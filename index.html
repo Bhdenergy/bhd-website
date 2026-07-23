@@ -1501,7 +1501,7 @@
 
   // Lead per E-Mail versenden (FormSubmit – kostenlos, kein Konto).
   // Nach dem ersten echten Absenden auf der Live-Seite kommt einmalig eine
-  // Bestätigungsmail an xpressbaugmbh@gmail.com -> Link darin anklicken.
+  // Bestätigungsmail an service-bhd@outlook.de -> Link darin anklicken.
   async function sendLead(lead){
     try{
       const payload=Object.assign({
@@ -1510,7 +1510,7 @@
         _captcha:'false'
       },lead);
       if(Array.isArray(payload.interesse))payload.interesse=payload.interesse.join(', ');
-      await fetch('https://formsubmit.co/ajax/xpressbaugmbh@gmail.com',{
+      await fetch('https://formsubmit.co/ajax/service-bhd@outlook.de',{
         method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify(payload)
