@@ -1510,10 +1510,14 @@
         _captcha:'false'
       },lead);
       if(Array.isArray(payload.interesse))payload.interesse=payload.interesse.join(', ');
+      // Formular-kodiert (application/x-www-form-urlencoded) statt JSON:
+      // vermeidet den CORS-Preflight, der Browser-Absendungen still blockieren kann.
+      const data=new URLSearchParams();
+      Object.keys(payload).forEach(k=>data.append(k, payload[k]==null?'':payload[k]));
       await fetch('https://formsubmit.co/ajax/service-bhd@outlook.de',{
         method:'POST',
-        headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body:JSON.stringify(payload)
+        headers:{'Accept':'application/json'},
+        body:data
       });
     }catch(e){console.error('Lead-Versand fehlgeschlagen',e);}
   }
