@@ -121,9 +121,31 @@
   .nav-phone{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);font-size:1rem}
   .nav-phone .ic{color:var(--green)}
   .nav-cta{padding:14px 28px;font-size:1.02rem}
-  @media(max-width:860px){.nav-links{gap:20px}.nav-links a.active::after{bottom:-25px}}
-  @media(max-width:680px){.nav-phone{display:none}}
-  @media(max-width:560px){.nav-links{display:none}.nav-cta{display:inline-flex}}
+  .menu-phone{display:none}
+  .nav-toggle{display:none;flex-direction:column;align-items:center;justify-content:center;width:46px;height:46px;border:1.5px solid var(--line-2);border-radius:12px;background:var(--panel);color:var(--ink);cursor:pointer;flex:none}
+  .nav-toggle .bar{display:block;width:21px;height:2px;background:currentColor;border-radius:2px;transition:transform .28s var(--ease),opacity .2s}
+  .nav-toggle .bar+.bar{margin-top:5px}
+  .nav-toggle:hover{border-color:var(--green);color:var(--green-deep)}
+  nav.open .nav-toggle .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.open .nav-toggle .bar:nth-child(2){opacity:0}
+  nav.open .nav-toggle .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  @media(max-width:980px){
+    .nav-toggle{display:inline-flex}
+    .nav-phone{display:none}
+    .nav-links{position:absolute;top:100%;left:0;right:0;margin:0;flex-direction:column;align-items:stretch;gap:0;
+      background:color-mix(in srgb,var(--bg) 97%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:var(--shadow);
+      padding:6px 0;max-height:0;overflow:hidden;opacity:0;visibility:hidden;transition:max-height .32s var(--ease),opacity .24s,visibility .24s}
+    nav.open .nav-links{max-height:82vh;opacity:1;visibility:visible;overflow:auto}
+    .nav-links a{padding:15px 32px;font-size:1.08rem;border-bottom:1px solid var(--line);color:var(--ink)}
+    .nav-links a:last-child{border-bottom:0}
+    .nav-links a.active::after{display:none}
+    .nav-links a.active{color:var(--green-deep)}
+    .menu-phone{display:flex;align-items:center;gap:9px;color:var(--green-deep);font-weight:700}
+    .menu-phone .ic{color:var(--green-deep)}
+  }
+  @media(max-width:560px){.nav-cta{padding:12px 20px;font-size:.96rem}}
+  @media(max-width:400px){.nav-cta{display:none}}
 
   /* ---------- HERO ---------- */
   .hero{position:relative;overflow:hidden;padding:clamp(60px,7vw,96px) 0 clamp(68px,8vw,104px)}
@@ -558,17 +580,21 @@
 <nav>
   <div class="wrap nav-in">
     <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo.png" width="560" height="345" alt="BHD – Beratung Heimenergie Deutschland"></div>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <a data-nav="home">Start</a>
       <a data-nav="check">Angebots-Check</a>
       <a data-nav="about">Über uns</a>
       <a data-nav="ref">Referenzen</a>
       <a data-nav="shop">Ratgeber</a>
       <a data-nav="ask">Anfragen</a>
+      <a href="tel:+491634440392" class="menu-phone"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
     </div>
     <div class="nav-right">
       <a href="tel:+491634440392" class="nav-phone"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
       <a href="#funnel" data-go-funnel class="btn nav-cta">Jetzt anfragen</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </div>
   </div>
 </nav>
@@ -1897,6 +1923,23 @@
     const t=document.getElementById(el.dataset.scrollto);
     if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
   }));
+
+  // ---------- Mobiles Menü (Burger) ----------
+  (function(){
+    const navEl=document.querySelector('nav');
+    const tgl=document.getElementById('nav-toggle');
+    if(!navEl||!tgl)return;
+    const closeMenu=()=>{navEl.classList.remove('open');tgl.setAttribute('aria-expanded','false');tgl.setAttribute('aria-label','Menü öffnen');};
+    tgl.addEventListener('click',()=>{
+      const open=navEl.classList.toggle('open');
+      tgl.setAttribute('aria-expanded',open?'true':'false');
+      tgl.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+    });
+    // Menü schließen, wenn ein Link oder der CTA angeklickt wird
+    document.querySelectorAll('#nav-links a, .nav-cta').forEach(a=>a.addEventListener('click',closeMenu));
+    // Schließen mit Escape
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeMenu();});
+  })();
 
   // ---------- Angebots-Check: Danke-Meldung nach Upload ----------
   // FormSubmit leitet nach erfolgreichem Absenden per _next auf ?checkok=1 zurück.
