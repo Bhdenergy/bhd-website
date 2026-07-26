@@ -335,6 +335,13 @@
   .prose p b{color:var(--ink)}
   .prose .pullquote{border-left:3px solid var(--gold);padding:4px 0 4px 22px;margin:26px 0;font-size:1.22rem;line-height:1.5;color:var(--ink);text-align:left;font-weight:500}
 
+  /* Datei-Upload-Feld */
+  .filefield{display:flex;flex-direction:column;gap:9px;margin-bottom:15px}
+  .filefield label{font-weight:600;font-size:1rem}
+  input[type=file]{width:100%;font-family:inherit;font-size:.95rem;color:var(--ink-2);background:var(--bg);border:1.5px dashed var(--line-2);border-radius:13px;padding:13px 15px;cursor:pointer;transition:border-color .18s}
+  input[type=file]:hover{border-color:var(--green)}
+  input[type=file]::file-selector-button{font-family:inherit;font-weight:600;font-size:.92rem;margin-right:14px;padding:9px 15px;border-radius:9px;border:0;background:var(--gold-soft);color:var(--gold-deep);cursor:pointer}
+
   /* ======================================================================
      REFERENZEN-SEITE
      ====================================================================== */
@@ -1399,7 +1406,7 @@
       <h1>Angebot erhalten? <em>Erst prüfen, dann unterschreiben.</em></h1>
       <p class="lede">Sie haben bereits ein Angebot für Photovoltaik, Speicher oder eine Wärmepumpe vorliegen? Wir prüfen es <b style="color:var(--ink)">unabhängig auf Seriosität, Effizienz und Fairness</b> – und vermitteln Ihnen auf Wunsch einen geprüften, vertrauenswürdigen Installationspartner aus unserem Netzwerk. Kostenlos und innerhalb von 24 Stunden.</p>
       <div class="hero-cta">
-        <a data-nav="ask" class="btn">Angebot kostenlos prüfen lassen</a>
+        <a data-scrollto="check-form" class="btn" style="cursor:pointer">Angebot kostenlos prüfen lassen</a>
         <a href="tel:+491634440392" class="btn btn-ghost"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
       </div>
     </div>
@@ -1471,7 +1478,7 @@
       <div class="tline">
         <div class="tstep">
           <div class="trail"><span class="tnode">1</span><span class="tbar"></span></div>
-          <div class="tbody"><h3>Angebot einreichen</h3><p>Senden Sie uns Ihr vorliegendes Angebot – ganz bequem über unser <a data-nav="ask" style="color:var(--gold-deep);text-decoration:underline;cursor:pointer">Anfrageformular</a> oder als PDF/Foto per E-Mail an <a href="mailto:service-bhd@outlook.de?subject=Angebots-Check" style="color:var(--gold-deep);text-decoration:underline">service-bhd@outlook.de</a>.</p></div>
+          <div class="tbody"><h3>Angebot einreichen</h3><p>Senden Sie uns Ihr vorliegendes Angebot – ganz bequem über das <a data-scrollto="check-form" style="color:var(--gold-deep);text-decoration:underline;cursor:pointer">Formular unten</a> (Datei optional anhängbar) oder als PDF/Foto per E-Mail an <a href="mailto:service-bhd@outlook.de?subject=Angebots-Check" style="color:var(--gold-deep);text-decoration:underline">service-bhd@outlook.de</a>.</p></div>
         </div>
         <div class="tstep">
           <div class="trail"><span class="tnode">2</span><span class="tbar"></span></div>
@@ -1485,12 +1492,69 @@
     </div>
   </section>
 
+  <!-- Angebots-Check-Formular -->
+  <section class="pad" style="padding-top:0" id="check-form">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">In 2 Minuten eingereicht</div>
+        <h2>Angebot zum Check einreichen</h2>
+        <p>Kurz Ihre Kontaktdaten, optional das Angebot als Datei – wir melden uns innerhalb von 24 Stunden.</p>
+      </div>
+      <div class="forms-wrap" style="max-width:680px">
+        <div class="fcard" id="check-card">
+          <form id="check-form-el" action="https://formsubmit.co/service-bhd@outlook.de" method="POST" enctype="multipart/form-data">
+            <div class="fcard-head">
+              <span class="fbadge"><svg class="ic"><use href="#i-shield"/></svg></span>
+              <div>
+                <span class="ftag"><svg class="ic"><use href="#i-clock"/></svg> Prüfung in 24 Stunden</span>
+                <h2>Kostenloser Angebots-Check</h2>
+                <p>Unabhängig, ehrlich und unverbindlich – ganz ohne Verkaufsdruck.</p>
+              </div>
+            </div>
+
+            <input type="hidden" name="_subject" value="Neuer Angebots-Check – BHD Website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://bhd-website.vercel.app/?checkok=1#angebots-check">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="grid2">
+              <div class="fld"><label for="c-name">Name <span class="req">*</span></label><input type="text" id="c-name" name="Name" placeholder="Vor- und Nachname" autocomplete="name" required></div>
+              <div class="fld"><label for="c-plz">Postleitzahl <span class="hint2">(optional)</span></label><input type="text" id="c-plz" name="PLZ" inputmode="numeric" maxlength="5" placeholder="z. B. 13357" autocomplete="postal-code"></div>
+            </div>
+            <div class="grid2">
+              <div class="fld"><label for="c-mail">E-Mail <span class="req">*</span></label><input type="email" id="c-mail" name="E-Mail" placeholder="name@beispiel.de" autocomplete="email" required></div>
+              <div class="fld"><label for="c-tel">Telefon <span class="req">*</span></label><input type="tel" id="c-tel" name="Telefon" placeholder="0170 1234567" autocomplete="tel" required></div>
+            </div>
+            <div class="fld"><label for="c-anbieter">Von welchem Anbieter liegt das Angebot vor? <span class="hint2">(optional)</span></label><input type="text" id="c-anbieter" name="Anbieter" placeholder="Firmenname – falls bekannt"></div>
+            <div class="filefield">
+              <label for="c-file">Angebot als Datei anhängen <span class="hint2">(optional · PDF, JPG oder PNG)</span></label>
+              <input type="file" id="c-file" name="Angebot" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/*">
+            </div>
+            <div class="fld"><label for="c-msg">Ihre Nachricht <span class="hint2">(optional)</span></label><textarea id="c-msg" name="Nachricht" placeholder="z. B. Fragen zum Angebot, Wunschtermin, Besonderheiten …"></textarea></div>
+            <div class="consent">
+              <input type="checkbox" id="c-dsgvo" name="Einverständnis" value="Ja, erteilt" required>
+              <label for="c-dsgvo">Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden und ich kontaktiert werde (<a href="#datenschutz">Datenschutz</a>). Widerruf jederzeit möglich. <span class="req">*</span></label>
+            </div>
+            <button type="submit" class="btn" style="width:100%">Angebot kostenlos prüfen lassen</button>
+            <div class="fnote"><svg class="ic"><use href="#i-lock"/></svg> SSL-verschlüsselt · kein Spam · 100 % kostenlos &amp; unverbindlich</div>
+          </form>
+          <div class="fdone" id="check-done">
+            <div class="check"><svg class="ic"><use href="#i-check"/></svg></div>
+            <h3>Vielen Dank!</h3>
+            <p>Ihr Angebot ist bei uns eingegangen. Wir prüfen es und melden uns innerhalb von 24 Stunden mit einer ehrlichen Einschätzung bei Ihnen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="pad cta-band">
     <div class="wrap">
       <div>
         <h2>Lassen Sie Ihr Angebot kostenlos prüfen.</h2>
         <p>Unabhängig, ehrlich und innerhalb von 24 Stunden – bevor Sie unterschreiben.</p>
-        <a data-nav="ask" class="btn">Jetzt Angebot prüfen lassen</a>
+        <a data-scrollto="check-form" class="btn" style="cursor:pointer">Jetzt Angebot prüfen lassen</a>
       </div>
     </div>
   </section>
@@ -1880,6 +1944,27 @@
     document.getElementById('b2b-done').classList.add('show');
     document.getElementById('b2b-card').scrollIntoView({behavior:'smooth',block:'center'});
   });
+
+  // ---------- Angebots-Check: sanftes Scrollen zum Formular ----------
+  document.querySelectorAll('[data-scrollto]').forEach(el=>el.addEventListener('click',(e)=>{
+    e.preventDefault();
+    const t=document.getElementById(el.dataset.scrollto);
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+
+  // ---------- Angebots-Check: Danke-Meldung nach Upload ----------
+  // FormSubmit leitet nach erfolgreichem Absenden per _next auf ?checkok=1 zurück.
+  (function(){
+    if(new URLSearchParams(location.search).get('checkok')!=='1')return;
+    setView('check',false);
+    const form=document.getElementById('check-form-el');
+    const done=document.getElementById('check-done');
+    if(form)form.style.display='none';
+    if(done)done.classList.add('show');
+    const anchor=document.getElementById('check-form');
+    if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
+    history.replaceState(null,'',location.pathname+'#angebots-check');
+  })();
 </script>
 
 </body></html>
