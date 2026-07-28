@@ -413,6 +413,8 @@
   .rtag.pv .ic{color:var(--amber)}
   .rtag.wp .ic{color:var(--green)}
   .rtag.duo .ic{color:var(--blue)}
+  .rtag.tec .ic{color:var(--blue)}
+  .rcard.is-hidden{display:none}
   .rbody{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
   .rloc{display:flex;align-items:center;gap:7px;color:var(--ink-3);font-size:.9rem;font-weight:600;margin-bottom:9px}
   .rloc .ic{width:15px;height:15px;color:var(--green)}
@@ -852,7 +854,7 @@
       <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Referenzen</span></div>
       <div class="eyebrow"><span class="dot"></span> Realisierte Projekte für Einfamilienhäuser</div>
       <h1>Anlagen, die für sich sprechen.</h1>
-      <p class="lede">Ein Auszug aus Projekten, die unsere geprüften Fachbetriebe umgesetzt haben – vom kompakten Modulfeld auf dem Ziegeldach bis zur aufgeständerten Flachdach-Anlage.</p>
+      <p class="lede">Ein Auszug aus Projekten, die unsere geprüften Fachbetriebe umgesetzt haben – vom Modulfeld auf dem Ziegeldach über die Wärmepumpe im Garten bis zu Speicher, Wechselrichter und Wallbox im Technikraum.</p>
       <div class="hero-cta">
         <a href="#funnel" data-go-funnel class="btn">Eigenes Projekt anfragen</a>
         <a href="tel:+491634440392" class="btn btn-ghost"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
@@ -876,15 +878,22 @@
       <div class="head">
         <div class="kicker">Projektgalerie</div>
         <h2>Eigenheime mit Zukunft.</h2>
-        <p>Ein Einblick in Photovoltaik-Anlagen, die unsere Fachpartner auf Dächern in ganz Deutschland umgesetzt haben.</p>
+        <p>Filtern Sie nach Anlagentyp – von der Dachanlage über die Wärmepumpe bis zu Speicher, Wechselrichter und Wallbox.</p>
+      </div>
+
+      <div class="ref-filter">
+        <button class="fbtn active" data-filter="all"><svg class="ic"><use href="#i-grid"/></svg> Alle Projekte</button>
+        <button class="fbtn" data-filter="pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</button>
+        <button class="fbtn" data-filter="wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</button>
+        <button class="fbtn" data-filter="tec"><svg class="ic"><use href="#i-battery"/></svg> Technik &amp; Speicher</button>
       </div>
 
       <div class="ref-grid">
 
-        <!-- Projekt 1 -->
+        <!-- PV 1 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <img src="assets/referenzen/ref-1-satteldach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <img src="assets/referenzen/ref-pv-01-satteldach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Einfamilienhaus mit rotem Ziegel-Satteldach und zwei belegten Photovoltaik-Teilflächen">
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
@@ -894,10 +903,36 @@
           </div>
         </article>
 
-        <!-- Projekt 2 -->
+        <!-- WP 1 -->
+        <article class="rcard" data-type="wp">
+          <div class="rmedia">
+            <img src="assets/referenzen/ref-wp-01-aussengeraet.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Luft-Wasser-Wärmepumpe als Außengerät neben der Hauswand, Leitungen isoliert in den Keller geführt">
+            <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
+          </div>
+          <div class="rbody">
+            <h3>Luft-Wasser-Wärmepumpe am Haus</h3>
+            <p>Außengerät auf Fundamentplatten neben der Hauswand – die isolierten Leitungen wurden verdeckt in den Keller geführt.</p>
+          </div>
+        </article>
+
+        <!-- TEC 1 -->
+        <article class="rcard" data-type="tec">
+          <div class="rmedia">
+            <img src="assets/referenzen/ref-tec-01-wechselrichter-speicher.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Wandmontierter Wechselrichter über einem stehenden Batteriespeicher im Hauswirtschaftsraum">
+            <span class="rtag tec"><svg class="ic"><use href="#i-battery"/></svg> Technik &amp; Speicher</span>
+          </div>
+          <div class="rbody">
+            <h3>Wechselrichter mit Batteriespeicher</h3>
+            <p>Wechselrichter und Speicher übereinander gesetzt – kompakte Lösung für Räume, in denen wenig Wandfläche zur Verfügung steht.</p>
+          </div>
+        </article>
+
+        <!-- PV 2 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <img src="assets/referenzen/ref-2-flachdach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <img src="assets/referenzen/ref-pv-02-flachdach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Aufgeständerte Photovoltaik-Module auf dem Flachdach eines Mehrfamilienhauses">
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
@@ -907,36 +942,62 @@
           </div>
         </article>
 
-        <!-- Projekt 3 -->
-        <article class="rcard" data-type="pv">
+        <!-- TEC 5 – Wallbox -->
+        <article class="rcard" data-type="tec">
           <div class="rmedia">
-            <img src="assets/referenzen/ref-3-ziegeldach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
-                 alt="Photovoltaik-Module entlang des Firsts auf einem roten Ziegeldach, Monteur bei der Abnahme">
-            <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
+            <img src="assets/referenzen/ref-tec-05-wallbox.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Wallbox mit aufgewickeltem Ladekabel an einer Klinkerwand">
+            <span class="rtag tec"><svg class="ic"><use href="#i-plug"/></svg> Wallbox</span>
           </div>
           <div class="rbody">
-            <h3>Photovoltaik auf Ziegeldach</h3>
-            <p>Modulreihe entlang des Firsts, ergänzt um eine zweite Teilfläche – Planung und Montage durch unseren geprüften Fachpartner.</p>
+            <h3>Wallbox für das E-Auto</h3>
+            <p>Ladepunkt an der Hauswand, direkt an die PV-Anlage angebunden – so lädt das Auto bevorzugt mit dem eigenen Solarstrom.</p>
           </div>
         </article>
 
-        <!-- Projekt 4 -->
+        <!-- PV 5 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <img src="assets/referenzen/ref-4-volldach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
-                 alt="Weitgehend voll belegte Dachfläche mit schwarzen Photovoltaik-Modulen">
+            <img src="assets/referenzen/ref-pv-05-daemmerung.jpg" width="1400" height="1050" loading="lazy" decoding="async"
+                 alt="Einfamilienhaus in der Dämmerung mit Photovoltaik-Modulen auf beiden Dachflächen">
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
           <div class="rbody">
-            <h3>Vollflächen-Belegung</h3>
-            <p>Weitgehend voll belegte Dachfläche mit Vollschwarz-Modulen – so viel Leistung wie möglich auf der vorhandenen Fläche.</p>
+            <h3>Beidseitig belegtes Satteldach</h3>
+            <p>Module auf beiden Dachflächen und um die Gaube herum geführt – so wird der Ertrag über den ganzen Tag verteilt statt nur zur Mittagsspitze.</p>
           </div>
         </article>
 
-        <!-- Projekt 5 -->
+        <!-- WP 2 -->
+        <article class="rcard" data-type="wp">
+          <div class="rmedia">
+            <img src="assets/referenzen/ref-wp-02-abendlicht.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Wärmepumpen-Außengerät auf Betonfundament an der Hauswand im Abendlicht">
+            <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
+          </div>
+          <div class="rbody">
+            <h3>Wärmepumpe auf Betonfundament</h3>
+            <p>Schwingungsentkoppelte Aufstellung auf Betonsockeln mit Abstand zur Wand – das hält den Betriebslärm im Haus und beim Nachbarn niedrig.</p>
+          </div>
+        </article>
+
+        <!-- TEC 2 -->
+        <article class="rcard" data-type="tec">
+          <div class="rmedia">
+            <img src="assets/referenzen/ref-tec-02-wechselrichter-speicher.jpg" width="787" height="1400" loading="lazy" decoding="async"
+                 alt="Kompaktes Speichersystem mit Wechselrichter an der Wand und Batterieeinheit darunter">
+            <span class="rtag tec"><svg class="ic"><use href="#i-battery"/></svg> Technik &amp; Speicher</span>
+          </div>
+          <div class="rbody">
+            <h3>Kompaktes Speichersystem</h3>
+            <p>Wechselrichter und Batterieeinheit als aufeinander abgestimmtes System – Verkabelung vollständig hinter Kanälen geführt.</p>
+          </div>
+        </article>
+
+        <!-- PV 3 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <img src="assets/referenzen/ref-5-anthrazitdach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <img src="assets/referenzen/ref-pv-03-terrassendach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Anthrazitfarbenes Satteldach mit Photovoltaik-Modulen und zusätzlich solarbelegter Terrassenüberdachung">
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
@@ -946,16 +1007,42 @@
           </div>
         </article>
 
-        <!-- Projekt 6 -->
+        <!-- TEC 3 -->
+        <article class="rcard" data-type="tec">
+          <div class="rmedia">
+            <img src="assets/referenzen/ref-tec-03-wechselrichter.jpg" width="787" height="1400" loading="lazy" decoding="async"
+                 alt="Wandmontierter Wechselrichter mit sauber verlegten Leitungen im Technikraum">
+            <span class="rtag tec"><svg class="ic"><use href="#i-chip"/></svg> Wechselrichter</span>
+          </div>
+          <div class="rbody">
+            <h3>Wechselrichter im Technikraum</h3>
+            <p>Zentrale Schaltstelle der Anlage: Sie wandelt den Gleichstrom vom Dach in nutzbaren Haushaltsstrom um und meldet die Erträge an die App.</p>
+          </div>
+        </article>
+
+        <!-- PV 4 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <img src="assets/referenzen/ref-6-giebeldach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <img src="assets/referenzen/ref-pv-04-giebeldach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Kompaktes schwarzes Photovoltaik-Modulfeld bündig eingepasst in ein rotes Ziegeldach">
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
           <div class="rbody">
             <h3>Kompakte Anlage auf Ziegeldach</h3>
             <p>Vollschwarz-Module bündig in die Dachfläche eingepasst – optisch ruhig und ohne störende Aufbauten.</p>
+          </div>
+        </article>
+
+        <!-- TEC 4 -->
+        <article class="rcard" data-type="tec">
+          <div class="rmedia">
+            <img src="assets/referenzen/ref-tec-04-batteriespeicher.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Stehender Batteriespeicher mit mehreren Modulen im Heizungsraum">
+            <span class="rtag tec"><svg class="ic"><use href="#i-battery"/></svg> Technik &amp; Speicher</span>
+          </div>
+          <div class="rbody">
+            <h3>Batteriespeicher im Heizungsraum</h3>
+            <p>Mehrere Batteriemodule zu einem Turm gestapelt – der Speicher lässt sich später um weitere Module erweitern, wenn der Verbrauch steigt.</p>
           </div>
         </article>
 
@@ -1751,6 +1838,22 @@
     if(first)document.getElementById('successName').textContent=first;
     show(total);
   });
+
+  // ---------- Referenzen: Filter nach Anlagentyp ----------
+  (function(){
+    const btns=document.querySelectorAll('.ref-filter .fbtn');
+    const cards=document.querySelectorAll('.ref-grid .rcard');
+    if(!btns.length||!cards.length)return;
+    btns.forEach(function(b){
+      b.addEventListener('click',function(){
+        const f=b.dataset.filter;
+        btns.forEach(function(x){x.classList.toggle('active',x===b);});
+        cards.forEach(function(c){
+          c.classList.toggle('is-hidden', f!=='all' && c.dataset.type!==f);
+        });
+      });
+    });
+  })();
 
   // ---------- Seiten-Routing (Start / Referenzen / Anfragen) ----------
   const viewHome=document.getElementById('view-home');
