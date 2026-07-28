@@ -401,8 +401,11 @@
   .rcard{border:1px solid var(--line);border-radius:20px;background:var(--panel);overflow:hidden;box-shadow:var(--shadow);
     display:flex;flex-direction:column;transition:transform .3s var(--ease),border-color .3s var(--ease)}
   .rcard:hover{transform:translateY(-5px);border-color:var(--line-2)}
-  .rmedia{position:relative;aspect-ratio:16/10;overflow:hidden}
+  .rmedia{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--line)}
   .rmedia svg.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .rmedia img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s var(--ease)}
+  .rcard:hover .rmedia img{transform:scale(1.04)}
   .rtag{position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;gap:7px;
     font-size:.78rem;font-weight:700;letter-spacing:.02em;padding:7px 13px;border-radius:100px;
     color:var(--ink);background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(6px);border:1px solid var(--line-2)}
@@ -849,7 +852,7 @@
       <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Referenzen</span></div>
       <div class="eyebrow"><span class="dot"></span> Realisierte Projekte für Einfamilienhäuser</div>
       <h1>Anlagen, die für sich sprechen.</h1>
-      <p class="lede">Ein Auszug aus Photovoltaik- und Wärmepumpen-Projekten, die unsere geprüften Fachbetriebe für Eigenheime umgesetzt haben – von der kompakten PV-Anlage bis zum energieautarken Zuhause.</p>
+      <p class="lede">Ein Auszug aus Projekten, die unsere geprüften Fachbetriebe umgesetzt haben – vom kompakten Modulfeld auf dem Ziegeldach bis zur aufgeständerten Flachdach-Anlage.</p>
       <div class="hero-cta">
         <a href="#funnel" data-go-funnel class="btn">Eigenes Projekt anfragen</a>
         <a href="tel:+491634440392" class="btn btn-ghost"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
@@ -873,105 +876,92 @@
       <div class="head">
         <div class="kicker">Projektgalerie</div>
         <h2>Eigenheime mit Zukunft.</h2>
-        <p>Filtern Sie nach Anlagentyp und entdecken Sie ausgewählte Referenzen inklusive Eckdaten.</p>
-      </div>
-
-      <div class="ref-filter">
-        <button class="fbtn active" data-filter="all"><svg class="ic"><use href="#i-grid"/></svg> Alle Projekte</button>
-        <button class="fbtn" data-filter="pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</button>
-        <button class="fbtn" data-filter="wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</button>
-        <button class="fbtn" data-filter="duo"><svg class="ic"><use href="#i-layers"/></svg> Kombination</button>
+        <p>Ein Einblick in Photovoltaik-Anlagen, die unsere Fachpartner auf Dächern in ganz Deutschland umgesetzt haben.</p>
       </div>
 
       <div class="ref-grid">
 
-        <!-- Projekt 1 – PV -->
+        <!-- Projekt 1 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <svg class="scene" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Einfamilienhaus mit Photovoltaik-Anlage auf dem Satteldach"><defs><linearGradient id="s1sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34414d"/><stop offset=".6" stop-color="#2a333d"/><stop offset="1" stop-color="#222a31"/></linearGradient><radialGradient id="s1glow" cx="80%" cy="18%" r="46%"><stop offset="0" stop-color="#E9AE52" stop-opacity=".33"/><stop offset="1" stop-color="#E9AE52" stop-opacity="0"/></radialGradient><linearGradient id="s1wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b5560"/><stop offset="1" stop-color="#39424c"/></linearGradient><linearGradient id="s1roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b444f"/><stop offset="1" stop-color="#2c343d"/></linearGradient><linearGradient id="s1pan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#616d7a"/><stop offset="1" stop-color="#3b4652"/></linearGradient><linearGradient id="s1glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ba1b3"/><stop offset=".5" stop-color="#4d5b68"/><stop offset="1" stop-color="#33404b"/></linearGradient><radialGradient id="s1sh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".4"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs><rect width="400" height="250" fill="url(#s1sky)"/><rect width="400" height="250" fill="url(#s1glow)"/><circle cx="322" cy="50" r="19" fill="#F1C368"/><circle cx="322" cy="50" r="19" fill="none" stroke="#E9AE52" stroke-opacity=".5" stroke-width="2"><animate attributeName="r" values="19;25;19" dur="5s" repeatCount="indefinite"/></circle><path d="M0 192 q22 -24 44 -4 q20 -22 44 -2 q24 -20 48 0 l0 30 -136 0 z" fill="#232d29" opacity=".85"/><path d="M296 194 q24 -20 48 -2 q22 -16 56 2 l0 20 -104 0 z" fill="#232d29" opacity=".7"/><rect y="196" width="400" height="54" fill="#232a2c"/><rect y="196" width="400" height="5" fill="#2c3431"/><ellipse cx="196" cy="226" rx="118" ry="13" fill="url(#s1sh)"/><rect x="120" y="132" width="150" height="96" fill="url(#s1wall)"/><rect x="120" y="132" width="9" height="96" fill="#000" opacity=".12"/><polygon points="106,136 195,74 284,136" fill="url(#s1roof)"/><polygon points="106,136 195,74 284,136" fill="none" stroke="#525c69" stroke-width="1" opacity=".6"/><rect x="246" y="94" width="12" height="28" fill="#39424c"/><rect x="243" y="90" width="18" height="6" fill="#48525d"/><g transform="translate(132,96) skewX(-31)"><rect x="-3" y="-3" width="93" height="43" rx="2" fill="#2b333b"/><g fill="url(#s1pan)" stroke="#8b96a1" stroke-width=".7"><rect x="0" y="0" width="27" height="17"/><rect x="30" y="0" width="27" height="17"/><rect x="60" y="0" width="27" height="17"/><rect x="0" y="20" width="27" height="17"/><rect x="30" y="20" width="27" height="17"/><rect x="60" y="20" width="27" height="17"/></g><polygon points="0,0 32,0 8,37 0,37" fill="#ffffff" opacity=".08"/></g><rect x="140" y="160" width="30" height="34" rx="2" fill="url(#s1glass)" stroke="#59636e" stroke-width="2"/><line x1="155" y1="160" x2="155" y2="194" stroke="#59636e" stroke-width="1.3"/><line x1="140" y1="177" x2="170" y2="177" stroke="#59636e" stroke-width="1.3"/><rect x="220" y="160" width="30" height="34" rx="2" fill="url(#s1glass)" stroke="#59636e" stroke-width="2"/><line x1="235" y1="160" x2="235" y2="194" stroke="#59636e" stroke-width="1.3"/><line x1="220" y1="177" x2="250" y2="177" stroke="#59636e" stroke-width="1.3"/><rect x="184" y="196" width="26" height="32" rx="1.5" fill="#2a313a" stroke="#465262" stroke-width="1.5"/><circle cx="204" cy="213" r="1.6" fill="#E9AE52"/></svg>
+            <img src="assets/referenzen/ref-1-satteldach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Einfamilienhaus mit rotem Ziegel-Satteldach und zwei belegten Photovoltaik-Teilflächen">
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
           <div class="rbody">
-            <span class="rloc"><svg class="ic"><use href="#i-pin"/></svg> Musterstadt, Baden-Württemberg</span>
-            <h3>PV-Anlage mit Stromspeicher</h3>
-            <p>Süddach-Belegung mit Hochleistungsmodulen und Batteriespeicher – für maximalen Eigenverbrauch über das ganze Jahr.</p>
-            <div class="rspecs"><div><b>9,8</b><span>kWp</span></div><div><b>10</b><span>kWh Speicher</span></div><div><b>68 %</b><span>Autarkie</span></div></div>
+            <h3>Aufdach-Photovoltaik auf Satteldach</h3>
+            <p>Ziegel-Satteldach mit zwei belegten Teilflächen – die Modulfelder wurden um Dachfenster und Schornstein herum geplant.</p>
           </div>
         </article>
 
-        <!-- Projekt 2 – WP -->
-        <article class="rcard" data-type="wp">
-          <div class="rmedia">
-            <svg class="scene" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Luft-Wasser-Waermepumpe"><defs><linearGradient id="s2sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#313d48"/><stop offset="1" stop-color="#232a31"/></linearGradient><linearGradient id="s2wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b5560"/><stop offset="1" stop-color="#39424c"/></linearGradient><linearGradient id="s2unit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#48515c"/><stop offset="1" stop-color="#333b45"/></linearGradient><linearGradient id="s2glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ba1b3"/><stop offset=".5" stop-color="#4d5b68"/><stop offset="1" stop-color="#33404b"/></linearGradient><radialGradient id="s2sh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".42"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs><rect width="400" height="250" fill="url(#s2sky)"/><rect y="196" width="400" height="54" fill="#232a2c"/><rect y="196" width="400" height="5" fill="#2c3431"/><rect x="40" y="58" width="214" height="138" fill="url(#s2wall)"/><rect x="40" y="58" width="9" height="138" fill="#000" opacity=".12"/><rect x="70" y="86" width="40" height="44" rx="2" fill="url(#s2glass)" stroke="#59636e" stroke-width="2"/><line x1="90" y1="86" x2="90" y2="130" stroke="#59636e" stroke-width="1.3"/><line x1="70" y1="108" x2="110" y2="108" stroke="#59636e" stroke-width="1.3"/><rect x="150" y="86" width="40" height="44" rx="2" fill="url(#s2glass)" stroke="#59636e" stroke-width="2"/><line x1="170" y1="86" x2="170" y2="130" stroke="#59636e" stroke-width="1.3"/><line x1="150" y1="108" x2="190" y2="108" stroke="#59636e" stroke-width="1.3"/><rect x="212" y="140" width="30" height="56" rx="1.5" fill="#2a313a" stroke="#465262" stroke-width="1.5"/><circle cx="216" cy="168" r="1.6" fill="#E9AE52"/><ellipse cx="330" cy="204" rx="66" ry="11" fill="url(#s2sh)"/><rect x="278" y="196" width="106" height="6" fill="#2b3330"/><rect x="280" y="126" width="102" height="70" rx="8" fill="url(#s2unit)" stroke="#525c67" stroke-width="1.5"/><rect x="280" y="126" width="102" height="13" rx="8" fill="#3a434d"/><g stroke="#2b333c" stroke-width="2"><line x1="290" y1="150" x2="290" y2="188"/><line x1="297" y1="150" x2="297" y2="188"/><line x1="304" y1="150" x2="304" y2="188"/><line x1="311" y1="150" x2="311" y2="188"/></g><circle cx="348" cy="165" r="23" fill="#212831" stroke="#525c67" stroke-width="1.5"/><circle cx="348" cy="165" r="16" fill="none" stroke="#2f3841" stroke-width="1"/><g stroke="#b2bac2" stroke-width="4" stroke-linecap="round"><line x1="348" y1="165" x2="348" y2="146"/><line x1="348" y1="165" x2="364" y2="175"/><line x1="348" y1="165" x2="332" y2="175"/><animateTransform attributeName="transform" type="rotate" from="0 348 165" to="360 348 165" dur="2.6s" repeatCount="indefinite"/></g><circle cx="348" cy="165" r="3.4" fill="#7B828B"/><g stroke="#E9AE52" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".6"><path d="M388 158 q10 -8 0 -16"/><path d="M382 150 q9 -7 0 -14"/></g></svg>
-            <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
-          </div>
-          <div class="rbody">
-            <span class="rloc"><svg class="ic"><use href="#i-pin"/></svg> Beispieldorf, Bayern</span>
-            <h3>Luft-Wasser-Wärmepumpe</h3>
-            <p>Alte Ölheizung ersetzt durch eine effiziente Luft-Wasser-Wärmepumpe – über die BEG gefördert und flüsterleise im Betrieb.</p>
-            <div class="rspecs"><div><b>9 kW</b><span>Heizleistung</span></div><div><b>A+++</b><span>Effizienz</span></div><div><b>55 %</b><span>Ersparnis</span></div></div>
-          </div>
-        </article>
-
-        <!-- Projekt 3 – Kombi -->
-        <article class="rcard" data-type="duo">
-          <div class="rmedia">
-            <svg class="scene" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Einfamilienhaus mit Photovoltaik und Waermepumpe"><defs><linearGradient id="s3sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34414d"/><stop offset=".6" stop-color="#2a333d"/><stop offset="1" stop-color="#222a31"/></linearGradient><radialGradient id="s3glow" cx="16%" cy="16%" r="42%"><stop offset="0" stop-color="#E9AE52" stop-opacity=".3"/><stop offset="1" stop-color="#E9AE52" stop-opacity="0"/></radialGradient><linearGradient id="s3wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b5560"/><stop offset="1" stop-color="#39424c"/></linearGradient><linearGradient id="s3roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b444f"/><stop offset="1" stop-color="#2c343d"/></linearGradient><linearGradient id="s3pan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#616d7a"/><stop offset="1" stop-color="#3b4652"/></linearGradient><linearGradient id="s3glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ba1b3"/><stop offset=".5" stop-color="#4d5b68"/><stop offset="1" stop-color="#33404b"/></linearGradient><linearGradient id="s3unit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#48515c"/><stop offset="1" stop-color="#333b45"/></linearGradient><radialGradient id="s3sh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".4"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs><rect width="400" height="250" fill="url(#s3sky)"/><rect width="400" height="250" fill="url(#s3glow)"/><circle cx="58" cy="46" r="17" fill="#F1C368"/><rect y="196" width="400" height="54" fill="#232a2c"/><rect y="196" width="400" height="5" fill="#2c3431"/><ellipse cx="168" cy="226" rx="110" ry="12" fill="url(#s3sh)"/><rect x="84" y="130" width="158" height="98" fill="url(#s3wall)"/><rect x="84" y="130" width="9" height="98" fill="#000" opacity=".12"/><polygon points="70,134 163,72 256,134" fill="url(#s3roof)"/><polygon points="70,134 163,72 256,134" fill="none" stroke="#525c69" stroke-width="1" opacity=".6"/><rect x="220" y="94" width="11" height="26" fill="#39424c"/><rect x="217" y="90" width="17" height="6" fill="#48525d"/><g transform="translate(98,96) skewX(-31)"><rect x="-3" y="-3" width="93" height="43" rx="2" fill="#2b333b"/><g fill="url(#s3pan)" stroke="#8b96a1" stroke-width=".7"><rect x="0" y="0" width="27" height="17"/><rect x="30" y="0" width="27" height="17"/><rect x="60" y="0" width="27" height="17"/><rect x="0" y="20" width="27" height="17"/><rect x="30" y="20" width="27" height="17"/><rect x="60" y="20" width="27" height="17"/></g><polygon points="0,0 32,0 8,37 0,37" fill="#ffffff" opacity=".08"/></g><rect x="104" y="158" width="28" height="32" rx="2" fill="url(#s3glass)" stroke="#59636e" stroke-width="2"/><line x1="118" y1="158" x2="118" y2="190" stroke="#59636e" stroke-width="1.3"/><line x1="104" y1="174" x2="132" y2="174" stroke="#59636e" stroke-width="1.3"/><rect x="192" y="158" width="28" height="32" rx="2" fill="url(#s3glass)" stroke="#59636e" stroke-width="2"/><line x1="206" y1="158" x2="206" y2="190" stroke="#59636e" stroke-width="1.3"/><line x1="192" y1="174" x2="220" y2="174" stroke="#59636e" stroke-width="1.3"/><rect x="150" y="196" width="24" height="32" rx="1.5" fill="#2a313a" stroke="#465262" stroke-width="1.5"/><circle cx="169" cy="213" r="1.5" fill="#E9AE52"/><ellipse cx="322" cy="206" rx="46" ry="9" fill="url(#s3sh)"/><rect x="288" y="168" width="68" height="60" rx="6" fill="url(#s3unit)" stroke="#525c67" stroke-width="1.5"/><rect x="288" y="168" width="68" height="11" rx="6" fill="#3a434d"/><g stroke="#2b333c" stroke-width="1.6"><line x1="295" y1="188" x2="295" y2="221"/><line x1="301" y1="188" x2="301" y2="221"/><line x1="307" y1="188" x2="307" y2="221"/></g><circle cx="333" cy="200" r="16" fill="#212831" stroke="#525c67" stroke-width="1.5"/><g stroke="#b2bac2" stroke-width="3.4" stroke-linecap="round"><line x1="333" y1="200" x2="333" y2="187"/><line x1="333" y1="200" x2="344" y2="207"/><line x1="333" y1="200" x2="322" y2="207"/><animateTransform attributeName="transform" type="rotate" from="0 333 200" to="360 333 200" dur="2.8s" repeatCount="indefinite"/></g><circle cx="333" cy="200" r="2.6" fill="#7B828B"/></svg>
-            <span class="rtag duo"><svg class="ic"><use href="#i-layers"/></svg> PV + Wärmepumpe</span>
-          </div>
-          <div class="rbody">
-            <span class="rloc"><svg class="ic"><use href="#i-pin"/></svg> Sonnendorf, Hessen</span>
-            <h3>Komplettpaket: Solar &amp; Wärme</h3>
-            <p>Photovoltaik, Speicher und Wärmepumpe perfekt aufeinander abgestimmt – Strom und Heizung aus einer Hand.</p>
-            <div class="rspecs"><div><b>12,4</b><span>kWp</span></div><div><b>15</b><span>kWh Speicher</span></div><div><b>70 %</b><span>Ersparnis</span></div></div>
-          </div>
-        </article>
-
-        <!-- Projekt 4 – PV Volldach -->
+        <!-- Projekt 2 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <svg class="scene" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Voll belegtes Satteldach mit Solarmodulen"><defs><linearGradient id="s4sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34414d"/><stop offset=".6" stop-color="#2a333d"/><stop offset="1" stop-color="#222a31"/></linearGradient><radialGradient id="s4glow" cx="84%" cy="16%" r="46%"><stop offset="0" stop-color="#E9AE52" stop-opacity=".32"/><stop offset="1" stop-color="#E9AE52" stop-opacity="0"/></radialGradient><linearGradient id="s4wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b5560"/><stop offset="1" stop-color="#39424c"/></linearGradient><linearGradient id="s4roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b444f"/><stop offset="1" stop-color="#2c343d"/></linearGradient><linearGradient id="s4pan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#616d7a"/><stop offset="1" stop-color="#38424e"/></linearGradient><linearGradient id="s4glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ba1b3"/><stop offset=".5" stop-color="#4d5b68"/><stop offset="1" stop-color="#33404b"/></linearGradient><radialGradient id="s4sh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".4"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs><rect width="400" height="250" fill="url(#s4sky)"/><rect width="400" height="250" fill="url(#s4glow)"/><circle cx="336" cy="44" r="18" fill="#F1C368"/><circle cx="336" cy="44" r="18" fill="none" stroke="#E9AE52" stroke-opacity=".5" stroke-width="2"><animate attributeName="r" values="18;24;18" dur="5s" repeatCount="indefinite"/></circle><path d="M0 196 q26 -22 52 -4 q24 -20 52 -2 l0 24 -104 0 z" fill="#232d29" opacity=".8"/><rect y="200" width="400" height="50" fill="#232a2c"/><rect y="200" width="400" height="5" fill="#2c3431"/><ellipse cx="198" cy="228" rx="124" ry="12" fill="url(#s4sh)"/><rect x="96" y="140" width="204" height="90" fill="url(#s4wall)"/><rect x="96" y="140" width="9" height="90" fill="#000" opacity=".12"/><polygon points="82,144 198,66 314,144" fill="url(#s4roof)"/><polygon points="82,144 198,66 314,144" fill="none" stroke="#525c69" stroke-width="1" opacity=".6"/><rect x="276" y="98" width="12" height="30" fill="#39424c"/><rect x="273" y="94" width="18" height="6" fill="#48525d"/><g transform="translate(110,86) skewX(-32)"><rect x="-3" y="-3" width="126" height="60" rx="2" fill="#2b333b"/><g fill="url(#s4pan)" stroke="#8b96a1" stroke-width=".7"><rect x="0" y="0" width="28" height="16"/><rect x="31" y="0" width="28" height="16"/><rect x="62" y="0" width="28" height="16"/><rect x="93" y="0" width="28" height="16"/><rect x="0" y="19" width="28" height="16"/><rect x="31" y="19" width="28" height="16"/><rect x="62" y="19" width="28" height="16"/><rect x="93" y="19" width="28" height="16"/><rect x="0" y="38" width="28" height="16"/><rect x="31" y="38" width="28" height="16"/><rect x="62" y="38" width="28" height="16"/><rect x="93" y="38" width="28" height="16"/></g><polygon points="0,0 40,0 12,54 0,54" fill="#ffffff" opacity=".07"/></g><rect x="128" y="168" width="30" height="34" rx="2" fill="url(#s4glass)" stroke="#59636e" stroke-width="2"/><line x1="143" y1="168" x2="143" y2="202" stroke="#59636e" stroke-width="1.3"/><line x1="128" y1="185" x2="158" y2="185" stroke="#59636e" stroke-width="1.3"/><rect x="238" y="168" width="30" height="34" rx="2" fill="url(#s4glass)" stroke="#59636e" stroke-width="2"/><line x1="253" y1="168" x2="253" y2="202" stroke="#59636e" stroke-width="1.3"/><line x1="238" y1="185" x2="268" y2="185" stroke="#59636e" stroke-width="1.3"/><rect x="184" y="200" width="28" height="30" rx="1.5" fill="#2a313a" stroke="#465262" stroke-width="1.5"/><circle cx="205" cy="215" r="1.6" fill="#E9AE52"/></svg>
+            <img src="assets/referenzen/ref-2-flachdach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Aufgeständerte Photovoltaik-Module auf dem Flachdach eines Mehrfamilienhauses">
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
           <div class="rbody">
-            <span class="rloc"><svg class="ic"><use href="#i-pin"/></svg> Musterhausen, Nordrhein-Westfalen</span>
-            <h3>Volldach-Photovoltaik</h3>
-            <p>Komplett belegtes Satteldach mit Ost-West-Ausrichtung für gleichmäßigen Ertrag über den ganzen Tag.</p>
-            <div class="rspecs"><div><b>14,2</b><span>kWp</span></div><div><b>Ost/West</b><span>Ausrichtung</span></div><div><b>13.500</b><span>kWh/Jahr</span></div></div>
+            <h3>Flachdach-Anlage auf Aufständerung</h3>
+            <p>Aufgeständerte Module auf dem Flachdach eines Mehrfamilienhauses – Ausrichtung und Reihenabstand so ausgelegt, dass sich die Reihen nicht gegenseitig verschatten.</p>
           </div>
         </article>
 
-        <!-- Projekt 5 – WP Neubau -->
-        <article class="rcard" data-type="wp">
+        <!-- Projekt 3 -->
+        <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <svg class="scene" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Waermepumpe im Garten eines Neubau-Einfamilienhauses"><defs><linearGradient id="s5sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#313d48"/><stop offset="1" stop-color="#26303a"/></linearGradient><linearGradient id="s5grass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f4633"/><stop offset="1" stop-color="#243528"/></linearGradient><linearGradient id="s5wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#414a54"/><stop offset="1" stop-color="#333b44"/></linearGradient><linearGradient id="s5unit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#49525d"/><stop offset="1" stop-color="#333b45"/></linearGradient><linearGradient id="s5glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7f95a7"/><stop offset="1" stop-color="#33404b"/></linearGradient><radialGradient id="s5sh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".45"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs><rect width="400" height="250" fill="url(#s5sky)"/><rect y="176" width="400" height="74" fill="url(#s5grass)"/><rect y="176" width="400" height="4" fill="#37543c"/><rect x="28" y="80" width="150" height="98" fill="url(#s5wall)"/><polygon points="20,84 103,42 186,84" fill="#2c333c"/><rect x="52" y="104" width="32" height="32" rx="2" fill="url(#s5glass)" stroke="#4f5964" stroke-width="1.6"/><rect x="112" y="104" width="32" height="32" rx="2" fill="url(#s5glass)" stroke="#4f5964" stroke-width="1.6"/><circle cx="30" cy="178" r="15" fill="#2c5636"/><circle cx="50" cy="181" r="11" fill="#356a41"/><circle cx="372" cy="180" r="14" fill="#2c5636"/><ellipse cx="284" cy="216" rx="92" ry="13" fill="url(#s5sh)"/><rect x="206" y="112" width="156" height="98" rx="9" fill="url(#s5unit)" stroke="#525c67" stroke-width="1.5"/><rect x="206" y="112" width="156" height="17" rx="9" fill="#3a434d"/><text x="220" y="126" font-family="Helvetica Neue, sans-serif" font-size="10" font-weight="700" fill="#7B828B">BHD</text><g stroke="#2b333c" stroke-width="2"><line x1="218" y1="140" x2="218" y2="202"/><line x1="226" y1="140" x2="226" y2="202"/><line x1="234" y1="140" x2="234" y2="202"/></g><circle cx="292" cy="164" r="32" fill="#212831" stroke="#525c67" stroke-width="1.6"/><circle cx="292" cy="164" r="23" fill="none" stroke="#2f3841" stroke-width="1"/><g stroke="#b2bac2" stroke-width="5" stroke-linecap="round"><line x1="292" y1="164" x2="292" y2="139"/><line x1="292" y1="164" x2="314" y2="177"/><line x1="292" y1="164" x2="270" y2="177"/><animateTransform attributeName="transform" type="rotate" from="0 292 164" to="360 292 164" dur="2.4s" repeatCount="indefinite"/></g><circle cx="292" cy="164" r="4.6" fill="#7B828B"/><rect x="338" y="150" width="20" height="40" rx="3" fill="#333b44"/></svg>
-            <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
+            <img src="assets/referenzen/ref-3-ziegeldach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Photovoltaik-Module entlang des Firsts auf einem roten Ziegeldach, Monteur bei der Abnahme">
+            <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
           <div class="rbody">
-            <span class="rloc"><svg class="ic"><use href="#i-pin"/></svg> Grünheim, Niedersachsen</span>
-            <h3>Wärmepumpe im Neubau</h3>
-            <p>Bodennahe Aufstellung mit optimierter Schallentkopplung – umweltfreundliches Heizen für ein KfW-Effizienzhaus.</p>
-            <div class="rspecs"><div><b>11 kW</b><span>Heizleistung</span></div><div><b>4,7</b><span>JAZ</span></div><div><b>&lt;35 dB</b><span>Betriebslärm</span></div></div>
+            <h3>Photovoltaik auf Ziegeldach</h3>
+            <p>Modulreihe entlang des Firsts, ergänzt um eine zweite Teilfläche – Planung und Montage durch unseren geprüften Fachpartner.</p>
           </div>
         </article>
 
-        <!-- Projekt 6 – Kombi autark -->
-        <article class="rcard" data-type="duo">
+        <!-- Projekt 4 -->
+        <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <svg class="scene" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Modernes energieautarkes Einfamilienhaus"><defs><linearGradient id="s6sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34414d"/><stop offset=".6" stop-color="#2a333d"/><stop offset="1" stop-color="#222a31"/></linearGradient><radialGradient id="s6glow" cx="84%" cy="16%" r="44%"><stop offset="0" stop-color="#E9AE52" stop-opacity=".3"/><stop offset="1" stop-color="#E9AE52" stop-opacity="0"/></radialGradient><linearGradient id="s6wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b5560"/><stop offset="1" stop-color="#39424c"/></linearGradient><linearGradient id="s6pan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#616d7a"/><stop offset="1" stop-color="#3b4652"/></linearGradient><linearGradient id="s6glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7f95a7"/><stop offset="1" stop-color="#33404b"/></linearGradient><linearGradient id="s6unit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#48515c"/><stop offset="1" stop-color="#333b45"/></linearGradient><radialGradient id="s6sh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".4"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs><rect width="400" height="250" fill="url(#s6sky)"/><rect width="400" height="250" fill="url(#s6glow)"/><circle cx="332" cy="44" r="17" fill="#F1C368"/><rect y="196" width="400" height="54" fill="#232a2c"/><rect y="196" width="400" height="5" fill="#2c3431"/><ellipse cx="180" cy="226" rx="120" ry="12" fill="url(#s6sh)"/><rect x="84" y="120" width="204" height="108" fill="url(#s6wall)"/><rect x="84" y="112" width="204" height="11" fill="#454f5a"/><rect x="84" y="120" width="9" height="108" fill="#000" opacity=".12"/><g transform="translate(104,92)"><g fill="url(#s6pan)" stroke="#8b96a1" stroke-width=".7" transform="skewX(-16)"><rect x="0" y="0" width="36" height="15"/><rect x="40" y="0" width="36" height="15"/><rect x="80" y="0" width="36" height="15"/><rect x="120" y="0" width="36" height="15"/></g><g stroke="#39424c" stroke-width="2"><line x1="6" y1="15" x2="12" y2="28"/><line x1="150" y1="15" x2="156" y2="28"/></g></g><rect x="104" y="140" width="80" height="54" rx="2" fill="url(#s6glass)" stroke="#59636e" stroke-width="2"/><line x1="144" y1="140" x2="144" y2="194" stroke="#59636e" stroke-width="1.3"/><rect x="198" y="140" width="46" height="54" rx="2" fill="url(#s6glass)" stroke="#59636e" stroke-width="2"/><rect x="118" y="196" width="32" height="32" rx="1.5" fill="#2a313a" stroke="#465262" stroke-width="1.5"/><circle cx="145" cy="213" r="1.6" fill="#E9AE52"/><ellipse cx="330" cy="206" rx="44" ry="9" fill="url(#s6sh)"/><rect x="300" y="162" width="60" height="66" rx="6" fill="url(#s6unit)" stroke="#525c67" stroke-width="1.5"/><rect x="300" y="162" width="60" height="11" rx="6" fill="#3a434d"/><g stroke="#2b333c" stroke-width="1.6"><line x1="307" y1="182" x2="307" y2="221"/><line x1="313" y1="182" x2="313" y2="221"/><line x1="319" y1="182" x2="319" y2="221"/></g><circle cx="338" cy="196" r="15" fill="#212831" stroke="#525c67" stroke-width="1.5"/><g stroke="#b2bac2" stroke-width="3.2" stroke-linecap="round"><line x1="338" y1="196" x2="338" y2="184"/><line x1="338" y1="196" x2="348" y2="203"/><line x1="338" y1="196" x2="328" y2="203"/><animateTransform attributeName="transform" type="rotate" from="0 338 196" to="360 338 196" dur="2.7s" repeatCount="indefinite"/></g><circle cx="338" cy="196" r="2.5" fill="#7B828B"/></svg>
-            <span class="rtag duo"><svg class="ic"><use href="#i-layers"/></svg> PV + Speicher + WP</span>
+            <img src="assets/referenzen/ref-4-volldach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Weitgehend voll belegte Dachfläche mit schwarzen Photovoltaik-Modulen">
+            <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
           <div class="rbody">
-            <span class="rloc"><svg class="ic"><use href="#i-pin"/></svg> Sonnenau, Rheinland-Pfalz</span>
-            <h3>Energieautarkes Eigenheim</h3>
-            <p>Rundum-sorglos-Paket: Solarstrom vom Dach, großer Speicher und Wärmepumpe – nahezu unabhängig vom Energieversorger.</p>
-            <div class="rspecs"><div><b>16,0</b><span>kWp</span></div><div><b>20</b><span>kWh Speicher</span></div><div><b>82 %</b><span>Autarkie</span></div></div>
+            <h3>Vollflächen-Belegung</h3>
+            <p>Weitgehend voll belegte Dachfläche mit Vollschwarz-Modulen – so viel Leistung wie möglich auf der vorhandenen Fläche.</p>
+          </div>
+        </article>
+
+        <!-- Projekt 5 -->
+        <article class="rcard" data-type="pv">
+          <div class="rmedia">
+            <img src="assets/referenzen/ref-5-anthrazitdach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Anthrazitfarbenes Satteldach mit Photovoltaik-Modulen und zusätzlich solarbelegter Terrassenüberdachung">
+            <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
+          </div>
+          <div class="rbody">
+            <h3>Photovoltaik inklusive Terrassendach</h3>
+            <p>Anthrazitfarbenes Satteldach mit Modulen am First – zusätzlich wurde die Terrassenüberdachung mit Solarmodulen ausgestattet.</p>
+          </div>
+        </article>
+
+        <!-- Projekt 6 -->
+        <article class="rcard" data-type="pv">
+          <div class="rmedia">
+            <img src="assets/referenzen/ref-6-giebeldach-pv.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+                 alt="Kompaktes schwarzes Photovoltaik-Modulfeld bündig eingepasst in ein rotes Ziegeldach">
+            <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
+          </div>
+          <div class="rbody">
+            <h3>Kompakte Anlage auf Ziegeldach</h3>
+            <p>Vollschwarz-Module bündig in die Dachfläche eingepasst – optisch ruhig und ohne störende Aufbauten.</p>
           </div>
         </article>
 
       </div>
 
-      <p class="ref-note">Die Abbildungen sind musterhafte Projektdarstellungen. Standortangaben und Kennzahlen sind Beispielwerte – ersetzen Sie sie durch echte Fotos und Daten Ihrer realisierten Anlagen, bevor Sie online gehen.</p>
+      <p class="ref-note">Alle gezeigten Fotos stammen aus Projekten, die unsere Fachpartner umgesetzt haben. Aus Rücksicht auf die Privatsphäre unserer Kunden nennen wir keine Adressen.</p>
     </div>
   </section>
 
