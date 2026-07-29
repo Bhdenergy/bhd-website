@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bhd-website.vercel.app/sitemap.xml
+Sitemap: https://bhd-energie.de/sitemap.xml

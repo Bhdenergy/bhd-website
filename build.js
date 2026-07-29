@@ -16,8 +16,9 @@ const path = require('path');
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src', 'site.html');
 
-/* Domain an EINER Stelle. Beim Umzug auf bhd-energie.de nur diese Zeile ändern. */
-const SITE = 'https://bhd-website.vercel.app';
+/* Domain an EINER Stelle. Hauptadresse der Website (ohne www – www leitet in
+ * Vercel darauf um). Bei einem Domainwechsel nur diese Zeile ändern. */
+const SITE = 'https://bhd-energie.de';
 
 /* Kontakt-E-Mail an EINER Stelle. Wird überall eingesetzt: Footer, Schnellkontakt,
  * Impressum, Datenschutz UND als Empfänger der drei Formulare (FormSubmit).
@@ -301,8 +302,10 @@ function jsonLd(page) {
 function buildPage(page) {
   const url = SITE + URL_OF[page.key];
   const view = fixLinks(VIEWS[page.key])
-    // Der Angebots-Check springt nach dem Upload auf seine eigene Seite zurueck
-    .replace(SITE + '/?checkok=1#angebots-check', SITE + URL_OF.check + '?checkok=1');
+    // Der Angebots-Check springt nach dem Upload auf seine eigene Seite zurueck.
+    // Unabhaengig davon, welche Adresse in der Quelldatei steht.
+    .replace(/value="https?:\/\/[^"]*checkok=1[^"]*"/g,
+             'value="' + SITE + URL_OF.check + '?checkok=1"');
 
   return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(page.title)}</title>

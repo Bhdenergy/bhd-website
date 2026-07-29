@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bhd-website.vercel.app/</loc>
+    <loc>https://bhd-energie.de/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bhd-website.vercel.app/angebots-check/</loc>
+    <loc>https://bhd-energie.de/angebots-check/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bhd-website.vercel.app/referenzen/</loc>
+    <loc>https://bhd-energie.de/referenzen/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bhd-website.vercel.app/ueber-uns/</loc>
+    <loc>https://bhd-energie.de/ueber-uns/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bhd-website.vercel.app/ratgeber/</loc>
+    <loc>https://bhd-energie.de/ratgeber/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://bhd-website.vercel.app/anfragen/</loc>
+    <loc>https://bhd-energie.de/anfragen/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bhd-website.vercel.app/impressum/</loc>
+    <loc>https://bhd-energie.de/impressum/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://bhd-website.vercel.app/datenschutz/</loc>
+    <loc>https://bhd-energie.de/datenschutz/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
