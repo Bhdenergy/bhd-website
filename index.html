@@ -417,6 +417,14 @@
   .rtag.duo .ic{color:var(--blue)}
   .rtag.tec .ic{color:var(--blue)}
   .rcard.is-hidden{display:none}
+  /* Abschluss-Karte „und viele weitere Projekte" – füllt die angebrochene letzte Reihe */
+  .rcard-more{background:var(--bg-soft);border-style:dashed;border-color:var(--line-2);box-shadow:none;min-height:220px}
+  .rcard-more:hover{transform:none;border-color:var(--gold)}
+  .more-inner{height:100%;padding:34px 30px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:10px}
+  .more-inner .ic{width:26px;height:26px;color:var(--gold)}
+  .more-inner h3{margin:0;font-size:1.24rem;font-weight:600;letter-spacing:-.01em}
+  .more-inner p{margin:0;color:var(--ink-2);font-size:.97rem;line-height:1.5;max-width:46ch}
+  .more-inner .btn{margin-top:6px}
   .rbody{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
   .rloc{display:flex;align-items:center;gap:7px;color:var(--ink-3);font-size:.9rem;font-weight:600;margin-bottom:9px}
   .rloc .ic{width:15px;height:15px;color:var(--green)}
@@ -1289,6 +1297,16 @@
           </div>
         </article>
 
+        <!-- Abschluss-Karte: füllt die angebrochene letzte Reihe (Breite per JS) -->
+        <article class="rcard rcard-more" id="ref-more">
+          <div class="more-inner">
+            <svg class="ic"><use href="#i-grid"/></svg>
+            <h3>Und viele weitere Projekte</h3>
+            <p>Diese Galerie ist nur ein Auszug. Über 250 Anlagen sind bereits umgesetzt – von der einzelnen Dachfläche bis zur kompletten Umstellung mit Wärmepumpe, Speicher und Wallbox.</p>
+            <a href="#funnel" data-go-funnel class="btn btn-ghost">Eigenes Projekt anfragen</a>
+          </div>
+        </article>
+
       </div>
 
       <p class="ref-note">Alle gezeigten Fotos stammen aus Projekten, die unsere Fachpartner umgesetzt haben. Aus Rücksicht auf die Privatsphäre unserer Kunden nennen wir keine Adressen.</p>
@@ -2085,8 +2103,24 @@
   // ---------- Referenzen: Filter nach Anlagentyp ----------
   (function(){
     const btns=document.querySelectorAll('.ref-filter .fbtn');
-    const cards=document.querySelectorAll('.ref-grid .rcard');
+    const grid=document.querySelector('.ref-grid');
+    const cards=document.querySelectorAll('.ref-grid .rcard[data-type]');
+    const more=document.getElementById('ref-more');
     if(!btns.length||!cards.length)return;
+
+    // Abschluss-Karte so breit machen, dass die letzte Reihe voll wird
+    function fitMore(){
+      if(!more||!grid)return;
+      // Spaltenzahl aus den berechneten Pixelbreiten – nur zuverlässig, wenn das Grid sichtbar ist
+      const cols=getComputedStyle(grid).gridTemplateColumns.split(' ')
+                   .filter(function(v){return v.indexOf('px')>-1;}).length;
+      if(!cols)return;
+      let visible=0;
+      cards.forEach(function(c){ if(!c.classList.contains('is-hidden'))visible++; });
+      const rest=visible%cols;
+      more.style.gridColumn='span '+(rest===0?cols:cols-rest);
+    }
+
     btns.forEach(function(b){
       b.addEventListener('click',function(){
         const f=b.dataset.filter;
@@ -2094,8 +2128,14 @@
         cards.forEach(function(c){
           c.classList.toggle('is-hidden', f!=='all' && c.dataset.type!==f);
         });
+        fitMore();
       });
     });
+
+    fitMore();
+    window.addEventListener('resize',fitMore);
+    // greift auch, wenn die Referenzen-Ansicht erst per Routing sichtbar wird
+    if(window.ResizeObserver)new ResizeObserver(fitMore).observe(grid);
   })();
 
   // ---------- Seiten-Routing (Start / Referenzen / Anfragen) ----------
