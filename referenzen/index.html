@@ -1156,6 +1156,46 @@
   const barIO=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.width;barIO.unobserve(e.target)}})},{threshold:.4});
   document.querySelectorAll('.bar-fill[data-width]').forEach(el=>barIO.observe(el));
 
+  // ---------- Lead-Versand (von ALLEN Formularen genutzt) ----------
+  // Liegt bewusst hier oben im gemeinsamen Bereich: Der Funnel auf der
+  // Startseite und die Formulare auf /anfragen/ liegen auf verschiedenen
+  // Seiten und brauchen beide diese Funktion.
+  // Gibt true zurueck, wenn FormSubmit die Anfrage angenommen hat.
+  async function sendLead(lead){
+    try{
+      const payload=Object.assign({
+        _subject:'Neue Anfrage ('+lead.typ+') – BHD Website',
+        _template:'table',
+        _captcha:'false'
+      },lead);
+      if(Array.isArray(payload.interesse))payload.interesse=payload.interesse.join(', ');
+      // Formular-kodiert (application/x-www-form-urlencoded) statt JSON:
+      // vermeidet den CORS-Preflight, der Browser-Absendungen still blockieren kann.
+      // Content-Type NICHT manuell setzen.
+      const data=new URLSearchParams();
+      Object.keys(payload).forEach(k=>data.append(k, payload[k]==null?'':payload[k]));
+      const res=await fetch('https://formsubmit.co/ajax/info@bhd-energie.de',{
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body:data
+      });
+      const out=await res.json().catch(()=>null);
+      const ok=res.ok && !(out && String(out.success)==='false');
+      if(!ok)console.error('Lead-Versand abgelehnt:',out);
+      return ok;
+    }catch(e){console.error('Lead-Versand fehlgeschlagen',e);return false;}
+  }
+
+  // Ersatz-Hinweis, wenn der Versand scheitert – besser als ein falsches „Danke"
+  function leadFallback(box){
+    if(!box)return;
+    const h=box.querySelector('h3'), p=box.querySelector('p');
+    if(h)h.textContent='Bitte melden Sie sich kurz direkt';
+    if(p)p.innerHTML='Ihre Angaben konnten technisch leider nicht übermittelt werden. '+
+      'Rufen Sie uns gern an: <a href="tel:+491634440392" style="color:inherit"><b>0163 4440392</b></a> '+
+      'oder schreiben Sie an <a href="mailto:info@bhd-energie.de" style="color:inherit"><b>info@bhd-energie.de</b></a>.';
+  }
+
   // ---------- Funnel (nur Startseite) ----------
   (function(){
     if(!document.getElementById('funnel'))return;
@@ -1188,12 +1228,14 @@
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.value)){mail.style.borderColor='#d64545';ok=false}
     if(!dsgvo.checked){dsgvo.parentElement.style.color='#d64545';ok=false}else{dsgvo.parentElement.style.color=''}
     if(!ok)return;
-    answers.name=name.value;answers.tel=tel.value;answers.mail=mail.value;answers.dsgvo=true;
-    // TODO: answers an dein CRM / Formspree / Make / E-Mail senden
-    console.log('Lead:',answers);
+    answers.typ='Startseite';
+    answers.name=name.value;answers.tel=tel.value;answers.mail=mail.value;answers.dsgvo='ja';
     const first=name.value.trim().split(' ')[0];
     if(first)document.getElementById('successName').textContent=first;
     show(total);
+    // Anfrage wirklich verschicken. Scheitert der Versand, wird die
+    // Erfolgsmeldung durch die Rückfallmeldung mit Telefonnummer ersetzt.
+    sendLead(answers).then(function(ok){ if(!ok)leadFallback(success); });
   });
 
   })();
@@ -1270,28 +1312,8 @@
   const b2cPlz=document.getElementById('b2c-plz');
   b2cPlz.addEventListener('input',()=>{b2cPlz.value=b2cPlz.value.replace(/\D/g,'')});
 
-  // Lead per E-Mail versenden (FormSubmit – kostenlos, kein Konto).
-  // Nach dem ersten echten Absenden auf der Live-Seite kommt einmalig eine
-  // Bestätigungsmail an info@bhd-energie.de -> Link darin anklicken.
-  async function sendLead(lead){
-    try{
-      const payload=Object.assign({
-        _subject:'Neue Anfrage ('+lead.typ+') – BHD Website',
-        _template:'table',
-        _captcha:'false'
-      },lead);
-      if(Array.isArray(payload.interesse))payload.interesse=payload.interesse.join(', ');
-      // Formular-kodiert (application/x-www-form-urlencoded) statt JSON:
-      // vermeidet den CORS-Preflight, der Browser-Absendungen still blockieren kann.
-      const data=new URLSearchParams();
-      Object.keys(payload).forEach(k=>data.append(k, payload[k]==null?'':payload[k]));
-      await fetch('https://formsubmit.co/ajax/info@bhd-energie.de',{
-        method:'POST',
-        headers:{'Accept':'application/json'},
-        body:data
-      });
-    }catch(e){console.error('Lead-Versand fehlgeschlagen',e);}
-  }
+  // sendLead() ist weiter oben im gemeinsamen Bereich definiert – der Funnel
+  // auf der Startseite braucht sie ebenfalls.
 
   // B2C absenden
   document.getElementById('b2c-submit').addEventListener('click',()=>{
@@ -1309,9 +1331,10 @@
     if(!ok)return;
     const lead={typ:'B2C',interesse,name:name.value,plz:plz.value,tel:tel.value,mail:mail.value,
       wohnsituation:document.getElementById('b2c-eigentum').value,nachricht:document.getElementById('b2c-msg').value};
-    sendLead(lead);
+    const done=document.getElementById('b2c-done');
+    sendLead(lead).then(function(sent){ if(!sent)leadFallback(done); });
     document.getElementById('b2c-form').style.display='none';
-    document.getElementById('b2c-done').classList.add('show');
+    done.classList.add('show');
     document.getElementById('b2c-card').scrollIntoView({behavior:'smooth',block:'center'});
   });
 
@@ -1328,9 +1351,10 @@
     const lead={typ:'B2B',firma:firma.value,ansprechpartner:name.value,mail:mail.value,tel:tel.value,
       art:art.value,region:document.getElementById('b2b-region').value,website:document.getElementById('b2b-web').value,
       nachricht:document.getElementById('b2b-msg').value};
-    sendLead(lead);
+    const done=document.getElementById('b2b-done');
+    sendLead(lead).then(function(sent){ if(!sent)leadFallback(done); });
     document.getElementById('b2b-form').style.display='none';
-    document.getElementById('b2b-done').classList.add('show');
+    done.classList.add('show');
     document.getElementById('b2b-card').scrollIntoView({behavior:'smooth',block:'center'});
   });
 
