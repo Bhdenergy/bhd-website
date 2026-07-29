@@ -16,8 +16,15 @@ const path = require('path');
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src', 'site.html');
 
-/* Domain an EINER Stelle. Beim Umzug auf bhd-energy.de nur diese Zeile ändern. */
+/* Domain an EINER Stelle. Beim Umzug auf bhd-energie.de nur diese Zeile ändern. */
 const SITE = 'https://bhd-website.vercel.app';
+
+/* Kontakt-E-Mail an EINER Stelle. Wird überall eingesetzt: Footer, Schnellkontakt,
+ * Impressum, Datenschutz UND als Empfänger der drei Formulare (FormSubmit).
+ * ACHTUNG beim Wechsel: FormSubmit muss für die neue Adresse einmalig neu
+ * freigeschaltet werden – nach dem ersten Absenden kommt eine Bestätigungsmail. */
+const MAIL = 'service-bhd@outlook.de';
+const MAIL_IN_SOURCE = 'service-bhd@outlook.de'; // so steht sie in src/site.html
 
 /* Zeilenenden vereinheitlichen – die Quelldatei kommt aus Windows (CRLF). */
 const src = fs.readFileSync(SRC, 'utf8').replace(/\r\n/g, '\n');
@@ -170,12 +177,15 @@ function buildScript() {
   return head + funnelGuarded + filter + nav + formsGuarded + tail;
 }
 
-const SCRIPT = buildScript();
+/* Auch im Skript steckt die Adresse (FormSubmit-Endpunkt der beiden Formulare). */
+const SCRIPT = buildScript().split(MAIL_IN_SOURCE).join(MAIL);
 
 /* --------------------------------------------------- Links absolut machen */
 
 function fixLinks(html) {
   return html
+    // Kontaktadresse zentral setzen (mailto, Impressum, Datenschutz, FormSubmit)
+    .split(MAIL_IN_SOURCE).join(MAIL)
     // Assets funktionieren dann aus jeder Unterseite heraus
     .replace(/(src|href)="assets\//g, '$1="/assets/')
     // Menue-/Footer-Links: echte Ziele ergaenzen (data-nav bleibt fuer die Markierung)

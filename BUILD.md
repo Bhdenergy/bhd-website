@@ -54,9 +54,26 @@ In `build.js` steht die Adresse an genau einer Stelle:
 const SITE = 'https://bhd-website.vercel.app';
 ```
 
-Auf `https://bhd-energy.de` ändern, `node build.js` ausführen, committen und
+Auf `https://bhd-energie.de` ändern, `node build.js` ausführen, committen und
 pushen. Damit stimmen Canonical-Adressen, Open Graph, strukturierte Daten und
 die Sitemap wieder.
+
+## Kontakt-E-Mail wechseln
+
+Ebenfalls eine einzige Zeile in `build.js`:
+
+```js
+const MAIL = 'service-bhd@outlook.de';
+```
+
+Sie wird beim Bauen überall eingesetzt: Footer, Schnellkontakt-Button,
+Impressum, Datenschutzerklärung – **und als Empfänger der drei Formulare**.
+
+> **Reihenfolge beachten:** Erst das neue Postfach anlegen und testen, dass dort
+> Mails ankommen. Dann `MAIL` ändern und neu bauen. Beim ersten Absenden eines
+> Formulars verschickt FormSubmit eine einmalige Bestätigungsmail an die neue
+> Adresse – erst nach dem Klick darauf kommen Anfragen wieder an. Solange das
+> nicht passiert ist, gehen Anfragen verloren.
 
 ## Was der Generator übernimmt
 
