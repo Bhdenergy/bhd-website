@@ -30,7 +30,7 @@
       "vatID": "DE370268782",
       "identifier": "HRB 266273 B",
       "url": "https://bhd-energie.de/",
-      "email": "service-bhd@outlook.de",
+      "email": "info@bhd-energie.de",
       "telephone": "+49 163 4440392",
       "foundingDate": "2024",
       "founder": {
@@ -879,7 +879,7 @@
       <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo" src="/assets/bhd-logo.png" width="560" height="345" alt="BHD – Beratung Heimenergie Deutschland"></a>
       <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ratgeber/" data-nav="shop">Ratgeber</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
     </div>
-    <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13357 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:service-bhd@outlook.de" style="color:inherit">service-bhd@outlook.de</a>. © 2026 Brotherhooddeen UG (haftungsbeschränkt)</p>
+    <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13357 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:info@bhd-energie.de" style="color:inherit">info@bhd-energie.de</a>. © 2026 Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
 </footer>
 
@@ -1030,7 +1030,7 @@
 
   // Lead per E-Mail versenden (FormSubmit – kostenlos, kein Konto).
   // Nach dem ersten echten Absenden auf der Live-Seite kommt einmalig eine
-  // Bestätigungsmail an service-bhd@outlook.de -> Link darin anklicken.
+  // Bestätigungsmail an info@bhd-energie.de -> Link darin anklicken.
   async function sendLead(lead){
     try{
       const payload=Object.assign({
@@ -1043,7 +1043,7 @@
       // vermeidet den CORS-Preflight, der Browser-Absendungen still blockieren kann.
       const data=new URLSearchParams();
       Object.keys(payload).forEach(k=>data.append(k, payload[k]==null?'':payload[k]));
-      await fetch('https://formsubmit.co/ajax/service-bhd@outlook.de',{
+      await fetch('https://formsubmit.co/ajax/info@bhd-energie.de',{
         method:'POST',
         headers:{'Accept':'application/json'},
         body:data
@@ -1142,7 +1142,7 @@
     <svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>
     <span class="qc-label">WhatsApp</span>
   </a>
-  <a class="qc qc-mail" href="mailto:service-bhd@outlook.de?subject=Anfrage%20%C3%BCber%20die%20Website" aria-label="E-Mail schreiben an service-bhd@outlook.de">
+  <a class="qc qc-mail" href="mailto:info@bhd-energie.de?subject=Anfrage%20%C3%BCber%20die%20Website" aria-label="E-Mail schreiben an info@bhd-energie.de">
     <svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>
     <span class="qc-label">E-Mail</span>
   </a>

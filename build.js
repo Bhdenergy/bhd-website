@@ -24,7 +24,7 @@ const SITE = 'https://bhd-energie.de';
  * Impressum, Datenschutz UND als Empfänger der drei Formulare (FormSubmit).
  * ACHTUNG beim Wechsel: FormSubmit muss für die neue Adresse einmalig neu
  * freigeschaltet werden – nach dem ersten Absenden kommt eine Bestätigungsmail. */
-const MAIL = 'service-bhd@outlook.de';
+const MAIL = 'info@bhd-energie.de';
 const MAIL_IN_SOURCE = 'service-bhd@outlook.de'; // so steht sie in src/site.html
 
 /* Zeilenenden vereinheitlichen – die Quelldatei kommt aus Windows (CRLF). */
@@ -222,7 +222,7 @@ function jsonLd(page) {
       vatID: 'DE370268782',
       identifier: 'HRB 266273 B',
       url: SITE + '/',
-      email: 'service-bhd@outlook.de',
+      email: MAIL,
       telephone: '+49 163 4440392',
       foundingDate: '2024',
       founder: { '@type': 'Person', name: 'Kürşat Yıldırım' },
