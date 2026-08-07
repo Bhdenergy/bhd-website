@@ -1,104 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://bhd-energie.de/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/angebots-check/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/referenzen/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-pv-01-satteldach.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-pv-02-flachdach.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-pv-03-terrassendach.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-pv-04-giebeldach.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-pv-05-daemmerung.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-pv-06-montageschienen.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-pv-07-hofanlage.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-tec-01-wechselrichter-speicher.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-tec-02-wechselrichter-speicher.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-tec-03-wechselrichter.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-tec-04-batteriespeicher.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-tec-05-wallbox.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-tec-06-zaehlerschrank.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-tec-07-speicher-zaehlerschrank.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-tec-08-speicher-wechselrichter.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-tec-09-montage-speicher.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-01-aussengeraet.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-02-abendlicht.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-03-warmwasserspeicher.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-04-innengeraet.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-05-aussengeraet.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-06-erdarbeiten.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-07-fundament.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-08-aussengeraet-sockel.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-09-aussengeraet-terrasse.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-10-innengeraet-hydraulik.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhd-energie.de/assets/referenzen/ref-wp-11-pumpengruppe.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://bhd-energie.de/ueber-uns/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/photovoltaik/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/stromspeicher/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/waermepumpe/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/kosten/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/ratgeber/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/ratgeber/photovoltaik-lohnt-sich/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/ratgeber/waermepumpe-altbau/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/ratgeber/angebot-pruefen/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/waermepumpen-rechner/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/anfragen/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bhd-energie.de/kontakt/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bhd-energie.de/partner-werden/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/impressum/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://bhd-energie.de/datenschutz/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -113,7 +113,45 @@
           }
         }
       ],
-      "slogan": "Sonne rein. Stromrechnung raus."
+      "slogan": "Sonne rein. Stromrechnung raus.",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://bhd-energie.de/#logo",
+        "url": "https://bhd-energie.de/icon-512.png",
+        "width": 512,
+        "height": 512,
+        "caption": "BHD – Beratung Heimenergie Deutschland"
+      },
+      "image": "https://bhd-energie.de/assets/og-bhd.png",
+      "priceRange": "€€",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+49-163-4440392",
+          "email": "info@bhd-energie.de",
+          "contactType": "customer service",
+          "areaServed": "DE",
+          "availableLanguage": [
+            "de"
+          ]
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      ]
     },
     {
       "@type": "WebSite",
@@ -137,7 +175,8 @@
       },
       "about": {
         "@id": "https://bhd-energie.de/#org"
-      }
+      },
+      "dateModified": "2026-08-07"
     },
     {
       "@type": "FAQPage",
@@ -237,8 +276,10 @@
 }
 </script>
 <style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f6f5f1;color:#1b1a17}img{max-width:100%}</style>
-<link rel="stylesheet" href="/assets/site.css?v=11434029">
+<link rel="preload" href="/assets/site.css?v=912e486b" as="style">
+<link rel="stylesheet" href="/assets/site.css?v=912e486b">
 </head><body data-page="home">
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
 <svg style="display:none" aria-hidden="true">
   <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.3M12 19.1v2.3M2.6 12h2.3M19.1 12h2.3M5.1 5.1l1.6 1.6M17.3 17.3l1.6 1.6M18.9 5.1l-1.6 1.6M6.7 17.3l-1.6 1.6"/></symbol>
@@ -279,7 +320,7 @@
 
 <nav>
   <div class="wrap nav-in">
-    <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><picture><source srcset="/assets/bhd-logo.webp" type="image/webp"><img class="brand-logo" src="/assets/bhd-logo.png" width="560" height="345" alt="BHD – Beratung Heimenergie Deutschland"></picture></a>
+    <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo" src="/assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></a>
     <div class="nav-links" id="nav-links">
       <a href="/" data-nav="home">Start</a>
       <div class="nav-drop">
@@ -296,6 +337,7 @@
       <a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a>
       <a href="/referenzen/" data-nav="ref">Referenzen</a>
       <a href="/ueber-uns/" data-nav="about">Über uns</a>
+      <a href="/kontakt/" data-nav="kontakt">Kontakt</a>
       <a href="/anfragen/" data-nav="ask">Anfragen</a>
       <a href="/partner-werden/" data-nav="partner" class="nav-b2b">Partner werden</a>
       <a href="tel:+491634440392" class="menu-phone"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
@@ -310,6 +352,7 @@
   </div>
 </nav>
 
+<main id="inhalt">
 <div id="view-home">
 
 <header class="hero">
@@ -382,7 +425,7 @@
           <p class="funnel-hint">So finden wir den passenden Fachbetrieb in Ihrer Nähe.</p>
           <div class="fld">
             <label for="plz">Postleitzahl <span class="req">*</span></label>
-            <input type="text" id="plz" inputmode="numeric" maxlength="5" placeholder="z. B. 80331">
+            <input type="text" id="plz" name="plz" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="z. B. 80331">
           </div>
           <button class="btn" data-next-valid="plz">Weiter</button>
           <div class="back-row"><button class="backlink" data-back><svg class="ic"><use href="#i-chevron"/></svg> Zurück</button></div>
@@ -393,18 +436,18 @@
           <p class="funnel-hint">Ihr kostenloses Angebot ist gleich fertig.</p>
           <div class="fld">
             <label for="name">Name <span class="req">*</span></label>
-            <input type="text" id="name" placeholder="Vor- und Nachname" autocomplete="name">
+            <input type="text" id="name" name="name" required placeholder="Vor- und Nachname" autocomplete="name">
           </div>
           <div class="grid2">
-            <div class="fld"><label for="tel">Telefon <span class="req">*</span></label><input type="tel" id="tel" placeholder="0170 1234567" autocomplete="tel"></div>
-            <div class="fld"><label for="mail">E-Mail <span class="req">*</span></label><input type="email" id="mail" placeholder="name@beispiel.de" autocomplete="email"></div>
+            <div class="fld"><label for="tel">Telefon <span class="req">*</span></label><input type="tel" id="tel" name="tel" required placeholder="0170 1234567" autocomplete="tel"></div>
+            <div class="fld"><label for="mail">E-Mail <span class="req">*</span></label><input type="email" id="mail" name="mail" required placeholder="name@beispiel.de" autocomplete="email"></div>
           </div>
           <div class="fld">
             <label for="msg">Weitere Infos <span class="hint2">(optional)</span></label>
             <textarea id="msg" rows="3" placeholder="z. B. Dachform und Ausrichtung, Stromverbrauch pro Jahr, vorhandene Heizung, Wunschtermin …"></textarea>
           </div>
           <div class="consent">
-            <input type="checkbox" id="dsgvo">
+            <input type="checkbox" id="dsgvo" required>
             <label for="dsgvo">Ich möchte ein kostenloses Angebot und bin einverstanden, kontaktiert zu werden (<a href="/datenschutz/">Datenschutz</a>). Widerruf jederzeit möglich. <span class="req">*</span></label>
           </div>
           <button class="btn" id="finalSubmit">Angebot sichern</button>
@@ -424,7 +467,7 @@
 
 <section class="strip">
   <div class="wrap strip-in">
-    <div class="badge"><span class="bic"><svg class="ic"><use href="#i-star"/></svg></span> <span><b>Zufriedene</b> Kundenbewertungen</span></div>
+    <div class="badge"><span class="bic"><svg class="ic"><use href="#i-star"/></svg></span> <span><b>Unabhängige</b> Beratung</span></div>
     <div class="badge"><span class="bic"><svg class="ic"><use href="#i-check"/></svg></span> <span><b>Geprüfte</b> Fachbetriebe</span></div>
     <div class="badge"><span class="bic euro">€</span> <span>Bis zu <b>80 %</b> KfW-Zuschuss</span></div>
     <div class="badge"><span class="bic"><svg class="ic"><use href="#i-bolt"/></svg></span> <span><b>0 %</b> MwSt. auf Solar</span></div>
@@ -441,12 +484,12 @@
     </div>
     <div class="swipe-wrap rise">
       <div class="swipe" role="list">
-        <article class="comp" role="listitem"><div class="thumb t1"><svg class="ic"><use href="#i-sun"/></svg></div><div class="comp-body"><h3>Solarmodule</h3><p>Erzeugen sauberen Strom direkt auf Ihrem Dach.</p></div></article>
-        <article class="comp" role="listitem"><div class="thumb t2"><svg class="ic"><use href="#i-battery"/></svg></div><div class="comp-body"><h3>Stromspeicher</h3><p>Speichert Sonnenstrom für Abend und Nacht.</p></div></article>
-        <article class="comp" role="listitem"><div class="thumb t3"><svg class="ic"><use href="#i-wave"/></svg></div><div class="comp-body"><h3>Wärmepumpe</h3><p>Heizt effizient mit kostenloser Umweltwärme.</p></div></article>
-        <article class="comp" role="listitem"><div class="thumb t4"><svg class="ic"><use href="#i-plug"/></svg></div><div class="comp-body"><h3>Wallbox</h3><p>Lädt Ihr E-Auto günstig mit eigenem Strom.</p></div></article>
-        <article class="comp" role="listitem"><div class="thumb t5"><svg class="ic"><use href="#i-chip"/></svg></div><div class="comp-body"><h3>Energiemanager</h3><p>Verteilt den Strom automatisch dorthin, wo er zählt.</p></div></article>
-        <article class="comp" role="listitem"><div class="thumb t6"><svg class="ic"><use href="#i-chart"/></svg></div><div class="comp-body"><h3>Dynamischer Tarif</h3><p>Nutzt günstige Strompreise optimal aus.</p></div></article>
+        <div class="comp" role="listitem"><div class="thumb t1"><svg class="ic"><use href="#i-sun"/></svg></div><div class="comp-body"><h3>Solarmodule</h3><p>Erzeugen sauberen Strom direkt auf Ihrem Dach.</p></div></div>
+        <div class="comp" role="listitem"><div class="thumb t2"><svg class="ic"><use href="#i-battery"/></svg></div><div class="comp-body"><h3>Stromspeicher</h3><p>Speichert Sonnenstrom für Abend und Nacht.</p></div></div>
+        <div class="comp" role="listitem"><div class="thumb t3"><svg class="ic"><use href="#i-wave"/></svg></div><div class="comp-body"><h3>Wärmepumpe</h3><p>Heizt effizient mit kostenloser Umweltwärme.</p></div></div>
+        <div class="comp" role="listitem"><div class="thumb t4"><svg class="ic"><use href="#i-plug"/></svg></div><div class="comp-body"><h3>Wallbox</h3><p>Lädt Ihr E-Auto günstig mit eigenem Strom.</p></div></div>
+        <div class="comp" role="listitem"><div class="thumb t5"><svg class="ic"><use href="#i-chip"/></svg></div><div class="comp-body"><h3>Energiemanager</h3><p>Verteilt den Strom automatisch dorthin, wo er zählt.</p></div></div>
+        <div class="comp" role="listitem"><div class="thumb t6"><svg class="ic"><use href="#i-chart"/></svg></div><div class="comp-body"><h3>Dynamischer Tarif</h3><p>Nutzt günstige Strompreise optimal aus.</p></div></div>
       </div>
       <div class="swipe-nav">
         <button class="snav" data-swipe="prev" aria-label="Vorherige Komponente"><svg class="ic" style="transform:rotate(180deg)"><use href="#i-chevron"/></svg></button>
@@ -594,33 +637,33 @@
          Hälften pflegen, sonst ruckelt der Übergang. -->
     <div class="marquee rise" aria-label="Hersteller und Lieferanten">
       <div class="marquee-track">
-        <div class="mk"><img src="/assets/marken/trina.svg" alt="Trina Solar" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="/assets/marken/longi.png" alt="LONGi" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img class="hoch" src="/assets/marken/k2.svg" alt="K2 Systems" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="/assets/marken/huawei.svg" alt="Huawei" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="/assets/marken/foxess.svg" alt="Fox ESS" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="/assets/marken/alphaess.svg" alt="AlphaESS" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="/assets/marken/sigenergy.svg" alt="Sigenergy" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="/assets/marken/bosch.svg" alt="Bosch" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img class="hoch" src="/assets/marken/buderus.png" alt="Buderus" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="/assets/marken/vaillant.svg" alt="Vaillant" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="/assets/marken/wolf.svg" alt="Wolf" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="/assets/marken/panasonic.svg" alt="Panasonic" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="/assets/marken/unielektro.svg" alt="Uni Elektro" loading="eager" decoding="sync" fetchpriority="low"></div>
+        <div class="mk"><img width="251" height="58" src="/assets/marken/trina.svg" alt="Trina Solar" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="300" height="116" src="/assets/marken/longi.png" alt="LONGi" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img class="hoch" width="88" height="88" src="/assets/marken/k2.svg" alt="K2 Systems" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="2000" height="324" src="/assets/marken/huawei.svg" alt="Huawei" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="166" height="64" src="/assets/marken/foxess.svg" alt="Fox ESS" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="196" height="67" src="/assets/marken/alphaess.svg" alt="AlphaESS" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="301" height="61" src="/assets/marken/sigenergy.svg" alt="Sigenergy" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="433" height="97" src="/assets/marken/bosch.svg" alt="Bosch" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img class="hoch" width="151" height="143" src="/assets/marken/buderus.png" alt="Buderus" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="576" height="164" src="/assets/marken/vaillant.svg" alt="Vaillant" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="174" height="53" src="/assets/marken/wolf.svg" alt="Wolf" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="504" height="80" src="/assets/marken/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="288" height="64" src="/assets/marken/unielektro.svg" alt="Uni Elektro" loading="lazy" decoding="async" fetchpriority="low"></div>
 
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/trina.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/longi.png" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img class="hoch" src="/assets/marken/k2.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/huawei.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/foxess.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/alphaess.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/sigenergy.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/bosch.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img class="hoch" src="/assets/marken/buderus.png" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/vaillant.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/wolf.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/panasonic.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="/assets/marken/unielektro.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="251" height="58" src="/assets/marken/trina.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="300" height="116" src="/assets/marken/longi.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img class="hoch" width="88" height="88" src="/assets/marken/k2.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="2000" height="324" src="/assets/marken/huawei.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="166" height="64" src="/assets/marken/foxess.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="196" height="67" src="/assets/marken/alphaess.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="301" height="61" src="/assets/marken/sigenergy.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="433" height="97" src="/assets/marken/bosch.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img class="hoch" width="151" height="143" src="/assets/marken/buderus.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="576" height="164" src="/assets/marken/vaillant.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="174" height="53" src="/assets/marken/wolf.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="504" height="80" src="/assets/marken/panasonic.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="288" height="64" src="/assets/marken/unielektro.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
       </div>
     </div>
 
@@ -722,18 +765,19 @@
 </section>
 
 </div><!-- /view-home -->
+</main>
 
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><picture><source srcset="/assets/bhd-logo.webp" type="image/webp"><img class="brand-logo" src="/assets/bhd-logo.png" width="560" height="345" alt="BHD – Beratung Heimenergie Deutschland"></picture></a>
-      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
+      <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo" src="/assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></a>
+      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/kontakt/" data-nav="kontakt">Kontakt</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:info@bhd-energie.de" style="color:inherit">info@bhd-energie.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
 </footer>
 
-<script src="/assets/site.js?v=11434029" defer></script>
+<script src="/assets/site.js?v=912e486b" defer></script>
 
 <div class="quickcontact" aria-label="Schnellkontakt">
   <a class="qc qc-phone" href="tel:+491634440392" aria-label="Anrufen unter 0163 4440392">
@@ -748,6 +792,23 @@
     <svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>
     <span class="qc-label">E-Mail</span>
   </a>
+</div>
+
+<!-- Einwilligung fuer die Reichweitenmessung. Bleibt ausgeblendet, solange in
+     build.js keine GA4_ID hinterlegt ist – dann wird auch nichts geladen und
+     es braucht kein Banner. Ohne Zustimmung verlaesst kein Datenpaket den
+     Browser (§ 25 TDDDG). -->
+<div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-titel" hidden>
+  <div class="consent-in">
+    <div class="consent-txt">
+      <strong id="consent-titel">Dürfen wir mitzählen?</strong>
+      <p>Wir würden gern anonym messen, welche Seiten gelesen werden, um sie zu verbessern. Dafür setzt Google Analytics Cookies und überträgt Daten in die USA. Ohne Ihre Zustimmung passiert nichts davon – die Website funktioniert vollständig. Mehr dazu in der <a href="/datenschutz/" data-nav="datenschutz">Datenschutzerklärung</a>.</p>
+    </div>
+    <div class="consent-btns">
+      <button type="button" class="btn btn-ghost" id="consent-nein">Nur Notwendiges</button>
+      <button type="button" class="btn" id="consent-ja">Statistik erlauben</button>
+    </div>
+  </div>
 </div>
 
 

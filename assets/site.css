@@ -13,9 +13,21 @@
   /* Hell, ruhig, editorial (Stil christoph-gey.de) – Gold als dezenter Akzent. Kein Emoji, alles SVG. */
 
   *{box-sizing:border-box}
+  /* Sprunglink: liegt vor der Navigation und wird erst beim Tabben sichtbar.
+     Tastatur- und Screenreader-Nutzer muessen so nicht jedes Mal durch das
+     komplette Menue. Das Ziel ist <main id="inhalt"> (siehe build.js). */
+  .skip{position:absolute;left:-9999px;top:0;z-index:300;
+    background:var(--ink);color:#fff;padding:11px 18px;border-radius:0 0 10px 0;
+    font-weight:600;font-size:.95rem;text-decoration:none}
+  .skip:focus{left:0}
   html{scroll-behavior:smooth;overflow-x:hidden}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-wrap:break-word}
   a{color:inherit;text-decoration:none}
+  /* Links im Fliesstext. Die Grundregel darueber setzt bewusst color:inherit,
+     damit Menue-, Karten- und Button-Links neutral bleiben – Verweise mitten
+     im Text muessen aber als solche erkennbar sein. */
+  a.ilink{color:var(--gold-deep);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+  a.ilink:hover{color:var(--gold)}
   ::selection{background:var(--green);color:#fff}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
   @media(max-width:600px){.wrap{padding:0 18px}}
@@ -146,7 +158,10 @@
   .hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:72px;align-items:center;position:relative;z-index:2}
   @media(max-width:1024px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:48px}.funnel{max-width:560px;width:100%;margin-inline:auto}}
 
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--green);
+  /* Textfarbe bewusst --green-deep (#8f6414) statt --green (#c6892a):
+     Gold auf Weiss erreicht nur 2,99:1, gefordert sind 4,5:1. Die dunkle
+     Variante kommt auf 5,25:1 und sieht praktisch identisch aus. */
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--green-deep);
     padding:9px 17px;border:1px solid var(--line-2);border-radius:100px;margin-bottom:30px;background:var(--panel)}
   .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
   h1{font-size:clamp(2.7rem,6vw,4.7rem);line-height:1.04;letter-spacing:-.03em;font-weight:600;margin:0 0 26px;max-width:15ch;text-wrap:balance}
@@ -621,6 +636,20 @@
     .marquee-track{animation:none}
   }
   .brands-note{max-width:78ch;margin:26px auto 0;text-align:center;font-size:.84rem;color:var(--ink-3);line-height:1.55}
+  .brands-note a{color:var(--gold-deep);font-weight:600;text-decoration:underline}
+
+  /* ---------- Kontaktseite ---------- */
+  .kontakt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+  .kk{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px 26px;box-shadow:var(--shadow)}
+  .kk-ic{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;
+    background:var(--gold-soft);color:var(--gold-deep);margin-bottom:16px}
+  .kk-ic .ic{width:22px;height:22px}
+  .kk h2{font-size:1.02rem;font-weight:600;margin:0 0 8px;letter-spacing:0}
+  .kk-big{font-size:1.28rem;font-weight:600;line-height:1.35;margin:0 0 12px;color:var(--ink)}
+  .kk-big a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--gold-soft)}
+  .kk-big a:hover{border-bottom-color:var(--gold)}
+  .kk p{margin:0;color:var(--ink-2);font-size:.95rem;line-height:1.6}
+  .kk p a{color:var(--gold-deep);font-weight:600;text-decoration:underline}
 
   /* ======================================================================
      PARTNER-WERDEN-SEITE (B2B)
@@ -770,8 +799,12 @@
   .qc .ic{width:23px;height:23px}
   .qc:hover{transform:translateY(-3px);box-shadow:0 6px 14px -4px rgba(20,18,12,.3),0 22px 40px -18px rgba(20,18,12,.5)}
   .qc:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-  .qc-phone{background:var(--gold);border-color:transparent;color:#fff}
-  .qc-wa{background:#25D366;border-color:transparent;color:#fff}
+  /* Dunklere Flaechen als das reine Marken-Gold bzw. WhatsApp-Gruen: auf dem
+     Handy steht die Beschriftung direkt auf dem Knopf, und Weiss auf #c6892a
+     (2,99:1) bzw. auf #25D366 (1,98:1) ist nicht lesbar genug. Die dunkleren
+     Toene erreichen 5,25:1 und 5,28:1 und bleiben klar wiedererkennbar. */
+  .qc-phone{background:var(--gold-deep);border-color:transparent;color:#fff}
+  .qc-wa{background:#0B7A63;border-color:transparent;color:#fff}
   .qc-mail{background:var(--panel);color:var(--ink)}
   /* Beschriftung erscheint links daneben beim Draufzeigen */
   .qc-label{position:absolute;right:calc(100% + 11px);white-space:nowrap;
@@ -799,6 +832,30 @@
   }
   /* Sehr schmale Geräte: Beschriftung weglassen, damit nichts umbricht */
   @media(max-width:360px){.qc-label{display:none}}
+
+  /* ======================================================================
+     EINWILLIGUNG – liegt ueber der Schnellkontakt-Leiste (z-index 150) und
+     unter der Navigation (200), damit das Menue bedienbar bleibt.
+     ====================================================================== */
+  .consent{position:fixed;left:0;right:0;bottom:0;z-index:180;
+    background:var(--panel);border-top:1px solid var(--line-2);
+    box-shadow:0 -10px 34px -18px rgba(20,18,12,.55);
+    padding:18px 0 calc(18px + env(safe-area-inset-bottom,0px))}
+  .consent[hidden]{display:none}
+  .consent-in{max-width:var(--maxw);margin:0 auto;padding:0 26px;
+    display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .consent-txt{flex:1 1 420px;min-width:0}
+  .consent-txt strong{display:block;font-size:1.02rem;margin-bottom:5px}
+  .consent-txt p{margin:0;font-size:.9rem;line-height:1.55;color:var(--ink-2);max-width:72ch}
+  .consent-txt a{color:var(--gold-deep);font-weight:600;text-decoration:underline}
+  .consent-btns{display:flex;gap:11px;flex:0 0 auto;flex-wrap:wrap}
+  .consent-btns .btn{white-space:nowrap}
+  @media(max-width:700px){
+    .consent{bottom:64px}          /* Platz fuer die feste Kontaktleiste */
+    .consent-in{padding:0 18px;gap:14px}
+    .consent-btns{width:100%}
+    .consent-btns .btn{flex:1}
+  }
 
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise{opacity:1;transform:none}.blob{display:none}.flow-line{stroke-dashoffset:0}.node-dot,.node-final,.node-label{opacity:1}}
 

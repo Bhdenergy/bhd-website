@@ -68,6 +68,61 @@
       'oder schreiben Sie an <a href="mailto:info@bhd-energie.de" style="color:inherit"><b>info@bhd-energie.de</b></a>.';
   }
 
+  // ---------- Einwilligung & Reichweitenmessung ----------
+  // Google Analytics wird ERST nach ausdruecklicher Zustimmung nachgeladen.
+  // Vorher wird kein Skript eingebunden und kein Cookie gesetzt (§ 25 TDDDG).
+  // Die Mess-ID kommt ueber data-ga am <body> aus build.js; ist sie leer,
+  // bleibt das Banner unsichtbar und die Seite komplett trackingfrei.
+  (function(){
+    var GA=document.body.dataset.ga||'';
+    var KEY='bhd-consent';
+    var box=document.getElementById('consent');
+
+    function gelesen(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+    function merken(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+    function zeigen(){if(box)box.hidden=false}
+    function schliessen(){if(box)box.hidden=true}
+
+    function ladeGA(){
+      if(!GA||window.__gaAktiv)return;
+      window.__gaAktiv=true;
+      window.dataLayer=window.dataLayer||[];
+      window.gtag=function(){window.dataLayer.push(arguments)};
+      gtag('js',new Date());
+      // Consent Mode v2: alles aus, nur die Statistik wird freigegeben.
+      gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',
+        ad_personalization:'denied',analytics_storage:'denied'});
+      gtag('consent','update',{analytics_storage:'granted'});
+      gtag('config',GA,{anonymize_ip:true});
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(GA);
+      document.head.appendChild(s);
+    }
+
+    var wahl=gelesen();
+    if(!GA)schliessen();
+    else if(wahl==='ja'){ladeGA();schliessen()}
+    else if(wahl==='nein')schliessen();
+    else zeigen();
+
+    var ja=document.getElementById('consent-ja'),nein=document.getElementById('consent-nein');
+    if(ja)ja.addEventListener('click',function(){merken('ja');ladeGA();schliessen()});
+    if(nein)nein.addEventListener('click',function(){merken('nein');schliessen()});
+
+    // Aus der Datenschutzerklaerung heraus widerrufbar
+    window.bhdEinwilligung=function(){try{localStorage.removeItem(KEY)}catch(e){}zeigen()};
+    document.querySelectorAll('[data-consent]').forEach(function(el){
+      el.addEventListener('click',function(e){e.preventDefault();window.bhdEinwilligung()});
+    });
+  })();
+
+  // Lead-Ereignis melden. Wird von allen drei Formularwegen aufgerufen und
+  // laeuft ins Leere, solange keine Einwilligung vorliegt – genau so gewollt.
+  function trackLead(quelle){
+    try{if(window.gtag)gtag('event','generate_lead',{method:quelle})}catch(e){}
+  }
+
   // ---------- Funnel (nur Startseite) ----------
   (function(){
     if(!document.getElementById('funnel'))return;
@@ -109,7 +164,7 @@
     show(total);
     // Anfrage wirklich verschicken. Scheitert der Versand, wird die
     // Erfolgsmeldung durch die Rückfallmeldung mit Telefonnummer ersetzt.
-    sendLead(answers).then(function(ok){ if(!ok)leadFallback(success); });
+    sendLead(answers).then(function(ok){ if(ok)trackLead('funnel'); else leadFallback(success); });
   });
 
   })();
@@ -174,7 +229,14 @@
   })();
   // ---------- Formulare der Anfragen-Seite ----------
   const isMail=(v)=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-  const mark=(el,bad)=>{el.style.borderColor=bad?'#d64545':''};
+  // Fehlerhafte Felder auch fuer Screenreader kennzeichnen, nicht nur farblich.
+  // Farbe allein reicht nicht: wer sie nicht sieht, erfaehrt sonst gar nicht,
+  // welches Feld beanstandet wurde.
+  const mark=(el,bad)=>{
+    el.style.borderColor=bad?'#d64545':'';
+    if(bad)el.setAttribute('aria-invalid','true');
+    else el.removeAttribute('aria-invalid');
+  };
   function validateRequired(fields){
     let ok=true;
     fields.forEach(el=>{const empty=!el.value.trim();mark(el,empty);if(empty)ok=false;});
@@ -207,7 +269,7 @@
     const lead={typ:'B2C',interesse,name:name.value,plz:plz.value,tel:tel.value,mail:mail.value,
       wohnsituation:document.getElementById('b2c-eigentum').value,nachricht:document.getElementById('b2c-msg').value};
     const done=document.getElementById('b2c-done');
-    sendLead(lead).then(function(sent){ if(!sent)leadFallback(done); });
+    sendLead(lead).then(function(sent){ if(sent)trackLead('anfragen-b2c'); else leadFallback(done); });
     document.getElementById('b2c-form').style.display='none';
     done.classList.add('show');
     document.getElementById('b2c-card').scrollIntoView({behavior:'smooth',block:'center'});
@@ -233,7 +295,7 @@
       montageteam:document.getElementById('b2b-mitarbeiter').value,
       nachricht:document.getElementById('b2b-msg').value};
     const done=document.getElementById('b2b-done');
-    sendLead(lead).then(function(sent){ if(!sent)leadFallback(done); });
+    sendLead(lead).then(function(sent){ if(sent)trackLead('partner-b2b'); else leadFallback(done); });
     document.getElementById('b2b-form').style.display='none';
     done.classList.add('show');
     document.getElementById('b2b-card').scrollIntoView({behavior:'smooth',block:'center'});
@@ -488,7 +550,7 @@
     const lead=Object.assign({typ:'Wärmepumpen-Rechner',name:name.value,plz:plz.value,
       tel:tel.value,mail:mail.value,nachricht:$('wp-k-msg').value}, letztesErgebnis||{});
     const done=$('wp-k-done');
-    sendLead(lead).then(function(sent){ if(!sent)leadFallback(done); });
+    sendLead(lead).then(function(sent){ if(sent)trackLead('waermepumpen-rechner'); else leadFallback(done); });
     $('wp-form').style.display='none';
     done.classList.add('show');
     $('wp-card').scrollIntoView({behavior:'smooth',block:'center'});
@@ -530,6 +592,7 @@
     const done=document.getElementById('check-done');
     if(form)form.style.display='none';
     if(done)done.classList.add('show');
+    trackLead('angebots-check');
     const anchor=document.getElementById('check-form');
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname);

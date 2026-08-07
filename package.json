@@ -1,0 +1,27 @@
+{
+  "name": "bhd-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhdenergy/bhd-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Bhdenergy/bhd-website/issues"
+  },
+  "homepage": "https://github.com/Bhdenergy/bhd-website#readme",
+  "dependencies": {
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.5.0"
+  }
+}

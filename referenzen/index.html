@@ -113,7 +113,45 @@
           }
         }
       ],
-      "slogan": "Sonne rein. Stromrechnung raus."
+      "slogan": "Sonne rein. Stromrechnung raus.",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://bhd-energie.de/#logo",
+        "url": "https://bhd-energie.de/icon-512.png",
+        "width": 512,
+        "height": 512,
+        "caption": "BHD – Beratung Heimenergie Deutschland"
+      },
+      "image": "https://bhd-energie.de/assets/og-bhd.png",
+      "priceRange": "€€",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+49-163-4440392",
+          "email": "info@bhd-energie.de",
+          "contactType": "customer service",
+          "areaServed": "DE",
+          "availableLanguage": [
+            "de"
+          ]
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      ]
     },
     {
       "@type": "WebSite",
@@ -137,7 +175,8 @@
       },
       "about": {
         "@id": "https://bhd-energie.de/#org"
-      }
+      },
+      "dateModified": "2026-08-07"
     },
     {
       "@type": "BreadcrumbList",
@@ -160,8 +199,10 @@
 }
 </script>
 <style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f6f5f1;color:#1b1a17}img{max-width:100%}</style>
-<link rel="stylesheet" href="/assets/site.css?v=11434029">
+<link rel="preload" href="/assets/site.css?v=912e486b" as="style">
+<link rel="stylesheet" href="/assets/site.css?v=912e486b">
 </head><body data-page="ref">
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
 <svg style="display:none" aria-hidden="true">
   <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.3M12 19.1v2.3M2.6 12h2.3M19.1 12h2.3M5.1 5.1l1.6 1.6M17.3 17.3l1.6 1.6M18.9 5.1l-1.6 1.6M6.7 17.3l-1.6 1.6"/></symbol>
@@ -202,7 +243,7 @@
 
 <nav>
   <div class="wrap nav-in">
-    <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><picture><source srcset="/assets/bhd-logo.webp" type="image/webp"><img class="brand-logo" src="/assets/bhd-logo.png" width="560" height="345" alt="BHD – Beratung Heimenergie Deutschland"></picture></a>
+    <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo" src="/assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></a>
     <div class="nav-links" id="nav-links">
       <a href="/" data-nav="home">Start</a>
       <div class="nav-drop">
@@ -219,6 +260,7 @@
       <a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a>
       <a href="/referenzen/" data-nav="ref">Referenzen</a>
       <a href="/ueber-uns/" data-nav="about">Über uns</a>
+      <a href="/kontakt/" data-nav="kontakt">Kontakt</a>
       <a href="/anfragen/" data-nav="ask">Anfragen</a>
       <a href="/partner-werden/" data-nav="partner" class="nav-b2b">Partner werden</a>
       <a href="tel:+491634440392" class="menu-phone"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
@@ -233,6 +275,7 @@
   </div>
 </nav>
 
+<main id="inhalt">
 <div id="view-ref">
 
   <header class="ref-hero">
@@ -240,7 +283,7 @@
       <div class="breadcrumb"><a href="/" data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Referenzen</span></div>
       <div class="eyebrow"><span class="dot"></span> Realisierte Projekte für Einfamilienhäuser</div>
       <h1>Anlagen, die für sich sprechen.</h1>
-      <p class="lede">Ein Auszug aus Projekten, die unsere geprüften Fachbetriebe umgesetzt haben – vom Modulfeld auf dem Ziegeldach über die Wärmepumpe im Garten bis zu Speicher, Wechselrichter und Wallbox im Technikraum.</p>
+      <p class="lede">Ein Auszug aus Projekten, die unsere geprüften Fachbetriebe umgesetzt haben – vom Modulfeld auf dem Ziegeldach über die <a href="/waermepumpe/" class="ilink" data-nav="wp">Wärmepumpe</a> im Garten bis zu <a href="/stromspeicher/" class="ilink" data-nav="speicher">Speicher</a>, Wechselrichter und Wallbox im Technikraum.</p>
       <div class="hero-cta">
         <a href="/#funnel" data-go-funnel class="btn">Eigenes Projekt anfragen</a>
         <a href="tel:+491634440392" class="btn btn-ghost"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
@@ -252,8 +295,8 @@
     <div class="wrap" style="padding-top:44px;padding-bottom:44px">
       <div class="ref-stats">
         <div class="rstat"><b>250+</b><span>umgesetzte Anlagen</span></div>
-        <div class="rstat"><b>Zufriedene</b><span>Kundenbewertungen</span></div>
-        <div class="rstat"><b>bis&nbsp;90&nbsp;%</b><span>weniger Energiekosten</span></div>
+        <div class="rstat"><b>24&nbsp;h</b><span>Rückmeldung zum Angebots-Check</span></div>
+        <div class="rstat"><b>bis&nbsp;90&nbsp;%</b><span>weniger Strom aus dem Netz</span></div>
         <div class="rstat"><b>100&nbsp;%</b><span>geprüfte Fachbetriebe</span></div>
       </div>
     </div>
@@ -264,7 +307,7 @@
       <div class="head">
         <div class="kicker">Projektgalerie</div>
         <h2>Eigenheime mit Zukunft.</h2>
-        <p>Filtern Sie nach Anlagentyp – von der Dachanlage über die Wärmepumpe bis zu Speicher, Wechselrichter und Wallbox.</p>
+        <p>Filtern Sie nach Anlagentyp – von der <a href="/photovoltaik/" class="ilink" data-nav="pv">Dachanlage</a> über die <a href="/waermepumpe/" class="ilink" data-nav="wp">Wärmepumpe</a> bis zu Speicher, Wechselrichter und Wallbox.</p>
       </div>
 
       <div class="ref-filter">
@@ -279,7 +322,7 @@
         <!-- PV 1 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-pv-01-satteldach.webp" type="image/webp"><img src="/assets/referenzen/ref-pv-01-satteldach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-pv-01-satteldach-400.webp 400w, /assets/referenzen/ref-pv-01-satteldach-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-pv-01-satteldach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Einfamilienhaus mit rotem Ziegel-Satteldach und zwei belegten Photovoltaik-Teilflächen"></picture>
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
@@ -292,7 +335,7 @@
         <!-- WP 1 -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-01-aussengeraet.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-01-aussengeraet.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-01-aussengeraet-400.webp 400w, /assets/referenzen/ref-wp-01-aussengeraet-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-01-aussengeraet.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Luft-Wasser-Wärmepumpe als Außengerät neben der Hauswand, Leitungen isoliert in den Keller geführt"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
           </div>
@@ -305,7 +348,7 @@
         <!-- TEC 1 -->
         <article class="rcard" data-type="tec">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-tec-01-wechselrichter-speicher.webp" type="image/webp"><img src="/assets/referenzen/ref-tec-01-wechselrichter-speicher.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-01-wechselrichter-speicher-400.webp 400w, /assets/referenzen/ref-tec-01-wechselrichter-speicher-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-tec-01-wechselrichter-speicher.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Wandmontierter Wechselrichter über einem stehenden Batteriespeicher im Hauswirtschaftsraum"></picture>
             <span class="rtag tec"><svg class="ic"><use href="#i-battery"/></svg> Technik &amp; Speicher</span>
           </div>
@@ -318,7 +361,7 @@
         <!-- PV 2 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-pv-02-flachdach.webp" type="image/webp"><img src="/assets/referenzen/ref-pv-02-flachdach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-pv-02-flachdach-400.webp 400w, /assets/referenzen/ref-pv-02-flachdach-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-pv-02-flachdach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Aufgeständerte schwarze Photovoltaik-Module auf dem Flachdach eines städtischen Mehrfamilienhauses"></picture>
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
@@ -331,7 +374,7 @@
         <!-- TEC 5 – Wallbox -->
         <article class="rcard" data-type="tec">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-tec-05-wallbox.webp" type="image/webp"><img src="/assets/referenzen/ref-tec-05-wallbox.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-05-wallbox-400.webp 400w, /assets/referenzen/ref-tec-05-wallbox-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-tec-05-wallbox.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Wallbox mit aufgewickeltem Ladekabel an einer Klinkerwand"></picture>
             <span class="rtag tec"><svg class="ic"><use href="#i-plug"/></svg> Wallbox</span>
           </div>
@@ -344,7 +387,7 @@
         <!-- PV 5 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-pv-05-daemmerung.webp" type="image/webp"><img src="/assets/referenzen/ref-pv-05-daemmerung.jpg" width="1400" height="1050" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-pv-05-daemmerung-400.webp 400w, /assets/referenzen/ref-pv-05-daemmerung-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-pv-05-daemmerung.jpg" width="1400" height="1050" loading="lazy" decoding="async"
                  alt="Einfamilienhaus in der Dämmerung mit Photovoltaik-Modulen auf beiden Dachflächen"></picture>
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
@@ -357,7 +400,7 @@
         <!-- WP 2 -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-02-abendlicht.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-02-abendlicht.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-02-abendlicht-400.webp 400w, /assets/referenzen/ref-wp-02-abendlicht-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-02-abendlicht.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Wärmepumpen-Außengerät auf Betonfundament an der Hauswand im Abendlicht"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
           </div>
@@ -370,7 +413,7 @@
         <!-- TEC 2 -->
         <article class="rcard" data-type="tec">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-tec-02-wechselrichter-speicher.webp" type="image/webp"><img src="/assets/referenzen/ref-tec-02-wechselrichter-speicher.jpg" width="787" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-02-wechselrichter-speicher-400.webp 400w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-tec-02-wechselrichter-speicher.jpg" width="787" height="1400" loading="lazy" decoding="async"
                  alt="Kompaktes Speichersystem mit Wechselrichter an der Wand und Batterieeinheit darunter"></picture>
             <span class="rtag tec"><svg class="ic"><use href="#i-battery"/></svg> Technik &amp; Speicher</span>
           </div>
@@ -383,7 +426,7 @@
         <!-- PV 3 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-pv-03-terrassendach.webp" type="image/webp"><img src="/assets/referenzen/ref-pv-03-terrassendach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-pv-03-terrassendach-400.webp 400w, /assets/referenzen/ref-pv-03-terrassendach-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-pv-03-terrassendach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Anthrazitfarbenes Satteldach mit Photovoltaik-Modulen und zusätzlich solarbelegter Terrassenüberdachung"></picture>
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
@@ -396,7 +439,7 @@
         <!-- TEC 3 -->
         <article class="rcard" data-type="tec">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-tec-03-wechselrichter.webp" type="image/webp"><img src="/assets/referenzen/ref-tec-03-wechselrichter.jpg" width="787" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-03-wechselrichter-400.webp 400w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-tec-03-wechselrichter.jpg" width="787" height="1400" loading="lazy" decoding="async"
                  alt="Wandmontierter Wechselrichter mit sauber verlegten Leitungen im Technikraum"></picture>
             <span class="rtag tec"><svg class="ic"><use href="#i-chip"/></svg> Wechselrichter</span>
           </div>
@@ -409,7 +452,7 @@
         <!-- PV 4 -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-pv-04-giebeldach.webp" type="image/webp"><img src="/assets/referenzen/ref-pv-04-giebeldach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-pv-04-giebeldach-400.webp 400w, /assets/referenzen/ref-pv-04-giebeldach-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-pv-04-giebeldach.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Kompaktes schwarzes Photovoltaik-Modulfeld bündig eingepasst in ein rotes Ziegeldach"></picture>
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
@@ -422,7 +465,7 @@
         <!-- TEC 4 -->
         <article class="rcard" data-type="tec">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-tec-04-batteriespeicher.webp" type="image/webp"><img src="/assets/referenzen/ref-tec-04-batteriespeicher.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-04-batteriespeicher-400.webp 400w, /assets/referenzen/ref-tec-04-batteriespeicher-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-tec-04-batteriespeicher.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Stehender Batteriespeicher mit mehreren Modulen im Heizungsraum"></picture>
             <span class="rtag tec"><svg class="ic"><use href="#i-battery"/></svg> Technik &amp; Speicher</span>
           </div>
@@ -435,7 +478,7 @@
         <!-- WP 3 – Warmwasserspeicher -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-03-warmwasserspeicher.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-03-warmwasserspeicher.jpg" width="933" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-03-warmwasserspeicher-400.webp 400w, /assets/referenzen/ref-wp-03-warmwasserspeicher-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-03-warmwasserspeicher.jpg" width="933" height="1400" loading="lazy" decoding="async"
                  alt="Warmwasserspeicher mit Pumpenstation und Ausdehnungsgefäß, Kupferleitungen sauber an der Wand geführt"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Warmwasser</span>
           </div>
@@ -448,7 +491,7 @@
         <!-- TEC 6 – Zählerschrank -->
         <article class="rcard" data-type="tec">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-tec-06-zaehlerschrank.webp" type="image/webp"><img src="/assets/referenzen/ref-tec-06-zaehlerschrank.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-06-zaehlerschrank-400.webp 400w, /assets/referenzen/ref-tec-06-zaehlerschrank-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-tec-06-zaehlerschrank.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Geöffneter Zählerschrank mit digitalem Zähler, Unterverteilung und beschrifteten Sicherungsreihen"></picture>
             <span class="rtag tec"><svg class="ic"><use href="#i-bolt"/></svg> Zählerplatz</span>
           </div>
@@ -461,7 +504,7 @@
         <!-- WP 4 – Innengerät -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-04-innengeraet.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-04-innengeraet.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-04-innengeraet-400.webp 400w, /assets/referenzen/ref-wp-04-innengeraet-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-04-innengeraet.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Innengerät einer Wärmepumpe mit Touch-Display im Technikraum, darüber isolierte Hydraulikleitungen"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
           </div>
@@ -474,7 +517,7 @@
         <!-- WP 5 – Außengerät -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-05-aussengeraet.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-05-aussengeraet.jpg" width="1280" height="960" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-05-aussengeraet-400.webp 400w, /assets/referenzen/ref-wp-05-aussengeraet-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-05-aussengeraet.jpg" width="1280" height="960" loading="lazy" decoding="async"
                  alt="Luft-Wasser-Wärmepumpe als Außengerät auf Betonsockeln im Kiesbett neben der Hauswand"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
           </div>
@@ -487,7 +530,7 @@
         <!-- PV 6 – Montageschienen -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-pv-06-montageschienen.webp" type="image/webp"><img src="/assets/referenzen/ref-pv-06-montageschienen.jpg" width="1400" height="1050" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-pv-06-montageschienen-400.webp 400w, /assets/referenzen/ref-pv-06-montageschienen-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-pv-06-montageschienen.jpg" width="1400" height="1050" loading="lazy" decoding="async"
                  alt="Montageschienen auf einem Ziegeldach während der Installation, Dachfläche mit Sicherungsnetz abgesichert"></picture>
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Montage</span>
           </div>
@@ -500,7 +543,7 @@
         <!-- TEC 7 – Speicher mit Zählerschrank -->
         <article class="rcard" data-type="tec">
           <div class="rmedia portrait">
-            <picture><source srcset="/assets/referenzen/ref-tec-07-speicher-zaehlerschrank.webp" type="image/webp"><img src="/assets/referenzen/ref-tec-07-speicher-zaehlerschrank.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-07-speicher-zaehlerschrank-400.webp 400w, /assets/referenzen/ref-tec-07-speicher-zaehlerschrank-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-tec-07-speicher-zaehlerschrank.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Hoher Batteriespeicher im Keller, direkt daneben der Zählerschrank an der Wand"></picture>
             <span class="rtag tec"><svg class="ic"><use href="#i-battery"/></svg> Technik &amp; Speicher</span>
           </div>
@@ -513,7 +556,7 @@
         <!-- TEC 8 – Speicher mit Wechselrichter -->
         <article class="rcard" data-type="tec">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-tec-08-speicher-wechselrichter.webp" type="image/webp"><img src="/assets/referenzen/ref-tec-08-speicher-wechselrichter.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-08-speicher-wechselrichter-400.webp 400w, /assets/referenzen/ref-tec-08-speicher-wechselrichter-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-tec-08-speicher-wechselrichter.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Batteriespeicher im Kellerraum mit daneben an der Wand montiertem Hybrid-Wechselrichter"></picture>
             <span class="rtag tec"><svg class="ic"><use href="#i-chip"/></svg> Speichersystem</span>
           </div>
@@ -526,7 +569,7 @@
         <!-- TEC 9 – Montage Speicher -->
         <article class="rcard" data-type="tec">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-tec-09-montage-speicher.webp" type="image/webp"><img src="/assets/referenzen/ref-tec-09-montage-speicher.jpg" width="960" height="1280" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-09-montage-speicher-400.webp 400w, /assets/referenzen/ref-tec-09-montage-speicher-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-tec-09-montage-speicher.jpg" width="960" height="1280" loading="lazy" decoding="async"
                  alt="Monteur im BHD-Shirt richtet einen wandmontierten Batteriespeicher an einer Klinkerwand aus"></picture>
             <span class="rtag tec"><svg class="ic"><use href="#i-battery"/></svg> Montage</span>
           </div>
@@ -539,7 +582,7 @@
         <!-- PV 7 – Hofanlage -->
         <article class="rcard" data-type="pv">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-pv-07-hofanlage.webp" type="image/webp"><img src="/assets/referenzen/ref-pv-07-hofanlage.jpg" width="960" height="1280" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-pv-07-hofanlage-400.webp 400w, /assets/referenzen/ref-pv-07-hofanlage-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-pv-07-hofanlage.jpg" width="960" height="1280" loading="lazy" decoding="async"
                  alt="Zwei Scheunendächer eines Hofes vollflächig mit Photovoltaik belegt, davor der Transporter von BHD"></picture>
             <span class="rtag pv"><svg class="ic"><use href="#i-sun"/></svg> Photovoltaik</span>
           </div>
@@ -552,7 +595,7 @@
         <!-- WP 6 – Erdarbeiten -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-06-erdarbeiten.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-06-erdarbeiten.jpg" width="788" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-06-erdarbeiten-400.webp 400w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-06-erdarbeiten.jpg" width="788" height="1400" loading="lazy" decoding="async"
                  alt="Monteure heben von Hand die Grube für das Fundament der Wärmepumpe im Garten aus"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Erdarbeiten</span>
           </div>
@@ -565,7 +608,7 @@
         <!-- WP 7 – Fundament -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-07-fundament.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-07-fundament.jpg" width="788" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-07-fundament-400.webp 400w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-07-fundament.jpg" width="788" height="1400" loading="lazy" decoding="async"
                  alt="Fertig eingeschaltes Betonfundament für ein Wärmepumpen-Außengerät wird abgezogen"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Fundament</span>
           </div>
@@ -578,7 +621,7 @@
         <!-- WP 8 – Außengerät auf Sockel -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-08-aussengeraet-sockel.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-08-aussengeraet-sockel.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-08-aussengeraet-sockel-400.webp 400w, /assets/referenzen/ref-wp-08-aussengeraet-sockel-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-08-aussengeraet-sockel.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Wärmepumpen-Außengerät auf dem fertigen Fundament neben der Terrasse, Kiesbett darunter"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
           </div>
@@ -591,7 +634,7 @@
         <!-- WP 9 – Außengerät an der Terrasse -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-09-aussengeraet-terrasse.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-09-aussengeraet-terrasse.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-09-aussengeraet-terrasse-400.webp 400w, /assets/referenzen/ref-wp-09-aussengeraet-terrasse-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-09-aussengeraet-terrasse.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Wärmepumpen-Außengerät direkt an der überdachten Terrasse eines Wohnhauses in der Dämmerung"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
           </div>
@@ -604,7 +647,7 @@
         <!-- WP 10 – Innengerät mit Hydraulik -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-10-innengeraet-hydraulik.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-10-innengeraet-hydraulik.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-10-innengeraet-hydraulik-400.webp 400w, /assets/referenzen/ref-wp-10-innengeraet-hydraulik-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-10-innengeraet-hydraulik.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Innengerät der Wärmepumpe im Keller mit gedämmter Hydraulik, Pumpengruppe und Ausdehnungsgefäß"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe</span>
           </div>
@@ -617,7 +660,7 @@
         <!-- WP 11 – Pumpengruppe -->
         <article class="rcard" data-type="wp">
           <div class="rmedia">
-            <picture><source srcset="/assets/referenzen/ref-wp-11-pumpengruppe.webp" type="image/webp"><img src="/assets/referenzen/ref-wp-11-pumpengruppe.jpg" width="1050" height="1400" loading="lazy" decoding="async"
+            <picture><source type="image/webp" srcset="/assets/referenzen/ref-wp-11-pumpengruppe-400.webp 400w, /assets/referenzen/ref-wp-11-pumpengruppe-800.webp 800w" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px"><img src="/assets/referenzen/ref-wp-11-pumpengruppe.jpg" width="1050" height="1400" loading="lazy" decoding="async"
                  alt="Pumpengruppe mit zwei Manometern, Ausdehnungsgefäß und Systemtrenner an der Kellerwand"></picture>
             <span class="rtag wp"><svg class="ic"><use href="#i-wave"/></svg> Heizungstechnik</span>
           </div>
@@ -654,18 +697,19 @@
   </section>
 
 </div><!-- /view-ref -->
+</main>
 
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><picture><source srcset="/assets/bhd-logo.webp" type="image/webp"><img class="brand-logo" src="/assets/bhd-logo.png" width="560" height="345" alt="BHD – Beratung Heimenergie Deutschland"></picture></a>
-      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
+      <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo" src="/assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></a>
+      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/kontakt/" data-nav="kontakt">Kontakt</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:info@bhd-energie.de" style="color:inherit">info@bhd-energie.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
 </footer>
 
-<script src="/assets/site.js?v=11434029" defer></script>
+<script src="/assets/site.js?v=912e486b" defer></script>
 
 <div class="quickcontact" aria-label="Schnellkontakt">
   <a class="qc qc-phone" href="tel:+491634440392" aria-label="Anrufen unter 0163 4440392">
@@ -680,6 +724,23 @@
     <svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>
     <span class="qc-label">E-Mail</span>
   </a>
+</div>
+
+<!-- Einwilligung fuer die Reichweitenmessung. Bleibt ausgeblendet, solange in
+     build.js keine GA4_ID hinterlegt ist – dann wird auch nichts geladen und
+     es braucht kein Banner. Ohne Zustimmung verlaesst kein Datenpaket den
+     Browser (§ 25 TDDDG). -->
+<div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-titel" hidden>
+  <div class="consent-in">
+    <div class="consent-txt">
+      <strong id="consent-titel">Dürfen wir mitzählen?</strong>
+      <p>Wir würden gern anonym messen, welche Seiten gelesen werden, um sie zu verbessern. Dafür setzt Google Analytics Cookies und überträgt Daten in die USA. Ohne Ihre Zustimmung passiert nichts davon – die Website funktioniert vollständig. Mehr dazu in der <a href="/datenschutz/" data-nav="datenschutz">Datenschutzerklärung</a>.</p>
+    </div>
+    <div class="consent-btns">
+      <button type="button" class="btn btn-ghost" id="consent-nein">Nur Notwendiges</button>
+      <button type="button" class="btn" id="consent-ja">Statistik erlauben</button>
+    </div>
+  </div>
 </div>
 
 

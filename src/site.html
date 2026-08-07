@@ -91,9 +91,21 @@
   /* Hell, ruhig, editorial (Stil christoph-gey.de) – Gold als dezenter Akzent. Kein Emoji, alles SVG. */
 
   *{box-sizing:border-box}
+  /* Sprunglink: liegt vor der Navigation und wird erst beim Tabben sichtbar.
+     Tastatur- und Screenreader-Nutzer muessen so nicht jedes Mal durch das
+     komplette Menue. Das Ziel ist <main id="inhalt"> (siehe build.js). */
+  .skip{position:absolute;left:-9999px;top:0;z-index:300;
+    background:var(--ink);color:#fff;padding:11px 18px;border-radius:0 0 10px 0;
+    font-weight:600;font-size:.95rem;text-decoration:none}
+  .skip:focus{left:0}
   html{scroll-behavior:smooth;overflow-x:hidden}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-wrap:break-word}
   a{color:inherit;text-decoration:none}
+  /* Links im Fliesstext. Die Grundregel darueber setzt bewusst color:inherit,
+     damit Menue-, Karten- und Button-Links neutral bleiben – Verweise mitten
+     im Text muessen aber als solche erkennbar sein. */
+  a.ilink{color:var(--gold-deep);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+  a.ilink:hover{color:var(--gold)}
   ::selection{background:var(--green);color:#fff}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
   @media(max-width:600px){.wrap{padding:0 18px}}
@@ -224,7 +236,10 @@
   .hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:72px;align-items:center;position:relative;z-index:2}
   @media(max-width:1024px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:48px}.funnel{max-width:560px;width:100%;margin-inline:auto}}
 
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--green);
+  /* Textfarbe bewusst --green-deep (#8f6414) statt --green (#c6892a):
+     Gold auf Weiss erreicht nur 2,99:1, gefordert sind 4,5:1. Die dunkle
+     Variante kommt auf 5,25:1 und sieht praktisch identisch aus. */
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--green-deep);
     padding:9px 17px;border:1px solid var(--line-2);border-radius:100px;margin-bottom:30px;background:var(--panel)}
   .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
   h1{font-size:clamp(2.7rem,6vw,4.7rem);line-height:1.04;letter-spacing:-.03em;font-weight:600;margin:0 0 26px;max-width:15ch;text-wrap:balance}
@@ -699,6 +714,20 @@
     .marquee-track{animation:none}
   }
   .brands-note{max-width:78ch;margin:26px auto 0;text-align:center;font-size:.84rem;color:var(--ink-3);line-height:1.55}
+  .brands-note a{color:var(--gold-deep);font-weight:600;text-decoration:underline}
+
+  /* ---------- Kontaktseite ---------- */
+  .kontakt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+  .kk{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px 26px;box-shadow:var(--shadow)}
+  .kk-ic{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;
+    background:var(--gold-soft);color:var(--gold-deep);margin-bottom:16px}
+  .kk-ic .ic{width:22px;height:22px}
+  .kk h2{font-size:1.02rem;font-weight:600;margin:0 0 8px;letter-spacing:0}
+  .kk-big{font-size:1.28rem;font-weight:600;line-height:1.35;margin:0 0 12px;color:var(--ink)}
+  .kk-big a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--gold-soft)}
+  .kk-big a:hover{border-bottom-color:var(--gold)}
+  .kk p{margin:0;color:var(--ink-2);font-size:.95rem;line-height:1.6}
+  .kk p a{color:var(--gold-deep);font-weight:600;text-decoration:underline}
 
   /* ======================================================================
      PARTNER-WERDEN-SEITE (B2B)
@@ -848,8 +877,12 @@
   .qc .ic{width:23px;height:23px}
   .qc:hover{transform:translateY(-3px);box-shadow:0 6px 14px -4px rgba(20,18,12,.3),0 22px 40px -18px rgba(20,18,12,.5)}
   .qc:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-  .qc-phone{background:var(--gold);border-color:transparent;color:#fff}
-  .qc-wa{background:#25D366;border-color:transparent;color:#fff}
+  /* Dunklere Flaechen als das reine Marken-Gold bzw. WhatsApp-Gruen: auf dem
+     Handy steht die Beschriftung direkt auf dem Knopf, und Weiss auf #c6892a
+     (2,99:1) bzw. auf #25D366 (1,98:1) ist nicht lesbar genug. Die dunkleren
+     Toene erreichen 5,25:1 und 5,28:1 und bleiben klar wiedererkennbar. */
+  .qc-phone{background:var(--gold-deep);border-color:transparent;color:#fff}
+  .qc-wa{background:#0B7A63;border-color:transparent;color:#fff}
   .qc-mail{background:var(--panel);color:var(--ink)}
   /* Beschriftung erscheint links daneben beim Draufzeigen */
   .qc-label{position:absolute;right:calc(100% + 11px);white-space:nowrap;
@@ -877,6 +910,30 @@
   }
   /* Sehr schmale Geräte: Beschriftung weglassen, damit nichts umbricht */
   @media(max-width:360px){.qc-label{display:none}}
+
+  /* ======================================================================
+     EINWILLIGUNG – liegt ueber der Schnellkontakt-Leiste (z-index 150) und
+     unter der Navigation (200), damit das Menue bedienbar bleibt.
+     ====================================================================== */
+  .consent{position:fixed;left:0;right:0;bottom:0;z-index:180;
+    background:var(--panel);border-top:1px solid var(--line-2);
+    box-shadow:0 -10px 34px -18px rgba(20,18,12,.55);
+    padding:18px 0 calc(18px + env(safe-area-inset-bottom,0px))}
+  .consent[hidden]{display:none}
+  .consent-in{max-width:var(--maxw);margin:0 auto;padding:0 26px;
+    display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .consent-txt{flex:1 1 420px;min-width:0}
+  .consent-txt strong{display:block;font-size:1.02rem;margin-bottom:5px}
+  .consent-txt p{margin:0;font-size:.9rem;line-height:1.55;color:var(--ink-2);max-width:72ch}
+  .consent-txt a{color:var(--gold-deep);font-weight:600;text-decoration:underline}
+  .consent-btns{display:flex;gap:11px;flex:0 0 auto;flex-wrap:wrap}
+  .consent-btns .btn{white-space:nowrap}
+  @media(max-width:700px){
+    .consent{bottom:64px}          /* Platz fuer die feste Kontaktleiste */
+    .consent-in{padding:0 18px;gap:14px}
+    .consent-btns{width:100%}
+    .consent-btns .btn{flex:1}
+  }
 
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise{opacity:1;transform:none}.blob{display:none}.flow-line{stroke-dashoffset:0}.node-dot,.node-final,.node-label{opacity:1}}
 </style>
@@ -921,7 +978,7 @@
 
 <nav>
   <div class="wrap nav-in">
-    <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo.png" width="560" height="345" alt="BHD – Beratung Heimenergie Deutschland"></div>
+    <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></div>
     <div class="nav-links" id="nav-links">
       <a data-nav="home">Start</a>
       <div class="nav-drop">
@@ -938,6 +995,7 @@
       <a data-nav="ratgeber">Ratgeber</a>
       <a data-nav="ref">Referenzen</a>
       <a data-nav="about">Über uns</a>
+      <a data-nav="kontakt">Kontakt</a>
       <a data-nav="ask">Anfragen</a>
       <a data-nav="partner" class="nav-b2b">Partner werden</a>
       <a href="tel:+491634440392" class="menu-phone"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
@@ -1025,7 +1083,7 @@
           <p class="funnel-hint">So finden wir den passenden Fachbetrieb in Ihrer Nähe.</p>
           <div class="fld">
             <label for="plz">Postleitzahl <span class="req">*</span></label>
-            <input type="text" id="plz" inputmode="numeric" maxlength="5" placeholder="z. B. 80331">
+            <input type="text" id="plz" name="plz" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="z. B. 80331">
           </div>
           <button class="btn" data-next-valid="plz">Weiter</button>
           <div class="back-row"><button class="backlink" data-back><svg class="ic"><use href="#i-chevron"/></svg> Zurück</button></div>
@@ -1036,18 +1094,18 @@
           <p class="funnel-hint">Ihr kostenloses Angebot ist gleich fertig.</p>
           <div class="fld">
             <label for="name">Name <span class="req">*</span></label>
-            <input type="text" id="name" placeholder="Vor- und Nachname" autocomplete="name">
+            <input type="text" id="name" name="name" required placeholder="Vor- und Nachname" autocomplete="name">
           </div>
           <div class="grid2">
-            <div class="fld"><label for="tel">Telefon <span class="req">*</span></label><input type="tel" id="tel" placeholder="0170 1234567" autocomplete="tel"></div>
-            <div class="fld"><label for="mail">E-Mail <span class="req">*</span></label><input type="email" id="mail" placeholder="name@beispiel.de" autocomplete="email"></div>
+            <div class="fld"><label for="tel">Telefon <span class="req">*</span></label><input type="tel" id="tel" name="tel" required placeholder="0170 1234567" autocomplete="tel"></div>
+            <div class="fld"><label for="mail">E-Mail <span class="req">*</span></label><input type="email" id="mail" name="mail" required placeholder="name@beispiel.de" autocomplete="email"></div>
           </div>
           <div class="fld">
             <label for="msg">Weitere Infos <span class="hint2">(optional)</span></label>
             <textarea id="msg" rows="3" placeholder="z. B. Dachform und Ausrichtung, Stromverbrauch pro Jahr, vorhandene Heizung, Wunschtermin …"></textarea>
           </div>
           <div class="consent">
-            <input type="checkbox" id="dsgvo">
+            <input type="checkbox" id="dsgvo" required>
             <label for="dsgvo">Ich möchte ein kostenloses Angebot und bin einverstanden, kontaktiert zu werden (<a href="#datenschutz">Datenschutz</a>). Widerruf jederzeit möglich. <span class="req">*</span></label>
           </div>
           <button class="btn" id="finalSubmit">Angebot sichern</button>
@@ -1067,7 +1125,7 @@
 
 <section class="strip">
   <div class="wrap strip-in">
-    <div class="badge"><span class="bic"><svg class="ic"><use href="#i-star"/></svg></span> <span><b>Zufriedene</b> Kundenbewertungen</span></div>
+    <div class="badge"><span class="bic"><svg class="ic"><use href="#i-star"/></svg></span> <span><b>Unabhängige</b> Beratung</span></div>
     <div class="badge"><span class="bic"><svg class="ic"><use href="#i-check"/></svg></span> <span><b>Geprüfte</b> Fachbetriebe</span></div>
     <div class="badge"><span class="bic euro">€</span> <span>Bis zu <b>80 %</b> KfW-Zuschuss</span></div>
     <div class="badge"><span class="bic"><svg class="ic"><use href="#i-bolt"/></svg></span> <span><b>0 %</b> MwSt. auf Solar</span></div>
@@ -1084,12 +1142,12 @@
     </div>
     <div class="swipe-wrap rise">
       <div class="swipe" role="list">
-        <article class="comp" role="listitem"><div class="thumb t1"><svg class="ic"><use href="#i-sun"/></svg></div><div class="comp-body"><h3>Solarmodule</h3><p>Erzeugen sauberen Strom direkt auf Ihrem Dach.</p></div></article>
-        <article class="comp" role="listitem"><div class="thumb t2"><svg class="ic"><use href="#i-battery"/></svg></div><div class="comp-body"><h3>Stromspeicher</h3><p>Speichert Sonnenstrom für Abend und Nacht.</p></div></article>
-        <article class="comp" role="listitem"><div class="thumb t3"><svg class="ic"><use href="#i-wave"/></svg></div><div class="comp-body"><h3>Wärmepumpe</h3><p>Heizt effizient mit kostenloser Umweltwärme.</p></div></article>
-        <article class="comp" role="listitem"><div class="thumb t4"><svg class="ic"><use href="#i-plug"/></svg></div><div class="comp-body"><h3>Wallbox</h3><p>Lädt Ihr E-Auto günstig mit eigenem Strom.</p></div></article>
-        <article class="comp" role="listitem"><div class="thumb t5"><svg class="ic"><use href="#i-chip"/></svg></div><div class="comp-body"><h3>Energiemanager</h3><p>Verteilt den Strom automatisch dorthin, wo er zählt.</p></div></article>
-        <article class="comp" role="listitem"><div class="thumb t6"><svg class="ic"><use href="#i-chart"/></svg></div><div class="comp-body"><h3>Dynamischer Tarif</h3><p>Nutzt günstige Strompreise optimal aus.</p></div></article>
+        <div class="comp" role="listitem"><div class="thumb t1"><svg class="ic"><use href="#i-sun"/></svg></div><div class="comp-body"><h3>Solarmodule</h3><p>Erzeugen sauberen Strom direkt auf Ihrem Dach.</p></div></div>
+        <div class="comp" role="listitem"><div class="thumb t2"><svg class="ic"><use href="#i-battery"/></svg></div><div class="comp-body"><h3>Stromspeicher</h3><p>Speichert Sonnenstrom für Abend und Nacht.</p></div></div>
+        <div class="comp" role="listitem"><div class="thumb t3"><svg class="ic"><use href="#i-wave"/></svg></div><div class="comp-body"><h3>Wärmepumpe</h3><p>Heizt effizient mit kostenloser Umweltwärme.</p></div></div>
+        <div class="comp" role="listitem"><div class="thumb t4"><svg class="ic"><use href="#i-plug"/></svg></div><div class="comp-body"><h3>Wallbox</h3><p>Lädt Ihr E-Auto günstig mit eigenem Strom.</p></div></div>
+        <div class="comp" role="listitem"><div class="thumb t5"><svg class="ic"><use href="#i-chip"/></svg></div><div class="comp-body"><h3>Energiemanager</h3><p>Verteilt den Strom automatisch dorthin, wo er zählt.</p></div></div>
+        <div class="comp" role="listitem"><div class="thumb t6"><svg class="ic"><use href="#i-chart"/></svg></div><div class="comp-body"><h3>Dynamischer Tarif</h3><p>Nutzt günstige Strompreise optimal aus.</p></div></div>
       </div>
       <div class="swipe-nav">
         <button class="snav" data-swipe="prev" aria-label="Vorherige Komponente"><svg class="ic" style="transform:rotate(180deg)"><use href="#i-chevron"/></svg></button>
@@ -1237,33 +1295,33 @@
          Hälften pflegen, sonst ruckelt der Übergang. -->
     <div class="marquee rise" aria-label="Hersteller und Lieferanten">
       <div class="marquee-track">
-        <div class="mk"><img src="assets/marken/trina.svg" alt="Trina Solar" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="assets/marken/longi.png" alt="LONGi" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img class="hoch" src="assets/marken/k2.svg" alt="K2 Systems" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="assets/marken/huawei.svg" alt="Huawei" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="assets/marken/foxess.svg" alt="Fox ESS" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="assets/marken/alphaess.svg" alt="AlphaESS" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="assets/marken/sigenergy.svg" alt="Sigenergy" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="assets/marken/bosch.svg" alt="Bosch" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img class="hoch" src="assets/marken/buderus.png" alt="Buderus" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="assets/marken/vaillant.svg" alt="Vaillant" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="assets/marken/wolf.svg" alt="Wolf" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="assets/marken/panasonic.svg" alt="Panasonic" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk"><img src="assets/marken/unielektro.svg" alt="Uni Elektro" loading="eager" decoding="sync" fetchpriority="low"></div>
+        <div class="mk"><img width="251" height="58" src="assets/marken/trina.svg" alt="Trina Solar" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="300" height="116" src="assets/marken/longi.png" alt="LONGi" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img class="hoch" width="88" height="88" src="assets/marken/k2.svg" alt="K2 Systems" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="2000" height="324" src="assets/marken/huawei.svg" alt="Huawei" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="166" height="64" src="assets/marken/foxess.svg" alt="Fox ESS" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="196" height="67" src="assets/marken/alphaess.svg" alt="AlphaESS" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="301" height="61" src="assets/marken/sigenergy.svg" alt="Sigenergy" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="433" height="97" src="assets/marken/bosch.svg" alt="Bosch" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img class="hoch" width="151" height="143" src="assets/marken/buderus.png" alt="Buderus" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="576" height="164" src="assets/marken/vaillant.svg" alt="Vaillant" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="174" height="53" src="assets/marken/wolf.svg" alt="Wolf" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="504" height="80" src="assets/marken/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="288" height="64" src="assets/marken/unielektro.svg" alt="Uni Elektro" loading="lazy" decoding="async" fetchpriority="low"></div>
 
-        <div class="mk" aria-hidden="true"><img src="assets/marken/trina.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="assets/marken/longi.png" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img class="hoch" src="assets/marken/k2.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="assets/marken/huawei.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="assets/marken/foxess.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="assets/marken/alphaess.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="assets/marken/sigenergy.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="assets/marken/bosch.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img class="hoch" src="assets/marken/buderus.png" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="assets/marken/vaillant.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="assets/marken/wolf.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="assets/marken/panasonic.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img src="assets/marken/unielektro.svg" alt="" loading="eager" decoding="sync" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="251" height="58" src="assets/marken/trina.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="300" height="116" src="assets/marken/longi.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img class="hoch" width="88" height="88" src="assets/marken/k2.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="2000" height="324" src="assets/marken/huawei.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="166" height="64" src="assets/marken/foxess.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="196" height="67" src="assets/marken/alphaess.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="301" height="61" src="assets/marken/sigenergy.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="433" height="97" src="assets/marken/bosch.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img class="hoch" width="151" height="143" src="assets/marken/buderus.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="576" height="164" src="assets/marken/vaillant.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="174" height="53" src="assets/marken/wolf.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="504" height="80" src="assets/marken/panasonic.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="288" height="64" src="assets/marken/unielektro.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
       </div>
     </div>
 
@@ -1374,7 +1432,7 @@
       <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Referenzen</span></div>
       <div class="eyebrow"><span class="dot"></span> Realisierte Projekte für Einfamilienhäuser</div>
       <h1>Anlagen, die für sich sprechen.</h1>
-      <p class="lede">Ein Auszug aus Projekten, die unsere geprüften Fachbetriebe umgesetzt haben – vom Modulfeld auf dem Ziegeldach über die Wärmepumpe im Garten bis zu Speicher, Wechselrichter und Wallbox im Technikraum.</p>
+      <p class="lede">Ein Auszug aus Projekten, die unsere geprüften Fachbetriebe umgesetzt haben – vom Modulfeld auf dem Ziegeldach über die <a class="ilink" data-nav="wp">Wärmepumpe</a> im Garten bis zu <a class="ilink" data-nav="speicher">Speicher</a>, Wechselrichter und Wallbox im Technikraum.</p>
       <div class="hero-cta">
         <a href="#funnel" data-go-funnel class="btn">Eigenes Projekt anfragen</a>
         <a href="tel:+491634440392" class="btn btn-ghost"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
@@ -1386,8 +1444,8 @@
     <div class="wrap" style="padding-top:44px;padding-bottom:44px">
       <div class="ref-stats">
         <div class="rstat"><b>250+</b><span>umgesetzte Anlagen</span></div>
-        <div class="rstat"><b>Zufriedene</b><span>Kundenbewertungen</span></div>
-        <div class="rstat"><b>bis&nbsp;90&nbsp;%</b><span>weniger Energiekosten</span></div>
+        <div class="rstat"><b>24&nbsp;h</b><span>Rückmeldung zum Angebots-Check</span></div>
+        <div class="rstat"><b>bis&nbsp;90&nbsp;%</b><span>weniger Strom aus dem Netz</span></div>
         <div class="rstat"><b>100&nbsp;%</b><span>geprüfte Fachbetriebe</span></div>
       </div>
     </div>
@@ -1398,7 +1456,7 @@
       <div class="head">
         <div class="kicker">Projektgalerie</div>
         <h2>Eigenheime mit Zukunft.</h2>
-        <p>Filtern Sie nach Anlagentyp – von der Dachanlage über die Wärmepumpe bis zu Speicher, Wechselrichter und Wallbox.</p>
+        <p>Filtern Sie nach Anlagentyp – von der <a class="ilink" data-nav="pv">Dachanlage</a> über die <a class="ilink" data-nav="wp">Wärmepumpe</a> bis zu Speicher, Wechselrichter und Wallbox.</p>
       </div>
 
       <div class="ref-filter">
@@ -1826,12 +1884,12 @@
             </div>
 
             <div class="grid2">
-              <div class="fld"><label for="b2c-name">Name <span class="req">*</span></label><input type="text" id="b2c-name" placeholder="Vor- und Nachname" autocomplete="name"></div>
-              <div class="fld"><label for="b2c-plz">Postleitzahl <span class="req">*</span></label><input type="text" id="b2c-plz" inputmode="numeric" maxlength="5" placeholder="z. B. 80331"></div>
+              <div class="fld"><label for="b2c-name">Name <span class="req">*</span></label><input type="text" id="b2c-name" name="name" required placeholder="Vor- und Nachname" autocomplete="name"></div>
+              <div class="fld"><label for="b2c-plz">Postleitzahl <span class="req">*</span></label><input type="text" id="b2c-plz" name="plz" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="z. B. 80331"></div>
             </div>
             <div class="grid2">
-              <div class="fld"><label for="b2c-tel">Telefon <span class="req">*</span></label><input type="tel" id="b2c-tel" placeholder="0170 1234567" autocomplete="tel"></div>
-              <div class="fld"><label for="b2c-mail">E-Mail <span class="req">*</span></label><input type="email" id="b2c-mail" placeholder="name@beispiel.de" autocomplete="email"></div>
+              <div class="fld"><label for="b2c-tel">Telefon <span class="req">*</span></label><input type="tel" id="b2c-tel" name="tel" required placeholder="0170 1234567" autocomplete="tel"></div>
+              <div class="fld"><label for="b2c-mail">E-Mail <span class="req">*</span></label><input type="email" id="b2c-mail" name="mail" required placeholder="name@beispiel.de" autocomplete="email"></div>
             </div>
             <div class="fld">
               <label for="b2c-eigentum">Wohnsituation</label>
@@ -1844,7 +1902,7 @@
             </div>
             <div class="fld"><label for="b2c-msg">Nachricht <span class="hint2">(optional)</span></label><textarea id="b2c-msg" placeholder="z. B. Dachform, ungefährer Stromverbrauch, Wunschtermin …"></textarea></div>
             <div class="consent">
-              <input type="checkbox" id="b2c-dsgvo">
+              <input type="checkbox" id="b2c-dsgvo" required>
               <label for="b2c-dsgvo">Ich möchte ein kostenloses Angebot und bin einverstanden, kontaktiert zu werden (<a href="#datenschutz">Datenschutz</a>). Widerruf jederzeit möglich. <span class="req">*</span></label>
             </div>
             <button type="button" class="btn" style="width:100%" id="b2c-submit">Angebot anfordern</button>
@@ -1872,6 +1930,86 @@
 
 </div><!-- /view-ask -->
 
+<!-- ========================= KONTAKT ========================= -->
+<div id="view-kontakt" hidden>
+
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Kontakt</span></div>
+      <div class="eyebrow"><span class="dot"></span> Täglich 8 – 20 Uhr erreichbar</div>
+      <h1>Reden wir <em>über Ihr Haus.</em></h1>
+      <p class="lede">Sie erreichen bei uns keinen Callcenter-Agenten, sondern jemanden, der die Technik kennt. Rufen Sie an, schreiben Sie über WhatsApp oder per E-Mail – was Ihnen lieber ist.</p>
+      <div class="hero-cta">
+        <a href="tel:+491634440392" class="btn"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
+        <a href="https://wa.me/491634440392?text=Hallo%20BHD%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung." class="btn btn-ghost" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="pad">
+    <div class="wrap">
+      <div class="kontakt-grid">
+
+        <div class="kk">
+          <span class="kk-ic"><svg class="ic"><use href="#i-phone"/></svg></span>
+          <h2>Telefon</h2>
+          <p class="kk-big"><a href="tel:+491634440392">0163 4440392</a></p>
+          <p>Der direkteste Weg. Wenn wir gerade in einem Termin sind, rufen wir am selben Tag zurück.</p>
+        </div>
+
+        <div class="kk">
+          <span class="kk-ic"><svg class="ic"><use href="#i-whatsapp"/></svg></span>
+          <h2>WhatsApp</h2>
+          <p class="kk-big"><a href="https://wa.me/491634440392?text=Hallo%20BHD%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung." target="_blank" rel="noopener">Nachricht schreiben</a></p>
+          <p>Praktisch, wenn Sie Fotos vom Dach, vom Zählerschrank oder ein Angebot als PDF schicken möchten.</p>
+        </div>
+
+        <div class="kk">
+          <span class="kk-ic"><svg class="ic"><use href="#i-mail"/></svg></span>
+          <h2>E-Mail</h2>
+          <p class="kk-big"><a href="mailto:service-bhd@outlook.de">service-bhd@outlook.de</a></p>
+          <p>Antwort in der Regel innerhalb eines Werktags. Liegt ein Angebot bei, melden wir uns innerhalb von 24 Stunden.</p>
+        </div>
+
+        <div class="kk">
+          <span class="kk-ic"><svg class="ic"><use href="#i-clock"/></svg></span>
+          <h2>Erreichbarkeit</h2>
+          <p class="kk-big">Täglich 8 – 20 Uhr</p>
+          <p>Montag bis Sonntag, auch am Wochenende. Außerhalb dieser Zeiten hinterlassen Sie einfach eine Nachricht.</p>
+        </div>
+
+        <div class="kk">
+          <span class="kk-ic"><svg class="ic"><use href="#i-pin"/></svg></span>
+          <h2>Anschrift</h2>
+          <p class="kk-big">Prinzenallee 44b<br>13359 Berlin</p>
+          <p>Sitz in Berlin, beraten wird bundesweit. <a href="https://www.openstreetmap.org/?mlat=52.55896&amp;mlon=13.38854#map=17/52.55896/13.38854" target="_blank" rel="noopener">Auf der Karte ansehen</a> – wir binden bewusst keine Google-Karte ein, die Daten an Google senden würde.</p>
+        </div>
+
+        <div class="kk">
+          <span class="kk-ic"><svg class="ic"><use href="#i-shield"/></svg></span>
+          <h2>Unternehmen</h2>
+          <p class="kk-big">Brotherhooddeen&nbsp;UG</p>
+          <p>Haftungsbeschränkt, Amtsgericht Charlottenburg, HRB 266273 B. Geschäftsführer: Kürşat Yıldırım. Alle Angaben im <a data-nav="impressum">Impressum</a>.</p>
+        </div>
+
+      </div>
+
+      <p class="brands-note">Sie möchten lieber schriftlich anfragen und Ihre Eckdaten gleich mitschicken? Dann geht es über das <a data-nav="ask">Anfrageformular</a> schneller. Liegt Ihnen bereits ein Angebot vor, prüfen wir es im <a data-nav="check">Angebots-Check</a> kostenlos.</p>
+    </div>
+  </section>
+
+  <section class="pad cta-band">
+    <div class="wrap">
+      <div class="rise">
+        <h2>Lieber gleich ein Angebot?</h2>
+        <p>Fünf kurze Fragen, danach meldet sich ein geprüfter Fachbetrieb aus Ihrer Region.</p>
+        <a href="#funnel" data-go-funnel class="btn">Angebot anfordern</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /view-kontakt -->
+
 <!-- ========================= ANSICHT: ÜBER UNS ========================= -->
 <div id="view-about" hidden>
 
@@ -1895,7 +2033,7 @@
         <div class="about-copy">
           <div class="kicker">Unsere Geschichte</div>
           <h2>Aus Überzeugung für die Energiewende.</h2>
-          <p>BHD – Beratung Heimenergie Deutschland wurde von Kürşat Yıldırım gegründet, der seit über <b style="color:var(--ink)">drei Jahren</b> direkt in der Photovoltaik- und Wärmepumpen-Branche arbeitet. In dieser Zeit hat er hunderte Beratungen begleitet und aus erster Hand gelernt, worauf es Hausbesitzern wirklich ankommt: ehrliche Zahlen, klare Kommunikation und saubere Arbeit.</p>
+          <p>BHD – Beratung Heimenergie Deutschland wurde von Kürşat Yıldırım gegründet, der seit über <b style="color:var(--ink)">drei Jahren</b> direkt in der Photovoltaik- und Wärmepumpen-Branche arbeitet. In dieser Zeit hat er hunderte Beratungen begleitet und aus erster Hand gelernt, worauf es Hausbesitzern wirklich ankommt: ehrliche Zahlen, klare Kommunikation und saubere Arbeit. Eine Auswahl umgesetzter Anlagen zeigen die <a class="ilink" data-nav="ref">Referenzen</a>.</p>
           <p>Damit aus einer guten Beratung auch eine erstklassige Anlage wird, setzen wir ausschließlich auf ein Netzwerk geprüfter Installateur-Partner mit <b style="color:var(--ink)">mehr als zehn Jahren Montage-Erfahrung</b>. So treffen frischer Unternehmergeist und handwerkliche Routine aufeinander – zu Ihrem Vorteil.</p>
           <ul class="usp">
             <li><svg class="ic"><use href="#i-check"/></svg> Ein fester Ansprechpartner von der Anfrage bis zur Inbetriebnahme</li>
@@ -2027,8 +2165,8 @@
       </div>
       <div class="vgrid">
         <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-sun"/></svg></div><h3>Dachfläche</h3><p>Süd bringt am meisten, Ost-West verteilt den Ertrag besser über den Tag. Beides funktioniert. Auch Nordflächen können sich bei genug Platz rechnen.</p></div>
-        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-chart"/></svg></div><h3>Ihr Verbrauch</h3><p>Faustregel: rund 1 kWp je 1.000 kWh Jahresverbrauch. Kommen Wärmepumpe oder E-Auto dazu, darf die Anlage deutlich größer ausfallen.</p></div>
-        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-battery"/></svg></div><h3>Speicher</h3><p>Hebt den Eigenverbrauch von etwa 30 auf 60 bis 80 Prozent. Sinnvoll, wenn abends und nachts nennenswert Strom gebraucht wird.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-chart"/></svg></div><h3>Ihr Verbrauch</h3><p>Faustregel: rund 1 kWp je 1.000 kWh Jahresverbrauch. Kommen <a class="ilink" data-nav="wp">Wärmepumpe</a> oder E-Auto dazu, darf die Anlage deutlich größer ausfallen.</p></div>
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-battery"/></svg></div><h3>Speicher</h3><p>Hebt den Eigenverbrauch von etwa 30 auf 60 bis 80 Prozent. Sinnvoll, wenn abends und nachts nennenswert Strom gebraucht wird. Details unter <a class="ilink" data-nav="speicher">Stromspeicher</a>.</p></div>
         <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-bolt"/></svg></div><h3>Zählerschrank</h3><p>Muss die neue Technik aufnehmen können. In älteren Häusern ist hier häufiger etwas zu tun, als die Angebote vermuten lassen.</p></div>
       </div>
     </div>
@@ -2196,10 +2334,10 @@
       <div class="head">
         <div class="kicker">Die richtige Größe</div>
         <h2>Größer ist nicht besser.</h2>
-        <p>Ein Speicher, der im Sommer nie ganz leer wird, verdient sein Geld nicht zurück. Als Richtwert gilt etwa 1 kWh Speicher je 1.000 kWh Jahresstromverbrauch.</p>
+        <p>Ein Speicher, der im Sommer nie ganz leer wird, verdient sein Geld nicht zurück. Als Richtwert gilt etwa 1 kWh Speicher je 1.000 kWh Jahresstromverbrauch. Wie Speicher und Anlage zusammenspielen, steht unter <a class="ilink" data-nav="pv">Photovoltaik</a>; die aktuellen <a class="ilink" data-nav="kosten">Preise je kWh</a> nennen wir offen.</p>
       </div>
       <div class="vgrid">
-        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-battery"/></svg></div><h3>5 bis 8 kWh</h3><p>Für Haushalte ohne Wärmepumpe und E-Auto. Deckt Abend und Nacht ab, mehr braucht es meist nicht.</p></div>
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-battery"/></svg></div><h3>5 bis 8 kWh</h3><p>Für Haushalte ohne <a class="ilink" data-nav="wp">Wärmepumpe</a> und E-Auto. Deckt Abend und Nacht ab, mehr braucht es meist nicht.</p></div>
         <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-house"/></svg></div><h3>10 bis 12 kWh</h3><p>Der Normalfall im Einfamilienhaus mit vier Personen. Gutes Verhältnis aus Preis je kWh und tatsächlicher Nutzung.</p></div>
         <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-plug"/></svg></div><h3>15 kWh und mehr</h3><p>Sinnvoll mit Wärmepumpe, E-Auto oder wenn Notstrom gewünscht ist. Darunter zahlt sich die Größe selten aus.</p></div>
         <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-lock"/></svg></div><h3>Notstrom</h3><p>Nicht jeder Speicher kann das. Ersatzstrom für einzelne Stromkreise oder volle Notstromfähigkeit sind zwei verschiedene Dinge – und zwei verschiedene Preise.</p></div>
@@ -2313,7 +2451,7 @@
           <div class="kicker">Die entscheidende Zahl</div>
           <h2>Vorlauftemperatur ist alles.</h2>
           <p>Je niedriger die Temperatur, mit der Ihre Heizung auskommt, desto weniger Strom braucht die Wärmepumpe. Der Unterschied ist erheblich: Bei 35 °C über eine Fußbodenheizung sind rund <b style="color:var(--ink)">4,3 Kilowattstunden Wärme je Kilowattstunde Strom</b> realistisch, bei 55 °C über Bestandsheizkörper nur noch etwa <b style="color:var(--ink)">3,0</b>. Das sind über 40 Prozent Unterschied bei den Betriebskosten.</p>
-          <p>Die gute Nachricht: Man muss dafür selten das ganze Haus dämmen. Größere Heizkörper in wenigen kritischen Räumen und ein hydraulischer Abgleich bringen die Vorlauftemperatur oft um 10 bis 15 °C herunter – für einen Bruchteil der Kosten einer Fassadendämmung.</p>
+          <p>Die gute Nachricht: Man muss dafür selten das ganze Haus dämmen. Größere Heizkörper in wenigen kritischen Räumen und ein hydraulischer Abgleich bringen die Vorlauftemperatur oft um 10 bis 15 °C herunter – für einen Bruchteil der Kosten einer Fassadendämmung. Ausführlich im Ratgeber <a class="ilink" data-nav="rat-wp">Wärmepumpe im Altbau</a>.</p>
           <ul class="usp">
             <li><svg class="ic"><use href="#i-check"/></svg> Funktioniert in den meisten Altbauten</li>
             <li><svg class="ic"><use href="#i-check"/></svg> Keine Erdarbeiten bei Luft-Wasser-Geräten</li>
@@ -2350,7 +2488,7 @@
       <div class="tline">
         <div class="tstep">
           <div class="trail"><span class="tnode">1</span><span class="tbar"></span></div>
-          <div class="tbody"><h3>Heizlast bestimmen</h3><p>Aus Verbrauch und Gebäudedaten ergibt sich, wie viel Leistung nötig ist. Eine zu groß gewählte Wärmepumpe taktet und verschleißt schneller.</p></div>
+          <div class="tbody"><h3>Heizlast bestimmen</h3><p>Aus Verbrauch und Gebäudedaten ergibt sich, wie viel Leistung nötig ist. Eine zu groß gewählte Wärmepumpe taktet und verschleißt schneller. Was das kostet, steht unter <a class="ilink" data-nav="kosten">Kosten</a>.</p></div>
         </div>
         <div class="tstep">
           <div class="trail"><span class="tnode">2</span><span class="tbar"></span></div>
@@ -2510,7 +2648,7 @@
     <p>Gleichzeitig ist etwas anderes passiert: Anlagen sind deutlich günstiger geworden, seit 2023 fällt keine Umsatzsteuer mehr an, und Netzstrom kostet rund 35 Cent. Damit hat sich die Logik umgedreht. <b>Nicht die Einspeisung bringt das Geld, sondern der vermiedene Netzbezug.</b> Jede Kilowattstunde, die Sie selbst verbrauchen, ist rund viereinhalbmal so viel wert wie eine eingespeiste.</p>
 
     <h2>Die Rechnung an einem echten Fall</h2>
-    <p>Nehmen wir ein Einfamilienhaus mit vier Personen und 4.500 kWh Jahresverbrauch. Auf dem Satteldach liegen 10 kWp, dazu ein Speicher mit 8 kWh. Investition: rund 18.000 €.</p>
+    <p>Nehmen wir ein Einfamilienhaus mit vier Personen und 4.500 kWh Jahresverbrauch. Auf dem Satteldach liegen 10 kWp, dazu ein <a class="ilink" data-nav="speicher">Speicher</a> mit 8 kWh. Investition: rund 18.000 € – die Spannen dahinter stehen unter <a class="ilink" data-nav="kosten">Kosten</a>.</p>
     <p>Die Anlage erzeugt bei etwa 950 kWh je kWp rund <b>9.500 kWh im Jahr</b>. Mit Speicher liegt der Eigenverbrauch bei etwa 65 Prozent des Haushaltsbedarfs, also rund 2.925 kWh. Bei 35 Cent Netzstrompreis sind das <b>1.024 € gespart</b>. Die übrigen 6.575 kWh gehen ins Netz und bringen bei 7,7 Cent noch <b>506 €</b>. Zusammen rund <b>1.530 € Vorteil pro Jahr</b> – rechnerisch amortisiert sich die Anlage in etwa zwölf Jahren.</p>
     <p>Danach läuft sie weiter. Module halten typischerweise 25 bis 30 Jahre. Der Wechselrichter muss meist nach 12 bis 15 Jahren getauscht werden, das sollte man einkalkulieren.</p>
 
@@ -2564,7 +2702,7 @@
     <h2>Der günstigste Hebel ist fast nie die Dämmung</h2>
     <p>Viele glauben, vor einer Wärmepumpe müsse das ganze Haus gedämmt werden. Das stimmt selten. Deutlich wirksamer im Verhältnis zum Preis sind zwei andere Maßnahmen:</p>
     <p><b>Größere Heizkörper in wenigen Räumen.</b> Meist sind es zwei oder drei Zimmer, die bei niedriger Vorlauftemperatur nicht mehr warm werden. Ein Austausch kostet je Heizkörper 400 bis 900 € und senkt die nötige Vorlauftemperatur im ganzen System.</p>
-    <p><b>Hydraulischer Abgleich.</b> Dabei wird eingestellt, wie viel Wasser durch welchen Heizkörper fließt. Ohne Abgleich bekommen Räume nahe der Heizung zu viel und entfernte zu wenig – und man dreht die Vorlauftemperatur hoch, um den letzten Raum warm zu bekommen. Kosten: 700 bis 1.500 €, bei jeder Wärmepumpe im Bestand ohnehin Pflicht.</p>
+    <p><b>Hydraulischer Abgleich.</b> Dabei wird eingestellt, wie viel Wasser durch welchen Heizkörper fließt. Ohne Abgleich bekommen Räume nahe der Heizung zu viel und entfernte zu wenig – und man dreht die Vorlauftemperatur hoch, um den letzten Raum warm zu bekommen. Kosten: 700 bis 1.500 €, bei jeder <a class="ilink" data-nav="wp">Wärmepumpe</a> im Bestand ohnehin Pflicht.</p>
 
     <h2>Die Sorge mit dem Lärm</h2>
     <p>Die häufigste Frage überhaupt, meist wegen der Nachbarn. Aktuelle Luft-Wasser-Geräte liegen bei etwa 50 bis 60 Dezibel Schallleistung. Entscheidend ist aber der Schalldruck am Nachbargrundstück, und der hängt vom Aufstellort ab. Drei Dinge helfen: genug Abstand zur Grenze, keine Aufstellung in einer Ecke zwischen zwei Wänden, wo sich der Schall verstärkt, und ein Gerät mit Nachtabsenkung. Ein guter Planer rechnet das vorher aus, statt zu hoffen.</p>
@@ -2592,7 +2730,7 @@
 
   <section class="pad"><div class="wrap"><div class="artikel">
     <h2>Bei jeder Anlage</h2>
-    <p><b>1. Alle Komponenten mit Hersteller und Typbezeichnung.</b> „Wechselrichter 10 kW" reicht nicht. Ohne genaue Bezeichnung können Sie weder Datenblatt noch Preis vergleichen, und der Betrieb kann im Zweifel etwas anderes einbauen.</p>
+    <p><b>1. Alle Komponenten mit Hersteller und Typbezeichnung.</b> „Wechselrichter 10 kW" reicht nicht. Ohne genaue Bezeichnung können Sie weder Datenblatt noch Preis vergleichen, und der Betrieb kann im Zweifel etwas anderes einbauen. Vergleichswerte finden Sie unter <a class="ilink" data-nav="kosten">Kosten</a>.</p>
     <p><b>2. Garantien getrennt ausgewiesen.</b> Herstellergarantie auf Produkt und Leistung, gesetzliche Gewährleistung auf die Montage. Bei Modulen sind 25 Jahre Leistungsgarantie üblich, bei Wechselrichtern deutlich weniger.</p>
     <p><b>3. Der Zählerschrank.</b> Als eigene Position mit Preis, auch wenn er vielleicht nicht nötig wird. Fehlt er, ist das kein günstiges Angebot, sondern ein unvollständiges.</p>
     <p><b>4. Gerüst und Zuwegung.</b> Wer stellt das Gerüst, für wie lange, und wer zahlt Standzeitverlängerung bei Wetter?</p>
@@ -2632,7 +2770,7 @@
       <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Kosten</span></div>
       <div class="eyebrow"><span class="dot"></span> Marktübliche Preise, Stand August 2026</div>
       <h1>Was kostet das <em>wirklich?</em></h1>
-      <p class="lede">Die meisten Anbieter nennen keine Preise, bevor Sie Ihre Telefonnummer hinterlassen haben. Wir machen es anders: Hier stehen die Spannen, mit denen der Markt aktuell arbeitet. Damit können Sie ein Angebot einordnen, noch bevor Sie mit uns sprechen.</p>
+      <p class="lede">Die meisten Anbieter nennen keine Preise, bevor Sie Ihre Telefonnummer hinterlassen haben. Wir machen es anders: Hier stehen die Spannen, mit denen der Markt aktuell arbeitet. Damit können Sie ein Angebot einordnen, noch bevor Sie mit uns sprechen. Die Technik dahinter erklären wir bei <a class="ilink" data-nav="pv">Photovoltaik</a>, <a class="ilink" data-nav="speicher">Stromspeicher</a> und <a class="ilink" data-nav="wp">Wärmepumpe</a>.</p>
     </div>
   </header>
 
@@ -2915,12 +3053,12 @@
             </div>
 
             <div class="grid2">
-              <div class="fld"><label for="b2b-firma">Firma <span class="req">*</span></label><input type="text" id="b2b-firma" placeholder="Musterbau GmbH" autocomplete="organization"></div>
-              <div class="fld"><label for="b2b-name">Ansprechpartner <span class="req">*</span></label><input type="text" id="b2b-name" placeholder="Vor- und Nachname" autocomplete="name"></div>
+              <div class="fld"><label for="b2b-firma">Firma <span class="req">*</span></label><input type="text" id="b2b-firma" name="firma" required placeholder="Musterbau GmbH" autocomplete="organization"></div>
+              <div class="fld"><label for="b2b-name">Ansprechpartner <span class="req">*</span></label><input type="text" id="b2b-name" name="name" required placeholder="Vor- und Nachname" autocomplete="name"></div>
             </div>
             <div class="grid2">
-              <div class="fld"><label for="b2b-mail">E-Mail <span class="req">*</span></label><input type="email" id="b2b-mail" placeholder="name@firma.de" autocomplete="email"></div>
-              <div class="fld"><label for="b2b-tel">Telefon <span class="req">*</span></label><input type="tel" id="b2b-tel" placeholder="030 1234567" autocomplete="tel"></div>
+              <div class="fld"><label for="b2b-mail">E-Mail <span class="req">*</span></label><input type="email" id="b2b-mail" name="mail" required placeholder="name@firma.de" autocomplete="email"></div>
+              <div class="fld"><label for="b2b-tel">Telefon <span class="req">*</span></label><input type="tel" id="b2b-tel" name="tel" required placeholder="030 1234567" autocomplete="tel"></div>
             </div>
             <div class="fld">
               <label for="b2b-art">Art der Partnerschaft <span class="req">*</span></label>
@@ -2954,7 +3092,7 @@
             </div>
             <div class="fld"><label for="b2b-msg">Weitere Infos <span class="hint2">(optional)</span></label><textarea id="b2b-msg" rows="4" placeholder="Kurz zu Ihrem Betrieb, Ihren Leistungen, Referenzen oder Ihrem Anliegen …"></textarea></div>
             <div class="consent">
-              <input type="checkbox" id="b2b-dsgvo">
+              <input type="checkbox" id="b2b-dsgvo" required>
               <label for="b2b-dsgvo">Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Partnerschaftsanfrage verarbeitet werden (<a href="#datenschutz">Datenschutz</a>). <span class="req">*</span></label>
             </div>
             <button type="button" class="btn" style="width:100%" id="b2b-submit">Partneranfrage senden</button>
@@ -3205,12 +3343,12 @@
               </div>
             </div>
             <div class="grid2">
-              <div class="fld"><label for="wp-k-name">Name <span class="req">*</span></label><input type="text" id="wp-k-name" placeholder="Vor- und Nachname" autocomplete="name"></div>
-              <div class="fld"><label for="wp-k-plz">Postleitzahl <span class="req">*</span></label><input type="text" id="wp-k-plz" inputmode="numeric" maxlength="5" placeholder="z. B. 13359" autocomplete="postal-code"></div>
+              <div class="fld"><label for="wp-k-name">Name <span class="req">*</span></label><input type="text" id="wp-k-name" name="name" required placeholder="Vor- und Nachname" autocomplete="name"></div>
+              <div class="fld"><label for="wp-k-plz">Postleitzahl <span class="req">*</span></label><input type="text" id="wp-k-plz" name="plz" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="z. B. 13359" autocomplete="postal-code"></div>
             </div>
             <div class="grid2">
-              <div class="fld"><label for="wp-k-mail">E-Mail <span class="req">*</span></label><input type="email" id="wp-k-mail" placeholder="name@beispiel.de" autocomplete="email"></div>
-              <div class="fld"><label for="wp-k-tel">Telefon <span class="req">*</span></label><input type="tel" id="wp-k-tel" placeholder="0170 1234567" autocomplete="tel"></div>
+              <div class="fld"><label for="wp-k-mail">E-Mail <span class="req">*</span></label><input type="email" id="wp-k-mail" name="mail" required placeholder="name@beispiel.de" autocomplete="email"></div>
+              <div class="fld"><label for="wp-k-tel">Telefon <span class="req">*</span></label><input type="tel" id="wp-k-tel" name="tel" required placeholder="0170 1234567" autocomplete="tel"></div>
             </div>
             <div class="fld"><label for="wp-k-msg">Weitere Infos <span class="hint2">(optional)</span></label><textarea id="wp-k-msg" rows="3" placeholder="z. B. Besonderheiten am Gebäude, Aufstellort, Wunschtermin …"></textarea></div>
             <div class="consent">
@@ -3236,7 +3374,7 @@
       <div class="head">
         <div class="kicker">Nachvollziehbar</div>
         <h2>So wird gerechnet.</h2>
-        <p>Damit Sie die Zahlen einordnen können, steht hier jede Annahme offen. Wer anders rechnet, kommt zu anderen Ergebnissen.</p>
+        <p>Damit Sie die Zahlen einordnen können, steht hier jede Annahme offen. Wer anders rechnet, kommt zu anderen Ergebnissen. Die Technik dahinter erklären wir auf der Seite <a class="ilink" data-nav="wp">Wärmepumpe</a>, die Preise unter <a class="ilink" data-nav="kosten">Kosten</a>.</p>
       </div>
       <div class="faq">
         <details class="faq-item"><summary>Heizlast aus dem Verbrauch <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Aus Ihrem Jahresverbrauch wird zuerst die tatsächlich genutzte Wärme berechnet. Dafür rechnen wir Erdgas mit 10 kWh je m³, Heizöl mit 10 kWh je Liter und Flüssiggas mit 6,6 kWh je Liter. Vom Brennstoff kommt nicht alles als Wärme an: Wir setzen einen Nutzungsgrad von 90 % bei Gas, 85 % bei Öl und Flüssiggas sowie 100 % bei Strom-Direktheizung an. Vom Ergebnis ziehen wir das Warmwasser mit 500 kWh je Person und Jahr ab, sofern es über dieselbe Heizung lief. Die verbleibende Heizwärme geteilt durch 2.100 Vollbenutzungsstunden ergibt die Heizlast in Kilowatt.</div></details>
@@ -3312,7 +3450,7 @@
       <div class="steps3">
         <div class="s3"><div class="n"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Seriosität</h3><p>Steht hinter dem Angebot ein verlässlicher Anbieter? Wir prüfen Vertragsbedingungen, Garantien und Kleingedrucktes auf Fallstricke.</p></div>
         <div class="s3"><div class="n"><svg class="ic"><use href="#i-chart"/></svg></div><h3>Effizienz</h3><p>Passt die Anlage technisch zu Ihrem Haus? Wir prüfen Dimensionierung, Komponenten und ob die versprochenen Erträge realistisch sind.</p></div>
-        <div class="s3"><div class="n"><svg class="ic"><use href="#i-check"/></svg></div><h3>Fairness</h3><p>Stimmt das Preis-Leistungs-Verhältnis? Wir ordnen den Preis ehrlich im Marktvergleich ein – ohne Verkaufsinteresse.</p></div>
+        <div class="s3"><div class="n"><svg class="ic"><use href="#i-check"/></svg></div><h3>Fairness</h3><p>Stimmt das Preis-Leistungs-Verhältnis? Wir ordnen den Preis ehrlich im Marktvergleich ein – ohne Verkaufsinteresse. Die Spannen dazu stehen offen unter <a class="ilink" data-nav="kosten">Kosten</a>.</p></div>
       </div>
     </div>
   </section>
@@ -3323,7 +3461,7 @@
       <div class="head">
         <div class="kicker">Vorsicht, wo Sie kaufen</div>
         <h2>Diese Fallen erkennen wir für Sie.</h2>
-        <p>Nicht jedes günstige Angebot ist ein gutes Angebot. Auf diese Punkte achten wir besonders.</p>
+        <p>Nicht jedes günstige Angebot ist ein gutes Angebot. Auf diese Punkte achten wir besonders – die vollständige Liste steht im Ratgeber <a class="ilink" data-nav="rat-check">Angebot prüfen: 12 Punkte</a>.</p>
       </div>
       <div class="vgrid">
         <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-bolt"/></svg></div><h3>Lockpreise</h3><p>Auffällig niedrige Preise gehen fast immer zulasten von Qualität, Service oder Garantie.</p></div>
@@ -3527,8 +3665,13 @@
         <h2>8. Speicherdauer</h2>
         <p>Wir speichern personenbezogene Daten nur so lange, wie es für die genannten Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen dies vorschreiben. Danach werden die Daten gelöscht.</p>
 
-        <h2>9. Cookies &amp; Tracking</h2>
-        <p>Diese Website setzt derzeit keine Tracking- oder Marketing-Cookies ein. Sollten künftig Analyse- oder Marketing-Dienste (z. B. Meta Pixel) eingesetzt werden, holen wir hierfür vorab Ihre Einwilligung ein und ergänzen diese Erklärung entsprechend.</p>
+        <h2>9. Cookies &amp; Reichweitenmessung</h2>
+        <p>Für den Betrieb der Website selbst setzen wir <strong>keine</strong> Cookies und binden keine Schriften, Karten oder Skripte von fremden Servern ein. Sie können die Seite vollständig nutzen, ohne dass Daten an Dritte fließen.</p>
+        <p><strong>Google Analytics 4.</strong> Um zu verstehen, welche Inhalte gelesen werden, möchten wir die Reichweite messen. Dazu nutzen wir Google Analytics 4, einen Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Analytics setzt Cookies und verarbeitet Nutzungsdaten wie aufgerufene Seiten, Verweildauer, ungefähren Standort auf Stadtebene sowie Gerät und Browser. Die IP-Adresse wird gekürzt verarbeitet.</p>
+        <p><strong>Wir laden Google Analytics ausschließlich nach Ihrer ausdrücklichen Einwilligung.</strong> Solange Sie nicht zugestimmt haben, wird kein Google-Skript geladen und kein Cookie gesetzt. Rechtsgrundlage ist Ihre Einwilligung nach § 25 Abs. 1 TDDDG und Art. 6 Abs. 1 lit. a DSGVO.</p>
+        <p><strong>Übermittlung in die USA.</strong> Dabei können Daten an die Google LLC in den USA übermittelt werden. Google LLC ist unter dem EU-US Data Privacy Framework zertifiziert; Grundlage der Übermittlung ist der Angemessenheitsbeschluss der EU-Kommission vom 10. Juli 2023, ergänzt um Standardvertragsklauseln. Trotz dieser Grundlagen lässt sich ein Zugriff US-amerikanischer Behörden nicht vollständig ausschließen.</p>
+        <p><strong>Einwilligung widerrufen.</strong> Sie können Ihre Entscheidung jederzeit mit Wirkung für die Zukunft ändern: <a href="#" data-consent>Einwilligung erneut abfragen</a>. Die bis dahin erfolgte Verarbeitung bleibt rechtmäßig. Weitere Informationen finden Sie in der <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
+        <p>Marketing-Dienste wie das Meta Pixel setzen wir derzeit <strong>nicht</strong> ein. Sollte sich das ändern, holen wir auch dafür vorab Ihre Einwilligung ein und ergänzen diese Erklärung.</p>
 
         <h2>10. Ihre Rechte</h2>
         <p>Sie haben im Rahmen der gesetzlichen Bestimmungen das Recht auf:</p>
@@ -3556,8 +3699,8 @@
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo.png" width="560" height="345" alt="BHD – Beratung Heimenergie Deutschland"></div>
-      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
+      <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></div>
+      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:service-bhd@outlook.de" style="color:inherit">service-bhd@outlook.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
@@ -3634,6 +3777,61 @@
       'oder schreiben Sie an <a href="mailto:service-bhd@outlook.de" style="color:inherit"><b>service-bhd@outlook.de</b></a>.';
   }
 
+  // ---------- Einwilligung & Reichweitenmessung ----------
+  // Google Analytics wird ERST nach ausdruecklicher Zustimmung nachgeladen.
+  // Vorher wird kein Skript eingebunden und kein Cookie gesetzt (§ 25 TDDDG).
+  // Die Mess-ID kommt ueber data-ga am <body> aus build.js; ist sie leer,
+  // bleibt das Banner unsichtbar und die Seite komplett trackingfrei.
+  (function(){
+    var GA=document.body.dataset.ga||'';
+    var KEY='bhd-consent';
+    var box=document.getElementById('consent');
+
+    function gelesen(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+    function merken(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+    function zeigen(){if(box)box.hidden=false}
+    function schliessen(){if(box)box.hidden=true}
+
+    function ladeGA(){
+      if(!GA||window.__gaAktiv)return;
+      window.__gaAktiv=true;
+      window.dataLayer=window.dataLayer||[];
+      window.gtag=function(){window.dataLayer.push(arguments)};
+      gtag('js',new Date());
+      // Consent Mode v2: alles aus, nur die Statistik wird freigegeben.
+      gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',
+        ad_personalization:'denied',analytics_storage:'denied'});
+      gtag('consent','update',{analytics_storage:'granted'});
+      gtag('config',GA,{anonymize_ip:true});
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(GA);
+      document.head.appendChild(s);
+    }
+
+    var wahl=gelesen();
+    if(!GA)schliessen();
+    else if(wahl==='ja'){ladeGA();schliessen()}
+    else if(wahl==='nein')schliessen();
+    else zeigen();
+
+    var ja=document.getElementById('consent-ja'),nein=document.getElementById('consent-nein');
+    if(ja)ja.addEventListener('click',function(){merken('ja');ladeGA();schliessen()});
+    if(nein)nein.addEventListener('click',function(){merken('nein');schliessen()});
+
+    // Aus der Datenschutzerklaerung heraus widerrufbar
+    window.bhdEinwilligung=function(){try{localStorage.removeItem(KEY)}catch(e){}zeigen()};
+    document.querySelectorAll('[data-consent]').forEach(function(el){
+      el.addEventListener('click',function(e){e.preventDefault();window.bhdEinwilligung()});
+    });
+  })();
+
+  // Lead-Ereignis melden. Wird von allen drei Formularwegen aufgerufen und
+  // laeuft ins Leere, solange keine Einwilligung vorliegt – genau so gewollt.
+  function trackLead(quelle){
+    try{if(window.gtag)gtag('event','generate_lead',{method:quelle})}catch(e){}
+  }
+
   // ---------- Funnel ----------
   const answers={};
   const steps=[...document.querySelectorAll('.step[data-step]')];
@@ -3673,7 +3871,7 @@
     show(total);
     // Anfrage wirklich verschicken. Scheitert der Versand, wird die
     // Erfolgsmeldung durch die Rückfallmeldung mit Telefonnummer ersetzt.
-    sendLead(answers).then(function(ok){ if(!ok)leadFallback(success); });
+    sendLead(answers).then(function(ok){ if(ok)trackLead('funnel'); else leadFallback(success); });
   });
 
   // ---------- Referenzen: Filter nach Anlagentyp ----------
@@ -3831,7 +4029,14 @@
 
   // ---------- Formulare der Anfragen-Seite ----------
   const isMail=(v)=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-  const mark=(el,bad)=>{el.style.borderColor=bad?'#d64545':''};
+  // Fehlerhafte Felder auch fuer Screenreader kennzeichnen, nicht nur farblich.
+  // Farbe allein reicht nicht: wer sie nicht sieht, erfaehrt sonst gar nicht,
+  // welches Feld beanstandet wurde.
+  const mark=(el,bad)=>{
+    el.style.borderColor=bad?'#d64545':'';
+    if(bad)el.setAttribute('aria-invalid','true');
+    else el.removeAttribute('aria-invalid');
+  };
   function validateRequired(fields){
     let ok=true;
     fields.forEach(el=>{const empty=!el.value.trim();mark(el,empty);if(empty)ok=false;});
@@ -3864,7 +4069,7 @@
     const lead={typ:'B2C',interesse,name:name.value,plz:plz.value,tel:tel.value,mail:mail.value,
       wohnsituation:document.getElementById('b2c-eigentum').value,nachricht:document.getElementById('b2c-msg').value};
     const done=document.getElementById('b2c-done');
-    sendLead(lead).then(function(sent){ if(!sent)leadFallback(done); });
+    sendLead(lead).then(function(sent){ if(sent)trackLead('anfragen-b2c'); else leadFallback(done); });
     document.getElementById('b2c-form').style.display='none';
     done.classList.add('show');
     document.getElementById('b2c-card').scrollIntoView({behavior:'smooth',block:'center'});
@@ -3890,7 +4095,7 @@
       montageteam:document.getElementById('b2b-mitarbeiter').value,
       nachricht:document.getElementById('b2b-msg').value};
     const done=document.getElementById('b2b-done');
-    sendLead(lead).then(function(sent){ if(!sent)leadFallback(done); });
+    sendLead(lead).then(function(sent){ if(sent)trackLead('partner-b2b'); else leadFallback(done); });
     document.getElementById('b2b-form').style.display='none';
     done.classList.add('show');
     document.getElementById('b2b-card').scrollIntoView({behavior:'smooth',block:'center'});
@@ -4145,7 +4350,7 @@
     const lead=Object.assign({typ:'Wärmepumpen-Rechner',name:name.value,plz:plz.value,
       tel:tel.value,mail:mail.value,nachricht:$('wp-k-msg').value}, letztesErgebnis||{});
     const done=$('wp-k-done');
-    sendLead(lead).then(function(sent){ if(!sent)leadFallback(done); });
+    sendLead(lead).then(function(sent){ if(sent)trackLead('waermepumpen-rechner'); else leadFallback(done); });
     $('wp-form').style.display='none';
     done.classList.add('show');
     $('wp-card').scrollIntoView({behavior:'smooth',block:'center'});
@@ -4187,6 +4392,7 @@
     const done=document.getElementById('check-done');
     if(form)form.style.display='none';
     if(done)done.classList.add('show');
+    trackLead('angebots-check');
     const anchor=document.getElementById('check-form');
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname+'#angebots-check');
@@ -4207,6 +4413,23 @@
     <svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>
     <span class="qc-label">E-Mail</span>
   </a>
+</div>
+
+<!-- Einwilligung fuer die Reichweitenmessung. Bleibt ausgeblendet, solange in
+     build.js keine GA4_ID hinterlegt ist – dann wird auch nichts geladen und
+     es braucht kein Banner. Ohne Zustimmung verlaesst kein Datenpaket den
+     Browser (§ 25 TDDDG). -->
+<div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-titel" hidden>
+  <div class="consent-in">
+    <div class="consent-txt">
+      <strong id="consent-titel">Dürfen wir mitzählen?</strong>
+      <p>Wir würden gern anonym messen, welche Seiten gelesen werden, um sie zu verbessern. Dafür setzt Google Analytics Cookies und überträgt Daten in die USA. Ohne Ihre Zustimmung passiert nichts davon – die Website funktioniert vollständig. Mehr dazu in der <a data-nav="datenschutz">Datenschutzerklärung</a>.</p>
+    </div>
+    <div class="consent-btns">
+      <button type="button" class="btn btn-ghost" id="consent-nein">Nur Notwendiges</button>
+      <button type="button" class="btn" id="consent-ja">Statistik erlauben</button>
+    </div>
+  </div>
 </div>
 
 </body></html>

@@ -27,6 +27,38 @@ const SITE = 'https://bhd-energie.de';
 const MAIL = 'info@bhd-energie.de';
 const MAIL_IN_SOURCE = 'service-bhd@outlook.de'; // so steht sie in src/site.html
 
+/* ------------------------------------------------- Nachtragen nach Anmeldung
+ * Diese drei Werte sind die einzigen Stellen, die nach dem Einrichten der
+ * Konten von Hand gefuellt werden muessen. Danach einmal `node build.js`.
+ * Solange ein Wert leer ist, laesst der Generator die zugehoerige Zeile
+ * einfach weg – die Seite bleibt in jedem Fall gueltig.
+ */
+
+/* Google Search Console: nur noetig, wenn NICHT ueber DNS bestaetigt wird.
+ * Der Wert ist der Teil hinter "content=" aus dem Meta-Tag, das Google zeigt. */
+const GSC_TOKEN = '';
+
+/* Google Analytics 4: Mess-ID aus der Datenstream-Einstellung, Form "G-XXXXXXXXXX".
+ * WICHTIG: GA4 wird erst nach ausdruecklicher Einwilligung geladen (§ 25 TDDDG). */
+const GA4_ID = '';
+
+/* Social-Media-Profile fuer sameAs im JSON-LD. NUR echte, existierende Profile
+ * eintragen – Verweise auf nicht vorhandene Seiten schaden mehr, als sie nutzen.
+ * Beispiel: ['https://www.facebook.com/…', 'https://www.linkedin.com/company/…'] */
+const SOCIAL = [];
+
+/* IndexNow: meldet neue und geaenderte Seiten sofort an Bing (und damit an
+ * ChatGPT Search und Copilot). Der Schluessel ist frei waehlbar, muss aber als
+ * Datei <schluessel>.txt im Wurzelverzeichnis liegen – das erledigt der Build. */
+const INDEXNOW_KEY = 'bhd7f3a1c94e26d508b1a2f6c3e9740b';
+
+/* Erreichbarkeit – steht im JSON-LD, auf der Kontaktseite und muss mit dem
+ * Google-Unternehmensprofil uebereinstimmen. */
+const OPENING = { von: '08:00', bis: '20:00', text: 'Täglich 8:00 – 20:00 Uhr' };
+
+/* Datum des letzten inhaltlichen Durchgangs – fuer dateModified im JSON-LD. */
+const REVIEWED = new Date().toISOString().slice(0, 10);
+
 /* Zeilenenden vereinheitlichen – die Quelldatei kommt aus Windows (CRLF). */
 const src = fs.readFileSync(SRC, 'utf8').replace(/\r\n/g, '\n');
 
@@ -121,22 +153,26 @@ const PAGES = [
   {
     key: 'ratgeber', dir: 'ratgeber', view: 'view-ratgeber', prio: '0.7', crumb: 'Ratgeber',
     title: 'Ratgeber: Photovoltaik & Wärmepumpe verstehen | BHD',
-    desc: 'Verständliche Beiträge zu Photovoltaik, Wärmepumpe und Angebotsprüfung – von Beratern, die keine Anlagen verkaufen und auch sagen, was sich nicht lohnt.'
+    desc: 'Verständliche Beiträge zu Photovoltaik, Wärmepumpe und Angebotsprüfung – von Beratern, die keine Anlagen verkaufen und auch sagen, was sich nicht lohnt.',
+    ld: ['ratgeberliste']
   },
   {
     key: 'rat-pv', dir: 'ratgeber/photovoltaik-lohnt-sich', view: 'view-rat-pv', prio: '0.8', crumb: 'Lohnt sich Photovoltaik?',
     title: 'Lohnt sich Photovoltaik 2026 noch? | BHD Ratgeber',
-    desc: 'Einspeisevergütung bei 7,7 Cent, Netzstrom bei 35: Warum sich die Rechnung umgedreht hat, wann sich eine Anlage amortisiert und für wen sie sich nicht lohnt.'
+    desc: 'Einspeisevergütung bei 7,7 Cent, Netzstrom bei 35: Warum sich die Rechnung umgedreht hat, wann sich eine Anlage amortisiert und für wen sie sich nicht lohnt.',
+    article: { headline: 'Lohnt sich Photovoltaik 2026 noch?', pub: '2026-08-01', section: 'Photovoltaik' }
   },
   {
     key: 'rat-wp', dir: 'ratgeber/waermepumpe-altbau', view: 'view-rat-wp', prio: '0.8', crumb: 'Wärmepumpe im Altbau',
     title: 'Wärmepumpe im Altbau: geht das? | BHD Ratgeber',
-    desc: 'Der Selbsttest an einem kalten Tag, warum die Vorlauftemperatur über 500 Euro im Jahr entscheidet und weshalb Dämmung selten der günstigste Hebel ist.'
+    desc: 'Der Selbsttest an einem kalten Tag, warum die Vorlauftemperatur über 500 Euro im Jahr entscheidet und weshalb Dämmung selten der günstigste Hebel ist.',
+    article: { headline: 'Wärmepumpe im Altbau: geht das?', pub: '2026-08-01', section: 'Wärmepumpe' }
   },
   {
     key: 'rat-check', dir: 'ratgeber/angebot-pruefen', view: 'view-rat-check', prio: '0.8', crumb: 'Angebot prüfen',
     title: 'PV-Angebot prüfen: 12-Punkte-Checkliste | BHD Ratgeber',
-    desc: 'Checkliste für PV- und Wärmepumpen-Angebote: zwölf Angaben, die enthalten sein müssen, und drei Warnzeichen, bei denen Sie besser nicht unterschreiben.'
+    desc: 'Checkliste für PV- und Wärmepumpen-Angebote: zwölf Angaben, die enthalten sein müssen, und drei Warnzeichen, bei denen Sie besser nicht unterschreiben.',
+    article: { headline: 'Angebot prüfen: 12 Punkte, die drinstehen müssen', pub: '2026-08-01', section: 'Angebotsprüfung' }
   },
   {
     key: 'rechner', dir: 'waermepumpen-rechner', view: 'view-rechner', prio: '0.9', crumb: 'Wärmepumpen-Rechner',
@@ -149,6 +185,13 @@ const PAGES = [
     key: 'ask', dir: 'anfragen', view: 'view-ask', prio: '0.9', crumb: 'Anfragen',
     title: 'Anfrage stellen – kostenloses Angebot | BHD',
     desc: 'Kostenloses Angebot für Photovoltaik, Stromspeicher oder Wärmepumpe anfordern. Unabhängige Beratung und geprüfte Fachbetriebe aus Ihrer Region.'
+  },
+  {
+    key: 'kontakt', dir: 'kontakt', view: 'view-kontakt', prio: '0.8', crumb: 'Kontakt',
+    title: 'Kontakt: Telefon, WhatsApp & E-Mail | BHD Berlin',
+    ogTitle: 'Kontakt – direkt mit einem Berater sprechen | BHD',
+    desc: 'BHD erreichen Sie täglich von 8 bis 20 Uhr: telefonisch unter 0163 4440392, per WhatsApp oder E-Mail. Sitz in Berlin, Beratung bundesweit.',
+    ld: ['kontakt']
   },
   {
     key: 'partner', dir: 'partner-werden', view: 'view-partner', prio: '0.7', crumb: 'Partner werden',
@@ -293,11 +336,33 @@ function fixLinks(html) {
  * `picture{display:contents}` sorgt dafuer, dass sich am Layout nichts
  * aendert – die bestehenden CSS-Regeln greifen unveraendert auf das <img>.
  */
+/* Breiten, die tools/bilder.js fuer die Referenzfotos erzeugt. */
+const BILD_BREITEN = [400, 800];
+
+/* Die Referenzkarten sind auf dem Handy fast bildschirmbreit, auf mittleren
+ * Bildschirmen halb so breit und auf grossen rund 340 px. Ohne diese Angabe
+ * nimmt der Browser die Fensterbreite an und laedt immer die groesste Datei. */
+const BILD_SIZES = '(max-width:700px) 92vw, (max-width:1100px) 46vw, 340px';
+
 function webpPicture(html) {
   return html.replace(/<img\b[^>]*\bsrc="(\/assets\/[^"]+\.(?:jpg|jpeg|png))"[^>]*>/gi, (tag, src) => {
     const webp = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
     if (!fs.existsSync(path.join(ROOT, webp))) return tag;
-    return '<picture><source srcset="' + webp + '" type="image/webp">' + tag + '</picture>';
+
+    /* Liegen zusaetzlich verkleinerte Fassungen vor, als srcset anbieten –
+     * sonst laedt das Handy die volle Aufloesung fuer eine kleine Kachel. */
+    const basis = src.replace(/\.(jpg|jpeg|png)$/i, '');
+    const stufen = BILD_BREITEN
+      .map(b => ({ b: b, datei: basis + '-' + b + '.webp' }))
+      .filter(s => fs.existsSync(path.join(ROOT, s.datei)));
+
+    if (!stufen.length) {
+      return '<picture><source srcset="' + webp + '" type="image/webp">' + tag + '</picture>';
+    }
+
+    const srcset = stufen.map(s => s.datei + ' ' + s.b + 'w').join(', ');
+    return '<picture><source type="image/webp" srcset="' + srcset +
+           '" sizes="' + BILD_SIZES + '">' + tag + '</picture>';
   });
 }
 
@@ -357,7 +422,29 @@ function jsonLd(page) {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Kostenloser Angebots-Check für Photovoltaik- und Wärmepumpen-Angebote' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Vermittlung geprüfter regionaler Fachbetriebe' } }
       ],
-      slogan: 'Sonne rein. Stromrechnung raus.'
+      slogan: 'Sonne rein. Stromrechnung raus.',
+      /* logo und image braucht Google fuer das Knowledge Panel und fuer
+       * lokale Ergebnisse. Ohne logo kann kein Panel gebildet werden. */
+      logo: { '@type': 'ImageObject', '@id': SITE + '/#logo', url: SITE + '/icon-512.png', width: 512, height: 512, caption: 'BHD – Beratung Heimenergie Deutschland' },
+      image: SITE + '/assets/og-bhd.png',
+      /* Preisniveau als grobe Einordnung – Pflichtfeld-Kandidat fuer LocalBusiness. */
+      priceRange: '€€',
+      contactPoint: [{
+        '@type': 'ContactPoint',
+        telephone: '+49-163-4440392',
+        email: MAIL,
+        contactType: 'customer service',
+        areaServed: 'DE',
+        availableLanguage: ['de']
+      }],
+      openingHoursSpecification: [{
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: OPENING.von,
+        closes: OPENING.bis
+      }],
+      /* sameAs nur ausgeben, wenn oben echte Profile eingetragen sind. */
+      ...(SOCIAL.length ? { sameAs: SOCIAL } : {})
     },
     {
       '@type': 'WebSite',
@@ -375,7 +462,10 @@ function jsonLd(page) {
       description: page.desc,
       inLanguage: 'de-DE',
       isPartOf: { '@id': SITE + '/#website' },
-      about: { '@id': SITE + '/#org' }
+      about: { '@id': SITE + '/#org' },
+      /* Damit Google und KI-Systeme erkennen, wie aktuell der Stand ist –
+       * bei Foerdersaetzen, die sich 2027 aendern, ist das entscheidend. */
+      dateModified: REVIEWED
     }
   ];
 
@@ -386,6 +476,69 @@ function jsonLd(page) {
         { '@type': 'ListItem', position: 1, name: 'Start', item: SITE + '/' },
         { '@type': 'ListItem', position: 2, name: page.crumb, item: SITE + URL_OF[page.key] }
       ]
+    });
+  }
+
+  /* Ratgeber-Beitraege: Article mit benanntem Autor und Datum.
+   * Google bewertet Ratgeber-Inhalte ohne erkennbare Verantwortliche
+   * systematisch schwaecher (E-E-A-T), und KI-Systeme zitieren bevorzugt
+   * datierte, namentlich verantwortete Texte. */
+  if (page.article) {
+    nodes.push({
+      '@type': 'Person',
+      '@id': SITE + '/#kuersat',
+      name: 'Kürşat Yıldırım',
+      jobTitle: 'Geschäftsführer',
+      worksFor: { '@id': SITE + '/#org' },
+      url: SITE + URL_OF.about,
+      knowsAbout: ['Photovoltaik', 'Wärmepumpe', 'Stromspeicher', 'KfW-Förderung', 'Angebotsprüfung']
+    });
+    nodes.push({
+      '@type': 'Article',
+      '@id': SITE + URL_OF[page.key] + '#article',
+      headline: page.article.headline,
+      description: page.desc,
+      inLanguage: 'de-DE',
+      datePublished: page.article.pub,
+      dateModified: REVIEWED,
+      articleSection: page.article.section,
+      author: { '@id': SITE + '/#kuersat' },
+      publisher: { '@id': SITE + '/#org' },
+      mainEntityOfPage: { '@id': SITE + URL_OF[page.key] + '#webpage' },
+      image: SITE + '/assets/og-bhd.png',
+      isAccessibleForFree: true
+    });
+  }
+
+  /* Ratgeber-Uebersicht: sagt Google und KI-Systemen, welche Beitraege
+   * zusammengehoeren und in welcher Reihenfolge sie stehen. */
+  if ((page.ld || []).includes('ratgeberliste')) {
+    const beitraege = PAGES.filter(p => p.article);
+    nodes.push({
+      '@type': 'ItemList',
+      '@id': SITE + URL_OF.ratgeber + '#list',
+      name: 'Ratgeber von BHD',
+      itemListElement: beitraege.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.article.headline,
+        url: SITE + URL_OF[p.key]
+      }))
+    });
+  }
+
+  /* Kontaktseite als ContactPage auszeichnen – Google wertet den Typ fuer
+   * lokale Ergebnisse und fuer das Knowledge Panel aus. */
+  if ((page.ld || []).includes('kontakt')) {
+    nodes.push({
+      '@type': 'ContactPage',
+      '@id': SITE + URL_OF.kontakt + '#contactpage',
+      url: SITE + URL_OF.kontakt,
+      name: page.title,
+      inLanguage: 'de-DE',
+      isPartOf: { '@id': SITE + '/#website' },
+      about: { '@id': SITE + '/#org' },
+      mainEntity: { '@id': SITE + '/#org' }
     });
   }
 
@@ -485,7 +638,7 @@ function buildPage(page) {
 <meta name="author" content="Brotherhooddeen UG (haftungsbeschränkt)">
 <meta name="geo.region" content="DE-BE">
 <meta name="geo.placename" content="Berlin">
-<link rel="canonical" href="${url}">
+<link rel="canonical" href="${url}">${GSC_TOKEN ? '\n<meta name="google-site-verification" content="' + esc(GSC_TOKEN) + '">' : ''}
 <!-- Domain-Umzug: nur die Konstante SITE in build.js aendern, dann "node build.js" -->
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/icon-512.png" sizes="512x512" type="image/png">
@@ -507,14 +660,18 @@ function buildPage(page) {
 ${jsonLd(page)}
 </script>
 ${STYLE_INLINE}
+<link rel="preload" href="/assets/site.css?v=${ASSET_V}" as="style">
 <link rel="stylesheet" href="/assets/site.css?v=${ASSET_V}">
-</head><body data-page="${page.key}">
+</head><body data-page="${page.key}"${GA4_ID ? ' data-ga="' + esc(GA4_ID) + '"' : ''}>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
 ${SPRITE}
 
 ${NAV_OUT}
 
+<main id="inhalt">
 ${view}
+</main>
 
 ${FOOTER_OUT}
 
@@ -558,8 +715,25 @@ PAGES.forEach(p => {
 /* sitemap.xml */
 /* lastmod je Seite aus dem Änderungsdatum der erzeugten Datei – so stimmt es
  * automatisch und muss nicht von Hand gepflegt werden. */
+/* Die Referenzfotos zusaetzlich als <image:image> melden. Bei Handwerks-
+ * leistungen kommt ein spuerbarer Teil des Verkehrs ueber die Bildersuche,
+ * und die Fotos sind der glaubwuerdigste Inhalt der Website. */
+function bildEintraege(key) {
+  if (key !== 'ref') return '';
+  const dir = path.join(ROOT, 'assets', 'referenzen');
+  if (!fs.existsSync(dir)) return '';
+  return fs.readdirSync(dir)
+    .filter(f => /\.jpg$/i.test(f))
+    .sort()
+    .map(f => '    <image:image>\n' +
+               '      <image:loc>' + SITE + '/assets/referenzen/' + f + '</image:loc>\n' +
+               '    </image:image>\n')
+    .join('');
+}
+
 const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' +
-  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n' +
+  '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' +
   PAGES.map(p => {
     const datei = path.join(ROOT, p.dir || '', 'index.html');
     const lastmod = fs.statSync(datei).mtime.toISOString().slice(0, 10);
@@ -568,6 +742,7 @@ const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' +
       '    <lastmod>' + lastmod + '</lastmod>\n' +
       '    <changefreq>' + (p.key === 'home' ? 'weekly' : 'monthly') + '</changefreq>\n' +
       '    <priority>' + p.prio + '</priority>\n' +
+      bildEintraege(p.key) +
       '  </url>\n';
   }).join('') +
   '</urlset>\n';
@@ -577,7 +752,65 @@ fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap, 'utf8');
 fs.writeFileSync(path.join(ROOT, 'robots.txt'),
   'User-agent: *\nAllow: /\n\nSitemap: ' + SITE + '/sitemap.xml\n', 'utf8');
 
+/* ---------------------------------------------- Dateien fuer Suche und KI */
+
+/* IndexNow-Schluessel: Bing prueft diese Datei, bevor es eine Meldung annimmt. */
+fs.writeFileSync(path.join(ROOT, INDEXNOW_KEY + '.txt'), INDEXNOW_KEY + '\n', 'utf8');
+
+/* security.txt nach RFC 9116 – reines Vertrauenssignal, kostet nichts. */
+const ablauf = new Date(Date.now() + 365 * 24 * 3600 * 1000).toISOString().slice(0, 19) + 'Z';
+fs.mkdirSync(path.join(ROOT, '.well-known'), { recursive: true });
+fs.writeFileSync(path.join(ROOT, '.well-known', 'security.txt'),
+  'Contact: mailto:' + MAIL + '\n' +
+  'Expires: ' + ablauf + '\n' +
+  'Preferred-Languages: de, en\n' +
+  'Canonical: ' + SITE + '/.well-known/security.txt\n', 'utf8');
+
+/* llms.txt – beschreibt das Unternehmen in Klartext fuer KI-Systeme.
+ * Noch kein offizieller Standard, aber von mehreren Anbietern ausgewertet
+ * und ohne Risiko fuer die klassische Suche. */
+const beitraegeTxt = PAGES.filter(p => p.article)
+  .map(p => '- [' + p.article.headline + '](' + SITE + URL_OF[p.key] + ')').join('\n');
+fs.writeFileSync(path.join(ROOT, 'llms.txt'),
+`# BHD – Beratung Heimenergie Deutschland
+
+> Unabhängige Beratung für Hausbesitzer zu Photovoltaik, Stromspeicher und
+> Wärmepumpe. Vermittlung geprüfter, regionaler Fachbetriebe. Wir verkaufen
+> keine Anlagen, sondern beraten und vermitteln.
+>
+> Betreiber: Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b,
+> 13359 Berlin. Handelsregister: Amtsgericht Charlottenburg, HRB 266273 B.
+> USt-IdNr. DE370268782. Gegründet 2024. Geschäftsführer: Kürşat Yıldırım.
+> Sitz in Berlin, bundesweit tätig. Erreichbar ${OPENING.text}.
+
+## Leistungen
+- [Photovoltaik](${SITE}${URL_OF.pv}): Anlagengröße, Eigenverbrauch, 0 % Umsatzsteuer nach § 12 Abs. 3 UStG
+- [Stromspeicher](${SITE}${URL_OF.speicher}): sinnvolle Kapazität, nutzbare Kapazität, Zyklengarantie
+- [Wärmepumpe](${SITE}${URL_OF.wp}): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 80 %
+- [Kosten](${SITE}${URL_OF.kosten}): marktübliche Preise und Eigenanteil nach Förderung
+- [Angebots-Check](${SITE}${URL_OF.check}): kostenlose Prüfung eines vorliegenden Angebots, Rückmeldung in 24 Stunden
+- [Wärmepumpen-Rechner](${SITE}${URL_OF.rechner}): Heizlast, Gerätegröße, Jahresarbeitszahl und Förderung – ohne Anmeldung
+
+## Ratgeber
+${beitraegeTxt}
+
+## Weitere Seiten
+- [Referenzen](${SITE}${URL_OF.ref}): umgesetzte Projekte mit eigenen Fotos
+- [Über uns](${SITE}${URL_OF.about})
+- [Kontakt](${SITE}${URL_OF.kontakt})
+- [Für Fachbetriebe](${SITE}${URL_OF.partner})
+
+## Kontakt
+Telefon +49 163 4440392 · ${MAIL}
+`, 'utf8');
+
 console.log('Erzeugt:');
 written.forEach(w => console.log('  ' + w[0].padEnd(18) + w[1]));
 console.log('  /sitemap.xml       ' + PAGES.length + ' Adressen');
 console.log('  /robots.txt');
+console.log('  /llms.txt');
+console.log('  /.well-known/security.txt');
+console.log('  /' + INDEXNOW_KEY + '.txt  (IndexNow)');
+if (!GSC_TOKEN) console.log('\nHinweis: GSC_TOKEN ist leer – Search Console noch nicht per Meta-Tag bestätigt.');
+if (!GA4_ID) console.log('Hinweis: GA4_ID ist leer – Analytics und Einwilligungsbanner bleiben inaktiv.');
+if (!SOCIAL.length) console.log('Hinweis: SOCIAL ist leer – sameAs fehlt im JSON-LD.');

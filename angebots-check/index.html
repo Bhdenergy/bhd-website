@@ -113,7 +113,45 @@
           }
         }
       ],
-      "slogan": "Sonne rein. Stromrechnung raus."
+      "slogan": "Sonne rein. Stromrechnung raus.",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://bhd-energie.de/#logo",
+        "url": "https://bhd-energie.de/icon-512.png",
+        "width": 512,
+        "height": 512,
+        "caption": "BHD – Beratung Heimenergie Deutschland"
+      },
+      "image": "https://bhd-energie.de/assets/og-bhd.png",
+      "priceRange": "€€",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+49-163-4440392",
+          "email": "info@bhd-energie.de",
+          "contactType": "customer service",
+          "areaServed": "DE",
+          "availableLanguage": [
+            "de"
+          ]
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      ]
     },
     {
       "@type": "WebSite",
@@ -137,7 +175,8 @@
       },
       "about": {
         "@id": "https://bhd-energie.de/#org"
-      }
+      },
+      "dateModified": "2026-08-07"
     },
     {
       "@type": "BreadcrumbList",
@@ -209,8 +248,10 @@
 }
 </script>
 <style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f6f5f1;color:#1b1a17}img{max-width:100%}</style>
-<link rel="stylesheet" href="/assets/site.css?v=11434029">
+<link rel="preload" href="/assets/site.css?v=912e486b" as="style">
+<link rel="stylesheet" href="/assets/site.css?v=912e486b">
 </head><body data-page="check">
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
 <svg style="display:none" aria-hidden="true">
   <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.3M12 19.1v2.3M2.6 12h2.3M19.1 12h2.3M5.1 5.1l1.6 1.6M17.3 17.3l1.6 1.6M18.9 5.1l-1.6 1.6M6.7 17.3l-1.6 1.6"/></symbol>
@@ -251,7 +292,7 @@
 
 <nav>
   <div class="wrap nav-in">
-    <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><picture><source srcset="/assets/bhd-logo.webp" type="image/webp"><img class="brand-logo" src="/assets/bhd-logo.png" width="560" height="345" alt="BHD – Beratung Heimenergie Deutschland"></picture></a>
+    <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo" src="/assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></a>
     <div class="nav-links" id="nav-links">
       <a href="/" data-nav="home">Start</a>
       <div class="nav-drop">
@@ -268,6 +309,7 @@
       <a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a>
       <a href="/referenzen/" data-nav="ref">Referenzen</a>
       <a href="/ueber-uns/" data-nav="about">Über uns</a>
+      <a href="/kontakt/" data-nav="kontakt">Kontakt</a>
       <a href="/anfragen/" data-nav="ask">Anfragen</a>
       <a href="/partner-werden/" data-nav="partner" class="nav-b2b">Partner werden</a>
       <a href="tel:+491634440392" class="menu-phone"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
@@ -282,6 +324,7 @@
   </div>
 </nav>
 
+<main id="inhalt">
 <div id="view-check">
 
   <header class="ref-hero">
@@ -331,7 +374,7 @@
       <div class="steps3">
         <div class="s3"><div class="n"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Seriosität</h3><p>Steht hinter dem Angebot ein verlässlicher Anbieter? Wir prüfen Vertragsbedingungen, Garantien und Kleingedrucktes auf Fallstricke.</p></div>
         <div class="s3"><div class="n"><svg class="ic"><use href="#i-chart"/></svg></div><h3>Effizienz</h3><p>Passt die Anlage technisch zu Ihrem Haus? Wir prüfen Dimensionierung, Komponenten und ob die versprochenen Erträge realistisch sind.</p></div>
-        <div class="s3"><div class="n"><svg class="ic"><use href="#i-check"/></svg></div><h3>Fairness</h3><p>Stimmt das Preis-Leistungs-Verhältnis? Wir ordnen den Preis ehrlich im Marktvergleich ein – ohne Verkaufsinteresse.</p></div>
+        <div class="s3"><div class="n"><svg class="ic"><use href="#i-check"/></svg></div><h3>Fairness</h3><p>Stimmt das Preis-Leistungs-Verhältnis? Wir ordnen den Preis ehrlich im Marktvergleich ein – ohne Verkaufsinteresse. Die Spannen dazu stehen offen unter <a href="/kosten/" class="ilink" data-nav="kosten">Kosten</a>.</p></div>
       </div>
     </div>
   </section>
@@ -342,7 +385,7 @@
       <div class="head">
         <div class="kicker">Vorsicht, wo Sie kaufen</div>
         <h2>Diese Fallen erkennen wir für Sie.</h2>
-        <p>Nicht jedes günstige Angebot ist ein gutes Angebot. Auf diese Punkte achten wir besonders.</p>
+        <p>Nicht jedes günstige Angebot ist ein gutes Angebot. Auf diese Punkte achten wir besonders – die vollständige Liste steht im Ratgeber <a href="/ratgeber/angebot-pruefen/" class="ilink" data-nav="rat-check">Angebot prüfen: 12 Punkte</a>.</p>
       </div>
       <div class="vgrid">
         <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-bolt"/></svg></div><h3>Lockpreise</h3><p>Auffällig niedrige Preise gehen fast immer zulasten von Qualität, Service oder Garantie.</p></div>
@@ -445,18 +488,19 @@
   </section>
 
 </div><!-- /view-check -->
+</main>
 
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><picture><source srcset="/assets/bhd-logo.webp" type="image/webp"><img class="brand-logo" src="/assets/bhd-logo.png" width="560" height="345" alt="BHD – Beratung Heimenergie Deutschland"></picture></a>
-      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
+      <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo" src="/assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></a>
+      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/kontakt/" data-nav="kontakt">Kontakt</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:info@bhd-energie.de" style="color:inherit">info@bhd-energie.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
 </footer>
 
-<script src="/assets/site.js?v=11434029" defer></script>
+<script src="/assets/site.js?v=912e486b" defer></script>
 
 <div class="quickcontact" aria-label="Schnellkontakt">
   <a class="qc qc-phone" href="tel:+491634440392" aria-label="Anrufen unter 0163 4440392">
@@ -471,6 +515,23 @@
     <svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>
     <span class="qc-label">E-Mail</span>
   </a>
+</div>
+
+<!-- Einwilligung fuer die Reichweitenmessung. Bleibt ausgeblendet, solange in
+     build.js keine GA4_ID hinterlegt ist – dann wird auch nichts geladen und
+     es braucht kein Banner. Ohne Zustimmung verlaesst kein Datenpaket den
+     Browser (§ 25 TDDDG). -->
+<div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-titel" hidden>
+  <div class="consent-in">
+    <div class="consent-txt">
+      <strong id="consent-titel">Dürfen wir mitzählen?</strong>
+      <p>Wir würden gern anonym messen, welche Seiten gelesen werden, um sie zu verbessern. Dafür setzt Google Analytics Cookies und überträgt Daten in die USA. Ohne Ihre Zustimmung passiert nichts davon – die Website funktioniert vollständig. Mehr dazu in der <a href="/datenschutz/" data-nav="datenschutz">Datenschutzerklärung</a>.</p>
+    </div>
+    <div class="consent-btns">
+      <button type="button" class="btn btn-ghost" id="consent-nein">Nur Notwendiges</button>
+      <button type="button" class="btn" id="consent-ja">Statistik erlauben</button>
+    </div>
+  </div>
 </div>
 
 
