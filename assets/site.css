@@ -855,12 +855,18 @@
   /* ======================================================================
      EINWILLIGUNG – liegt ueber der Schnellkontakt-Leiste (z-index 150) und
      unter der Navigation (200), damit das Menue bedienbar bleibt.
+
+     ACHTUNG: Diese Leiste MUSS .consent-bar heissen, nicht .consent.
+     .consent ist seit jeher die Checkbox-Zeile in den Formularen (siehe
+     oben). Beide Regeln haben dieselbe Spezifitaet, die spaetere gewinnt –
+     mit dem Namen .consent bekamen alle Formular-Checkboxen position:fixed
+     und klebten unten am Fenster, uebereinander und unlesbar.
      ====================================================================== */
-  .consent{position:fixed;left:0;right:0;bottom:0;z-index:180;
+  .consent-bar{position:fixed;left:0;right:0;bottom:0;z-index:180;
     background:var(--panel);border-top:1px solid var(--line-2);
     box-shadow:0 -10px 34px -18px rgba(20,18,12,.55);
     padding:18px 0 calc(18px + env(safe-area-inset-bottom,0px))}
-  .consent[hidden]{display:none}
+  .consent-bar[hidden]{display:none}
   .consent-in{max-width:var(--maxw);margin:0 auto;padding:0 26px;
     display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap}
   .consent-txt{flex:1 1 420px;min-width:0}
@@ -870,7 +876,7 @@
   .consent-btns{display:flex;gap:11px;flex:0 0 auto;flex-wrap:wrap}
   .consent-btns .btn{white-space:nowrap}
   @media(max-width:700px){
-    .consent{bottom:64px}          /* Platz fuer die feste Kontaktleiste */
+    .consent-bar{bottom:64px}      /* Platz fuer die feste Kontaktleiste */
     .consent-in{padding:0 18px;gap:14px}
     .consent-btns{width:100%}
     .consent-btns .btn{flex:1}
