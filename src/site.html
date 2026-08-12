@@ -4010,6 +4010,10 @@
             <input type="hidden" name="_next" value="https://bhd-website.vercel.app/?terminok=1">
             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="hidden" name="Wunschtermin" id="t-termin" value="">
+            <!-- Eingangsbestaetigung an den Kunden. Der Text wird beim Absenden
+                 per JavaScript zusammengesetzt, damit der gewaehlte Termin
+                 darin steht. -->
+            <input type="hidden" name="_autoresponse" id="t-autoresponse" value="">
 
             <div class="cal-wrap">
               <div class="cal">
@@ -4063,7 +4067,9 @@
               <div class="fld"><label for="t-tel">Telefon <span class="req">*</span></label><input type="tel" id="t-tel" name="Telefon" placeholder="0170 1234567" autocomplete="tel" required></div>
             </div>
             <div class="grid2">
-              <div class="fld"><label for="t-mail">E-Mail <span class="req">*</span></label><input type="email" id="t-mail" name="E-Mail" placeholder="name@beispiel.de" autocomplete="email" required></div>
+              <!-- Das Feld MUSS "email" heissen: FormSubmit erkennt nur daran,
+                   an welche Adresse die Eingangsbestaetigung gehen soll. -->
+              <div class="fld"><label for="t-mail">E-Mail <span class="req">*</span></label><input type="email" id="t-mail" name="email" placeholder="name@beispiel.de" autocomplete="email" required></div>
               <div class="fld"><label for="t-plz">Postleitzahl <span class="req">*</span></label><input type="text" id="t-plz" name="PLZ" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="z. B. 13359" autocomplete="postal-code" required></div>
             </div>
 
@@ -4077,7 +4083,7 @@
           <div class="fdone" id="termin-done">
             <div class="check"><svg class="ic"><use href="#i-check"/></svg></div>
             <h3>Terminanfrage ist da.</h3>
-            <p>Wir prüfen den Zeitpunkt und schicken Ihnen eine Bestätigung per E-Mail – in der Regel am selben Werktag. Bitte antworten Sie kurz darauf, dann ist der Termin fest. Wenn es eilt: <a href="tel:+491634440392" style="color:var(--gold-deep);text-decoration:underline">0163 4440392</a>.</p>
+            <p>Sie erhalten gleich eine <b>Eingangsbestätigung per E-Mail</b> mit Ihrem Wunschtermin. Anschließend prüfen wir den Zeitpunkt und melden uns – in der Regel am selben Werktag – mit der verbindlichen Zusage oder einem Alternativvorschlag. Kommt keine E-Mail an, schauen Sie bitte kurz im Spam-Ordner. Wenn es eilt: <a href="tel:+491634440392" style="color:var(--gold-deep);text-decoration:underline">0163 4440392</a>.</p>
           </div>
         </div>
       </div>
@@ -5095,6 +5101,35 @@
     btnPrev.addEventListener('click',()=>{sicht=new Date(sicht.getFullYear(),sicht.getMonth()-1,1);zeichneMonat();});
     btnNext.addEventListener('click',()=>{sicht=new Date(sicht.getFullYear(),sicht.getMonth()+1,1);zeichneMonat();});
 
+    /* Eingangsbestaetigung fuer den Kunden zusammensetzen. FormSubmit
+     * verschickt den Inhalt von _autoresponse an die Adresse aus dem Feld
+     * "email". Bewusst als EINGANGSbestaetigung formuliert: der Termin ist
+     * erst fest, wenn beide Seiten bestaetigt haben. Wer hier "Ihr Termin
+     * ist bestaetigt" schreibt, erzeugt genau das Missverstaendnis. */
+    function baueBestaetigung(){
+      const ziel=document.getElementById('t-autoresponse');
+      if(!ziel)return;
+      const art=(document.querySelector('input[name="Terminart"]:checked')||{}).value||'Telefontermin';
+      ziel.value=
+        'Guten Tag,\n\n'+
+        'vielen Dank für Ihre Terminanfrage bei BHD – Beratung Heimenergie Deutschland.\n\n'+
+        'Ihr Wunschtermin: '+(feld.value||'(nicht angegeben)')+'\n'+
+        'Art des Termins: '+art+'\n\n'+
+        'Bitte beachten Sie: Dieser Termin ist noch nicht fest gebucht. Wir prüfen den '+
+        'Zeitpunkt und melden uns in der Regel am selben Werktag bei Ihnen – mit einer '+
+        'Bestätigung oder einem Alternativvorschlag. Erst wenn Sie diese Bestätigung kurz '+
+        'zurückbestätigen, ist der Termin fest eingetragen.\n\n'+
+        'Das Telefongespräch ist für Sie kostenlos und unverbindlich.\n\n'+
+        'Wenn es eilig ist, erreichen Sie uns direkt unter 0163 4440392.\n\n'+
+        'Freundliche Grüße\n'+
+        'Kürşat Yıldırım\n\n'+
+        'BHD – Beratung Heimenergie Deutschland\n'+
+        'Brotherhooddeen UG (haftungsbeschränkt)\n'+
+        'Prinzenallee 44b, 13359 Berlin\n'+
+        'Telefon 0163 4440392 · service-bhd@outlook.de\n\n'+
+        'Diese Nachricht wurde automatisch erzeugt.';
+    }
+
     /* Ohne gewaehlten Termin nicht absenden – das Pflichtfeld ist versteckt,
      * die native Pruefung des Browsers greift dort nicht. */
     if(formular)formular.addEventListener('submit',e=>{
@@ -5102,7 +5137,9 @@
         e.preventDefault();
         warnung.hidden=false;
         document.getElementById('kalender').scrollIntoView({behavior:'smooth',block:'start'});
+        return;
       }
+      baueBestaetigung();
     });
 
     /* Ersten freien Tag vorauswaehlen, damit sofort Zeiten sichtbar sind. */

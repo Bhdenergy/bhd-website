@@ -763,6 +763,35 @@
     btnPrev.addEventListener('click',()=>{sicht=new Date(sicht.getFullYear(),sicht.getMonth()-1,1);zeichneMonat();});
     btnNext.addEventListener('click',()=>{sicht=new Date(sicht.getFullYear(),sicht.getMonth()+1,1);zeichneMonat();});
 
+    /* Eingangsbestaetigung fuer den Kunden zusammensetzen. FormSubmit
+     * verschickt den Inhalt von _autoresponse an die Adresse aus dem Feld
+     * "email". Bewusst als EINGANGSbestaetigung formuliert: der Termin ist
+     * erst fest, wenn beide Seiten bestaetigt haben. Wer hier "Ihr Termin
+     * ist bestaetigt" schreibt, erzeugt genau das Missverstaendnis. */
+    function baueBestaetigung(){
+      const ziel=document.getElementById('t-autoresponse');
+      if(!ziel)return;
+      const art=(document.querySelector('input[name="Terminart"]:checked')||{}).value||'Telefontermin';
+      ziel.value=
+        'Guten Tag,\n\n'+
+        'vielen Dank für Ihre Terminanfrage bei BHD – Beratung Heimenergie Deutschland.\n\n'+
+        'Ihr Wunschtermin: '+(feld.value||'(nicht angegeben)')+'\n'+
+        'Art des Termins: '+art+'\n\n'+
+        'Bitte beachten Sie: Dieser Termin ist noch nicht fest gebucht. Wir prüfen den '+
+        'Zeitpunkt und melden uns in der Regel am selben Werktag bei Ihnen – mit einer '+
+        'Bestätigung oder einem Alternativvorschlag. Erst wenn Sie diese Bestätigung kurz '+
+        'zurückbestätigen, ist der Termin fest eingetragen.\n\n'+
+        'Das Telefongespräch ist für Sie kostenlos und unverbindlich.\n\n'+
+        'Wenn es eilig ist, erreichen Sie uns direkt unter 0163 4440392.\n\n'+
+        'Freundliche Grüße\n'+
+        'Kürşat Yıldırım\n\n'+
+        'BHD – Beratung Heimenergie Deutschland\n'+
+        'Brotherhooddeen UG (haftungsbeschränkt)\n'+
+        'Prinzenallee 44b, 13359 Berlin\n'+
+        'Telefon 0163 4440392 · info@bhd-energie.de\n\n'+
+        'Diese Nachricht wurde automatisch erzeugt.';
+    }
+
     /* Ohne gewaehlten Termin nicht absenden – das Pflichtfeld ist versteckt,
      * die native Pruefung des Browsers greift dort nicht. */
     if(formular)formular.addEventListener('submit',e=>{
@@ -770,7 +799,9 @@
         e.preventDefault();
         warnung.hidden=false;
         document.getElementById('kalender').scrollIntoView({behavior:'smooth',block:'start'});
+        return;
       }
+      baueBestaetigung();
     });
 
     /* Ersten freien Tag vorauswaehlen, damit sofort Zeiten sichtbar sind. */

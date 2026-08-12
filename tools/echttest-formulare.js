@@ -18,7 +18,10 @@ const path = require('path');
 
 const CHROME = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
 const BASIS = (process.argv[2] || 'https://bhd-energie.de').replace(/\/$/, '');
-const MAIL = 'test@example.org';
+/* Adresse, die als Kunden-E-Mail eingetragen wird. Ueber die Umgebung
+ * setzbar, um die Eingangsbestaetigung an ein echtes Postfach zu pruefen:
+ *   $env:TESTMAIL="info@bhd-energie.de"; node tools/echttest-formulare.js <url> 7 */
+const MAIL = process.env.TESTMAIL || 'test@example.org';
 const TEL = '0170 0000000';
 const PLZ = '13359';
 
