@@ -742,7 +742,13 @@ function calUmschalten(html) {
 
 function buildPage(page) {
   const url = SITE + URL_OF[page.key];
-  const view = faqEinsetzen(calUmschalten(webpPicture(fixLinks(VIEWS[page.key])
+  /* REIHENFOLGE BEACHTEN: Erst die Bausteine einsetzen (Cal.com-Variante,
+   * FAQ-Abschnitt), DANACH fixLinks. Die eingesetzten Bausteine enthalten
+   * selbst data-nav-Verweise - laeuft fixLinks vorher, bleiben deren Links
+   * ohne Ziel. Genau das war beim FAQ-Knopf "Termin vereinbaren" passiert. */
+  const roh = faqEinsetzen(calUmschalten(VIEWS[page.key]), page.key);
+
+  const view = webpPicture(fixLinks(roh)
     // Der Angebots-Check springt nach dem Upload auf seine eigene Seite zurueck.
     // Unabhaengig davon, welche Adresse in der Quelldatei steht.
     .replace(/value="https?:\/\/[^"]*[?&]checkok=1[^"]*"/g,
@@ -752,7 +758,7 @@ function buildPage(page) {
     .replace(/value="https?:\/\/[^"]*[?&]bestandok=1[^"]*"/g,
              'value="' + SITE + URL_OF.bestand + '?bestandok=1"')
     .replace(/value="https?:\/\/[^"]*[?&]terminok=1[^"]*"/g,
-             'value="' + SITE + URL_OF.termin + '?terminok=1"'))), page.key);
+             'value="' + SITE + URL_OF.termin + '?terminok=1"'));
 
   return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(page.title)}</title>
