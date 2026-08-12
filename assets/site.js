@@ -217,7 +217,7 @@
     // Alte Adressen mit # auf die neuen Seiten umleiten (fuer geteilte Links)
     var map={"#referenzen":"/referenzen/","#anfragen":"/anfragen/","#ueber-uns":"/ueber-uns/","#angebots-check":"/angebots-check/","#waermepumpen-rechner":"/waermepumpen-rechner/","#partner-werden":"/partner-werden/","#photovoltaik":"/photovoltaik/","#ratgeber-photovoltaik":"/ratgeber/photovoltaik-lohnt-sich/","#ratgeber-waermepumpe":"/ratgeber/waermepumpe-altbau/","#ratgeber-angebot":"/ratgeber/angebot-pruefen/","#stromspeicher":"/stromspeicher/","#waermepumpe":"/waermepumpe/","#kosten":"/kosten/","#ratgeber":"/ratgeber/","#impressum":"/impressum/","#datenschutz":"/datenschutz/"};
     if(map[location.hash]){location.replace(map[location.hash]);return;}
-    // â€žJetzt anfragen": auf der Startseite sanft scrollen, sonst normal verlinken
+    // „Jetzt anfragen": auf der Startseite sanft scrollen, sonst normal verlinken
     document.querySelectorAll('[data-go-funnel]').forEach(function(el){
       el.addEventListener('click',function(e){
         var f=document.getElementById('funnel');

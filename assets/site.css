@@ -985,6 +985,6 @@
 
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise{opacity:1;transform:none}.blob{display:none}.flow-line{stroke-dashoffset:0}.node-dot,.node-final,.node-label{opacity:1}}
 
-/* <picture> soll das Layout nicht beeinflussen â€“ die bestehenden
+/* <picture> soll das Layout nicht beeinflussen – die bestehenden
    Regeln greifen dadurch weiterhin direkt auf das <img>. */
 picture{display:contents}
