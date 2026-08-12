@@ -358,7 +358,17 @@
             <input type="hidden" name="Wunschtermin" id="t-termin" value="">
             <!-- Eingangsbestaetigung an den Kunden. Der Text wird beim Absenden
                  per JavaScript zusammengesetzt, damit der gewaehlte Termin
-                 darin steht. -->
+                 darin steht.
+
+                 ACHTUNG - WIRKT DERZEIT NICHT: FormSubmit verschickt die
+                 Autoresponse nur, wenn reCAPTCHA aktiv ist. Oben steht aber
+                 _captcha=false, damit der Kunde nach dem Absenden kein
+                 Captcha loesen muss. Solange das so bleibt, geht KEINE
+                 Bestaetigung an den Kunden. Feld und Text bleiben stehen,
+                 damit es sofort greift, sobald _captcha entfernt wird oder
+                 der Versand ueber einen eigenen Dienst laeuft.
+                 Quelle: formsubmit.co - "Autoresponse won't work with forms
+                 that disabled reCAPTCHA and forms submitting through AJAX." -->
             <input type="hidden" name="_autoresponse" id="t-autoresponse" value="">
 
             <div class="cal-wrap">
@@ -429,7 +439,7 @@
           <div class="fdone" id="termin-done">
             <div class="check"><svg class="ic"><use href="#i-check"/></svg></div>
             <h3>Terminanfrage ist da.</h3>
-            <p>Sie erhalten gleich eine <b>Eingangsbestätigung per E-Mail</b> mit Ihrem Wunschtermin. Anschließend prüfen wir den Zeitpunkt und melden uns – in der Regel am selben Werktag – mit der verbindlichen Zusage oder einem Alternativvorschlag. Kommt keine E-Mail an, schauen Sie bitte kurz im Spam-Ordner. Wenn es eilt: <a href="tel:+491634440392" style="color:var(--gold-deep);text-decoration:underline">0163 4440392</a>.</p>
+            <p>Wir prüfen den Zeitpunkt und melden uns – in der Regel am selben Werktag – per E-Mail oder telefonisch bei Ihnen, mit der verbindlichen Zusage oder einem Alternativvorschlag. Erst mit dieser Rückmeldung steht der Termin fest. Wenn es eilt: <a href="tel:+491634440392" style="color:var(--gold-deep);text-decoration:underline">0163 4440392</a>.</p>
           </div>
         </div>
       </div>
