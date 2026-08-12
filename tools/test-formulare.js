@@ -158,6 +158,16 @@ async function multipartFormular(browser, pfad, formId, name, vorher) {
   await abfangen(page, gesendet);
   await page.goto(BASIS + pfad, { waitUntil: 'networkidle2' });
 
+  /* Die Terminseite kann auf Cal.com umgestellt sein – dann gibt es das
+   * eigene Formular nicht mehr. Das ist kein Fehler, sondern der
+   * gewuenschte Zustand. */
+  const vorhanden = await page.$('#' + formId);
+  if (!vorhanden) {
+    console.log('   [--]  uebersprungen: Formular ' + formId + ' existiert auf dieser Seite nicht (auf Cal.com umgestellt?)');
+    await page.close();
+    return;
+  }
+
   /* Manche Formulare brauchen vorab eine Auswahl, die kein <input required>
    * ist – beim Terminformular etwa Tag und Uhrzeit aus dem Kalender. */
   if (vorher) {

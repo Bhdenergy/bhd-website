@@ -1,32 +1,32 @@
-# BHD – Beratung Heimenergie Deutschland
+# BHD â€“ Beratung Heimenergie Deutschland
 
-> Unabhängige Beratung für Hausbesitzer zu Photovoltaik, Stromspeicher und
-> Wärmepumpe. Vermittlung geprüfter, regionaler Fachbetriebe. Wir verkaufen
+> UnabhÃ¤ngige Beratung fÃ¼r Hausbesitzer zu Photovoltaik, Stromspeicher und
+> WÃ¤rmepumpe. Vermittlung geprÃ¼fter, regionaler Fachbetriebe. Wir verkaufen
 > keine Anlagen, sondern beraten und vermitteln.
 >
-> Betreiber: Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b,
+> Betreiber: Brotherhooddeen UG (haftungsbeschrÃ¤nkt), Prinzenallee 44b,
 > 13359 Berlin. Handelsregister: Amtsgericht Charlottenburg, HRB 266273 B.
-> USt-IdNr. DE370268782. Gegründet 2024. Geschäftsführer: Kürşat Yıldırım.
-> Sitz in Berlin, bundesweit tätig. Erreichbar Täglich 8:00 – 20:00 Uhr.
+> USt-IdNr. DE370268782. GegrÃ¼ndet 2024. GeschÃ¤ftsfÃ¼hrer: KÃ¼rÅŸat YÄ±ldÄ±rÄ±m.
+> Sitz in Berlin, bundesweit tÃ¤tig. Erreichbar TÃ¤glich 8:00 â€“ 20:00 Uhr.
 
 ## Leistungen
-- [Photovoltaik](https://bhd-energie.de/photovoltaik/): Anlagengröße, Eigenverbrauch, 0 % Umsatzsteuer nach § 12 Abs. 3 UStG
-- [Stromspeicher](https://bhd-energie.de/stromspeicher/): sinnvolle Kapazität, nutzbare Kapazität, Zyklengarantie
-- [Wärmepumpe](https://bhd-energie.de/waermepumpe/): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 80 %
-- [Kosten](https://bhd-energie.de/kosten/): marktübliche Preise und Eigenanteil nach Förderung
-- [Angebots-Check](https://bhd-energie.de/angebots-check/): kostenlose Prüfung eines vorliegenden Angebots, Rückmeldung in 24 Stunden
-- [Wärmepumpen-Rechner](https://bhd-energie.de/waermepumpen-rechner/): Heizlast, Gerätegröße, Jahresarbeitszahl und Förderung – ohne Anmeldung
+- [Photovoltaik](https://bhd-energie.de/photovoltaik/): AnlagengrÃ¶ÃŸe, Eigenverbrauch, 0 % Umsatzsteuer nach Â§ 12 Abs. 3 UStG
+- [Stromspeicher](https://bhd-energie.de/stromspeicher/): sinnvolle KapazitÃ¤t, nutzbare KapazitÃ¤t, Zyklengarantie
+- [WÃ¤rmepumpe](https://bhd-energie.de/waermepumpe/): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 80 %
+- [Kosten](https://bhd-energie.de/kosten/): marktÃ¼bliche Preise und Eigenanteil nach FÃ¶rderung
+- [Angebots-Check](https://bhd-energie.de/angebots-check/): kostenlose PrÃ¼fung eines vorliegenden Angebots, RÃ¼ckmeldung in 24 Stunden
+- [WÃ¤rmepumpen-Rechner](https://bhd-energie.de/waermepumpen-rechner/): Heizlast, GerÃ¤tegrÃ¶ÃŸe, Jahresarbeitszahl und FÃ¶rderung â€“ ohne Anmeldung
 
 ## Ratgeber
 - [Lohnt sich Photovoltaik 2026 noch?](https://bhd-energie.de/ratgeber/photovoltaik-lohnt-sich/)
-- [Wärmepumpe im Altbau: geht das?](https://bhd-energie.de/ratgeber/waermepumpe-altbau/)
-- [Angebot prüfen: 12 Punkte, die drinstehen müssen](https://bhd-energie.de/ratgeber/angebot-pruefen/)
+- [WÃ¤rmepumpe im Altbau: geht das?](https://bhd-energie.de/ratgeber/waermepumpe-altbau/)
+- [Angebot prÃ¼fen: 12 Punkte, die drinstehen mÃ¼ssen](https://bhd-energie.de/ratgeber/angebot-pruefen/)
 
 ## Weitere Seiten
 - [Referenzen](https://bhd-energie.de/referenzen/): umgesetzte Projekte mit eigenen Fotos
-- [Über uns](https://bhd-energie.de/ueber-uns/)
+- [Ãœber uns](https://bhd-energie.de/ueber-uns/)
 - [Kontakt](https://bhd-energie.de/kontakt/)
-- [Für Fachbetriebe](https://bhd-energie.de/partner-werden/)
+- [FÃ¼r Fachbetriebe](https://bhd-energie.de/partner-werden/)
 
 ## Kontakt
-Telefon +49 163 4440392 · info@bhd-energie.de
+Telefon +49 163 4440392 Â· info@bhd-energie.de

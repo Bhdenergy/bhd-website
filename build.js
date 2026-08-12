@@ -1,5 +1,5 @@
-/*
- * BHD-Website – Seitengenerator
+﻿/*
+ * BHD-Website â€“ Seitengenerator
  * -----------------------------
  * Liest die Quelldatei src/site.html (alle Ansichten in einer Datei) und
  * erzeugt daraus echte Unterseiten mit eigenen URLs, dazu sitemap.xml und
@@ -7,8 +7,8 @@
  *
  * Aufruf:  node build.js
  *
- * WICHTIG: Immer nur src/site.html bearbeiten – die erzeugten Dateien
- * (index.html, referenzen/index.html, …) werden bei jedem Lauf überschrieben.
+ * WICHTIG: Immer nur src/site.html bearbeiten â€“ die erzeugten Dateien
+ * (index.html, referenzen/index.html, â€¦) werden bei jedem Lauf Ã¼berschrieben.
  */
 const fs = require('fs');
 const path = require('path');
@@ -16,14 +16,14 @@ const path = require('path');
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src', 'site.html');
 
-/* Domain an EINER Stelle. Hauptadresse der Website (ohne www – www leitet in
- * Vercel darauf um). Bei einem Domainwechsel nur diese Zeile ändern. */
+/* Domain an EINER Stelle. Hauptadresse der Website (ohne www â€“ www leitet in
+ * Vercel darauf um). Bei einem Domainwechsel nur diese Zeile Ã¤ndern. */
 const SITE = 'https://bhd-energie.de';
 
-/* Kontakt-E-Mail an EINER Stelle. Wird überall eingesetzt: Footer, Schnellkontakt,
- * Impressum, Datenschutz UND als Empfänger der drei Formulare (FormSubmit).
- * ACHTUNG beim Wechsel: FormSubmit muss für die neue Adresse einmalig neu
- * freigeschaltet werden – nach dem ersten Absenden kommt eine Bestätigungsmail. */
+/* Kontakt-E-Mail an EINER Stelle. Wird Ã¼berall eingesetzt: Footer, Schnellkontakt,
+ * Impressum, Datenschutz UND als EmpfÃ¤nger der drei Formulare (FormSubmit).
+ * ACHTUNG beim Wechsel: FormSubmit muss fÃ¼r die neue Adresse einmalig neu
+ * freigeschaltet werden â€“ nach dem ersten Absenden kommt eine BestÃ¤tigungsmail. */
 const MAIL = 'info@bhd-energie.de';
 const MAIL_IN_SOURCE = 'service-bhd@outlook.de'; // so steht sie in src/site.html
 
@@ -31,7 +31,7 @@ const MAIL_IN_SOURCE = 'service-bhd@outlook.de'; // so steht sie in src/site.htm
  * Diese drei Werte sind die einzigen Stellen, die nach dem Einrichten der
  * Konten von Hand gefuellt werden muessen. Danach einmal `node build.js`.
  * Solange ein Wert leer ist, laesst der Generator die zugehoerige Zeile
- * einfach weg – die Seite bleibt in jedem Fall gueltig.
+ * einfach weg â€“ die Seite bleibt in jedem Fall gueltig.
  */
 
 /* Google Search Console: nur noetig, wenn NICHT ueber DNS bestaetigt wird.
@@ -39,27 +39,40 @@ const MAIL_IN_SOURCE = 'service-bhd@outlook.de'; // so steht sie in src/site.htm
 const GSC_TOKEN = 'YmJdAGRuu0_isrbFEfEq8GP-UYUhLj1bDpGdXmTraFE';
 
 /* Google Analytics 4: Mess-ID aus der Datenstream-Einstellung, Form "G-XXXXXXXXXX".
- * WICHTIG: GA4 wird erst nach ausdruecklicher Einwilligung geladen (§ 25 TDDDG). */
+ * WICHTIG: GA4 wird erst nach ausdruecklicher Einwilligung geladen (Â§ 25 TDDDG). */
 const GA4_ID = 'G-NM7G327C1L';
 
 /* Social-Media-Profile fuer sameAs im JSON-LD. NUR echte, existierende Profile
- * eintragen – Verweise auf nicht vorhandene Seiten schaden mehr, als sie nutzen.
- * Beispiel: ['https://www.facebook.com/…', 'https://www.linkedin.com/company/…'] */
+ * eintragen â€“ Verweise auf nicht vorhandene Seiten schaden mehr, als sie nutzen.
+ * Beispiel: ['https://www.facebook.com/â€¦', 'https://www.linkedin.com/company/â€¦'] */
 const SOCIAL = [];
 
 /* IndexNow: meldet neue und geaenderte Seiten sofort an Bing (und damit an
  * ChatGPT Search und Copilot). Der Schluessel ist frei waehlbar, muss aber als
- * Datei <schluessel>.txt im Wurzelverzeichnis liegen – das erledigt der Build. */
+ * Datei <schluessel>.txt im Wurzelverzeichnis liegen â€“ das erledigt der Build. */
 const INDEXNOW_KEY = 'bhd7f3a1c94e26d508b1a2f6c3e9740b';
 
-/* Erreichbarkeit – steht im JSON-LD, auf der Kontaktseite und muss mit dem
- * Google-Unternehmensprofil uebereinstimmen. */
-const OPENING = { von: '08:00', bis: '20:00', text: 'Täglich 8:00 – 20:00 Uhr' };
+/* ---------------------------------------------------------------------
+ * TERMINBUCHUNG UEBER CAL.COM
+ *
+ * Hier den eigenen Cal.com-Link eintragen, OHNE "https://cal.com/" davor.
+ * Beispiel:  const CAL_LINK = 'bhd-energie/telefonberatung';
+ *
+ * Solange der Wert leer ist, bleibt das bisherige eigene Terminformular
+ * stehen. Sobald er gesetzt ist, ersetzt der Cal.com-Buchungskalender das
+ * Formular - dann werden gebuchte Zeiten wirklich gesperrt und der Kunde
+ * bekommt automatisch eine Bestaetigung.
+ * ------------------------------------------------------------------- */
+const CAL_LINK = '';
 
-/* Datum des letzten inhaltlichen Durchgangs – fuer dateModified im JSON-LD. */
+/* Erreichbarkeit â€“ steht im JSON-LD, auf der Kontaktseite und muss mit dem
+ * Google-Unternehmensprofil uebereinstimmen. */
+const OPENING = { von: '08:00', bis: '20:00', text: 'TÃ¤glich 8:00 â€“ 20:00 Uhr' };
+
+/* Datum des letzten inhaltlichen Durchgangs â€“ fuer dateModified im JSON-LD. */
 const REVIEWED = new Date().toISOString().slice(0, 10);
 
-/* Zeilenenden vereinheitlichen – die Quelldatei kommt aus Windows (CRLF). */
+/* Zeilenenden vereinheitlichen â€“ die Quelldatei kommt aus Windows (CRLF). */
 const src = fs.readFileSync(SRC, 'utf8').replace(/\r\n/g, '\n');
 
 /* ---------------------------------------------------------------- Helfer */
@@ -81,147 +94,147 @@ function esc(s) {
 const PAGES = [
   {
     key: 'home', dir: '', view: 'view-home', prio: '1.0', nav: false,
-    title: 'Photovoltaik & Wärmepumpe Berlin & bundesweit | BHD',
-    ogTitle: 'Photovoltaik & Wärmepumpe – unabhängige Beratung | BHD',
-    desc: 'Unabhängige Beratung zu Photovoltaik, Stromspeicher und Wärmepumpe. Geprüfte Fachbetriebe, KfW-Zuschuss bis 80 %. Sitz in Berlin, bundesweit tätig.',
+    title: 'Photovoltaik & WÃ¤rmepumpe Berlin & bundesweit | BHD',
+    ogTitle: 'Photovoltaik & WÃ¤rmepumpe â€“ unabhÃ¤ngige Beratung | BHD',
+    desc: 'UnabhÃ¤ngige Beratung zu Photovoltaik, Stromspeicher und WÃ¤rmepumpe. GeprÃ¼fte Fachbetriebe, KfW-Zuschuss bis 80 %. Sitz in Berlin, bundesweit tÃ¤tig.',
     ld: ['faq']
   },
   {
     key: 'check', dir: 'angebots-check', view: 'view-check', prio: '0.9', crumb: 'Angebots-Check',
-    title: 'Angebots-Check: PV-Angebot prüfen lassen | BHD',
-    desc: 'Angebot für Photovoltaik oder Wärmepumpe kostenlos prüfen lassen: Seriosität, Auslegung und Preis. Ehrliche Rückmeldung innerhalb von 24 Stunden.',
+    title: 'Angebots-Check: PV-Angebot prÃ¼fen lassen | BHD',
+    desc: 'Angebot fÃ¼r Photovoltaik oder WÃ¤rmepumpe kostenlos prÃ¼fen lassen: SeriositÃ¤t, Auslegung und Preis. Ehrliche RÃ¼ckmeldung innerhalb von 24 Stunden.',
     ld: ['service'],
     service: {
       name: "Kostenloser Angebots-Check",
-      typ: "Unabhängige Angebotsprüfung",
-      desc: "Prüfung eines vorliegenden Angebots für Photovoltaik, Stromspeicher oder Wärmepumpe auf Seriosität des Anbieters, technische Auslegung und Preis-Leistungs-Verhältnis, mit Rückmeldung innerhalb von 24 Stunden."
+      typ: "UnabhÃ¤ngige AngebotsprÃ¼fung",
+      desc: "PrÃ¼fung eines vorliegenden Angebots fÃ¼r Photovoltaik, Stromspeicher oder WÃ¤rmepumpe auf SeriositÃ¤t des Anbieters, technische Auslegung und Preis-Leistungs-VerhÃ¤ltnis, mit RÃ¼ckmeldung innerhalb von 24 Stunden."
     }
   },
   {
     key: 'bestand', dir: 'bestandsanlagen-check', view: 'view-bestand', prio: '0.9',
     crumb: 'Bestandsanlagen-Check',
-    title: 'Bestandsanlagen-Check: Hilfe bei Mängeln & Baustopp | BHD',
+    title: 'Bestandsanlagen-Check: Hilfe bei MÃ¤ngeln & Baustopp | BHD',
     ogTitle: 'Anlage schon gebaut und es hakt? Bestandsanlagen-Check | BHD',
-    desc: 'Photovoltaik oder Wärmepumpe bereits installiert und es gibt Probleme: Mängel, Baustopp, insolvente Firma, fehlende Anmeldung oder kein Wartungsvertrag. Wir schauen drauf.',
+    desc: 'Photovoltaik oder WÃ¤rmepumpe bereits installiert und es gibt Probleme: MÃ¤ngel, Baustopp, insolvente Firma, fehlende Anmeldung oder kein Wartungsvertrag. Wir schauen drauf.',
     ld: ['bestandservice']
   },
   {
     key: 'termin', dir: 'termin', view: 'view-termin', prio: '0.9', crumb: 'Termin',
-    title: 'Termin vereinbaren – Telefonberatung kostenlos | BHD',
-    ogTitle: 'Beratungstermin online anfragen – kostenlos | BHD',
-    desc: 'Beratungstermin zu Photovoltaik oder Wärmepumpe direkt online anfragen. Telefontermin kostenlos, auf Wunsch auch vor Ort. Montag bis Freitag, Antwort am selben Werktag.'
+    title: 'Termin vereinbaren â€“ Telefonberatung kostenlos | BHD',
+    ogTitle: 'Beratungstermin online anfragen â€“ kostenlos | BHD',
+    desc: 'Beratungstermin zu Photovoltaik oder WÃ¤rmepumpe direkt online anfragen. Telefontermin kostenlos, auf Wunsch auch vor Ort. Montag bis Freitag, Antwort am selben Werktag.'
   },
   {
     key: 'ref', dir: 'referenzen', view: 'view-ref', prio: '0.8', crumb: 'Referenzen',
-    title: 'Referenzen: PV- & Wärmepumpen-Projekte | BHD',
-    desc: 'Umgesetzte Projekte: Photovoltaik auf Sattel- und Flachdach, Luft-Wasser-Wärmepumpen von der Erdarbeit bis zur Hydraulik, Speicher und Wallbox.'
+    title: 'Referenzen: PV- & WÃ¤rmepumpen-Projekte | BHD',
+    desc: 'Umgesetzte Projekte: Photovoltaik auf Sattel- und Flachdach, Luft-Wasser-WÃ¤rmepumpen von der Erdarbeit bis zur Hydraulik, Speicher und Wallbox.'
   },
   {
-    key: 'about', dir: 'ueber-uns', view: 'view-about', prio: '0.6', crumb: 'Über uns',
-    title: 'Über uns – BHD Beratung Heimenergie Deutschland',
-    desc: 'Wer hinter BHD steht: Brotherhooddeen UG aus Berlin, gegründet 2024, bundesweit tätig. Unabhängige Beratung und geprüfte Installateur-Partner.'
+    key: 'about', dir: 'ueber-uns', view: 'view-about', prio: '0.6', crumb: 'Ãœber uns',
+    title: 'Ãœber uns â€“ BHD Beratung Heimenergie Deutschland',
+    desc: 'Wer hinter BHD steht: Brotherhooddeen UG aus Berlin, gegrÃ¼ndet 2024, bundesweit tÃ¤tig. UnabhÃ¤ngige Beratung und geprÃ¼fte Installateur-Partner.'
   },
   {
     key: 'pv', dir: 'photovoltaik', view: 'view-pv', prio: '0.9', crumb: 'Photovoltaik',
-    title: 'Photovoltaik fürs Eigenheim: Kosten & Förderung | BHD',
-    ogTitle: 'Photovoltaik – unabhängig beraten statt verkauft | BHD',
-    desc: 'Photovoltaik fürs Einfamilienhaus: welche Anlagengröße passt, warum der Eigenverbrauch zählt und wie 0 % Mehrwertsteuer wirkt. Unabhängig beraten.',
+    title: 'Photovoltaik fÃ¼rs Eigenheim: Kosten & FÃ¶rderung | BHD',
+    ogTitle: 'Photovoltaik â€“ unabhÃ¤ngig beraten statt verkauft | BHD',
+    desc: 'Photovoltaik fÃ¼rs Einfamilienhaus: welche AnlagengrÃ¶ÃŸe passt, warum der Eigenverbrauch zÃ¤hlt und wie 0 % Mehrwertsteuer wirkt. UnabhÃ¤ngig beraten.',
     service: {
-      name: "Beratung und Vermittlung für Photovoltaikanlagen",
+      name: "Beratung und Vermittlung fÃ¼r Photovoltaikanlagen",
       typ: "Photovoltaik-Beratung",
-      desc: "Unabhängige Beratung zur Auslegung einer Photovoltaikanlage für Einfamilienhäuser: passende Anlagengröße nach Verbrauch, Eigenverbrauchsoptimierung, Speicherbedarf, steuerliche Behandlung nach § 12 Abs. 3 UStG und Vermittlung eines geprüften Fachbetriebs."
+      desc: "UnabhÃ¤ngige Beratung zur Auslegung einer Photovoltaikanlage fÃ¼r EinfamilienhÃ¤user: passende AnlagengrÃ¶ÃŸe nach Verbrauch, Eigenverbrauchsoptimierung, Speicherbedarf, steuerliche Behandlung nach Â§ 12 Abs. 3 UStG und Vermittlung eines geprÃ¼ften Fachbetriebs."
     }
   },
   {
     key: 'speicher', dir: 'stromspeicher', view: 'view-speicher', prio: '0.8', crumb: 'Stromspeicher',
-    title: 'Stromspeicher: Größe, Technik und Preise | BHD',
-    desc: 'Stromspeicher für die Solaranlage: welche Kapazität sich rechnet, was nutzbare Kapazität und Zyklengarantie bedeuten, aktuelle Preise je kWh.',
+    title: 'Stromspeicher: GrÃ¶ÃŸe, Technik und Preise | BHD',
+    desc: 'Stromspeicher fÃ¼r die Solaranlage: welche KapazitÃ¤t sich rechnet, was nutzbare KapazitÃ¤t und Zyklengarantie bedeuten, aktuelle Preise je kWh.',
     service: {
-      name: "Beratung und Vermittlung für Stromspeicher",
+      name: "Beratung und Vermittlung fÃ¼r Stromspeicher",
       typ: "Stromspeicher-Beratung",
-      desc: "Beratung zur Auslegung von Batteriespeichern für Photovoltaikanlagen: sinnvolle Kapazität nach Jahresstromverbrauch, nutzbare gegenüber nominaler Kapazität, Zellchemie, Zyklengarantie, Notstromfähigkeit und Aufstellort."
+      desc: "Beratung zur Auslegung von Batteriespeichern fÃ¼r Photovoltaikanlagen: sinnvolle KapazitÃ¤t nach Jahresstromverbrauch, nutzbare gegenÃ¼ber nominaler KapazitÃ¤t, Zellchemie, Zyklengarantie, NotstromfÃ¤higkeit und Aufstellort."
     }
   },
   {
-    key: 'wp', dir: 'waermepumpe', view: 'view-wp', prio: '0.9', crumb: 'Wärmepumpe',
-    title: 'Wärmepumpe: Eignung, Ablauf & KfW-Förderung | BHD',
-    ogTitle: 'Wärmepumpe – lohnt sich das in Ihrem Haus? | BHD',
-    desc: 'Wärmepumpe im Altbau: warum die Vorlauftemperatur über die Kosten entscheidet, wie eine Umstellung abläuft und wie bis zu 80 % KfW-Zuschuss gehen.',
+    key: 'wp', dir: 'waermepumpe', view: 'view-wp', prio: '0.9', crumb: 'WÃ¤rmepumpe',
+    title: 'WÃ¤rmepumpe: Eignung, Ablauf & KfW-FÃ¶rderung | BHD',
+    ogTitle: 'WÃ¤rmepumpe â€“ lohnt sich das in Ihrem Haus? | BHD',
+    desc: 'WÃ¤rmepumpe im Altbau: warum die Vorlauftemperatur Ã¼ber die Kosten entscheidet, wie eine Umstellung ablÃ¤uft und wie bis zu 80 % KfW-Zuschuss gehen.',
     service: {
-      name: "Beratung und Vermittlung für Wärmepumpen",
-      typ: "Wärmepumpen-Beratung",
-      desc: "Beratung zur Umstellung auf eine Luft-Wasser-Wärmepumpe im Bestandsgebäude: Heizlast, erforderliche Vorlauftemperatur, Anpassung der Heizflächen, hydraulischer Abgleich, Zählerschrank nach § 14a EnWG und Abwicklung des KfW-Zuschusses 458."
+      name: "Beratung und Vermittlung fÃ¼r WÃ¤rmepumpen",
+      typ: "WÃ¤rmepumpen-Beratung",
+      desc: "Beratung zur Umstellung auf eine Luft-Wasser-WÃ¤rmepumpe im BestandsgebÃ¤ude: Heizlast, erforderliche Vorlauftemperatur, Anpassung der HeizflÃ¤chen, hydraulischer Abgleich, ZÃ¤hlerschrank nach Â§ 14a EnWG und Abwicklung des KfW-Zuschusses 458."
     }
   },
   {
     key: 'kosten', dir: 'kosten', view: 'view-kosten', prio: '0.9', crumb: 'Kosten',
-    title: 'Was kostet PV, Speicher & Wärmepumpe? Preise | BHD',
-    ogTitle: 'Preise offen genannt – Photovoltaik & Wärmepumpe | BHD',
-    desc: 'Marktübliche Preise für Photovoltaik, Stromspeicher und Wärmepumpe, Stand 2026. Mit Beispielrechnung zum Eigenanteil nach der KfW-Förderung.',
+    title: 'Was kostet PV, Speicher & WÃ¤rmepumpe? Preise | BHD',
+    ogTitle: 'Preise offen genannt â€“ Photovoltaik & WÃ¤rmepumpe | BHD',
+    desc: 'MarktÃ¼bliche Preise fÃ¼r Photovoltaik, Stromspeicher und WÃ¤rmepumpe, Stand 2026. Mit Beispielrechnung zum Eigenanteil nach der KfW-FÃ¶rderung.',
     service: {
-      name: "Kosteneinschätzung für Photovoltaik und Wärmepumpe",
+      name: "KosteneinschÃ¤tzung fÃ¼r Photovoltaik und WÃ¤rmepumpe",
       typ: "Kostenberatung",
-      desc: "Einordnung marktüblicher Preise für Photovoltaikanlagen, Stromspeicher, Luft-Wasser-Wärmepumpen, Wallboxen und Zählerschränke sowie Berechnung des Eigenanteils nach Abzug der KfW-Förderung."
+      desc: "Einordnung marktÃ¼blicher Preise fÃ¼r Photovoltaikanlagen, Stromspeicher, Luft-Wasser-WÃ¤rmepumpen, Wallboxen und ZÃ¤hlerschrÃ¤nke sowie Berechnung des Eigenanteils nach Abzug der KfW-FÃ¶rderung."
     }
   },
   {
     key: 'ratgeber', dir: 'ratgeber', view: 'view-ratgeber', prio: '0.7', crumb: 'Ratgeber',
-    title: 'Ratgeber: Photovoltaik & Wärmepumpe verstehen | BHD',
-    desc: 'Verständliche Beiträge zu Photovoltaik, Wärmepumpe und Angebotsprüfung – von Beratern, die keine Anlagen verkaufen und auch sagen, was sich nicht lohnt.',
+    title: 'Ratgeber: Photovoltaik & WÃ¤rmepumpe verstehen | BHD',
+    desc: 'VerstÃ¤ndliche BeitrÃ¤ge zu Photovoltaik, WÃ¤rmepumpe und AngebotsprÃ¼fung â€“ von Beratern, die keine Anlagen verkaufen und auch sagen, was sich nicht lohnt.',
     ld: ['ratgeberliste']
   },
   {
     key: 'rat-pv', dir: 'ratgeber/photovoltaik-lohnt-sich', view: 'view-rat-pv', prio: '0.8', crumb: 'Lohnt sich Photovoltaik?',
     title: 'Lohnt sich Photovoltaik 2026 noch? | BHD Ratgeber',
-    desc: 'Einspeisevergütung bei 7,7 Cent, Netzstrom bei 35: Warum sich die Rechnung umgedreht hat, wann sich eine Anlage amortisiert und für wen sie sich nicht lohnt.',
+    desc: 'EinspeisevergÃ¼tung bei 7,7 Cent, Netzstrom bei 35: Warum sich die Rechnung umgedreht hat, wann sich eine Anlage amortisiert und fÃ¼r wen sie sich nicht lohnt.',
     article: { headline: 'Lohnt sich Photovoltaik 2026 noch?', pub: '2026-08-01', section: 'Photovoltaik' }
   },
   {
-    key: 'rat-wp', dir: 'ratgeber/waermepumpe-altbau', view: 'view-rat-wp', prio: '0.8', crumb: 'Wärmepumpe im Altbau',
-    title: 'Wärmepumpe im Altbau: geht das? | BHD Ratgeber',
-    desc: 'Der Selbsttest an einem kalten Tag, warum die Vorlauftemperatur über 500 Euro im Jahr entscheidet und weshalb Dämmung selten der günstigste Hebel ist.',
-    article: { headline: 'Wärmepumpe im Altbau: geht das?', pub: '2026-08-01', section: 'Wärmepumpe' }
+    key: 'rat-wp', dir: 'ratgeber/waermepumpe-altbau', view: 'view-rat-wp', prio: '0.8', crumb: 'WÃ¤rmepumpe im Altbau',
+    title: 'WÃ¤rmepumpe im Altbau: geht das? | BHD Ratgeber',
+    desc: 'Der Selbsttest an einem kalten Tag, warum die Vorlauftemperatur Ã¼ber 500 Euro im Jahr entscheidet und weshalb DÃ¤mmung selten der gÃ¼nstigste Hebel ist.',
+    article: { headline: 'WÃ¤rmepumpe im Altbau: geht das?', pub: '2026-08-01', section: 'WÃ¤rmepumpe' }
   },
   {
-    key: 'rat-check', dir: 'ratgeber/angebot-pruefen', view: 'view-rat-check', prio: '0.8', crumb: 'Angebot prüfen',
-    title: 'PV-Angebot prüfen: 12-Punkte-Checkliste | BHD Ratgeber',
-    desc: 'Checkliste für PV- und Wärmepumpen-Angebote: zwölf Angaben, die enthalten sein müssen, und drei Warnzeichen, bei denen Sie besser nicht unterschreiben.',
-    article: { headline: 'Angebot prüfen: 12 Punkte, die drinstehen müssen', pub: '2026-08-01', section: 'Angebotsprüfung' }
+    key: 'rat-check', dir: 'ratgeber/angebot-pruefen', view: 'view-rat-check', prio: '0.8', crumb: 'Angebot prÃ¼fen',
+    title: 'PV-Angebot prÃ¼fen: 12-Punkte-Checkliste | BHD Ratgeber',
+    desc: 'Checkliste fÃ¼r PV- und WÃ¤rmepumpen-Angebote: zwÃ¶lf Angaben, die enthalten sein mÃ¼ssen, und drei Warnzeichen, bei denen Sie besser nicht unterschreiben.',
+    article: { headline: 'Angebot prÃ¼fen: 12 Punkte, die drinstehen mÃ¼ssen', pub: '2026-08-01', section: 'AngebotsprÃ¼fung' }
   },
   {
-    key: 'rechner', dir: 'waermepumpen-rechner', view: 'view-rechner', prio: '0.9', crumb: 'Wärmepumpen-Rechner',
-    title: 'Wärmepumpen-Rechner: Größe & Förderung | BHD',
-    ogTitle: 'Kostenloser Wärmepumpen-Rechner – Größe & Förderung | BHD',
-    desc: 'Kostenloser Wärmepumpen-Rechner: Heizlast, Gerätegröße, Jahresarbeitszahl, Speicher und KfW-Zuschuss aus Ihren Gebäudedaten. Ohne Anmeldung.',
+    key: 'rechner', dir: 'waermepumpen-rechner', view: 'view-rechner', prio: '0.9', crumb: 'WÃ¤rmepumpen-Rechner',
+    title: 'WÃ¤rmepumpen-Rechner: GrÃ¶ÃŸe & FÃ¶rderung | BHD',
+    ogTitle: 'Kostenloser WÃ¤rmepumpen-Rechner â€“ GrÃ¶ÃŸe & FÃ¶rderung | BHD',
+    desc: 'Kostenloser WÃ¤rmepumpen-Rechner: Heizlast, GerÃ¤tegrÃ¶ÃŸe, Jahresarbeitszahl, Speicher und KfW-Zuschuss aus Ihren GebÃ¤udedaten. Ohne Anmeldung.',
     ld: ['rechner']
   },
   {
     key: 'ask', dir: 'anfragen', view: 'view-ask', prio: '0.9', crumb: 'Anfragen',
-    title: 'Anfrage stellen – kostenloses Angebot | BHD',
-    desc: 'Kostenloses Angebot für Photovoltaik, Stromspeicher oder Wärmepumpe anfordern. Unabhängige Beratung und geprüfte Fachbetriebe aus Ihrer Region.'
+    title: 'Anfrage stellen â€“ kostenloses Angebot | BHD',
+    desc: 'Kostenloses Angebot fÃ¼r Photovoltaik, Stromspeicher oder WÃ¤rmepumpe anfordern. UnabhÃ¤ngige Beratung und geprÃ¼fte Fachbetriebe aus Ihrer Region.'
   },
   {
     key: 'kontakt', dir: 'kontakt', view: 'view-kontakt', prio: '0.8', crumb: 'Kontakt',
     title: 'Kontakt: Telefon, WhatsApp & E-Mail | BHD Berlin',
-    ogTitle: 'Kontakt – direkt mit einem Berater sprechen | BHD',
-    desc: 'BHD erreichen Sie täglich von 8 bis 20 Uhr: telefonisch unter 0163 4440392, per WhatsApp oder E-Mail. Sitz in Berlin, Beratung bundesweit.',
+    ogTitle: 'Kontakt â€“ direkt mit einem Berater sprechen | BHD',
+    desc: 'BHD erreichen Sie tÃ¤glich von 8 bis 20 Uhr: telefonisch unter 0163 4440392, per WhatsApp oder E-Mail. Sitz in Berlin, Beratung bundesweit.',
     ld: ['kontakt']
   },
   {
     key: 'partner', dir: 'partner-werden', view: 'view-partner', prio: '0.7', crumb: 'Partner werden',
-    title: 'Partner werden – für Fachbetriebe | BHD',
-    ogTitle: 'Partner werden – Aufträge statt Akquise | BHD',
+    title: 'Partner werden â€“ fÃ¼r Fachbetriebe | BHD',
+    ogTitle: 'Partner werden â€“ AuftrÃ¤ge statt Akquise | BHD',
     desc: 'Als Fachbetrieb Partner von BHD werden: vorqualifizierte Anfragen in Ihrer Region, keine Vorkosten, keine Mindestabnahme. Ablauf und Formular.'
   },
   {
     key: 'impressum', dir: 'impressum', view: 'view-impressum', prio: '0.2', crumb: 'Impressum',
     title: 'Impressum | BHD Beratung Heimenergie Deutschland',
-    desc: 'Impressum und Anbieterkennzeichnung der Brotherhooddeen UG (haftungsbeschränkt) aus Berlin, Marke BHD – Beratung Heimenergie Deutschland.'
+    desc: 'Impressum und Anbieterkennzeichnung der Brotherhooddeen UG (haftungsbeschrÃ¤nkt) aus Berlin, Marke BHD â€“ Beratung Heimenergie Deutschland.'
   },
   {
     key: 'datenschutz', dir: 'datenschutz', view: 'view-datenschutz', prio: '0.2', crumb: 'Datenschutz',
     title: 'Datenschutz | BHD Beratung Heimenergie Deutschland',
-    desc: 'Datenschutzerklärung von BHD: welche Daten wir verarbeiten, zu welchem Zweck, wer sie erhält und welche Rechte Sie nach der DSGVO haben.'
+    desc: 'DatenschutzerklÃ¤rung von BHD: welche Daten wir verarbeiten, zu welchem Zweck, wer sie erhÃ¤lt und welche Rechte Sie nach der DSGVO haben.'
   }
 ];
 
@@ -245,7 +258,7 @@ PAGES.forEach(p => {
     .replace('<div id="' + p.view + '" hidden>', '<div id="' + p.view + '">');
 });
 
-/* ------------------------------------------------- Script umbauen (1×) */
+/* ------------------------------------------------- Script umbauen (1Ã—) */
 
 function buildScript() {
   let s = '  const reduce=' + SCRIPT_RAW;
@@ -262,7 +275,7 @@ function buildScript() {
   const forms = s.slice(s.indexOf(MARK_FORMS), s.indexOf(MARK_SCROLL));
   let tail = s.slice(s.indexOf(MARK_SCROLL));
 
-  // Der Routing-Block entfällt – ersetzt durch echte Links + Hash-Weiterleitung
+  // Der Routing-Block entfÃ¤llt â€“ ersetzt durch echte Links + Hash-Weiterleitung
   const nav = [
     '  // ---------- Navigation (echte Unterseiten) ----------',
     '  (function(){',
@@ -283,7 +296,7 @@ function buildScript() {
       '#impressum': URL_OF.impressum, '#datenschutz': URL_OF.datenschutz
     }) + ';',
     '    if(map[location.hash]){location.replace(map[location.hash]);return;}',
-    '    // „Jetzt anfragen": auf der Startseite sanft scrollen, sonst normal verlinken',
+    '    // â€žJetzt anfragen": auf der Startseite sanft scrollen, sonst normal verlinken',
     "    document.querySelectorAll('[data-go-funnel]').forEach(function(el){",
     "      el.addEventListener('click',function(e){",
     "        var f=document.getElementById('funnel');",
@@ -304,7 +317,7 @@ function buildScript() {
     funnel.replace(MARK_FUNNEL + '\n', '') + '  })();\n\n';
 
   // Die Formular-Bloecke (B2C, B2B, Waermepumpen-Rechner) pruefen in der
-  // Quelldatei jeweils selbst, ob ihre Elemente vorhanden sind – hier ist
+  // Quelldatei jeweils selbst, ob ihre Elemente vorhanden sind â€“ hier ist
   // deshalb keine zusaetzliche Kapselung noetig.
   const formsGuarded = forms + '\n';
 
@@ -317,7 +330,12 @@ function buildScript() {
 }
 
 /* Auch im Skript steckt die Adresse (FormSubmit-Endpunkt der beiden Formulare). */
-const SCRIPT = buildScript().split(MAIL_IN_SOURCE).join(MAIL);
+/* Auch im Skript stecken die Adresse und der Cal.com-Link. Das Skript wird
+ * nur EINMAL gebaut, calUmschalten() greift dort also nicht - die Ersetzung
+ * muss hier passieren. */
+const SCRIPT = buildScript()
+  .split(MAIL_IN_SOURCE).join(MAIL)
+  .split('__CAL_LINK__').join(CAL_LINK);
 
 /* --------------------------------------------------- Links absolut machen */
 
@@ -328,7 +346,7 @@ function fixLinks(html) {
     // Assets funktionieren dann aus jeder Unterseite heraus
     .replace(/(src|href)="assets\//g, '$1="/assets/')
     // Menue-/Footer-Links: echte Ziele ergaenzen (data-nav bleibt fuer die Markierung)
-    // data-nav kann an beliebiger Stelle im <a> stehen (z. B. nach class) –
+    // data-nav kann an beliebiger Stelle im <a> stehen (z. B. nach class) â€“
     // deshalb den ganzen Tag betrachten und href nur ergaenzen, wenn keins da ist.
     .replace(/<a\b[^>]*>/g, (tag) => {
       if (/\shref=/.test(tag)) return tag;
@@ -348,7 +366,7 @@ function fixLinks(html) {
  * von Hand umzubauen, wird jedes <img> hier automatisch in ein <picture>
  * gehuellt: moderne Browser laden WebP, aeltere weiterhin das Original.
  * `picture{display:contents}` sorgt dafuer, dass sich am Layout nichts
- * aendert – die bestehenden CSS-Regeln greifen unveraendert auf das <img>.
+ * aendert â€“ die bestehenden CSS-Regeln greifen unveraendert auf das <img>.
  */
 /* Breiten, die tools/bilder.js fuer die Referenzfotos erzeugt. */
 const BILD_BREITEN = [400, 800];
@@ -363,7 +381,7 @@ function webpPicture(html) {
     const webp = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
     if (!fs.existsSync(path.join(ROOT, webp))) return tag;
 
-    /* Liegen zusaetzlich verkleinerte Fassungen vor, als srcset anbieten –
+    /* Liegen zusaetzlich verkleinerte Fassungen vor, als srcset anbieten â€“
      * sonst laedt das Handy die volle Aufloesung fuer eine kleine Kachel. */
     const basis = src.replace(/\.(jpg|jpeg|png)$/i, '');
     const stufen = BILD_BREITEN
@@ -380,7 +398,7 @@ function webpPicture(html) {
   });
 }
 
-/* Das schliessende </div> der Marke muss zu </a> werden – zeilenweise sicher. */
+/* Das schliessende </div> der Marke muss zu </a> werden â€“ zeilenweise sicher. */
 function fixBrandClose(html) {
   return html.replace(
     /<a class="brand" href="\/" data-nav="home" aria-label="Zur Startseite">(<img[^>]*>)<\/div>/g,
@@ -398,19 +416,19 @@ function jsonLd(page) {
   const nodes = [
     {
       // ProfessionalService ist ein Untertyp von LocalBusiness und trifft es
-      // genauer als der Oberbegriff: BHD berät und vermittelt, montiert nicht selbst.
+      // genauer als der Oberbegriff: BHD berÃ¤t und vermittelt, montiert nicht selbst.
       '@type': ['Organization', 'ProfessionalService'],
       '@id': SITE + '/#org',
-      name: 'BHD – Beratung Heimenergie Deutschland',
-      legalName: 'Brotherhooddeen UG (haftungsbeschränkt)',
+      name: 'BHD â€“ Beratung Heimenergie Deutschland',
+      legalName: 'Brotherhooddeen UG (haftungsbeschrÃ¤nkt)',
       vatID: 'DE370268782',
       identifier: 'HRB 266273 B',
       url: SITE + '/',
       email: MAIL,
       telephone: '+49 163 4440392',
       foundingDate: '2024',
-      founder: { '@type': 'Person', name: 'Kürşat Yıldırım' },
-      description: 'Unabhängige Beratung für Hausbesitzer zu Photovoltaik, Stromspeicher und Wärmepumpe. Vermittlung geprüfter, regionaler Fachbetriebe. Sitz in Berlin, bundesweit tätig.',
+      founder: { '@type': 'Person', name: 'KÃ¼rÅŸat YÄ±ldÄ±rÄ±m' },
+      description: 'UnabhÃ¤ngige Beratung fÃ¼r Hausbesitzer zu Photovoltaik, Stromspeicher und WÃ¤rmepumpe. Vermittlung geprÃ¼fter, regionaler Fachbetriebe. Sitz in Berlin, bundesweit tÃ¤tig.',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Prinzenallee 44b',
@@ -418,7 +436,7 @@ function jsonLd(page) {
         addressLocality: 'Berlin',
         addressCountry: 'DE'
       },
-      // Koordinaten der Geschäftsadresse, per OpenStreetMap ermittelt
+      // Koordinaten der GeschÃ¤ftsadresse, per OpenStreetMap ermittelt
       geo: { '@type': 'GeoCoordinates', latitude: 52.55896, longitude: 13.38854 },
       hasMap: 'https://www.openstreetmap.org/?mlat=52.55896&mlon=13.38854#map=18/52.55896/13.38854',
       areaServed: [
@@ -426,23 +444,23 @@ function jsonLd(page) {
         { '@type': 'Country', name: 'Deutschland' }
       ],
       knowsAbout: [
-        'Photovoltaik', 'Solaranlage', 'Stromspeicher', 'Batteriespeicher', 'Wärmepumpe',
-        'Luft-Wasser-Wärmepumpe', 'Wallbox', 'Energieberatung', 'KfW-Förderung',
-        'Heizlastberechnung', 'Eigenverbrauch', 'Angebotsprüfung'
+        'Photovoltaik', 'Solaranlage', 'Stromspeicher', 'Batteriespeicher', 'WÃ¤rmepumpe',
+        'Luft-Wasser-WÃ¤rmepumpe', 'Wallbox', 'Energieberatung', 'KfW-FÃ¶rderung',
+        'Heizlastberechnung', 'Eigenverbrauch', 'AngebotsprÃ¼fung'
       ],
       makesOffer: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Unabhängige Beratung zu Photovoltaik und Stromspeicher' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Beratung und Vermittlung für Wärmepumpen inklusive KfW-Förderung' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Kostenloser Angebots-Check für Photovoltaik- und Wärmepumpen-Angebote' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Vermittlung geprüfter regionaler Fachbetriebe' } }
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'UnabhÃ¤ngige Beratung zu Photovoltaik und Stromspeicher' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Beratung und Vermittlung fÃ¼r WÃ¤rmepumpen inklusive KfW-FÃ¶rderung' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Kostenloser Angebots-Check fÃ¼r Photovoltaik- und WÃ¤rmepumpen-Angebote' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Vermittlung geprÃ¼fter regionaler Fachbetriebe' } }
       ],
       slogan: 'Sonne rein. Stromrechnung raus.',
       /* logo und image braucht Google fuer das Knowledge Panel und fuer
        * lokale Ergebnisse. Ohne logo kann kein Panel gebildet werden. */
-      logo: { '@type': 'ImageObject', '@id': SITE + '/#logo', url: SITE + '/icon-512.png', width: 512, height: 512, caption: 'BHD – Beratung Heimenergie Deutschland' },
+      logo: { '@type': 'ImageObject', '@id': SITE + '/#logo', url: SITE + '/icon-512.png', width: 512, height: 512, caption: 'BHD â€“ Beratung Heimenergie Deutschland' },
       image: SITE + '/assets/og-bhd.png',
-      /* Preisniveau als grobe Einordnung – Pflichtfeld-Kandidat fuer LocalBusiness. */
-      priceRange: '€€',
+      /* Preisniveau als grobe Einordnung â€“ Pflichtfeld-Kandidat fuer LocalBusiness. */
+      priceRange: 'â‚¬â‚¬',
       contactPoint: [{
         '@type': 'ContactPoint',
         telephone: '+49-163-4440392',
@@ -464,7 +482,7 @@ function jsonLd(page) {
       '@type': 'WebSite',
       '@id': SITE + '/#website',
       url: SITE + '/',
-      name: 'BHD – Beratung Heimenergie Deutschland',
+      name: 'BHD â€“ Beratung Heimenergie Deutschland',
       inLanguage: 'de-DE',
       publisher: { '@id': SITE + '/#org' }
     },
@@ -477,7 +495,7 @@ function jsonLd(page) {
       inLanguage: 'de-DE',
       isPartOf: { '@id': SITE + '/#website' },
       about: { '@id': SITE + '/#org' },
-      /* Damit Google und KI-Systeme erkennen, wie aktuell der Stand ist –
+      /* Damit Google und KI-Systeme erkennen, wie aktuell der Stand ist â€“
        * bei Foerdersaetzen, die sich 2027 aendern, ist das entscheidend. */
       dateModified: REVIEWED
     }
@@ -503,12 +521,12 @@ function jsonLd(page) {
     nodes.push({
       '@type': 'Person',
       '@id': SITE + '/#kuersat',
-      name: 'Kürşat Yıldırım',
-      jobTitle: 'Geschäftsführer',
+      name: 'KÃ¼rÅŸat YÄ±ldÄ±rÄ±m',
+      jobTitle: 'GeschÃ¤ftsfÃ¼hrer',
       worksFor: { '@id': SITE + '/#org' },
       url: SITE + URL_OF.about,
       image: SITE + '/assets/team/gf-qualitaetskontrolle.jpg',
-      knowsAbout: ['Photovoltaik', 'Wärmepumpe', 'Stromspeicher', 'KfW-Förderung', 'Angebotsprüfung'],
+      knowsAbout: ['Photovoltaik', 'WÃ¤rmepumpe', 'Stromspeicher', 'KfW-FÃ¶rderung', 'AngebotsprÃ¼fung'],
       mainEntityOfPage: { '@id': SITE + URL_OF.about + '#webpage' }
     });
   }
@@ -521,11 +539,11 @@ function jsonLd(page) {
     nodes.push({
       '@type': 'Person',
       '@id': SITE + '/#kuersat',
-      name: 'Kürşat Yıldırım',
-      jobTitle: 'Geschäftsführer',
+      name: 'KÃ¼rÅŸat YÄ±ldÄ±rÄ±m',
+      jobTitle: 'GeschÃ¤ftsfÃ¼hrer',
       worksFor: { '@id': SITE + '/#org' },
       url: SITE + URL_OF.about,
-      knowsAbout: ['Photovoltaik', 'Wärmepumpe', 'Stromspeicher', 'KfW-Förderung', 'Angebotsprüfung']
+      knowsAbout: ['Photovoltaik', 'WÃ¤rmepumpe', 'Stromspeicher', 'KfW-FÃ¶rderung', 'AngebotsprÃ¼fung']
     });
     nodes.push({
       '@type': 'Article',
@@ -561,7 +579,7 @@ function jsonLd(page) {
     });
   }
 
-  /* Kontaktseite als ContactPage auszeichnen – Google wertet den Typ fuer
+  /* Kontaktseite als ContactPage auszeichnen â€“ Google wertet den Typ fuer
    * lokale Ergebnisse und fuer das Knowledge Panel aus. */
   if ((page.ld || []).includes('kontakt')) {
     nodes.push({
@@ -581,17 +599,17 @@ function jsonLd(page) {
       '@type': 'FAQPage',
       '@id': SITE + '/#faq',
       mainEntity: [
-        { '@type': 'Question', name: 'Was kostet mich die Anfrage?', acceptedAnswer: { '@type': 'Answer', text: 'Die Anfrage und das anschließende Angebot sind für Sie völlig kostenlos und unverbindlich. Sie gehen keinerlei Verpflichtung ein.' } },
-        { '@type': 'Question', name: 'Wie viel Förderung bekomme ich für eine Wärmepumpe?', acceptedAnswer: { '@type': 'Answer', text: 'Über den KfW-Zuschuss 458 gibt es 30 % Grundförderung. Selbstnutzende Eigentümer, die eine alte Heizung ersetzen, bekommen 16 % Klimageschwindigkeitsbonus dazu, und je nach zu versteuerndem Haushaltseinkommen kommen 40, 30 oder 10 % Einkommensbonus obendrauf. Die Summe ist bei 80 % gedeckelt, die förderfähigen Kosten bei 28.000 Euro für die erste Wohneinheit. Daraus ergibt sich ein Höchstzuschuss von 22.400 Euro.' } },
-        { '@type': 'Question', name: 'Warum sollte ich mit der Förderung nicht warten?', acceptedAnswer: { '@type': 'Answer', text: 'Weil die Sätze planmäßig sinken. Die Grundförderung geht im ersten Quartal 2027 von 30 auf 15 Prozent zurück, der Klimageschwindigkeitsbonus sinkt ab Februar 2027 alle sechs Monate um 4 Prozentpunkte und der Höchstbetrag der förderfähigen Kosten sinkt ab dem 1. Februar 2027 alle sechs Monate um 750 Euro. Wer 2026 beantragt, rechnet noch mit den heutigen Sätzen.' } },
-        { '@type': 'Question', name: 'Wann muss ich den Förderantrag stellen?', acceptedAnswer: { '@type': 'Answer', text: 'Vor der Auftragserteilung. Wer den Handwerker zuerst beauftragt und danach den Antrag stellt, verliert den Zuschuss. Üblich ist ein Vertrag mit aufschiebender Bedingung, der erst wirksam wird, wenn die Förderung bewilligt ist.' } },
-        { '@type': 'Question', name: 'Gibt es für Photovoltaik auch einen Zuschuss?', acceptedAnswer: { '@type': 'Answer', text: 'Nicht in der Form wie bei der Wärmepumpe. Der Vorteil steckt bei Solar in der Steuer: Auf Lieferung und Montage von Anlage, Speicher und Wechselrichter am Wohngebäude fallen 0 % Umsatzsteuer an (§ 12 Abs. 3 UStG, unbefristet). Zusätzlich sind die Einnahmen aus vielen kleinen Anlagen einkommensteuerfrei nach § 3 Nr. 72 EStG.' } },
-        { '@type': 'Question', name: 'Lohnt sich Photovoltaik 2026 noch?', acceptedAnswer: { '@type': 'Answer', text: 'In den meisten Fällen ja. Anlagen sind deutlich günstiger geworden, die Mehrwertsteuer entfällt und der selbst genutzte Strom ist heute mehr wert als der eingespeiste. Entscheidend ist nicht die Einspeisevergütung, sondern der Eigenverbrauch. Bei einem Haushalt mit Wärmepumpe oder E-Auto rechnet sich eine Anlage deshalb schneller.' } },
-        { '@type': 'Question', name: 'Funktioniert eine Wärmepumpe auch im Altbau?', acceptedAnswer: { '@type': 'Answer', text: 'Meistens ja, entscheidend ist die Vorlauftemperatur. Je niedriger die Temperatur, mit der die Heizung auskommt, desto wirtschaftlicher läuft die Wärmepumpe. Größere Heizkörper in einzelnen Räumen und ein hydraulischer Abgleich senken die Vorlauftemperatur oft um 10 bis 15 Grad und sind fast immer günstiger als eine komplette Dämmung.' } },
-        { '@type': 'Question', name: 'Wie schnell erhalte ich ein Angebot?', acceptedAnswer: { '@type': 'Answer', text: 'Nach Ihrer Anfrage meldet sich in kurzer Zeit ein geprüfter Fachbetrieb aus Ihrer Region mit einem auf Ihr Haus zugeschnittenen Angebot. Liegt bereits ein Angebot vor, prüfen wir es innerhalb von 24 Stunden kostenlos.' } },
-        { '@type': 'Question', name: 'Brauche ich Eigenkapital?', acceptedAnswer: { '@type': 'Answer', text: 'Nicht zwingend. Neben dem KfW-Zuschuss gibt es zinsverbilligte Kredite und Finanzierungen über die Hausbank. Welche Variante sinnvoll ist, hängt von der Summe und der persönlichen Situation ab.' } },
-        { '@type': 'Question', name: 'Welche Garantie habe ich auf die Anlage?', acceptedAnswer: { '@type': 'Answer', text: 'Zu unterscheiden sind Herstellergarantie und gesetzliche Gewährleistung. Die Herstellergarantie kommt vom Produzenten und liegt bei Modulen je nach Hersteller bei bis zu 25 Jahren, bei Speichern und Wechselrichtern deutlich darunter. Davon getrennt gilt die gesetzliche Gewährleistung des ausführenden Betriebs auf die Montage.' } },
-        { '@type': 'Question', name: 'Muss mein Zählerschrank für eine Wärmepumpe erneuert werden?', acceptedAnswer: { '@type': 'Answer', text: 'Nicht immer. Eine Wärmepumpe braucht eine eigene Absicherung mit Fehlerstromschutzschalter Typ B und eine Steuereinrichtung nach § 14a EnWG. In älteren Zählerschränken fehlt dafür oft der Platz. Ob Erneuerung, Erweiterung oder nur das Nachrüsten der Steuerung nötig ist, zeigt die Prüfung vor Ort.' } }
+        { '@type': 'Question', name: 'Was kostet mich die Anfrage?', acceptedAnswer: { '@type': 'Answer', text: 'Die Anfrage und das anschlieÃŸende Angebot sind fÃ¼r Sie vÃ¶llig kostenlos und unverbindlich. Sie gehen keinerlei Verpflichtung ein.' } },
+        { '@type': 'Question', name: 'Wie viel FÃ¶rderung bekomme ich fÃ¼r eine WÃ¤rmepumpe?', acceptedAnswer: { '@type': 'Answer', text: 'Ãœber den KfW-Zuschuss 458 gibt es 30 % GrundfÃ¶rderung. Selbstnutzende EigentÃ¼mer, die eine alte Heizung ersetzen, bekommen 16 % Klimageschwindigkeitsbonus dazu, und je nach zu versteuerndem Haushaltseinkommen kommen 40, 30 oder 10 % Einkommensbonus obendrauf. Die Summe ist bei 80 % gedeckelt, die fÃ¶rderfÃ¤higen Kosten bei 28.000 Euro fÃ¼r die erste Wohneinheit. Daraus ergibt sich ein HÃ¶chstzuschuss von 22.400 Euro.' } },
+        { '@type': 'Question', name: 'Warum sollte ich mit der FÃ¶rderung nicht warten?', acceptedAnswer: { '@type': 'Answer', text: 'Weil die SÃ¤tze planmÃ¤ÃŸig sinken. Die GrundfÃ¶rderung geht im ersten Quartal 2027 von 30 auf 15 Prozent zurÃ¼ck, der Klimageschwindigkeitsbonus sinkt ab Februar 2027 alle sechs Monate um 4 Prozentpunkte und der HÃ¶chstbetrag der fÃ¶rderfÃ¤higen Kosten sinkt ab dem 1. Februar 2027 alle sechs Monate um 750 Euro. Wer 2026 beantragt, rechnet noch mit den heutigen SÃ¤tzen.' } },
+        { '@type': 'Question', name: 'Wann muss ich den FÃ¶rderantrag stellen?', acceptedAnswer: { '@type': 'Answer', text: 'Vor der Auftragserteilung. Wer den Handwerker zuerst beauftragt und danach den Antrag stellt, verliert den Zuschuss. Ãœblich ist ein Vertrag mit aufschiebender Bedingung, der erst wirksam wird, wenn die FÃ¶rderung bewilligt ist.' } },
+        { '@type': 'Question', name: 'Gibt es fÃ¼r Photovoltaik auch einen Zuschuss?', acceptedAnswer: { '@type': 'Answer', text: 'Nicht in der Form wie bei der WÃ¤rmepumpe. Der Vorteil steckt bei Solar in der Steuer: Auf Lieferung und Montage von Anlage, Speicher und Wechselrichter am WohngebÃ¤ude fallen 0 % Umsatzsteuer an (Â§ 12 Abs. 3 UStG, unbefristet). ZusÃ¤tzlich sind die Einnahmen aus vielen kleinen Anlagen einkommensteuerfrei nach Â§ 3 Nr. 72 EStG.' } },
+        { '@type': 'Question', name: 'Lohnt sich Photovoltaik 2026 noch?', acceptedAnswer: { '@type': 'Answer', text: 'In den meisten FÃ¤llen ja. Anlagen sind deutlich gÃ¼nstiger geworden, die Mehrwertsteuer entfÃ¤llt und der selbst genutzte Strom ist heute mehr wert als der eingespeiste. Entscheidend ist nicht die EinspeisevergÃ¼tung, sondern der Eigenverbrauch. Bei einem Haushalt mit WÃ¤rmepumpe oder E-Auto rechnet sich eine Anlage deshalb schneller.' } },
+        { '@type': 'Question', name: 'Funktioniert eine WÃ¤rmepumpe auch im Altbau?', acceptedAnswer: { '@type': 'Answer', text: 'Meistens ja, entscheidend ist die Vorlauftemperatur. Je niedriger die Temperatur, mit der die Heizung auskommt, desto wirtschaftlicher lÃ¤uft die WÃ¤rmepumpe. GrÃ¶ÃŸere HeizkÃ¶rper in einzelnen RÃ¤umen und ein hydraulischer Abgleich senken die Vorlauftemperatur oft um 10 bis 15 Grad und sind fast immer gÃ¼nstiger als eine komplette DÃ¤mmung.' } },
+        { '@type': 'Question', name: 'Wie schnell erhalte ich ein Angebot?', acceptedAnswer: { '@type': 'Answer', text: 'Nach Ihrer Anfrage meldet sich in kurzer Zeit ein geprÃ¼fter Fachbetrieb aus Ihrer Region mit einem auf Ihr Haus zugeschnittenen Angebot. Liegt bereits ein Angebot vor, prÃ¼fen wir es innerhalb von 24 Stunden kostenlos.' } },
+        { '@type': 'Question', name: 'Brauche ich Eigenkapital?', acceptedAnswer: { '@type': 'Answer', text: 'Nicht zwingend. Neben dem KfW-Zuschuss gibt es zinsverbilligte Kredite und Finanzierungen Ã¼ber die Hausbank. Welche Variante sinnvoll ist, hÃ¤ngt von der Summe und der persÃ¶nlichen Situation ab.' } },
+        { '@type': 'Question', name: 'Welche Garantie habe ich auf die Anlage?', acceptedAnswer: { '@type': 'Answer', text: 'Zu unterscheiden sind Herstellergarantie und gesetzliche GewÃ¤hrleistung. Die Herstellergarantie kommt vom Produzenten und liegt bei Modulen je nach Hersteller bei bis zu 25 Jahren, bei Speichern und Wechselrichtern deutlich darunter. Davon getrennt gilt die gesetzliche GewÃ¤hrleistung des ausfÃ¼hrenden Betriebs auf die Montage.' } },
+        { '@type': 'Question', name: 'Muss mein ZÃ¤hlerschrank fÃ¼r eine WÃ¤rmepumpe erneuert werden?', acceptedAnswer: { '@type': 'Answer', text: 'Nicht immer. Eine WÃ¤rmepumpe braucht eine eigene Absicherung mit Fehlerstromschutzschalter Typ B und eine Steuereinrichtung nach Â§ 14a EnWG. In Ã¤lteren ZÃ¤hlerschrÃ¤nken fehlt dafÃ¼r oft der Platz. Ob Erneuerung, Erweiterung oder nur das NachrÃ¼sten der Steuerung nÃ¶tig ist, zeigt die PrÃ¼fung vor Ort.' } }
       ]
     });
   }
@@ -609,7 +627,7 @@ function jsonLd(page) {
         { '@type': 'City', name: 'Berlin' },
         { '@type': 'Country', name: 'Deutschland' }
       ],
-      audience: { '@type': 'Audience', audienceType: 'Hausbesitzer und Eigentümer' },
+      audience: { '@type': 'Audience', audienceType: 'Hausbesitzer und EigentÃ¼mer' },
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: 'Beratung und Angebotserstellung kostenlos und unverbindlich' }
     });
   }
@@ -618,12 +636,12 @@ function jsonLd(page) {
     nodes.push({
       '@type': 'WebApplication',
       '@id': SITE + URL_OF.rechner + '#app',
-      name: 'Wärmepumpen-Rechner von BHD',
+      name: 'WÃ¤rmepumpen-Rechner von BHD',
       url: SITE + URL_OF.rechner,
       applicationCategory: 'UtilitiesApplication',
       operatingSystem: 'Web',
       inLanguage: 'de-DE',
-      description: 'Kostenloser Wärmepumpen-Rechner ohne Anmeldung: ermittelt aus Wohnfläche, Baualtersklasse, Gebäudeart und dem bisherigen Energieverbrauch die Heizlast, die erforderliche Heizleistung, die geschätzte Jahresarbeitszahl, den Jahresstrombedarf, Speichergrößen und den voraussichtlichen KfW-Zuschuss 458.',
+      description: 'Kostenloser WÃ¤rmepumpen-Rechner ohne Anmeldung: ermittelt aus WohnflÃ¤che, Baualtersklasse, GebÃ¤udeart und dem bisherigen Energieverbrauch die Heizlast, die erforderliche Heizleistung, die geschÃ¤tzte Jahresarbeitszahl, den Jahresstrombedarf, SpeichergrÃ¶ÃŸen und den voraussichtlichen KfW-Zuschuss 458.',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
       provider: { '@id': SITE + '/#org' }
     });
@@ -631,10 +649,10 @@ function jsonLd(page) {
       '@type': 'FAQPage',
       '@id': SITE + URL_OF.rechner + '#faq',
       mainEntity: [
-        { '@type': 'Question', name: 'Wie groß muss meine Wärmepumpe sein?', acceptedAnswer: { '@type': 'Answer', text: 'Die Größe richtet sich nach der Heizlast des Gebäudes. Aus dem Jahresverbrauch lässt sie sich am zuverlässigsten ableiten: nutzbare Wärme abzüglich Warmwasser, geteilt durch rund 2.100 Vollbenutzungsstunden. Ohne Verbrauchsangabe rechnet man über Wohnfläche und Baualtersklasse. Übernimmt die Wärmepumpe auch das Warmwasser, kommen etwa 10 Prozent Zuschlag für Speicherladung und Sperrzeiten dazu. Verbindlich ist eine raumweise Heizlastberechnung nach DIN EN 12831.' } },
-        { '@type': 'Question', name: 'Wie viel Förderung gibt es 2026 für eine Wärmepumpe?', acceptedAnswer: { '@type': 'Answer', text: 'Über den KfW-Zuschuss 458 gibt es seit dem 21. Juli 2026 eine Grundförderung von 30 Prozent, dazu für selbstnutzende Eigentümer 16 Prozent Klimageschwindigkeitsbonus beim Tausch einer alten Heizung und einen Einkommensbonus von 40, 30 oder 10 Prozent je nach zu versteuerndem Haushaltseinkommen. Die Gesamtförderung ist auf 80 Prozent gedeckelt, die förderfähigen Kosten der ersten Wohneinheit auf 28.000 Euro. Daraus ergibt sich ein Höchstzuschuss von 22.400 Euro. Der Antrag muss vor der Auftragserteilung gestellt werden.' } },
-        { '@type': 'Question', name: 'Welche Jahresarbeitszahl erreicht eine Luft-Wasser-Wärmepumpe?', acceptedAnswer: { '@type': 'Answer', text: 'Entscheidend ist die Vorlauftemperatur. Bei 35 Grad über eine Fußbodenheizung sind rund 4,3 realistisch, bei 45 Grad etwa 3,6 und bei 55 Grad über Bestandsheizkörper nur noch rund 3,0. Warmwasserbereitung über dieselbe Wärmepumpe senkt den Jahreswert um etwa 0,2. Größere Heizflächen und ein hydraulischer Abgleich sind deshalb meist die wirtschaftlichste Maßnahme.' } },
-        { '@type': 'Question', name: 'Braucht eine Wärmepumpe einen Pufferspeicher?', acceptedAnswer: { '@type': 'Answer', text: 'In der Regel ja. Ein Puffer- oder Reihenspeicher mit etwa 20 Litern je Kilowatt Heizleistung, mindestens aber 50 Litern, stellt sicher, dass beim Abtauen genügend Wärme im System ist und die Wärmepumpe nicht ständig taktet. Der Warmwasserspeicher kommt separat dazu und richtet sich nach der Personenzahl.' } }
+        { '@type': 'Question', name: 'Wie groÃŸ muss meine WÃ¤rmepumpe sein?', acceptedAnswer: { '@type': 'Answer', text: 'Die GrÃ¶ÃŸe richtet sich nach der Heizlast des GebÃ¤udes. Aus dem Jahresverbrauch lÃ¤sst sie sich am zuverlÃ¤ssigsten ableiten: nutzbare WÃ¤rme abzÃ¼glich Warmwasser, geteilt durch rund 2.100 Vollbenutzungsstunden. Ohne Verbrauchsangabe rechnet man Ã¼ber WohnflÃ¤che und Baualtersklasse. Ãœbernimmt die WÃ¤rmepumpe auch das Warmwasser, kommen etwa 10 Prozent Zuschlag fÃ¼r Speicherladung und Sperrzeiten dazu. Verbindlich ist eine raumweise Heizlastberechnung nach DIN EN 12831.' } },
+        { '@type': 'Question', name: 'Wie viel FÃ¶rderung gibt es 2026 fÃ¼r eine WÃ¤rmepumpe?', acceptedAnswer: { '@type': 'Answer', text: 'Ãœber den KfW-Zuschuss 458 gibt es seit dem 21. Juli 2026 eine GrundfÃ¶rderung von 30 Prozent, dazu fÃ¼r selbstnutzende EigentÃ¼mer 16 Prozent Klimageschwindigkeitsbonus beim Tausch einer alten Heizung und einen Einkommensbonus von 40, 30 oder 10 Prozent je nach zu versteuerndem Haushaltseinkommen. Die GesamtfÃ¶rderung ist auf 80 Prozent gedeckelt, die fÃ¶rderfÃ¤higen Kosten der ersten Wohneinheit auf 28.000 Euro. Daraus ergibt sich ein HÃ¶chstzuschuss von 22.400 Euro. Der Antrag muss vor der Auftragserteilung gestellt werden.' } },
+        { '@type': 'Question', name: 'Welche Jahresarbeitszahl erreicht eine Luft-Wasser-WÃ¤rmepumpe?', acceptedAnswer: { '@type': 'Answer', text: 'Entscheidend ist die Vorlauftemperatur. Bei 35 Grad Ã¼ber eine FuÃŸbodenheizung sind rund 4,3 realistisch, bei 45 Grad etwa 3,6 und bei 55 Grad Ã¼ber BestandsheizkÃ¶rper nur noch rund 3,0. Warmwasserbereitung Ã¼ber dieselbe WÃ¤rmepumpe senkt den Jahreswert um etwa 0,2. GrÃ¶ÃŸere HeizflÃ¤chen und ein hydraulischer Abgleich sind deshalb meist die wirtschaftlichste MaÃŸnahme.' } },
+        { '@type': 'Question', name: 'Braucht eine WÃ¤rmepumpe einen Pufferspeicher?', acceptedAnswer: { '@type': 'Answer', text: 'In der Regel ja. Ein Puffer- oder Reihenspeicher mit etwa 20 Litern je Kilowatt Heizleistung, mindestens aber 50 Litern, stellt sicher, dass beim Abtauen genÃ¼gend WÃ¤rme im System ist und die WÃ¤rmepumpe nicht stÃ¤ndig taktet. Der Warmwasserspeicher kommt separat dazu und richtet sich nach der Personenzahl.' } }
       ]
     });
   }
@@ -643,11 +661,11 @@ function jsonLd(page) {
     nodes.push({
       '@type': 'Service',
       '@id': SITE + URL_OF.check + '#angebotscheck',
-      name: 'Angebots-Check für Photovoltaik & Wärmepumpe',
-      serviceType: 'Unabhängige Angebotsprüfung',
+      name: 'Angebots-Check fÃ¼r Photovoltaik & WÃ¤rmepumpe',
+      serviceType: 'UnabhÃ¤ngige AngebotsprÃ¼fung',
       provider: { '@id': SITE + '/#org' },
       areaServed: { '@type': 'Country', name: 'Deutschland' },
-      description: 'Kostenlose, unabhängige Prüfung eines bereits vorliegenden Angebots für Photovoltaik, Stromspeicher oder Wärmepumpe auf Seriosität, Effizienz und Fairness – Rückmeldung innerhalb von 24 Stunden, inklusive Vermittlung eines geprüften, vertrauenswürdigen Installationspartners.',
+      description: 'Kostenlose, unabhÃ¤ngige PrÃ¼fung eines bereits vorliegenden Angebots fÃ¼r Photovoltaik, Stromspeicher oder WÃ¤rmepumpe auf SeriositÃ¤t, Effizienz und Fairness â€“ RÃ¼ckmeldung innerhalb von 24 Stunden, inklusive Vermittlung eines geprÃ¼ften, vertrauenswÃ¼rdigen Installationspartners.',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
     });
   }
@@ -656,12 +674,12 @@ function jsonLd(page) {
     nodes.push({
       '@type': 'Service',
       '@id': SITE + URL_OF.bestand + '#bestandscheck',
-      name: 'Bestandsanlagen-Check für Photovoltaik & Wärmepumpe',
-      serviceType: 'Prüfung bestehender Anlagen',
+      name: 'Bestandsanlagen-Check fÃ¼r Photovoltaik & WÃ¤rmepumpe',
+      serviceType: 'PrÃ¼fung bestehender Anlagen',
       provider: { '@id': SITE + '/#org' },
       areaServed: { '@type': 'Country', name: 'Deutschland' },
-      description: 'Ersteinschätzung für bereits gebaute Photovoltaik- und Wärmepumpenanlagen: bei Mängeln und Schäden, unterbrochener Baustelle, insolventem Errichter, fehlender Anmeldung im Marktstammdatenregister, zu geringem Ertrag oder wenn ein Wartungsvertrag fehlt. Telefonische Ersteinschätzung kostenlos, auf Wunsch Vermittlung eines Fachbetriebs zur Übernahme.',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: 'Ersteinschätzung kostenlos und unverbindlich' }
+      description: 'ErsteinschÃ¤tzung fÃ¼r bereits gebaute Photovoltaik- und WÃ¤rmepumpenanlagen: bei MÃ¤ngeln und SchÃ¤den, unterbrochener Baustelle, insolventem Errichter, fehlender Anmeldung im Marktstammdatenregister, zu geringem Ertrag oder wenn ein Wartungsvertrag fehlt. Telefonische ErsteinschÃ¤tzung kostenlos, auf Wunsch Vermittlung eines Fachbetriebs zur Ãœbernahme.',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: 'ErsteinschÃ¤tzung kostenlos und unverbindlich' }
     });
   }
 
@@ -670,9 +688,25 @@ function jsonLd(page) {
 
 /* ------------------------------------------------------------ Seite bauen */
 
+/* Schaltet zwischen eigenem Terminformular und Cal.com um. Die beiden
+ * Varianten stehen in src/site.html zwischen den Marken <!--CAL:AN--> und
+ * <!--CAL:AUS-->; hier faellt die jeweils nicht gewaehlte weg. */
+function calUmschalten(html) {
+  const block = marke => new RegExp('<!--' + marke + '-->[\\s\\S]*?<!--\\/' + marke + '-->', 'g');
+  if (CAL_LINK) {
+    return html
+      .replace(block('CAL:AUS'), '')
+      .replace(/<!--CAL:AN-->|<!--\/CAL:AN-->/g, '')
+      .split('__CAL_LINK__').join(CAL_LINK);
+  }
+  return html
+    .replace(block('CAL:AN'), '')
+    .replace(/<!--CAL:AUS-->|<!--\/CAL:AUS-->/g, '');
+}
+
 function buildPage(page) {
   const url = SITE + URL_OF[page.key];
-  const view = webpPicture(fixLinks(VIEWS[page.key])
+  const view = calUmschalten(webpPicture(fixLinks(VIEWS[page.key])
     // Der Angebots-Check springt nach dem Upload auf seine eigene Seite zurueck.
     // Unabhaengig davon, welche Adresse in der Quelldatei steht.
     .replace(/value="https?:\/\/[^"]*[?&]checkok=1[^"]*"/g,
@@ -682,13 +716,13 @@ function buildPage(page) {
     .replace(/value="https?:\/\/[^"]*[?&]bestandok=1[^"]*"/g,
              'value="' + SITE + URL_OF.bestand + '?bestandok=1"')
     .replace(/value="https?:\/\/[^"]*[?&]terminok=1[^"]*"/g,
-             'value="' + SITE + URL_OF.termin + '?terminok=1"'));
+             'value="' + SITE + URL_OF.termin + '?terminok=1"')));
 
   return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(page.title)}</title>
 <meta name="description" content="${esc(page.desc)}">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="author" content="Brotherhooddeen UG (haftungsbeschränkt)">
+<meta name="author" content="Brotherhooddeen UG (haftungsbeschrÃ¤nkt)">
 <meta name="geo.region" content="DE-BE">
 <meta name="geo.placename" content="Berlin">
 <link rel="canonical" href="${url}">${GSC_TOKEN ? '\n<meta name="google-site-verification" content="' + esc(GSC_TOKEN) + '">' : ''}
@@ -697,7 +731,7 @@ function buildPage(page) {
 <link rel="icon" href="/icon-512.png" sizes="512x512" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="BHD – Beratung Heimenergie Deutschland">
+<meta property="og:site_name" content="BHD â€“ Beratung Heimenergie Deutschland">
 <meta property="og:title" content="${esc(page.ogTitle || page.title)}">
 <meta property="og:description" content="${esc(page.desc)}">
 <meta property="og:url" content="${url}">
@@ -705,7 +739,7 @@ function buildPage(page) {
 <meta property="og:image" content="${SITE}/assets/og-bhd.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="BHD – Beratung Heimenergie Deutschland: Photovoltaik und Wärmepumpe, unabhängige Beratung für Hausbesitzer">
+<meta property="og:image:alt" content="BHD â€“ Beratung Heimenergie Deutschland: Photovoltaik und WÃ¤rmepumpe, unabhÃ¤ngige Beratung fÃ¼r Hausbesitzer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="${SITE}/assets/og-bhd.png">
 <meta name="theme-color" content="#f6f5f1">
@@ -743,7 +777,7 @@ ${QUICK_OUT}
  * Aenderung sicher die neue Fassung geladen wird und nicht die alte.
  */
 const CSS_OUT = STYLE_MAIN.replace(/^<style>\n?/, '').replace(/<\/style>$/, '') +
-  '\n/* <picture> soll das Layout nicht beeinflussen – die bestehenden\n' +
+  '\n/* <picture> soll das Layout nicht beeinflussen â€“ die bestehenden\n' +
   '   Regeln greifen dadurch weiterhin direkt auf das <img>. */\n' +
   'picture{display:contents}\n';
 const JS_OUT = SCRIPT;
@@ -766,7 +800,7 @@ PAGES.forEach(p => {
 });
 
 /* sitemap.xml */
-/* lastmod je Seite aus dem Änderungsdatum der erzeugten Datei – so stimmt es
+/* lastmod je Seite aus dem Ã„nderungsdatum der erzeugten Datei â€“ so stimmt es
  * automatisch und muss nicht von Hand gepflegt werden. */
 /* Die Referenzfotos zusaetzlich als <image:image> melden. Bei Handwerks-
  * leistungen kommt ein spuerbarer Teil des Verkehrs ueber die Bildersuche,
@@ -810,7 +844,7 @@ fs.writeFileSync(path.join(ROOT, 'robots.txt'),
 /* IndexNow-Schluessel: Bing prueft diese Datei, bevor es eine Meldung annimmt. */
 fs.writeFileSync(path.join(ROOT, INDEXNOW_KEY + '.txt'), INDEXNOW_KEY + '\n', 'utf8');
 
-/* security.txt nach RFC 9116 – reines Vertrauenssignal, kostet nichts. */
+/* security.txt nach RFC 9116 â€“ reines Vertrauenssignal, kostet nichts. */
 const ablauf = new Date(Date.now() + 365 * 24 * 3600 * 1000).toISOString().slice(0, 19) + 'Z';
 fs.mkdirSync(path.join(ROOT, '.well-known'), { recursive: true });
 fs.writeFileSync(path.join(ROOT, '.well-known', 'security.txt'),
@@ -819,42 +853,42 @@ fs.writeFileSync(path.join(ROOT, '.well-known', 'security.txt'),
   'Preferred-Languages: de, en\n' +
   'Canonical: ' + SITE + '/.well-known/security.txt\n', 'utf8');
 
-/* llms.txt – beschreibt das Unternehmen in Klartext fuer KI-Systeme.
+/* llms.txt â€“ beschreibt das Unternehmen in Klartext fuer KI-Systeme.
  * Noch kein offizieller Standard, aber von mehreren Anbietern ausgewertet
  * und ohne Risiko fuer die klassische Suche. */
 const beitraegeTxt = PAGES.filter(p => p.article)
   .map(p => '- [' + p.article.headline + '](' + SITE + URL_OF[p.key] + ')').join('\n');
 fs.writeFileSync(path.join(ROOT, 'llms.txt'),
-`# BHD – Beratung Heimenergie Deutschland
+`# BHD â€“ Beratung Heimenergie Deutschland
 
-> Unabhängige Beratung für Hausbesitzer zu Photovoltaik, Stromspeicher und
-> Wärmepumpe. Vermittlung geprüfter, regionaler Fachbetriebe. Wir verkaufen
+> UnabhÃ¤ngige Beratung fÃ¼r Hausbesitzer zu Photovoltaik, Stromspeicher und
+> WÃ¤rmepumpe. Vermittlung geprÃ¼fter, regionaler Fachbetriebe. Wir verkaufen
 > keine Anlagen, sondern beraten und vermitteln.
 >
-> Betreiber: Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b,
+> Betreiber: Brotherhooddeen UG (haftungsbeschrÃ¤nkt), Prinzenallee 44b,
 > 13359 Berlin. Handelsregister: Amtsgericht Charlottenburg, HRB 266273 B.
-> USt-IdNr. DE370268782. Gegründet 2024. Geschäftsführer: Kürşat Yıldırım.
-> Sitz in Berlin, bundesweit tätig. Erreichbar ${OPENING.text}.
+> USt-IdNr. DE370268782. GegrÃ¼ndet 2024. GeschÃ¤ftsfÃ¼hrer: KÃ¼rÅŸat YÄ±ldÄ±rÄ±m.
+> Sitz in Berlin, bundesweit tÃ¤tig. Erreichbar ${OPENING.text}.
 
 ## Leistungen
-- [Photovoltaik](${SITE}${URL_OF.pv}): Anlagengröße, Eigenverbrauch, 0 % Umsatzsteuer nach § 12 Abs. 3 UStG
-- [Stromspeicher](${SITE}${URL_OF.speicher}): sinnvolle Kapazität, nutzbare Kapazität, Zyklengarantie
-- [Wärmepumpe](${SITE}${URL_OF.wp}): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 80 %
-- [Kosten](${SITE}${URL_OF.kosten}): marktübliche Preise und Eigenanteil nach Förderung
-- [Angebots-Check](${SITE}${URL_OF.check}): kostenlose Prüfung eines vorliegenden Angebots, Rückmeldung in 24 Stunden
-- [Wärmepumpen-Rechner](${SITE}${URL_OF.rechner}): Heizlast, Gerätegröße, Jahresarbeitszahl und Förderung – ohne Anmeldung
+- [Photovoltaik](${SITE}${URL_OF.pv}): AnlagengrÃ¶ÃŸe, Eigenverbrauch, 0 % Umsatzsteuer nach Â§ 12 Abs. 3 UStG
+- [Stromspeicher](${SITE}${URL_OF.speicher}): sinnvolle KapazitÃ¤t, nutzbare KapazitÃ¤t, Zyklengarantie
+- [WÃ¤rmepumpe](${SITE}${URL_OF.wp}): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 80 %
+- [Kosten](${SITE}${URL_OF.kosten}): marktÃ¼bliche Preise und Eigenanteil nach FÃ¶rderung
+- [Angebots-Check](${SITE}${URL_OF.check}): kostenlose PrÃ¼fung eines vorliegenden Angebots, RÃ¼ckmeldung in 24 Stunden
+- [WÃ¤rmepumpen-Rechner](${SITE}${URL_OF.rechner}): Heizlast, GerÃ¤tegrÃ¶ÃŸe, Jahresarbeitszahl und FÃ¶rderung â€“ ohne Anmeldung
 
 ## Ratgeber
 ${beitraegeTxt}
 
 ## Weitere Seiten
 - [Referenzen](${SITE}${URL_OF.ref}): umgesetzte Projekte mit eigenen Fotos
-- [Über uns](${SITE}${URL_OF.about})
+- [Ãœber uns](${SITE}${URL_OF.about})
 - [Kontakt](${SITE}${URL_OF.kontakt})
-- [Für Fachbetriebe](${SITE}${URL_OF.partner})
+- [FÃ¼r Fachbetriebe](${SITE}${URL_OF.partner})
 
 ## Kontakt
-Telefon +49 163 4440392 · ${MAIL}
+Telefon +49 163 4440392 Â· ${MAIL}
 `, 'utf8');
 
 console.log('Erzeugt:');
@@ -864,6 +898,6 @@ console.log('  /robots.txt');
 console.log('  /llms.txt');
 console.log('  /.well-known/security.txt');
 console.log('  /' + INDEXNOW_KEY + '.txt  (IndexNow)');
-if (!GSC_TOKEN) console.log('\nHinweis: GSC_TOKEN ist leer – Search Console noch nicht per Meta-Tag bestätigt.');
-if (!GA4_ID) console.log('Hinweis: GA4_ID ist leer – Analytics und Einwilligungsbanner bleiben inaktiv.');
-if (!SOCIAL.length) console.log('Hinweis: SOCIAL ist leer – sameAs fehlt im JSON-LD.');
+if (!GSC_TOKEN) console.log('\nHinweis: GSC_TOKEN ist leer â€“ Search Console noch nicht per Meta-Tag bestÃ¤tigt.');
+if (!GA4_ID) console.log('Hinweis: GA4_ID ist leer â€“ Analytics und Einwilligungsbanner bleiben inaktiv.');
+if (!SOCIAL.length) console.log('Hinweis: SOCIAL ist leer â€“ sameAs fehlt im JSON-LD.');

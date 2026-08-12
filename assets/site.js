@@ -217,7 +217,7 @@
     // Alte Adressen mit # auf die neuen Seiten umleiten (fuer geteilte Links)
     var map={"#referenzen":"/referenzen/","#anfragen":"/anfragen/","#ueber-uns":"/ueber-uns/","#angebots-check":"/angebots-check/","#waermepumpen-rechner":"/waermepumpen-rechner/","#partner-werden":"/partner-werden/","#photovoltaik":"/photovoltaik/","#ratgeber-photovoltaik":"/ratgeber/photovoltaik-lohnt-sich/","#ratgeber-waermepumpe":"/ratgeber/waermepumpe-altbau/","#ratgeber-angebot":"/ratgeber/angebot-pruefen/","#stromspeicher":"/stromspeicher/","#waermepumpe":"/waermepumpe/","#kosten":"/kosten/","#ratgeber":"/ratgeber/","#impressum":"/impressum/","#datenschutz":"/datenschutz/"};
     if(map[location.hash]){location.replace(map[location.hash]);return;}
-    // „Jetzt anfragen": auf der Startseite sanft scrollen, sonst normal verlinken
+    // â€žJetzt anfragen": auf der Startseite sanft scrollen, sonst normal verlinken
     document.querySelectorAll('[data-go-funnel]').forEach(function(el){
       el.addEventListener('click',function(e){
         var f=document.getElementById('funnel');
@@ -811,6 +811,33 @@
     }
     zeichneMonat();
     zeichneSlots();
+  })();
+
+  // ---------- Cal.com: Buchungskalender erst auf Klick laden ----------
+  // Zwei-Klick-Loesung: Ohne Zutun des Besuchers wird nichts von Cal.com
+  // geladen und keine IP-Adresse uebertragen. Der Block steht nur auf der
+  // Seite, wenn in build.js ein CAL_LINK hinterlegt ist.
+  (function(){
+    var knopf=document.getElementById('cal-start');
+    if(!knopf)return;
+    knopf.addEventListener('click',function(){
+      var hinweis=document.getElementById('cal-laden');
+      var platz=document.getElementById('cal-einbettung');
+      if(hinweis)hinweis.hidden=true;
+      if(platz)platz.hidden=false;
+      // Einbettungscode von Cal.com
+      (function(C,A,L){var p=function(a,ar){a.q.push(ar)};var d=C.document;C.Cal=C.Cal||function(){
+        var cal=C.Cal;var ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];
+        d.head.appendChild(d.createElement('script')).src=A;cal.loaded=true;}
+        if(ar[0]===L){var api=function(){p(api,arguments)};var namespace=ar[1];
+        api.q=api.q||[];if(typeof namespace==='string'){cal.ns[namespace]=cal.ns[namespace]||api;
+        p(cal.ns[namespace],ar);p(cal,['initNamespace',namespace]);}else p(cal,ar);return;}
+        p(cal,ar);};})(window,'https://app.cal.com/embed/embed.js','init');
+      Cal('init',{origin:'https://app.cal.com'});
+      Cal('inline',{elementOrSelector:'#cal-einbettung',calLink:'',layout:'month_view'});
+      Cal('ui',{layout:'month_view',hideEventTypeDetails:false});
+      if(typeof trackLead==='function')trackLead('termin-kalender-geoeffnet');
+    },{once:true});
   })();
 
   // ---------- Termin: Danke-Meldung nach dem Absenden ----------

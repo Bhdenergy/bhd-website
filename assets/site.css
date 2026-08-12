@@ -538,6 +538,22 @@
   .radiorow b{display:block;font-weight:600;color:var(--ink)}
   .radiorow span small{display:block;color:var(--ink-3);font-size:.85rem;margin-top:2px}
 
+  /* Zwei-Klick-Kachel vor dem Cal.com-Kalender */
+  .cal-laden{max-width:620px;margin:0 auto;text-align:center;background:var(--panel);
+    border:1px solid var(--line);border-radius:20px;padding:clamp(28px,4vw,44px);box-shadow:var(--shadow)}
+  .cal-laden[hidden]{display:none}
+  .cal-laden-ic{width:58px;height:58px;border-radius:16px;background:var(--green-soft);
+    color:var(--green-deep);display:grid;place-items:center;margin:0 auto 18px}
+  .cal-laden-ic .ic{width:28px;height:28px}
+  .cal-laden h3{margin:0 0 10px;font-size:1.3rem;font-weight:600;letter-spacing:-.01em}
+  .cal-laden p{margin:0 auto 22px;max-width:46ch;color:var(--ink-2);font-size:.98rem;line-height:1.6}
+  .cal-laden .cal-laden-alt{margin:16px auto 0;font-size:.9rem;color:var(--ink-3)}
+  .cal-laden .cal-laden-alt a{color:var(--gold-deep);font-weight:600;text-decoration:underline}
+  /* Der eingebettete Kalender braucht eine Mindesthoehe, sonst springt das
+     Layout beim Nachladen. */
+  #cal-einbettung{min-height:640px}
+  #cal-einbettung[hidden]{display:none}
+
   /* Ehrlicher Hinweis auf die Grenzen unserer Hilfe */
   .limit-note{max-width:760px;margin:0 auto;background:var(--panel);border:1px solid var(--line);
     border-left:3px solid var(--gold-deep);border-radius:14px;padding:24px 26px;box-shadow:var(--shadow)}
@@ -969,6 +985,6 @@
 
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise{opacity:1;transform:none}.blob{display:none}.flow-line{stroke-dashoffset:0}.node-dot,.node-final,.node-label{opacity:1}}
 
-/* <picture> soll das Layout nicht beeinflussen – die bestehenden
+/* <picture> soll das Layout nicht beeinflussen â€“ die bestehenden
    Regeln greifen dadurch weiterhin direkt auf das <img>. */
 picture{display:contents}

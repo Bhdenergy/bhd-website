@@ -52,6 +52,18 @@ async function monatLesen(page) {
   await page.setViewport({ width: 1280, height: 1000 });
   await page.goto(BASIS + '/termin/', { waitUntil: 'networkidle0' });
 
+  /* Ist die Terminseite auf Cal.com umgestellt, gibt es den eigenen
+   * Kalender nicht mehr - dann ist dieser Test gegenstandslos. Cal.com
+   * bringt Verfuegbarkeiten, Sperren und Bestaetigungen selbst mit. */
+  if (!(await page.$('#cal-grid'))) {
+    const calDa = !!(await page.$('#cal-start'));
+    console.log(calDa
+      ? 'Eigener Kalender ist auf Cal.com umgestellt – dieser Test entfaellt.'
+      : 'WARNUNG: Weder eigener Kalender noch Cal.com-Einbindung gefunden.');
+    await browser.close();
+    process.exit(calDa ? 0 : 1);
+  }
+
   const daten = await monatLesen(page);
   const jahr = +daten.monat.split(' ')[1];
   const MONATE = ['Januar','Februar','März','April','Mai','Juni','Juli','August',

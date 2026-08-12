@@ -616,6 +616,22 @@
   .radiorow b{display:block;font-weight:600;color:var(--ink)}
   .radiorow span small{display:block;color:var(--ink-3);font-size:.85rem;margin-top:2px}
 
+  /* Zwei-Klick-Kachel vor dem Cal.com-Kalender */
+  .cal-laden{max-width:620px;margin:0 auto;text-align:center;background:var(--panel);
+    border:1px solid var(--line);border-radius:20px;padding:clamp(28px,4vw,44px);box-shadow:var(--shadow)}
+  .cal-laden[hidden]{display:none}
+  .cal-laden-ic{width:58px;height:58px;border-radius:16px;background:var(--green-soft);
+    color:var(--green-deep);display:grid;place-items:center;margin:0 auto 18px}
+  .cal-laden-ic .ic{width:28px;height:28px}
+  .cal-laden h3{margin:0 0 10px;font-size:1.3rem;font-weight:600;letter-spacing:-.01em}
+  .cal-laden p{margin:0 auto 22px;max-width:46ch;color:var(--ink-2);font-size:.98rem;line-height:1.6}
+  .cal-laden .cal-laden-alt{margin:16px auto 0;font-size:.9rem;color:var(--ink-3)}
+  .cal-laden .cal-laden-alt a{color:var(--gold-deep);font-weight:600;text-decoration:underline}
+  /* Der eingebettete Kalender braucht eine Mindesthoehe, sonst springt das
+     Layout beim Nachladen. */
+  #cal-einbettung{min-height:640px}
+  #cal-einbettung[hidden]{display:none}
+
   /* Ehrlicher Hinweis auf die Grenzen unserer Hilfe */
   .limit-note{max-width:760px;margin:0 auto;background:var(--panel);border:1px solid var(--line);
     border-left:3px solid var(--gold-deep);border-radius:14px;padding:24px 26px;box-shadow:var(--shadow)}
@@ -3968,6 +3984,7 @@
   </section>
 
   <!-- Ablauf -->
+<!--CAL:AUS-->
   <section class="pad">
     <div class="wrap">
       <div class="head">
@@ -3982,8 +3999,26 @@
       </div>
     </div>
   </section>
+<!--/CAL:AUS-->
+<!--CAL:AN-->
+  <section class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">So kommt der Termin zustande</div>
+        <h2>Wählen, bestätigen, sprechen.</h2>
+        <p>Sie buchen selbst einen freien Zeitpunkt. Verbindlich wird er, sobald wir ihn bestätigt haben – Sie bekommen jeden Schritt per E-Mail.</p>
+      </div>
+      <div class="steps3">
+        <div class="s3"><div class="n">1</div><h3>Sie buchen einen freien Zeitpunkt</h3><p>Im Kalender stehen nur Zeiten, die tatsächlich frei sind. Gebuchte Termine verschwinden sofort für alle anderen.</p></div>
+        <div class="s3"><div class="n">2</div><h3>Wir bestätigen den Termin</h3><p>Sie erhalten sofort eine Eingangsbestätigung. Wir sehen uns den Zeitpunkt an und bestätigen ihn – in der Regel am selben Werktag. Passt er bei uns nicht, schlagen wir Ihnen einen anderen vor.</p></div>
+        <div class="s3"><div class="n">3</div><h3>Erinnerung und Anruf</h3><p>Vor dem Gespräch bekommen Sie eine Erinnerung. Falls etwas dazwischenkommt, verschieben oder absagen Sie mit einem Klick aus der E-Mail heraus.</p></div>
+      </div>
+    </div>
+  </section>
+<!--/CAL:AN-->
 
   <!-- Kalender + Formular -->
+<!--CAL:AUS-->
   <section class="pad" style="padding-top:0" id="kalender">
     <div class="wrap">
       <div class="head">
@@ -4100,6 +4135,31 @@
     </div>
   </section>
 
+<!--/CAL:AUS-->
+<!--CAL:AN-->
+  <!-- Cal.com-Buchungskalender. Wird bewusst ERST auf Klick geladen:
+       beim Laden wandert die IP-Adresse des Besuchers zu Cal.com, und das
+       ohne Zutun zu tun waere ein Datenschutzproblem (Zwei-Klick-Loesung). -->
+  <section class="pad" style="padding-top:0" id="kalender">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Wunschtermin wählen</div>
+        <h2>Freie Zeiten im Überblick</h2>
+        <p>Im Kalender stehen nur Zeiten, die wirklich frei sind. Sie erhalten sofort eine Bestätigung per E-Mail, dazu eine Erinnerung vor dem Gespräch und Links zum Verschieben oder Absagen.</p>
+      </div>
+
+      <div class="cal-laden" id="cal-laden">
+        <span class="cal-laden-ic"><svg class="ic"><use href="#i-clock"/></svg></span>
+        <h3>Buchungskalender anzeigen</h3>
+        <p>Den Kalender stellt unser Terminanbieter <b style="color:var(--ink)">Cal.com</b> bereit. Beim Laden wird Ihre IP-Adresse dorthin übertragen. Deshalb laden wir ihn erst, wenn Sie es möchten. Näheres in der <a class="ilink" data-nav="datenschutz">Datenschutzerklärung</a>.</p>
+        <button type="button" class="btn" id="cal-start">Kalender laden und Termin wählen</button>
+        <p class="cal-laden-alt">Lieber ohne? Rufen Sie einfach an: <a href="tel:+491634440392">0163 4440392</a></p>
+      </div>
+      <div id="cal-einbettung" hidden></div>
+    </div>
+  </section>
+<!--/CAL:AN-->
+
   <section class="pad" style="padding-top:0">
     <div class="wrap">
       <div class="limit-note">
@@ -4200,6 +4260,14 @@
         <h2>4. Kontaktaufnahme &amp; Anfrageformulare</h2>
         <p>Wenn Sie uns über unsere Formulare (Angebotsanfrage, Partneranfrage) oder per E-Mail kontaktieren, verarbeiten wir die von Ihnen angegebenen Daten (z. B. Name, Anschrift/PLZ, Telefonnummer, E-Mail-Adresse sowie Ihre Angaben zum Vorhaben), um Ihre Anfrage zu bearbeiten und Ihnen ein Angebot zu erstellen bzw. Sie an einen passenden Fachbetrieb zu vermitteln.</p>
         <p>Zur technischen Übermittlung der Formulardaten per E-Mail nutzen wir den Dienst FormSubmit (formsubmit.co). Dabei werden die eingegebenen Formulardaten an dessen Server übertragen und an unsere E-Mail-Adresse weitergeleitet. Rechtsgrundlage ist Ihre Einwilligung sowie die Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und b DSGVO). Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+<!--CAL:AN-->
+        <h2>4a. Terminbuchung über Cal.com</h2>
+        <p>Für die Vereinbarung von Beratungsterminen setzen wir den Dienst <b>Cal.com</b> ein (Cal.com, Inc., 2261 Market Street, San Francisco, CA 94114, USA). Der Buchungskalender ist auf unserer Terminseite eingebunden.</p>
+        <p><b>Der Kalender wird nicht automatisch geladen.</b> Er erscheint erst, wenn Sie ausdrücklich auf „Kalender laden und Termin wählen" klicken. Solange Sie das nicht tun, wird keine Verbindung zu Cal.com aufgebaut und keine Ihrer Daten dorthin übertragen. Mit dem Klick willigen Sie in das Laden ein (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG).</p>
+        <p>Beim Laden werden Ihre IP-Adresse sowie technische Angaben Ihres Browsers an Cal.com übermittelt. Buchen Sie einen Termin, verarbeitet Cal.com zusätzlich die dabei angegebenen Daten – in der Regel Name, E-Mail-Adresse, Telefonnummer, den gewünschten Zeitpunkt und Ihre Angaben zum Anliegen – um den Termin zu verwalten und Ihnen Bestätigungen und Erinnerungen zu senden. Rechtsgrundlage hierfür ist die Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO).</p>
+        <p>Cal.com verarbeitet Daten auch in den <b>USA</b>. Die Übermittlung stützt sich auf die Standardvertragsklauseln der EU-Kommission. Ein dem europäischen Recht gleichwertiges Datenschutzniveau kann in den USA nicht in jedem Fall garantiert werden; insbesondere besteht die Möglichkeit des Zugriffs durch dortige Behörden. Näheres finden Sie in der <a href="https://cal.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Cal.com</a>.</p>
+        <p>Sie können einen Termin jederzeit auch ohne diesen Dienst vereinbaren – rufen Sie uns einfach an oder schreiben Sie uns eine E-Mail.</p>
+<!--/CAL:AN-->
 
         <h2>5. Empfänger Ihrer Daten</h2>
         <p>Ihre Anfragedaten geben wir ausschließlich an den Fachbetrieb weiter, der Ihr Angebot erstellt oder die Arbeiten ausführt. Diese Betriebe sind eigenständig Verantwortliche im Sinne der DSGVO. Eine Weitergabe erfolgt nur, soweit sie zur Bearbeitung Ihrer Anfrage erforderlich ist. Ein Verkauf Ihrer Daten oder eine Weitergabe an Adresshändler findet nicht statt. Daneben verarbeiten unsere technischen Dienstleister (Hosting, Formularversand) Daten in unserem Auftrag, siehe Abschnitte 2 und 4.</p>
@@ -5159,6 +5227,33 @@
     }
     zeichneMonat();
     zeichneSlots();
+  })();
+
+  // ---------- Cal.com: Buchungskalender erst auf Klick laden ----------
+  // Zwei-Klick-Loesung: Ohne Zutun des Besuchers wird nichts von Cal.com
+  // geladen und keine IP-Adresse uebertragen. Der Block steht nur auf der
+  // Seite, wenn in build.js ein CAL_LINK hinterlegt ist.
+  (function(){
+    var knopf=document.getElementById('cal-start');
+    if(!knopf)return;
+    knopf.addEventListener('click',function(){
+      var hinweis=document.getElementById('cal-laden');
+      var platz=document.getElementById('cal-einbettung');
+      if(hinweis)hinweis.hidden=true;
+      if(platz)platz.hidden=false;
+      // Einbettungscode von Cal.com
+      (function(C,A,L){var p=function(a,ar){a.q.push(ar)};var d=C.document;C.Cal=C.Cal||function(){
+        var cal=C.Cal;var ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];
+        d.head.appendChild(d.createElement('script')).src=A;cal.loaded=true;}
+        if(ar[0]===L){var api=function(){p(api,arguments)};var namespace=ar[1];
+        api.q=api.q||[];if(typeof namespace==='string'){cal.ns[namespace]=cal.ns[namespace]||api;
+        p(cal.ns[namespace],ar);p(cal,['initNamespace',namespace]);}else p(cal,ar);return;}
+        p(cal,ar);};})(window,'https://app.cal.com/embed/embed.js','init');
+      Cal('init',{origin:'https://app.cal.com'});
+      Cal('inline',{elementOrSelector:'#cal-einbettung',calLink:'__CAL_LINK__',layout:'month_view'});
+      Cal('ui',{layout:'month_view',hideEventTypeDetails:false});
+      if(typeof trackLead==='function')trackLead('termin-kalender-geoeffnet');
+    },{once:true});
   })();
 
   // ---------- Termin: Danke-Meldung nach dem Absenden ----------
