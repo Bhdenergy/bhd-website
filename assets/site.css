@@ -95,7 +95,7 @@
   nav.open .nav-toggle .bar:nth-child(2){opacity:0}
   nav.open .nav-toggle .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-  @media(max-width:1180px){
+  @media(max-width:1220px){
     .nav-toggle{display:inline-flex}
     .nav-phone{display:none}
     .nav-links{position:absolute;top:100%;left:0;right:0;margin:0;flex-direction:column;align-items:stretch;gap:0;
@@ -118,8 +118,11 @@
     .nav-sub a{padding:13px 32px 13px 46px;background:transparent;border:0;
       border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;font-size:1.02rem}
   }
-  /* Im engen Desktop-Bereich Abstaende und Schrift leicht zusammenziehen */
-  @media(min-width:1181px) and (max-width:1400px){
+  /* Auf dem Desktop Abstaende und Schrift leicht zusammenziehen. Gilt bis
+     ganz nach oben: nav .wrap ist auf 1360px gedeckelt, breiter wird die
+     Leiste also nie - mit voller Schriftgroesse passen die Menuepunkte
+     dort nicht mehr neben den "Jetzt anfragen"-Button. */
+  @media(min-width:1221px){
     .nav-links{gap:19px}
     .nav-links a,.nav-drop-lbl{font-size:.94rem}
     .nav-right{gap:14px}
@@ -466,6 +469,24 @@
   .fnote{color:var(--ink-3);font-size:.82rem;text-align:center;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px}
   .fnote .ic{width:15px;height:15px}
 
+  /* Mehrfachauswahl "Wobei sollen wir helfen?" im Bestandsanlagen-Formular.
+     Eigener Name, NICHT .consent – das ist die Zustimmungszeile. */
+  .checkgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 18px}
+  @media(max-width:620px){.checkgrid{grid-template-columns:minmax(0,1fr)}}
+  .checkgrid label{display:flex;gap:11px;align-items:flex-start;padding:12px 14px;
+    border:1px solid var(--line);border-radius:12px;background:var(--bg);
+    font-size:.93rem;line-height:1.45;cursor:pointer;
+    transition:border-color .2s var(--ease),background .2s var(--ease)}
+  .checkgrid label:hover{border-color:var(--line-2);background:var(--bg-soft)}
+  .checkgrid input{margin-top:2px;width:18px;height:18px;accent-color:var(--green);flex:none}
+
+  /* Ehrlicher Hinweis auf die Grenzen unserer Hilfe */
+  .limit-note{max-width:760px;margin:0 auto;background:var(--panel);border:1px solid var(--line);
+    border-left:3px solid var(--gold-deep);border-radius:14px;padding:24px 26px;box-shadow:var(--shadow)}
+  .limit-note h3{margin:0 0 10px;font-size:1.1rem;font-weight:600}
+  .limit-note p{margin:0 0 12px;color:var(--ink-2);font-size:.98rem;line-height:1.6}
+  .limit-note p:last-child{margin-bottom:0}
+
   /* ======================================================================
      ÜBER-UNS-SEITE
      ====================================================================== */
@@ -508,6 +529,12 @@
   .vgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
   @media(max-width:920px){.vgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media(max-width:520px){.vgrid{grid-template-columns:minmax(0,1fr)}}
+  /* Variante fuer sechs Karten: 3+3 statt 4+2. Die Wiederholung in den
+     Media Queries ist noetig, weil .vgrid.g3 spezifischer ist als .vgrid
+     und sonst auch dort gewinnen wuerde. */
+  .vgrid.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media(max-width:920px){.vgrid.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:520px){.vgrid.g3{grid-template-columns:minmax(0,1fr)}}
   .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px;box-shadow:var(--shadow);transition:transform .3s var(--ease),border-color .3s var(--ease)}
   .vcard:hover{transform:translateY(-4px);border-color:var(--line-2)}
   .vcard .vic{width:50px;height:50px;border-radius:13px;background:var(--green-soft);color:var(--green-deep);display:grid;place-items:center;margin-bottom:18px}

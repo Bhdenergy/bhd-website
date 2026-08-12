@@ -34,7 +34,12 @@ async function abfangen(page, sammler) {
   page.on('request', req => {
     const u = req.url();
     if (u.includes('formsubmit.co')) {
-      sammler.push({ url: u, body: req.postData() || '', methode: req.method() });
+      /* Nur echte Absendungen zaehlen. Nach dem multipart-POST holt der
+       * Browser noch formsubmit.co/favicon.ico – das ist kein Lead und
+       * wurde frueher faelschlich als zweiter Versand gewertet. */
+      if (req.method() === 'POST') {
+        sammler.push({ url: u, body: req.postData() || '', methode: req.method() });
+      }
       return req.respond({
         status: 200,
         contentType: 'application/json',
@@ -141,6 +146,58 @@ async function einfachesFormular(browser, pfad, praefix, name) {
   await page.close();
 }
 
+/* Angebots-Check und Bestandsanlagen-Check laufen NICHT ueber sendLead(),
+ * sondern als gewoehnlicher multipart-POST – nur so nimmt FormSubmit
+ * Dateianhaenge an. Sie brauchen deshalb einen eigenen Testweg. Genau
+ * dieser Pfad war bis 2026-08-12 ungetestet. */
+async function multipartFormular(browser, pfad, formId, name) {
+  console.log('\n' + name);
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 1000 });
+  const gesendet = [];
+  await abfangen(page, gesendet);
+  await page.goto(BASIS + pfad, { waitUntil: 'networkidle2' });
+
+  const gefuellt = await page.evaluate((id) => {
+    const f = document.getElementById(id);
+    if (!f) return 'Formular ' + id + ' nicht gefunden';
+    f.querySelectorAll('[required]').forEach(el => {
+      if (el.type === 'checkbox') { if (!el.checked) el.click(); return; }
+      if (el.tagName === 'SELECT') {
+        if (el.options.length > 1) { el.selectedIndex = 1; el.dispatchEvent(new Event('change', { bubbles: true })); }
+        return;
+      }
+      if (el.type === 'email') el.value = 'test@example.org';
+      else if (el.type === 'tel') el.value = '0170 1234567';
+      else if (el.name === 'PLZ') el.value = '13359';
+      else el.value = 'Test Testmann';
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+    /* Falls es eine Mehrfachauswahl gibt, eine Option mitschicken. */
+    const mehrfach = f.querySelector('.checkgrid input[type=checkbox]');
+    if (mehrfach && !mehrfach.checked) mehrfach.click();
+    const knopf = f.querySelector('button[type=submit]');
+    if (!knopf) return 'Absendeknopf nicht gefunden';
+    knopf.click();
+    return 'ok';
+  }, formId);
+
+  pruefe(gefuellt === 'ok', 'Formular ausfuellbar (' + gefuellt + ')');
+  await schlaf(1600);
+
+  pruefe(gesendet.length === 1, 'genau ein POST an FormSubmit (war: ' + gesendet.length + ')');
+  if (gesendet.length) {
+    pruefe(gesendet[0].methode === 'POST', 'Methode POST (war: ' + gesendet[0].methode + ')');
+    pruefe(gesendet[0].url.includes('info@bhd-energie.de'), 'Empfaenger info@bhd-energie.de');
+    /* Bei multipart liefert Puppeteer den Body nicht immer aus – nur pruefen,
+     * wenn er da ist, sonst faelschlich Alarm schlagen. */
+    const b = gesendet[0].body || '';
+    if (b) pruefe(b.includes('Test Testmann'), 'Name im Rumpf uebertragen');
+    else console.log('   [--]  Rumpf von Puppeteer nicht ausgelesen (bei multipart normal)');
+  }
+  await page.close();
+}
+
 (async () => {
   const browser = await puppeteer.launch({
     executablePath: CHROME,
@@ -151,6 +208,8 @@ async function einfachesFormular(browser, pfad, praefix, name) {
   await funnel(browser);
   await einfachesFormular(browser, '/anfragen/', 'b2c', '2) Anfrageformular B2C (/anfragen/)');
   await einfachesFormular(browser, '/partner-werden/', 'b2b', '3) Partnerformular B2B (/partner-werden/)');
+  await multipartFormular(browser, '/angebots-check/', 'check-form-el', '4) Angebots-Check (Upload-Formular)');
+  await multipartFormular(browser, '/bestandsanlagen-check/', 'bestand-form-el', '5) Bestandsanlagen-Check (Upload-Formular)');
   await browser.close();
   console.log(fehler ? ('\n' + fehler + ' FEHLER – nicht deployen.') : '\nAlle Lead-Wege senden korrekt.');
   process.exit(fehler ? 1 : 0);

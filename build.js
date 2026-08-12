@@ -98,6 +98,14 @@ const PAGES = [
     }
   },
   {
+    key: 'bestand', dir: 'bestandsanlagen-check', view: 'view-bestand', prio: '0.9',
+    crumb: 'Bestandsanlagen-Check',
+    title: 'Bestandsanlagen-Check: Hilfe bei Mängeln & Baustopp | BHD',
+    ogTitle: 'Anlage schon gebaut und es hakt? Bestandsanlagen-Check | BHD',
+    desc: 'Photovoltaik oder Wärmepumpe bereits installiert und es gibt Probleme: Mängel, Baustopp, insolvente Firma, fehlende Anmeldung oder kein Wartungsvertrag. Wir schauen drauf.',
+    ld: ['bestandservice']
+  },
+  {
     key: 'ref', dir: 'referenzen', view: 'view-ref', prio: '0.8', crumb: 'Referenzen',
     title: 'Referenzen: PV- & Wärmepumpen-Projekte | BHD',
     desc: 'Umgesetzte Projekte: Photovoltaik auf Sattel- und Flachdach, Luft-Wasser-Wärmepumpen von der Erdarbeit bis zur Hydraulik, Speicher und Wallbox.'
@@ -638,6 +646,19 @@ function jsonLd(page) {
     });
   }
 
+  if ((page.ld || []).includes('bestandservice')) {
+    nodes.push({
+      '@type': 'Service',
+      '@id': SITE + URL_OF.bestand + '#bestandscheck',
+      name: 'Bestandsanlagen-Check für Photovoltaik & Wärmepumpe',
+      serviceType: 'Prüfung bestehender Anlagen',
+      provider: { '@id': SITE + '/#org' },
+      areaServed: { '@type': 'Country', name: 'Deutschland' },
+      description: 'Ersteinschätzung für bereits gebaute Photovoltaik- und Wärmepumpenanlagen: bei Mängeln und Schäden, unterbrochener Baustelle, insolventem Errichter, fehlender Anmeldung im Marktstammdatenregister, zu geringem Ertrag oder wenn ein Wartungsvertrag fehlt. Telefonische Ersteinschätzung kostenlos, auf Wunsch Vermittlung eines Fachbetriebs zur Übernahme.',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: 'Ersteinschätzung kostenlos und unverbindlich' }
+    });
+  }
+
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': nodes }, null, 2);
 }
 
@@ -648,8 +669,12 @@ function buildPage(page) {
   const view = webpPicture(fixLinks(VIEWS[page.key])
     // Der Angebots-Check springt nach dem Upload auf seine eigene Seite zurueck.
     // Unabhaengig davon, welche Adresse in der Quelldatei steht.
-    .replace(/value="https?:\/\/[^"]*checkok=1[^"]*"/g,
-             'value="' + SITE + URL_OF.check + '?checkok=1"'));
+    .replace(/value="https?:\/\/[^"]*[?&]checkok=1[^"]*"/g,
+             'value="' + SITE + URL_OF.check + '?checkok=1"')
+    // Dasselbe fuer den Bestandsanlagen-Check. Eigene Marke, damit sich die
+    // beiden Rueckspruenge nicht gegenseitig ueberschreiben.
+    .replace(/value="https?:\/\/[^"]*[?&]bestandok=1[^"]*"/g,
+             'value="' + SITE + URL_OF.bestand + '?bestandok=1"'));
 
   return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(page.title)}</title>

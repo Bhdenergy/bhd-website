@@ -173,7 +173,7 @@
   nav.open .nav-toggle .bar:nth-child(2){opacity:0}
   nav.open .nav-toggle .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-  @media(max-width:1180px){
+  @media(max-width:1220px){
     .nav-toggle{display:inline-flex}
     .nav-phone{display:none}
     .nav-links{position:absolute;top:100%;left:0;right:0;margin:0;flex-direction:column;align-items:stretch;gap:0;
@@ -196,8 +196,11 @@
     .nav-sub a{padding:13px 32px 13px 46px;background:transparent;border:0;
       border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;font-size:1.02rem}
   }
-  /* Im engen Desktop-Bereich Abstaende und Schrift leicht zusammenziehen */
-  @media(min-width:1181px) and (max-width:1400px){
+  /* Auf dem Desktop Abstaende und Schrift leicht zusammenziehen. Gilt bis
+     ganz nach oben: nav .wrap ist auf 1360px gedeckelt, breiter wird die
+     Leiste also nie - mit voller Schriftgroesse passen die Menuepunkte
+     dort nicht mehr neben den "Jetzt anfragen"-Button. */
+  @media(min-width:1221px){
     .nav-links{gap:19px}
     .nav-links a,.nav-drop-lbl{font-size:.94rem}
     .nav-right{gap:14px}
@@ -544,6 +547,24 @@
   .fnote{color:var(--ink-3);font-size:.82rem;text-align:center;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px}
   .fnote .ic{width:15px;height:15px}
 
+  /* Mehrfachauswahl "Wobei sollen wir helfen?" im Bestandsanlagen-Formular.
+     Eigener Name, NICHT .consent – das ist die Zustimmungszeile. */
+  .checkgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 18px}
+  @media(max-width:620px){.checkgrid{grid-template-columns:minmax(0,1fr)}}
+  .checkgrid label{display:flex;gap:11px;align-items:flex-start;padding:12px 14px;
+    border:1px solid var(--line);border-radius:12px;background:var(--bg);
+    font-size:.93rem;line-height:1.45;cursor:pointer;
+    transition:border-color .2s var(--ease),background .2s var(--ease)}
+  .checkgrid label:hover{border-color:var(--line-2);background:var(--bg-soft)}
+  .checkgrid input{margin-top:2px;width:18px;height:18px;accent-color:var(--green);flex:none}
+
+  /* Ehrlicher Hinweis auf die Grenzen unserer Hilfe */
+  .limit-note{max-width:760px;margin:0 auto;background:var(--panel);border:1px solid var(--line);
+    border-left:3px solid var(--gold-deep);border-radius:14px;padding:24px 26px;box-shadow:var(--shadow)}
+  .limit-note h3{margin:0 0 10px;font-size:1.1rem;font-weight:600}
+  .limit-note p{margin:0 0 12px;color:var(--ink-2);font-size:.98rem;line-height:1.6}
+  .limit-note p:last-child{margin-bottom:0}
+
   /* ======================================================================
      ÜBER-UNS-SEITE
      ====================================================================== */
@@ -586,6 +607,12 @@
   .vgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
   @media(max-width:920px){.vgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media(max-width:520px){.vgrid{grid-template-columns:minmax(0,1fr)}}
+  /* Variante fuer sechs Karten: 3+3 statt 4+2. Die Wiederholung in den
+     Media Queries ist noetig, weil .vgrid.g3 spezifischer ist als .vgrid
+     und sonst auch dort gewinnen wuerde. */
+  .vgrid.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media(max-width:920px){.vgrid.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:520px){.vgrid.g3{grid-template-columns:minmax(0,1fr)}}
   .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px;box-shadow:var(--shadow);transition:transform .3s var(--ease),border-color .3s var(--ease)}
   .vcard:hover{transform:translateY(-4px);border-color:var(--line-2)}
   .vcard .vic{width:50px;height:50px;border-radius:13px;background:var(--green-soft);color:var(--green-deep);display:grid;place-items:center;margin-bottom:18px}
@@ -1012,11 +1039,12 @@
           <a data-nav="pv">Photovoltaik</a>
           <a data-nav="speicher">Stromspeicher</a>
           <a data-nav="wp">Wärmepumpe</a>
+          <a data-nav="rechner">Wärmepumpen-Rechner</a>
           <a data-nav="kosten">Was zahle ich?</a>
         </div>
       </div>
-      <a data-nav="rechner">Wärmepumpen-Rechner</a>
       <a data-nav="check">Angebots-Check</a>
+      <a data-nav="bestand">Bestandsanlagen-Check</a>
       <a data-nav="ratgeber">Ratgeber</a>
       <a data-nav="ref">Referenzen</a>
       <a data-nav="about">Über uns</a>
@@ -3619,6 +3647,232 @@
 
 </div><!-- /view-check -->
 
+<!-- ========================= ANSICHT: BESTANDSANLAGEN-CHECK ========================= -->
+<div id="view-bestand" hidden>
+
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Bestandsanlagen-Check</span></div>
+      <div class="eyebrow"><span class="dot"></span> Für Anlagen, die schon stehen</div>
+      <h1>Anlage steht – und jetzt <em>hakt es?</em></h1>
+      <p class="lede">Nicht jede Photovoltaikanlage und nicht jede Wärmepumpe läuft nach der Montage so, wie sie soll. Manche wurde nie angemeldet, bei anderen steht die Baustelle seit Monaten still oder der Errichter ist nicht mehr erreichbar. <b style="color:var(--ink)">Wir sehen uns Ihren Fall an – auch wenn die Anlage nicht von uns ist.</b></p>
+      <div class="hero-cta">
+        <a data-scrollto="bestand-form" class="btn" style="cursor:pointer">Fall schildern</a>
+        <a href="tel:+491634440392" class="btn btn-ghost"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="strip">
+    <div class="wrap strip-in">
+      <div class="badge"><span class="bic euro">€</span> <span>Ersteinschätzung <b>kostenlos</b></span></div>
+      <div class="badge"><span class="bic"><svg class="ic"><use href="#i-phone"/></svg></span> <span>Auch <b>telefonisch</b></span></div>
+      <div class="badge"><span class="bic"><svg class="ic"><use href="#i-house"/></svg></span> <span>Auch bei <b>fremden Anlagen</b></span></div>
+      <div class="badge"><span class="bic"><svg class="ic"><use href="#i-check"/></svg></span> <span><b>Fachbetriebe</b> zur Übernahme</span></div>
+    </div>
+  </section>
+
+  <!-- Typische Fälle -->
+  <section class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Womit Leute zu uns kommen</div>
+        <h2>Sechs Fälle, die wir immer wieder sehen.</h2>
+        <p>Wenn Sie sich in einem davon wiedererkennen, sind Sie hier richtig. Und wenn Ihr Fall nicht dabei ist, schildern Sie ihn uns trotzdem.</p>
+      </div>
+      <div class="vgrid g3">
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-grid"/></svg></div><h3>Nie angemeldet</h3><p>Die Anlage läuft, steht aber nicht im Marktstammdatenregister oder wurde beim Netzbetreiber nie gemeldet. Das lässt sich nachholen – je früher, desto besser.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-clock"/></svg></div><h3>Baustopp</h3><p>Module liegen auf dem Dach, der Speicher steht im Keller, und seit Wochen kommt niemand mehr. Wir klären, was fehlt und wer es zu Ende bringt.</p></div>
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Mängel und Schäden</h3><p>Undichte Dachdurchführung, lose Unterkonstruktion, falsch gesetzte Leitungen, Wärmepumpe zu laut. Wir sehen uns an, was tatsächlich vorliegt.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-lock"/></svg></div><h3>Firma insolvent</h3><p>Der Errichter existiert nicht mehr, Gewährleistung läuft ins Leere. Wir helfen, den Zustand zu dokumentieren und einen Betrieb zu finden, der übernimmt.</p></div>
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-key"/></svg></div><h3>Kein Wartungsvertrag</h3><p>Niemand ist mehr zuständig, wenn etwas ausfällt. Wir vermitteln einen Fachbetrieb, der Wartung und Störungsdienst dauerhaft übernimmt.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-chart"/></svg></div><h3>Zu wenig Ertrag</h3><p>Die Anlage bringt weniger als versprochen. Oft liegt es an Auslegung, Verschattung, Wechselrichter-Einstellungen oder schlicht daran, dass ein String nicht liefert.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warum das oft liegen bleibt -->
+  <section class="pad" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Warum solche Fälle liegen bleiben</div>
+        <h2>Fremde Anlagen fasst kaum jemand gern an.</h2>
+      </div>
+      <div class="prose">
+        <p>Wer eine Anlage nicht selbst gebaut hat, übernimmt ungern die Verantwortung dafür. Man weiß nicht, was unter der Verkleidung steckt, wie sauber gearbeitet wurde und wofür man am Ende geradesteht. Deshalb bekommen viele Hausbesitzer auf ihre Anfrage gar keine Antwort oder hören, man mache „nur eigene Anlagen".</p>
+        <p class="pullquote">„Eine halbfertige Anlage ist kein Grundstück, das man liegen lassen kann. Sie hängt am Dach und am Zählerschrank."</p>
+        <p>Wir gehen das anders an. Der erste Schritt ist immer eine <b>Bestandsaufnahme</b>: Was ist verbaut, was fehlt, was ist mangelhaft und was funktioniert. Erst danach lässt sich seriös sagen, was es braucht – und was es kostet. Diese Einschätzung bekommen Sie von uns, bevor irgendjemand einen Auftrag von Ihnen will. Wie wir dabei arbeiten, steht unter <a class="ilink" data-nav="about">Über uns</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ablauf -->
+  <section class="pad" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">So läuft es ab</div>
+        <h2>Von der Schilderung zur Lösung.</h2>
+      </div>
+      <div class="tline">
+        <div class="tstep">
+          <div class="trail"><span class="tnode">1</span><span class="tbar"></span></div>
+          <div class="tbody"><h3>Sie schildern den Fall</h3><p>Über das <a data-scrollto="bestand-form" style="color:var(--gold-deep);text-decoration:underline;cursor:pointer">Formular unten</a> mit Fotos und Unterlagen, oder Sie rufen einfach an. Je mehr wir vorab sehen, desto konkreter fällt die erste Antwort aus.</p></div>
+        </div>
+        <div class="tstep">
+          <div class="trail"><span class="tnode">2</span><span class="tbar"></span></div>
+          <div class="tbody"><h3>Telefonische Ersteinschätzung</h3><p>Wir rufen zurück und gehen den Fall mit Ihnen durch: was aus der Ferne erkennbar ist, was vor Ort geprüft werden muss und welche Schritte Vorrang haben. Kostenlos und unverbindlich.</p></div>
+        </div>
+        <div class="tstep">
+          <div class="trail"><span class="tnode">3</span></div>
+          <div class="tbody"><h3>Vor Ort und weiter</h3><p>Wenn nötig kommen wir zur Bestandsaufnahme und halten den Zustand fest. Danach vermitteln wir einen Fachbetrieb, der die Anlage übernimmt, fertigstellt, in Ordnung bringt oder künftig wartet.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grenzen -->
+  <section class="pad" style="padding-top:0">
+    <div class="wrap">
+      <div class="limit-note">
+        <h3>Was wir tun – und was nicht</h3>
+        <p>Wir sind Fachleute für Photovoltaik und Wärmepumpen, <b style="color:var(--ink)">keine Rechtsanwälte</b>. Wir bewerten den technischen Zustand Ihrer Anlage, halten Mängel nachvollziehbar fest und sagen Ihnen, was fachlich nötig ist. Eine rechtliche Bewertung Ihrer Ansprüche gegenüber dem Errichter oder dessen Insolvenzverwalter gehört nicht dazu – dafür brauchen Sie einen Anwalt.</p>
+        <p>Eine saubere technische Dokumentation ist dafür allerdings die Grundlage. Genau die können wir liefern.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formular -->
+  <section class="pad" style="padding-top:0" id="bestand-form">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Schildern Sie uns Ihren Fall</div>
+        <h2>Bestandsanlagen-Check anfragen</h2>
+        <p>Je genauer Sie das Problem beschreiben und je mehr Fotos Sie anhängen, desto konkreter können wir antworten. Wenn Ihnen Schreiben zu umständlich ist: rufen Sie an, das geht genauso.</p>
+      </div>
+      <div class="forms-wrap" style="max-width:720px">
+        <div class="fcard" id="bestand-card">
+          <form id="bestand-form-el" action="https://formsubmit.co/service-bhd@outlook.de" method="POST" enctype="multipart/form-data">
+            <div class="fcard-head">
+              <span class="fbadge"><svg class="ic"><use href="#i-house"/></svg></span>
+              <div>
+                <span class="ftag"><svg class="ic"><use href="#i-phone"/></svg> Rückruf auf Wunsch</span>
+                <h2>Bestandsanlagen-Check</h2>
+                <p>Für Anlagen, die bereits gebaut sind – ganz gleich, von wem.</p>
+              </div>
+            </div>
+
+            <input type="hidden" name="_subject" value="Bestandsanlagen-Check – BHD Website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://bhd-website.vercel.app/?bestandok=1">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="grid2">
+              <div class="fld">
+                <label for="b-anliegen">Worum geht es? <span class="req">*</span></label>
+                <select id="b-anliegen" name="Anliegen" required>
+                  <option value="">Bitte wählen …</option>
+                  <option>Anlage wurde nie angemeldet</option>
+                  <option>Baustopp – es geht nicht weiter</option>
+                  <option>Mängel oder Schäden an der Anlage</option>
+                  <option>Errichter ist insolvent oder nicht erreichbar</option>
+                  <option>Wartungsvertrag gesucht</option>
+                  <option>Anlage bringt zu wenig Ertrag</option>
+                  <option>Erweiterung geplant (Speicher, Wallbox)</option>
+                  <option>Etwas anderes</option>
+                </select>
+              </div>
+              <div class="fld">
+                <label for="b-anlage">Um welche Anlage geht es? <span class="req">*</span></label>
+                <select id="b-anlage" name="Anlagenart" required>
+                  <option value="">Bitte wählen …</option>
+                  <option>Photovoltaik</option>
+                  <option>Photovoltaik mit Stromspeicher</option>
+                  <option>Wärmepumpe</option>
+                  <option>Photovoltaik und Wärmepumpe</option>
+                  <option>Nur Stromspeicher</option>
+                  <option>Etwas anderes</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid2">
+              <div class="fld"><label for="b-baujahr">Seit wann steht die Anlage? <span class="hint2">(optional)</span></label><input type="text" id="b-baujahr" name="Baujahr" placeholder="z. B. Sommer 2024 oder noch im Bau"></div>
+              <div class="fld"><label for="b-firma">Welche Firma hat gebaut? <span class="hint2">(optional)</span></label><input type="text" id="b-firma" name="Errichter" placeholder="Firmenname – falls bekannt"></div>
+            </div>
+
+            <div class="fld">
+              <label for="b-problem">Was ist das Problem? <span class="req">*</span></label>
+              <textarea id="b-problem" name="Problem" rows="4" placeholder="Beschreiben Sie möglichst konkret, was nicht stimmt: seit wann, was Sie beobachten, was die Firma dazu gesagt hat, welche Unterlagen Sie haben …" required></textarea>
+            </div>
+
+            <div class="fld" style="margin-bottom:10px">
+              <label id="b-hilfe-label">Wobei sollen wir helfen? <span class="hint2">(Mehrfachauswahl)</span></label>
+            </div>
+            <div class="checkgrid" role="group" aria-labelledby="b-hilfe-label">
+              <label><input type="checkbox" name="Gewünschte Hilfe" value="Anlage prüfen und Zustand dokumentieren"><span>Anlage prüfen und Zustand dokumentieren</span></label>
+              <label><input type="checkbox" name="Gewünschte Hilfe" value="Anmeldung nachholen"><span>Anmeldung nachholen (Marktstammdatenregister, Netzbetreiber)</span></label>
+              <label><input type="checkbox" name="Gewünschte Hilfe" value="Fachbetrieb finden, der weiterbaut"><span>Fachbetrieb finden, der weiterbaut</span></label>
+              <label><input type="checkbox" name="Gewünschte Hilfe" value="Mängel beheben lassen"><span>Mängel beheben lassen</span></label>
+              <label><input type="checkbox" name="Gewünschte Hilfe" value="Wartungsvertrag vermitteln"><span>Wartungsvertrag vermitteln</span></label>
+              <label><input type="checkbox" name="Gewünschte Hilfe" value="Ertrag prüfen und optimieren"><span>Ertrag prüfen und optimieren</span></label>
+              <label><input type="checkbox" name="Gewünschte Hilfe" value="Nur erst einmal ein Gespräch"><span>Erst einmal nur ein Gespräch</span></label>
+              <label><input type="checkbox" name="Gewünschte Hilfe" value="Weiß ich noch nicht"><span>Weiß ich noch nicht</span></label>
+            </div>
+
+            <div class="filefield">
+              <label for="b-files">Fotos oder Unterlagen anhängen <span class="hint2">(optional · mehrere möglich · PDF, JPG oder PNG)</span></label>
+              <input type="file" id="b-files" name="Anhang" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/*" multiple>
+            </div>
+
+            <div class="grid2">
+              <div class="fld"><label for="b-name">Name <span class="req">*</span></label><input type="text" id="b-name" name="Name" placeholder="Vor- und Nachname" autocomplete="name" required></div>
+              <div class="fld"><label for="b-plz">Postleitzahl <span class="req">*</span></label><input type="text" id="b-plz" name="PLZ" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="z. B. 13359" autocomplete="postal-code" required></div>
+            </div>
+            <div class="grid2">
+              <div class="fld"><label for="b-mail">E-Mail <span class="req">*</span></label><input type="email" id="b-mail" name="E-Mail" placeholder="name@beispiel.de" autocomplete="email" required></div>
+              <div class="fld"><label for="b-tel">Telefon <span class="req">*</span></label><input type="tel" id="b-tel" name="Telefon" placeholder="0170 1234567" autocomplete="tel" required></div>
+            </div>
+            <div class="fld">
+              <label for="b-zeit">Wann erreichen wir Sie am besten?</label>
+              <select id="b-zeit" name="Erreichbarkeit">
+                <option>Egal, ich gehe ran</option>
+                <option>Vormittags</option>
+                <option>Nachmittags</option>
+                <option>Abends</option>
+                <option>Lieber per E-Mail</option>
+              </select>
+            </div>
+
+            <div class="consent">
+              <input type="checkbox" id="b-dsgvo" name="Einverständnis" value="Ja, erteilt" required>
+              <label for="b-dsgvo">Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden und ich kontaktiert werde (<a href="#datenschutz">Datenschutz</a>). Widerruf jederzeit möglich. <span class="req">*</span></label>
+            </div>
+            <button type="submit" class="btn" style="width:100%">Fall schildern</button>
+            <div class="fnote"><svg class="ic"><use href="#i-lock"/></svg> SSL-verschlüsselt · kein Spam · Ersteinschätzung kostenlos</div>
+          </form>
+          <div class="fdone" id="bestand-done">
+            <div class="check"><svg class="ic"><use href="#i-check"/></svg></div>
+            <h3>Angekommen.</h3>
+            <p>Wir sehen uns Ihre Schilderung an und melden uns bei Ihnen – in der Regel innerhalb eines Werktags. Wenn es eilt, rufen Sie gern direkt an: <a href="tel:+491634440392" style="color:var(--gold-deep);text-decoration:underline">0163 4440392</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Lieber gleich sprechen?</h2>
+        <p>Manche Fälle sind in fünf Minuten am Telefon klarer als in jedem Formular.</p>
+        <a href="tel:+491634440392" class="btn"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /view-bestand -->
+
 <!-- ========================= ANSICHT: IMPRESSUM ========================= -->
 <div id="view-impressum" hidden>
   <header class="ref-hero">
@@ -3754,7 +4008,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></div>
-      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
+      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="bestand">Bestandsanlagen-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:service-bhd@outlook.de" style="color:inherit">service-bhd@outlook.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
@@ -4450,6 +4704,22 @@
     const anchor=document.getElementById('check-form');
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname+'#angebots-check');
+  })();
+
+  // ---------- Bestandsanlagen-Check: Danke-Meldung nach Upload ----------
+  // Eigene Marke ?bestandok=1, damit sie sich nicht mit dem Angebots-Check
+  // beisst. Steigt aus, wenn das Formular auf dieser Seite gar nicht steht.
+  (function(){
+    if(new URLSearchParams(location.search).get('bestandok')!=='1')return;
+    const form=document.getElementById('bestand-form-el');
+    const done=document.getElementById('bestand-done');
+    if(!form||!done)return;
+    form.style.display='none';
+    done.classList.add('show');
+    trackLead('bestandsanlagen-check');
+    const anchor=document.getElementById('bestand-form');
+    if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
+    history.replaceState(null,'',location.pathname);
   })();
 </script>
 

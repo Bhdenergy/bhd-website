@@ -597,3 +597,19 @@
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname);
   })();
+
+  // ---------- Bestandsanlagen-Check: Danke-Meldung nach Upload ----------
+  // Eigene Marke ?bestandok=1, damit sie sich nicht mit dem Angebots-Check
+  // beisst. Steigt aus, wenn das Formular auf dieser Seite gar nicht steht.
+  (function(){
+    if(new URLSearchParams(location.search).get('bestandok')!=='1')return;
+    const form=document.getElementById('bestand-form-el');
+    const done=document.getElementById('bestand-done');
+    if(!form||!done)return;
+    form.style.display='none';
+    done.classList.add('show');
+    trackLead('bestandsanlagen-check');
+    const anchor=document.getElementById('bestand-form');
+    if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
+    history.replaceState(null,'',location.pathname);
+  })();
