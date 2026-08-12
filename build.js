@@ -479,6 +479,26 @@ function jsonLd(page) {
     });
   }
 
+  /* Ueber uns ist die Heimatseite der Person: Person.url zeigt ohnehin
+   * hierher, also gehoert der vollstaendige Eintrag mit echtem Foto auf
+   * diese Seite. Ein Personen-Entity mit Bild, Jobtitel und Arbeitgeber
+   * ist eines der wenigen E-E-A-T-Signale, die man selbst setzen kann.
+   * Gleiche @id wie auf den Ratgeber-Seiten, damit Google beides als
+   * dieselbe Person zusammenfuehrt. */
+  if (page.key === 'about') {
+    nodes.push({
+      '@type': 'Person',
+      '@id': SITE + '/#kuersat',
+      name: 'Kürşat Yıldırım',
+      jobTitle: 'Geschäftsführer',
+      worksFor: { '@id': SITE + '/#org' },
+      url: SITE + URL_OF.about,
+      image: SITE + '/assets/team/gf-qualitaetskontrolle.jpg',
+      knowsAbout: ['Photovoltaik', 'Wärmepumpe', 'Stromspeicher', 'KfW-Förderung', 'Angebotsprüfung'],
+      mainEntityOfPage: { '@id': SITE + URL_OF.about + '#webpage' }
+    });
+  }
+
   /* Ratgeber-Beitraege: Article mit benanntem Autor und Datum.
    * Google bewertet Ratgeber-Inhalte ohne erkennbare Verantwortliche
    * systematisch schwaecher (E-E-A-T), und KI-Systeme zitieren bevorzugt
