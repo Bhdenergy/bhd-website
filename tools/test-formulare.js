@@ -207,6 +207,48 @@ async function multipartFormular(browser, pfad, formId, name, vorher) {
   await page.close();
 }
 
+/* Der Waermepumpen-Rechner ist ebenfalls ein Lead-Weg: nach der Berechnung
+ * erscheint ein Kontaktformular, dessen Knopf sendLead() aufruft. Er hat
+ * kein action-Attribut und faellt deshalb bei einer Sichtpruefung nicht auf. */
+async function rechnerFormular(browser) {
+  console.log('\n7) Waermepumpen-Rechner (Auslegung senden)');
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 1000 });
+  const gesendet = [];
+  await abfangen(page, gesendet);
+  await page.goto(BASIS + '/waermepumpen-rechner/', { waitUntil: 'networkidle2' });
+
+  /* Erst rechnen lassen - ohne Ergebnis blendet die Seite das Formular nicht ein. */
+  const sichtbar = await page.evaluate(() => {
+    document.getElementById('wp-send').click();
+    const box = document.getElementById('wp-kontakt');
+    return !!box && getComputedStyle(box).display !== 'none';
+  });
+  pruefe(sichtbar, 'Kontaktformular erscheint nach der Berechnung');
+  await schlaf(500);
+
+  await page.evaluate(() => {
+    const setz = (id, v) => { const e = document.getElementById(id); if (e) { e.value = v; e.dispatchEvent(new Event('input', { bubbles: true })); } };
+    setz('wp-k-name', 'Test Testmann');
+    setz('wp-k-plz', '13359');
+    setz('wp-k-mail', 'test@example.org');
+    setz('wp-k-tel', '0170 1234567');
+    const ok = document.getElementById('wp-k-dsgvo');
+    if (ok && !ok.checked) ok.click();
+    document.getElementById('wp-k-submit').click();
+  });
+  await schlaf(1400);
+
+  pruefe(gesendet.length === 1, 'genau eine Anfrage an FormSubmit (war: ' + gesendet.length + ')');
+  if (gesendet.length) {
+    const b = decodeURIComponent(gesendet[0].body.replace(/\+/g, ' '));
+    pruefe(b.includes('Test Testmann'), 'Name uebertragen');
+    pruefe(b.includes('test@example.org'), 'E-Mail uebertragen');
+    pruefe(gesendet[0].url.includes('info@bhd-energie.de'), 'Empfaenger info@bhd-energie.de');
+  }
+  await page.close();
+}
+
 (async () => {
   const browser = await puppeteer.launch({
     executablePath: CHROME,
@@ -226,6 +268,7 @@ async function multipartFormular(browser, pfad, formId, name, vorher) {
     zeit.click();
     return document.getElementById('t-termin').value ? true : 'Wunschtermin wurde nicht gesetzt';
   });
+  await rechnerFormular(browser);
   await browser.close();
   console.log(fehler ? ('\n' + fehler + ' FEHLER – nicht deployen.') : '\nAlle Lead-Wege senden korrekt.');
   process.exit(fehler ? 1 : 0);
