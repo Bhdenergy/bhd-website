@@ -152,6 +152,9 @@
   .nav-drop{position:relative}
   .nav-drop-lbl{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--ink-2);
     font-size:1rem;white-space:nowrap;cursor:default;transition:color .18s var(--ease)}
+  /* „Leistungen" ist nur eine Beschriftung, „Über uns" und „Kontakt" sind
+     zugleich echte Seiten – als <a> bekommen sie den Zeigefinger zurueck. */
+  a.nav-drop-lbl{cursor:pointer}
   .nav-drop-lbl .ic{width:14px;height:14px;transition:transform .22s var(--ease)}
   .nav-drop:hover .nav-drop-lbl{color:var(--ink)}
   .nav-drop:hover .nav-drop-lbl .ic{transform:rotate(90deg)}
@@ -173,7 +176,7 @@
   nav.open .nav-toggle .bar:nth-child(2){opacity:0}
   nav.open .nav-toggle .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-  @media(max-width:1220px){
+  @media(max-width:1099px){
     .nav-toggle{display:inline-flex}
     .nav-phone{display:none}
     .nav-links{position:absolute;top:100%;left:0;right:0;margin:0;flex-direction:column;align-items:stretch;gap:0;
@@ -200,11 +203,13 @@
      ganz nach oben: nav .wrap ist auf 1360px gedeckelt, breiter wird die
      Leiste also nie - mit voller Schriftgroesse passen die Menuepunkte
      dort nicht mehr neben den "Jetzt anfragen"-Button. */
-  @media(min-width:1221px){
-    .nav-links{gap:15px}
-    .nav-links a,.nav-drop-lbl{font-size:.91rem}
-    .nav-right{gap:12px}
-    .nav-cta{padding:12px 18px;font-size:.93rem}
+  /* Volle Leiste ab 1100px. Darunter Burger-Menue – gemessen, nicht geraten:
+     bei 1080px blieben nur 10px Luft neben dem CTA-Knopf. */
+  @media(min-width:1100px){
+    .nav-links{gap:22px}
+    .nav-links a,.nav-drop-lbl{font-size:.96rem}
+    .nav-right{gap:14px}
+    .nav-cta{padding:13px 22px;font-size:.97rem}
   }
   @media(max-width:560px){.nav-cta{padding:12px 20px;font-size:.96rem}}
   @media(max-width:400px){.nav-cta{display:none}}
@@ -1098,12 +1103,22 @@
       </div>
       <a data-nav="check">Angebots-Check</a>
       <a data-nav="bestand">Bestandsanlagen-Check</a>
-      <a data-nav="ratgeber">Ratgeber</a>
-      <a data-nav="ref">Referenzen</a>
-      <a data-nav="about">Über uns</a>
+      <div class="nav-drop">
+        <a class="nav-drop-lbl" data-nav="about">Über uns <svg class="ic"><use href="#i-chevron"/></svg></a>
+        <div class="nav-sub">
+          <a data-nav="about">Über uns</a>
+          <a data-nav="ref">Referenzen</a>
+          <a data-nav="ratgeber">Ratgeber</a>
+        </div>
+      </div>
       <a data-nav="termin">Termin</a>
-      <a data-nav="kontakt">Kontakt</a>
-      <a data-nav="ask">Anfragen</a>
+      <div class="nav-drop">
+        <a class="nav-drop-lbl" data-nav="kontakt">Kontakt <svg class="ic"><use href="#i-chevron"/></svg></a>
+        <div class="nav-sub">
+          <a data-nav="kontakt">Kontakt</a>
+          <a data-nav="ask">Anfragen</a>
+        </div>
+      </div>
       <a data-nav="partner" class="nav-b2b">Partner werden</a>
       <a href="tel:+491634440392" class="menu-phone"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
     </div>
