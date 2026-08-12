@@ -150,13 +150,20 @@ async function einfachesFormular(browser, pfad, praefix, name) {
  * sondern als gewoehnlicher multipart-POST – nur so nimmt FormSubmit
  * Dateianhaenge an. Sie brauchen deshalb einen eigenen Testweg. Genau
  * dieser Pfad war bis 2026-08-12 ungetestet. */
-async function multipartFormular(browser, pfad, formId, name) {
+async function multipartFormular(browser, pfad, formId, name, vorher) {
   console.log('\n' + name);
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 1000 });
   const gesendet = [];
   await abfangen(page, gesendet);
   await page.goto(BASIS + pfad, { waitUntil: 'networkidle2' });
+
+  /* Manche Formulare brauchen vorab eine Auswahl, die kein <input required>
+   * ist – beim Terminformular etwa Tag und Uhrzeit aus dem Kalender. */
+  if (vorher) {
+    const vorbereitet = await page.evaluate(vorher);
+    pruefe(vorbereitet === true, 'Vorauswahl getroffen (' + vorbereitet + ')');
+  }
 
   const gefuellt = await page.evaluate((id) => {
     const f = document.getElementById(id);
@@ -190,8 +197,10 @@ async function multipartFormular(browser, pfad, formId, name) {
     pruefe(gesendet[0].methode === 'POST', 'Methode POST (war: ' + gesendet[0].methode + ')');
     pruefe(gesendet[0].url.includes('info@bhd-energie.de'), 'Empfaenger info@bhd-energie.de');
     /* Bei multipart liefert Puppeteer den Body nicht immer aus – nur pruefen,
-     * wenn er da ist, sonst faelschlich Alarm schlagen. */
-    const b = gesendet[0].body || '';
+     * wenn er da ist, sonst faelschlich Alarm schlagen. Formulare ohne
+     * enctype senden urlencoded, da muss vor dem Vergleich dekodiert werden. */
+    let b = gesendet[0].body || '';
+    if (b) { try { b = decodeURIComponent(b.replace(/\+/g, ' ')); } catch (e) { /* multipart: bleibt roh */ } }
     if (b) pruefe(b.includes('Test Testmann'), 'Name im Rumpf uebertragen');
     else console.log('   [--]  Rumpf von Puppeteer nicht ausgelesen (bei multipart normal)');
   }
@@ -210,6 +219,13 @@ async function multipartFormular(browser, pfad, formId, name) {
   await einfachesFormular(browser, '/partner-werden/', 'b2b', '3) Partnerformular B2B (/partner-werden/)');
   await multipartFormular(browser, '/angebots-check/', 'check-form-el', '4) Angebots-Check (Upload-Formular)');
   await multipartFormular(browser, '/bestandsanlagen-check/', 'bestand-form-el', '5) Bestandsanlagen-Check (Upload-Formular)');
+  await multipartFormular(browser, '/termin/', 'termin-form-el', '6) Terminanfrage (Kalender)', () => {
+    /* Der erste freie Tag ist vorausgewaehlt – nur noch eine Uhrzeit klicken. */
+    const zeit = document.querySelector('#slots .slot:not(:disabled)');
+    if (!zeit) return 'keine freie Uhrzeit gefunden';
+    zeit.click();
+    return document.getElementById('t-termin').value ? true : 'Wunschtermin wurde nicht gesetzt';
+  });
   await browser.close();
   console.log(fehler ? ('\n' + fehler + ' FEHLER – nicht deployen.') : '\nAlle Lead-Wege senden korrekt.');
   process.exit(fehler ? 1 : 0);

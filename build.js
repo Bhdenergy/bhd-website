@@ -106,6 +106,12 @@ const PAGES = [
     ld: ['bestandservice']
   },
   {
+    key: 'termin', dir: 'termin', view: 'view-termin', prio: '0.9', crumb: 'Termin',
+    title: 'Termin vereinbaren – Telefonberatung kostenlos | BHD',
+    ogTitle: 'Beratungstermin online anfragen – kostenlos | BHD',
+    desc: 'Beratungstermin zu Photovoltaik oder Wärmepumpe direkt online anfragen. Telefontermin kostenlos, auf Wunsch auch vor Ort. Montag bis Freitag, Antwort am selben Werktag.'
+  },
+  {
     key: 'ref', dir: 'referenzen', view: 'view-ref', prio: '0.8', crumb: 'Referenzen',
     title: 'Referenzen: PV- & Wärmepumpen-Projekte | BHD',
     desc: 'Umgesetzte Projekte: Photovoltaik auf Sattel- und Flachdach, Luft-Wasser-Wärmepumpen von der Erdarbeit bis zur Hydraulik, Speicher und Wallbox.'
@@ -674,7 +680,9 @@ function buildPage(page) {
     // Dasselbe fuer den Bestandsanlagen-Check. Eigene Marke, damit sich die
     // beiden Rueckspruenge nicht gegenseitig ueberschreiben.
     .replace(/value="https?:\/\/[^"]*[?&]bestandok=1[^"]*"/g,
-             'value="' + SITE + URL_OF.bestand + '?bestandok=1"'));
+             'value="' + SITE + URL_OF.bestand + '?bestandok=1"')
+    .replace(/value="https?:\/\/[^"]*[?&]terminok=1[^"]*"/g,
+             'value="' + SITE + URL_OF.termin + '?terminok=1"'));
 
   return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(page.title)}</title>

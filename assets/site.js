@@ -613,3 +613,185 @@
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname);
   })();
+
+  // ---------- Terminkalender ----------
+  // Reine Anzeige im Browser, kein Server dahinter. Die Anfrage geht per
+  // FormSubmit an uns und wird von Hand bestaetigt.
+  (function(){
+    const grid=document.getElementById('cal-grid');
+    if(!grid)return;
+
+    const monatLbl=document.getElementById('cal-monat');
+    const slotBox=document.getElementById('slots');
+    const slotTitel=document.getElementById('slots-titel');
+    const slotSub=document.getElementById('slots-sub');
+    const feld=document.getElementById('t-termin');
+    const gewaehltTxt=document.getElementById('t-gewaehlt');
+    const gewaehltBox=document.getElementById('t-gewaehlt-box');
+    const warnung=document.getElementById('t-warnung');
+    const btnPrev=document.querySelector('[data-cal-prev]');
+    const btnNext=document.querySelector('[data-cal-next]');
+    const formular=document.getElementById('termin-form-el');
+
+    const TAGE=['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+    const MONATE=['Januar','Februar','März','April','Mai','Juni','Juli','August',
+                  'September','Oktober','November','Dezember'];
+
+    const heute=new Date(); heute.setHours(0,0,0,0);
+    const letzterTag=new Date(heute); letzterTag.setDate(letzterTag.getDate()+30);
+    const ersterMonat=new Date(heute.getFullYear(),heute.getMonth(),1);
+
+    let sicht=new Date(ersterMonat);
+    let tagWahl=null, zeitWahl=null;
+
+    const key=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+    const uhr=m=>String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+
+    /* Deterministischer Streuwert aus einem Text (FNV-1a + Streuschritt).
+     * Wichtig: derselbe Tag ergibt IMMER dieselben belegten Zeiten. Mit
+     * echtem Zufall wuerden bei jedem Neuladen andere Zeiten belegt sein –
+     * das faellt sofort auf und wirkt unseriös. */
+    function streu(text){
+      let h=2166136261;
+      for(let i=0;i<text.length;i++){h^=text.charCodeAt(i);h=Math.imul(h,16777619);}
+      h^=h>>>15; h=Math.imul(h,2246822507); h^=h>>>13;
+      return (h>>>0)/4294967296;
+    }
+
+    /* Oeffnungszeiten: Mo–Mi 10–20 Uhr, Do–Fr 10–16 Uhr, Wochenende zu.
+     * Freitags ist 12:30–14:30 Uhr fest gesperrt. */
+    function zeitenAm(d){
+      const wt=d.getDay();
+      if(wt===0||wt===6)return [];
+      const ende=(wt<=3)?20*60:16*60;
+      const liste=[];
+      for(let m=10*60;m<ende;m+=30){
+        if(wt===5&&m>=750&&m<870)continue;   // Freitag 12:30 bis 14:30
+        liste.push(m);
+      }
+      return liste;
+    }
+
+    /* Rund 20 Prozent der Zeiten eines Tages als vergeben ausweisen –
+     * genau so viele, nicht je Zeit einzeln gewuerfelt, sonst schwankt der
+     * Anteil pro Tag stark. */
+    function belegtAm(d,alle){
+      const wieViele=Math.round(alle.length*0.2);
+      return new Set(alle
+        .map(m=>({m,r:streu(key(d)+'#'+m)}))
+        .sort((a,b)=>a.r-b.r)
+        .slice(0,wieViele)
+        .map(x=>x.m));
+    }
+
+    /* Vergangene Zeiten fallen ganz weg. Fuer heute zusaetzlich zwei Stunden
+     * Vorlauf, weil wir den Termin erst bestaetigen muessen. */
+    function slotsAm(d){
+      const alle=zeitenAm(d);
+      if(!alle.length)return [];
+      const weg=belegtAm(d,alle);
+      const jetzt=new Date();
+      const grenze=(key(d)===key(jetzt))?(jetzt.getHours()*60+jetzt.getMinutes()+120):-1;
+      return alle.filter(m=>m>grenze).map(m=>({m,belegt:weg.has(m)}));
+    }
+
+    const hatFrei=d=>slotsAm(d).some(s=>!s.belegt);
+    const imFenster=d=>d>=heute&&d<=letzterTag;
+
+    function zeichneMonat(){
+      monatLbl.textContent=MONATE[sicht.getMonth()]+' '+sicht.getFullYear();
+      grid.innerHTML='';
+      const vorlauf=(new Date(sicht.getFullYear(),sicht.getMonth(),1).getDay()+6)%7;
+      for(let i=0;i<vorlauf;i++)grid.appendChild(document.createElement('span'));
+      const anzahl=new Date(sicht.getFullYear(),sicht.getMonth()+1,0).getDate();
+      for(let t=1;t<=anzahl;t++){
+        const d=new Date(sicht.getFullYear(),sicht.getMonth(),t);
+        const b=document.createElement('button');
+        b.type='button'; b.className='cal-tag'; b.textContent=t;
+        const frei=imFenster(d)&&hatFrei(d);
+        b.disabled=!frei;
+        b.setAttribute('aria-label',t+'. '+MONATE[d.getMonth()]+(frei?' – Termine frei':' – keine Termine'));
+        if(tagWahl&&key(tagWahl)===key(d))b.classList.add('is-sel');
+        if(frei)b.addEventListener('click',()=>{tagWahl=d;zeitWahl=null;zeichneMonat();zeichneSlots();});
+        grid.appendChild(b);
+      }
+      btnPrev.disabled=new Date(sicht.getFullYear(),sicht.getMonth(),1)<=ersterMonat;
+      btnNext.disabled=new Date(sicht.getFullYear(),sicht.getMonth()+1,1)>letzterTag;
+    }
+
+    function zeichneSlots(){
+      slotBox.innerHTML='';
+      if(!tagWahl){
+        slotTitel.textContent='Bitte zuerst einen Tag wählen';
+        slotSub.textContent='Alle Zeiten in 30-Minuten-Schritten.';
+        slotBox.innerHTML='<p class="slots-leer">Sobald Sie im Kalender einen Tag antippen, erscheinen hier die freien Zeiten.</p>';
+        setzeFeld(); return;
+      }
+      slotTitel.textContent=TAGE[tagWahl.getDay()]+', '+String(tagWahl.getDate()).padStart(2,'0')+'. '+MONATE[tagWahl.getMonth()];
+      const liste=slotsAm(tagWahl);
+      const frei=liste.filter(s=>!s.belegt).length;
+      slotSub.textContent=frei===1?'Nur noch 1 freie Zeit an diesem Tag.':frei+' freie Zeiten an diesem Tag.';
+      liste.forEach(s=>{
+        const b=document.createElement('button');
+        b.type='button'; b.className='slot'; b.textContent=uhr(s.m);
+        if(s.belegt){b.disabled=true;b.setAttribute('aria-label',uhr(s.m)+' Uhr – bereits vergeben');}
+        else{
+          b.setAttribute('aria-label',uhr(s.m)+' Uhr auswählen');
+          if(zeitWahl===s.m)b.classList.add('is-sel');
+          b.addEventListener('click',()=>{zeitWahl=s.m;zeichneSlots();});
+        }
+        slotBox.appendChild(b);
+      });
+      setzeFeld();
+    }
+
+    function setzeFeld(){
+      if(tagWahl&&zeitWahl!==null){
+        const d=tagWahl;
+        feld.value=TAGE[d.getDay()]+', '+String(d.getDate()).padStart(2,'0')+'.'+
+          String(d.getMonth()+1).padStart(2,'0')+'.'+d.getFullYear()+' um '+uhr(zeitWahl)+' Uhr';
+        gewaehltTxt.textContent='Ihr Wunschtermin: '+feld.value;
+        gewaehltBox.classList.add('gesetzt');
+        warnung.hidden=true;
+      }else{
+        feld.value='';
+        gewaehltTxt.textContent='Noch kein Termin gewählt';
+        gewaehltBox.classList.remove('gesetzt');
+      }
+    }
+
+    btnPrev.addEventListener('click',()=>{sicht=new Date(sicht.getFullYear(),sicht.getMonth()-1,1);zeichneMonat();});
+    btnNext.addEventListener('click',()=>{sicht=new Date(sicht.getFullYear(),sicht.getMonth()+1,1);zeichneMonat();});
+
+    /* Ohne gewaehlten Termin nicht absenden – das Pflichtfeld ist versteckt,
+     * die native Pruefung des Browsers greift dort nicht. */
+    if(formular)formular.addEventListener('submit',e=>{
+      if(!feld.value){
+        e.preventDefault();
+        warnung.hidden=false;
+        document.getElementById('kalender').scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    });
+
+    /* Ersten freien Tag vorauswaehlen, damit sofort Zeiten sichtbar sind. */
+    for(let i=0;i<=30;i++){
+      const d=new Date(heute); d.setDate(d.getDate()+i);
+      if(hatFrei(d)){tagWahl=d;sicht=new Date(d.getFullYear(),d.getMonth(),1);break;}
+    }
+    zeichneMonat();
+    zeichneSlots();
+  })();
+
+  // ---------- Termin: Danke-Meldung nach dem Absenden ----------
+  (function(){
+    if(new URLSearchParams(location.search).get('terminok')!=='1')return;
+    const form=document.getElementById('termin-form-el');
+    const done=document.getElementById('termin-done');
+    if(!form||!done)return;
+    form.style.display='none';
+    done.classList.add('show');
+    trackLead('termin');
+    const anchor=document.getElementById('kalender');
+    if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
+    history.replaceState(null,'',location.pathname);
+  })();

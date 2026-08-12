@@ -201,10 +201,10 @@
      Leiste also nie - mit voller Schriftgroesse passen die Menuepunkte
      dort nicht mehr neben den "Jetzt anfragen"-Button. */
   @media(min-width:1221px){
-    .nav-links{gap:19px}
-    .nav-links a,.nav-drop-lbl{font-size:.94rem}
-    .nav-right{gap:14px}
-    .nav-cta{padding:12px 20px;font-size:.95rem}
+    .nav-links{gap:15px}
+    .nav-links a,.nav-drop-lbl{font-size:.91rem}
+    .nav-right{gap:12px}
+    .nav-cta{padding:12px 18px;font-size:.93rem}
   }
   @media(max-width:560px){.nav-cta{padding:12px 20px;font-size:.96rem}}
   @media(max-width:400px){.nav-cta{display:none}}
@@ -557,6 +557,59 @@
     transition:border-color .2s var(--ease),background .2s var(--ease)}
   .checkgrid label:hover{border-color:var(--line-2);background:var(--bg-soft)}
   .checkgrid input{margin-top:2px;width:18px;height:18px;accent-color:var(--green);flex:none}
+
+  /* ======================================================================
+     TERMINKALENDER
+     ====================================================================== */
+  .cal-wrap{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:26px;align-items:start;margin-bottom:26px}
+  @media(max-width:760px){.cal-wrap{grid-template-columns:minmax(0,1fr)}}
+  .cal{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .cal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+  .cal-head strong{font-size:1.02rem;font-weight:600}
+  .cal-nav{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--panel);
+    display:grid;place-items:center;cursor:pointer;color:var(--ink-2);flex:none}
+  .cal-nav:hover:not(:disabled){border-color:var(--line-2);color:var(--ink)}
+  .cal-nav:disabled{opacity:.3;cursor:not-allowed}
+  .cal-nav .ic{width:17px;height:17px}
+  .cal-nav.prev .ic{transform:rotate(180deg)}
+  .cal-wd{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;margin-bottom:5px}
+  .cal-wd span{text-align:center;font-size:.72rem;font-weight:700;color:var(--ink-3);letter-spacing:.04em}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}
+  .cal-tag{aspect-ratio:1;border:1px solid transparent;border-radius:9px;background:transparent;
+    font-size:.92rem;font-weight:600;color:var(--ink-2);cursor:pointer;display:grid;place-items:center;
+    font-family:inherit;transition:background .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease)}
+  .cal-tag:hover:not(:disabled){background:var(--panel);border-color:var(--line-2);color:var(--ink)}
+  .cal-tag:disabled{color:var(--ink-3);opacity:.35;cursor:not-allowed}
+  .cal-tag.is-sel{background:var(--green);border-color:var(--green);color:#fff}
+
+  .slots-titel{font-size:.98rem;font-weight:600;margin:0 0 4px}
+  .slots-sub{font-size:.85rem;color:var(--ink-3);margin:0 0 14px}
+  .slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+  .slot{padding:11px 4px;border-radius:10px;border:1px solid var(--line);background:var(--panel);
+    font-size:.92rem;font-weight:600;color:var(--ink-2);cursor:pointer;text-align:center;font-family:inherit;
+    transition:border-color .18s var(--ease),background .18s var(--ease),color .18s var(--ease)}
+  .slot:hover:not(:disabled){border-color:var(--green);color:var(--ink)}
+  .slot.is-sel{background:var(--green);border-color:var(--green);color:#fff}
+  .slot:disabled{background:var(--bg-soft);color:var(--ink-3);text-decoration:line-through;cursor:not-allowed;opacity:.7}
+  .slots-leer{color:var(--ink-2);font-size:.94rem;margin:0;line-height:1.55}
+
+  .termin-gewaehlt{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;
+    background:var(--bg-soft);border:1px solid var(--line);margin-bottom:20px;font-size:.96rem;color:var(--ink-3)}
+  .termin-gewaehlt .ic{width:20px;height:20px;flex:none;color:var(--ink-3)}
+  .termin-gewaehlt.gesetzt{background:var(--green-soft);border-color:var(--green);color:var(--ink);font-weight:600}
+  .termin-gewaehlt.gesetzt .ic{color:var(--green-deep)}
+  .termin-warnung{background:#fdf2f2;border:1px solid #e6b8b8;color:#8f2020;border-radius:10px;
+    padding:12px 15px;font-size:.92rem;margin-bottom:16px}
+
+  .radiorow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:18px}
+  @media(max-width:560px){.radiorow{grid-template-columns:minmax(0,1fr)}}
+  .radiorow label{display:flex;gap:11px;align-items:flex-start;padding:14px 15px;border:1px solid var(--line);
+    border-radius:12px;background:var(--bg);cursor:pointer;font-size:.94rem;line-height:1.45;
+    transition:border-color .2s var(--ease),background .2s var(--ease)}
+  .radiorow label:hover{border-color:var(--line-2);background:var(--bg-soft)}
+  .radiorow input{margin-top:2px;width:18px;height:18px;accent-color:var(--green);flex:none}
+  .radiorow b{display:block;font-weight:600;color:var(--ink)}
+  .radiorow span small{display:block;color:var(--ink-3);font-size:.85rem;margin-top:2px}
 
   /* Ehrlicher Hinweis auf die Grenzen unserer Hilfe */
   .limit-note{max-width:760px;margin:0 auto;background:var(--panel);border:1px solid var(--line);
@@ -1048,6 +1101,7 @@
       <a data-nav="ratgeber">Ratgeber</a>
       <a data-nav="ref">Referenzen</a>
       <a data-nav="about">Über uns</a>
+      <a data-nav="termin">Termin</a>
       <a data-nav="kontakt">Kontakt</a>
       <a data-nav="ask">Anfragen</a>
       <a data-nav="partner" class="nav-b2b">Partner werden</a>
@@ -3873,6 +3927,161 @@
 
 </div><!-- /view-bestand -->
 
+<!-- ========================= ANSICHT: TERMIN ========================= -->
+<div id="view-termin" hidden>
+
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Termin</span></div>
+      <div class="eyebrow"><span class="dot"></span> Telefontermin kostenlos</div>
+      <h1>Termin vereinbaren – <em>ohne Warteschleife.</em></h1>
+      <p class="lede">Suchen Sie sich einen Tag und eine Uhrzeit aus, die Ihnen passen. Wir rufen Sie zum vereinbarten Zeitpunkt an und gehen Ihr Vorhaben in Ruhe durch. <b style="color:var(--ink)">Das Telefongespräch ist kostenlos und unverbindlich.</b></p>
+      <div class="hero-cta">
+        <a data-scrollto="kalender" class="btn" style="cursor:pointer">Zum Kalender</a>
+        <a href="tel:+491634440392" class="btn btn-ghost"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="strip">
+    <div class="wrap strip-in">
+      <div class="badge"><span class="bic euro">€</span> <span>Telefontermin <b>kostenlos</b></span></div>
+      <div class="badge"><span class="bic"><svg class="ic"><use href="#i-clock"/></svg></span> <span><b>30 Minuten</b> pro Termin</span></div>
+      <div class="badge"><span class="bic"><svg class="ic"><use href="#i-house"/></svg></span> <span>Auf Wunsch <b>vor Ort</b></span></div>
+      <div class="badge"><span class="bic"><svg class="ic"><use href="#i-check"/></svg></span> <span><b>Ohne</b> Verkaufsdruck</span></div>
+    </div>
+  </section>
+
+  <!-- Ablauf -->
+  <section class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">So kommt der Termin zustande</div>
+        <h2>Anfragen, bestätigen, sprechen.</h2>
+        <p>Ihre Auswahl ist eine Anfrage, noch keine feste Buchung. Erst wenn beide Seiten bestätigt haben, steht der Termin.</p>
+      </div>
+      <div class="steps3">
+        <div class="s3"><div class="n">1</div><h3>Sie wählen einen Zeitpunkt</h3><p>Tag und Uhrzeit aus dem Kalender, dazu kurz der Grund. So wissen wir vorab, worum es geht, und Sie müssen nichts zweimal erzählen.</p></div>
+        <div class="s3"><div class="n">2</div><h3>Wir bestätigen per E-Mail</h3><p>Wir sehen uns die Anfrage an und schicken Ihnen eine Bestätigung – in der Regel am selben Werktag. Passt der Zeitpunkt bei uns nicht, schlagen wir Ihnen Alternativen vor.</p></div>
+        <div class="s3"><div class="n">3</div><h3>Sie bestätigen zurück</h3><p>Eine kurze Antwort auf unsere E-Mail genügt. Danach ist der Termin fest eingetragen und wir melden uns pünktlich bei Ihnen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalender + Formular -->
+  <section class="pad" style="padding-top:0" id="kalender">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Wunschtermin wählen</div>
+        <h2>Freie Zeiten im Überblick</h2>
+        <p>Montag bis Mittwoch von 10 bis 20 Uhr, Donnerstag und Freitag von 10 bis 16 Uhr. Termine sind bis zu einem Monat im Voraus buchbar. Durchgestrichene Zeiten sind bereits vergeben.</p>
+      </div>
+
+      <div class="forms-wrap" style="max-width:820px">
+        <div class="fcard" id="termin-card">
+          <form id="termin-form-el" action="https://formsubmit.co/service-bhd@outlook.de" method="POST">
+            <div class="fcard-head">
+              <span class="fbadge"><svg class="ic"><use href="#i-clock"/></svg></span>
+              <div>
+                <span class="ftag"><svg class="ic"><use href="#i-phone"/></svg> Telefontermin kostenlos</span>
+                <h2>Termin anfragen</h2>
+                <p>Erst nach beidseitiger Bestätigung verbindlich.</p>
+              </div>
+            </div>
+
+            <input type="hidden" name="_subject" value="Terminanfrage – BHD Website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://bhd-website.vercel.app/?terminok=1">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="Wunschtermin" id="t-termin" value="">
+
+            <div class="cal-wrap">
+              <div class="cal">
+                <div class="cal-head">
+                  <button type="button" class="cal-nav prev" data-cal-prev aria-label="Voriger Monat"><svg class="ic"><use href="#i-chevron"/></svg></button>
+                  <strong id="cal-monat">&nbsp;</strong>
+                  <button type="button" class="cal-nav" data-cal-next aria-label="Nächster Monat"><svg class="ic"><use href="#i-chevron"/></svg></button>
+                </div>
+                <div class="cal-wd" aria-hidden="true"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div>
+                <div class="cal-grid" id="cal-grid" role="group" aria-label="Tag auswählen"></div>
+              </div>
+              <div>
+                <p class="slots-titel" id="slots-titel">Bitte zuerst einen Tag wählen</p>
+                <p class="slots-sub" id="slots-sub">Alle Zeiten in 30-Minuten-Schritten.</p>
+                <div class="slots" id="slots" role="group" aria-label="Uhrzeit auswählen"></div>
+              </div>
+            </div>
+
+            <div class="termin-gewaehlt" id="t-gewaehlt-box">
+              <svg class="ic"><use href="#i-clock"/></svg>
+              <span id="t-gewaehlt">Noch kein Termin gewählt</span>
+            </div>
+            <div class="termin-warnung" id="t-warnung" hidden>Bitte wählen Sie oben noch einen Tag und eine Uhrzeit aus.</div>
+
+            <div class="fld"><label id="t-art-label">Wie möchten Sie sprechen? <span class="req">*</span></label></div>
+            <div class="radiorow" role="radiogroup" aria-labelledby="t-art-label">
+              <label><input type="radio" name="Terminart" value="Telefontermin" checked required><span><b>Telefontermin</b><small>Kostenlos. Wir rufen Sie an.</small></span></label>
+              <label><input type="radio" name="Terminart" value="Vor-Ort-Termin"><span><b>Vor-Ort-Termin</b><small>Nur nach Absprache. Wir klären Machbarkeit und Anfahrt bei der Bestätigung.</small></span></label>
+            </div>
+
+            <div class="fld">
+              <label for="t-thema">Worum geht es? <span class="req">*</span></label>
+              <select id="t-thema" name="Thema" required>
+                <option value="">Bitte wählen …</option>
+                <option>Photovoltaik</option>
+                <option>Wärmepumpe</option>
+                <option>Stromspeicher oder Nachrüstung</option>
+                <option>Angebot prüfen lassen</option>
+                <option>Bestehende Anlage – Problem oder Wartung</option>
+                <option>Etwas anderes</option>
+              </select>
+            </div>
+
+            <div class="fld">
+              <label for="t-grund">Grund für den Termin <span class="req">*</span></label>
+              <textarea id="t-grund" name="Grund" rows="4" placeholder="Was möchten Sie besprechen? Zum Beispiel: Einfamilienhaus Baujahr 1998, Gasheizung, Interesse an Wärmepumpe und PV, Angebot liegt vor …" required></textarea>
+            </div>
+
+            <div class="grid2">
+              <div class="fld"><label for="t-name">Name <span class="req">*</span></label><input type="text" id="t-name" name="Name" placeholder="Vor- und Nachname" autocomplete="name" required></div>
+              <div class="fld"><label for="t-tel">Telefon <span class="req">*</span></label><input type="tel" id="t-tel" name="Telefon" placeholder="0170 1234567" autocomplete="tel" required></div>
+            </div>
+            <div class="grid2">
+              <div class="fld"><label for="t-mail">E-Mail <span class="req">*</span></label><input type="email" id="t-mail" name="E-Mail" placeholder="name@beispiel.de" autocomplete="email" required></div>
+              <div class="fld"><label for="t-plz">Postleitzahl <span class="req">*</span></label><input type="text" id="t-plz" name="PLZ" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="z. B. 13359" autocomplete="postal-code" required></div>
+            </div>
+
+            <div class="consent">
+              <input type="checkbox" id="t-dsgvo" name="Einverständnis" value="Ja, erteilt" required>
+              <label for="t-dsgvo">Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Terminanfrage verarbeitet werden und ich kontaktiert werde (<a href="#datenschutz">Datenschutz</a>). Widerruf jederzeit möglich. <span class="req">*</span></label>
+            </div>
+            <button type="submit" class="btn" style="width:100%">Termin anfragen</button>
+            <div class="fnote"><svg class="ic"><use href="#i-lock"/></svg> SSL-verschlüsselt · Telefontermin kostenlos · erst nach Bestätigung verbindlich</div>
+          </form>
+          <div class="fdone" id="termin-done">
+            <div class="check"><svg class="ic"><use href="#i-check"/></svg></div>
+            <h3>Terminanfrage ist da.</h3>
+            <p>Wir prüfen den Zeitpunkt und schicken Ihnen eine Bestätigung per E-Mail – in der Regel am selben Werktag. Bitte antworten Sie kurz darauf, dann ist der Termin fest. Wenn es eilt: <a href="tel:+491634440392" style="color:var(--gold-deep);text-decoration:underline">0163 4440392</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0">
+    <div class="wrap">
+      <div class="limit-note">
+        <h3>Gut zu wissen</h3>
+        <p><b style="color:var(--ink)">Der Telefontermin kostet nichts</b> und verpflichtet Sie zu nichts. Er dauert etwa 30 Minuten – genug, um Ihr Vorhaben durchzugehen und offene Fragen zu klären.</p>
+        <p><b style="color:var(--ink)">Vor-Ort-Termine</b> vereinbaren wir nur nach vorheriger Absprache. Ob ein Besuch sinnvoll ist und was er gegebenenfalls kostet, klären wir vorher – überrascht werden Sie dabei nicht.</p>
+        <p>Sie möchten lieber sofort sprechen? Rufen Sie einfach an: <a href="tel:+491634440392" style="color:var(--gold-deep);text-decoration:underline;font-weight:600">0163 4440392</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /view-termin -->
+
 <!-- ========================= ANSICHT: IMPRESSUM ========================= -->
 <div id="view-impressum" hidden>
   <header class="ref-hero">
@@ -4008,7 +4217,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></div>
-      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="bestand">Bestandsanlagen-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
+      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="bestand">Bestandsanlagen-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="termin">Termin</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:service-bhd@outlook.de" style="color:inherit">service-bhd@outlook.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
@@ -4718,6 +4927,188 @@
     done.classList.add('show');
     trackLead('bestandsanlagen-check');
     const anchor=document.getElementById('bestand-form');
+    if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
+    history.replaceState(null,'',location.pathname);
+  })();
+
+  // ---------- Terminkalender ----------
+  // Reine Anzeige im Browser, kein Server dahinter. Die Anfrage geht per
+  // FormSubmit an uns und wird von Hand bestaetigt.
+  (function(){
+    const grid=document.getElementById('cal-grid');
+    if(!grid)return;
+
+    const monatLbl=document.getElementById('cal-monat');
+    const slotBox=document.getElementById('slots');
+    const slotTitel=document.getElementById('slots-titel');
+    const slotSub=document.getElementById('slots-sub');
+    const feld=document.getElementById('t-termin');
+    const gewaehltTxt=document.getElementById('t-gewaehlt');
+    const gewaehltBox=document.getElementById('t-gewaehlt-box');
+    const warnung=document.getElementById('t-warnung');
+    const btnPrev=document.querySelector('[data-cal-prev]');
+    const btnNext=document.querySelector('[data-cal-next]');
+    const formular=document.getElementById('termin-form-el');
+
+    const TAGE=['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+    const MONATE=['Januar','Februar','März','April','Mai','Juni','Juli','August',
+                  'September','Oktober','November','Dezember'];
+
+    const heute=new Date(); heute.setHours(0,0,0,0);
+    const letzterTag=new Date(heute); letzterTag.setDate(letzterTag.getDate()+30);
+    const ersterMonat=new Date(heute.getFullYear(),heute.getMonth(),1);
+
+    let sicht=new Date(ersterMonat);
+    let tagWahl=null, zeitWahl=null;
+
+    const key=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+    const uhr=m=>String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+
+    /* Deterministischer Streuwert aus einem Text (FNV-1a + Streuschritt).
+     * Wichtig: derselbe Tag ergibt IMMER dieselben belegten Zeiten. Mit
+     * echtem Zufall wuerden bei jedem Neuladen andere Zeiten belegt sein –
+     * das faellt sofort auf und wirkt unseriös. */
+    function streu(text){
+      let h=2166136261;
+      for(let i=0;i<text.length;i++){h^=text.charCodeAt(i);h=Math.imul(h,16777619);}
+      h^=h>>>15; h=Math.imul(h,2246822507); h^=h>>>13;
+      return (h>>>0)/4294967296;
+    }
+
+    /* Oeffnungszeiten: Mo–Mi 10–20 Uhr, Do–Fr 10–16 Uhr, Wochenende zu.
+     * Freitags ist 12:30–14:30 Uhr fest gesperrt. */
+    function zeitenAm(d){
+      const wt=d.getDay();
+      if(wt===0||wt===6)return [];
+      const ende=(wt<=3)?20*60:16*60;
+      const liste=[];
+      for(let m=10*60;m<ende;m+=30){
+        if(wt===5&&m>=750&&m<870)continue;   // Freitag 12:30 bis 14:30
+        liste.push(m);
+      }
+      return liste;
+    }
+
+    /* Rund 20 Prozent der Zeiten eines Tages als vergeben ausweisen –
+     * genau so viele, nicht je Zeit einzeln gewuerfelt, sonst schwankt der
+     * Anteil pro Tag stark. */
+    function belegtAm(d,alle){
+      const wieViele=Math.round(alle.length*0.2);
+      return new Set(alle
+        .map(m=>({m,r:streu(key(d)+'#'+m)}))
+        .sort((a,b)=>a.r-b.r)
+        .slice(0,wieViele)
+        .map(x=>x.m));
+    }
+
+    /* Vergangene Zeiten fallen ganz weg. Fuer heute zusaetzlich zwei Stunden
+     * Vorlauf, weil wir den Termin erst bestaetigen muessen. */
+    function slotsAm(d){
+      const alle=zeitenAm(d);
+      if(!alle.length)return [];
+      const weg=belegtAm(d,alle);
+      const jetzt=new Date();
+      const grenze=(key(d)===key(jetzt))?(jetzt.getHours()*60+jetzt.getMinutes()+120):-1;
+      return alle.filter(m=>m>grenze).map(m=>({m,belegt:weg.has(m)}));
+    }
+
+    const hatFrei=d=>slotsAm(d).some(s=>!s.belegt);
+    const imFenster=d=>d>=heute&&d<=letzterTag;
+
+    function zeichneMonat(){
+      monatLbl.textContent=MONATE[sicht.getMonth()]+' '+sicht.getFullYear();
+      grid.innerHTML='';
+      const vorlauf=(new Date(sicht.getFullYear(),sicht.getMonth(),1).getDay()+6)%7;
+      for(let i=0;i<vorlauf;i++)grid.appendChild(document.createElement('span'));
+      const anzahl=new Date(sicht.getFullYear(),sicht.getMonth()+1,0).getDate();
+      for(let t=1;t<=anzahl;t++){
+        const d=new Date(sicht.getFullYear(),sicht.getMonth(),t);
+        const b=document.createElement('button');
+        b.type='button'; b.className='cal-tag'; b.textContent=t;
+        const frei=imFenster(d)&&hatFrei(d);
+        b.disabled=!frei;
+        b.setAttribute('aria-label',t+'. '+MONATE[d.getMonth()]+(frei?' – Termine frei':' – keine Termine'));
+        if(tagWahl&&key(tagWahl)===key(d))b.classList.add('is-sel');
+        if(frei)b.addEventListener('click',()=>{tagWahl=d;zeitWahl=null;zeichneMonat();zeichneSlots();});
+        grid.appendChild(b);
+      }
+      btnPrev.disabled=new Date(sicht.getFullYear(),sicht.getMonth(),1)<=ersterMonat;
+      btnNext.disabled=new Date(sicht.getFullYear(),sicht.getMonth()+1,1)>letzterTag;
+    }
+
+    function zeichneSlots(){
+      slotBox.innerHTML='';
+      if(!tagWahl){
+        slotTitel.textContent='Bitte zuerst einen Tag wählen';
+        slotSub.textContent='Alle Zeiten in 30-Minuten-Schritten.';
+        slotBox.innerHTML='<p class="slots-leer">Sobald Sie im Kalender einen Tag antippen, erscheinen hier die freien Zeiten.</p>';
+        setzeFeld(); return;
+      }
+      slotTitel.textContent=TAGE[tagWahl.getDay()]+', '+String(tagWahl.getDate()).padStart(2,'0')+'. '+MONATE[tagWahl.getMonth()];
+      const liste=slotsAm(tagWahl);
+      const frei=liste.filter(s=>!s.belegt).length;
+      slotSub.textContent=frei===1?'Nur noch 1 freie Zeit an diesem Tag.':frei+' freie Zeiten an diesem Tag.';
+      liste.forEach(s=>{
+        const b=document.createElement('button');
+        b.type='button'; b.className='slot'; b.textContent=uhr(s.m);
+        if(s.belegt){b.disabled=true;b.setAttribute('aria-label',uhr(s.m)+' Uhr – bereits vergeben');}
+        else{
+          b.setAttribute('aria-label',uhr(s.m)+' Uhr auswählen');
+          if(zeitWahl===s.m)b.classList.add('is-sel');
+          b.addEventListener('click',()=>{zeitWahl=s.m;zeichneSlots();});
+        }
+        slotBox.appendChild(b);
+      });
+      setzeFeld();
+    }
+
+    function setzeFeld(){
+      if(tagWahl&&zeitWahl!==null){
+        const d=tagWahl;
+        feld.value=TAGE[d.getDay()]+', '+String(d.getDate()).padStart(2,'0')+'.'+
+          String(d.getMonth()+1).padStart(2,'0')+'.'+d.getFullYear()+' um '+uhr(zeitWahl)+' Uhr';
+        gewaehltTxt.textContent='Ihr Wunschtermin: '+feld.value;
+        gewaehltBox.classList.add('gesetzt');
+        warnung.hidden=true;
+      }else{
+        feld.value='';
+        gewaehltTxt.textContent='Noch kein Termin gewählt';
+        gewaehltBox.classList.remove('gesetzt');
+      }
+    }
+
+    btnPrev.addEventListener('click',()=>{sicht=new Date(sicht.getFullYear(),sicht.getMonth()-1,1);zeichneMonat();});
+    btnNext.addEventListener('click',()=>{sicht=new Date(sicht.getFullYear(),sicht.getMonth()+1,1);zeichneMonat();});
+
+    /* Ohne gewaehlten Termin nicht absenden – das Pflichtfeld ist versteckt,
+     * die native Pruefung des Browsers greift dort nicht. */
+    if(formular)formular.addEventListener('submit',e=>{
+      if(!feld.value){
+        e.preventDefault();
+        warnung.hidden=false;
+        document.getElementById('kalender').scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    });
+
+    /* Ersten freien Tag vorauswaehlen, damit sofort Zeiten sichtbar sind. */
+    for(let i=0;i<=30;i++){
+      const d=new Date(heute); d.setDate(d.getDate()+i);
+      if(hatFrei(d)){tagWahl=d;sicht=new Date(d.getFullYear(),d.getMonth(),1);break;}
+    }
+    zeichneMonat();
+    zeichneSlots();
+  })();
+
+  // ---------- Termin: Danke-Meldung nach dem Absenden ----------
+  (function(){
+    if(new URLSearchParams(location.search).get('terminok')!=='1')return;
+    const form=document.getElementById('termin-form-el');
+    const done=document.getElementById('termin-done');
+    if(!form||!done)return;
+    form.style.display='none';
+    done.classList.add('show');
+    trackLead('termin');
+    const anchor=document.getElementById('kalender');
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname);
   })();
