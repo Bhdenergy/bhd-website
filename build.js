@@ -36,11 +36,11 @@ const MAIL_IN_SOURCE = 'service-bhd@outlook.de'; // so steht sie in src/site.htm
 
 /* Google Search Console: nur noetig, wenn NICHT ueber DNS bestaetigt wird.
  * Der Wert ist der Teil hinter "content=" aus dem Meta-Tag, das Google zeigt. */
-const GSC_TOKEN = '';
+const GSC_TOKEN = 'YmJdAGRuu0_isrbFEfEq8GP-UYUhLj1bDpGdXmTraFE';
 
 /* Google Analytics 4: Mess-ID aus der Datenstream-Einstellung, Form "G-XXXXXXXXXX".
  * WICHTIG: GA4 wird erst nach ausdruecklicher Einwilligung geladen (§ 25 TDDDG). */
-const GA4_ID = '';
+const GA4_ID = 'G-NM7G327C1L';
 
 /* Social-Media-Profile fuer sameAs im JSON-LD. NUR echte, existierende Profile
  * eintragen – Verweise auf nicht vorhandene Seiten schaden mehr, als sie nutzen.
