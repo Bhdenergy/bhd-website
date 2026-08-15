@@ -319,6 +319,42 @@
   .hero-video .ff-sub{color:rgba(255,255,255,.80)}
   .hero-video .ff-go{color:#f0cf92}
 
+  /* ----------------------------------------------------------------------
+     Anfrage-Kasten auf dem Video: durchscheinend statt deckend weiss.
+     Vom Nutzer am 2026-08-15 so gewuenscht ("etwas mehr transparent, aber
+     man muss alles lesen koennen").
+
+     78 % Weiss ist die Grenze: darunter faellt der helle Hilfstext unter
+     4,5:1, sobald ein dunkles Modul hinter dem Kasten liegt. Deshalb sind
+     die hellen Grautoene hier eigens nachgedunkelt. Wer die Deckung weiter
+     senkt, muss diese Farben erneut gegen den dunkelsten Bildinhalt pruefen
+     -- Rezept: tools/pruef-kontrast-hero.js.
+     ---------------------------------------------------------------------- */
+  .hero-video .funnel{background:rgba(255,255,255,.78);
+    -webkit-backdrop-filter:blur(20px) saturate(1.15);backdrop-filter:blur(20px) saturate(1.15);
+    border-color:rgba(255,255,255,.55);box-shadow:0 28px 64px -30px rgba(0,0,0,.7)}
+  /* --ink-3 (#726e62) kommt auf dem durchscheinenden Grund nur noch auf 3,4:1 */
+  .hero-video .funnel-hint,.hero-video .funnel-meta .lbl{color:#4f4b43}
+  .hero-video .progress{background:rgba(20,18,12,.16)}
+  /* Das Kostenlos-Abzeichen braucht einen eigenen helleren Grund, sonst
+     rutscht das Gold darauf unter 4,5:1. */
+  .hero-video .freebadge{background:rgba(255,255,255,.72);color:#7f5710}
+  .hero-video .choice{background:rgba(255,255,255,.42);border-color:rgba(20,18,12,.20)}
+  .hero-video .choice:hover{background:rgba(255,255,255,.62);border-color:var(--green-deep)}
+  .hero-video .choice .cic{background:rgba(255,255,255,.68)}
+  .hero-video .funnel input[type=text],.hero-video .funnel input[type=tel],
+  .hero-video .funnel input[type=email],.hero-video .funnel select,
+  .hero-video .funnel textarea{background:rgba(255,255,255,.52)}
+  /* Letzter Schritt: Kleingedrucktes, Einwilligung und Platzhalter sind in
+     --ink-3/--ink-2 gesetzt und reichen auf dem Kasten nicht mehr. */
+  .hero-video .funnel .hint2,.hero-video .funnel .trust-mini,
+  .hero-video .funnel input::placeholder,.hero-video .funnel textarea::placeholder{color:#4f4b43}
+  .hero-video .funnel .consent label{color:#3f3c36}
+  .hero-video .funnel .backlink{color:#4f4b43}
+  /* Noch dunkler als das Abzeichen-Gold: der Datenschutz-Link steht im
+     Fliesstext und hat damit den dunkleren Kastengrund hinter sich. */
+  .hero-video .funnel .consent a,.hero-video .funnel .req{color:#5e400c}
+
   /* Bewegung reduzieren wird im Skript abgefangen: das Video bekommt dann gar
      keine Quelle und bleibt unsichtbar (opacity 0), das Standbild steht. */
 
@@ -1217,13 +1253,13 @@
        "Video im Hero"). preload="none" ist entscheidend: sonst zieht der
        Browser das Video schon waehrend des Seitenaufbaus. -->
   <div class="hero-media" aria-hidden="true">
-    <img class="hero-still" src="/assets/video/dach-standbild.webp"
-         srcset="/assets/video/dach-standbild-854.webp 854w, /assets/video/dach-standbild.webp 1280w"
+    <img class="hero-still" src="/assets/video/dachfilm-standbild.webp"
+         srcset="/assets/video/dachfilm-standbild-854.webp 854w, /assets/video/dachfilm-standbild.webp 1280w"
          sizes="100vw" alt=""
          width="1280" height="720" fetchpriority="high" decoding="async">
     <video class="hero-vid" muted loop playsinline preload="none"
-           data-vid-gross="/assets/video/dach-1280.mp4"
-           data-vid-klein="/assets/video/dach-854.mp4"></video>
+           data-vid-gross="/assets/video/dachfilm-1280.mp4"
+           data-vid-klein="/assets/video/dachfilm-854.mp4"></video>
     <span class="hero-veil"></span>
   </div>
   <div class="wrap hero-grid">
