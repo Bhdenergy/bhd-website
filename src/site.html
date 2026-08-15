@@ -134,7 +134,10 @@
   /* nowrap: sonst bricht „Wärmepumpen-Rechner" mitten im Wort um */
   .nav-links a{font-weight:600;color:var(--ink-2);font-size:1rem;white-space:nowrap;transition:color .18s var(--ease);position:relative}
   .nav-links a:hover{color:var(--ink)}
-  .nav-links a.active{color:var(--green)}
+  /* --green-deep statt --green: helles Gold auf hellem Grund kommt nur auf
+     2,99:1. Im Handymenue (weiter unten) war das schon korrigiert, hier war
+     es uebersehen worden. Der Unterstrich darf hell bleiben, er ist Zierde. */
+  .nav-links a.active{color:var(--green-deep)}
   .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-25px;height:2px;background:var(--green)}
   .nav-right{display:flex;align-items:center;gap:20px;flex:none}
   .nav-phone{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);font-size:1rem;white-space:nowrap}
@@ -261,6 +264,63 @@
   .stars{display:inline-flex;gap:2px;color:var(--gold)}
   .stars .ic{width:20px;height:20px}
   .socialproof b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+  /* ======================================================================
+     VIDEO-HERO (nur Startseite, Klasse .hero-video)
+     ----------------------------------------------------------------------
+     Die Drohnenaufnahme liegt hinter dem gesamten Hero. WICHTIG: Alle
+     Regeln hier sind auf .hero-video gescoped. h1, .lede, .btn und .usp
+     sind globale Klassen und werden auch von jeder Unterseite benutzt --
+     ohne Scope wuerde die helle Schrift dort auf hellem Grund landen.
+
+     Das Standbild ist das ERSTE Bild des Videos, nicht irgendein anderer
+     Frame. Nur so springt das Bild nicht, wenn das Video einblendet.
+     ====================================================================== */
+  .hero-video{background:#14130f;isolation:isolate}
+  .hero-media{position:absolute;inset:0;z-index:0;overflow:hidden}
+  /* .hero-vid bewusst in EINER Regel: tools/pruef-kollisionen.js schlaegt an,
+     wenn ein Selektor mehrfach auftaucht und nur eine der Regeln positioniert
+     -- das war die Fehlerart des .consent-Bugs. Nicht wieder aufteilen. */
+  .hero-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+    opacity:0;transition:opacity .8s var(--ease)}
+  .hero-vid.laeuft{opacity:1}
+  /* Zwei Verlaeufe: links abdunkeln fuer die Schrift, unten fuer den
+     Uebergang in den hellen Seitenhintergrund. */
+  .hero-veil{position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(101deg,rgba(11,10,7,.86) 0%,rgba(11,10,7,.70) 34%,rgba(11,10,7,.34) 64%,rgba(11,10,7,.44) 100%),
+      linear-gradient(to bottom,rgba(11,10,7,.34) 0%,rgba(11,10,7,0) 24%,rgba(11,10,7,0) 72%,rgba(11,10,7,.46) 100%)}
+  .hero-video .hero-grid{position:relative;z-index:2}
+
+  .hero-video .eyebrow{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.32);
+    color:#f0d9a8;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .hero-video .eyebrow .dot{background:#e0a544}
+  .hero-video h1{color:#fff;text-shadow:0 2px 28px rgba(0,0,0,.45)}
+  .hero-video h1 em{color:#f0cf92}
+  .hero-video .lede{color:rgba(255,255,255,.88);text-shadow:0 1px 18px rgba(0,0,0,.5)}
+  .hero-video .usp li{color:rgba(255,255,255,.92);text-shadow:0 1px 14px rgba(0,0,0,.5)}
+  .hero-video .usp .ic{color:#e0a544}
+  /* Der Hauptknopf wird weiss: Gold auf dem Video hat zu wenig Abstand. */
+  .hero-video .btn{background:#fff;color:#1b1a17}
+  .hero-video .btn:hover{background:#f0e7d6;box-shadow:0 12px 30px -10px rgba(0,0,0,.55)}
+  .hero-video .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.42);
+    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .hero-video .btn-ghost:hover{background:rgba(255,255,255,.18);border-color:#fff;color:#fff}
+  .hero-video .btn:focus-visible,.hero-video a:focus-visible{outline-color:#fff}
+
+  .hero-video .foerderflash{background:rgba(20,18,12,.42);border-color:rgba(240,207,146,.42);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  .hero-video .foerderflash:hover{border-color:rgba(240,207,146,.75);
+    box-shadow:0 16px 34px -20px rgba(0,0,0,.8)}
+  .hero-video .ff-ic{background:rgba(255,255,255,.12);border-color:rgba(240,207,146,.45);color:#f0cf92}
+  .hero-video .ff-puls{border-color:#f0cf92}
+  .hero-video .ff-txt b{color:#fff}
+  .hero-video .ff-sub{color:rgba(255,255,255,.80)}
+  .hero-video .ff-go{color:#f0cf92}
+
+  /* Bewegung reduzieren wird im Skript abgefangen: das Video bekommt dann gar
+     keine Quelle und bleibt unsichtbar (opacity 0), das Standbild steht. */
 
   /* funnel */
   .funnel{background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:clamp(24px,3vw,34px);position:relative}
@@ -1151,7 +1211,21 @@
 <!-- ========================= ANSICHT: STARTSEITE ========================= -->
 <div id="view-home">
 
-<header class="hero">
+<header class="hero hero-video">
+  <!-- Drohnenaufnahme hinter dem Hero. Das Standbild ist sofort da (65 KB),
+       das Video wird erst nach dem Seitenaufbau nachgeladen (siehe Skript
+       "Video im Hero"). preload="none" ist entscheidend: sonst zieht der
+       Browser das Video schon waehrend des Seitenaufbaus. -->
+  <div class="hero-media" aria-hidden="true">
+    <img class="hero-still" src="/assets/video/dach-standbild.webp"
+         srcset="/assets/video/dach-standbild-854.webp 854w, /assets/video/dach-standbild.webp 1280w"
+         sizes="100vw" alt=""
+         width="1280" height="720" fetchpriority="high" decoding="async">
+    <video class="hero-vid" muted loop playsinline preload="none"
+           data-vid-gross="/assets/video/dach-1280.mp4"
+           data-vid-klein="/assets/video/dach-854.mp4"></video>
+    <span class="hero-veil"></span>
+  </div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <div class="eyebrow rise in"><span class="dot"></span> Solar &amp; Wärmepumpe · staatlich gefördert 2026</div>
@@ -4465,6 +4539,32 @@
   function trackLead(quelle){
     try{if(window.gtag)gtag('event','generate_lead',{method:quelle})}catch(e){}
   }
+
+  // ---------- Video im Hero (nur Startseite) ----------
+  // Reihenfolge ist hier der ganze Trick: sichtbar ist zuerst nur das
+  // Standbild. Das Video wird erst NACH dem Seitenaufbau geholt, damit es
+  // den Erstaufbau und damit die Ladewerte nicht ausbremst.
+  (function(){
+    var v=document.querySelector('.hero-vid');
+    if(!v)return;
+    // Bewegung reduzieren: gar nicht laden, das Standbild bleibt stehen.
+    if(reduce)return;
+    // Datensparmodus und langsame Verbindungen verschonen.
+    var netz=navigator.connection||{};
+    if(netz.saveData)return;
+    if(/(^|-)2g$/.test(netz.effectiveType||''))return;
+
+    var klein=window.matchMedia('(max-width:900px)').matches;
+    function start(){
+      v.src=klein?v.dataset.vidKlein:v.dataset.vidGross;
+      v.addEventListener('playing',function(){v.classList.add('laeuft')},{once:true});
+      var p=v.play();
+      if(p&&p.catch)p.catch(function(){});
+    }
+    // Etwas Luft nach dem load-Ereignis, damit Schrift und Funnel zuerst stehen.
+    if(document.readyState==='complete')setTimeout(start,300);
+    else window.addEventListener('load',function(){setTimeout(start,300)});
+  })();
 
   // ---------- Funnel ----------
   const answers={};

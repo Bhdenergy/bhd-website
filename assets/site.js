@@ -123,6 +123,32 @@
     try{if(window.gtag)gtag('event','generate_lead',{method:quelle})}catch(e){}
   }
 
+  // ---------- Video im Hero (nur Startseite) ----------
+  // Reihenfolge ist hier der ganze Trick: sichtbar ist zuerst nur das
+  // Standbild. Das Video wird erst NACH dem Seitenaufbau geholt, damit es
+  // den Erstaufbau und damit die Ladewerte nicht ausbremst.
+  (function(){
+    var v=document.querySelector('.hero-vid');
+    if(!v)return;
+    // Bewegung reduzieren: gar nicht laden, das Standbild bleibt stehen.
+    if(reduce)return;
+    // Datensparmodus und langsame Verbindungen verschonen.
+    var netz=navigator.connection||{};
+    if(netz.saveData)return;
+    if(/(^|-)2g$/.test(netz.effectiveType||''))return;
+
+    var klein=window.matchMedia('(max-width:900px)').matches;
+    function start(){
+      v.src=klein?v.dataset.vidKlein:v.dataset.vidGross;
+      v.addEventListener('playing',function(){v.classList.add('laeuft')},{once:true});
+      var p=v.play();
+      if(p&&p.catch)p.catch(function(){});
+    }
+    // Etwas Luft nach dem load-Ereignis, damit Schrift und Funnel zuerst stehen.
+    if(document.readyState==='complete')setTimeout(start,300);
+    else window.addEventListener('load',function(){setTimeout(start,300)});
+  })();
+
   // ---------- Funnel (nur Startseite) ----------
   (function(){
     if(!document.getElementById('funnel'))return;

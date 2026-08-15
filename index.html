@@ -177,7 +177,7 @@
       "about": {
         "@id": "https://bhd-energie.de/#org"
       },
-      "dateModified": "2026-08-12"
+      "dateModified": "2026-08-15"
     },
     {
       "@type": "FAQPage",
@@ -294,8 +294,8 @@
 }
 </script>
 <style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f6f5f1;color:#1b1a17}img{max-width:100%}</style>
-<link rel="preload" href="/assets/site.css?v=0757c356" as="style">
-<link rel="stylesheet" href="/assets/site.css?v=0757c356">
+<link rel="preload" href="/assets/site.css?v=88352350" as="style">
+<link rel="stylesheet" href="/assets/site.css?v=88352350">
 </head><body data-page="home" data-ga="G-NM7G327C1L">
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
@@ -385,7 +385,21 @@
 <main id="inhalt">
 <div id="view-home">
 
-<header class="hero">
+<header class="hero hero-video">
+  <!-- Drohnenaufnahme hinter dem Hero. Das Standbild ist sofort da (65 KB),
+       das Video wird erst nach dem Seitenaufbau nachgeladen (siehe Skript
+       "Video im Hero"). preload="none" ist entscheidend: sonst zieht der
+       Browser das Video schon waehrend des Seitenaufbaus. -->
+  <div class="hero-media" aria-hidden="true">
+    <img class="hero-still" src="/assets/video/dach-standbild.webp"
+         srcset="/assets/video/dach-standbild-854.webp 854w, /assets/video/dach-standbild.webp 1280w"
+         sizes="100vw" alt=""
+         width="1280" height="720" fetchpriority="high" decoding="async">
+    <video class="hero-vid" muted loop playsinline preload="none"
+           data-vid-gross="/assets/video/dach-1280.mp4"
+           data-vid-klein="/assets/video/dach-854.mp4"></video>
+    <span class="hero-veil"></span>
+  </div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <div class="eyebrow rise in"><span class="dot"></span> Solar &amp; Wärmepumpe · staatlich gefördert 2026</div>
@@ -807,7 +821,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=0757c356" defer></script>
+<script src="/assets/site.js?v=88352350" defer></script>
 
 <div class="quickcontact" aria-label="Schnellkontakt">
   <a class="qc qc-phone" href="tel:+491634440392" aria-label="Anrufen unter 0163 4440392">
