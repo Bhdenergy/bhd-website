@@ -17,9 +17,9 @@ const CHROME = process.env.CHROME_PATH ||
 const ZIEL = process.argv[2] || 'http://localhost:8099/';
 
 const ERWARTET = {
-  gross: 'dachfilm-1280.mp4',
-  klein: 'dachfilm-854.mp4',
-  dauer: 13.6,      // drei Clips mit Halt und Ausblendung
+  gross: 'dachfilm2-1280.mp4',
+  klein: 'dachfilm2-854.mp4',
+  dauer: 10.4,      // zwei Ausschnitte, per Kreuzblende verbunden
   toleranz: 0.3
 };
 

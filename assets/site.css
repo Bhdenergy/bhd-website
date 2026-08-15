@@ -280,6 +280,51 @@
   /* Bewegung reduzieren wird im Skript abgefangen: das Video bekommt dann gar
      keine Quelle und bleibt unsichtbar (opacity 0), das Standbild steht. */
 
+  /* ----------------------------------------------------------------------
+     HANDY UND TABLET (<=1024px): Das Video liegt NICHT mehr hinter dem
+     ganzen Hero. Die Grenze ist bewusst dieselbe wie bei .hero-grid --
+     ab dort stapeln sich Text und Kasten und der Hero wird sehr hoch.
+
+     Grund: auf dem Handy stapeln sich Text und Anfrage-Kasten untereinander,
+     der Hero ist dadurch ueber 1500 px hoch. Das 16:9-Video musste per
+     object-fit:cover auf 390x1563 gezogen werden -- sichtbar blieben rund
+     14 % der Bildbreite, vierfach hochskaliert. Von der Drohnenaufnahme war
+     nichts mehr zu erkennen, nur eine dunkle unscharfe Flaeche.
+
+     Jetzt steht das Video als eigenes Band ganz oben, im eigenen
+     Seitenverhaeltnis: kein Beschnitt, keine Hochskalierung, das ganze Bild.
+     Darunter dunkler Grund fuer Text und Kasten.
+     ---------------------------------------------------------------------- */
+  @media(max-width:1024px){
+    .hero-video{display:flex;flex-direction:column;padding-top:0}
+    /* svh statt vh: auf iOS springt vh, sobald die Adressleiste einklappt.
+       Die vh-Zeile davor ist der Rueckfall fuer aeltere Browser. */
+    .hero-media{position:relative;inset:auto;order:-1;width:100%;flex:none;
+      height:min(42vh,340px);height:min(42svh,340px)}
+    /* Abdunkeln fuer die Schrift entfaellt -- die Schrift steht jetzt
+       darunter. Bleibt der weiche Uebergang ins dunkle Hero-Feld. */
+    .hero-veil{background:linear-gradient(to bottom,
+      rgba(11,10,7,.30) 0%,rgba(11,10,7,0) 22%,rgba(11,10,7,0) 58%,rgba(11,10,7,.96) 100%)}
+    .hero-video .hero-grid{padding-top:26px}
+    /* Der Anfrage-Kasten steht jetzt auf ruhigem dunklem Grund statt auf
+       bewegtem Bild. Deckendes Weiss ist dort sauberer und besser lesbar,
+       die eigens nachgedunkelten Grautoene werden wieder zurueckgenommen. */
+    .hero-video .funnel{background:var(--panel);border-color:var(--line);
+      -webkit-backdrop-filter:none;backdrop-filter:none}
+    .hero-video .funnel-hint,.hero-video .funnel-meta .lbl,.hero-video .funnel .hint2,
+    .hero-video .funnel .trust-mini,.hero-video .funnel .backlink,
+    .hero-video .funnel input::placeholder,.hero-video .funnel textarea::placeholder{color:var(--ink-3)}
+    .hero-video .funnel .consent label{color:var(--ink-2)}
+    .hero-video .funnel .consent a,.hero-video .funnel .req{color:var(--gold-deep)}
+    .hero-video .freebadge{background:var(--green-soft);color:var(--green-deep)}
+    .hero-video .progress{background:var(--bg-soft)}
+    .hero-video .choice{background:var(--panel);border-color:var(--line)}
+    .hero-video .choice .cic{background:var(--bg-soft)}
+    .hero-video .funnel input[type=text],.hero-video .funnel input[type=tel],
+    .hero-video .funnel input[type=email],.hero-video .funnel select,
+    .hero-video .funnel textarea{background:var(--panel)}
+  }
+
   /* funnel */
   .funnel{background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:clamp(24px,3vw,34px);position:relative}
   .funnel-top{margin-bottom:24px}
@@ -1072,11 +1117,18 @@
   .consent-txt a{color:var(--gold-deep);font-weight:600;text-decoration:underline}
   .consent-btns{display:flex;gap:11px;flex:0 0 auto;flex-wrap:wrap}
   .consent-btns .btn{white-space:nowrap}
+  /* Auf dem Handy nimmt die Leiste sonst den halben Bildschirm ein -- beim
+     ersten Besuch ist dann von der Startseite nichts mehr zu sehen. Deshalb
+     hier durchgehend enger: weniger Polster, kleinere Schrift, und die
+     beiden Knoepfe passen nebeneinander in eine Zeile statt untereinander. */
   @media(max-width:700px){
-    .consent-bar{bottom:64px}      /* Platz fuer die feste Kontaktleiste */
-    .consent-in{padding:0 18px;gap:14px}
-    .consent-btns{width:100%}
-    .consent-btns .btn{flex:1}
+    .consent-bar{bottom:64px;      /* Platz fuer die feste Kontaktleiste */
+      padding:13px 0 calc(13px + env(safe-area-inset-bottom,0px))}
+    .consent-in{padding:0 16px;gap:11px}
+    .consent-txt strong{font-size:.96rem;margin-bottom:2px}
+    .consent-txt p{font-size:.84rem;line-height:1.5}
+    .consent-btns{width:100%;gap:9px;flex-wrap:nowrap}
+    .consent-btns .btn{flex:1 1 0;min-width:0;padding:11px 10px;font-size:.88rem}
   }
 
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise{opacity:1;transform:none}.blob{display:none}.flow-line{stroke-dashoffset:0}.node-dot,.node-final,.node-label{opacity:1}}
