@@ -34,15 +34,13 @@ const FAQ = {
       F('Was kostet mich eine Kilowattstunde Strom?',
         'Für Haushaltskunden liegt der Arbeitspreis derzeit meist zwischen 30 und 40 Cent je Kilowattstunde, dazu kommt ein monatlicher Grundpreis. Genau das ist der Hebel einer Solaranlage: Selbst erzeugter Strom kostet über die Lebensdauer gerechnet ungefähr 8 bis 12 Cent je Kilowattstunde.'),
       F('Wann amortisiert sich eine Photovoltaikanlage?',
-        'Bei guter Auslegung und hohem Eigenverbrauch sind 9 bis 13 Jahre ein realistischer Korridor. Entscheidend ist, wie viel des erzeugten Stroms Sie selbst nutzen: Jede selbst verbrauchte Kilowattstunde spart 30 bis 40 Cent, jede eingespeiste bringt nur einen Bruchteil davon. Wer Ihnen fünf Jahre verspricht, rechnet mit Annahmen, die selten eintreten.'),
+        'Bei guter Auslegung und hohem Eigenverbrauch sind 10 bis 14 Jahre ein realistischer Korridor, wenn man Betriebskosten und Leistungsverlust der Module ehrlich mitrechnet. Entscheidend ist, wie viel des erzeugten Stroms Sie selbst nutzen: Jede selbst verbrauchte Kilowattstunde spart 30 bis 40 Cent, jede eingespeiste bringt derzeit 7,7 Cent. Wer Ihnen fünf Jahre verspricht, rechnet mit Annahmen, die selten eintreten. Mit Ihren eigenen Zahlen rechnet das unser Rentabilitätsrechner.'),
       F('Warum kostet Photovoltaik keine Mehrwertsteuer?',
         'Seit 2023 gilt für Lieferung und Montage von Photovoltaikanlagen, Speichern und Wechselrichtern an Wohngebäuden ein Umsatzsteuersatz von 0 Prozent (§ 12 Abs. 3 UStG). Diese Regelung ist unbefristet, es gibt also keine Frist, unter der man hindurchmuss. Bei 20.000 Euro Anlagenpreis sind das rund 3.800 Euro Ersparnis.'),
       F('Welche Kosten werden in Angeboten oft vergessen?',
         'Typisch sind: Erneuerung des Zählerschranks, Gerüst bei Dacharbeiten, Wallbox samt Installation, einzelne größere Heizkörper und der hydraulische Abgleich, der bei jeder Wärmepumpe im Bestand Pflicht ist. Die Spannen dazu stehen weiter oben auf dieser Seite. Seriöse Angebote führen diese Posten wenigstens als Option auf.'),
       F('Ist das günstigste Angebot das beste?',
-        'Selten. Auffällig niedrige Preise gehen fast immer zulasten von Komponentenqualität, Montagesorgfalt oder Erreichbarkeit im Schadensfall. Aussagekräftiger als der Endbetrag ist der Preis je kWp beziehungsweise je kWh Speicher, und die Frage, was alles enthalten ist.'),
-      F('Kann ich die Anlage finanzieren?',
-        'Ja. Neben dem KfW-Zuschuss für Wärmepumpen gibt es zinsverbilligte Kredite und Finanzierungen über die Hausbank. Ob sich eine Finanzierung lohnt, hängt vom Zins und von Ihrer Steuersituation ab. Wir verkaufen keine Finanzierungen und haben daran auch kein Interesse.')
+        'Selten. Auffällig niedrige Preise gehen fast immer zulasten von Komponentenqualität, Montagesorgfalt oder Erreichbarkeit im Schadensfall. Aussagekräftiger als der Endbetrag ist der Preis je kWp beziehungsweise je kWh Speicher, und die Frage, was alles enthalten ist.')
     ]
   },
 
@@ -110,6 +108,27 @@ const FAQ = {
   },
 
   /* ------------------------------------------------ Wärmepumpen-Rechner */
+  /* --------------------------------------------- Rentabilitätsrechner */
+  rendite: {
+    kicker: 'Häufig gefragt',
+    titel: 'Häufige Fragen zur Wirtschaftlichkeit',
+    intro: 'Was sich rechnet, was nicht und woran seriöse Rechnungen zu erkennen sind.',
+    items: [
+      F('Wann amortisiert sich eine Photovoltaikanlage?',
+        'Bei guter Auslegung und hohem Eigenverbrauch sind 10 bis 14 Jahre ein realistischer Korridor, wenn man Betriebskosten und Leistungsverlust der Module ehrlich mitrechnet. Entscheidend ist nicht die Einspeisevergütung, sondern der Eigenverbrauch: Jede selbst genutzte Kilowattstunde spart 30 bis 40 Cent, jede eingespeiste bringt derzeit 7,7 Cent. Wer Ihnen fünf oder sechs Jahre verspricht, rechnet mit Annahmen, die selten eintreten.'),
+      F('Lohnt sich ein Stromspeicher wirtschaftlich?',
+        'Er hebt den Anteil, den Sie selbst verbrauchen, von rund 30 auf 55 bis 70 Prozent – kostet aber auch 3.000 bis 9.500 Euro. Über die Lebensdauer geht die Rechnung bei einem passend dimensionierten Speicher meist knapp auf. Als Richtwert gilt etwa 1 Kilowattstunde Speicher je 1.000 Kilowattstunden Jahresverbrauch. Ein Speicher, der im Sommer nie leer wird, verdient sein Geld nicht zurück. Wer Notstrom oder Unabhängigkeit will, entscheidet ohnehin nicht rein nach Rendite.'),
+      F('Rechnet sich eine Wärmepumpe gegenüber Gas?',
+        'Das hängt an drei Zahlen: der nötigen Vorlauftemperatur, dem Strompreis und dem Gaspreis. Bei Fußbodenheizung oder großzügigen Heizkörpern arbeitet eine Luft-Wasser-Wärmepumpe mit einer Jahresarbeitszahl von 3,5 bis 4 und ist im Betrieb klar günstiger. Bei kleinen, alten Heizkörpern und 55 bis 60 Grad Vorlauf kann der Kostenvorteil auf null schrumpfen. Ehrlich wird der Vergleich erst, wenn man gegenrechnet, dass ein alter Kessel ohnehin ersetzt werden muss.'),
+      F('Warum rechnet dieser Rechner ohne steigende Energiepreise?',
+        'Weil niemand weiß, wie sie sich entwickeln. Rechner, die pauschal drei oder vier Prozent Preissteigerung pro Jahr unterstellen, verkürzen die Amortisation deutlich – auf dem Papier. Wir rechnen bewusst mit heutigen Preisen. Steigen sie, wird Ihr Ergebnis besser als hier angezeigt. Ab 2027 wird der CO₂-Preis für Gebäude im europäischen Emissionshandel am Markt gebildet, was fossile Energie tendenziell verteuert.'),
+      F('Was ist der Unterschied zum Wärmepumpen-Rechner?',
+        'Der Wärmepumpen-Rechner beantwortet die technische Frage: Welche Heizlast hat Ihr Haus, welche Gerätegröße passt, welche Speicher braucht es? Der Rentabilitätsrechner beantwortet die kaufmännische Frage: Was kostet es, was sparen Sie im Jahr und wann ist es bezahlt? Beide greifen auf dieselben Kennwerte zurück, damit sich die Ergebnisse nicht widersprechen.'),
+      F('Ersetzt das Ergebnis ein Angebot?',
+        'Nein. Es ist eine Überschlagsrechnung mit offengelegten Annahmen – gut geeignet, um eine Größenordnung zu bekommen und ein vorliegendes Angebot einzuordnen. Was wirklich zählt, entscheidet sich vor Ort: Dachfläche, Verschattung, Zählerschrank, Heizlast und Zustand der Heizflächen. Schicken Sie uns Ihr Angebot, dann sagen wir Ihnen innerhalb von 24 Stunden, ob die Zahlen darin tragen.')
+    ]
+  },
+
   rechner: {
     kicker: 'Häufig gefragt',
     titel: 'Häufige Fragen zur Auslegung',
@@ -118,7 +137,7 @@ const FAQ = {
       F('Wie groß muss meine Wärmepumpe sein?',
         'Die Größe richtet sich nach der Heizlast des Gebäudes. Aus dem Jahresverbrauch lässt sie sich am zuverlässigsten ableiten: nutzbare Wärme abzüglich Warmwasser, geteilt durch rund 2.100 Vollbenutzungsstunden. Ohne Verbrauchsangabe rechnet man über Wohnfläche und Baualtersklasse. Verbindlich ist eine raumweise Heizlastberechnung nach DIN EN 12831.'),
       F('Wie viel Förderung gibt es 2026 für eine Wärmepumpe?',
-        'Über den KfW-Zuschuss 458 gibt es 30 Prozent Grundförderung, dazu für selbstnutzende Eigentümer 16 Prozent Klimageschwindigkeitsbonus beim Tausch einer alten Heizung und einen Einkommensbonus von 40, 30 oder 10 Prozent je nach zu versteuerndem Haushaltseinkommen. Die Gesamtförderung ist auf 80 Prozent gedeckelt, die förderfähigen Kosten der ersten Wohneinheit auf 28.000 Euro. Daraus ergibt sich ein Höchstzuschuss von 22.400 Euro. Der Antrag muss vor der Auftragserteilung gestellt werden.'),
+        'Über den KfW-Zuschuss 458 gibt es 30 Prozent Grundförderung, dazu für selbstnutzende Eigentümer 16 Prozent Klimageschwindigkeitsbonus beim Tausch einer alten Heizung und einen Einkommensbonus von 40, 30 oder 10 Prozent je nach zu versteuerndem Haushaltseinkommen. Gedeckelt ist die Gesamtförderung bei 70 Prozent; die 80 Prozent erreichen nur selbstnutzende Eigentümer mit einem anzusetzenden zu versteuernden Haushaltseinkommen bis 30.000 Euro. Die förderfähigen Kosten der ersten Wohneinheit liegen bei 28.000 Euro. Daraus ergibt sich ein Höchstzuschuss von 22.400 Euro. Der Antrag muss vor der Auftragserteilung gestellt werden.'),
       F('Welche Jahresarbeitszahl erreicht eine Luft-Wasser-Wärmepumpe?',
         'Entscheidend ist die Vorlauftemperatur. Bei 35 Grad über eine Fußbodenheizung sind rund 4,3 realistisch, bei 45 Grad etwa 3,6 und bei 55 Grad über Bestandsheizkörper nur noch rund 3,0. Warmwasserbereitung über dieselbe Wärmepumpe senkt den Jahreswert um etwa 0,2. Größere Heizflächen und ein hydraulischer Abgleich sind deshalb meist die wirtschaftlichste Maßnahme.'),
       F('Braucht eine Wärmepumpe einen Pufferspeicher?',

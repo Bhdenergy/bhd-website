@@ -212,6 +212,14 @@ const PAGES = [
     ld: ['rechner']
   },
   {
+    key: 'rendite', dir: 'rentabilitaetsrechner', view: 'view-rendite', prio: '0.9',
+    crumb: 'Rentabilitätsrechner',
+    title: 'Rentabilitätsrechner: Lohnt sich PV oder Wärmepumpe? | BHD',
+    ogTitle: 'Rechnet sich Photovoltaik oder eine Wärmepumpe? Jetzt rechnen | BHD',
+    desc: 'Kostenloser Rentabilitätsrechner für Photovoltaik und Wärmepumpe: Ersparnis pro Jahr, Einspeisevergütung, KfW-Zuschuss und nach wie vielen Jahren sich die Anlage bezahlt macht.',
+    ld: ['rendite']
+  },
+  {
     key: 'ask', dir: 'anfragen', view: 'view-ask', prio: '0.9', crumb: 'Anfragen',
     title: 'Anfrage stellen – kostenloses Angebot | BHD',
     desc: 'Kostenloses Angebot für Photovoltaik, Stromspeicher oder Wärmepumpe anfordern. Unabhängige Beratung und geprüfte Fachbetriebe aus Ihrer Region.'
@@ -646,6 +654,21 @@ function jsonLd(page, viewHtml) {
       operatingSystem: 'Web',
       inLanguage: 'de-DE',
       description: 'Kostenloser Wärmepumpen-Rechner ohne Anmeldung: ermittelt aus Wohnfläche, Baualtersklasse, Gebäudeart und dem bisherigen Energieverbrauch die Heizlast, die erforderliche Heizleistung, die geschätzte Jahresarbeitszahl, den Jahresstrombedarf, Speichergrößen und den voraussichtlichen KfW-Zuschuss 458.',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+      provider: { '@id': SITE + '/#org' }
+    });
+  }
+
+  if ((page.ld || []).includes('rendite')) {
+    nodes.push({
+      '@type': 'WebApplication',
+      '@id': SITE + URL_OF.rendite + '#app',
+      name: 'Rentabilitätsrechner für Photovoltaik und Wärmepumpe',
+      url: SITE + URL_OF.rendite,
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Web',
+      inLanguage: 'de-DE',
+      description: 'Kostenloser Wirtschaftlichkeitsrechner ohne Anmeldung: berechnet für Photovoltaik den Jahresertrag, den Eigenverbrauch, die gesparten Stromkosten, die Einspeisevergütung und die Amortisationszeit – und für die Wärmepumpe den Heizkostenvergleich, den KfW-Zuschuss 458, den Eigenanteil und die Amortisation. Alle Annahmen sind auf der Seite offengelegt.',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
       provider: { '@id': SITE + '/#org' }
     });

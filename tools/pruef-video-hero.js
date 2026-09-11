@@ -16,9 +16,13 @@ const CHROME = process.env.CHROME_PATH ||
   'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
 const ZIEL = process.argv[2] || 'http://localhost:8099/';
 
+/* Bei neuem Schnitt oder neuen Dateinamen hier mitziehen.
+ * Drei Fassungen seit 27.08.2026: auf dem PC liegt das Video full-bleed hinter
+ * dem Hero und wurde vorher aus 1280 px auf 1920 px hochgezogen. */
 const ERWARTET = {
-  gross: 'dachfilm2-1280.mp4',
-  klein: 'dachfilm2-854.mp4',
+  gross: 'dachfilm3-1920.mp4',   // ab 1400 px Anzeigebreite (mal Pixeldichte)
+  mittel: 'dachfilm3-1280.mp4',  // 1025 bis 1399 px
+  klein: 'dachfilm3-854.mp4',    // Handy-Band unter 1025 px
   dauer: 10.4,      // zwei Ausschnitte, per Kreuzblende verbunden
   toleranz: 0.3
 };
@@ -85,7 +89,14 @@ async function zustand(browser, breite, hoehe, reduce) {
     pruef('Video spielt', !m.pausiert && m.zeit > 0, 'Sekunde ' + m.zeit);
   }
 
-  console.log('\n3) Bewegung reduzieren');
+  console.log('\n3) Schmaler PC (1280 breit)');
+  const s = await zustand(browser, 1280, 860, false);
+  if (s) {
+    pruef('mittlere Fassung geladen', s.quelle === ERWARTET.mittel, s.quelle);
+    pruef('Video spielt', !s.pausiert && s.zeit > 0, 'Sekunde ' + s.zeit);
+  }
+
+  console.log('\n4) Bewegung reduzieren');
   const r = await zustand(browser, 1440, 900, true);
   if (r) {
     pruef('kein Video geladen', r.quelle === '', r.quelle || 'keine Quelle');

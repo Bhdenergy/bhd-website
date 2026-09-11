@@ -137,9 +137,23 @@
     if(netz.saveData)return;
     if(/(^|-)2g$/.test(netz.effectiveType||''))return;
 
-    var klein=window.matchMedia('(max-width:900px)').matches;
+    // Welche Fassung geladen wird, entscheidet die TATSAECHLICHE Anzeigebreite,
+    // nicht die Bildschirmbreite allein. Auf dem PC liegt das Video full-bleed
+    // hinter dem ganzen Hero: bei 1920 px Fenster wurde die alte 1280er-Datei
+    // um das 1,5-Fache hochgezogen und sah entsprechend weich aus. Unter
+    // 1025 px steht das Video als schmales Band (siehe CSS) - dort reicht die
+    // kleine Fassung, und die grosse waere nur unnoetige Datenmenge.
+    var bandLayout=window.matchMedia('(max-width:1024px)').matches;
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    var langsam=/(^|-)[23]g$/.test(netz.effectiveType||'');
+    function quelle(){
+      if(langsam)return v.dataset.vidKlein;
+      var b=Math.round((v.getBoundingClientRect().width||window.innerWidth)*dpr);
+      if(bandLayout)return b>=1100?v.dataset.vidMittel:v.dataset.vidKlein;
+      return b>=1400?v.dataset.vidGross:v.dataset.vidMittel;
+    }
     function start(){
-      v.src=klein?v.dataset.vidKlein:v.dataset.vidGross;
+      v.src=quelle();
       v.addEventListener('playing',function(){v.classList.add('laeuft')},{once:true});
       var p=v.play();
       if(p&&p.catch)p.catch(function(){});
@@ -351,7 +365,8 @@
   const VOLLSTUNDEN=2100;      // Vollbenutzungsstunden Heizung pro Jahr (Richtwert Deutschland)
   const WW_PRO_PERSON=500;     // kWh Warmwasserwärme je Person und Jahr
   const MAX_KOSTEN=28000;      // förderfähige Kosten 1. Wohneinheit, KfW 458 ab 21.07.2026
-  const MAX_QUOTE=80;          // Deckel der Gesamtförderung in Prozent
+  const MAX_QUOTE=80;          // Deckel nur bei anzusetzendem zvE bis 30.000 €
+  const REGEL_QUOTE=70;        // sonst gilt der Regeldeckel von 70 %
 
   // Jahresarbeitszahl einer Luft-Wasser-Wärmepumpe je Vorlauftemperatur
   const JAZ_VL={35:4.3, 40:4.0, 45:3.6, 55:3.0, 60:2.7};
@@ -456,7 +471,14 @@
       if(ek){quote+=ek;bausteine.push(ek+' % Einkommensbonus');}
     }
     const quoteVorDeckel=quote;
-    quote=Math.min(MAX_QUOTE,quote);
+    // Deckel: laut KfW-Merkblatt 458 grundsaetzlich 70 %. Die 80 % gibt es nur
+    // fuer selbstnutzende Eigentuemer mit einem anzusetzenden zu versteuernden
+    // Haushaltseinkommen bis 30.000 € (Kinder sind oben bereits abgezogen).
+    // Vorher stand hier pauschal 80 % - das hat im Bereich 30.001 bis 40.000 €
+    // sechs Prozentpunkte zu viel ausgewiesen, also bis zu 1.680 € Zuschuss,
+    // den es nicht gibt.
+    const deckel=(selbstnutzer&&zveAngegeben&&zve<=30000)?MAX_QUOTE:REGEL_QUOTE;
+    quote=Math.min(deckel,quote);
 
     const investRaw=parseFloat($('wp-invest').value);
     const investAngegeben=isFinite(investRaw)&&investRaw>0;
@@ -493,8 +515,9 @@
     }else if(!zveAngegeben){
       hinweise.push(['info','Ohne Angabe zum Haushaltseinkommen ist der Einkommensbonus nicht eingerechnet. Bis 50.000 € zu versteuerndem Einkommen kommen 10 bis 40 Prozentpunkte dazu.']);
     }
-    if(quoteVorDeckel>MAX_QUOTE){
-      hinweise.push(['info','Die Boni summieren sich auf '+quoteVorDeckel+' %. Gefördert werden höchstens '+MAX_QUOTE+' %.']);
+    if(quoteVorDeckel>deckel){
+      hinweise.push(['info','Die Boni summieren sich auf '+quoteVorDeckel+' %. Gefördert werden in Ihrem Fall höchstens '+deckel+' %'+
+        (deckel===REGEL_QUOTE?' – die 80 % gibt es nur bei einem anzusetzenden Haushaltseinkommen bis 30.000 €.':'.')]);
     }
 
     // --- Ausgabe ---
@@ -583,6 +606,243 @@
   });
 
   $('wp-k-plz').addEventListener('input',()=>{$('wp-k-plz').value=$('wp-k-plz').value.replace(/\D/g,'')});
+  })();
+
+  // ===== Rentabilitätsrechner – nur auf /rentabilitaetsrechner/ =====
+  // Zwei Rechner in einem Umschalter. Bewusst kurz gehalten: wenige Eingaben,
+  // eine Leitzahl, alle Annahmen stehen sichtbar unter dem Rechner.
+  //
+  // WICHTIG: Die Kennwerte sind mit dem Rest der Website abgeglichen und
+  // duerfen nicht einzeln geaendert werden.
+  //  - 7,7 ct Einspeisung  = anzulegender Wert der Bundesnetzagentur fuer
+  //    Anlagen bis 10 kW, Inbetriebnahme 01.08.2026 bis 31.01.2027.
+  //  - Preise je kWp / je kWh Speicher = Mitte der Spannen auf /kosten/.
+  //  - JAZ je Vorlauftemperatur = dieselbe Tabelle wie im Waermepumpen-Rechner.
+  //  - Foerderdeckel 70 %, 80 % nur bis 30.000 € anzusetzendem zvE (KfW 458).
+  // Das Rechenbeispiel auf /photovoltaik/ muss dasselbe Ergebnis liefern.
+  (function(){
+  const wurzel=document.getElementById('rendite');
+  if(!wurzel)return;
+
+  const $=(id)=>document.getElementById(id);
+  const nf=(n,d)=>n.toLocaleString('de-DE',{minimumFractionDigits:d||0,maximumFractionDigits:d||0});
+  const eur=(n)=>nf(Math.round(n))+' €';
+  const num=(id,def)=>{const v=parseFloat(($(id)||{}).value);return isFinite(v)?v:(def===undefined?0:def);};
+
+  const VERGUETUNG=0.077;      // €/kWh Ueberschusseinspeisung bis 10 kW
+  const PREIS_KWP=1450;        // € je kWp schluesselfertig, ohne Speicher
+  const PREIS_SPEICHER={0:0,5:3750,8:5000,10:5750,15:8000};
+  const BETRIEB_ANTEIL=0.01;   // Versicherung, Wartung, Zaehler, Ruecklage WR
+  const BETRIEB_MIN=120;
+  const DEGRADATION=0.005;     // Leistungsverlust der Module pro Jahr
+  const JAHRE=20;
+
+  const MAX_KOSTEN=28000, MAX_QUOTE=80, REGEL_QUOTE=70;
+  const JAZ_VL={35:4.3,40:4.0,45:3.6,55:3.0,60:2.7};
+  const TRAEGER={
+    'gas-kwh':     {kwh:1,   eta:0.90, preis:0.12, einheit:'€/kWh'},
+    'gas-m3':      {kwh:10,  eta:0.90, preis:1.20, einheit:'€/m³'},
+    'oel':         {kwh:10,  eta:0.85, preis:1.10, einheit:'€/Liter'},
+    'fluessiggas': {kwh:6.6, eta:0.85, preis:0.90, einheit:'€/Liter'},
+    'strom':       {kwh:1,   eta:1.00, preis:0.32, einheit:'€/kWh'}
+  };
+
+  function hinweiseAus(id,liste){
+    $(id).innerHTML=liste.map(h=>'<div class="cn cn-'+h[0]+'">'+h[1]+'</div>').join('');
+  }
+  function jahre(n){
+    if(!isFinite(n)||n<=0)return null;
+    return n>=JAHRE*2?null:n;
+  }
+
+  /* ------------------------------------------------------ Photovoltaik */
+
+  // Autarkiegrad: Anteil Ihres Strombedarfs, den die Anlage deckt.
+  // Kalibriert auf zwei belastbare Stuetzpunkte: ohne Speicher rund 30 %
+  // bei einer Anlage, die den Jahresverbrauch gerade erzeugt, und rund 66 %
+  // in der Konstellation des Rechenbeispiels auf /photovoltaik/
+  // (10 kWp, 8 kWh Speicher, 4.500 kWh Verbrauch). Der Deckel bei knapp
+  // 70 % ist Absicht - hoehere Jahreswerte traegt der Winter nicht.
+  function autarkie(ertrag,verbrauch,speicher){
+    const r=ertrag/verbrauch;
+    const a0=0.439*(1-Math.exp(-1.15*r));
+    const c=speicher/(verbrauch/1000);
+    const g=0.446*(1-Math.exp(-2.0*c))*Math.min(1,r);
+    return Math.min(0.92,a0+g*(1-a0));
+  }
+
+  let investBeruehrt=false;
+  function pvVorschlag(){
+    const kwp=num('rp-kwp',10);
+    const sp=num('rp-speicher',0);
+    return Math.round((kwp*PREIS_KWP+(PREIS_SPEICHER[sp]||sp*600))/100)*100;
+  }
+  function pvInvestSetzen(){
+    if(investBeruehrt)return;
+    $('rp-invest').value=pvVorschlag();
+  }
+
+  function rechnePV(){
+    const verbrauch=num('rp-verbrauch',0);
+    const preis=num('rp-preis',0.35);
+    const kwp=num('rp-kwp',0);
+    const spez=num('rp-ausrichtung',950);
+    const speicher=num('rp-speicher',0);
+    const hinweise=[];
+
+    if(!(verbrauch>0)||!(kwp>0)){
+      $('rp-amort').textContent='–';
+      $('rp-amort-sub').textContent='Bitte Verbrauch und Anlagengröße eintragen.';
+      hinweiseAus('rp-hinweise',[]);
+      return;
+    }
+
+    const invest=Math.max(0,num('rp-invest',pvVorschlag()));
+    const ertrag=kwp*spez;
+    const quote=autarkie(ertrag,verbrauch,speicher);
+    const eigen=Math.min(verbrauch*quote,ertrag*0.9);
+    const eingespeist=Math.max(0,ertrag-eigen);
+    const gespart=eigen*preis;
+    const erloes=eingespeist*VERGUETUNG;
+    const betrieb=Math.max(BETRIEB_MIN,invest*BETRIEB_ANTEIL);
+    const vorteil=gespart+erloes-betrieb;
+    // Ueber 20 Jahre mit mittlerem Leistungsverlust der Module
+    const mittel=1-DEGRADATION*(JAHRE-1)/2;
+    const summe20=(gespart+erloes)*mittel*JAHRE-betrieb*JAHRE-invest;
+    const amort=jahre(invest/vorteil);
+
+    $('rp-amort').textContent=amort?nf(amort,1).replace(',0','')+' Jahren':'–';
+    $('rp-amort-sub').textContent=amort
+      ? 'Danach bleiben rund '+eur(vorteil)+' im Jahr übrig. Module halten typischerweise 25 bis 30 Jahre.'
+      : 'Mit diesen Werten rechnet sich die Anlage rechnerisch nicht innerhalb von 40 Jahren. Prüfen Sie Investition, Verbrauch und Strompreis.';
+    $('rp-ertrag').textContent=nf(ertrag)+' kWh';
+    $('rp-eigen').textContent=nf(eigen)+' kWh';
+    $('rp-autarkie').textContent=nf(quote*100)+' % aus eigener Sonne';
+    $('rp-sparen').textContent=eur(gespart)+'/Jahr';
+    $('rp-erloes').textContent=eur(erloes)+'/Jahr';
+    $('rp-betrieb').textContent='− '+eur(betrieb)+'/Jahr';
+    $('rp-vorteil').textContent=eur(vorteil)+'/Jahr';
+    $('rp-invest-out').textContent=eur(invest);
+    $('rp-20').textContent=(summe20>=0?'+ ':'− ')+eur(Math.abs(summe20));
+    $('rp-invest-hint').textContent='Vorschlag aus unserer Preisübersicht: '+eur(pvVorschlag())+
+      ' für '+nf(kwp,1).replace(',0','')+' kWp'+(speicher?' mit '+speicher+' kWh Speicher':' ohne Speicher')+'.';
+
+    const rel=ertrag/verbrauch;
+    if(rel<0.8)hinweise.push(['info','Die Anlage erzeugt weniger, als Sie verbrauchen. Zusätzliche Module kosten anteilig wenig, weil Gerüst, Montage und Anschluss ohnehin anfallen – im Zweifel lieber ein paar Module mehr aufs Dach.']);
+    if(rel>2.6)hinweise.push(['info','Die Anlage erzeugt ein Vielfaches Ihres Verbrauchs. Der Überschuss geht zu 7,7 Cent ins Netz statt 35 Cent zu sparen. Sinnvoll wird das vor allem mit Wärmepumpe oder E-Auto.']);
+    if(speicher>0&&speicher/(verbrauch/1000)>2.2)hinweise.push(['warn','Der Speicher ist im Verhältnis zum Verbrauch groß. Als Richtwert gilt etwa 1 kWh je 1.000 kWh Jahresstromverbrauch. Ein Speicher, der im Sommer nie leer wird, verdient sein Geld nicht zurück.']);
+    if(speicher===0)hinweise.push(['info','Ohne Speicher decken Sie vor allem den Tagesverbrauch. Ein Speicher hebt den Eigenverbrauch deutlich, kostet aber auch – probieren Sie beide Varianten durch.']);
+    hinweise.push(['info','Nicht enthalten: steigende Strompreise und ein E-Auto. Beide würden das Ergebnis verbessern. Enthalten sind dagegen Betriebskosten und Leistungsverlust der Module.']);
+    hinweiseAus('rp-hinweise',hinweise);
+  }
+
+  /* ------------------------------------------------------ Wärmepumpe */
+
+  function rechneWP(){
+    const t=TRAEGER[$('rw-traeger').value]||TRAEGER['gas-kwh'];
+    const menge=num('rw-menge',0);
+    const preisAlt=num('rw-preis-alt',0);
+    const vl=num('rw-vl',55);
+    const preisStrom=num('rw-preis-strom',0.26);
+    const invest=Math.max(0,num('rw-invest',28000));
+    const hinweise=[];
+
+    $('rw-preis-alt-unit').textContent=t.einheit;
+
+    if(!(menge>0)||!(preisAlt>0)){
+      $('rw-amort').textContent='–';
+      $('rw-amort-sub').textContent='Bitte Verbrauch und Preis Ihrer heutigen Heizung eintragen.';
+      hinweiseAus('rw-hinweise',[]);
+      return;
+    }
+
+    const waerme=menge*t.kwh*t.eta;
+    let jaz=(JAZ_VL[vl]||3.0)-0.2;          // 0,2 Abzug für die Warmwasserbereitung
+    jaz=Math.min(4.6,Math.max(2.3,jaz));
+    const strom=waerme/jaz;
+    const kostenAlt=menge*preisAlt;
+    const kostenNeu=strom*preisStrom;
+    const ersparnis=kostenAlt-kostenNeu;
+
+    // --- Förderung nach KfW 458 ---
+    const selbst=num('rw-selbst',1)===1;
+    const altOK=num('rw-alt',0)===1;
+    const kinder=Math.max(0,num('rw-kinder',0));
+    const zveRaw=parseFloat($('rw-zve').value);
+    const zveDa=isFinite(zveRaw)&&zveRaw>0;
+    const zve=zveDa?Math.max(0,zveRaw-kinder*10000):null;
+
+    let quote=30;
+    if(selbst&&altOK)quote+=16;
+    if(selbst&&zveDa){
+      if(zve<=30000)quote+=40; else if(zve<=40000)quote+=30; else if(zve<=50000)quote+=10;
+    }
+    const vorDeckel=quote;
+    const deckel=(selbst&&zveDa&&zve<=30000)?MAX_QUOTE:REGEL_QUOTE;
+    quote=Math.min(deckel,quote);
+    const zuschuss=Math.min(invest,MAX_KOSTEN)*quote/100;
+    const eigen=invest-zuschuss;
+
+    const amort=jahre(eigen/ersparnis);
+    // Gegenrechnung: der alte Kessel muss ohnehin ersetzt werden. Eine neue
+    // Gasheizung kostet eingebaut rund 10.000 € - diese Ausgabe spart man
+    // durch die Waermepumpe ebenfalls.
+    const ohnehin=10000;
+    const amortGegen=jahre(Math.max(0,eigen-ohnehin)/ersparnis);
+
+    $('rw-amort').textContent=amort?nf(amort,1).replace(',0','')+' Jahren':'–';
+    $('rw-amort-sub').innerHTML=amort
+      ? 'Gegengerechnet mit einer ohnehin fälligen neuen Heizung (rund '+eur(ohnehin)+'): <b>'+
+        (amortGegen?nf(amortGegen,1).replace(',0','')+' Jahre':'sofort')+'</b>.'
+      : 'Mit diesen Werten spart die Wärmepumpe rechnerisch nichts. Das liegt fast immer an einer hohen Vorlauftemperatur oder an einem günstigen Altvertrag.';
+    $('rw-alt-kosten').textContent=eur(kostenAlt)+'/Jahr';
+    $('rw-neu-kosten').textContent=eur(kostenNeu)+'/Jahr';
+    $('rw-ersparnis').textContent=(ersparnis>=0?'':'− ')+eur(Math.abs(ersparnis))+'/Jahr';
+    $('rw-jaz').textContent=nf(jaz,1);
+    $('rw-strom').textContent=nf(strom)+' kWh/Jahr';
+    $('rw-quote').textContent=nf(quote)+' %';
+    $('rw-zuschuss').textContent=eur(zuschuss);
+    $('rw-eigen').textContent=eur(eigen);
+    $('rw-20').textContent=eur(ersparnis*JAHRE);
+
+    if(vl>=55)hinweise.push(['warn','Bei '+vl+' °C Vorlauf arbeitet eine Luft-Wasser-Wärmepumpe noch, aber unwirtschaftlich. Größere Heizkörper in wenigen Räumen und ein hydraulischer Abgleich bringen die Vorlauftemperatur oft um 10 bis 15 °C herunter – das ist meist die günstigste Maßnahme überhaupt. Stellen Sie oben einmal 45 °C ein und vergleichen Sie.']);
+    if(!selbst)hinweise.push(['info','Klimageschwindigkeits- und Einkommensbonus gibt es nur für selbstnutzende Eigentümer. Gerechnet ist deshalb nur die Grundförderung.']);
+    else if(!zveDa)hinweise.push(['info','Ohne Angabe zum Haushaltseinkommen fehlt der Einkommensbonus. Bis 50.000 € zu versteuerndem Einkommen kommen 10 bis 40 Prozentpunkte dazu.']);
+    if(vorDeckel>deckel)hinweise.push(['info','Die Boni summieren sich auf '+vorDeckel+' %. Gefördert werden in Ihrem Fall höchstens '+deckel+' %'+(deckel===REGEL_QUOTE?' – die 80 % gibt es nur bis 30.000 € anzusetzendem Einkommen.':'.')]);
+    if(invest>MAX_KOSTEN)hinweise.push(['info','Gefördert werden höchstens '+eur(MAX_KOSTEN)+' für die erste Wohneinheit. Was darüber liegt, zahlen Sie voll.']);
+    hinweise.push(['info','Nicht enthalten: steigende Gas- und Ölpreise. Ab 2027 wird der CO₂-Preis für Gebäude im europäischen Emissionshandel am Markt gebildet – wohin das führt, kann heute niemand seriös beziffern. Welche Größe zu Ihrem Haus passt, rechnet der <a href="/waermepumpen-rechner/">Wärmepumpen-Rechner</a>.']);
+    hinweiseAus('rw-hinweise',hinweise);
+  }
+
+  /* ------------------------------------------------------ Umschalter */
+
+  function zeige(welche){
+    ['pv','wp'].forEach(k=>{
+      const feld=$('rt-'+k), knopf=$('rt-tab-'+k), an=(k===welche);
+      feld.hidden=!an;
+      knopf.classList.toggle('is-on',an);
+      knopf.setAttribute('aria-selected',an?'true':'false');
+    });
+    if(location.hash!=='#'+welche)history.replaceState(null,'',location.pathname+'#'+welche);
+  }
+  document.querySelectorAll('.rt-tab').forEach(b=>b.addEventListener('click',()=>zeige(b.dataset.rt)));
+  if(location.hash==='#wp')zeige('wp');
+
+  // Preisvorschlag nur so lange nachführen, wie niemand von Hand eingreift
+  $('rp-invest').addEventListener('input',()=>{investBeruehrt=true;});
+  ['rp-kwp','rp-speicher'].forEach(id=>$(id).addEventListener('input',()=>{pvInvestSetzen();rechnePV();}));
+  ['rp-verbrauch','rp-preis','rp-ausrichtung','rp-invest'].forEach(id=>$(id).addEventListener('input',rechnePV));
+  ['rw-traeger','rw-menge','rw-preis-alt','rw-vl','rw-preis-strom','rw-invest',
+   'rw-selbst','rw-alt','rw-zve','rw-kinder'].forEach(id=>$(id).addEventListener('input',rechneWP));
+  $('rw-traeger').addEventListener('change',()=>{
+    const t=TRAEGER[$('rw-traeger').value];
+    if(t)$('rw-preis-alt').value=t.preis;
+    rechneWP();
+  });
+
+  pvInvestSetzen();
+  rechnePV();
+  rechneWP();
   })();
 
 
@@ -684,11 +944,47 @@
       return (h>>>0)/4294967296;
     }
 
+    /* Gesetzliche Feiertage. Der Kalender reicht nur 30 Tage voraus, trotzdem
+     * hat ein buchbarer Termin am 3. Oktober oder am zweiten Weihnachtstag
+     * frueher oder spaeter jeden getroffen. Beruecksichtigt sind die
+     * bundeseinheitlichen Feiertage, der Berliner Frauentag (Sitz Berlin)
+     * sowie Heiligabend und Silvester - beides zwar keine Feiertage, aber
+     * an beiden Tagen rufen wir niemanden an. */
+    const osterCache={};
+    function ostersonntag(j){
+      if(osterCache[j])return osterCache[j];
+      const a=j%19,b=Math.floor(j/100),c=j%100,d=Math.floor(b/4),e=b%4,
+            f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),
+            h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,
+            l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),
+            mon=Math.floor((h+l-7*m+114)/31),tag=((h+l-7*m+114)%31)+1;
+      return (osterCache[j]=new Date(j,mon-1,tag));
+    }
+    const feierCache={};
+    function feiertage(j){
+      if(feierCache[j])return feierCache[j];
+      const o=ostersonntag(j);
+      const rel=off=>{const d=new Date(o);d.setDate(d.getDate()+off);return key(d)};
+      return (feierCache[j]=new Set([
+        j+'-1-1',      // Neujahr
+        j+'-3-8',      // Internationaler Frauentag (Berlin)
+        j+'-5-1',      // Tag der Arbeit
+        j+'-10-3',     // Tag der Deutschen Einheit
+        j+'-12-24', j+'-12-25', j+'-12-26', j+'-12-31',
+        rel(-2),       // Karfreitag
+        rel(1),        // Ostermontag
+        rel(39),       // Christi Himmelfahrt
+        rel(50)        // Pfingstmontag
+      ]));
+    }
+    const istFeiertag=d=>feiertage(d.getFullYear()).has(key(d));
+
     /* Oeffnungszeiten: Mo–Mi 10–20 Uhr, Do–Fr 10–16 Uhr, Wochenende zu.
-     * Freitags ist 12:30–14:30 Uhr fest gesperrt. */
+     * Freitags ist 12:30–14:30 Uhr fest gesperrt, an Feiertagen ganz zu. */
     function zeitenAm(d){
       const wt=d.getDay();
       if(wt===0||wt===6)return [];
+      if(istFeiertag(d))return [];
       const ende=(wt<=3)?20*60:16*60;
       const liste=[];
       for(let m=10*60;m<ende;m+=30){

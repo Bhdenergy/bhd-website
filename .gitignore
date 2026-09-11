@@ -1,3 +1,6 @@
 node_modules/
 # Zwischenbild von tools/pruef-kontrast-hero.js (wird normal selbst geloescht)
 .kontrast-tmp.png
+
+# Arbeitsdateien dieser Sitzung
+.tmp/

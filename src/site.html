@@ -57,8 +57,7 @@
       "mainEntity": [
         { "@type": "Question", "name": "Was kostet mich die Anfrage?", "acceptedAnswer": { "@type": "Answer", "text": "Die Anfrage und das anschließende Angebot sind für Sie völlig kostenlos und unverbindlich – Sie gehen keinerlei Verpflichtung ein." } },
         { "@type": "Question", "name": "Lohnt sich Photovoltaik 2026 noch?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Dank staatlicher Förderung, 0 % Mehrwertsteuer auf viele private PV-Anlagen und steigender Strompreise amortisiert sich eine Anlage in der Regel nach wenigen Jahren und spart danach über die gesamte Laufzeit Geld." } },
-        { "@type": "Question", "name": "Wie schnell erhalte ich ein Angebot?", "acceptedAnswer": { "@type": "Answer", "text": "Nach Ihrer Anfrage meldet sich in kurzer Zeit ein geprüfter Fachbetrieb aus Ihrer Region mit einem auf Ihr Haus zugeschnittenen Angebot." } },
-        { "@type": "Question", "name": "Brauche ich Eigenkapital?", "acceptedAnswer": { "@type": "Answer", "text": "Nicht zwingend – es gibt Finanzierungsmodelle ab 0 € Anzahlung. Der Fachbetrieb berät Sie zu den passenden Optionen." } }
+        { "@type": "Question", "name": "Wie schnell erhalte ich ein Angebot?", "acceptedAnswer": { "@type": "Answer", "text": "Nach Ihrer Anfrage meldet sich in kurzer Zeit ein geprüfter Fachbetrieb aus Ihrer Region mit einem auf Ihr Haus zugeschnittenen Angebot." } }
       ]
     },
     {
@@ -1068,6 +1067,21 @@
   .co-legal{margin:16px 0 0;font-size:.8rem;color:var(--ink-3);line-height:1.5;text-align:center}
 
   /* ======================================================================
+     RENTABILITÄTSRECHNER – Umschalter Photovoltaik / Wärmepumpe
+     Das Ergebnisfeld und die Eingabekarten kommen aus dem .calc-*-Baukasten
+     oben, hier steht nur der Umschalter.
+     ====================================================================== */
+  .rt-tabs{display:flex;gap:10px;justify-content:center;margin:0 auto 34px;max-width:540px}
+  .rt-tab{flex:1 1 0;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:14px 18px;border-radius:100px;border:1px solid var(--line);background:var(--panel);
+    color:var(--ink-2);font:inherit;font-weight:600;font-size:1rem;cursor:pointer;
+    transition:border-color .2s var(--ease),color .2s var(--ease),background .2s var(--ease)}
+  .rt-tab .ic{width:19px;height:19px}
+  .rt-tab:hover{border-color:var(--line-2);color:var(--ink)}
+  .rt-tab.is-on{background:var(--ink);border-color:var(--ink);color:#fff}
+  @media(max-width:430px){.rt-tab{padding:12px 9px;font-size:.93rem;gap:7px}}
+
+  /* ======================================================================
      FÖRDERUNG & STEUER (Startseite)
      ====================================================================== */
   .fund-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
@@ -1261,6 +1275,7 @@
           <a data-nav="pv">Photovoltaik</a>
           <a data-nav="speicher">Stromspeicher</a>
           <a data-nav="wp">Wärmepumpe</a>
+          <a data-nav="rendite">Rentabilitätsrechner</a>
           <a data-nav="rechner">Wärmepumpen-Rechner</a>
           <a data-nav="kosten">Was zahle ich?</a>
         </div>
@@ -1305,13 +1320,14 @@
        "Video im Hero"). preload="none" ist entscheidend: sonst zieht der
        Browser das Video schon waehrend des Seitenaufbaus. -->
   <div class="hero-media" aria-hidden="true">
-    <img class="hero-still" src="/assets/video/dachfilm2-standbild.webp"
-         srcset="/assets/video/dachfilm2-standbild-854.webp 854w, /assets/video/dachfilm2-standbild.webp 1280w"
+    <img class="hero-still" src="/assets/video/dachfilm3-standbild-1280.webp"
+         srcset="/assets/video/dachfilm3-standbild-854.webp 854w, /assets/video/dachfilm3-standbild-1280.webp 1280w, /assets/video/dachfilm3-standbild-1920.webp 1920w"
          sizes="100vw" alt=""
-         width="1280" height="720" fetchpriority="high" decoding="async">
+         width="1920" height="1080" fetchpriority="high" decoding="async">
     <video class="hero-vid" muted loop playsinline preload="none"
-           data-vid-gross="/assets/video/dachfilm2-1280.mp4"
-           data-vid-klein="/assets/video/dachfilm2-854.mp4"></video>
+           data-vid-gross="/assets/video/dachfilm3-1920.mp4"
+           data-vid-mittel="/assets/video/dachfilm3-1280.mp4"
+           data-vid-klein="/assets/video/dachfilm3-854.mp4"></video>
     <span class="hero-veil"></span>
   </div>
   <div class="wrap hero-grid">
@@ -1462,22 +1478,22 @@
     <div class="head rise">
       <div class="kicker">Ihre Ersparnis</div>
       <h2>So viel bleibt in Ihrer Tasche.</h2>
-      <p>Je mehr Strom Sie selbst erzeugen und speichern, desto unabhängiger werden Sie vom teuren Netz.</p>
+      <p>Je mehr Strom Sie selbst erzeugen und speichern, desto unabhängiger werden Sie vom teuren Netz. Was in Ihrem Fall zusammenkommt, rechnet der <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a> aus.</p>
     </div>
     <div class="savings rise">
       <div class="bar-row">
-        <div class="bar-top"><span>Nur Solaranlage</span><span class="v">bis zu 70 %</span></div>
-        <div class="bar-track"><div class="bar-fill green" data-width="70%"></div></div>
+        <div class="bar-top"><span>Nur Solaranlage</span><span class="v">rund 40 %</span></div>
+        <div class="bar-track"><div class="bar-fill green" data-width="40%"></div></div>
       </div>
       <div class="bar-row">
-        <div class="bar-top"><span>Solar + Speicher</span><span class="v">bis zu 80 %</span></div>
-        <div class="bar-track"><div class="bar-fill mid" data-width="80%"></div></div>
+        <div class="bar-top"><span>Solar + Speicher</span><span class="v">rund 70 %</span></div>
+        <div class="bar-track"><div class="bar-fill mid" data-width="70%"></div></div>
       </div>
       <div class="bar-row">
-        <div class="bar-top"><span>Solar + Speicher + Wärmepumpe</span><span class="v">bis zu 90 %</span></div>
-        <div class="bar-track"><div class="bar-fill duo" data-width="90%"></div></div>
+        <div class="bar-top"><span>Solar + Speicher + Wärmepumpe</span><span class="v">rund 55 %</span></div>
+        <div class="bar-track"><div class="bar-fill duo" data-width="55%"></div></div>
       </div>
-      <p class="savings-note">Unabhängigkeit vom Stromnetz – Richtwerte, abhängig von Dach, Verbrauch und Anlagengröße.</p>
+      <p class="savings-note">Anteil Ihres Stromverbrauchs aus eigener Sonne, über das ganze Jahr gerechnet. Dass der dritte Wert niedriger liegt, ist kein Fehler: Eine Wärmepumpe braucht Strom vor allem im Winter, wenn die Sonne wenig liefert. Dafür entfällt die Gas- oder Ölrechnung vollständig – unterm Strich zahlen Sie deutlich weniger. Richtwerte, abhängig von Dach, Verbrauch und Anlagengröße.</p>
     </div>
   </div>
 </section>
@@ -1504,7 +1520,7 @@
           <li><span>Einkommensbonus, gestaffelt nach zu versteuerndem Haushaltseinkommen</span> <b>+ 10–40 %</b></li>
           <li><span>Förderfähige Kosten, erste Wohneinheit</span> <b>bis 28.000 €</b></li>
         </ul>
-        <p class="fund-note">Der Einkommensbonus beträgt 40 % bis 30.000 €, 30 % bis 40.000 € und 10 % bis 50.000 € zu versteuerndem Haushaltseinkommen. Pro minderjährigem Kind werden 10.000 € vom Einkommen abgezogen. Die Summe aller Boni ist bei 80 % gedeckelt.</p>
+        <p class="fund-note">Der Einkommensbonus beträgt 40 % bis 30.000 €, 30 % bis 40.000 € und 10 % bis 50.000 € zu versteuerndem Haushaltseinkommen. Pro minderjährigem Kind werden 10.000 € vom Einkommen abgezogen. Gedeckelt ist die Summe aller Boni bei 70 %; die 80 % erreichen nur selbstnutzende Eigentümer mit einem anzusetzenden Haushaltseinkommen bis 30.000 €.</p>
       </div>
 
       <div class="fund rise d1">
@@ -1527,13 +1543,14 @@
       <svg class="ic"><use href="#i-clock"/></svg>
       <div>
         <b>Zwei Dinge, die zeitlich wichtig sind.</b><br>
-        Die Zuschusssätze der Wärmepumpen-Förderung sinken planmäßig: Die Grundförderung geht im ersten Quartal 2027 von 30 auf 15 Prozent zurück, der Klimageschwindigkeitsbonus sinkt ab Februar 2027 alle sechs Monate um 4 Prozentpunkte, und der Höchstbetrag der förderfähigen Kosten sinkt ab dem 1. Februar 2027 alle sechs Monate um 750 €. Wer 2026 beantragt, sichert sich die heutigen Sätze.<br><br>
+        Die Zuschusssätze der Wärmepumpen-Förderung sinken planmäßig: Der Klimageschwindigkeitsbonus sinkt ab dem 1. Februar 2027 halbjährlich um 4 Prozentpunkte, von heute 16 auf 0 Prozent im August 2028. Der Höchstbetrag der förderfähigen Kosten sinkt ab dem 1. Februar 2027 ebenfalls halbjährlich, um je 750 €. Für das erste Quartal 2027 hat der Bund zusätzlich einen Wertschöpfungsbonus angekündigt: Die Grundförderung von 30 Prozent soll dann an eine Herstellung in der EU geknüpft sein und für Geräte von außerhalb auf 15 Prozent sinken. Die Einzelheiten dazu stehen noch aus. Wer 2026 beantragt, rechnet mit den heutigen Sätzen.<br><br>
         Und: <b>Der Antrag muss vor der Auftragserteilung gestellt werden.</b> Wer den Handwerker zuerst beauftragt, verliert den Zuschuss. Üblich ist ein Vertrag mit aufschiebender Bedingung, damit beides zusammenpasst. Wir achten im Ablauf darauf.
       </div>
     </div>
 
     <div class="fund-cta rise">
-      <a data-nav="rechner" class="btn">Förderung &amp; Wärmepumpe berechnen</a>
+      <a data-nav="rendite" class="btn">Rechnet sich das für mich?</a>
+      <a data-nav="rechner" class="btn btn-ghost">Wärmepumpe auslegen</a>
       <a href="#funnel" class="btn btn-ghost">Kostenloses Angebot anfragen</a>
     </div>
 
@@ -1676,9 +1693,9 @@
     <div class="faq rise" data-faq>
       <details class="faq-item"><summary>Was kostet mich die Anfrage? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Die Anfrage und das anschließende Angebot sind für Sie völlig kostenlos und unverbindlich. Sie gehen keinerlei Verpflichtung ein.</div></details>
 
-      <details class="faq-item"><summary>Wie viel Förderung bekomme ich für eine Wärmepumpe? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Über den KfW-Zuschuss 458 gibt es 30 % Grundförderung. Selbstnutzende Eigentümer, die eine alte Heizung ersetzen, bekommen 16 % Klimageschwindigkeitsbonus dazu, und je nach zu versteuerndem Haushaltseinkommen kommen 40, 30 oder 10 % Einkommensbonus obendrauf. Die Summe ist bei 80 % gedeckelt, die förderfähigen Kosten bei 28.000 € für die erste Wohneinheit – daraus ergibt sich ein Höchstzuschuss von 22.400 €. Was in Ihrem Fall zusammenkommt, rechnet unser Wärmepumpen-Rechner in zwei Minuten aus.</div></details>
+      <details class="faq-item"><summary>Wie viel Förderung bekomme ich für eine Wärmepumpe? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Über den KfW-Zuschuss 458 gibt es 30 % Grundförderung. Selbstnutzende Eigentümer, die eine alte Heizung ersetzen, bekommen 16 % Klimageschwindigkeitsbonus dazu, und je nach zu versteuerndem Haushaltseinkommen kommen 40, 30 oder 10 % Einkommensbonus obendrauf. Gedeckelt ist die Summe bei 70 %, bei einem anzusetzenden Haushaltseinkommen bis 30.000 € bei 80 %; die förderfähigen Kosten liegen bei 28.000 € für die erste Wohneinheit – daraus ergibt sich ein Höchstzuschuss von 22.400 €. Was in Ihrem Fall zusammenkommt, rechnet unser Wärmepumpen-Rechner in zwei Minuten aus, was danach übrig bleibt der <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a>.</div></details>
 
-      <details class="faq-item"><summary>Warum sollte ich mit der Förderung nicht warten? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Weil die Sätze planmäßig sinken, nicht weil wir Druck machen wollen. Die Grundförderung geht im ersten Quartal 2027 von 30 auf 15 Prozent zurück. Der Klimageschwindigkeitsbonus sinkt ab Februar 2027 alle sechs Monate um 4 Prozentpunkte. Und der Höchstbetrag der förderfähigen Kosten sinkt ab dem 1. Februar 2027 alle sechs Monate um 750 €. Wer 2026 beantragt, rechnet noch mit den heutigen Sätzen.</div></details>
+      <details class="faq-item"><summary>Warum sollte ich mit der Förderung nicht warten? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Weil die Sätze planmäßig sinken, nicht weil wir Druck machen wollen. Der Klimageschwindigkeitsbonus sinkt ab Februar 2027 alle sechs Monate um 4 Prozentpunkte – von heute 16 Prozent auf 0 Prozent im August 2028. Der Höchstbetrag der förderfähigen Kosten sinkt ab dem 1. Februar 2027 alle sechs Monate um 750 €. Für das erste Quartal 2027 ist außerdem ein Wertschöpfungsbonus angekündigt, der die Grundförderung von 30 Prozent an eine Herstellung in der EU knüpft; für Geräte von außerhalb kann sie auf 15 Prozent sinken. Wer 2026 beantragt, rechnet noch mit den heutigen Sätzen.</div></details>
 
       <details class="faq-item"><summary>Wann muss ich den Förderantrag stellen? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Vor der Auftragserteilung. Das ist der Fehler, der die meisten Zuschüsse kostet: Wer den Handwerker zuerst beauftragt und danach den Antrag stellt, bekommt nichts mehr. Üblich ist ein Vertrag mit aufschiebender Bedingung – er wird also erst wirksam, wenn die Förderung bewilligt ist. Wir achten im Ablauf darauf, dass die Reihenfolge stimmt.</div></details>
 
@@ -1690,7 +1707,6 @@
 
       <details class="faq-item"><summary>Wie schnell erhalte ich ein Angebot? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Nach Ihrer Anfrage meldet sich in kurzer Zeit ein geprüfter Fachbetrieb aus Ihrer Region mit einem auf Ihr Haus zugeschnittenen Angebot. Liegt Ihnen bereits ein Angebot vor, prüfen wir es innerhalb von 24 Stunden kostenlos auf Auslegung, Preis und Fairness.</div></details>
 
-      <details class="faq-item"><summary>Brauche ich Eigenkapital? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Nicht zwingend. Neben dem KfW-Zuschuss gibt es zinsverbilligte Kredite und Finanzierungen über Ihre Hausbank. Welche Variante für Sie sinnvoll ist, hängt von der Summe und Ihrer Situation ab – der Fachbetrieb bespricht die Möglichkeiten mit Ihnen, bevor etwas unterschrieben wird.</div></details>
 
       <details class="faq-item"><summary>Wie lange dauert es von der Anfrage bis zur fertigen Anlage? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Für eine Photovoltaikanlage sind einige Wochen realistisch, bei einer Wärmepumpe kommt der Förderantrag und häufig die Abstimmung mit dem Netzbetreiber dazu. Die Montage selbst dauert meist wenige Tage. Wer belastbare Termine zusagt, bevor er Ihr Dach und Ihren Zählerschrank gesehen hat, sagt Ihnen nicht die Wahrheit.</div></details>
 
@@ -2549,18 +2565,19 @@
       </div>
       <div class="kcalc" style="max-width:700px">
         <div class="kcalc-h">Einfamilienhaus, 4 Personen, 4.500 kWh Jahresverbrauch</div>
-        <p>10 kWp auf dem Satteldach, 8 kWh Speicher, Eigenverbrauchsanteil rund 65 Prozent.</p>
+        <p>10 kWp auf dem Satteldach, 8 kWh Speicher. Damit deckt die Anlage rund 66 Prozent Ihres Strombedarfs.</p>
         <ul class="co-list">
-          <li><span>Investition</span><b>18.000 €</b></li>
+          <li><span>Investition</span><b>19.500 €</b></li>
           <li><span>Jahresertrag (rund 950 kWh je kWp)</span><b>9.500 kWh</b></li>
-          <li><span>davon selbst verbraucht</span><b>2.925 kWh</b></li>
-          <li><span>gespart bei 0,35 €/kWh Netzstrom</span><b>1.024 €/Jahr</b></li>
-          <li><span>eingespeist</span><b>6.575 kWh</b></li>
-          <li><span>Einspeiseerlös bei 7,7 ct/kWh</span><b>506 €/Jahr</b></li>
-          <li><span>Vorteil gesamt</span><b>1.530 €/Jahr</b></li>
-          <li><span>Rechnerische Amortisation</span><b>rund 12 Jahre</b></li>
+          <li><span>davon selbst verbraucht</span><b>2.970 kWh</b></li>
+          <li><span>gespart bei 0,35 €/kWh Netzstrom</span><b>1.040 €/Jahr</b></li>
+          <li><span>eingespeist</span><b>6.530 kWh</b></li>
+          <li><span>Einspeiseerlös bei 7,7 ct/kWh</span><b>503 €/Jahr</b></li>
+          <li><span>Betrieb, Versicherung, Rücklage Wechselrichter</span><b>− 195 €/Jahr</b></li>
+          <li><span>Vorteil gesamt</span><b>1.347 €/Jahr</b></li>
+          <li><span>Rechnerische Amortisation</span><b>rund 14,5 Jahre</b></li>
         </ul>
-        <p class="kt-note" style="margin-top:16px">Danach läuft die Anlage weiter: Module halten typischerweise 25 bis 30 Jahre. Steigt der Strompreis, verkürzt sich die Amortisation, sinkt er, verlängert sie sich. Wer zusätzlich ein E-Auto oder eine Wärmepumpe betreibt, hebt den Eigenverbrauch und kommt schneller in die Gewinnzone. Alle Werte sind Annahmen und keine Zusage.</p>
+        <p class="kt-note" style="margin-top:16px">Danach läuft die Anlage weiter: Module halten typischerweise 25 bis 30 Jahre. Viele Rechner lassen die Betriebskosten weg – dann steht dort eine Amortisation von zwölf Jahren. Wir zeigen sie lieber. Steigt der Strompreis, verkürzt sich die Zeit, sinkt er, verlängert sie sich. Wer zusätzlich ein E-Auto oder eine Wärmepumpe betreibt, hebt den Eigenverbrauch deutlich und kommt spürbar schneller in die Gewinnzone. Mit Ihren eigenen Zahlen rechnet das der <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a>. Alle Werte sind Annahmen und keine Zusage.</p>
       </div>
     </div>
   </section>
@@ -2719,15 +2736,15 @@
       </div>
       <div class="kcalc" style="max-width:700px">
         <div class="kcalc-h">10 kWp Anlage, 4.500 kWh Jahresverbrauch, 10 kWh Speicher</div>
-        <p>Ohne Speicher liegt der Eigenverbrauch bei etwa 30 Prozent, mit Speicher bei rund 65 Prozent.</p>
+        <p>Eine 10-kWp-Anlage deckt bei diesem Verbrauch schon ohne Speicher rund 40 Prozent – tagsüber ist ohnehin genug da. Der Speicher hebt das auf etwa 66 Prozent.</p>
         <ul class="co-list">
-          <li><span>Mehrpreis für den Speicher</span><b>5.500 €</b></li>
-          <li><span>Zusätzlich selbst genutzter Strom</span><b>rund 1.575 kWh/Jahr</b></li>
+          <li><span>Mehrpreis für den Speicher</span><b>5.750 €</b></li>
+          <li><span>Zusätzlich selbst genutzter Strom</span><b>rund 1.190 kWh/Jahr</b></li>
           <li><span>Wert je kWh (0,35 € gespart statt 0,077 € Einspeisung)</span><b>0,273 €</b></li>
-          <li><span>Zusätzlicher Vorteil</span><b>430 €/Jahr</b></li>
-          <li><span>Rechnerische Amortisation</span><b>rund 13 Jahre</b></li>
+          <li><span>Zusätzlicher Vorteil</span><b>325 €/Jahr</b></li>
+          <li><span>Rechnerische Amortisation</span><b>rund 18 Jahre</b></li>
         </ul>
-        <p class="kt-note" style="margin-top:16px">Damit liegt der Speicher etwa an der Grenze seiner üblichen Garantiedauer von zehn Jahren. Deutlich besser wird die Rechnung, sobald eine Wärmepumpe oder ein E-Auto dazukommt: Dann wird der Speicher häufiger geleert und wieder gefüllt, und jeder Zyklus bringt Geld. Steigt der Strompreis, verkürzt sich die Amortisation ebenfalls. Wer den Speicher vor allem für Unabhängigkeit und Notstrom will, trifft eine andere Entscheidung als eine rein wirtschaftliche – das ist völlig in Ordnung, sollte aber bewusst geschehen.</p>
+        <p class="kt-note" style="margin-top:16px">Das liegt deutlich über der üblichen Garantiedauer von zehn Jahren – rein wirtschaftlich trägt sich ein Speicher in dieser Konstellation also nicht sicher. Sagen wir offen, auch wenn es Umsatz kostet. Ganz anders sieht es aus, sobald eine Wärmepumpe oder ein E-Auto dazukommt: Bei 8.000 kWh Jahresverbrauch bringt derselbe Speicher rund 600 € im Jahr und ist nach etwa zehn Jahren bezahlt. Er wird dann häufiger geleert und wieder gefüllt, und jeder Zyklus bringt Geld. Steigt der Strompreis, verkürzt sich die Zeit zusätzlich. Beide Fälle können Sie im <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a> gegeneinanderstellen. Und wer den Speicher vor allem für Unabhängigkeit und Notstrom will, trifft eine andere Entscheidung als eine rein wirtschaftliche – das ist völlig in Ordnung, sollte aber bewusst geschehen.</p>
       </div>
     </div>
   </section>
@@ -2987,9 +3004,9 @@
     <p>Gleichzeitig ist etwas anderes passiert: Anlagen sind deutlich günstiger geworden, seit 2023 fällt keine Umsatzsteuer mehr an, und Netzstrom kostet rund 35 Cent. Damit hat sich die Logik umgedreht. <b>Nicht die Einspeisung bringt das Geld, sondern der vermiedene Netzbezug.</b> Jede Kilowattstunde, die Sie selbst verbrauchen, ist rund viereinhalbmal so viel wert wie eine eingespeiste.</p>
 
     <h2>Die Rechnung an einem echten Fall</h2>
-    <p>Nehmen wir ein Einfamilienhaus mit vier Personen und 4.500 kWh Jahresverbrauch. Auf dem Satteldach liegen 10 kWp, dazu ein <a class="ilink" data-nav="speicher">Speicher</a> mit 8 kWh. Investition: rund 18.000 € – die Spannen dahinter stehen unter <a class="ilink" data-nav="kosten">Kosten</a>.</p>
-    <p>Die Anlage erzeugt bei etwa 950 kWh je kWp rund <b>9.500 kWh im Jahr</b>. Mit Speicher liegt der Eigenverbrauch bei etwa 65 Prozent des Haushaltsbedarfs, also rund 2.925 kWh. Bei 35 Cent Netzstrompreis sind das <b>1.024 € gespart</b>. Die übrigen 6.575 kWh gehen ins Netz und bringen bei 7,7 Cent noch <b>506 €</b>. Zusammen rund <b>1.530 € Vorteil pro Jahr</b> – rechnerisch amortisiert sich die Anlage in etwa zwölf Jahren.</p>
-    <p>Danach läuft sie weiter. Module halten typischerweise 25 bis 30 Jahre. Der Wechselrichter muss meist nach 12 bis 15 Jahren getauscht werden, das sollte man einkalkulieren.</p>
+    <p>Nehmen wir ein Einfamilienhaus mit vier Personen und 4.500 kWh Jahresverbrauch. Auf dem Satteldach liegen 10 kWp, dazu ein <a class="ilink" data-nav="speicher">Speicher</a> mit 8 kWh. Investition: rund 19.500 € – die Spannen dahinter stehen unter <a class="ilink" data-nav="kosten">Kosten</a>.</p>
+    <p>Die Anlage erzeugt bei etwa 950 kWh je kWp rund <b>9.500 kWh im Jahr</b>. Mit Speicher deckt sie etwa 66 Prozent des Haushaltsbedarfs, also rund 2.970 kWh. Bei 35 Cent Netzstrompreis sind das <b>1.040 € gespart</b>. Die übrigen 6.530 kWh gehen ins Netz und bringen bei 7,7 Cent noch <b>503 €</b>. Davon gehen rund 195 € im Jahr für Versicherung, Zähler und die Rücklage für den Wechselrichter ab. Bleiben <b>1.347 € Vorteil pro Jahr</b> – rechnerisch amortisiert sich die Anlage damit in etwa <b>14,5 Jahren</b>.</p>
+    <p>Ohne die Betriebskosten stünden hier zwölf Jahre, und genau so rechnen es die meisten. Wir zeigen die ehrlichere Zahl. Danach läuft die Anlage weiter: Module halten typischerweise 25 bis 30 Jahre. Der Wechselrichter muss meist nach 12 bis 15 Jahren getauscht werden – deshalb steckt er oben schon in der Rücklage. Mit Ihren eigenen Zahlen rechnet das der <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a>.</p>
 
     <h2>Für wen es sich besonders lohnt</h2>
     <ul class="usp">
@@ -3112,7 +3129,7 @@
       <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Kosten</span></div>
       <div class="eyebrow"><span class="dot"></span> Marktübliche Preise, Stand August 2026</div>
       <h1>Was kostet das <em>wirklich?</em></h1>
-      <p class="lede">Die meisten Anbieter nennen keine Preise, bevor Sie Ihre Telefonnummer hinterlassen haben. Wir machen es anders: Hier stehen die Spannen, mit denen der Markt aktuell arbeitet. Damit können Sie ein Angebot einordnen, noch bevor Sie mit uns sprechen. Die Technik dahinter erklären wir bei <a class="ilink" data-nav="pv">Photovoltaik</a>, <a class="ilink" data-nav="speicher">Stromspeicher</a> und <a class="ilink" data-nav="wp">Wärmepumpe</a>.</p>
+      <p class="lede">Die meisten Anbieter nennen keine Preise, bevor Sie Ihre Telefonnummer hinterlassen haben. Wir machen es anders: Hier stehen die Spannen, mit denen der Markt aktuell arbeitet. Damit können Sie ein Angebot einordnen, noch bevor Sie mit uns sprechen. Die Technik dahinter erklären wir bei <a class="ilink" data-nav="pv">Photovoltaik</a>, <a class="ilink" data-nav="speicher">Stromspeicher</a> und <a class="ilink" data-nav="wp">Wärmepumpe</a>. Ob sich das für Sie rechnet, zeigt der <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a>.</p>
     </div>
   </header>
 
@@ -3717,7 +3734,7 @@
       <div class="head">
         <div class="kicker">Nachvollziehbar</div>
         <h2>So wird gerechnet.</h2>
-        <p>Damit Sie die Zahlen einordnen können, steht hier jede Annahme offen. Wer anders rechnet, kommt zu anderen Ergebnissen. Die Technik dahinter erklären wir auf der Seite <a class="ilink" data-nav="wp">Wärmepumpe</a>, die Preise unter <a class="ilink" data-nav="kosten">Kosten</a>.</p>
+        <p>Damit Sie die Zahlen einordnen können, steht hier jede Annahme offen. Wer anders rechnet, kommt zu anderen Ergebnissen. Die Technik dahinter erklären wir auf der Seite <a class="ilink" data-nav="wp">Wärmepumpe</a>, die Preise unter <a class="ilink" data-nav="kosten">Kosten</a>. Was nach Förderung übrig bleibt und wann es sich bezahlt macht, rechnet der <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a>.</p>
       </div>
       <div class="faq">
         <details class="faq-item"><summary>Heizlast aus dem Verbrauch <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Aus Ihrem Jahresverbrauch wird zuerst die tatsächlich genutzte Wärme berechnet. Dafür rechnen wir Erdgas mit 10 kWh je m³, Heizöl mit 10 kWh je Liter und Flüssiggas mit 6,6 kWh je Liter. Vom Brennstoff kommt nicht alles als Wärme an: Wir setzen einen Nutzungsgrad von 90 % bei Gas, 85 % bei Öl und Flüssiggas sowie 100 % bei Strom-Direktheizung an. Vom Ergebnis ziehen wir das Warmwasser mit 500 kWh je Person und Jahr ab, sofern es über dieselbe Heizung lief. Die verbleibende Heizwärme geteilt durch 2.100 Vollbenutzungsstunden ergibt die Heizlast in Kilowatt.</div></details>
@@ -3725,7 +3742,7 @@
         <details class="faq-item"><summary>Gerätegröße und Vorlauftemperatur <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Die Wärmepumpe muss die Heizlast bei der kältesten Auslegungstemperatur Ihrer Region decken. Übernimmt sie zusätzlich das Warmwasser, rechnen wir 10 % Zuschlag für Speicherladung und mögliche Sperrzeiten des Netzbetreibers. Die Vorlauftemperatur ergibt sich aus Ihrer Wärmeverteilung: 35 °C bei Fußbodenheizung bis 60 °C bei kleinen, alten Heizkörpern. Sie ist der wichtigste Hebel für die Effizienz.</div></details>
         <details class="faq-item"><summary>Jahresarbeitszahl und Stromverbrauch <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Die Jahresarbeitszahl sagt, wie viele Kilowattstunden Wärme aus einer Kilowattstunde Strom werden. Für Luft-Wasser-Wärmepumpen setzen wir 4,3 bei 35 °C Vorlauf an, 4,0 bei 40 °C, 3,6 bei 45 °C, 3,0 bei 55 °C und 2,7 bei 60 °C. Warmwasser über die Wärmepumpe zieht den Wert um 0,2 nach unten, eine kalte Region um 0,15, eine milde Region hebt ihn um 0,1. Der Jahresstrombedarf ist die benötigte Wärme geteilt durch diese Zahl. Erdwärme oder Wasser als Quelle liegt spürbar besser, das rechnet dieser Rechner nicht.</div></details>
         <details class="faq-item"><summary>Speichergrößen <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Der Warmwasserspeicher richtet sich nach der Personenzahl: bis 2 Personen 200 Liter, 3 bis 4 Personen 300 Liter, 5 bis 6 Personen 400 Liter, darüber 500 Liter. Dazu kommt ein Puffer- oder Reihenspeicher mit etwa 20 Litern je Kilowatt Heizleistung, mindestens 50 Liter. Er stellt sicher, dass beim Abtauen genug Wärme im System ist und die Wärmepumpe nicht ständig taktet.</div></details>
-        <details class="faq-item"><summary>Förderung <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Gerechnet wird nach den seit dem 21. Juli 2026 geltenden Bedingungen des KfW-Zuschusses 458: 30 % Grundförderung, 16 % Klimageschwindigkeitsbonus für selbstnutzende Eigentümer beim Tausch einer alten Heizung sowie ein Einkommensbonus von 40, 30 oder 10 % je nach zu versteuerndem Haushaltseinkommen, wobei je minderjährigem Kind 10.000 € abgezogen werden. Die Summe ist bei 80 % gedeckelt, die förderfähigen Kosten bei 28.000 € für die erste Wohneinheit. Daraus ergibt sich der Höchstzuschuss von 22.400 €. Der Antrag muss vor der Auftragserteilung gestellt werden.</div></details>
+        <details class="faq-item"><summary>Förderung <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Gerechnet wird nach den seit dem 21. Juli 2026 geltenden Bedingungen des KfW-Zuschusses 458: 30 % Grundförderung, 16 % Klimageschwindigkeitsbonus für selbstnutzende Eigentümer beim Tausch einer alten Heizung sowie ein Einkommensbonus von 40, 30 oder 10 % je nach zu versteuerndem Haushaltseinkommen, wobei je minderjährigem Kind 10.000 € abgezogen werden. Gedeckelt ist die Summe bei 70 %; die 80 % gibt es nur für selbstnutzende Eigentümer mit einem anzusetzenden zu versteuernden Haushaltseinkommen bis 30.000 €. Die förderfähigen Kosten liegen bei 28.000 € für die erste Wohneinheit. Daraus ergibt sich der Höchstzuschuss von 22.400 €. Der Antrag muss vor der Auftragserteilung gestellt werden.</div></details>
         <details class="faq-item"><summary>Was dieser Rechner nicht kann <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Er ersetzt keine Heizlastberechnung nach DIN EN 12831 und keine Vor-Ort-Prüfung. Er kennt Ihre Raumaufteilung nicht, nicht die tatsächlichen Heizkörpergrößen, nicht den Zustand der Leitungen, nicht den Aufstellort und nicht Ihren Zählerschrank. Alles davon kann das Ergebnis verändern. Nutzen Sie die Zahlen als Größenordnung und um ein vorliegendes Angebot einzuordnen, nicht als Bestellgrundlage.</div></details>
       </div>
     </div>
@@ -3743,6 +3760,305 @@
   </section>
 
 </div><!-- /view-rechner -->
+
+<!-- ========================= ANSICHT: RENTABILITÄTSRECHNER ========================= -->
+<div id="view-rendite" hidden>
+
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Rentabilitätsrechner</span></div>
+      <div class="eyebrow"><span class="dot"></span> Kostenlos · ohne Anmeldung</div>
+      <h1>Rechnet sich das <em>für mich?</em></h1>
+      <p class="lede">Die Frage, die am Ende zählt. Tragen Sie ein, was Sie heute verbrauchen und zahlen – Sie sehen sofort, was übrig bleibt und nach wie vielen Jahren die Anlage bezahlt ist. Gerechnet wird vorsichtig: Betriebskosten sind drin, steigende Energiepreise sind es nicht.</p>
+    </div>
+  </header>
+
+  <section class="strip">
+    <div class="wrap strip-in">
+      <div class="badge"><span class="bic"><svg class="ic"><use href="#i-chart"/></svg></span> <span><b>2 Minuten</b> bis zum Ergebnis</span></div>
+      <div class="badge"><span class="bic"><svg class="ic"><use href="#i-lock"/></svg></span> <span>Rechnet <b>im Browser</b>, nichts wird gesendet</span></div>
+      <div class="badge"><span class="bic euro">€</span> <span>Aktuelle <b>Vergütung &amp; Förderung</b></span></div>
+      <div class="badge"><span class="bic"><svg class="ic"><use href="#i-check"/></svg></span> <span>Annahmen <b>offengelegt</b></span></div>
+    </div>
+  </section>
+
+  <section class="pad" id="rendite">
+    <div class="wrap">
+
+      <div class="rt-tabs" role="tablist" aria-label="Was soll gerechnet werden?">
+        <button type="button" class="rt-tab is-on" id="rt-tab-pv" data-rt="pv" role="tab" aria-selected="true" aria-controls="rt-pv">
+          <svg class="ic"><use href="#i-sun"/></svg> Photovoltaik
+        </button>
+        <button type="button" class="rt-tab" id="rt-tab-wp" data-rt="wp" role="tab" aria-selected="false" aria-controls="rt-wp">
+          <svg class="ic"><use href="#i-wave"/></svg> Wärmepumpe
+        </button>
+      </div>
+
+      <!-- ---------------------------------------------------------------- PV -->
+      <div class="calc-split" id="rt-pv" role="tabpanel" aria-labelledby="rt-tab-pv">
+        <div class="calc-form">
+
+          <div class="calc-group">
+            <h2 class="calc-h">1. Ihr Strom heute</h2>
+            <p class="calc-sub">Beide Werte stehen auf Ihrer letzten Jahresabrechnung.</p>
+            <div class="grid2">
+              <div class="fld">
+                <label for="rp-verbrauch">Stromverbrauch pro Jahr <span class="req">*</span></label>
+                <input type="number" id="rp-verbrauch" class="wu" inputmode="numeric" min="500" max="40000" step="100" value="4500"><span class="unit">kWh</span>
+              </div>
+              <div class="fld">
+                <label for="rp-preis">Ihr Strompreis</label>
+                <input type="number" id="rp-preis" class="wu" inputmode="decimal" min="0.10" max="1" step="0.01" value="0.35"><span class="unit">€/kWh</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <h2 class="calc-h">2. Die geplante Anlage</h2>
+            <p class="calc-sub">Faustregel für die Größe: rund 1 kWp je 1.000 kWh Jahresverbrauch. Mit Wärmepumpe oder E-Auto darf es deutlich mehr sein.</p>
+            <div class="grid2">
+              <div class="fld">
+                <label for="rp-kwp">Anlagengröße <span class="req">*</span></label>
+                <input type="number" id="rp-kwp" class="wu" inputmode="decimal" min="1" max="30" step="0.5" value="10"><span class="unit">kWp</span>
+              </div>
+              <div class="fld">
+                <label for="rp-speicher">Stromspeicher</label>
+                <select id="rp-speicher">
+                  <option value="0">Ohne Speicher</option>
+                  <option value="5">5 kWh</option>
+                  <option value="8" selected>8 kWh</option>
+                  <option value="10">10 kWh</option>
+                  <option value="15">15 kWh</option>
+                </select>
+              </div>
+            </div>
+            <div class="fld">
+              <label for="rp-ausrichtung">Dach: Ausrichtung und Neigung</label>
+              <select id="rp-ausrichtung">
+                <option value="1000">Süd, 30 bis 40 Grad, unverschattet</option>
+                <option value="950" selected>Südost oder Südwest</option>
+                <option value="900">Flachdach oder flache Neigung</option>
+                <option value="870">Ost-West geteilt</option>
+                <option value="780">Nordanteil oder zeitweise verschattet</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <h2 class="calc-h">3. Was es kostet</h2>
+            <p class="calc-sub">Vorbelegt mit der Mitte unserer <a class="ilink" data-nav="kosten">Preisübersicht</a>. Haben Sie ein Angebot, tragen Sie dessen Summe ein – dann rechnet der Rechner mit Ihren echten Zahlen.</p>
+            <div class="fld">
+              <label for="rp-invest">Investition schlüsselfertig <span class="hint2">(0 % Umsatzsteuer)</span></label>
+              <input type="number" id="rp-invest" class="wu" inputmode="numeric" min="1000" step="500"><span class="unit">€</span>
+            </div>
+            <p class="calc-sub" style="margin:12px 0 0" id="rp-invest-hint">&nbsp;</p>
+          </div>
+        </div>
+
+        <div class="calc-out">
+          <div class="calc-out-in">
+            <div class="co-head">
+              <span class="co-ic"><svg class="ic"><use href="#i-sun"/></svg></span>
+              <div><b>Ihre Photovoltaik-Rechnung</b><span>rechnet live mit Ihren Angaben</span></div>
+            </div>
+
+            <div class="co-hero">
+              <span class="co-hero-lbl">Bezahlt nach</span>
+              <span class="co-hero-val" id="rp-amort">–</span>
+              <span class="co-hero-sub" id="rp-amort-sub">–</span>
+            </div>
+
+            <ul class="co-list">
+              <li>Jahresertrag der Anlage <b id="rp-ertrag">–</b></li>
+              <li>Davon selbst verbraucht <b id="rp-eigen">–</b></li>
+              <li>Ihr Strom kommt dann zu <b id="rp-autarkie">–</b></li>
+              <li>Gesparte Stromkosten <b id="rp-sparen">–</b></li>
+              <li>Einspeisevergütung <b id="rp-erloes">–</b></li>
+              <li>Betrieb, Versicherung, Zähler <b id="rp-betrieb">–</b></li>
+            </ul>
+
+            <div class="co-block">
+              <div class="co-block-h">Unterm Strich</div>
+              <ul class="co-list">
+                <li>Vorteil pro Jahr <b id="rp-vorteil">–</b></li>
+                <li>Investition <b id="rp-invest-out">–</b></li>
+                <li>Überschuss nach 20 Jahren <b id="rp-20">–</b></li>
+              </ul>
+            </div>
+
+            <div class="co-notes" id="rp-hinweise"></div>
+
+            <div class="fund-cta" style="margin-top:26px">
+              <a data-nav="check" class="btn">Angebot prüfen lassen</a>
+            </div>
+            <p class="co-legal">Überschlägige Rechnung auf Basis Ihrer Angaben und der unten offengelegten Annahmen. Keine Zusage über Erträge oder Erlöse.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------------------------------------------------------------- WP -->
+      <div class="calc-split" id="rt-wp" role="tabpanel" aria-labelledby="rt-tab-wp" hidden>
+        <div class="calc-form">
+
+          <div class="calc-group">
+            <h2 class="calc-h">1. Heizung heute</h2>
+            <p class="calc-sub">Der Verbrauch steht auf Ihrer letzten Abrechnung. Er ist die wichtigste Zahl in dieser Rechnung.</p>
+            <div class="grid2">
+              <div class="fld">
+                <label for="rw-traeger">Energieträger</label>
+                <select id="rw-traeger">
+                  <option value="gas-kwh" selected>Erdgas (kWh pro Jahr)</option>
+                  <option value="gas-m3">Erdgas (m³ pro Jahr)</option>
+                  <option value="oel">Heizöl (Liter pro Jahr)</option>
+                  <option value="fluessiggas">Flüssiggas (Liter pro Jahr)</option>
+                  <option value="strom">Strom-Direktheizung (kWh pro Jahr)</option>
+                </select>
+              </div>
+              <div class="fld">
+                <label for="rw-menge">Verbrauch pro Jahr <span class="req">*</span></label>
+                <input type="number" id="rw-menge" inputmode="numeric" min="0" step="100" value="20000">
+              </div>
+            </div>
+            <div class="fld">
+              <label for="rw-preis-alt">Ihr Preis dafür</label>
+              <input type="number" id="rw-preis-alt" class="wu" inputmode="decimal" min="0" step="0.01" value="0.12"><span class="unit" id="rw-preis-alt-unit">€/kWh</span>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <h2 class="calc-h">2. Die neue Wärmepumpe</h2>
+            <p class="calc-sub">Wie warm das Heizwasser sein muss, entscheidet über die Effizienz – und damit über Ihre Stromrechnung.</p>
+            <div class="fld">
+              <label for="rw-vl">Wie wird die Wärme im Haus verteilt?</label>
+              <select id="rw-vl">
+                <option value="35">Fußbodenheizung im ganzen Haus</option>
+                <option value="40">Fußbodenheizung und einzelne Heizkörper</option>
+                <option value="45">Große Heizkörper oder Heizkörper nach Tausch</option>
+                <option value="55" selected>Heizkörper im Bestand, unverändert</option>
+                <option value="60">Kleine, alte Heizkörper</option>
+              </select>
+            </div>
+            <div class="grid2">
+              <div class="fld">
+                <label for="rw-preis-strom">Preis Wärmepumpenstrom</label>
+                <input type="number" id="rw-preis-strom" class="wu" inputmode="decimal" min="0" step="0.01" value="0.26"><span class="unit">€/kWh</span>
+              </div>
+              <div class="fld">
+                <label for="rw-invest">Investition <span class="hint2">(brutto)</span></label>
+                <input type="number" id="rw-invest" class="wu" inputmode="numeric" min="1000" step="500" value="28000"><span class="unit">€</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <h2 class="calc-h">3. Ihre Förderung</h2>
+            <p class="calc-sub">KfW-Zuschuss 458, Stand August 2026. Der Antrag muss vor der Auftragserteilung gestellt sein.</p>
+            <div class="grid2">
+              <div class="fld">
+                <label for="rw-selbst">Wohnen Sie selbst im Haus?</label>
+                <select id="rw-selbst">
+                  <option value="1" selected>Ja, selbstnutzender Eigentümer</option>
+                  <option value="0">Nein (vermietet oder gewerblich)</option>
+                </select>
+              </div>
+              <div class="fld">
+                <label for="rw-alt">Welche Heizung wird ersetzt?</label>
+                <select id="rw-alt">
+                  <option value="1" selected>Öl, Kohle oder Nachtspeicher</option>
+                  <option value="1">Gasheizung, mindestens 20 Jahre alt</option>
+                  <option value="0">Gasheizung, jünger als 20 Jahre</option>
+                  <option value="0">Keine (Neubau oder Erstinstallation)</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid2">
+              <div class="fld">
+                <label for="rw-zve">Zu versteuerndes Haushaltseinkommen <span class="hint2">(optional)</span></label>
+                <input type="number" id="rw-zve" class="wu" inputmode="numeric" min="0" step="1000" placeholder="z. B. 42000"><span class="unit">€/Jahr</span>
+              </div>
+              <div class="fld">
+                <label for="rw-kinder">Minderjährige Kinder im Haushalt</label>
+                <input type="number" id="rw-kinder" inputmode="numeric" min="0" max="10" step="1" value="0">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-out">
+          <div class="calc-out-in">
+            <div class="co-head">
+              <span class="co-ic"><svg class="ic"><use href="#i-wave"/></svg></span>
+              <div><b>Ihre Wärmepumpen-Rechnung</b><span>rechnet live mit Ihren Angaben</span></div>
+            </div>
+
+            <div class="co-hero">
+              <span class="co-hero-lbl">Bezahlt nach</span>
+              <span class="co-hero-val" id="rw-amort">–</span>
+              <span class="co-hero-sub" id="rw-amort-sub">–</span>
+            </div>
+
+            <ul class="co-list">
+              <li>Heizkosten heute <b id="rw-alt-kosten">–</b></li>
+              <li>Mit Wärmepumpe <b id="rw-neu-kosten">–</b></li>
+              <li>Ersparnis pro Jahr <b id="rw-ersparnis">–</b></li>
+              <li>Angesetzte Jahresarbeitszahl <b id="rw-jaz">–</b></li>
+              <li>Strombedarf der Wärmepumpe <b id="rw-strom">–</b></li>
+            </ul>
+
+            <div class="co-block">
+              <div class="co-block-h">Förderung</div>
+              <ul class="co-list">
+                <li>Förderquote <b id="rw-quote">–</b></li>
+                <li>Voraussichtlicher Zuschuss <b id="rw-zuschuss">–</b></li>
+                <li>Ihr Eigenanteil <b id="rw-eigen">–</b></li>
+                <li>Ersparnis über 20 Jahre <b id="rw-20">–</b></li>
+              </ul>
+            </div>
+
+            <div class="co-notes" id="rw-hinweise"></div>
+
+            <div class="fund-cta" style="margin-top:26px">
+              <a data-nav="rechner" class="btn">Passende Größe berechnen</a>
+            </div>
+            <p class="co-legal">Überschlägige Rechnung auf Basis Ihrer Angaben. Die Förderangaben sind keine Zusage der KfW.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Methodik -->
+  <section class="pad" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Nachvollziehbar</div>
+        <h2>Womit gerechnet wird.</h2>
+        <p>Ein Rentabilitätsrechner ist nur so ehrlich wie seine Annahmen. Deshalb stehen sie hier alle offen – auch die, die das Ergebnis schlechter machen. Die Technik erklären wir auf den Seiten <a class="ilink" data-nav="pv">Photovoltaik</a> und <a class="ilink" data-nav="wp">Wärmepumpe</a>, die Preise unter <a class="ilink" data-nav="kosten">Was zahle ich?</a></p>
+      </div>
+      <div class="faq">
+        <details class="faq-item"><summary>Ertrag und Eigenverbrauch bei Photovoltaik <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Je nach Ausrichtung und Neigung setzen wir 780 bis 1.000 kWh je kWp und Jahr an. Wer Ihnen 1.200 kWh verspricht, rechnet mit Bestwerten. Wie viel davon Sie selbst verbrauchen, hängt vom Verhältnis aus Anlagengröße, Verbrauch und Speicher ab: ohne Speicher liegt der Anteil an Ihrem Strombedarf typischerweise bei rund 30 Prozent, mit einem passenden Speicher bei 55 bis 70 Prozent. Der Rechner interpoliert zwischen diesen Punkten und deckelt bei rund 69 Prozent – höhere Jahreswerte sind in der Praxis kaum zu halten, weil im Dezember und Januar schlicht zu wenig Sonne kommt.</div></details>
+        <details class="faq-item"><summary>Einspeisevergütung und Steuer <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Gerechnet wird mit 7,7 Cent je Kilowattstunde für die Überschusseinspeisung. Das ist der anzulegende Wert der Bundesnetzagentur für Anlagen bis 10 kW mit Inbetriebnahme zwischen dem 1. August 2026 und dem 31. Januar 2027; er ist ab Inbetriebnahme 20 Jahre plus Inbetriebnahmejahr fest. Die Sätze für Neuanlagen sinken halbjährlich. Auf Kauf und Montage privater Anlagen am Wohngebäude fällt keine Umsatzsteuer an (§ 12 Abs. 3 UStG), die Investitionssumme ist deshalb bereits der Endbetrag.</div></details>
+        <details class="faq-item"><summary>Was bei Photovoltaik als Kosten gegengerechnet wird <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Ein Prozent der Investitionssumme pro Jahr, mindestens 120 €. Darin stecken Versicherung, Wartung, Zählergebühr und eine Rücklage für den Wechselrichter, der nach etwa 12 bis 15 Jahren getauscht wird. Für die 20-Jahres-Summe rechnen wir zusätzlich mit 0,5 Prozent Leistungsverlust der Module pro Jahr. Viele Rechner lassen beides weg – dann sieht die Amortisation ein bis zwei Jahre besser aus, als sie ist.</div></details>
+        <details class="faq-item"><summary>Wärmepumpe: von Ihrem Verbrauch zur Stromrechnung <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Aus dem Verbrauch wird zuerst die tatsächlich genutzte Wärme: Erdgas mit 10 kWh je m³, Heizöl mit 10 kWh je Liter, Flüssiggas mit 6,6 kWh je Liter, davon kommen 90 Prozent (Gas) beziehungsweise 85 Prozent (Öl, Flüssiggas) als Wärme an. Diese Wärme geteilt durch die Jahresarbeitszahl ergibt den Strombedarf. Die Jahresarbeitszahl leiten wir aus der nötigen Vorlauftemperatur ab: 4,3 bei 35 °C bis 2,7 bei 60 °C, abzüglich 0,2 für die Warmwasserbereitung. Zum Vergleich: Der Feldtest des Fraunhofer ISE hat 2025 an Luft-Wasser-Wärmepumpen im Bestand im Mittel 3,4 gemessen. Wir rechnen also eher vorsichtig.</div></details>
+        <details class="faq-item"><summary>Wärmepumpe: Förderung und der ehrliche Vergleich <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">30 Prozent Grundförderung, 16 Prozent Klimageschwindigkeitsbonus für selbstnutzende Eigentümer beim Tausch einer alten Heizung, dazu 40, 30 oder 10 Prozent Einkommensbonus je nach zu versteuerndem Haushaltseinkommen (je minderjährigem Kind erhöht sich die Grenze um 10.000 €). Gedeckelt ist die Summe bei 70 Prozent, bei einem anzusetzenden Einkommen bis 30.000 € bei 80 Prozent. Förderfähig sind höchstens 28.000 € für die erste Wohneinheit. Ein Punkt, den viele Vergleiche unterschlagen: Auch ein alter Gas- oder Ölkessel muss irgendwann ersetzt werden. Diese ohnehin fällige Ausgabe zeigen wir deshalb als zweite Zeile in der Amortisation.</div></details>
+        <details class="faq-item"><summary>Was dieser Rechner bewusst nicht tut <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Er rechnet ohne Preissteigerung – weder beim Strom noch bei Gas und Öl. Steigen die Energiepreise, wird das Ergebnis besser, sinken sie, wird es schlechter. Ab 2027 wird der CO₂-Preis für Gebäude und Verkehr nicht mehr staatlich festgelegt, sondern im europäischen Emissionshandel am Markt gebildet; wohin das führt, kann heute niemand seriös beziffern. Ebenso wenig rechnet er mit dem Wertzuwachs Ihrer Immobilie oder mit einem E-Auto, das den Eigenverbrauch deutlich hebt. Und er ersetzt keine Vor-Ort-Prüfung: Dachstatik, Verschattung, Zählerschrank und Heizlast entscheiden am Ende mit.</div></details>
+      </div>
+    </div>
+  </section>
+
+<!--FAQ-->
+  <section class="pad cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Zahlen passen – und jetzt?</h2>
+        <p>Schicken Sie uns ein vorliegendes Angebot. Wir sagen Ihnen innerhalb von 24 Stunden, ob es zu dieser Rechnung passt. Kostenlos und ohne Verkaufsinteresse.</p>
+        <a data-nav="check" class="btn">Zum Angebots-Check</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /view-rendite -->
 
 <!-- ========================= ANSICHT: ANGEBOTS-CHECK ========================= -->
 <div id="view-check" hidden>
@@ -4203,7 +4519,7 @@
       <div class="head">
         <div class="kicker">Wunschtermin wählen</div>
         <h2>Freie Zeiten im Überblick</h2>
-        <p>Montag bis Mittwoch von 10 bis 20 Uhr, Donnerstag und Freitag von 10 bis 16 Uhr. Termine sind bis zu einem Monat im Voraus buchbar. Durchgestrichene Zeiten sind bereits vergeben.</p>
+        <p>Montag bis Mittwoch von 10 bis 20 Uhr, Donnerstag und Freitag von 10 bis 16 Uhr. An Wochenenden und gesetzlichen Feiertagen bleibt der Kalender zu. Termine sind bis zu einem Monat im Voraus buchbar. Durchgestrichene Zeiten sind bereits vergeben.</p>
       </div>
 
       <div class="forms-wrap" style="max-width:820px">
@@ -4496,7 +4812,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></div>
-      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="bestand">Bestandsanlagen-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="termin">Termin</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
+      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="rendite">Rentabilitätsrechner</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="bestand">Bestandsanlagen-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="termin">Termin</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:service-bhd@outlook.de" style="color:inherit">service-bhd@outlook.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
@@ -4642,9 +4958,23 @@
     if(netz.saveData)return;
     if(/(^|-)2g$/.test(netz.effectiveType||''))return;
 
-    var klein=window.matchMedia('(max-width:900px)').matches;
+    // Welche Fassung geladen wird, entscheidet die TATSAECHLICHE Anzeigebreite,
+    // nicht die Bildschirmbreite allein. Auf dem PC liegt das Video full-bleed
+    // hinter dem ganzen Hero: bei 1920 px Fenster wurde die alte 1280er-Datei
+    // um das 1,5-Fache hochgezogen und sah entsprechend weich aus. Unter
+    // 1025 px steht das Video als schmales Band (siehe CSS) - dort reicht die
+    // kleine Fassung, und die grosse waere nur unnoetige Datenmenge.
+    var bandLayout=window.matchMedia('(max-width:1024px)').matches;
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    var langsam=/(^|-)[23]g$/.test(netz.effectiveType||'');
+    function quelle(){
+      if(langsam)return v.dataset.vidKlein;
+      var b=Math.round((v.getBoundingClientRect().width||window.innerWidth)*dpr);
+      if(bandLayout)return b>=1100?v.dataset.vidMittel:v.dataset.vidKlein;
+      return b>=1400?v.dataset.vidGross:v.dataset.vidMittel;
+    }
     function start(){
-      v.src=klein?v.dataset.vidKlein:v.dataset.vidGross;
+      v.src=quelle();
       v.addEventListener('playing',function(){v.classList.add('laeuft')},{once:true});
       var p=v.play();
       if(p&&p.catch)p.catch(function(){});
@@ -4947,7 +5277,8 @@
   const VOLLSTUNDEN=2100;      // Vollbenutzungsstunden Heizung pro Jahr (Richtwert Deutschland)
   const WW_PRO_PERSON=500;     // kWh Warmwasserwärme je Person und Jahr
   const MAX_KOSTEN=28000;      // förderfähige Kosten 1. Wohneinheit, KfW 458 ab 21.07.2026
-  const MAX_QUOTE=80;          // Deckel der Gesamtförderung in Prozent
+  const MAX_QUOTE=80;          // Deckel nur bei anzusetzendem zvE bis 30.000 €
+  const REGEL_QUOTE=70;        // sonst gilt der Regeldeckel von 70 %
 
   // Jahresarbeitszahl einer Luft-Wasser-Wärmepumpe je Vorlauftemperatur
   const JAZ_VL={35:4.3, 40:4.0, 45:3.6, 55:3.0, 60:2.7};
@@ -5052,7 +5383,14 @@
       if(ek){quote+=ek;bausteine.push(ek+' % Einkommensbonus');}
     }
     const quoteVorDeckel=quote;
-    quote=Math.min(MAX_QUOTE,quote);
+    // Deckel: laut KfW-Merkblatt 458 grundsaetzlich 70 %. Die 80 % gibt es nur
+    // fuer selbstnutzende Eigentuemer mit einem anzusetzenden zu versteuernden
+    // Haushaltseinkommen bis 30.000 € (Kinder sind oben bereits abgezogen).
+    // Vorher stand hier pauschal 80 % - das hat im Bereich 30.001 bis 40.000 €
+    // sechs Prozentpunkte zu viel ausgewiesen, also bis zu 1.680 € Zuschuss,
+    // den es nicht gibt.
+    const deckel=(selbstnutzer&&zveAngegeben&&zve<=30000)?MAX_QUOTE:REGEL_QUOTE;
+    quote=Math.min(deckel,quote);
 
     const investRaw=parseFloat($('wp-invest').value);
     const investAngegeben=isFinite(investRaw)&&investRaw>0;
@@ -5089,8 +5427,9 @@
     }else if(!zveAngegeben){
       hinweise.push(['info','Ohne Angabe zum Haushaltseinkommen ist der Einkommensbonus nicht eingerechnet. Bis 50.000 € zu versteuerndem Einkommen kommen 10 bis 40 Prozentpunkte dazu.']);
     }
-    if(quoteVorDeckel>MAX_QUOTE){
-      hinweise.push(['info','Die Boni summieren sich auf '+quoteVorDeckel+' %. Gefördert werden höchstens '+MAX_QUOTE+' %.']);
+    if(quoteVorDeckel>deckel){
+      hinweise.push(['info','Die Boni summieren sich auf '+quoteVorDeckel+' %. Gefördert werden in Ihrem Fall höchstens '+deckel+' %'+
+        (deckel===REGEL_QUOTE?' – die 80 % gibt es nur bei einem anzusetzenden Haushaltseinkommen bis 30.000 €.':'.')]);
     }
 
     // --- Ausgabe ---
@@ -5179,6 +5518,243 @@
   });
 
   $('wp-k-plz').addEventListener('input',()=>{$('wp-k-plz').value=$('wp-k-plz').value.replace(/\D/g,'')});
+  })();
+
+  // ===== Rentabilitätsrechner – nur auf /rentabilitaetsrechner/ =====
+  // Zwei Rechner in einem Umschalter. Bewusst kurz gehalten: wenige Eingaben,
+  // eine Leitzahl, alle Annahmen stehen sichtbar unter dem Rechner.
+  //
+  // WICHTIG: Die Kennwerte sind mit dem Rest der Website abgeglichen und
+  // duerfen nicht einzeln geaendert werden.
+  //  - 7,7 ct Einspeisung  = anzulegender Wert der Bundesnetzagentur fuer
+  //    Anlagen bis 10 kW, Inbetriebnahme 01.08.2026 bis 31.01.2027.
+  //  - Preise je kWp / je kWh Speicher = Mitte der Spannen auf /kosten/.
+  //  - JAZ je Vorlauftemperatur = dieselbe Tabelle wie im Waermepumpen-Rechner.
+  //  - Foerderdeckel 70 %, 80 % nur bis 30.000 € anzusetzendem zvE (KfW 458).
+  // Das Rechenbeispiel auf /photovoltaik/ muss dasselbe Ergebnis liefern.
+  (function(){
+  const wurzel=document.getElementById('rendite');
+  if(!wurzel)return;
+
+  const $=(id)=>document.getElementById(id);
+  const nf=(n,d)=>n.toLocaleString('de-DE',{minimumFractionDigits:d||0,maximumFractionDigits:d||0});
+  const eur=(n)=>nf(Math.round(n))+' €';
+  const num=(id,def)=>{const v=parseFloat(($(id)||{}).value);return isFinite(v)?v:(def===undefined?0:def);};
+
+  const VERGUETUNG=0.077;      // €/kWh Ueberschusseinspeisung bis 10 kW
+  const PREIS_KWP=1450;        // € je kWp schluesselfertig, ohne Speicher
+  const PREIS_SPEICHER={0:0,5:3750,8:5000,10:5750,15:8000};
+  const BETRIEB_ANTEIL=0.01;   // Versicherung, Wartung, Zaehler, Ruecklage WR
+  const BETRIEB_MIN=120;
+  const DEGRADATION=0.005;     // Leistungsverlust der Module pro Jahr
+  const JAHRE=20;
+
+  const MAX_KOSTEN=28000, MAX_QUOTE=80, REGEL_QUOTE=70;
+  const JAZ_VL={35:4.3,40:4.0,45:3.6,55:3.0,60:2.7};
+  const TRAEGER={
+    'gas-kwh':     {kwh:1,   eta:0.90, preis:0.12, einheit:'€/kWh'},
+    'gas-m3':      {kwh:10,  eta:0.90, preis:1.20, einheit:'€/m³'},
+    'oel':         {kwh:10,  eta:0.85, preis:1.10, einheit:'€/Liter'},
+    'fluessiggas': {kwh:6.6, eta:0.85, preis:0.90, einheit:'€/Liter'},
+    'strom':       {kwh:1,   eta:1.00, preis:0.32, einheit:'€/kWh'}
+  };
+
+  function hinweiseAus(id,liste){
+    $(id).innerHTML=liste.map(h=>'<div class="cn cn-'+h[0]+'">'+h[1]+'</div>').join('');
+  }
+  function jahre(n){
+    if(!isFinite(n)||n<=0)return null;
+    return n>=JAHRE*2?null:n;
+  }
+
+  /* ------------------------------------------------------ Photovoltaik */
+
+  // Autarkiegrad: Anteil Ihres Strombedarfs, den die Anlage deckt.
+  // Kalibriert auf zwei belastbare Stuetzpunkte: ohne Speicher rund 30 %
+  // bei einer Anlage, die den Jahresverbrauch gerade erzeugt, und rund 66 %
+  // in der Konstellation des Rechenbeispiels auf /photovoltaik/
+  // (10 kWp, 8 kWh Speicher, 4.500 kWh Verbrauch). Der Deckel bei knapp
+  // 70 % ist Absicht - hoehere Jahreswerte traegt der Winter nicht.
+  function autarkie(ertrag,verbrauch,speicher){
+    const r=ertrag/verbrauch;
+    const a0=0.439*(1-Math.exp(-1.15*r));
+    const c=speicher/(verbrauch/1000);
+    const g=0.446*(1-Math.exp(-2.0*c))*Math.min(1,r);
+    return Math.min(0.92,a0+g*(1-a0));
+  }
+
+  let investBeruehrt=false;
+  function pvVorschlag(){
+    const kwp=num('rp-kwp',10);
+    const sp=num('rp-speicher',0);
+    return Math.round((kwp*PREIS_KWP+(PREIS_SPEICHER[sp]||sp*600))/100)*100;
+  }
+  function pvInvestSetzen(){
+    if(investBeruehrt)return;
+    $('rp-invest').value=pvVorschlag();
+  }
+
+  function rechnePV(){
+    const verbrauch=num('rp-verbrauch',0);
+    const preis=num('rp-preis',0.35);
+    const kwp=num('rp-kwp',0);
+    const spez=num('rp-ausrichtung',950);
+    const speicher=num('rp-speicher',0);
+    const hinweise=[];
+
+    if(!(verbrauch>0)||!(kwp>0)){
+      $('rp-amort').textContent='–';
+      $('rp-amort-sub').textContent='Bitte Verbrauch und Anlagengröße eintragen.';
+      hinweiseAus('rp-hinweise',[]);
+      return;
+    }
+
+    const invest=Math.max(0,num('rp-invest',pvVorschlag()));
+    const ertrag=kwp*spez;
+    const quote=autarkie(ertrag,verbrauch,speicher);
+    const eigen=Math.min(verbrauch*quote,ertrag*0.9);
+    const eingespeist=Math.max(0,ertrag-eigen);
+    const gespart=eigen*preis;
+    const erloes=eingespeist*VERGUETUNG;
+    const betrieb=Math.max(BETRIEB_MIN,invest*BETRIEB_ANTEIL);
+    const vorteil=gespart+erloes-betrieb;
+    // Ueber 20 Jahre mit mittlerem Leistungsverlust der Module
+    const mittel=1-DEGRADATION*(JAHRE-1)/2;
+    const summe20=(gespart+erloes)*mittel*JAHRE-betrieb*JAHRE-invest;
+    const amort=jahre(invest/vorteil);
+
+    $('rp-amort').textContent=amort?nf(amort,1).replace(',0','')+' Jahren':'–';
+    $('rp-amort-sub').textContent=amort
+      ? 'Danach bleiben rund '+eur(vorteil)+' im Jahr übrig. Module halten typischerweise 25 bis 30 Jahre.'
+      : 'Mit diesen Werten rechnet sich die Anlage rechnerisch nicht innerhalb von 40 Jahren. Prüfen Sie Investition, Verbrauch und Strompreis.';
+    $('rp-ertrag').textContent=nf(ertrag)+' kWh';
+    $('rp-eigen').textContent=nf(eigen)+' kWh';
+    $('rp-autarkie').textContent=nf(quote*100)+' % aus eigener Sonne';
+    $('rp-sparen').textContent=eur(gespart)+'/Jahr';
+    $('rp-erloes').textContent=eur(erloes)+'/Jahr';
+    $('rp-betrieb').textContent='− '+eur(betrieb)+'/Jahr';
+    $('rp-vorteil').textContent=eur(vorteil)+'/Jahr';
+    $('rp-invest-out').textContent=eur(invest);
+    $('rp-20').textContent=(summe20>=0?'+ ':'− ')+eur(Math.abs(summe20));
+    $('rp-invest-hint').textContent='Vorschlag aus unserer Preisübersicht: '+eur(pvVorschlag())+
+      ' für '+nf(kwp,1).replace(',0','')+' kWp'+(speicher?' mit '+speicher+' kWh Speicher':' ohne Speicher')+'.';
+
+    const rel=ertrag/verbrauch;
+    if(rel<0.8)hinweise.push(['info','Die Anlage erzeugt weniger, als Sie verbrauchen. Zusätzliche Module kosten anteilig wenig, weil Gerüst, Montage und Anschluss ohnehin anfallen – im Zweifel lieber ein paar Module mehr aufs Dach.']);
+    if(rel>2.6)hinweise.push(['info','Die Anlage erzeugt ein Vielfaches Ihres Verbrauchs. Der Überschuss geht zu 7,7 Cent ins Netz statt 35 Cent zu sparen. Sinnvoll wird das vor allem mit Wärmepumpe oder E-Auto.']);
+    if(speicher>0&&speicher/(verbrauch/1000)>2.2)hinweise.push(['warn','Der Speicher ist im Verhältnis zum Verbrauch groß. Als Richtwert gilt etwa 1 kWh je 1.000 kWh Jahresstromverbrauch. Ein Speicher, der im Sommer nie leer wird, verdient sein Geld nicht zurück.']);
+    if(speicher===0)hinweise.push(['info','Ohne Speicher decken Sie vor allem den Tagesverbrauch. Ein Speicher hebt den Eigenverbrauch deutlich, kostet aber auch – probieren Sie beide Varianten durch.']);
+    hinweise.push(['info','Nicht enthalten: steigende Strompreise und ein E-Auto. Beide würden das Ergebnis verbessern. Enthalten sind dagegen Betriebskosten und Leistungsverlust der Module.']);
+    hinweiseAus('rp-hinweise',hinweise);
+  }
+
+  /* ------------------------------------------------------ Wärmepumpe */
+
+  function rechneWP(){
+    const t=TRAEGER[$('rw-traeger').value]||TRAEGER['gas-kwh'];
+    const menge=num('rw-menge',0);
+    const preisAlt=num('rw-preis-alt',0);
+    const vl=num('rw-vl',55);
+    const preisStrom=num('rw-preis-strom',0.26);
+    const invest=Math.max(0,num('rw-invest',28000));
+    const hinweise=[];
+
+    $('rw-preis-alt-unit').textContent=t.einheit;
+
+    if(!(menge>0)||!(preisAlt>0)){
+      $('rw-amort').textContent='–';
+      $('rw-amort-sub').textContent='Bitte Verbrauch und Preis Ihrer heutigen Heizung eintragen.';
+      hinweiseAus('rw-hinweise',[]);
+      return;
+    }
+
+    const waerme=menge*t.kwh*t.eta;
+    let jaz=(JAZ_VL[vl]||3.0)-0.2;          // 0,2 Abzug für die Warmwasserbereitung
+    jaz=Math.min(4.6,Math.max(2.3,jaz));
+    const strom=waerme/jaz;
+    const kostenAlt=menge*preisAlt;
+    const kostenNeu=strom*preisStrom;
+    const ersparnis=kostenAlt-kostenNeu;
+
+    // --- Förderung nach KfW 458 ---
+    const selbst=num('rw-selbst',1)===1;
+    const altOK=num('rw-alt',0)===1;
+    const kinder=Math.max(0,num('rw-kinder',0));
+    const zveRaw=parseFloat($('rw-zve').value);
+    const zveDa=isFinite(zveRaw)&&zveRaw>0;
+    const zve=zveDa?Math.max(0,zveRaw-kinder*10000):null;
+
+    let quote=30;
+    if(selbst&&altOK)quote+=16;
+    if(selbst&&zveDa){
+      if(zve<=30000)quote+=40; else if(zve<=40000)quote+=30; else if(zve<=50000)quote+=10;
+    }
+    const vorDeckel=quote;
+    const deckel=(selbst&&zveDa&&zve<=30000)?MAX_QUOTE:REGEL_QUOTE;
+    quote=Math.min(deckel,quote);
+    const zuschuss=Math.min(invest,MAX_KOSTEN)*quote/100;
+    const eigen=invest-zuschuss;
+
+    const amort=jahre(eigen/ersparnis);
+    // Gegenrechnung: der alte Kessel muss ohnehin ersetzt werden. Eine neue
+    // Gasheizung kostet eingebaut rund 10.000 € - diese Ausgabe spart man
+    // durch die Waermepumpe ebenfalls.
+    const ohnehin=10000;
+    const amortGegen=jahre(Math.max(0,eigen-ohnehin)/ersparnis);
+
+    $('rw-amort').textContent=amort?nf(amort,1).replace(',0','')+' Jahren':'–';
+    $('rw-amort-sub').innerHTML=amort
+      ? 'Gegengerechnet mit einer ohnehin fälligen neuen Heizung (rund '+eur(ohnehin)+'): <b>'+
+        (amortGegen?nf(amortGegen,1).replace(',0','')+' Jahre':'sofort')+'</b>.'
+      : 'Mit diesen Werten spart die Wärmepumpe rechnerisch nichts. Das liegt fast immer an einer hohen Vorlauftemperatur oder an einem günstigen Altvertrag.';
+    $('rw-alt-kosten').textContent=eur(kostenAlt)+'/Jahr';
+    $('rw-neu-kosten').textContent=eur(kostenNeu)+'/Jahr';
+    $('rw-ersparnis').textContent=(ersparnis>=0?'':'− ')+eur(Math.abs(ersparnis))+'/Jahr';
+    $('rw-jaz').textContent=nf(jaz,1);
+    $('rw-strom').textContent=nf(strom)+' kWh/Jahr';
+    $('rw-quote').textContent=nf(quote)+' %';
+    $('rw-zuschuss').textContent=eur(zuschuss);
+    $('rw-eigen').textContent=eur(eigen);
+    $('rw-20').textContent=eur(ersparnis*JAHRE);
+
+    if(vl>=55)hinweise.push(['warn','Bei '+vl+' °C Vorlauf arbeitet eine Luft-Wasser-Wärmepumpe noch, aber unwirtschaftlich. Größere Heizkörper in wenigen Räumen und ein hydraulischer Abgleich bringen die Vorlauftemperatur oft um 10 bis 15 °C herunter – das ist meist die günstigste Maßnahme überhaupt. Stellen Sie oben einmal 45 °C ein und vergleichen Sie.']);
+    if(!selbst)hinweise.push(['info','Klimageschwindigkeits- und Einkommensbonus gibt es nur für selbstnutzende Eigentümer. Gerechnet ist deshalb nur die Grundförderung.']);
+    else if(!zveDa)hinweise.push(['info','Ohne Angabe zum Haushaltseinkommen fehlt der Einkommensbonus. Bis 50.000 € zu versteuerndem Einkommen kommen 10 bis 40 Prozentpunkte dazu.']);
+    if(vorDeckel>deckel)hinweise.push(['info','Die Boni summieren sich auf '+vorDeckel+' %. Gefördert werden in Ihrem Fall höchstens '+deckel+' %'+(deckel===REGEL_QUOTE?' – die 80 % gibt es nur bis 30.000 € anzusetzendem Einkommen.':'.')]);
+    if(invest>MAX_KOSTEN)hinweise.push(['info','Gefördert werden höchstens '+eur(MAX_KOSTEN)+' für die erste Wohneinheit. Was darüber liegt, zahlen Sie voll.']);
+    hinweise.push(['info','Nicht enthalten: steigende Gas- und Ölpreise. Ab 2027 wird der CO₂-Preis für Gebäude im europäischen Emissionshandel am Markt gebildet – wohin das führt, kann heute niemand seriös beziffern. Welche Größe zu Ihrem Haus passt, rechnet der <a href="/waermepumpen-rechner/">Wärmepumpen-Rechner</a>.']);
+    hinweiseAus('rw-hinweise',hinweise);
+  }
+
+  /* ------------------------------------------------------ Umschalter */
+
+  function zeige(welche){
+    ['pv','wp'].forEach(k=>{
+      const feld=$('rt-'+k), knopf=$('rt-tab-'+k), an=(k===welche);
+      feld.hidden=!an;
+      knopf.classList.toggle('is-on',an);
+      knopf.setAttribute('aria-selected',an?'true':'false');
+    });
+    if(location.hash!=='#'+welche)history.replaceState(null,'',location.pathname+'#'+welche);
+  }
+  document.querySelectorAll('.rt-tab').forEach(b=>b.addEventListener('click',()=>zeige(b.dataset.rt)));
+  if(location.hash==='#wp')zeige('wp');
+
+  // Preisvorschlag nur so lange nachführen, wie niemand von Hand eingreift
+  $('rp-invest').addEventListener('input',()=>{investBeruehrt=true;});
+  ['rp-kwp','rp-speicher'].forEach(id=>$(id).addEventListener('input',()=>{pvInvestSetzen();rechnePV();}));
+  ['rp-verbrauch','rp-preis','rp-ausrichtung','rp-invest'].forEach(id=>$(id).addEventListener('input',rechnePV));
+  ['rw-traeger','rw-menge','rw-preis-alt','rw-vl','rw-preis-strom','rw-invest',
+   'rw-selbst','rw-alt','rw-zve','rw-kinder'].forEach(id=>$(id).addEventListener('input',rechneWP));
+  $('rw-traeger').addEventListener('change',()=>{
+    const t=TRAEGER[$('rw-traeger').value];
+    if(t)$('rw-preis-alt').value=t.preis;
+    rechneWP();
+  });
+
+  pvInvestSetzen();
+  rechnePV();
+  rechneWP();
   })();
 
   // ---------- Angebots-Check: sanftes Scrollen zum Formular ----------
@@ -5280,11 +5856,47 @@
       return (h>>>0)/4294967296;
     }
 
+    /* Gesetzliche Feiertage. Der Kalender reicht nur 30 Tage voraus, trotzdem
+     * hat ein buchbarer Termin am 3. Oktober oder am zweiten Weihnachtstag
+     * frueher oder spaeter jeden getroffen. Beruecksichtigt sind die
+     * bundeseinheitlichen Feiertage, der Berliner Frauentag (Sitz Berlin)
+     * sowie Heiligabend und Silvester - beides zwar keine Feiertage, aber
+     * an beiden Tagen rufen wir niemanden an. */
+    const osterCache={};
+    function ostersonntag(j){
+      if(osterCache[j])return osterCache[j];
+      const a=j%19,b=Math.floor(j/100),c=j%100,d=Math.floor(b/4),e=b%4,
+            f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),
+            h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,
+            l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),
+            mon=Math.floor((h+l-7*m+114)/31),tag=((h+l-7*m+114)%31)+1;
+      return (osterCache[j]=new Date(j,mon-1,tag));
+    }
+    const feierCache={};
+    function feiertage(j){
+      if(feierCache[j])return feierCache[j];
+      const o=ostersonntag(j);
+      const rel=off=>{const d=new Date(o);d.setDate(d.getDate()+off);return key(d)};
+      return (feierCache[j]=new Set([
+        j+'-1-1',      // Neujahr
+        j+'-3-8',      // Internationaler Frauentag (Berlin)
+        j+'-5-1',      // Tag der Arbeit
+        j+'-10-3',     // Tag der Deutschen Einheit
+        j+'-12-24', j+'-12-25', j+'-12-26', j+'-12-31',
+        rel(-2),       // Karfreitag
+        rel(1),        // Ostermontag
+        rel(39),       // Christi Himmelfahrt
+        rel(50)        // Pfingstmontag
+      ]));
+    }
+    const istFeiertag=d=>feiertage(d.getFullYear()).has(key(d));
+
     /* Oeffnungszeiten: Mo–Mi 10–20 Uhr, Do–Fr 10–16 Uhr, Wochenende zu.
-     * Freitags ist 12:30–14:30 Uhr fest gesperrt. */
+     * Freitags ist 12:30–14:30 Uhr fest gesperrt, an Feiertagen ganz zu. */
     function zeitenAm(d){
       const wt=d.getDay();
       if(wt===0||wt===6)return [];
+      if(istFeiertag(d))return [];
       const ende=(wt<=3)?20*60:16*60;
       const liste=[];
       for(let m=10*60;m<ende;m+=30){
