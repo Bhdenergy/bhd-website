@@ -181,25 +181,60 @@
   @media(max-width:1099px){
     .nav-toggle{display:inline-flex}
     .nav-phone{display:none}
+    /* Handy-Menue: DECKENDE Flaeche. Vorher lag hier eine 98%-Mischung mit
+       backdrop-filter(16px) - der Hero schimmerte sichtbar durch die Liste
+       ("Sonne rein." stand hinter den Menuepunkten), das war der Hauptgrund
+       fuer den unruhigen Eindruck. Eine Overlay-Navigation deckt ab. */
     .nav-links{position:absolute;top:100%;left:0;right:0;margin:0;flex-direction:column;align-items:stretch;gap:0;
-      background:var(--bg);background:color-mix(in srgb,var(--bg) 98%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:var(--shadow);
-      padding:6px 0;max-height:0;overflow:hidden;opacity:0;visibility:hidden;transition:max-height .32s var(--ease),opacity .24s,visibility .24s}
-    nav.open .nav-links{max-height:82vh;opacity:1;visibility:visible;overflow:auto}
-    .nav-links a{padding:15px 32px;font-size:1.08rem;border-bottom:1px solid var(--line);color:var(--ink)}
-    .nav-links a:last-child{border-bottom:0}
+      background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none;
+      border-bottom:1px solid var(--line-2);box-shadow:var(--shadow);
+      padding:0 0 calc(8px + env(safe-area-inset-bottom,0px));
+      max-height:0;overflow:hidden;opacity:0;visibility:hidden;
+      overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+      transition:max-height .32s var(--ease),opacity .24s,visibility .24s}
+    nav.open .nav-links{max-height:82vh;max-height:calc(100dvh - 68px);opacity:1;visibility:visible;overflow:auto}
+    /* Nur die obersten Eintraege - .nav-sub a wird weiter unten eigens gesetzt */
+    .nav-links>a,.nav-drop>.nav-drop-lbl{display:flex;align-items:center;gap:10px;
+      min-height:52px;padding:13px 20px;font-size:1.04rem;font-weight:600;
+      color:var(--ink);white-space:normal;border-bottom:1px solid var(--line)}
+    /* Der goldene Unterstrich der aktiven Seite gehoert zur Desktop-Leiste.
+       Er sitzt 25px UNTER dem Link - im Handy-Menue landete er quer auf dem
+       naechsten Eintrag ("Photovoltaik" aktiv -> Strich ueber "Stromspeicher").
+       Gilt fuer ALLE Links im Menue, auch die im Untermenue. */
     .nav-links a.active::after{display:none}
-    .nav-links a.active{color:var(--green-deep)}
-    .menu-phone{display:flex;align-items:center;gap:9px;color:var(--green-deep);font-weight:700}
-    .menu-phone .ic{color:var(--green-deep)}
+    .nav-links>a.active,.nav-sub a.active{color:var(--green-deep);background:var(--gold-soft)}
+    .menu-phone{display:flex;align-items:center;gap:9px;color:var(--green-deep);font-weight:700;border-bottom:0}
+    .menu-phone .ic{color:var(--green-deep);flex:none}
     .nav-b2b{display:block}
-    .nav-links a{white-space:normal}
-    /* Ausklappmenü wird im Handy-Menü zur einfachen Liste */
-    .nav-drop-lbl{display:block;padding:15px 32px 8px;font-size:.82rem;letter-spacing:.06em;
-      text-transform:uppercase;color:var(--ink-3);border-bottom:0}
-    .nav-drop-lbl .ic{display:none}
-    .nav-sub{position:static;opacity:1;visibility:visible;transform:none;padding-top:0;min-width:0}
-    .nav-sub a{padding:13px 32px 13px 46px;background:transparent;border:0;
-      border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;font-size:1.02rem}
+    /* Aufklappgruppen: auf dem Handy zugeklappt, Tipp auf die Zeile oeffnet sie.
+       Vorher standen ALLE Untermenues dauerhaft offen - 20 Zeilen, 1114px hoch,
+       also laenger als der Bildschirm, und die Gruppentitel sahen wie tote
+       Ueberschriften aus. Zugeklappt sind es 9 Zeilen, die ohne Scrollen passen. */
+    .nav-drop{display:block;border-bottom:1px solid var(--line)}
+    .nav-drop>.nav-drop-lbl{width:100%;text-transform:none;letter-spacing:0;
+      cursor:pointer;border-bottom:0;-webkit-tap-highlight-color:transparent}
+    .nav-drop>.nav-drop-lbl .ic{display:block;width:15px;height:15px;margin-left:auto;
+      color:var(--ink-3);flex:none;transition:transform .24s var(--ease)}
+    .nav-drop.open>.nav-drop-lbl{color:var(--green-deep)}
+    .nav-drop.open>.nav-drop-lbl .ic{transform:rotate(90deg);color:var(--green-deep)}
+    .nav-sub{position:static;opacity:1;visibility:visible;transform:none;
+      min-width:0;padding:0;border-radius:0;box-shadow:none;border:0;
+      background:var(--bg-soft);max-height:0;overflow:hidden;
+      transition:max-height .3s var(--ease)}
+    .nav-drop.open>.nav-sub{max-height:520px}
+    .nav-sub a{display:block;padding:12px 20px 12px 34px;background:transparent;
+      border:0;border-top:1px solid var(--line);border-radius:0;box-shadow:none;
+      font-size:1rem;font-weight:500;color:var(--ink-2)}
+    .nav-sub a:first-child{border-top:0;border-radius:0;padding-top:12px}
+    .nav-sub a:last-child{border-bottom:0;border-radius:0;padding-bottom:12px;box-shadow:none}
+    .nav-sub a:hover{background:transparent;color:var(--ink)}
+    /* Solange das Menue offen ist, tritt die Schnellkontakt-Leiste zurueck.
+       Sie hat z-index 150 gegen nav 50, lag also UEBER dem Menue und hat die
+       letzten Eintraege verdeckt.
+       Dasselbe gilt fuer die Einwilligungsleiste (z-index 180): sie lag quer
+       ueber den Menuepunkten. Beide kommen zurueck, sobald das Menue zugeht. */
+    nav.open~.quickcontact,nav.open~.consent-bar{opacity:0;visibility:hidden;pointer-events:none}
+    .quickcontact,.consent-bar{transition:opacity .2s var(--ease),visibility .2s}
   }
   /* Auf dem Desktop Abstaende und Schrift leicht zusammenziehen. Gilt bis
      ganz nach oben: nav .wrap ist auf 1360px gedeckelt, breiter wird die
@@ -5765,18 +5800,77 @@
   }));
 
   // ---------- Mobiles Menü (Burger) ----------
+  // Die Gruppen "Leistungen", "Über uns" und "Kontakt" standen im Handy-Menü
+  // dauerhaft offen: 20 Zeilen, 1114px hoch bei 844px Bildschirm. Man musste
+  // im Menü scrollen, die letzten Punkte lagen unter der Schnellkontakt-Leiste.
+  // Jetzt sind sie zugeklappt und öffnen auf Tipp - 9 Zeilen, passt aufs Bild.
   (function(){
     const navEl=document.querySelector('nav');
     const tgl=document.getElementById('nav-toggle');
-    if(!navEl||!tgl)return;
-    const closeMenu=()=>{navEl.classList.remove('open');tgl.setAttribute('aria-expanded','false');tgl.setAttribute('aria-label','Menü öffnen');};
+    const links=document.getElementById('nav-links');
+    if(!navEl||!tgl||!links)return;
+
+    const handy=()=>window.matchMedia('(max-width:1099px)').matches;
+    const gruppen=[...links.querySelectorAll('.nav-drop')];
+    const label=g=>g.querySelector('.nav-drop-lbl');
+
+    function setzeGruppe(g,auf){
+      g.classList.toggle('open',auf);
+      const l=label(g);
+      if(l)l.setAttribute('aria-expanded',auf?'true':'false');
+    }
+    // Die Gruppe aufklappen, in der die gerade gezeigte Seite steht - sonst
+    // sucht man seinen Standort in einer zugeklappten Liste.
+    function aktiveGruppeOeffnen(){
+      gruppen.forEach(g=>setzeGruppe(g,!!g.querySelector('.nav-sub a.active')));
+    }
+
+    let aufraeumen;
+    const closeMenu=()=>{
+      navEl.classList.remove('open');
+      tgl.setAttribute('aria-expanded','false');
+      tgl.setAttribute('aria-label','Menü öffnen');
+      // erst nach dem Zufahren zuklappen, sonst ruckelt es sichtbar
+      clearTimeout(aufraeumen);
+      aufraeumen=setTimeout(()=>{if(!navEl.classList.contains('open'))gruppen.forEach(g=>setzeGruppe(g,false));},360);
+    };
+
     tgl.addEventListener('click',()=>{
       const open=navEl.classList.toggle('open');
       tgl.setAttribute('aria-expanded',open?'true':'false');
       tgl.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+      if(open){clearTimeout(aufraeumen);aktiveGruppeOeffnen();}
     });
-    // Menü schließen, wenn ein Link oder der CTA angeklickt wird
-    document.querySelectorAll('#nav-links a, .nav-cta').forEach(a=>a.addEventListener('click',closeMenu));
+
+    // Tipp auf eine Gruppenzeile klappt nur auf/zu, statt zu navigieren.
+    // Muss in der Capture-Phase abgefangen werden: "Über uns" und "Kontakt"
+    // sind <a data-nav> und haengen schon am globalen Navigations-Handler.
+    links.addEventListener('click',(e)=>{
+      if(!handy())return;
+      const l=e.target.closest('.nav-drop-lbl');
+      if(!l||!links.contains(l))return;
+      e.preventDefault();
+      e.stopPropagation();
+      const g=l.closest('.nav-drop');
+      setzeGruppe(g,!g.classList.contains('open'));
+    },true);
+
+    // Gruppenzeilen auch mit der Tastatur bedienbar machen
+    gruppen.forEach(g=>{
+      const l=label(g);
+      if(!l)return;
+      l.setAttribute('aria-expanded','false');
+      if(!l.hasAttribute('tabindex'))l.setAttribute('tabindex','0');
+      l.addEventListener('keydown',(e)=>{
+        if(!handy())return;
+        if(e.key!=='Enter'&&e.key!==' ')return;
+        e.preventDefault();
+        setzeGruppe(g,!g.classList.contains('open'));
+      });
+    });
+
+    // Menü schließen, wenn ein echter Link oder der CTA angeklickt wird
+    document.querySelectorAll('#nav-links a:not(.nav-drop-lbl), .nav-cta').forEach(a=>a.addEventListener('click',closeMenu));
     // Schließen mit Escape
     document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeMenu();});
   })();

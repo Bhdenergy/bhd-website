@@ -854,18 +854,77 @@
   }));
 
   // ---------- Mobiles Menü (Burger) ----------
+  // Die Gruppen "Leistungen", "Über uns" und "Kontakt" standen im Handy-Menü
+  // dauerhaft offen: 20 Zeilen, 1114px hoch bei 844px Bildschirm. Man musste
+  // im Menü scrollen, die letzten Punkte lagen unter der Schnellkontakt-Leiste.
+  // Jetzt sind sie zugeklappt und öffnen auf Tipp - 9 Zeilen, passt aufs Bild.
   (function(){
     const navEl=document.querySelector('nav');
     const tgl=document.getElementById('nav-toggle');
-    if(!navEl||!tgl)return;
-    const closeMenu=()=>{navEl.classList.remove('open');tgl.setAttribute('aria-expanded','false');tgl.setAttribute('aria-label','Menü öffnen');};
+    const links=document.getElementById('nav-links');
+    if(!navEl||!tgl||!links)return;
+
+    const handy=()=>window.matchMedia('(max-width:1099px)').matches;
+    const gruppen=[...links.querySelectorAll('.nav-drop')];
+    const label=g=>g.querySelector('.nav-drop-lbl');
+
+    function setzeGruppe(g,auf){
+      g.classList.toggle('open',auf);
+      const l=label(g);
+      if(l)l.setAttribute('aria-expanded',auf?'true':'false');
+    }
+    // Die Gruppe aufklappen, in der die gerade gezeigte Seite steht - sonst
+    // sucht man seinen Standort in einer zugeklappten Liste.
+    function aktiveGruppeOeffnen(){
+      gruppen.forEach(g=>setzeGruppe(g,!!g.querySelector('.nav-sub a.active')));
+    }
+
+    let aufraeumen;
+    const closeMenu=()=>{
+      navEl.classList.remove('open');
+      tgl.setAttribute('aria-expanded','false');
+      tgl.setAttribute('aria-label','Menü öffnen');
+      // erst nach dem Zufahren zuklappen, sonst ruckelt es sichtbar
+      clearTimeout(aufraeumen);
+      aufraeumen=setTimeout(()=>{if(!navEl.classList.contains('open'))gruppen.forEach(g=>setzeGruppe(g,false));},360);
+    };
+
     tgl.addEventListener('click',()=>{
       const open=navEl.classList.toggle('open');
       tgl.setAttribute('aria-expanded',open?'true':'false');
       tgl.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+      if(open){clearTimeout(aufraeumen);aktiveGruppeOeffnen();}
     });
-    // Menü schließen, wenn ein Link oder der CTA angeklickt wird
-    document.querySelectorAll('#nav-links a, .nav-cta').forEach(a=>a.addEventListener('click',closeMenu));
+
+    // Tipp auf eine Gruppenzeile klappt nur auf/zu, statt zu navigieren.
+    // Muss in der Capture-Phase abgefangen werden: "Über uns" und "Kontakt"
+    // sind <a data-nav> und haengen schon am globalen Navigations-Handler.
+    links.addEventListener('click',(e)=>{
+      if(!handy())return;
+      const l=e.target.closest('.nav-drop-lbl');
+      if(!l||!links.contains(l))return;
+      e.preventDefault();
+      e.stopPropagation();
+      const g=l.closest('.nav-drop');
+      setzeGruppe(g,!g.classList.contains('open'));
+    },true);
+
+    // Gruppenzeilen auch mit der Tastatur bedienbar machen
+    gruppen.forEach(g=>{
+      const l=label(g);
+      if(!l)return;
+      l.setAttribute('aria-expanded','false');
+      if(!l.hasAttribute('tabindex'))l.setAttribute('tabindex','0');
+      l.addEventListener('keydown',(e)=>{
+        if(!handy())return;
+        if(e.key!=='Enter'&&e.key!==' ')return;
+        e.preventDefault();
+        setzeGruppe(g,!g.classList.contains('open'));
+      });
+    });
+
+    // Menü schließen, wenn ein echter Link oder der CTA angeklickt wird
+    document.querySelectorAll('#nav-links a:not(.nav-drop-lbl), .nav-cta').forEach(a=>a.addEventListener('click',closeMenu));
     // Schließen mit Escape
     document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeMenu();});
   })();
