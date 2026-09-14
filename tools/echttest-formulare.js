@@ -120,7 +120,7 @@ async function postWeg(browser, nr, name, pfad, marke, fuellen) {
 
 (async () => {
   console.log('ECHTVERSAND gegen ' + BASIS);
-  console.log('Es entstehen sieben echte E-Mails an info@bhd-energie.de.\n');
+  console.log('Es entstehen bis zu neun echte E-Mails an info@bhd-energie.de.\n');
   const anhang = testDatei();
 
   const browser = await puppeteer.launch({
@@ -152,6 +152,20 @@ async function postWeg(browser, nr, name, pfad, marke, fuellen) {
       document.getElementById('finalSubmit').click();
     }, MAIL, TEL);
   });
+
+  /* 8) + 9) Kurzanfrage (Themenseite) und Kontaktformular – beide aus
+   * kurzanfrageHtml() in build.js, Versand ueber sendLead(). */
+  const kurz = (nr, text) => async page => {
+    await page.evaluate((m, t, p, text) => {
+      const f = document.querySelector('form.kf-form');
+      const setz = (n, v) => { const e = f.querySelector('[name="' + n + '"]'); if (e) e.value = v; };
+      setz('name', text); setz('tel', t); setz('plz', p); setz('email', m); setz('nachricht', text);
+      const ok = f.querySelector('input[type=checkbox][required]'); if (ok && !ok.checked) ok.click();
+      f.requestSubmit();
+    }, MAIL, TEL, PLZ, text);
+  };
+  await ajaxWeg(browser, 8, 'Rueckrufwunsch (/photovoltaik/)', '/photovoltaik/', kurz(8, 'TEST 8 Rueckruf Photovoltaik'));
+  await ajaxWeg(browser, 9, 'Kontaktformular (/kontakt/)', '/kontakt/', kurz(9, 'TEST 9 Kontaktformular'));
 
   /* 2) Anfrageformular B2C */
   await ajaxWeg(browser, 2, 'Anfrageformular B2C (/anfragen/)', '/anfragen/', async page => {

@@ -181,6 +181,21 @@ const PAGES = [
     }
   },
   {
+    /* Standortseite. Alle Zahlen am 14.09.2026 gegen amtliche Quellen geprueft
+     * (Quellenliste steht sichtbar auf der Seite). SolarPLUS-Richtlinie laeuft
+     * am 31.12.2026 aus, Klimabonus sinkt am 01.02.2027 -> dann ueberarbeiten. */
+    key: 'berlin', dir: 'photovoltaik-waermepumpe-berlin', view: 'view-berlin', prio: '0.9',
+    crumb: 'Photovoltaik & Wärmepumpe in Berlin',
+    title: 'Photovoltaik & Wärmepumpe Berlin: Solarpflicht & Förderung | BHD',
+    ogTitle: 'Photovoltaik und Wärmepumpe in Berlin – was hier gilt | BHD',
+    desc: 'Solaranlage oder Wärmepumpe in Berlin: wann die Solarpflicht greift, welche SolarPLUS-Zuschüsse es gibt, was beim Denkmalschutz gilt. Beratung mit Sitz in Berlin.',
+    service: {
+      name: 'Beratung zu Photovoltaik und Wärmepumpe in Berlin',
+      typ: 'Photovoltaik- und Wärmepumpen-Beratung',
+      desc: 'Beratung für Berliner Hausbesitzer zu Solaranlage, Stromspeicher und Wärmepumpe: Pflichten nach dem Solargesetz Berlin, Zuschüsse aus dem Landesprogramm SolarPLUS, Genehmigung bei Baudenkmalen, Anmeldung bei Stromnetz Berlin und KfW-Zuschuss 458 für Wärmepumpen.'
+    }
+  },
+  {
     key: 'ratgeber', dir: 'ratgeber', view: 'view-ratgeber', prio: '0.7', crumb: 'Ratgeber',
     title: 'Ratgeber: Photovoltaik & Wärmepumpe verstehen | BHD',
     desc: 'Verständliche Beiträge zu Photovoltaik, Wärmepumpe und Angebotsprüfung – von Beratern, die keine Anlagen verkaufen und auch sagen, was sich nicht lohnt.',
@@ -221,14 +236,14 @@ const PAGES = [
   },
   {
     key: 'ask', dir: 'anfragen', view: 'view-ask', prio: '0.9', crumb: 'Anfragen',
-    title: 'Anfrage stellen – kostenloses Angebot | BHD',
+    title: 'Kostenloses Angebot für Photovoltaik & Wärmepumpe | BHD',
     desc: 'Kostenloses Angebot für Photovoltaik, Stromspeicher oder Wärmepumpe anfordern. Unabhängige Beratung und geprüfte Fachbetriebe aus Ihrer Region.'
   },
   {
     key: 'kontakt', dir: 'kontakt', view: 'view-kontakt', prio: '0.8', crumb: 'Kontakt',
-    title: 'Kontakt: Telefon, WhatsApp & E-Mail | BHD Berlin',
+    title: 'Kontakt & Kontaktformular | BHD Berlin',
     ogTitle: 'Kontakt – direkt mit einem Berater sprechen | BHD',
-    desc: 'BHD erreichen Sie täglich von 8 bis 20 Uhr: telefonisch unter 0163 4440392, per WhatsApp oder E-Mail. Sitz in Berlin, Beratung bundesweit.',
+    desc: 'BHD erreichen Sie täglich von 8 bis 20 Uhr: über das Kontaktformular, telefonisch unter 0163 4440392, per WhatsApp oder E-Mail. Sitz in Berlin, Beratung bundesweit.',
     ld: ['kontakt']
   },
   {
@@ -715,6 +730,92 @@ function faqEinsetzen(html, key) {
   return html.split('<!--FAQ-->').join(faqHtml(key));
 }
 
+/* ------------------------------------------------ Kurzanfrage / Kontakt
+ * Vorher schickte jede Themenseite ihre Besucher zum Anfragen auf die
+ * Startseite (/#funnel) – ein kompletter Seitenwechsel genau in dem Moment,
+ * in dem jemand anfragen will. Jetzt steht das Formular direkt auf der Seite.
+ *
+ * Eingesetzt an der Marke <!--KURZANFRAGE--> in src/site.html, VOR fixLinks
+ * (der Baustein enthaelt data-nav- und #datenschutz-Verweise). Versand ueber
+ * sendLead() in site.js, Block "Kurzanfrage & Kontaktformular".
+ * Pro Seite hoechstens EIN Baustein – die ids leiten sich vom Seitenschluessel ab.
+ */
+const KURZANFRAGE = {
+  pv:          { h: 'Passt Solar auf Ihr Dach?', p: 'Hinterlassen Sie Ihre Nummer. Wir rufen zurück und schätzen gemeinsam mit Ihnen ein, welche Anlagengröße sinnvoll ist.', thema: 'Photovoltaik' },
+  speicher:    { h: 'Welcher Speicher passt zu Ihrem Verbrauch?', p: 'Nennen Sie uns im Rückruf Ihren Jahresverbrauch, dann sagen wir Ihnen, welche Größe sich rechnet.', thema: 'Stromspeicher' },
+  wp:          { h: 'Passt eine Wärmepumpe in Ihr Haus?', p: 'Wir sagen es Ihnen ehrlich, auch wenn die Antwort „noch nicht" lautet. Dazu gehört ein erster Blick auf die KfW-Förderung.', thema: 'Wärmepumpe' },
+  kosten:      { h: 'Was kostet es bei Ihnen?', p: 'Sagen Sie uns kurz, worum es geht. Sie bekommen eine Einschätzung für Ihr Haus, kostenlos und unverbindlich.', thema: 'Photovoltaik' },
+  ref:         { h: 'Wird Ihr Haus das nächste Projekt?', p: 'Hinterlassen Sie Ihre Nummer, wir melden uns für ein erstes Gespräch.', thema: 'Photovoltaik' },
+  about:       { h: 'Lernen Sie uns kennen.', p: 'Hinterlassen Sie Ihre Nummer, wir melden uns persönlich bei Ihnen.', thema: 'Photovoltaik' },
+  ratgeber:    { h: 'Frage nicht dabei?', p: 'Stellen Sie sie uns direkt. Wir rufen zurück, ohne Verkaufsdruck.', thema: 'Sonstiges' },
+  'rat-pv':    { h: 'Rechnet es sich bei Ihnen?', p: 'Wir gehen die Zahlen für Ihr Haus mit Ihnen durch, am Telefon und kostenlos.', thema: 'Photovoltaik' },
+  'rat-wp':    { h: 'Geht es in Ihrem Altbau?', p: 'Wir schauen uns Heizung und Heizkörper mit Ihnen an und sagen Ihnen offen, was dafür nötig ist.', thema: 'Wärmepumpe' },
+  'rat-check': { h: 'Lieber jemanden draufschauen lassen?', p: 'Rückruf anfordern oder das Angebot direkt im Angebots-Check hochladen.', thema: 'Angebot prüfen lassen' },
+  berlin:      { h: 'Projekt in Berlin?', p: 'Hinterlassen Sie Ihre Nummer. Wir melden uns und klären mit Ihnen, was für Ihr Haus in Frage kommt.', thema: 'Photovoltaik' },
+  kontakt:     { h: 'Nachricht schreiben', p: 'Schreiben Sie uns kurz, worum es geht. Fotos oder ein Angebot als PDF schicken Sie am einfachsten per WhatsApp oder über den Angebots-Check.', thema: 'Sonstiges', nachricht: true, kontakt: true }
+};
+
+const KF_THEMEN = ['Photovoltaik', 'Stromspeicher', 'Wärmepumpe', 'Photovoltaik und Wärmepumpe', 'Angebot prüfen lassen', 'Bestehende Anlage', 'Sonstiges'];
+
+function kurzanfrageHtml(key) {
+  const c = KURZANFRAGE[key];
+  if (!c) return '';
+  const id = 'kf-' + key;
+  const optionen = KF_THEMEN.map(t =>
+    '<option' + (t === c.thema ? ' selected' : '') + '>' + t + '</option>').join('');
+  const nachricht = c.nachricht
+    ? `<div class="fld"><label for="${id}-msg">Ihre Nachricht <span class="req">*</span></label><textarea id="${id}-msg" name="nachricht" required rows="4" placeholder="z. B. Dachform, Heizung, ungefährer Verbrauch oder Ihre Frage"></textarea></div>`
+    : `<div class="fld"><label for="${id}-msg">Worum geht es? <span class="hint2">(optional)</span></label><textarea id="${id}-msg" name="nachricht" rows="2" placeholder="z. B. Einfamilienhaus, 4.000 kWh Verbrauch"></textarea></div>`;
+  return `
+  <section class="pad kf-band" id="rueckruf">
+    <div class="wrap kf-grid">
+      <div class="kf-copy">
+        <div class="eyebrow"><span class="dot"></span> ${c.kontakt ? 'Kontaktformular' : 'Kostenloser Rückruf'}</div>
+        <h2>${c.h}</h2>
+        <p>${c.p}</p>
+        <ul class="usp">
+          <li><svg class="ic"><use href="#i-check"/></svg> Kostenlos und unverbindlich</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Antwort in der Regel innerhalb eines Werktags</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Lieber direkt? <a href="tel:+491634440392">0163 4440392</a></li>
+        </ul>
+      </div>
+      <div class="fcard kf-card" id="${id}-card">
+        <form class="kf-form" id="${id}-form" data-quelle="${key}" data-typ="${c.kontakt ? 'Kontaktformular' : 'Rückrufwunsch'}">
+          <div class="fld"><label for="${id}-thema">Thema</label><select id="${id}-thema" name="thema">${optionen}</select></div>
+          <div class="grid2">
+            <div class="fld"><label for="${id}-name">Name <span class="req">*</span></label><input type="text" id="${id}-name" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></div>
+            <div class="fld"><label for="${id}-tel">Telefon ${c.kontakt ? '<span class="hint2">(optional)</span>' : '<span class="req">*</span>'}</label><input type="tel" id="${id}-tel" name="tel"${c.kontakt ? '' : ' required'} autocomplete="tel" placeholder="0170 1234567" minlength="6"></div>
+          </div>
+          <div class="grid2">
+            <div class="fld"><label for="${id}-plz">Postleitzahl <span class="req">*</span></label><input type="text" id="${id}-plz" name="plz" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="z. B. 13359"></div>
+            <div class="fld"><label for="${id}-mail">E-Mail ${c.kontakt ? '<span class="req">*</span>' : '<span class="hint2">(optional)</span>'}</label><input type="email" id="${id}-mail" name="email" autocomplete="email" placeholder="name@beispiel.de"${c.kontakt ? ' required' : ''}></div>
+          </div>
+          ${nachricht}
+          <input type="text" name="_honey" class="kf-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="consent">
+            <input type="checkbox" id="${id}-dsgvo" required>
+            <label for="${id}-dsgvo">Ich bin einverstanden, dass BHD mich zu meiner Anfrage kontaktiert (<a href="#datenschutz">Datenschutz</a>). Widerruf jederzeit möglich. <span class="req">*</span></label>
+          </div>
+          <button type="submit" class="btn" style="width:100%">${c.kontakt ? 'Nachricht senden' : 'Rückruf anfordern'}</button>
+          <div class="fnote"><svg class="ic"><use href="#i-lock"/></svg> SSL-verschlüsselt · kein Newsletter · kostenlos</div>
+        </form>
+        <div class="fdone" id="${id}-done" role="status">
+          <div class="check"><svg class="ic"><use href="#i-check"/></svg></div>
+          <h3>Danke, ist angekommen.</h3>
+          <p>Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+`;
+}
+
+function kurzanfrageEinsetzen(html, key) {
+  if (html.indexOf('<!--KURZANFRAGE-->') < 0) return html;
+  if (!KURZANFRAGE[key]) throw new Error('Marke <!--KURZANFRAGE--> auf Seite "' + key + '", aber kein Eintrag in KURZANFRAGE');
+  return html.split('<!--KURZANFRAGE-->').join(kurzanfrageHtml(key));
+}
+
 /* Liest die Fragen aus dem FERTIGEN sichtbaren HTML. Nur Container mit
  * data-faq zaehlen - der Waermepumpen-Rechner nutzt dieselbe Aufklapp-Optik
  * fuer Rechenwege ("Heizlast aus dem Verbrauch"), das sind keine Fragen und
@@ -769,7 +870,7 @@ function buildPage(page) {
    * FAQ-Abschnitt), DANACH fixLinks. Die eingesetzten Bausteine enthalten
    * selbst data-nav-Verweise - laeuft fixLinks vorher, bleiben deren Links
    * ohne Ziel. Genau das war beim FAQ-Knopf "Termin vereinbaren" passiert. */
-  const roh = faqEinsetzen(calUmschalten(VIEWS[page.key]), page.key);
+  const roh = kurzanfrageEinsetzen(faqEinsetzen(calUmschalten(VIEWS[page.key]), page.key), page.key);
 
   const view = webpPicture(fixLinks(roh)
     // Der Angebots-Check springt nach dem Upload auf seine eigene Seite zurueck.
@@ -940,6 +1041,7 @@ fs.writeFileSync(path.join(ROOT, 'llms.txt'),
 - [Stromspeicher](${SITE}${URL_OF.speicher}): sinnvolle Kapazität, nutzbare Kapazität, Zyklengarantie
 - [Wärmepumpe](${SITE}${URL_OF.wp}): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 80 %
 - [Kosten](${SITE}${URL_OF.kosten}): marktübliche Preise und Eigenanteil nach Förderung
+- [Photovoltaik und Wärmepumpe in Berlin](${SITE}${URL_OF.berlin}): Solargesetz Berlin, Zuschüsse aus SolarPLUS, Denkmalschutz, Stromnetz Berlin
 - [Angebots-Check](${SITE}${URL_OF.check}): kostenlose Prüfung eines vorliegenden Angebots, Rückmeldung in 24 Stunden
 - [Wärmepumpen-Rechner](${SITE}${URL_OF.rechner}): Heizlast, Gerätegröße, Jahresarbeitszahl und Förderung – ohne Anmeldung
 

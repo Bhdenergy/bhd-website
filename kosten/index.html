@@ -177,7 +177,7 @@
       "about": {
         "@id": "https://bhd-energie.de/#org"
       },
-      "dateModified": "2026-09-11"
+      "dateModified": "2026-09-14"
     },
     {
       "@type": "BreadcrumbList",
@@ -285,8 +285,8 @@
 }
 </script>
 <style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f6f5f1;color:#1b1a17}img{max-width:100%}</style>
-<link rel="preload" href="/assets/site.css?v=1854fbb6" as="style">
-<link rel="stylesheet" href="/assets/site.css?v=1854fbb6">
+<link rel="preload" href="/assets/site.css?v=8246ef9e" as="style">
+<link rel="stylesheet" href="/assets/site.css?v=8246ef9e">
 </head><body data-page="kosten" data-ga="G-NM7G327C1L">
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
@@ -341,6 +341,7 @@
           <a href="/rentabilitaetsrechner/" data-nav="rendite">Rentabilitätsrechner</a>
           <a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a>
           <a href="/kosten/" data-nav="kosten">Was zahle ich?</a>
+          <a href="/photovoltaik-waermepumpe-berlin/" data-nav="berlin">In Berlin</a>
         </div>
       </div>
       <a href="/angebots-check/" data-nav="check">Angebots-Check</a>
@@ -523,15 +524,48 @@
       </div>
     </div>
   </section>
-  <section class="pad cta-band">
-    <div class="wrap">
-      <div>
+
+  <section class="pad kf-band" id="rueckruf">
+    <div class="wrap kf-grid">
+      <div class="kf-copy">
+        <div class="eyebrow"><span class="dot"></span> Kostenloser Rückruf</div>
         <h2>Was kostet es bei Ihnen?</h2>
-        <p>Sagen Sie uns kurz, worum es geht. Sie bekommen eine ehrliche Einschätzung, kostenlos und unverbindlich.</p>
-        <a href="/#funnel" data-go-funnel class="btn">Kostenlose Einschätzung</a>
+        <p>Sagen Sie uns kurz, worum es geht. Sie bekommen eine Einschätzung für Ihr Haus, kostenlos und unverbindlich.</p>
+        <ul class="usp">
+          <li><svg class="ic"><use href="#i-check"/></svg> Kostenlos und unverbindlich</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Antwort in der Regel innerhalb eines Werktags</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Lieber direkt? <a href="tel:+491634440392">0163 4440392</a></li>
+        </ul>
+      </div>
+      <div class="fcard kf-card" id="kf-kosten-card">
+        <form class="kf-form" id="kf-kosten-form" data-quelle="kosten" data-typ="Rückrufwunsch">
+          <div class="fld"><label for="kf-kosten-thema">Thema</label><select id="kf-kosten-thema" name="thema"><option selected>Photovoltaik</option><option>Stromspeicher</option><option>Wärmepumpe</option><option>Photovoltaik und Wärmepumpe</option><option>Angebot prüfen lassen</option><option>Bestehende Anlage</option><option>Sonstiges</option></select></div>
+          <div class="grid2">
+            <div class="fld"><label for="kf-kosten-name">Name <span class="req">*</span></label><input type="text" id="kf-kosten-name" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></div>
+            <div class="fld"><label for="kf-kosten-tel">Telefon <span class="req">*</span></label><input type="tel" id="kf-kosten-tel" name="tel" required autocomplete="tel" placeholder="0170 1234567" minlength="6"></div>
+          </div>
+          <div class="grid2">
+            <div class="fld"><label for="kf-kosten-plz">Postleitzahl <span class="req">*</span></label><input type="text" id="kf-kosten-plz" name="plz" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="z. B. 13359"></div>
+            <div class="fld"><label for="kf-kosten-mail">E-Mail <span class="hint2">(optional)</span></label><input type="email" id="kf-kosten-mail" name="email" autocomplete="email" placeholder="name@beispiel.de"></div>
+          </div>
+          <div class="fld"><label for="kf-kosten-msg">Worum geht es? <span class="hint2">(optional)</span></label><textarea id="kf-kosten-msg" name="nachricht" rows="2" placeholder="z. B. Einfamilienhaus, 4.000 kWh Verbrauch"></textarea></div>
+          <input type="text" name="_honey" class="kf-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="consent">
+            <input type="checkbox" id="kf-kosten-dsgvo" required>
+            <label for="kf-kosten-dsgvo">Ich bin einverstanden, dass BHD mich zu meiner Anfrage kontaktiert (<a href="/datenschutz/">Datenschutz</a>). Widerruf jederzeit möglich. <span class="req">*</span></label>
+          </div>
+          <button type="submit" class="btn" style="width:100%">Rückruf anfordern</button>
+          <div class="fnote"><svg class="ic"><use href="#i-lock"/></svg> SSL-verschlüsselt · kein Newsletter · kostenlos</div>
+        </form>
+        <div class="fdone" id="kf-kosten-done" role="status">
+          <div class="check"><svg class="ic"><use href="#i-check"/></svg></div>
+          <h3>Danke, ist angekommen.</h3>
+          <p>Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.</p>
+        </div>
       </div>
     </div>
   </section>
+
 
 </div><!-- /view-kosten -->
 </main>
@@ -540,13 +574,13 @@
   <div class="wrap">
     <div class="foot-top">
       <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo" src="/assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></a>
-      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/rentabilitaetsrechner/" data-nav="rendite">Rentabilitätsrechner</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/bestandsanlagen-check/" data-nav="bestand">Bestandsanlagen-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/termin/" data-nav="termin">Termin</a><a href="/kontakt/" data-nav="kontakt">Kontakt</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
+      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/photovoltaik-waermepumpe-berlin/" data-nav="berlin">Solar &amp; Wärmepumpe Berlin</a><a href="/rentabilitaetsrechner/" data-nav="rendite">Rentabilitätsrechner</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/bestandsanlagen-check/" data-nav="bestand">Bestandsanlagen-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/termin/" data-nav="termin">Termin</a><a href="/kontakt/" data-nav="kontakt">Kontakt</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:info@bhd-energie.de" style="color:inherit">info@bhd-energie.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
 </footer>
 
-<script src="/assets/site.js?v=1854fbb6" defer></script>
+<script src="/assets/site.js?v=8246ef9e" defer></script>
 
 <div class="quickcontact" aria-label="Schnellkontakt">
   <a class="qc qc-phone" href="tel:+491634440392" aria-label="Anrufen unter 0163 4440392">

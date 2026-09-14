@@ -514,6 +514,17 @@
 
   .cta-band{text-align:center;background:var(--bg-soft);border-top:1px solid var(--line)}
   .cta-band p{color:var(--ink-2);margin:0 0 30px;font-size:1.12rem}
+  /* Kurzanfrage/Kontaktformular am Seitenende (Markup aus build.js) */
+  .kf-band{background:var(--bg-soft);border-top:1px solid var(--line)}
+  .kf-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:center}
+  .kf-copy h2{margin:10px 0 14px}
+  .kf-copy>p{color:var(--ink-2);font-size:1.08rem;margin:0 0 22px;max-width:46ch}
+  .kf-copy .usp{margin:0;gap:11px}
+  .kf-copy .usp a{color:var(--green-deep);font-weight:600;text-decoration:underline}
+  .kf-card{padding:clamp(22px,3.4vw,34px)}
+  .kf-card textarea{min-height:0}
+  .kf-honey{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  @media(max-width:860px){.kf-grid{grid-template-columns:minmax(0,1fr)}}
 
   /* --- Swipe-Slider --- */
   .swipe-wrap{position:relative}
@@ -909,6 +920,12 @@
   .artikel p{margin:0 0 16px;color:var(--ink-2);font-size:1.06rem;line-height:1.68}
   .artikel p b{color:var(--ink);font-weight:600}
   .artikel .usp{margin:20px 0 24px}
+  .artikel ul.liste{margin:0 0 20px;padding-left:1.2em;color:var(--ink-2);font-size:1.06rem;line-height:1.65}
+  .artikel ul.liste li{margin-bottom:10px}
+  .artikel ul.liste b{color:var(--ink);font-weight:600}
+  .artikel .quellen{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);font-size:.9rem}
+  .artikel .quellen p,.artikel .quellen li{font-size:.9rem;line-height:1.55}
+  .artikel .quellen a{color:var(--green-deep);text-decoration:underline;overflow-wrap:anywhere}
   .artikel .ktable{margin:24px auto}
   .artikel .kt-note{margin:14px auto 26px;text-align:left}
   .artikel-cta{margin-top:48px;padding:28px 30px;border-radius:20px;background:var(--bg-soft);
@@ -1313,6 +1330,7 @@
           <a data-nav="rendite">Rentabilitätsrechner</a>
           <a data-nav="rechner">Wärmepumpen-Rechner</a>
           <a data-nav="kosten">Was zahle ich?</a>
+          <a data-nav="berlin">In Berlin</a>
         </div>
       </div>
       <a data-nav="check">Angebots-Check</a>
@@ -1369,7 +1387,7 @@
     <div class="hero-copy">
       <div class="eyebrow rise in"><span class="dot"></span> Solar &amp; Wärmepumpe · staatlich gefördert 2026</div>
       <h1 class="rise in d1">Sonne rein. <em>Stromrechnung raus.</em></h1>
-      <p class="lede rise in d1">Photovoltaik und Wärmepumpe für Ihr Zuhause – sauber, unabhängig und gefördert. Fragen Sie in unter 2&nbsp;Minuten unverbindlich an.</p>
+      <p class="lede rise in d1">Photovoltaik, Stromspeicher und Wärmepumpe für Ihr Zuhause. Unabhängig beraten und gefördert, von Berlin aus bundesweit. Fragen Sie in unter 2&nbsp;Minuten unverbindlich an.</p>
       <div class="hero-cta rise in d2">
         <a href="#funnel" class="btn">Angebot sichern</a>
         <a data-nav="ref" class="btn btn-ghost">Referenzen ansehen</a>
@@ -2186,15 +2204,7 @@
     </div>
   </section>
 
-  <section class="pad cta-band" style="padding-top:0;border-top:0">
-    <div class="wrap">
-      <div>
-        <h2>Wird Ihr Haus das nächste Referenzprojekt?</h2>
-        <p>Kostenlos, unverbindlich und in unter 2 Minuten angefragt.</p>
-        <a href="#funnel" data-go-funnel class="btn">Angebot sichern</a>
-      </div>
-    </div>
-  </section>
+<!--KURZANFRAGE-->
 
 <!--FAQ-->
 </div><!-- /view-ref -->
@@ -2295,6 +2305,7 @@
       <div class="hero-cta">
         <a href="tel:+491634440392" class="btn"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
         <a href="https://wa.me/491634440392?text=Hallo%20BHD%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung." class="btn btn-ghost" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> WhatsApp</a>
+        <a href="#rueckruf" class="btn btn-ghost"><svg class="ic"><use href="#i-mail"/></svg> Kontaktformular</a>
       </div>
     </div>
   </header>
@@ -2335,7 +2346,7 @@
           <span class="kk-ic"><svg class="ic"><use href="#i-pin"/></svg></span>
           <h2>Anschrift</h2>
           <p class="kk-big">Prinzenallee 44b<br>13359 Berlin</p>
-          <p>Sitz in Berlin, beraten wird bundesweit. <a href="https://www.openstreetmap.org/?mlat=52.55896&amp;mlon=13.38854#map=17/52.55896/13.38854" target="_blank" rel="noopener">Auf der Karte ansehen</a> – wir binden bewusst keine Google-Karte ein, die Daten an Google senden würde.</p>
+          <p>Sitz in Berlin, beraten wird bundesweit. Was für Häuser in Berlin gilt, steht auf der Seite <a data-nav="berlin">Photovoltaik und Wärmepumpe in Berlin</a>. <a href="https://www.openstreetmap.org/?mlat=52.55896&amp;mlon=13.38854#map=17/52.55896/13.38854" target="_blank" rel="noopener">Auf der Karte ansehen</a> – wir binden bewusst keine Google-Karte ein, die Daten an Google senden würde.</p>
         </div>
 
         <div class="kk">
@@ -2347,10 +2358,11 @@
 
       </div>
 
-      <p class="brands-note">Sie möchten lieber schriftlich anfragen und Ihre Eckdaten gleich mitschicken? Dann geht es über das <a data-nav="ask">Anfrageformular</a> schneller. Liegt Ihnen bereits ein Angebot vor, prüfen wir es im <a data-nav="check">Angebots-Check</a> kostenlos.</p>
+      <p class="brands-note">Liegt Ihnen bereits ein Angebot vor, prüfen wir es im <a data-nav="check">Angebots-Check</a> kostenlos. Einen festen Gesprächstermin können Sie über die <a data-nav="termin">Terminseite</a> anfragen.</p>
     </div>
   </section>
 
+<!--KURZANFRAGE-->
 <!--FAQ-->
   <section class="pad cta-band">
     <div class="wrap">
@@ -2512,15 +2524,7 @@
   </section>
 
 <!--FAQ-->
-  <section class="pad cta-band">
-    <div class="wrap">
-      <div>
-        <h2>Lernen Sie uns kennen.</h2>
-        <p>Stellen Sie unverbindlich Ihre Anfrage – wir melden uns persönlich bei Ihnen.</p>
-        <a data-nav="ask" class="btn">Anfrage stellen</a>
-      </div>
-    </div>
-  </section>
+<!--KURZANFRAGE-->
 
 </div><!-- /view-about -->
 
@@ -2691,15 +2695,7 @@
     </div>
   </section>
 
-  <section class="pad cta-band">
-    <div class="wrap">
-      <div>
-        <h2>Passt Solar auf Ihr Dach?</h2>
-        <p>Kostenlose Einschätzung in unter 2 Minuten angefragt.</p>
-        <a href="#funnel" data-go-funnel class="btn">Angebot sichern</a>
-      </div>
-    </div>
-  </section>
+<!--KURZANFRAGE-->
 
 </div><!-- /view-pv -->
 
@@ -2806,15 +2802,7 @@
     </div>
   </section>
 
-  <section class="pad cta-band">
-    <div class="wrap">
-      <div>
-        <h2>Welcher Speicher passt zu Ihrem Verbrauch?</h2>
-        <p>Sagen Sie uns Ihren Jahresverbrauch, wir sagen Ihnen die sinnvolle Größe.</p>
-        <a href="#funnel" data-go-funnel class="btn">Jetzt anfragen</a>
-      </div>
-    </div>
-  </section>
+<!--KURZANFRAGE-->
 
 </div><!-- /view-speicher -->
 
@@ -2959,15 +2947,7 @@
     </div>
   </section>
 
-  <section class="pad cta-band">
-    <div class="wrap">
-      <div>
-        <h2>Passt eine Wärmepumpe in Ihr Haus?</h2>
-        <p>Wir sagen es Ihnen ehrlich – auch dann, wenn die Antwort „noch nicht" lautet.</p>
-        <a href="#funnel" data-go-funnel class="btn">Kostenlos anfragen</a>
-      </div>
-    </div>
-  </section>
+<!--KURZANFRAGE-->
 
 </div><!-- /view-wp -->
 
@@ -3010,15 +2990,7 @@
   </section>
 
 <!--FAQ-->
-  <section class="pad cta-band">
-    <div class="wrap">
-      <div>
-        <h2>Frage nicht dabei?</h2>
-        <p>Kostenlos, unverbindlich und ohne Verkaufsdruck.</p>
-        <a href="tel:+491634440392" class="btn">0163 4440392</a>
-      </div>
-    </div>
-  </section>
+<!--KURZANFRAGE-->
 
 </div><!-- /view-ratgeber -->
 
@@ -3063,6 +3035,7 @@
     </div>
   </div></div></section>
 <!--FAQ-->
+<!--KURZANFRAGE-->
 </div><!-- /view-rat-pv -->
 
 <!-- ========================= ANSICHT: RATGEBER – WP im Altbau ========================= -->
@@ -3108,6 +3081,7 @@
     </div>
   </div></div></section>
 <!--FAQ-->
+<!--KURZANFRAGE-->
 </div><!-- /view-rat-wp -->
 
 <!-- ========================= ANSICHT: RATGEBER – Angebot prüfen ========================= -->
@@ -3154,6 +3128,7 @@
     </div>
   </div></div></section>
 <!--FAQ-->
+<!--KURZANFRAGE-->
 </div><!-- /view-rat-check -->
 
 <!-- ========================= ANSICHT: KOSTEN ========================= -->
@@ -3282,15 +3257,7 @@
   </section>
 
 <!--FAQ-->
-  <section class="pad cta-band">
-    <div class="wrap">
-      <div>
-        <h2>Was kostet es bei Ihnen?</h2>
-        <p>Sagen Sie uns kurz, worum es geht. Sie bekommen eine ehrliche Einschätzung, kostenlos und unverbindlich.</p>
-        <a href="#funnel" data-go-funnel class="btn">Kostenlose Einschätzung</a>
-      </div>
-    </div>
-  </section>
+<!--KURZANFRAGE-->
 
 </div><!-- /view-kosten -->
 
@@ -4704,6 +4671,90 @@
 <!--FAQ-->
 </div><!-- /view-termin -->
 
+<!-- ========================= ANSICHT: BERLIN (Standortseite) ========================= -->
+<!-- Zahlen am 14.09.2026 gegen amtliche Quellen geprueft, siehe Quellenliste unten.
+     Wieder anfassen: SolarPLUS-Richtlinie endet 31.12.2026, KfW-Klimabonus sinkt 01.02.2027,
+     EEG-Saetze gelten fuer Inbetriebnahme bis 31.12.2026. -->
+<div id="view-berlin" hidden>
+
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Photovoltaik &amp; Wärmepumpe in Berlin</span></div>
+      <div class="eyebrow"><span class="dot"></span> Unser Sitz: Berlin-Gesundbrunnen</div>
+      <h1>Photovoltaik und Wärmepumpe <em>in Berlin.</em></h1>
+      <p class="lede">In Berlin gelten ein paar Regeln, die es anderswo nicht gibt: die Solarpflicht bei Dachsanierungen, das Landesprogramm SolarPLUS und viele Häuser unter Denkmalschutz. Hier steht, was davon Ihr Haus betrifft.</p>
+      <div class="hero-cta">
+        <a href="#rueckruf" class="btn">Rückruf anfordern</a>
+        <a data-nav="check" class="btn btn-ghost">Angebot prüfen lassen</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Auf einen Blick</div>
+        <h2>Vier Punkte, die in Berlin dazukommen.</h2>
+      </div>
+      <div class="vgrid">
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-sun"/></svg></div><h3>Solarpflicht</h3><p>Bei Neubau und grundlegender Dachsanierung muss eine Solaranlage aufs Dach. Beim bestehenden Einfamilienhaus reichen dafür schon 2 kW.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-battery"/></svg></div><h3>SolarPLUS</h3><p>Das Land gibt Zuschüsse für den Stromspeicher (bis 4.750 €), den Zählerschrank (750 €) und denkmalgerechte Anlagen (bis 5.700 €).</p></div>
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-house"/></svg></div><h3>Denkmalschutz</h3><p>Auf den meisten Baudenkmalen ist Solar möglich. Vorher braucht es aber eine Genehmigung vom Bezirksamt.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-wave"/></svg></div><h3>Wärmepumpe</h3><p>Ein eigenes Berliner Programm gibt es derzeit nicht. Der KfW-Zuschuss des Bundes gilt aber auch hier.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0"><div class="wrap"><div class="artikel">
+    <h2>Solargesetz Berlin: Wann die Pflicht greift</h2>
+    <p>Das Berliner Solargesetz betrifft Gebäude mit mehr als 50 m² Nutzfläche in zwei Fällen: wenn mit dem Bau nach dem 31. Dezember 2022 begonnen wurde und wenn das Dach nach diesem Datum wesentlich umgebaut wird. Wesentlich heißt, dass die wasserführende Schicht bei einem Dachausbau, einer Aufstockung oder einer grundständigen Sanierung erheblich erneuert wird. Nach Auskunft des Senats kommt es darauf an, ob mehr als die Hälfte der Dachfläche betroffen ist.</p>
+    <p>Grundsätzlich müssen 30 Prozent der Dachfläche mit Solarmodulen belegt werden. Für bestehende Wohnhäuser gibt es eine Erleichterung: Bei höchstens zwei Wohnungen ist die Pflicht schon mit <b>2 kW installierter Leistung</b> erfüllt. Das ist die Untergrenze. Wirtschaftlich sinnvoll ist fast immer eine größere Anlage. Mit Ihren eigenen Zahlen prüfen können Sie das im <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a>.</p>
+    <p>Die Pflicht entfällt, wenn das Dach nur nach Norden zeigt, eine Anlage technisch nicht möglich ist oder anderen Vorschriften widerspricht. Eine Solarthermieanlage auf dem Dach erfüllt die Pflicht ebenfalls. Bei Ein- und Zweifamilienhäusern sind Bußgelder bis 5.000 € möglich.</p>
+    <p><b>Unser Rat:</b> Steht eine Dachsanierung an, planen Sie die Solaranlage gleich mit. Das Gerüst steht dann ohnehin, und die Module müssen später nicht für Arbeiten am Dach wieder herunter.</p>
+
+    <h2>SolarPLUS: Zuschüsse vom Land Berlin</h2>
+    <p>Das Landesprogramm SolarPLUS betreut das IBB Business Team im Auftrag der Senatsverwaltung. Eigentümer von Ein- und Zweifamilienhäusern und Reihenhäusern bekommen Pauschalen, die nicht zurückgezahlt werden müssen:</p>
+    <ul class="liste">
+      <li><b>Stromspeicher:</b> 500 € ab 2 kWp Anlagenleistung, gestaffelt bis 4.750 € ab 19 kWp. Gefördert wird der Speicher nur zusammen mit einer neuen Solaranlage oder bei einem Antrag bis drei Monate nach deren Inbetriebnahme. Der Hersteller muss eine Zeitwertersatzgarantie über zehn Jahre geben.</li>
+      <li><b>Zählerschrank:</b> 750 € pauschal bei mindestens 1.160 € Kosten, wenn der vorhandene Schrank vor 2015 in Betrieb ging, nicht den Regeln entspricht oder die Technik nicht aufnehmen kann.</li>
+      <li><b>Denkmalgerechte Photovoltaik:</b> 600 € bis 5.700 €, wenn die denkmalrechtliche Genehmigung vorliegt.</li>
+    </ul>
+    <p>Wichtig ist der Zeitpunkt. Als Beginn des Vorhabens zählt schon der unterschriebene Auftrag oder eine Anzahlung. Wer vorher beauftragt, trägt das Risiko, keinen Zuschuss zu bekommen. Stellen Sie den Antrag deshalb <b>vor der Auftragserteilung</b>. Die aktuelle Richtlinie gilt bis zum 31. Dezember 2026, und gefördert wird nur, solange Mittel vorhanden sind. Dieselben Kosten dürfen nicht zusätzlich über ein anderes Programm gefördert werden.</p>
+
+    <h2>Denkmalschutz: meistens möglich, nie ohne Genehmigung</h2>
+    <p>Nach dem Solarleitfaden des Landesdenkmalamts sind Solaranlagen auf einem Großteil der Berliner Baudenkmale grundsätzlich möglich. Für jede Anlage auf oder an einem Denkmal muss aber eine Genehmigung beantragt werden, die im Einzelfall geprüft wird. Zuständig ist fast immer das Bezirksamt als untere Denkmalschutzbehörde. Der Antrag lässt sich auch online über service.berlin.de stellen. Beauftragen Sie den Fachbetrieb erst, wenn die Genehmigung vorliegt.</p>
+
+    <h2>Anmeldung bei Stromnetz Berlin</h2>
+    <p>Netzbetreiber in Berlin ist die Stromnetz Berlin GmbH. Die Solaranlage meldet in der Regel der ausführende Betrieb über deren Kundenportal an. Zusätzlich muss die Anlage im Marktstammdatenregister der Bundesnetzagentur eingetragen werden. Beides sollte als Leistung im Angebot stehen. Was sonst noch hineingehört, steht in unserer <a class="ilink" data-nav="rat-check">Checkliste zum Angebot</a>.</p>
+    <p>Für Anlagen bis 10 kWp, die zwischen dem 1. August und dem 31. Dezember 2026 in Betrieb gehen, beträgt die Einspeisevergütung <b>7,70 Cent je kWh</b> bei Teileinspeisung und 12,22 Cent bei Volleinspeisung. Mehr lohnt sich der Strom, den Sie selbst verbrauchen. Warum, erklären wir auf der Seite <a class="ilink" data-nav="pv">Photovoltaik</a>.</p>
+
+    <h2>Wärmepumpe in Berlin: Bundesförderung statt Landesprogramm</h2>
+    <p>Ein eigenes Landesprogramm für den Heizungstausch gibt es in Berlin derzeit nicht. Das frühere Programm Effiziente GebäudePLUS nimmt seit Dezember 2023 keine Anträge mehr an. Für Berliner Hausbesitzer gilt deshalb der Zuschuss der KfW (Programm 458):</p>
+    <ul class="liste">
+      <li><b>30 % Grundförderung.</b></li>
+      <li><b>16 % Klimageschwindigkeitsbonus</b> beim Austausch einer Öl-, Kohle-, Gasetagen- oder Nachtspeicherheizung und einer Gas- oder Biomasseheizung, die mindestens 20 Jahre alt ist. Der Bonus sinkt am 1. Februar 2027 auf 12 %.</li>
+      <li><b>Einkommensbonus</b> von 40, 30 oder 10 % bei einem zu versteuernden Haushaltseinkommen bis 30.000, 40.000 oder 50.000 €. Lebt ein Kind unter 18 im Haushalt, liegen die Grenzen 10.000 € höher.</li>
+    </ul>
+    <p>Zusammen sind höchstens 70 % möglich, bei niedrigem Einkommen bis 80 %. Gefördert werden Kosten bis 28.000 € für die erste Wohneinheit. Die Boni gibt es nur für selbst bewohnte Häuser. Was bei Ihnen zusammenkommt, zeigt der <a class="ilink" data-nav="rechner">Wärmepumpen-Rechner</a>.</p>
+    <p>Viele Berliner Reihen- und Doppelhäuser stehen dicht beieinander. Planen Sie den Aufstellort des Außengeräts deshalb früh und mit Blick auf die Nachbarn. Worauf es technisch ankommt, steht auf der Seite <a class="ilink" data-nav="wp">Wärmepumpe</a>.</p>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 14. September 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>Solargesetz Berlin vom 5. Juli 2021: <a href="https://www.berlin.de/sen/energie/erneuerbare-energien/solargesetz-berlin/20210715_solargesetz-berlin.pdf" target="_blank" rel="noopener">berlin.de/sen/energie</a></li>
+        <li>Förderrichtlinie SolarPLUS 2026: <a href="https://www.ibb-business-team.de/foerderangebote/solarplus/solarplus-s/" target="_blank" rel="noopener">ibb-business-team.de</a></li>
+        <li>Solarleitfaden des Landesdenkmalamts: <a href="https://www.berlin.de/landesdenkmalamt/aktivitaeten/denkmal-und-klimaschutz/" target="_blank" rel="noopener">berlin.de/landesdenkmalamt</a></li>
+        <li>Anmeldung von Solaranlagen: <a href="https://www.stromnetz.berlin/einspeisen/solaranlage-bis-100-kwp/" target="_blank" rel="noopener">stromnetz.berlin</a></li>
+        <li>EEG-Vergütungssätze: <a href="https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/ErneuerbareEnergien/EEG_Foerderung/start.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
+        <li>Merkblatt KfW 458, Stand 07/2026: <a href="https://www.kfw.de/PDF/Download-Center/F%C3%B6rderprogramme-(Inlandsf%C3%B6rderung)/PDF-Dokumente/6000005131_M_458.pdf" target="_blank" rel="noopener">kfw.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+<!--FAQ-->
+<!--KURZANFRAGE-->
+</div><!-- /view-berlin -->
+
 <!-- ========================= ANSICHT: IMPRESSUM ========================= -->
 <div id="view-impressum" hidden>
   <header class="ref-hero">
@@ -4789,7 +4840,7 @@
         <p>Beim Besuch der Website werden automatisch Informationen erfasst, die Ihr Browser übermittelt (z. B. Browsertyp, Betriebssystem, Referrer-URL, Uhrzeit des Zugriffs, IP-Adresse). Diese Daten dienen der technischen Bereitstellung und Sicherheit und werden nicht mit anderen Datenquellen zusammengeführt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
 
         <h2>4. Kontaktaufnahme &amp; Anfrageformulare</h2>
-        <p>Wenn Sie uns über unsere Formulare (Angebotsanfrage, Partneranfrage) oder per E-Mail kontaktieren, verarbeiten wir die von Ihnen angegebenen Daten (z. B. Name, Anschrift/PLZ, Telefonnummer, E-Mail-Adresse sowie Ihre Angaben zum Vorhaben), um Ihre Anfrage zu bearbeiten und Ihnen ein Angebot zu erstellen bzw. Sie an einen passenden Fachbetrieb zu vermitteln.</p>
+        <p>Wenn Sie uns über unsere Formulare (Angebotsanfrage, Rückrufwunsch, Kontaktformular, Angebots-Check, Bestandsanlagen-Check, Terminanfrage, Partneranfrage) oder per E-Mail kontaktieren, verarbeiten wir die von Ihnen angegebenen Daten (z. B. Name, Anschrift/PLZ, Telefonnummer, E-Mail-Adresse sowie Ihre Angaben zum Vorhaben), um Ihre Anfrage zu bearbeiten und Ihnen ein Angebot zu erstellen bzw. Sie an einen passenden Fachbetrieb zu vermitteln.</p>
         <p>Zur technischen Übermittlung der Formulardaten per E-Mail nutzen wir den Dienst FormSubmit (formsubmit.co). Dabei werden die eingegebenen Formulardaten an dessen Server übertragen und an unsere E-Mail-Adresse weitergeleitet. Rechtsgrundlage ist Ihre Einwilligung sowie die Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und b DSGVO). Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</p>
 <!--CAL:AN-->
         <h2>4a. Terminbuchung über Cal.com</h2>
@@ -4847,7 +4898,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></div>
-      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="rendite">Rentabilitätsrechner</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="bestand">Bestandsanlagen-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="termin">Termin</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
+      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="berlin">Solar &amp; Wärmepumpe Berlin</a><a data-nav="rendite">Rentabilitätsrechner</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="bestand">Bestandsanlagen-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="termin">Termin</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:service-bhd@outlook.de" style="color:inherit">service-bhd@outlook.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
@@ -5286,6 +5337,35 @@
     document.getElementById('b2b-form').style.display='none';
     done.classList.add('show');
     document.getElementById('b2b-card').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  })();
+
+  // ===== Kurzanfrage & Kontaktformular – Themenseiten und /kontakt/ =====
+  // Markup kommt aus build.js (kurzanfrageHtml). Pflichtfelder prueft der
+  // Browser selbst (required/pattern), deshalb laeuft alles ueber "submit".
+  (function(){
+  document.querySelectorAll('form.kf-form').forEach(function(form){
+    const plz=form.querySelector('input[name="plz"]');
+    if(plz)plz.addEventListener('input',()=>{plz.value=plz.value.replace(/\D/g,'')});
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      const card=form.parentElement, done=card.querySelector('.fdone');
+      const feld=n=>{const el=form.querySelector('[name="'+n+'"]');return el?el.value.trim():''};
+      // Honeypot: Bots fuellen das unsichtbare Feld – still "Danke" zeigen, nichts senden
+      if(feld('_honey')){form.style.display='none';done.classList.add('show');return;}
+      const lead={typ:form.dataset.typ,seite:location.pathname,thema:feld('thema'),
+        name:feld('name'),tel:feld('tel'),plz:feld('plz'),nachricht:feld('nachricht')};
+      // Feld "email" setzt bei FormSubmit die Antwortadresse – nur senden, wenn angegeben
+      if(feld('email'))lead.email=feld('email');
+      const btn=form.querySelector('button[type="submit"]');
+      if(btn)btn.disabled=true;
+      sendLead(lead).then(function(sent){
+        if(sent)trackLead('kurzanfrage-'+form.dataset.quelle); else leadFallback(done);
+      });
+      form.style.display='none';
+      done.classList.add('show');
+      card.scrollIntoView({behavior:'smooth',block:'center'});
+    });
   });
   })();
 

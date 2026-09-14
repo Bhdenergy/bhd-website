@@ -14,6 +14,7 @@
 - [Stromspeicher](https://bhd-energie.de/stromspeicher/): sinnvolle Kapazität, nutzbare Kapazität, Zyklengarantie
 - [Wärmepumpe](https://bhd-energie.de/waermepumpe/): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 80 %
 - [Kosten](https://bhd-energie.de/kosten/): marktübliche Preise und Eigenanteil nach Förderung
+- [Photovoltaik und Wärmepumpe in Berlin](https://bhd-energie.de/photovoltaik-waermepumpe-berlin/): Solargesetz Berlin, Zuschüsse aus SolarPLUS, Denkmalschutz, Stromnetz Berlin
 - [Angebots-Check](https://bhd-energie.de/angebots-check/): kostenlose Prüfung eines vorliegenden Angebots, Rückmeldung in 24 Stunden
 - [Wärmepumpen-Rechner](https://bhd-energie.de/waermepumpen-rechner/): Heizlast, Gerätegröße, Jahresarbeitszahl und Förderung – ohne Anmeldung
 

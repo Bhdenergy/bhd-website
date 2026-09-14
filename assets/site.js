@@ -342,6 +342,35 @@
   });
   })();
 
+  // ===== Kurzanfrage & Kontaktformular – Themenseiten und /kontakt/ =====
+  // Markup kommt aus build.js (kurzanfrageHtml). Pflichtfelder prueft der
+  // Browser selbst (required/pattern), deshalb laeuft alles ueber "submit".
+  (function(){
+  document.querySelectorAll('form.kf-form').forEach(function(form){
+    const plz=form.querySelector('input[name="plz"]');
+    if(plz)plz.addEventListener('input',()=>{plz.value=plz.value.replace(/\D/g,'')});
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      const card=form.parentElement, done=card.querySelector('.fdone');
+      const feld=n=>{const el=form.querySelector('[name="'+n+'"]');return el?el.value.trim():''};
+      // Honeypot: Bots fuellen das unsichtbare Feld – still "Danke" zeigen, nichts senden
+      if(feld('_honey')){form.style.display='none';done.classList.add('show');return;}
+      const lead={typ:form.dataset.typ,seite:location.pathname,thema:feld('thema'),
+        name:feld('name'),tel:feld('tel'),plz:feld('plz'),nachricht:feld('nachricht')};
+      // Feld "email" setzt bei FormSubmit die Antwortadresse – nur senden, wenn angegeben
+      if(feld('email'))lead.email=feld('email');
+      const btn=form.querySelector('button[type="submit"]');
+      if(btn)btn.disabled=true;
+      sendLead(lead).then(function(sent){
+        if(sent)trackLead('kurzanfrage-'+form.dataset.quelle); else leadFallback(done);
+      });
+      form.style.display='none';
+      done.classList.add('show');
+      card.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+  })();
+
   // ===== Wärmepumpen-Rechner – nur auf /waermepumpen-rechner/ =====
   (function(){
   const root=document.getElementById('wp-rechner');

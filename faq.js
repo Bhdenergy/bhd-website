@@ -256,6 +256,27 @@ const FAQ = {
     ]
   },
 
+  /* Standortseite Berlin – Stand 14.09.2026, amtlich geprueft (Quellen auf der Seite). */
+  berlin: {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen aus Berlin',
+    intro: 'Stand September 2026. Förderprogramme ändern sich, vor einem Auftrag deshalb immer den aktuellen Stand prüfen.',
+    items: [
+      F('Gilt die Solarpflicht in Berlin auch für mein bestehendes Haus?',
+        'Nur, wenn das Dach nach dem 31. Dezember 2022 wesentlich umgebaut wird, also bei Dachausbau, Aufstockung oder einer grundständigen Sanierung, bei der die wasserführende Schicht erheblich erneuert wird. Solange Sie am Dach nichts Grundlegendes machen, besteht für ein bestehendes Haus keine Pflicht.'),
+      F('Wie groß muss die Solaranlage nach dem Berliner Solargesetz sein?',
+        'Grundsätzlich müssen 30 Prozent der Dachfläche belegt werden. Bei bestehenden Wohnhäusern mit höchstens zwei Wohnungen ist die Pflicht schon mit 2 kW installierter Leistung erfüllt. Eine Solarthermieanlage auf dem Dach zählt ebenfalls.'),
+      F('Welchen Zuschuss gibt es in Berlin für einen Stromspeicher?',
+        'Über das Landesprogramm SolarPLUS gibt es für Ein- und Zweifamilienhäuser eine Pauschale von 500 € bis 4.750 €, gestaffelt nach der Leistung der Solaranlage. Voraussetzung ist unter anderem, dass der Speicher zusammen mit einer neuen Anlage installiert wird oder der Antrag bis drei Monate nach deren Inbetriebnahme gestellt wird.'),
+      F('Muss ich den SolarPLUS-Antrag vor dem Auftrag stellen?',
+        'Das ist dringend zu empfehlen. Als Beginn des Vorhabens zählt schon der unterschriebene Auftrag oder eine Anzahlung. Wer vor dem Antrag beauftragt, kann daraus keinen Anspruch auf den Zuschuss ableiten und trägt das Risiko selbst.'),
+      F('Gibt es in Berlin eine eigene Förderung für Wärmepumpen?',
+        'Derzeit nicht. Das frühere Landesprogramm Effiziente GebäudePLUS nimmt seit Dezember 2023 keine Anträge mehr an. Es gilt der Zuschuss der KfW aus dem Programm 458: 30 Prozent Grundförderung plus mögliche Boni, zusammen höchstens 70 Prozent, bei niedrigem Einkommen bis 80 Prozent.'),
+      F('Darf ich auf einem denkmalgeschützten Haus in Berlin eine Solaranlage bauen?',
+        'Auf den meisten Berliner Baudenkmalen ist das nach Einschätzung des Landesdenkmalamts grundsätzlich möglich. Sie brauchen aber immer eine Genehmigung, meist vom Bezirksamt. Den Fachbetrieb sollten Sie erst beauftragen, wenn sie vorliegt. Für denkmalgerechte Anlagen gibt es aus SolarPLUS bis zu 5.700 €.')
+    ]
+  },
+
   'rat-check': {
     kicker: 'Kurz beantwortet',
     titel: 'Häufige Fragen dazu',

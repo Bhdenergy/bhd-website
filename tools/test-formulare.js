@@ -259,6 +259,55 @@ async function rechnerFormular(browser) {
   await page.close();
 }
 
+/* Kurzanfrage (Rueckruf) auf den Themenseiten und Kontaktformular auf
+ * /kontakt/. Markup kommt aus build.js, Versand ueber sendLead(). Geprueft
+ * wird auf JEDER Seite: leeres Absenden sendet nichts (Browser-Pruefung),
+ * korrekt ausgefuellt geht genau eine Anfrage raus, Danke-Meldung erscheint. */
+const KF_SEITEN = ['/photovoltaik/', '/stromspeicher/', '/waermepumpe/', '/kosten/', '/referenzen/',
+  '/ueber-uns/', '/ratgeber/', '/ratgeber/photovoltaik-lohnt-sich/', '/ratgeber/waermepumpe-altbau/',
+  '/ratgeber/angebot-pruefen/', '/photovoltaik-waermepumpe-berlin/', '/kontakt/'];
+
+async function kurzanfrage(browser, pfad) {
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 1000 });
+  const gesendet = [];
+  await abfangen(page, gesendet);
+  await page.goto(BASIS + pfad, { waitUntil: 'networkidle2' });
+  /* Sanftes Scrollen der Seite aus: page.click() scrollt zum Element und
+   * klickt sofort – waehrend der Animation traf der Klick sonst daneben. */
+  await page.addStyleTag({ content: 'html{scroll-behavior:auto!important}' });
+  const form = await page.$('form.kf-form');
+  if (!form) { pruefe(false, pfad + ': Formular vorhanden'); await page.close(); return; }
+
+  /* 1. Leer absenden: der Browser muss blockieren. */
+  await page.$eval('form.kf-form button[type=submit]', b => b.click());
+  await schlaf(400);
+  pruefe(gesendet.length === 0, pfad + ': leeres Formular sendet nichts');
+
+  /* 2. Wie ein Mensch tippen und absenden. */
+  const id = await page.$eval('form.kf-form', f => f.id.replace(/-form$/, ''));
+  await page.type('#' + id + '-name', 'Test Testmann');
+  await page.type('#' + id + '-tel', '0170 1234567');
+  await page.type('#' + id + '-plz', '13359');
+  await page.type('#' + id + '-mail', 'test@example.org');
+  if (await page.$('#' + id + '-msg[required]')) await page.type('#' + id + '-msg', 'Testnachricht');
+  await page.click('#' + id + '-dsgvo');
+  await page.click('#' + id + '-form button[type=submit]');
+  await schlaf(1200);
+
+  pruefe(gesendet.length === 1, pfad + ': genau eine Anfrage (war: ' + gesendet.length + ')');
+  if (gesendet.length) {
+    const b = decodeURIComponent(gesendet[0].body.replace(/\+/g, ' '));
+    pruefe(b.includes('Test Testmann') && b.includes('13359') && b.includes('0170 1234567') && b.includes('email=test@example.org'),
+      pfad + ': Name, PLZ, Telefon, E-Mail uebertragen');
+    pruefe(/thema=[^&]+/.test(b), pfad + ': Thema uebertragen');
+    pruefe(gesendet[0].url.includes('info@bhd-energie.de'), pfad + ': Empfaenger info@bhd-energie.de');
+  }
+  const dank = await page.$eval('#' + id + '-done', d => d.classList.contains('show') && d.offsetParent !== null);
+  pruefe(dank, pfad + ': Danke-Meldung sichtbar');
+  await page.close();
+}
+
 (async () => {
   const browser = await puppeteer.launch({
     executablePath: CHROME,
@@ -279,6 +328,8 @@ async function rechnerFormular(browser) {
     return document.getElementById('t-termin').value ? true : 'Wunschtermin wurde nicht gesetzt';
   });
   await rechnerFormular(browser);
+  console.log('\n8) Kurzanfrage / Kontaktformular (' + KF_SEITEN.length + ' Seiten)');
+  for (const s of KF_SEITEN) await kurzanfrage(browser, s);
   await browser.close();
   console.log(fehler ? ('\n' + fehler + ' FEHLER – nicht deployen.') : '\nAlle Lead-Wege senden korrekt.');
   process.exit(fehler ? 1 : 0);
