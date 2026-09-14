@@ -418,9 +418,12 @@ function webpPicture(html) {
       return '<picture><source srcset="' + webp + '" type="image/webp">' + tag + '</picture>';
     }
 
+    /* data-sizes am <img> ueberschreibt die Kartenwerte – etwa fuer ein Foto
+     * im Kopfbereich, das deutlich breiter als eine Referenzkarte ist. */
+    const eigen = tag.match(/\sdata-sizes="([^"]+)"/);
     const srcset = stufen.map(s => s.datei + ' ' + s.b + 'w').join(', ');
     return '<picture><source type="image/webp" srcset="' + srcset +
-           '" sizes="' + BILD_SIZES + '">' + tag + '</picture>';
+           '" sizes="' + (eigen ? eigen[1] : BILD_SIZES) + '">' + tag.replace(/\sdata-sizes="[^"]+"/, '') + '</picture>';
   });
 }
 
