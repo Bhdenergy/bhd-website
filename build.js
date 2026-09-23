@@ -196,6 +196,54 @@ const PAGES = [
     }
   },
   {
+    /* Standortseite Brandenburg. Rechtsstand am 23.09.2026 woertlich gegen die
+     * Brandenburgische Bauordnung geprueft (BRAVORS, Fassung vom 29.06.2026):
+     * keine Solarpflicht, § 61 stellt Solaranlagen verfahrensfrei.
+     * Wieder anfassen: KfW-Absenkung 01.02.2027, Potsdamer Programm-Status. */
+    key: 'brandenburg', dir: 'photovoltaik-waermepumpe-brandenburg', view: 'view-brandenburg',
+    prio: '0.9', crumb: 'Photovoltaik & Wärmepumpe in Brandenburg',
+    title: 'Photovoltaik & Wärmepumpe Brandenburg: Regeln & Förderung | BHD',
+    ogTitle: 'Photovoltaik und Wärmepumpe in Brandenburg – was hier gilt | BHD',
+    desc: 'Solaranlage in Brandenburg: keine Solarpflicht, keine Baugenehmigung nach § 61 BbgBO, kein Landeszuschuss. Was stattdessen gilt und was der KfW-Zuschuss bringt.',
+    service: {
+      name: 'Beratung zu Photovoltaik und Wärmepumpe in Brandenburg',
+      typ: 'Photovoltaik- und Wärmepumpen-Beratung',
+      desc: 'Beratung für Hausbesitzer in Brandenburg zu Solaranlage, Stromspeicher und Wärmepumpe: Verfahrensfreiheit nach § 61 der Brandenburgischen Bauordnung, Abstandsflächen und Brandwandabstände nach § 6 BbgBO, kommunale Förderprogramme, Anmeldung beim zuständigen Netzbetreiber und KfW-Zuschuss 458 für Wärmepumpen.'
+    }
+  },
+  {
+    /* Zeitkritische Seite: Klimageschwindigkeitsbonus und Foerderhoechstbetrag
+     * sinken am 01.02.2027. Alle Werte am 23.09.2026 woertlich aus dem Merkblatt
+     * KfW 458 (Stand 07/2026) uebernommen, Rechenbeispiele nachgerechnet.
+     * ZWINGEND zum 01.02.2027 ueberarbeiten - dann 12 % und 27.250 EUR. */
+    key: 'foerderung2027', dir: 'waermepumpe-foerderung-2027', view: 'view-foerderung2027',
+    prio: '0.9', crumb: 'Förderung sinkt 2027',
+    title: 'Wärmepumpen-Förderung sinkt 2027: was das kostet | BHD',
+    ogTitle: 'Am 1. Februar 2027 sinkt die Wärmepumpen-Förderung | BHD',
+    desc: 'Am 1. Februar 2027 sinken Klimageschwindigkeitsbonus und Förderhöchstbetrag der KfW 458. Für einen typischen Haushalt sind das rund 1.400 € weniger. Mit Rechenbeispielen.',
+    service: {
+      name: 'Unterstützung bei der KfW-Förderbeantragung für Wärmepumpen',
+      typ: 'Förderberatung Wärmepumpe',
+      desc: 'Begleitung des Zuschussantrags nach KfW 458: Ermittlung des erreichbaren Fördersatzes aus Grundförderung, Klimageschwindigkeitsbonus und Einkommensbonus, Bestätigung zum Antrag (BzA), Vertragsgestaltung mit aufschiebender Bedingung und Bestätigung nach Durchführung (BnD).'
+    }
+  },
+  {
+    /* Fristen und Sanktionen am 23.09.2026 gegen Bundesnetzagentur und
+     * MaStR-Webhilfe geprueft. Sanktion nur beim Doppelverstoss nach
+     * § 52 Abs. 1 Nr. 11 EEG 2023. Keine ungeprueften Bussgeld-Zahlen ergaenzen. */
+    key: 'mastr', dir: 'photovoltaik-anmelden-marktstammdatenregister', view: 'view-mastr',
+    prio: '0.8', crumb: 'Anlage anmelden',
+    title: 'Solaranlage im Marktstammdatenregister anmelden | BHD',
+    ogTitle: 'Solaranlage anmelden – Frist, Folgen und wie Sie es nachholen | BHD',
+    desc: 'Photovoltaik im Marktstammdatenregister anmelden: ein Monat Frist ab Inbetriebnahme. Was eine versäumte Frist wirklich kostet und wie Sie die Anmeldung nachholen.',
+    ld: ['service'],
+    service: {
+      name: 'Prüfung der Anmeldung von Photovoltaikanlagen',
+      typ: 'Anlagenprüfung',
+      desc: 'Prüfung, ob eine bestehende Photovoltaikanlage ordnungsgemäß im Marktstammdatenregister der Bundesnetzagentur und beim Netzbetreiber angemeldet ist, und Unterstützung beim Nachholen einer versäumten Registrierung.'
+    }
+  },
+  {
     key: 'ratgeber', dir: 'ratgeber', view: 'view-ratgeber', prio: '0.7', crumb: 'Ratgeber',
     title: 'Ratgeber: Photovoltaik & Wärmepumpe verstehen | BHD',
     desc: 'Verständliche Beiträge zu Photovoltaik, Wärmepumpe und Angebotsprüfung – von Beratern, die keine Anlagen verkaufen und auch sagen, was sich nicht lohnt.',
@@ -755,6 +803,9 @@ const KURZANFRAGE = {
   'rat-wp':    { h: 'Geht es in Ihrem Altbau?', p: 'Wir schauen uns Heizung und Heizkörper mit Ihnen an und sagen Ihnen offen, was dafür nötig ist.', thema: 'Wärmepumpe' },
   'rat-check': { h: 'Lieber jemanden draufschauen lassen?', p: 'Rückruf anfordern oder das Angebot direkt im Angebots-Check hochladen.', thema: 'Angebot prüfen lassen' },
   berlin:      { h: 'Projekt in Berlin?', p: 'Hinterlassen Sie Ihre Nummer. Wir melden uns und klären mit Ihnen, was für Ihr Haus in Frage kommt.', thema: 'Photovoltaik' },
+  brandenburg: { h: 'Projekt in Brandenburg?', p: 'Hinterlassen Sie Ihre Nummer. Wir melden uns und klären mit Ihnen, was auf Ihrem Grundstück geht und was die Gemeinde dazu sagt.', thema: 'Photovoltaik' },
+  foerderung2027: { h: 'Reicht die Zeit bei Ihnen noch?', p: 'Hinterlassen Sie Ihre Nummer. Wir sagen Ihnen ehrlich, ob der Antrag bis Ende Januar realistisch ist — und was dafür bis wann vorliegen muss.', thema: 'Wärmepumpe' },
+  mastr:       { h: 'Unsicher, ob Ihre Anlage angemeldet ist?', p: 'Hinterlassen Sie Ihre Nummer. Wir sehen nach und sagen Ihnen, was zu tun ist.', thema: 'Bestehende Anlage' },
   kontakt:     { h: 'Nachricht schreiben', p: 'Schreiben Sie uns kurz, worum es geht. Fotos oder ein Angebot als PDF schicken Sie am einfachsten per WhatsApp oder über den Angebots-Check.', thema: 'Sonstiges', nachricht: true, kontakt: true }
 };
 

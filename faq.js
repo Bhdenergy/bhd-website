@@ -277,6 +277,74 @@ const FAQ = {
     ]
   },
 
+  /* Standortseite Brandenburg – Rechtsstand 23.09.2026, woertlich gegen die
+   * Brandenburgische Bauordnung geprueft (Quellen stehen auf der Seite). */
+  brandenburg: {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen aus Brandenburg',
+    intro: 'Stand September 2026. Bauordnung und Förderprogramme ändern sich, vor einem Auftrag deshalb immer den aktuellen Stand prüfen.',
+    items: [
+      F('Gibt es in Brandenburg eine Solarpflicht?',
+        'Nein. Die Brandenburgische Bauordnung in der Fassung vom 29. Juni 2026 enthält keine Pflicht, eine Solaranlage zu errichten — auch nicht bei einer Dachsanierung. Das unterscheidet Brandenburg von Berlin, wo das Solargesetz bei Neubau und grundlegender Dachsanierung eine Anlage vorschreibt.'),
+      F('Brauche ich in Brandenburg eine Baugenehmigung für die Solaranlage?',
+        'Für die normale Anlage nicht. Nach § 61 der Brandenburgischen Bauordnung sind Solaranlagen in, an und auf Dach- und Außenwandflächen verfahrensfrei, ebenso gebäudeunabhängige Anlagen bis 3 Meter Höhe und 9 Meter Länge. Ausgenommen sind Hochhäuser. Liegt Ihr Haus im Geltungsbereich einer städtebaulichen Satzung oder einer Gestaltungssatzung mit Vorgaben zur Anlage, gilt die Verfahrensfreiheit nur, wenn die Anlage diesen Festsetzungen nicht widerspricht.'),
+      F('Gilt das auch bei Denkmalschutz?',
+        'Nein. Verfahrensfrei heißt nicht erlaubnisfrei. Steht das Gebäude unter Denkmalschutz oder liegt es in einem Denkmalbereich, brauchen Sie zusätzlich die Erlaubnis der unteren Denkmalschutzbehörde beim Landkreis oder bei der kreisfreien Stadt. Beauftragen Sie den Betrieb erst, wenn diese vorliegt.'),
+      F('Zahlt das Land Brandenburg einen Zuschuss für meine Photovoltaikanlage?',
+        'Für die private Aufdachanlage auf dem eigenen Haus gibt es keinen Investitionszuschuss des Landes. Es gibt kommunale Programme, die aber nicht durchgehend laufen: Die Landeshauptstadt Potsdam hat ein Klimaschutzförderprogramm, das zum Stand 23. September 2026 keine Anträge annimmt. Unabhängig davon fällt auf Lieferung und Montage einer Anlage am Wohngebäude keine Mehrwertsteuer an.'),
+      F('Wie nah darf die Anlage an die Grundstücksgrenze?',
+        'Nach § 6 der Brandenburgischen Bauordnung bleiben Solaranlagen bei rechtmäßig bestehenden Gebäuden bei der Berechnung der Abstandsflächen außer Betracht, solange sie nicht stärker als 0,50 Meter auftragen. Zu Brandwänden ist für Anlagen, die höchstens 30 Zentimeter über die Dachhaut ragen, ein Abstand von mindestens 0,50 Meter einzuhalten. Bei Reihen- und Doppelhäusern fällt dadurch der letzte Modulstreifen oft weg.'),
+      F('Wer ist in Brandenburg mein Netzbetreiber?',
+        'Anders als in Berlin gibt es nicht den einen. Je nach Ort sind E.DIS Netz, MITNETZ STROM oder ein örtliches Stadtwerk zuständig. Wer es ist, steht auf Ihrer Stromrechnung. Die Anmeldung übernimmt normalerweise der ausführende Elektrofachbetrieb; die Eintragung im Marktstammdatenregister bleibt Ihre Pflicht als Betreiber.')
+    ]
+  },
+
+  /* Zeitkritisch: Werte am 23.09.2026 woertlich aus Merkblatt KfW 458 (07/2026).
+   * ZWINGEND zum 01.02.2027 ueberarbeiten. */
+  foerderung2027: {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen zur Absenkung',
+    intro: 'Stand 23. September 2026 nach dem Merkblatt KfW 458. Was bewilligt wird, entscheidet allein die KfW.',
+    items: [
+      F('Was genau ändert sich am 1. Februar 2027?',
+        'Zwei Werte sinken gleichzeitig. Der Klimageschwindigkeitsbonus geht von 16 auf 12 Prozent zurück, und der Höchstbetrag der förderfähigen Kosten für die erste Wohneinheit sinkt von 28.000 auf 27.250 Euro. Beides sinkt danach halbjährlich weiter, jeweils zum 1. Februar und zum 1. August. Die Grundförderung von 30 Prozent und der Einkommensbonus bleiben unverändert.'),
+      F('Zählt das Datum des Einbaus oder das Datum des Antrags?',
+        'Der Zeitpunkt der Antragstellung. Wann die Wärmepumpe eingebaut wird und wann die Rechnung kommt, spielt für den Fördersatz keine Rolle. Deshalb ist es entscheidend, den Antrag rechtzeitig gestellt zu haben — nicht die Baustelle rechtzeitig fertig zu bekommen.'),
+      F('Wie viel Geld verliere ich, wenn ich warte?',
+        'Das hängt davon ab, ob Sie an der Obergrenze liegen. Wer 30 Prozent Grundförderung und 16 Prozent Klimabonus bekommt, erhält heute 12.880 Euro und ab dem 1. Februar 2027 noch 11.445 Euro — ein Unterschied von 1.435 Euro. Wer wegen eines niedrigen Einkommens ohnehin die Obergrenze von 70 oder 80 Prozent erreicht, verliert nur die gesunkene Bemessungsgrundlage, also rund 525 bis 600 Euro.'),
+      F('Bis wann muss ich mich entschieden haben?',
+        'Deutlich vor Ende Januar. Bevor Sie den Antrag überhaupt stellen können, brauchen Sie eine Bestätigung zum Antrag von einem Fachunternehmen oder einer Energieeffizienz-Expertin und einen bereits unterschriebenen Liefer- oder Leistungsvertrag mit einer aufschiebenden oder auflösenden Bedingung zur KfW-Zusage. Dafür muss die Auslegung stehen. Realistisch sollte das bis Ende November erledigt sein.'),
+      F('Bekomme ich den Klimageschwindigkeitsbonus für meine Gasheizung?',
+        'Nur, wenn deren Inbetriebnahme zum Zeitpunkt der Antragstellung mindestens 20 Jahre zurückliegt. Bei Öl-, Kohle-, Gasetagen- und Nachtstromspeicherheizungen gibt es den Bonus unabhängig vom Alter, die Heizung muss aber funktionstüchtig sein. Wer wartet, bis sie ausfällt, kann den Bonus verlieren.'),
+      F('Lohnt es sich, deswegen zu überstürzen?',
+        'Nein. Eine schlecht ausgelegte Wärmepumpe kostet über die Laufzeit deutlich mehr, als die Absenkung ausmacht. Wenn Sie ohnehin an der Obergrenze liegen und rund 525 Euro Unterschied im Raum stehen, ist das kein Grund, die Heizlastberechnung zu überspringen. Wer dagegen bei 46 Prozent landet und die Unterlagen beisammen hat, sollte den Antrag nicht liegen lassen.')
+    ]
+  },
+
+  /* MaStR – Fristen und Sanktionen am 23.09.2026 gegen Bundesnetzagentur geprueft.
+   * Keine ungeprueften Bussgeld-Zahlen ergaenzen. */
+  mastr: {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen zur Anmeldung',
+    intro: 'Stand September 2026. Keine Rechtsberatung — im Streitfall gehört der Vorgang zu einer Anwältin oder einem Anwalt.',
+    items: [
+      F('Wie lange habe ich Zeit, die Anlage anzumelden?',
+        'Einen Monat. Die Frist beginnt mit der Inbetriebnahme der Einheit, nicht mit der Schlussrechnung und nicht mit dem Zählerwechsel. Dieselbe Monatsfrist gilt später auch für Änderungen, etwa eine Erweiterung der Anlage oder einen Betreiberwechsel nach einem Hausverkauf.'),
+      F('Macht das nicht mein Installateur?',
+        'Die Anmeldung beim Netzbetreiber übernimmt in aller Regel der Elektrofachbetrieb, weil dafür eine Eintragung im Installateurverzeichnis nötig ist. Die Eintragung im Marktstammdatenregister ist dagegen Pflicht des Betreibers, also meistens Ihre. Manche Betriebe bieten das mit an — verlassen Sie sich aber nicht darauf, ohne die Registrierungsbestätigung gesehen zu haben.'),
+      F('Was passiert, wenn ich die Frist verpasst habe?',
+        'Zwei Dinge sind zu trennen. Die Einspeisevergütung kann nur ungekürzt ausgezahlt werden, wenn die Melde- und Registrierungspflichten erfüllt sind — der Netzbetreiber hält also Zahlungen zurück. Eine Sanktionszahlung entsteht nach § 52 Absatz 1 Nummer 11 EEG 2023 erst beim Doppelverstoß, wenn also zusätzlich die EEG-Jahresmeldung bis zum 28. Februar versäumt wurde. Sie beträgt dann 10 Euro je Kilowatt installierter Leistung und Kalendermonat.'),
+      F('Wird die Sanktion kleiner, wenn ich es nachhole?',
+        'Ja. Nach § 52 Absatz 3 EEG verringert sich die Sanktionszahlung rückwirkend um 80 Prozent, wenn beide Pflichten nachträglich erfüllt werden — aus 10 Euro je Kilowatt und Monat werden 2 Euro. Bei einer 10-kWp-Anlage und einem Jahr Verzug sind das statt 1.200 Euro noch 240 Euro. Deshalb lohnt es sich, das sofort zu erledigen und nicht abzuwarten.'),
+      F('Muss ich ein Balkonkraftwerk auch anmelden?',
+        'Ja. Steckersolargeräte müssen ebenfalls im Marktstammdatenregister eingetragen werden, allerdings in einem verkürzten Verfahren mit deutlich weniger Angaben.'),
+      F('Muss der Stromspeicher separat eingetragen werden?',
+        'Ja. Die Solaranlage wird als Stromerzeugungseinheit eingetragen, der Speicher als eigene Einheit. Ein Speicher ohne eigenen Eintrag ist einer der häufigsten Fehler und fällt oft erst auf, wenn der Netzbetreiber nachfragt.'),
+      F('Kann ich nachsehen, ob die Anlage auf meinem Haus registriert ist?',
+        'Ja, die eingetragenen Anlagendaten sind öffentlich einsehbar. Das ist besonders vor einem Hauskauf nützlich: Steht die vorhandene Anlage nicht im Register, ist das ein Punkt für die Kaufverhandlung und nicht Ihr Problem nach dem Einzug.')
+    ]
+  },
+
   'rat-check': {
     kicker: 'Kurz beantwortet',
     titel: 'Häufige Fragen dazu',

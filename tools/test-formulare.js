@@ -265,7 +265,9 @@ async function rechnerFormular(browser) {
  * korrekt ausgefuellt geht genau eine Anfrage raus, Danke-Meldung erscheint. */
 const KF_SEITEN = ['/photovoltaik/', '/stromspeicher/', '/waermepumpe/', '/kosten/', '/referenzen/',
   '/ueber-uns/', '/ratgeber/', '/ratgeber/photovoltaik-lohnt-sich/', '/ratgeber/waermepumpe-altbau/',
-  '/ratgeber/angebot-pruefen/', '/photovoltaik-waermepumpe-berlin/', '/kontakt/'];
+  '/ratgeber/angebot-pruefen/', '/photovoltaik-waermepumpe-berlin/',
+  '/photovoltaik-waermepumpe-brandenburg/', '/waermepumpe-foerderung-2027/',
+  '/photovoltaik-anmelden-marktstammdatenregister/', '/kontakt/'];
 
 async function kurzanfrage(browser, pfad) {
   const page = await browser.newPage();
