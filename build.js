@@ -424,7 +424,10 @@ function fixLinks(html) {
     // deshalb den ganzen Tag betrachten und href nur ergaenzen, wenn keins da ist.
     .replace(/<a\b[^>]*>/g, (tag) => {
       if (/\shref=/.test(tag)) return tag;
-      const m = tag.match(/\sdata-nav="([a-z-]+)"/);
+      // Ziffern muessen mit rein: Seitenschluessel wie "foerderung2027" sind
+      // sonst still ohne href geblieben - der Link sah aus wie ein Link, war
+      // aber keiner. Gefunden von tools/pruef-live.js am 23.09.2026.
+      const m = tag.match(/\sdata-nav="([a-z0-9-]+)"/);
       if (!m) return tag;
       return tag.replace('<a', '<a href="' + (URL_OF[m[1]] || '/') + '"');
     })
