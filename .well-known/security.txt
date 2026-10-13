@@ -1,4 +1,4 @@
 Contact: mailto:info@bhd-energie.de
-Expires: 2027-10-13T19:02:46Z
+Expires: 2027-10-13T19:15:54Z
 Preferred-Languages: de, en
 Canonical: https://bhd-energie.de/.well-known/security.txt
