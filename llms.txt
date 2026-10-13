@@ -7,7 +7,8 @@
 > Betreiber: Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b,
 > 13359 Berlin. Handelsregister: Amtsgericht Charlottenburg, HRB 266273 B.
 > USt-IdNr. DE370268782. Gegründet 2024. Geschäftsführer: Kürşat Yıldırım.
-> Sitz in Berlin, bundesweit tätig. Erreichbar Täglich 8:00 – 20:00 Uhr.
+> Sitz in Berlin, bundesweit tätig.
+> Erreichbar Mo–Fr 9:00 – 18:00 Uhr, Sa 10:00 – 15:00 Uhr. Google-Unternehmensprofil: https://www.google.com/maps?cid=17443850458843580917
 
 ## Leistungen
 - [Photovoltaik](https://bhd-energie.de/photovoltaik/): Anlagengröße, Eigenverbrauch, 0 % Umsatzsteuer nach § 12 Abs. 3 UStG
@@ -15,6 +16,9 @@
 - [Wärmepumpe](https://bhd-energie.de/waermepumpe/): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 80 %
 - [Kosten](https://bhd-energie.de/kosten/): marktübliche Preise und Eigenanteil nach Förderung
 - [Photovoltaik und Wärmepumpe in Berlin](https://bhd-energie.de/photovoltaik-waermepumpe-berlin/): Solargesetz Berlin, Zuschüsse aus SolarPLUS, Denkmalschutz, Stromnetz Berlin
+- [Photovoltaik und Wärmepumpe in Brandenburg](https://bhd-energie.de/photovoltaik-waermepumpe-brandenburg/): keine Solarpflicht, Baurecht nach BbgBO, Förderung
+- [Wärmepumpen-Förderung 2027](https://bhd-energie.de/waermepumpe-foerderung-2027/): was sich am 01.02.2027 beim KfW-Zuschuss ändert
+- [PV im Marktstammdatenregister anmelden](https://bhd-energie.de/photovoltaik-anmelden-marktstammdatenregister/): Frist, Folgen, Nachholen
 - [Angebots-Check](https://bhd-energie.de/angebots-check/): kostenlose Prüfung eines vorliegenden Angebots, Rückmeldung in 24 Stunden
 - [Wärmepumpen-Rechner](https://bhd-energie.de/waermepumpen-rechner/): Heizlast, Gerätegröße, Jahresarbeitszahl und Förderung – ohne Anmeldung
 
@@ -31,3 +35,4 @@
 
 ## Kontakt
 Telefon +49 163 4440392 · info@bhd-energie.de
+Google Maps: https://www.google.com/maps?cid=17443850458843580917

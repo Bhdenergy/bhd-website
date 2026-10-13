@@ -205,7 +205,7 @@ const FAQ = {
     intro: 'Wann und wie Sie uns am besten erreichen.',
     items: [
       F('Wann seid ihr erreichbar?',
-        'Täglich von 8:00 bis 20:00 Uhr telefonisch. E-Mails beantworten wir in der Regel am selben Werktag.'),
+        'Telefonisch Montag bis Freitag von 9 bis 18 Uhr und samstags von 10 bis 15 Uhr. E-Mails beantworten wir in der Regel am selben Werktag.'),
       F('Kann ich auch per WhatsApp schreiben?',
         'Ja, unter derselben Nummer. Für Fotos von Ihrem Dach, dem Zählerschrank oder einem vorliegenden Angebot ist das oft der schnellste Weg.'),
       F('Beraten Sie auch außerhalb von Berlin?',

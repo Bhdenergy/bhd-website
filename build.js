@@ -50,6 +50,13 @@ const GA4_ID = 'G-NM7G327C1L';
  * Beispiel: ['https://www.facebook.com/…', 'https://www.linkedin.com/company/…'] */
 const SOCIAL = [];
 
+/* Google-Unternehmensprofil (angelegt Okt. 2026). CID und Knowledge-Graph-ID
+ * aus Google Maps ausgelesen. Steht in sameAs/hasMap und auf der Kontaktseite. */
+const GOOGLE_CID = '17443850458843580917';
+const GOOGLE_KG = '/g/11nw0q10b9';
+const GOOGLE_MAPS = 'https://www.google.com/maps?cid=' + GOOGLE_CID;
+const PROFILE = [GOOGLE_MAPS, 'https://www.google.com/search?kgmid=' + GOOGLE_KG, ...SOCIAL];
+
 /* IndexNow: meldet neue und geaenderte Seiten sofort an Bing (und damit an
  * ChatGPT Search und Copilot). Der Schluessel ist frei waehlbar, muss aber als
  * Datei <schluessel>.txt im Wurzelverzeichnis liegen – das erledigt der Build. */
@@ -70,7 +77,13 @@ const CAL_LINK = '';
 
 /* Erreichbarkeit – steht im JSON-LD, auf der Kontaktseite und muss mit dem
  * Google-Unternehmensprofil uebereinstimmen. */
-const OPENING = { von: '08:00', bis: '20:00', text: 'Täglich 8:00 – 20:00 Uhr' };
+const OPENING = {
+  text: 'Mo–Fr 9:00 – 18:00 Uhr, Sa 10:00 – 15:00 Uhr',
+  spec: [
+    { tage: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], von: '09:00', bis: '18:00' },
+    { tage: ['Saturday'], von: '10:00', bis: '15:00' }
+  ]
+};
 
 /* Datum des letzten inhaltlichen Durchgangs – fuer dateModified im JSON-LD. */
 const REVIEWED = new Date().toISOString().slice(0, 10);
@@ -291,7 +304,7 @@ const PAGES = [
     key: 'kontakt', dir: 'kontakt', view: 'view-kontakt', prio: '0.8', crumb: 'Kontakt',
     title: 'Kontakt & Kontaktformular | BHD Berlin',
     ogTitle: 'Kontakt – direkt mit einem Berater sprechen | BHD',
-    desc: 'BHD erreichen Sie täglich von 8 bis 20 Uhr: über das Kontaktformular, telefonisch unter 0163 4440392, per WhatsApp oder E-Mail. Sitz in Berlin, Beratung bundesweit.',
+    desc: 'BHD erreichen Sie Mo–Fr 9–18 Uhr und Sa 10–15 Uhr: per Kontaktformular, Telefon 0163 4440392, WhatsApp oder E-Mail. Sitz in Berlin, Beratung bundesweit.',
     ld: ['kontakt']
   },
   {
@@ -509,6 +522,7 @@ function jsonLd(page, viewHtml) {
       foundingDate: '2024',
       founder: { '@type': 'Person', name: 'Kürşat Yıldırım' },
       description: 'Unabhängige Beratung für Hausbesitzer zu Photovoltaik, Stromspeicher und Wärmepumpe. Vermittlung geprüfter, regionaler Fachbetriebe. Sitz in Berlin, bundesweit tätig.',
+      alternateName: ['Beratung Heimenergie Deutschland', 'BHD Energie', 'BHD'],
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Prinzenallee 44b',
@@ -518,7 +532,7 @@ function jsonLd(page, viewHtml) {
       },
       // Koordinaten der Geschäftsadresse, per OpenStreetMap ermittelt
       geo: { '@type': 'GeoCoordinates', latitude: 52.55896, longitude: 13.38854 },
-      hasMap: 'https://www.openstreetmap.org/?mlat=52.55896&mlon=13.38854#map=18/52.55896/13.38854',
+      hasMap: GOOGLE_MAPS,
       areaServed: [
         { '@type': 'City', name: 'Berlin' },
         { '@type': 'Country', name: 'Deutschland' }
@@ -549,14 +563,15 @@ function jsonLd(page, viewHtml) {
         areaServed: 'DE',
         availableLanguage: ['de']
       }],
-      openingHoursSpecification: [{
+      openingHoursSpecification: OPENING.spec.map(o => ({
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: OPENING.von,
-        closes: OPENING.bis
-      }],
-      /* sameAs nur ausgeben, wenn oben echte Profile eingetragen sind. */
-      ...(SOCIAL.length ? { sameAs: SOCIAL } : {})
+        dayOfWeek: o.tage,
+        opens: o.von,
+        closes: o.bis
+      })),
+      /* Nur echte Profile: Google-Unternehmensprofil + SOCIAL. Die Google-
+       * Bewertungen bewusst NICHT als aggregateRating (Eigenauszeichnung). */
+      sameAs: PROFILE
     },
     {
       '@type': 'WebSite',
@@ -1091,7 +1106,8 @@ fs.writeFileSync(path.join(ROOT, 'llms.txt'),
 > Betreiber: Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b,
 > 13359 Berlin. Handelsregister: Amtsgericht Charlottenburg, HRB 266273 B.
 > USt-IdNr. DE370268782. Gegründet 2024. Geschäftsführer: Kürşat Yıldırım.
-> Sitz in Berlin, bundesweit tätig. Erreichbar ${OPENING.text}.
+> Sitz in Berlin, bundesweit tätig.
+> Erreichbar ${OPENING.text}. Google-Unternehmensprofil: ${GOOGLE_MAPS}
 
 ## Leistungen
 - [Photovoltaik](${SITE}${URL_OF.pv}): Anlagengröße, Eigenverbrauch, 0 % Umsatzsteuer nach § 12 Abs. 3 UStG
@@ -1099,6 +1115,9 @@ fs.writeFileSync(path.join(ROOT, 'llms.txt'),
 - [Wärmepumpe](${SITE}${URL_OF.wp}): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 80 %
 - [Kosten](${SITE}${URL_OF.kosten}): marktübliche Preise und Eigenanteil nach Förderung
 - [Photovoltaik und Wärmepumpe in Berlin](${SITE}${URL_OF.berlin}): Solargesetz Berlin, Zuschüsse aus SolarPLUS, Denkmalschutz, Stromnetz Berlin
+- [Photovoltaik und Wärmepumpe in Brandenburg](${SITE}${URL_OF.brandenburg}): keine Solarpflicht, Baurecht nach BbgBO, Förderung
+- [Wärmepumpen-Förderung 2027](${SITE}${URL_OF.foerderung2027}): was sich am 01.02.2027 beim KfW-Zuschuss ändert
+- [PV im Marktstammdatenregister anmelden](${SITE}${URL_OF.mastr}): Frist, Folgen, Nachholen
 - [Angebots-Check](${SITE}${URL_OF.check}): kostenlose Prüfung eines vorliegenden Angebots, Rückmeldung in 24 Stunden
 - [Wärmepumpen-Rechner](${SITE}${URL_OF.rechner}): Heizlast, Gerätegröße, Jahresarbeitszahl und Förderung – ohne Anmeldung
 
@@ -1113,6 +1132,7 @@ ${beitraegeTxt}
 
 ## Kontakt
 Telefon +49 163 4440392 · ${MAIL}
+Google Maps: ${GOOGLE_MAPS}
 `, 'utf8');
 
 console.log('Erzeugt:');
@@ -1124,4 +1144,4 @@ console.log('  /.well-known/security.txt');
 console.log('  /' + INDEXNOW_KEY + '.txt  (IndexNow)');
 if (!GSC_TOKEN) console.log('\nHinweis: GSC_TOKEN ist leer – Search Console noch nicht per Meta-Tag bestätigt.');
 if (!GA4_ID) console.log('Hinweis: GA4_ID ist leer – Analytics und Einwilligungsbanner bleiben inaktiv.');
-if (!SOCIAL.length) console.log('Hinweis: SOCIAL ist leer – sameAs fehlt im JSON-LD.');
+if (!SOCIAL.length) console.log('Hinweis: SOCIAL ist leer – sameAs enthaelt nur das Google-Profil.');
