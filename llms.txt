@@ -19,6 +19,11 @@
 - [Photovoltaik und Wärmepumpe in Brandenburg](https://bhd-energie.de/photovoltaik-waermepumpe-brandenburg/): keine Solarpflicht, Baurecht nach BbgBO, Förderung
 - [Wärmepumpen-Förderung 2027](https://bhd-energie.de/waermepumpe-foerderung-2027/): was sich am 01.02.2027 beim KfW-Zuschuss ändert
 - [PV im Marktstammdatenregister anmelden](https://bhd-energie.de/photovoltaik-anmelden-marktstammdatenregister/): Frist, Folgen, Nachholen
+- [Wallbox](https://bhd-energie.de/wallbox/): Anmeldung nach § 19 NAV, Netzentgelt nach § 14a EnWG, keine 0 % Umsatzsteuer
+- [Potsdam](https://bhd-energie.de/photovoltaik-waermepumpe-potsdam/): Klimaschutzförderprogramm, Denkmal und Welterbe, Fernwärmesatzung, Netzgesellschaft Potsdam
+- [Falkensee](https://bhd-energie.de/photovoltaik-waermepumpe-falkensee/): Wärmeplan, E.DIS Netz, Gestaltungssatzung Falkenhagen
+- [Bernau bei Berlin](https://bhd-energie.de/photovoltaik-waermepumpe-bernau/): Befreiung vom Fernwärme-Anschlusszwang, Altstadtsatzungen, Stadtwerke Bernau
+- [Oranienburg](https://bhd-energie.de/photovoltaik-waermepumpe-oranienburg/): Kampfmittel bei Erdarbeiten, zwei Netzbetreiber, Wärmeplanungskarte
 - [Angebots-Check](https://bhd-energie.de/angebots-check/): kostenlose Prüfung eines vorliegenden Angebots, Rückmeldung in 24 Stunden
 - [Wärmepumpen-Rechner](https://bhd-energie.de/waermepumpen-rechner/): Heizlast, Gerätegröße, Jahresarbeitszahl und Förderung – ohne Anmeldung
 
@@ -26,6 +31,9 @@
 - [Lohnt sich Photovoltaik 2026 noch?](https://bhd-energie.de/ratgeber/photovoltaik-lohnt-sich/)
 - [Wärmepumpe im Altbau: geht das?](https://bhd-energie.de/ratgeber/waermepumpe-altbau/)
 - [Angebot prüfen: 12 Punkte, die drinstehen müssen](https://bhd-energie.de/ratgeber/angebot-pruefen/)
+- [Einspeisevergütung 2026 und was ab 2027 kommt](https://bhd-energie.de/ratgeber/einspeiseverguetung/)
+- [Photovoltaik und Wärmepumpe: wie gut passen sie zusammen?](https://bhd-energie.de/ratgeber/photovoltaik-waermepumpe-kombinieren/)
+- [Stromspeicher nachrüsten: was Sie wissen müssen](https://bhd-energie.de/ratgeber/stromspeicher-nachruesten/)
 
 ## Weitere Seiten
 - [Referenzen](https://bhd-energie.de/referenzen/): umgesetzte Projekte mit eigenen Fotos

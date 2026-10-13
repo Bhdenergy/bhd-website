@@ -928,6 +928,11 @@
   .artikel ul.liste{margin:0 0 20px;padding-left:1.2em;color:var(--ink-2);font-size:1.06rem;line-height:1.65}
   .artikel ul.liste li{margin-bottom:10px}
   .artikel ul.liste b{color:var(--ink);font-weight:600}
+  .artikel .tabelle-wrap{overflow-x:auto;margin:0 0 20px}
+  .artikel .tabelle{width:100%;border-collapse:collapse;font-size:1rem;font-variant-numeric:tabular-nums}
+  .artikel .tabelle th,.artikel .tabelle td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+  .artikel .tabelle th{font-weight:600;color:var(--ink)}
+  @media(max-width:600px){.artikel .tabelle{font-size:.9rem}.artikel .tabelle th,.artikel .tabelle td{padding:8px 5px}}
   .artikel .quellen{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);font-size:.9rem}
   .artikel .quellen p,.artikel .quellen li{font-size:.9rem;line-height:1.55}
   .artikel .quellen a{color:var(--green-deep);text-decoration:underline;overflow-wrap:anywhere}
@@ -1332,6 +1337,7 @@
           <a data-nav="pv">Photovoltaik</a>
           <a data-nav="speicher">Stromspeicher</a>
           <a data-nav="wp">Wärmepumpe</a>
+          <a data-nav="wallbox">Wallbox</a>
           <a data-nav="rendite">Rentabilitätsrechner</a>
           <a data-nav="rechner">Wärmepumpen-Rechner</a>
           <a data-nav="kosten">Was zahle ich?</a>
@@ -1661,7 +1667,7 @@
   <div class="wrap">
     <div class="head rise">
       <h2>Unsere Partner</h2>
-      <p>Keine namenlosen Restposten. Wir setzen auf Komponenten etablierter Hersteller, für die es Ersatzteile, Garantie und einen Service gibt, den es in zehn Jahren noch gibt.</p>
+      <p>Wir arbeiten mit einem festen Installationspartner und mit Komponenten etablierter Hersteller. Für diese Komponenten gibt es Ersatzteile, Garantie und Service auch in zehn Jahren noch.</p>
     </div>
 
     <!-- Karussell: die Marken laufen endlos durch. Die Liste steht ZWEIMAL im
@@ -3014,6 +3020,24 @@
           <span class="art-tag">Angebote</span>
           <h2>Angebot prüfen: 12 Punkte, die drinstehen müssen</h2>
           <p>Eine Checkliste zum Mitnehmen. Fehlt einer dieser Punkte, ist das Angebot nicht günstiger, sondern unvollständig.</p>
+          <span class="art-go">Beitrag lesen <svg class="ic"><use href="#i-chevron"/></svg></span>
+        </a>
+        <a class="artcard" data-nav="rat-eeg">
+          <span class="art-tag">Photovoltaik</span>
+          <h2>Einspeisevergütung 2026 und was ab 2027 kommt</h2>
+          <p>Die aktuellen Sätze, der Gesetzentwurf für neue Anlagen ab 2027 und warum der Eigenverbrauch noch wichtiger wird.</p>
+          <span class="art-go">Beitrag lesen <svg class="ic"><use href="#i-chevron"/></svg></span>
+        </a>
+        <a class="artcard" data-nav="rat-pvwp">
+          <span class="art-tag">Wärmepumpe</span>
+          <h2>Photovoltaik und Wärmepumpe: wie gut passen sie zusammen?</h2>
+          <p>Wie viel Wärmepumpenstrom wirklich vom Dach kommt, was im Winter passiert und ob sich ein eigener Zähler lohnt.</p>
+          <span class="art-go">Beitrag lesen <svg class="ic"><use href="#i-chevron"/></svg></span>
+        </a>
+        <a class="artcard" data-nav="rat-speicher">
+          <span class="art-tag">Stromspeicher</span>
+          <h2>Stromspeicher nachrüsten: was Sie wissen müssen</h2>
+          <p>Ob es bei Ihrer Anlage geht, warum keine Mehrwertsteuer anfällt und wann sich das Nachrüsten besonders lohnt.</p>
           <span class="art-go">Beitrag lesen <svg class="ic"><use href="#i-chevron"/></svg></span>
         </a>
       </div>
@@ -4553,7 +4577,7 @@
       <div class="head">
         <div class="kicker">Wunschtermin wählen</div>
         <h2>Freie Zeiten im Überblick</h2>
-        <p>Montag bis Mittwoch von 10 bis 20 Uhr, Donnerstag und Freitag von 10 bis 16 Uhr. An Wochenenden und gesetzlichen Feiertagen bleibt der Kalender zu. Termine sind bis zu einem Monat im Voraus buchbar. Durchgestrichene Zeiten sind bereits vergeben.</p>
+        <p>Montag bis Mittwoch von 10 bis 20 Uhr, Donnerstag und Freitag von 10 bis 16 Uhr, Samstag von 10 bis 15 Uhr. Sonntags und an gesetzlichen Feiertagen bleibt der Kalender zu. Termine sind bis zu einem Monat im Voraus buchbar. Durchgestrichene Zeiten sind bereits vergeben.</p>
       </div>
 
       <div class="forms-wrap" style="max-width:820px">
@@ -5057,6 +5081,9 @@
     <p>Zusätzlich muss jede Anlage im Marktstammdatenregister der Bundesnetzagentur eingetragen werden. Das ist Pflicht, hat eine Frist und wird regelmäßig vergessen — mit Folgen für die Einspeisevergütung. Was dabei zu tun ist, steht auf der Seite <a class="ilink" data-nav="mastr">Anlage anmelden</a>.</p>
     <p>Für Anlagen bis 10 kWp, die zwischen dem 1. August und dem 31. Dezember 2026 in Betrieb gehen, beträgt die Einspeisevergütung 7,70 Cent je kWh bei Teileinspeisung. Mehr wert ist der Strom, den Sie selbst verbrauchen — bei 30 bis 40 Cent Bezugspreis ist das etwa das Vierfache. Warum das die wichtigste Stellschraube ist, steht auf der Seite <a class="ilink" data-nav="pv">Photovoltaik</a>.</p>
 
+    <h2>Potsdam, Falkensee, Bernau, Oranienburg</h2>
+    <p>Was eine Stadt zusätzlich regelt, unterscheidet sich stark: eigene Förderprogramme, Fernwärmesatzungen, Denkmalbereiche, verschiedene Netzbetreiber. Für vier Städte haben wir das zusammengetragen: <a class="ilink" data-nav="potsdam">Potsdam</a>, <a class="ilink" data-nav="falkensee">Falkensee</a>, <a class="ilink" data-nav="bernau">Bernau</a> und <a class="ilink" data-nav="oranienburg">Oranienburg</a>.</p>
+
     <h2>Große Dächer, große Anlagen — und eine Grenze</h2>
     <p>Brandenburger Grundstücke sind im Schnitt großzügiger als Berliner. Scheunen, Nebengebäude und Garagen bieten Fläche, die in der Stadt fehlt. Das verführt dazu, einfach das ganze Dach vollzumachen. Zwei Dinge sprechen dagegen: Ab 30 kWp Bruttoleistung entfällt der Nullsteuersatz nicht automatisch, wohl aber ändern sich die steuerlichen Randbedingungen und die Anmeldepflichten. Und jede Kilowattstunde, die Sie nicht selbst verbrauchen, bringt nur die Einspeisevergütung. Eine Anlage, die zum Verbrauch passt, schlägt fast immer die Anlage, die zum Dach passt.</p>
     <p>Wenn Sie ohnehin überlegen, ob Wärmepumpe und Photovoltaik zusammengehören: Ja, und zwar aus einem einfachen Grund. Die Wärmepumpe hebt den Eigenverbrauch deutlich an. Damit rechnet sich die größere Anlage auf einmal doch.</p>
@@ -5078,6 +5105,589 @@
 </div><!-- /view-brandenburg -->
 
 <!-- ========================= ANSICHT: IMPRESSUM ========================= -->
+
+<!-- ===== NEUE SEITEN Okt. 2026: Wallbox, Orte im Umland, Ratgeber ===== -->
+<div id="view-wallbox" hidden>
+
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Wallbox</span></div>
+      <div class="eyebrow"><span class="dot"></span> Laden zu Hause</div>
+      <h1>Die Wallbox <em>für das eigene Haus.</em></h1>
+      <p class="lede">Eine Wallbox ist schnell gekauft. Ob sie sich lohnt, hängt an drei Dingen: an der Anmeldung beim Netzbetreiber, am Netzentgelt und daran, ob Sie mit eigenem Solarstrom laden. Hier steht, was dabei gilt.</p>
+      <div class="hero-cta">
+        <a href="#rueckruf" class="btn">Rückruf anfordern</a>
+        <a data-nav="check" class="btn btn-ghost">Angebot prüfen lassen</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Auf einen Blick</div>
+        <h2>Vier Punkte vor dem Kauf.</h2>
+      </div>
+      <div class="vgrid">
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-plug"/></svg></div><h3>Immer anmelden</h3><p>Jede Wallbox muss vor der Inbetriebnahme beim Netzbetreiber angemeldet werden. Über 12 kVA braucht sie zusätzlich seine Zustimmung.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-bolt"/></svg></div><h3>11 kW reichen meist</h3><p>Damit ist ein Auto über Nacht voll. Eine 22-kW-Box braucht die Zustimmung des Netzbetreibers und bringt im Alltag oft wenig.</p></div>
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-chart"/></svg></div><h3>Weniger Netzentgelt</h3><p>Neue Wallboxen sind steuerbar nach § 14a EnWG. Dafür zahlen Sie weniger Netzentgelt, in Berlin derzeit rund 147 € im Jahr.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-house"/></svg></div><h3>Kein Zuschuss</h3><p>Für die private Wallbox am Einfamilienhaus gibt es 2026 keinen Zuschuss vom Bund, von Berlin oder von Brandenburg.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0"><div class="wrap"><div class="artikel">
+    <h2>Anmeldung beim Netzbetreiber</h2>
+    <p>Die Niederspannungsanschlussverordnung ist hier eindeutig: Ladeeinrichtungen für Elektroautos sind dem Netzbetreiber <b>vor der Inbetriebnahme mitzuteilen</b>, und zwar unabhängig von der Leistung. Liegt die Summe aller Ladepunkte an Ihrem Hausanschluss über <b>12 kVA</b>, darf die Wallbox erst nach seiner <b>Zustimmung</b> in Betrieb gehen. Der Netzbetreiber muss sich innerhalb von zwei Monaten äußern.</p>
+    <p>Die Anmeldung macht der Elektrofachbetrieb, der die Wallbox anschließt. In Berlin läuft sie über das Kundenportal der Stromnetz Berlin GmbH, in Brandenburg je nach Ort über E.DIS Netz oder ein Stadtwerk. Wer bei Ihnen zuständig ist, steht auf der Stromrechnung.</p>
+
+    <h2>11 oder 22 kW?</h2>
+    <p>Für ein Einfamilienhaus sind 11 kW der Normalfall. Eine solche Box lädt über Nacht auch einen großen Akku voll und bleibt unter der 12-kVA-Schwelle, braucht also nur die Anmeldung. Eine 22-kW-Box braucht die Zustimmung des Netzbetreibers und einen Hausanschluss, der das hergibt. Viele Elektroautos nehmen an der Wallbox ohnehin nicht mehr als 11 kW auf. Bevor Sie für 22 kW mehr bezahlen, lohnt ein Blick ins Datenblatt Ihres Autos.</p>
+    <p>Wichtig ist die Summe: Zwei Wallboxen mit je 11 kW ergeben 22 kW am Hausanschluss und brauchen damit ebenfalls die Zustimmung.</p>
+
+    <h2>§ 14a EnWG: dimmbar, dafür günstiger</h2>
+    <p>Seit dem 1. Januar 2024 müssen neue Wallboxen mit mehr als 4,2 kW <b>steuerbar</b> sein. Der Netzbetreiber darf die Ladeleistung herunterregeln, aber nur, solange tatsächlich eine Überlastung des Netzes droht, und nie unter 4,2 kW. Ein Auto lädt also auch dann weiter, nur langsamer. Im Gegenzug darf der Netzbetreiber den Anschluss nicht mehr mit Hinweis auf sein Netz ablehnen oder hinauszögern.</p>
+    <p>Für die Steuerbarkeit gibt es ein reduziertes Netzentgelt. Sie haben drei Möglichkeiten:</p>
+    <ul class="liste">
+      <li><b>Modul 1</b>, pauschale Reduzierung im Jahr. Das ist der Standard, wenn Sie nichts wählen. Bei der Stromnetz Berlin sind es 2026 <b>146,58 € brutto</b>.</li>
+      <li><b>Modul 2</b>, der Arbeitspreis des Netzentgelts sinkt um 60 %. Dafür braucht die Wallbox einen eigenen Zähler. In Berlin sind es 2026 3,55 statt 8,88 Cent je kWh (brutto).</li>
+      <li><b>Modul 3</b>, zeitlich gestaffeltes Netzentgelt, seit April 2025. Nur zusammen mit Modul 1 und nur mit intelligentem Messsystem.</li>
+    </ul>
+    <p>Welches Modul sich rechnet, hängt davon ab, wie viel Sie laden. Bei einem Auto mit durchschnittlicher Fahrleistung ist Modul 1 oft schon die richtige Wahl, weil der zweite Zähler Geld kostet. Modul 2 und 3 müssen Sie ausdrücklich wählen. Wenn Sie zusätzlich eine <a class="ilink" data-nav="wp">Wärmepumpe</a> betreiben oder planen, gehört beides in eine gemeinsame Rechnung.</p>
+
+    <h2>Laden mit eigenem Solarstrom</h2>
+    <p>Richtig günstig wird das Laden mit Strom vom eigenen Dach. Eine Wallbox mit Überschussladen lädt dann, wenn die <a class="ilink" data-nav="pv">Solaranlage</a> mehr erzeugt, als das Haus gerade braucht. Diese Kilowattstunde ist Ihnen sonst nur die Einspeisevergütung wert, aus dem Netz kostet sie ein Vielfaches. Das funktioniert vor allem, wenn das Auto tagsüber öfter zu Hause steht.</p>
+    <p>Ein Punkt wird in Angeboten gern unklar formuliert: Für die Solaranlage und den Speicher gilt der Nullsteuersatz nach § 12 Abs. 3 UStG. <b>Für die Wallbox nicht.</b> Das Bundesfinanzministerium zählt Ladeinfrastruktur ausdrücklich nicht zu den wesentlichen Komponenten einer Photovoltaikanlage. Auf die Wallbox und ihre Installation fallen also 19 % Umsatzsteuer an, auch wenn sie im selben Angebot steht.</p>
+
+    <h2>Förderung: derzeit keine für das Eigenheim</h2>
+    <p>Der frühere KfW-Zuschuss 442 für Solarstrom und Ladestation kann nicht mehr beantragt werden. Ein neues Bundesprogramm für das Einfamilienhaus gibt es nicht. Berlin fördert Wallboxen nur für Unternehmen und Selbstständige, Brandenburg hat derzeit kein Landesprogramm für Privatleute.</p>
+    <p>Anders ist es bei Mehrparteienhäusern: Für bestehende Häuser mit <b>mindestens drei Wohneinheiten</b> fördert der Bund Stellplätze mit Ladepunkt pauschal mit 1.500 € je Stellplatz. Anträge sind laut Förderaufruf bis zum <b>10. November 2026</b> möglich.</p>
+
+    <h2>Was der Elektriker vorher prüfen muss</h2>
+    <ul class="liste">
+      <li><b>Eigener Stromkreis.</b> Die Wallbox bekommt immer eine eigene Leitung mit eigener Absicherung.</li>
+      <li><b>Fehlerstromschutz.</b> Jeder Ladepunkt braucht einen eigenen FI-Schutzschalter. Ob Typ A genügt oder Typ B nötig ist, hängt davon ab, ob die Wallbox Gleichfehlerströme selbst erkennt. Das steht im Datenblatt.</li>
+      <li><b>Zählerschrank und Hausanschluss.</b> Ältere Zählerschränke haben oft keinen Platz für die zusätzliche Technik oder entsprechen nicht mehr den heutigen Anforderungen. Dann wird aus der Wallbox schnell ein Zählerschrank-Projekt. Diese Position muss im Angebot stehen.</li>
+      <li><b>Leitungsweg.</b> Von der Garage bis zum Zählerschrank können es viele Meter sein, mit Wanddurchbrüchen. Ein Pauschalpreis ohne Besichtigung ist hier wenig wert.</li>
+    </ul>
+    <p>Liegt Ihnen schon ein Angebot vor, sehen wir es uns im <a class="ilink" data-nav="check">Angebots-Check</a> kostenlos an.</p>
+
+    <h2>Und das Auto als Speicher?</h2>
+    <p>Bidirektionales Laden, also Strom aus dem Autoakku zurück ins Haus, kommt voran. Die Bundesnetzagentur hat am 1. Oktober 2026 festgelegt, dass solche Ladepunkte Stromspeichern weitgehend gleichgestellt werden. Netz- und Messstellenbetreiber haben für die Umsetzung bis Ende September 2027 Zeit. Bis dahin geht es nur im Einzelfall mit deren Einverständnis. Wer heute eine Wallbox kauft, sollte deshalb nicht allein dafür einen Aufpreis zahlen.</p>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>Niederspannungsanschlussverordnung § 19: <a href="https://www.gesetze-im-internet.de/nav/__19.html" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+        <li>Steuerbare Verbrauchseinrichtungen nach § 14a EnWG: <a href="https://www.bundesnetzagentur.de/DE/Vportal/Energie/SteuerbareVBE/start.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
+        <li>Preisblatt Netzentgelte 2026 der Stromnetz Berlin GmbH: <a href="https://www.stromnetz.berlin/netz-nutzen/steuerbare-verbrauchseinrichtungen/" target="_blank" rel="noopener">stromnetz.berlin</a></li>
+        <li>BMF-Schreiben vom 30.11.2023 zum Nullsteuersatz für Photovoltaikanlagen: <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2023-11-30-einzelfragen-bei-der-anwendung-des-nullsteuersatzes-fuer-bestimmte-photovoltaikanlagen.pdf" target="_blank" rel="noopener">bundesfinanzministerium.de</a></li>
+        <li>KfW 442, nicht mehr beantragbar: <a href="https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/F%C3%B6rderprodukte/Solarstrom-f%C3%BCr-Elektroautos-(442)/" target="_blank" rel="noopener">kfw.de</a></li>
+        <li>Förderung Ladeinfrastruktur in Mehrparteienhäusern: <a href="https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Bund/BMVI/ladeinfrastruktur-mehrparteinhauser-weg.html" target="_blank" rel="noopener">foerderdatenbank.de</a></li>
+        <li>Bundesnetzagentur, Festlegung MiSpeL vom 01.10.2026: <a href="https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/DE/2026/20261001_Mispel.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+<!--FAQ-->
+<!--KURZANFRAGE-->
+</div><!-- /view-wallbox -->
+
+<div id="view-potsdam" hidden>
+
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <a data-nav="brandenburg">Brandenburg</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Potsdam</span></div>
+      <div class="eyebrow"><span class="dot"></span> Landeshauptstadt Potsdam</div>
+      <h1>Photovoltaik und Wärmepumpe <em>in Potsdam.</em></h1>
+      <p class="lede">Potsdam hat ein eigenes Förderprogramm, viele Denkmalbereiche und seit Juni 2026 einen beschlossenen Wärmeplan. Für Ihr Haus heißt das: Manches ist hier einfacher als anderswo in Brandenburg, manches deutlich aufwendiger.</p>
+      <div class="hero-cta">
+        <a href="#rueckruf" class="btn">Rückruf anfordern</a>
+        <a data-nav="check" class="btn btn-ghost">Angebot prüfen lassen</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Auf einen Blick</div>
+        <h2>Was in Potsdam anders ist.</h2>
+      </div>
+      <div class="vgrid">
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-sun"/></svg></div><h3>Städtische Förderung</h3><p>Das Klimaschutzförderprogramm zahlt für Solaranlage, Speicher und Wärmepumpe. Derzeit nimmt die Stadt aber keine Anträge an.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Denkmal und Welterbe</h3><p>In den historischen Stadtkernen, den Vorstädten und am Welterbe gelten eigene Satzungen. Dort braucht die Anlage oft eine Erlaubnis.</p></div>
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-plug"/></svg></div><h3>Netzgesellschaft Potsdam</h3><p>Netzbetreiber ist die NGP. Solaranlagen und Wallboxen meldet der Fachbetrieb nur noch über ihr Netzanschlussportal an.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-wave"/></svg></div><h3>Wärmeplan und Fernwärme</h3><p>In Teilen der Stadt gibt es Fernwärme-Vorranggebiete. Vor der Wärmepumpe lohnt ein Blick, ob Ihr Grundstück dazugehört.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0"><div class="wrap"><div class="artikel">
+    <h2>Das Potsdamer Klimaschutzförderprogramm</h2>
+    <p>Potsdam ist eine der wenigen Städte in Brandenburg, die Privatleuten selbst Geld für Solaranlage und Heizungstausch geben. Die Richtlinie vom 26. März 2026 sieht unter anderem vor:</p>
+    <ul class="liste">
+      <li><b>Photovoltaik</b> auf Dach oder Fassade: 200 € je kWp, höchstens 1.200 € je Objekt.</li>
+      <li><b>Stromspeicher</b>: 1.000 € pauschal, wenn er mit einer Solaranlage gekoppelt ist und mindestens 5 kWh nutzbare Kapazität hat.</li>
+      <li><b>Wärmepumpe</b> (Luft oder Erdreich) in Wohngebäuden: 2.000 € pauschal.</li>
+      <li><b>Balkonkraftwerk</b>: 250 € pauschal.</li>
+    </ul>
+    <p>Die Bedingungen sind strenger als bei vielen anderen Programmen. Gefördert werden nur Privatleute mit Erstwohnsitz in Potsdam. <b>Vor dem Antrag ist eine Energieberatung Pflicht</b>, etwa bei der Verbraucherzentrale Brandenburg. Für Wärmepumpe und Speicher müssen Sie Ökostrom beziehen. Der Antrag muss gestellt sein, bevor Sie verbindlich bestellen, und bewilligt wird in der Reihenfolge des Eingangs.</p>
+    <p><b>Zum Stand 13. Oktober 2026 können keine Anträge gestellt werden.</b> Die Richtlinie lässt Anträge ohnehin nur bis zum 31. Oktober eines Jahres zu. Für 2026 ist das Programm damit praktisch erledigt. Wer 2027 bauen will, kann die Zeit nutzen: Energieberatung jetzt machen, Angebote einholen, aber noch nichts unterschreiben, bis der Antrag gestellt ist. Das gilt im Übrigen genauso für den KfW-Zuschuss.</p>
+
+    <h2>Denkmalschutz, Welterbe und Satzungen</h2>
+    <p>Grundsätzlich sind Solaranlagen auf dem Dach auch in Potsdam nach § 61 der Brandenburgischen Bauordnung verfahrensfrei. Die Bauaufsicht weist aber selbst darauf hin, dass für die historischen Stadtkerne von Potsdam und Babelsberg und für die Vorstädte <b>Denkmalbereichs-, Erhaltungs- und Gestaltungssatzungen sowie Bebauungspläne</b> bestehen. Dazu kommt die Welterbe-Satzung der Berlin-Potsdamer Kulturlandschaft.</p>
+    <ul class="liste">
+      <li><b>Einzeldenkmal oder Denkmalbereich:</b> Sie brauchen eine denkmalrechtliche Erlaubnis der Unteren Denkmalschutzbehörde der Stadt.</li>
+      <li><b>Erhaltungs- oder Sanierungssatzung:</b> Hier gilt eine eigene Genehmigungspflicht.</li>
+      <li><b>Gestaltungssatzung oder Bebauungsplan:</b> Keine Genehmigung nötig, solange die Anlage den Vorgaben entspricht. Sonst braucht es eine Abweichung oder Befreiung.</li>
+    </ul>
+    <p>Aus den Hinweisen der Stadt lässt sich ein praktischer Rat ableiten: Rückwärtige Dachflächen sind eher genehmigungsfähig als die Seite zur Straße. Die Stadt hat ein eigenes Merkblatt „Solarenergie und Denkmalschutz“ veröffentlicht. Klären Sie das, bevor ein Betrieb die Module plant. Eine Anlage, die nachträglich umgeplant werden muss, wird teuer.</p>
+
+    <h2>Anmeldung bei der Netzgesellschaft Potsdam</h2>
+    <p>Netzbetreiber für Strom ist die <b>Netzgesellschaft Potsdam GmbH (NGP)</b>. Seit dem 1. Oktober 2026 nimmt sie Anträge für Erzeugungsanlagen nur noch über ihr <b>Netzanschlussportal</b> an, für Wallboxen gilt das schon seit dem 15. September 2026. Die Anmeldung macht in der Regel der ausführende Elektrofachbetrieb. Für ein Balkonkraftwerk genügt der Eintrag im Marktstammdatenregister, die NGP meldet sich danach wegen des Zählerwechsels.</p>
+    <p>Unabhängig davon muss jede Solaranlage innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister stehen. Was dabei zu beachten ist, steht auf der Seite <a class="ilink" data-nav="mastr">Anlage anmelden</a>. Zur Wallbox und zum reduzierten Netzentgelt nach § 14a EnWG gibt es eine eigene Seite: <a class="ilink" data-nav="wallbox">Wallbox</a>.</p>
+
+    <h2>Wärmepumpe, Wärmeplan und Fernwärme</h2>
+    <p>Die Stadtverordneten haben den kommunalen Wärmeplan am 3. Juni 2026 beschlossen. Er ist eine strategische Grundlage und verpflichtet Sie als Eigentümer nicht unmittelbar. Die Aussage ist trotzdem hilfreich: Wärmenetze sieht der Plan vor allem in dicht bebauten Gebieten. In weniger dicht bebauten Bereichen können Einzellösungen wie die Wärmepumpe wirtschaftlich besser geeignet sein. Die Karten mit den Eignungsgebieten veröffentlicht die Stadt online.</p>
+    <p>Ein Punkt ist in Potsdam besonders: Die Stadt hat eine <b>Fernwärmesatzung mit Anschluss- und Benutzungszwang</b> für festgelegte Vorranggebiete, darunter das Bornstedter Feld, Teile der Innenstadt, Babelsberg und die Teltower Vorstadt, Schlaatz und Waldstadt. Die Satzung sieht Ausnahmen vor, wenn die Wärme überwiegend aus erneuerbaren Energien kommt. Ob und wie das für Ihr Grundstück gilt, sollte vor einem Wärmepumpen-Auftrag geklärt sein.</p>
+    <p>Für die Wärmepumpe selbst gilt der KfW-Zuschuss 458 wie überall: 30 % Grundförderung, dazu je nach Fall Klimageschwindigkeits- und Einkommensbonus, zusammen bis zu 70 % und in bestimmten Fällen 80 %. Gerechnet wird auf höchstens 28.000 € für die erste Wohneinheit. Am 1. Februar 2027 sinken Bonus und Höchstbetrag. Was das kostet, steht auf der Seite <a class="ilink" data-nav="foerderung2027">Förderung sinkt 2027</a>.</p>
+
+    <h2>Eignet sich Ihr Dach?</h2>
+    <p>Die Stadt bietet eine kostenlose Solarpotenzialanalyse für einzelne Hausdächer an. Sie zeigt, ob sich Ihr Dach grundsätzlich für Photovoltaik eignet. Für die Größe der Anlage zählt dann vor allem Ihr Verbrauch. Mit dem <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a> können Sie das mit Ihren eigenen Zahlen durchspielen.</p>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>Klimaschutzförderprogramm, Antragsstatus: <a href="https://www.potsdam.de/de/kategorie/klimaschutzfoerderprogramm" target="_blank" rel="noopener">potsdam.de</a></li>
+        <li>Potsdamer Klimaschutzförderrichtlinie vom 26.03.2026: <a href="https://www.potsdam.de/system/files/document/Schlussfassung%20Potsdamer%20Klimaschutzf%C3%B6rderrichtlinie%20%20vom%2026.03.2026_1.pdf" target="_blank" rel="noopener">potsdam.de (PDF)</a></li>
+        <li>Allgemeine Hinweise der Bauaufsicht zu Solaranlagen, Stand März 2025: <a href="https://www.potsdam.de/system/files/document/250314_441_Allgemeine%20Hinweise%20baurechtl.%20Genehmigungsbed%C3%BCrftigkeit%20Solaranlagen_Aktualisierung%202025_0.pdf" target="_blank" rel="noopener">potsdam.de (PDF)</a></li>
+        <li>Solarenergie und Denkmalschutz: <a href="https://www.potsdam.de/de/solarenergie-und-denkmalschutz" target="_blank" rel="noopener">potsdam.de</a></li>
+        <li>Netzgesellschaft Potsdam, Erzeugungsanlagen: <a href="https://www.ngp-potsdam.de/de/unsere-sparten/strom/erzeugungsanlagen/" target="_blank" rel="noopener">ngp-potsdam.de</a></li>
+        <li>Ergebnisse der kommunalen Wärmeplanung: <a href="https://www.potsdam.de/de/ergebnisse-der-kommunalen-waermeplanung-potsdam" target="_blank" rel="noopener">potsdam.de</a></li>
+        <li>Fernwärmesatzung der Landeshauptstadt Potsdam: <a href="https://potsdam.de/system/files/documents/Satzung_Fernwaerme.pdf" target="_blank" rel="noopener">potsdam.de (PDF)</a></li>
+        <li>Solarpotenzialanalyse für Hausdächer: <a href="https://www.potsdam.de/de/online-solarpotenzialanalyse-fuer-hausdaecher-potsdam" target="_blank" rel="noopener">potsdam.de</a></li>
+        <li>Merkblatt KfW 458, Stand 07/2026: <a href="https://www.kfw.de/PDF/Download-Center/F%C3%B6rderprogramme-(Inlandsf%C3%B6rderung)/PDF-Dokumente/6000005131_M_458.pdf" target="_blank" rel="noopener">kfw.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+<!--FAQ-->
+<!--KURZANFRAGE-->
+</div><!-- /view-potsdam -->
+
+<div id="view-falkensee" hidden>
+
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <a data-nav="brandenburg">Brandenburg</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Falkensee</span></div>
+      <div class="eyebrow"><span class="dot"></span> Falkensee im Havelland</div>
+      <h1>Photovoltaik und Wärmepumpe <em>in Falkensee.</em></h1>
+      <p class="lede">Falkensee ist eine Stadt der Einfamilienhäuser, und fast alle heizen noch mit Öl oder Gas. Der Wärmeplan der Stadt sieht für die meisten Häuser keine Fernwärme vor. Für viele Eigentümer läuft es deshalb auf die Wärmepumpe hinaus.</p>
+      <div class="hero-cta">
+        <a href="#rueckruf" class="btn">Rückruf anfordern</a>
+        <a data-nav="check" class="btn btn-ghost">Angebot prüfen lassen</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Auf einen Blick</div>
+        <h2>Was in Falkensee gilt.</h2>
+      </div>
+      <div class="vgrid">
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-wave"/></svg></div><h3>Wärmepumpe statt Netz</h3><p>Für rund 12.000 der etwa 15.700 beheizten Gebäude sieht der Wärmeplan eine eigene Heizung im Haus vor, kein Wärmenetz.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-plug"/></svg></div><h3>E.DIS Netz</h3><p>Netzbetreiber ist E.DIS. Eine Wärmepumpe muss dort unabhängig von ihrer Leistung angemeldet und genehmigt werden.</p></div>
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-house"/></svg></div><h3>Kein Stadtprogramm</h3><p>Die Stadt hat kein eigenes Förderprogramm für Solaranlage oder Wärmepumpe. Es bleibt der Zuschuss des Bundes.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Achtung in Falkenhagen</h3><p>Im historischen Angerdorf Falkenhagen schließt eine Gestaltungssatzung Kollektoren auf Dächern grundsätzlich aus.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0"><div class="wrap"><div class="artikel">
+    <h2>Eine Stadt der Einfamilienhäuser</h2>
+    <p>Der Abschlussbericht zur Wärmeplanung beschreibt Falkensee als eine Stadt, die von Ein- und Zweifamilienhäusern geprägt ist. Rund 40 % der Gebäude sind vor 1980 gebaut. Bei den Heizungen in den Häusern liegen Heizöl und Erdgas zusammen bei 98 %, am häufigsten ist die Gastherme im Einfamilienhaus.</p>
+    <p>Das ist für die Planung eine gute Ausgangslage. Freistehende Häuser haben meist Platz für das Außengerät einer Wärmepumpe und ein Dach ohne Nachbarn direkt an der Kante. Wie gut eine Wärmepumpe in einem Haus von vor 1980 läuft, hängt vor allem an der Vorlauftemperatur. Den Test, den Sie dazu selbst machen können, finden Sie im Ratgeber <a class="ilink" data-nav="rat-wp">Wärmepumpe im Altbau</a>.</p>
+
+    <h2>Was der Wärmeplan für Ihr Haus bedeutet</h2>
+    <p>Die Stadtverordneten haben den kommunalen Wärmeplan am 9. Juni 2026 beschlossen. Laut Verwaltung hat er keine unmittelbare rechtliche Wirkung für Eigentümer. Er zeigt aber, wohin es geht:</p>
+    <ul class="liste">
+      <li>Für rund <b>12.000 Gebäude</b> gilt eine dezentrale Versorgung, etwa mit einer Wärmepumpe, als sehr wahrscheinlich geeignet. Ein Anschluss an ein Wärmenetz ist dort nur sehr begrenzt möglich.</li>
+      <li>In den <b>Wärmenetzgebieten</b> liegen rund 350 Gebäude. Das Netz in Seegefeld soll deutlich wachsen.</li>
+      <li>Für rund <b>3.000 Gebäude</b> in sogenannten Prüfgebieten ist die Frage offen.</li>
+      <li>Wasserstoff ist im Plan derzeit keine Versorgungslösung.</li>
+    </ul>
+    <p>Wer in einem der Prüfgebiete wohnt und eine funktionierende Heizung hat, kann abwarten, was die Stadt dort entscheidet. Für alle anderen gibt es wenig Grund, auf ein Wärmenetz zu warten.</p>
+    <p>Eine Fernwärmesatzung mit Anschlusszwang gibt es nur für das Gebiet Falkenhorst und Finkenkruger Straße. Auch dort sieht sie eine Befreiung vor, wenn die Wärme überwiegend aus erneuerbaren Energien kommt, ausdrücklich zum Beispiel mit einer elektrischen Wärmepumpe. Die Befreiung muss beantragt werden.</p>
+
+    <h2>KfW-Zuschuss für die Wärmepumpe</h2>
+    <p>Da es in Falkensee kein städtisches Programm gibt, ist der KfW-Zuschuss 458 der entscheidende Baustein: 30 % Grundförderung, dazu je nach Fall Klimageschwindigkeits- und Einkommensbonus, zusammen bis zu 70 % und in bestimmten Fällen 80 %. Gerechnet wird auf höchstens 28.000 € für die erste Wohneinheit.</p>
+    <p>Für die vielen Gasthermen in Falkensee ist eine Regel wichtig: Den Klimageschwindigkeitsbonus gibt es beim Tausch einer Gasheizung erst, wenn sie bei Antragstellung mindestens 20 Jahre in Betrieb ist. Bei einer Ölheizung gilt keine Altersgrenze. Am 1. Februar 2027 sinken Bonus und Höchstbetrag. Was das in Euro bedeutet, steht auf der Seite <a class="ilink" data-nav="foerderung2027">Förderung sinkt 2027</a>, für Ihr Haus rechnet es der <a class="ilink" data-nav="rechner">Wärmepumpen-Rechner</a>.</p>
+
+    <h2>Anmeldung bei E.DIS</h2>
+    <p>Netzbetreiber für Strom ist die <b>E.DIS Netz GmbH</b>. Eine Solaranlage sollte laut E.DIS rund vier bis sechs Wochen vor Montagebeginn über deren Hausanschlussportal angemeldet werden. Danach muss sie innerhalb eines Monats nach Inbetriebnahme im <a class="ilink" data-nav="mastr">Marktstammdatenregister</a> stehen.</p>
+    <p>Bei der Wärmepumpe ist E.DIS strenger, als viele erwarten: Sie muss <b>unabhängig von ihrer Leistung</b> angemeldet und von E.DIS genehmigt werden. Das macht ein eingetragener Elektrofachbetrieb. Wärmepumpen und Wallboxen über 4,2 kW sind steuerbar nach § 14a EnWG, dafür sinkt das Netzentgelt. Mehr dazu auf der Seite <a class="ilink" data-nav="wallbox">Wallbox</a>.</p>
+
+    <h2>Solaranlagen im Angerdorf Falkenhagen</h2>
+    <p>Grundsätzlich brauchen Solaranlagen auf dem Dach auch in Falkensee keine Baugenehmigung. Eine Ausnahme ist das historische Angerdorf Falkenhagen. Die dortige Gestaltungssatzung sagt in § 10: Auf Dächern sind Sonnenkollektoren grundsätzlich nicht zulässig, Ausnahmen nur, wenn technische Alternativen unmöglich sind. Ebenerdige Anlagen sind erlaubt, wenn sie von der Straße nicht einsehbar und höchstens 1,50 m hoch sind.</p>
+    <p>Die Satzung stammt von 1992 und spricht von Kollektoren, nicht ausdrücklich von Photovoltaik. Wer im Geltungsbereich wohnt, sollte die Frage vor der Planung mit dem Bauamt der Stadt klären.</p>
+
+    <h2>Förderung in Falkensee</h2>
+    <p>Ein städtisches Förderprogramm für Solaranlage, Speicher oder Wärmepumpe gibt es nicht. Der Landkreis Havelland hat Balkonkraftwerke mit 180 € gefördert, für 2026 sind dort derzeit aber keine Anträge möglich. Was überall gilt: Auf Lieferung und Montage einer Solaranlage mit Speicher fällt auf Wohngebäuden keine Mehrwertsteuer an (§ 12 Abs. 3 UStG).</p>
+    <p>Ob Ihr Dach geeignet ist, zeigt der Solaratlas Brandenburg, auf den auch die Stadt verweist. Rechnen Sie anschließend mit Ihrem eigenen Verbrauch im <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a>.</p>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>Kommunale Wärmeplanung Falkensee, Beschluss und Abschlussbericht: <a href="https://www.falkensee.de/wärmeplanung" target="_blank" rel="noopener">falkensee.de</a></li>
+        <li>Fernwärmesatzung vom 27.01.2010: <a href="https://daten.verwaltungsportal.de/dateien/legalframework/9/8/4/2/Fernw_rmesatzung_27.01.2010.pdf" target="_blank" rel="noopener">falkensee.de (PDF)</a></li>
+        <li>Gestaltungssatzung Historisches Angerdorf Falkenhagen: <a href="https://daten.verwaltungsportal.de/dateien/legalframework/1/3/2/2/8/Gestaltungssatzung_Angerdorf_Falkenhagen.pdf" target="_blank" rel="noopener">falkensee.de (PDF)</a></li>
+        <li>Versorger in Falkensee: <a href="https://www.falkensee.de/seite/27660/merkblatt-der-ver-und-entsorger.html" target="_blank" rel="noopener">falkensee.de</a></li>
+        <li>E.DIS Netz, Photovoltaik anmelden: <a href="https://www.e-dis-netz.de/de/energie-einspeisen/ihre-anlage/photovoltaik.html" target="_blank" rel="noopener">e-dis-netz.de</a></li>
+        <li>E.DIS Netz, Wallbox, Wärmepumpe und Speicher: <a href="https://www.e-dis-netz.de/de/energie-anschliessen/ihr-zuhause/wallbox--waermepumpe--speicher-und-klimaanlage.html" target="_blank" rel="noopener">e-dis-netz.de</a></li>
+        <li>Landkreis Havelland, Förderung Stecker-Solargeräte: <a href="https://www.havelland.de/umwelt-landwirtschaft/umwelt/klimaschutz/erneuerbare-energien/foerderprogramm-stecker-solargeraete-1/" target="_blank" rel="noopener">havelland.de</a></li>
+        <li>Merkblatt KfW 458, Stand 07/2026: <a href="https://www.kfw.de/PDF/Download-Center/F%C3%B6rderprogramme-(Inlandsf%C3%B6rderung)/PDF-Dokumente/6000005131_M_458.pdf" target="_blank" rel="noopener">kfw.de</a></li>
+        <li>Nullsteuersatz § 12 Abs. 3 UStG: <a href="https://www.gesetze-im-internet.de/ustg_1980/__12.html" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+<!--FAQ-->
+<!--KURZANFRAGE-->
+</div><!-- /view-falkensee -->
+
+<div id="view-bernau" hidden>
+
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <a data-nav="brandenburg">Brandenburg</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Bernau</span></div>
+      <div class="eyebrow"><span class="dot"></span> Bernau bei Berlin</div>
+      <h1>Photovoltaik und Wärmepumpe <em>in Bernau.</em></h1>
+      <p class="lede">In Bernau kommt rund 40 % der Wärme aus dem Fernwärmenetz. Trotzdem können die meisten Hausbesitzer frei entscheiden, wie sie heizen. Was Sie zu Stadtwerken, Fernwärmesatzung und Altstadt wissen sollten.</p>
+      <div class="hero-cta">
+        <a href="#rueckruf" class="btn">Rückruf anfordern</a>
+        <a data-nav="check" class="btn btn-ghost">Angebot prüfen lassen</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Auf einen Blick</div>
+        <h2>Was in Bernau gilt.</h2>
+      </div>
+      <div class="vgrid">
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-house"/></svg></div><h3>Eigenheim frei</h3><p>Selbst genutzte Wohnhäuser mit bis zu zwei Wohnungen sind vom Fernwärme-Anschlusszwang befreit. Die Wärmepumpe ist also möglich.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-plug"/></svg></div><h3>Stadtwerke Bernau</h3><p>Im Stadtgebiet betreiben die Stadtwerke Bernau das Stromnetz. Dort meldet der Fachbetrieb Solaranlage, Wallbox und Wärmepumpe an.</p></div>
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Altstadt und Birkholz</h3><p>Im Stadtkern gelten Denkmal- und Gestaltungssatzung, in Birkholz darf eine sichtbare Anlage höchstens ein Viertel des Dachs belegen.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-sun"/></svg></div><h3>Keine Stadtförderung</h3><p>Bernau hat kein eigenes Förderprogramm für Solaranlage oder Wärmepumpe. Es bleiben der Bundeszuschuss und die Steuerbefreiung.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0"><div class="wrap"><div class="artikel">
+    <h2>Fernwärme in Bernau: was für Ihr Haus gilt</h2>
+    <p>Bernau hat ein großes Fernwärmenetz. Nach Angaben der Stadtwerke deckt es rund 40 % des Wärmebedarfs der Stadt. Die Fernwärmesatzung von 1997 legt vier Vorranggebiete fest: Stadtkern, Friedensthal, Waldfrieden und Waldsiedlung. Zum Stadtkern zählen dabei auch Nibelungen, Pankeborn und Rutenfeld.</p>
+    <p>Für Eigentümer von Einfamilienhäusern ist ein Satz in der Satzung entscheidend. In § 6 heißt es: <b>„Vom Anschlußzwang befreit sind selbstgenutzte Wohnhäuser mit bis zu 2 Wohneinheiten.“</b> Wer sein Haus selbst bewohnt, kann also auch im Vorranggebiet eine Wärmepumpe einbauen. Andere Gebäude können sich auf Antrag befreien lassen, wenn sie mit erneuerbarer Energie heizen.</p>
+    <p>Den kommunalen Wärmeplan haben die Stadtverordneten am 28. Mai 2026 beschlossen. Die Stadt stellt dazu ausdrücklich klar, dass sich aus dem Wärmeplan kein unmittelbarer Anschluss- oder Benutzungszwang ergibt.</p>
+
+    <h2>Wärmepumpe und KfW-Zuschuss</h2>
+    <p>Da die Stadt selbst nichts zuschießt, ist der KfW-Zuschuss 458 der wichtigste Baustein: 30 % Grundförderung, dazu je nach Fall Klimageschwindigkeits- und Einkommensbonus, zusammen bis zu 70 % und in bestimmten Fällen 80 %. Gerechnet wird auf höchstens 28.000 € für die erste Wohneinheit. Den Klimageschwindigkeitsbonus gibt es beim Tausch einer Gasheizung erst, wenn sie mindestens 20 Jahre in Betrieb ist, bei Öl ohne Altersgrenze.</p>
+    <p>Am 1. Februar 2027 sinken Bonus und Höchstbetrag. Was das in Euro bedeutet, steht auf der Seite <a class="ilink" data-nav="foerderung2027">Förderung sinkt 2027</a>. Wie viel bei Ihnen zusammenkommt, rechnet der <a class="ilink" data-nav="rechner">Wärmepumpen-Rechner</a>.</p>
+
+    <h2>Altstadt, Denkmal und Ortsteile</h2>
+    <p>Solaranlagen auf dem Dach sind in Brandenburg grundsätzlich verfahrensfrei. In Bernau gibt es aber mehrere Satzungen, die genau hinschauen:</p>
+    <ul class="liste">
+      <li><b>Denkmalschutzsatzung Stadtkern</b> von 1993. Sie schützt ausdrücklich die vielgestaltige Dachlandschaft der Altstadt und reicht über die Stadtmauer hinaus, unter anderem bis in die Breitscheid-, Bahnhof-, Goethe- und Parkstraße. Hier brauchen Sie eine Erlaubnis der Unteren Denkmalschutzbehörde des Landkreises Barnim in Eberswalde.</li>
+      <li><b>Gestaltungssatzung Innenstadt</b> von 1999. Sie lässt Solaranlagen zu, wenn sie „so eingebaut werden, daß sie nicht verunstaltend wirken“. Was das im Einzelfall heißt, sollte vor der Planung geklärt werden.</li>
+      <li><b>Gestaltungssatzung Birkholz</b>. Solaranlagen, die von der Straße aus sichtbar sind, dürfen höchstens <b>ein Viertel der Dachfläche</b> einnehmen.</li>
+    </ul>
+    <p>Daneben gibt es Denkmalschutzsatzungen für Börnicke und für das Bauhausdenkmal Bundesschule sowie Sanierungssatzungen. Wenn Ihr Haus in einem dieser Bereiche liegt, prüfen wir das vor der Planung mit Ihnen.</p>
+
+    <h2>Anmeldung bei den Stadtwerken Bernau</h2>
+    <p>Netzbetreiber im Stadtgebiet und in den angrenzenden Ortsteilen sind die <b>Stadtwerke Bernau</b>. Die Anmeldung von Solaranlage, Speicher, Wallbox und Wärmepumpe übernimmt der Elektrofachbetrieb mit dem Netzanschlussdatenblatt der Stadtwerke. Liegt Ihr Haus in einem Ortsteil, in dem ein anderer Netzbetreiber zuständig ist, steht das auf Ihrer Stromrechnung.</p>
+    <p>Zusätzlich muss jede Solaranlage und jeder Speicher innerhalb eines Monats im <a class="ilink" data-nav="mastr">Marktstammdatenregister</a> stehen. Wärmepumpen und Wallboxen über 4,2 kW sind steuerbar nach § 14a EnWG, dafür sinkt das Netzentgelt. Mehr dazu auf der Seite <a class="ilink" data-nav="wallbox">Wallbox</a>.</p>
+
+    <h2>Förderung in Bernau</h2>
+    <p>Die Stadt Bernau hat kein eigenes Förderprogramm für Privathaushalte und verweist selbst auf die Programme von Bund, KfW und BAFA. Auch das Land Brandenburg zahlt für die private Solaranlage keinen Zuschuss. Was bleibt: Auf Lieferung und Montage einer Solaranlage mit Speicher fällt bei Wohngebäuden keine Mehrwertsteuer an (§ 12 Abs. 3 UStG), und für die Wärmepumpe gibt es den KfW-Zuschuss.</p>
+    <p>Ob Ihr Dach geeignet ist, zeigt der Solaratlas Brandenburg, auf den auch die Stadt verweist. Mit Ihrem eigenen Verbrauch rechnen Sie es im <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a> durch.</p>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>Fernwärmesatzung der Stadt Bernau vom 20.03.1997: <a href="https://www.bernau.de/visioncontent/mediendatenbank/fernwaermesatzung_vom_20._maerz_1997.pdf" target="_blank" rel="noopener">bernau.de (PDF)</a></li>
+        <li>Kommunale Wärmeplanung: <a href="https://www.bernau.de/de/mein-bernau/gruene-stadt/klimaschutz-energie/artikel-waermeplanung.html" target="_blank" rel="noopener">bernau.de</a></li>
+        <li>Fernwärmeanteil laut Stadtwerken: <a href="https://www.waerme-fuer-bernau.de/" target="_blank" rel="noopener">waerme-fuer-bernau.de</a></li>
+        <li>Denkmalschutzsatzung Stadtkern vom 25.11.1993: <a href="https://www.bernau.de/visioncontent/mediendatenbank/denkmalbereichssatzung_vom_25._november_1993.pdf" target="_blank" rel="noopener">bernau.de (PDF)</a></li>
+        <li>Gestaltungssatzung Innenstadt vom 08.07.1999: <a href="https://www.bernau.de/visioncontent/mediendatenbank/gestaltungssatzung.pdf" target="_blank" rel="noopener">bernau.de (PDF)</a></li>
+        <li>Gestaltungssatzung Ortsteil Birkholz: <a href="https://www.bernau.de/visioncontent/mediendatenbank/ortsgestaltungssatzung_birkholz.pdf" target="_blank" rel="noopener">bernau.de (PDF)</a></li>
+        <li>Untere Denkmalschutzbehörde Landkreis Barnim: <a href="https://www.barnim.de/dienstleistungen/dienstleistungen-detail/erlaubnis-zur-durchfuehrung-von-massnahmen-an-denkmalen-109111318" target="_blank" rel="noopener">barnim.de</a></li>
+        <li>Stadtwerke Bernau, Netzanschluss: <a href="https://www.stadtwerke-bernau.de/netz/stromnetz/netzanschluss.html" target="_blank" rel="noopener">stadtwerke-bernau.de</a></li>
+        <li>Fördermöglichkeiten laut Stadt: <a href="https://www.bernau.de/de/mein-bernau/gruene-stadt/klimaschutz-energie/artikel-klimaschutz-erneuerbare-energien.html" target="_blank" rel="noopener">bernau.de</a></li>
+        <li>Merkblatt KfW 458, Stand 07/2026: <a href="https://www.kfw.de/PDF/Download-Center/F%C3%B6rderprogramme-(Inlandsf%C3%B6rderung)/PDF-Dokumente/6000005131_M_458.pdf" target="_blank" rel="noopener">kfw.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+<!--FAQ-->
+<!--KURZANFRAGE-->
+</div><!-- /view-bernau -->
+
+<div id="view-oranienburg" hidden>
+
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <a data-nav="brandenburg">Brandenburg</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Oranienburg</span></div>
+      <div class="eyebrow"><span class="dot"></span> Oranienburg im Kreis Oberhavel</div>
+      <h1>Photovoltaik und Wärmepumpe <em>in Oranienburg.</em></h1>
+      <p class="lede">Die Solaranlage auf dem Dach ist in Oranienburg so einfach wie anderswo. Bei der Wärmepumpe gibt es eine Besonderheit, die es in kaum einer anderen Stadt gibt: Für Fundament und Leitungsgraben wird im Boden gearbeitet, und der Boden ist hier mit Blindgängern belastet.</p>
+      <div class="hero-cta">
+        <a href="#rueckruf" class="btn">Rückruf anfordern</a>
+        <a data-nav="check" class="btn btn-ghost">Angebot prüfen lassen</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="pad">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Auf einen Blick</div>
+        <h2>Was in Oranienburg gilt.</h2>
+      </div>
+      <div class="vgrid">
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Kampfmittel im Boden</h3><p>Weite Teile der Stadt sind Kampfmittelverdachtsfläche. Vor jeder Erdarbeit für die Wärmepumpe sollte das geklärt sein.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-plug"/></svg></div><h3>Zwei Netzbetreiber</h3><p>Kernstadt und Sachsenhausen gehören zu den Stadtwerken Oranienburg, die übrigen Ortsteile zu E.DIS Netz.</p></div>
+        <div class="vcard"><div class="vic"><svg class="ic"><use href="#i-wave"/></svg></div><h3>Wärmeplanung</h3><p>Eine Karte der Stadt zeigt je Adresse, ob Fernwärme geplant ist oder Sie selbst für die Heizung sorgen müssen.</p></div>
+        <div class="vcard"><div class="vic amber"><svg class="ic"><use href="#i-house"/></svg></div><h3>Innenstadt</h3><p>Im Gebiet der Erhaltungssatzung Innenstadt brauchen sichtbare Veränderungen am Haus eine Genehmigung, auch eine Solaranlage.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0"><div class="wrap"><div class="artikel">
+    <h2>Blindgänger: was das für die Wärmepumpe heißt</h2>
+    <p>Der Leitfaden der Stadt spricht von rund 10.500 Großbomben mit chemischen Langzeitzündern, die im Zweiten Weltkrieg auf Oranienburg fielen. Etwa ein Drittel der später gefundenen Blindgänger war auf den Luftbildern nicht zu erkennen. Weite Teile des Stadtgebiets gelten deshalb als Kampfmittelverdachtsfläche.</p>
+    <p>Für die Solaranlage auf dem Dach spielt das keine Rolle. Für die Wärmepumpe schon, denn dafür wird gegraben: für das Fundament des Außengeräts, für den Leitungsgraben ins Haus und bei einer Erdwärmepumpe für die Bohrung.</p>
+    <ul class="liste">
+      <li>Für <b>Bauvorhaben mit Baugenehmigung</b> verlangt die Bauaufsicht in belasteten Gebieten eine <b>Kampfmittelfreiheitsbescheinigung</b>, vor Baubeginn.</li>
+      <li>Für das einzelne Fundament einer Luftwärmepumpe, das keine Baugenehmigung braucht, ist eine solche Pflicht nicht ausdrücklich geregelt. Wir raten trotzdem dazu, <b>vor jeder Erdarbeit Auskunft einzuholen</b>, beim Kampfmittelbeseitigungsdienst des Landes oder beim Sachgebiet Kampfmittel der Stadt.</li>
+      <li>Bei einer <b>Erdwärmepumpe mit Tiefenbohrung</b> kommt man an einer Prüfung praktisch nicht vorbei.</li>
+    </ul>
+    <p>Rechnen Sie dafür Zeit ein. Laut Leitfaden dauert eine Suche über den Kampfmittelbeseitigungsdienst einige Monate bis anderthalb Jahre, eine beauftragte Fachfirma braucht wenige Wochen, kostet dann aber Geld. Ein Wärmepumpen-Angebot für Oranienburg, in dem dieses Thema gar nicht vorkommt, ist unvollständig. Das prüfen wir im <a class="ilink" data-nav="check">Angebots-Check</a>.</p>
+
+    <h2>Welcher Netzbetreiber ist zuständig?</h2>
+    <p>In Oranienburg hängt das vom Ortsteil ab:</p>
+    <ul class="liste">
+      <li><b>Kernstadt und Sachsenhausen:</b> Stadtwerke Oranienburg. Solaranlage und Speicher meldet der Fachbetrieb dort online an. Ein Balkonkraftwerk bis 800 VA tragen Sie nur ins Marktstammdatenregister ein, die Meldung an die Stadtwerke läuft dann automatisch.</li>
+      <li><b>Lehnitz, Friedrichsthal, Germendorf, Malz, Schmachtenhagen, Wensickendorf und Zehlendorf:</b> E.DIS Netz, mit Anmeldung über deren Netzanschlussportal.</li>
+    </ul>
+    <p>Wärmepumpen über 4,2 kW müssen in beiden Netzen steuerbar sein nach § 14a EnWG, dafür sinkt das Netzentgelt. Für einen Wärmepumpentarif verlangen die Stadtwerke einen eigenen Zähler. Ob sich der lohnt, steht im Ratgeber <a class="ilink" data-nav="rat-pvwp">Photovoltaik und Wärmepumpe</a>. Für mehr Leistung im Netz bauen die Stadtwerke seit März 2026 ein neues Umspannwerk, ausdrücklich auch für Wärmepumpen und Elektromobilität. Fertig sein soll es Ende 2027 oder Anfang 2028.</p>
+
+    <h2>Wärmeplanung: Fernwärme oder eigene Heizung?</h2>
+    <p>Den Entwurf des kommunalen Wärmeplans hat die Stadt Anfang 2025 öffentlich ausgelegt. Ziel ist eine klimaneutrale Wärmeversorgung bis 2040, das Fernwärmenetz soll um rund 22 Kilometer wachsen. Die Wärmeplanungskarte der Stadt unterscheidet vier Gebietstypen: Fernwärme-Bestandsgebiet, Fernwärme-Ausbaugebiet, Prüfgebiet und Individualversorgung.</p>
+    <p>In den Gebieten mit Individualversorgung schreibt die Stadt: Die Wärmeversorgung muss durch die Eigentümer eigenständig sichergestellt werden. Dort ist die Wärmepumpe in aller Regel die naheliegende Lösung. Geben Sie Ihre Adresse in die Karte ein, bevor Sie sich entscheiden.</p>
+    <p>Für die Wärmepumpe gilt der KfW-Zuschuss 458: 30 % Grundförderung, dazu je nach Fall Klimageschwindigkeits- und Einkommensbonus, zusammen bis zu 70 % und in bestimmten Fällen 80 %, gerechnet auf höchstens 28.000 € für die erste Wohneinheit. Am 1. Februar 2027 sinken Bonus und Höchstbetrag, Details auf der Seite <a class="ilink" data-nav="foerderung2027">Förderung sinkt 2027</a>.</p>
+
+    <h2>Solaranlagen in der Innenstadt</h2>
+    <p>Grundsätzlich brauchen Solaranlagen auf dem Dach keine Baugenehmigung. In der Innenstadt gilt aber eine Erhaltungssatzung nach § 172 Baugesetzbuch. Danach sind alle Veränderungen genehmigungspflichtig, die das äußere Erscheinungsbild betreffen und von Dritten ohne Weiteres wahrgenommen werden. Eine von der Straße sichtbare Solaranlage gehört dazu. Den Antrag stellen Sie beim Stadtplanungsamt. Weitere Erhaltungssatzungen gibt es für die Neustadt im Umfeld der Gedenkstätte und die Ortsmitte Lehnitz. Bei Baudenkmalen ist zusätzlich die Untere Denkmalschutzbehörde des Landkreises Oberhavel zuständig.</p>
+
+    <h2>Förderung in Oranienburg</h2>
+    <p>Die Stadt Oranienburg hat kein eigenes Förderprogramm für Solaranlage oder Wärmepumpe. Sie verweist auf die kostenlose Energieberatung der Verbraucherzentrale. Für die Solaranlage mit Speicher bleibt die Befreiung von der Mehrwertsteuer (§ 12 Abs. 3 UStG), für die Wärmepumpe der KfW-Zuschuss. Ob Ihr Dach geeignet ist, zeigt der Solaratlas Brandenburg. Mit Ihren eigenen Zahlen rechnen Sie im <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a>.</p>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>Leitfaden der Stadt Oranienburg zur Kampfmittelbelastung: <a href="https://www.oranienburg.de/media/custom/2967_1530_1.PDF" target="_blank" rel="noopener">oranienburg.de (PDF)</a></li>
+        <li>Merkblatt für das Bauen in kampfmittelbelasteten Gebieten: <a href="https://polizei.brandenburg.de/fm/32/Merkblatt_fuer_das_Bauen_in_kampfmittelbelasteten_Gebieten.pdf" target="_blank" rel="noopener">polizei.brandenburg.de (PDF)</a></li>
+        <li>Stadtwerke Oranienburg, Stromnetz und Netzgebiet: <a href="https://stadtwerke-oranienburg.de/unser-netz/stromnetz/" target="_blank" rel="noopener">stadtwerke-oranienburg.de</a></li>
+        <li>Stadtwerke Oranienburg, Anmeldung Wärmepumpen: <a href="https://stadtwerke-oranienburg.de/meine-netzanmeldung/waermepumpen/" target="_blank" rel="noopener">stadtwerke-oranienburg.de</a></li>
+        <li>Stadtwerke Oranienburg, neues Umspannwerk: <a href="https://stadtwerke-oranienburg.de/baustart-umspannwerk/" target="_blank" rel="noopener">stadtwerke-oranienburg.de</a></li>
+        <li>E.DIS Netz, Wallbox, Wärmepumpe und Speicher: <a href="https://www.e-dis-netz.de/de/energie-anschliessen/ihr-zuhause/wallbox--waermepumpe--speicher-und-klimaanlage.html" target="_blank" rel="noopener">e-dis-netz.de</a></li>
+        <li>Wärmeplanung und Wärmeplanungskarte: <a href="https://oranienburg.de/St%C3%A4dtebau-Wirtschaft/Klima-Umwelt/Klima/W%C3%A4rmeplanungskarte/" target="_blank" rel="noopener">oranienburg.de</a></li>
+        <li>Erhaltungssatzung Innenstadt Oranienburg: <a href="https://www.oranienburg.de/media/custom/2967_99_1.PDF" target="_blank" rel="noopener">oranienburg.de (PDF)</a></li>
+        <li>Untere Denkmalschutzbehörde Landkreis Oberhavel: <a href="https://www.oberhavel.de/B%C3%BCrgerservice/Bauen-und-Wohnen/Denkmalschutz/" target="_blank" rel="noopener">oberhavel.de</a></li>
+        <li>Merkblatt KfW 458, Stand 07/2026: <a href="https://www.kfw.de/PDF/Download-Center/F%C3%B6rderprogramme-(Inlandsf%C3%B6rderung)/PDF-Dokumente/6000005131_M_458.pdf" target="_blank" rel="noopener">kfw.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+<!--FAQ-->
+<!--KURZANFRAGE-->
+</div><!-- /view-oranienburg -->
+
+<div id="view-rat-pvwp" hidden>
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <a data-nav="ratgeber">Ratgeber</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>PV und Wärmepumpe</span></div>
+      <div class="eyebrow"><span class="dot"></span> Ratgeber · Photovoltaik und Wärmepumpe</div>
+      <h1>Photovoltaik und Wärmepumpe: <em>wie gut passen sie zusammen?</em></h1>
+      <p class="lede">Die Wärmepumpe braucht im Winter den meisten Strom, die Solaranlage liefert ihn im Sommer. Trotzdem lohnt sich die Kombination. Was Messungen aus echten Häusern zeigen.</p>
+    </div>
+  </header>
+
+  <section class="pad"><div class="wrap"><div class="artikel">
+    <h2>Wie viel Wärmepumpenstrom vom Dach kommt</h2>
+    <p>Das Fraunhofer-Institut für Solare Energiesysteme hat Wärmepumpen in bestehenden Häusern mit Solaranlage über längere Zeit gemessen. Ein Ergebnis überrascht viele: Ohne Batterie kam in diesen Häusern rund <b>13 bis 36 %</b> des Wärmepumpenstroms direkt vom eigenen Dach, mit Batterie <b>17 bis 49 %</b>. Die Spanne hängt davon ab, ob man den Solarstrom zuerst dem Haushalt oder zuerst der Wärmepumpe zurechnet. Die Forscher weisen selbst darauf hin, dass es nur wenige Anlagen waren.</p>
+    <p>Bezogen auf das ganze Haus deckten die Anlagen ohne Batterie 25 bis 40 % des Strombedarfs selbst, mit Batterie 32 bis 62 %.</p>
+
+    <h2>Die Winterlücke ist real</h2>
+    <p>Von Mai bis August kam eines der gemessenen Häuser mit Batterie fast vollständig ohne Netzstrom aus. Im November, Dezember und Januar sank der Anteil unter 15 %. Die Batterie hilft in diesen Monaten nur noch, den wenigen Solarstrom vom Mittag in den Nachmittag zu schieben. Über Nacht reicht er nicht mehr.</p>
+    <p>Wer das weiß, plant realistisch: Die Solaranlage macht die Wärmepumpe nicht stromautark. Sie senkt aber die Stromkosten über das Jahr deutlich, vor allem in der Übergangszeit und beim Warmwasser im Sommer.</p>
+
+    <h2>Warmwasser und Heizkurve als Speicher</h2>
+    <p>Der Trick liegt darin, Wärme zu speichern statt Strom. In den gemessenen Häusern wurde bei Solarüberschuss die Warmwassertemperatur angehoben, teils auch die Heizkurve leicht nach oben gesetzt. Das Haus und der Warmwasserspeicher nehmen die Energie auf, die Wärmepumpe läuft dann, wenn die Sonne scheint. Viele Geräte haben dafür einen eigenen Eingang, oft „SG Ready“ genannt.</p>
+    <p>Etwas Effizienz kostet das, weil die Wärmepumpe bei höheren Temperaturen schlechter arbeitet. Der Bericht spricht von moderaten Minderungen. Bezahlt wird diese Wärme aber mit Strom, der sonst für wenige Cent ins Netz gegangen wäre. Ob ein elektrischer Heizstab im Warmwasserspeicher sinnvoll ist, hängt vom Einzelfall ab. Als Dauerlösung ist er deutlich weniger effizient als die Wärmepumpe selbst.</p>
+
+    <h2>Eigener Zähler oder nicht?</h2>
+    <p>Seit 2024 ist ein separater Zähler für die Wärmepumpe keine Pflicht mehr. Sie haben die Wahl, und die hat Folgen für das Netzentgelt nach § 14a EnWG:</p>
+    <ul class="liste">
+      <li><b>Ein gemeinsamer Zähler</b> für Haus und Wärmepumpe: Der Solarstrom versorgt beides gleichermaßen. Beim Netzentgelt ist dann nur das Modul 1 möglich, eine pauschale Ermäßigung im Jahr.</li>
+      <li><b>Ein eigener Zähler</b> für die Wärmepumpe: Damit ist Modul 2 möglich, bei dem das Netzentgelt je Kilowattstunde um 60 % sinkt. Die Bundesnetzagentur nennt diese Variante ausdrücklich als besonders geeignet für Wärmepumpen. Solarstrom kommt bei geeigneter Verschaltung trotzdem an die Wärmepumpe.</li>
+    </ul>
+    <p>Was sich bei Ihnen rechnet, hängt vom Verbrauch der Wärmepumpe ab und davon, was der zusätzliche Zähler kostet. Die alten, besonders günstigen Wärmepumpentarife gibt es so nicht mehr. Fraunhofer stellt fest, dass die neuen Tarife durchweg höhere Arbeits- und Grundpreise haben. Solarstrom vom eigenen Dach ist laut den Forschern trotzdem günstiger als Netzstrom, auch im Vergleich zu Wärmepumpentarifen.</p>
+
+    <h2>Was das für die Planung heißt</h2>
+    <ul class="liste">
+      <li>Die Solaranlage <b>größer auslegen</b>, wenn eine Wärmepumpe kommt oder schon da ist. Der zusätzliche Verbrauch macht die größere Anlage wirtschaftlich.</li>
+      <li>Auf <b>SG Ready</b> oder eine vergleichbare Schnittstelle achten, damit Wärmepumpe und Solaranlage miteinander sprechen können.</li>
+      <li>Die <b>Batterie</b> nach dem Abend- und Nachtverbrauch bemessen, nicht nach der Wärmepumpe im Winter. Für die Winterlücke ist auch eine große Batterie zu klein.</li>
+      <li>Die <b>Zählerfrage</b> vor der Anmeldung klären, später umzubauen kostet extra.</li>
+    </ul>
+    <p>Ob eine Wärmepumpe in Ihrem Haus gut läuft, entscheidet sich nicht am Dach, sondern an den Heizkörpern. Dazu der Ratgeber <a class="ilink" data-nav="rat-wp">Wärmepumpe im Altbau</a>. Was an Förderung möglich ist, rechnet der <a class="ilink" data-nav="rechner">Wärmepumpen-Rechner</a>.</p>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>Fraunhofer ISE, Abschlussbericht „WP-QS im Bestand“, 25.11.2025, Kapitel 8.1: <a href="https://www.ise.fraunhofer.de/content/dam/ise/de/documents/projekte/WP-QS_Schlussbericht.pdf" target="_blank" rel="noopener">ise.fraunhofer.de (PDF)</a></li>
+        <li>Fraunhofer ISE, Presseinformation vom 03.11.2025: <a href="https://www.ise.fraunhofer.de/content/dam/ise/de/documents/presseinformationen/2025/3025_ISE_PI_Waermepumpen-heizen-auch-im-Altbau-klimafreundlich.pdf" target="_blank" rel="noopener">ise.fraunhofer.de (PDF)</a></li>
+        <li>Bundesnetzagentur, steuerbare Verbrauchseinrichtungen: <a href="https://www.bundesnetzagentur.de/DE/Vportal/Energie/SteuerbareVBE/start.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+<!--FAQ-->
+<!--KURZANFRAGE-->
+</div><!-- /view-rat-pvwp -->
+
+<div id="view-rat-speicher" hidden>
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <a data-nav="ratgeber">Ratgeber</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Speicher nachrüsten</span></div>
+      <div class="eyebrow"><span class="dot"></span> Ratgeber · Stromspeicher</div>
+      <h1>Stromspeicher nachrüsten: <em>was Sie wissen müssen.</em></h1>
+      <p class="lede">Die Solaranlage läuft seit Jahren, mittags geht viel Strom ins Netz, abends kaufen Sie ihn teuer zurück. Ein Speicher lässt sich fast immer nachrüsten. Worauf es dabei ankommt.</p>
+    </div>
+  </header>
+
+  <section class="pad"><div class="wrap"><div class="artikel">
+    <h2>Geht das bei meiner Anlage?</h2>
+    <p>In den meisten Fällen ja. Es gibt zwei Bauarten. Beim <b>DC-gekoppelten</b> Speicher hängt die Batterie an einem Hybridwechselrichter, der Solarstrom und Batterie in einem Gerät verwaltet. Beim <b>AC-gekoppelten</b> Speicher bleibt der vorhandene Wechselrichter, und die Batterie bekommt einen eigenen Batteriewechselrichter im Hausnetz.</p>
+    <p>Bei neuen Anlagen ist DC-Kopplung inzwischen der Normalfall: Laut Stromspeicher-Inspektion der HTW Berlin hatten 2025 rund 90 % der Systeme einen Hybridwechselrichter. Beim Nachrüsten hängt die Wahl am vorhandenen Gerät. Ist Ihr Wechselrichter schon ein Hybridgerät mit Batterieanschluss, reicht oft die passende Batterie. Ist er alt oder nicht dafür ausgelegt, ist die AC-Lösung meist einfacher, als den Wechselrichter zu tauschen. Ein Angebot sollte begründen, warum es die eine oder andere Lösung vorschlägt.</p>
+
+    <h2>Keine Mehrwertsteuer, auch beim Nachrüsten</h2>
+    <p>Der Nullsteuersatz nach § 12 Abs. 3 UStG gilt ausdrücklich auch für Speicher, die später eingebaut werden. Das Bundesfinanzministerium schreibt im Anwendungserlass: Neben Modulen und Batteriespeicher, „auch nachträglich eingebaute Speicher“, sind die wesentlichen Komponenten steuerfrei. Voraussetzung: Die Anlage hat laut Marktstammdatenregister höchstens 30 kWp. Bei Speichern ab 5 kWh nutzbarer Kapazität geht das Ministerium vereinfachend davon aus, dass sie für Solarstrom bestimmt sind.</p>
+    <p>Steht auf einem Angebot für einen nachgerüsteten Speicher Mehrwertsteuer, fragen Sie nach.</p>
+
+    <h2>Anmelden: Der Speicher ist eine eigene Einheit</h2>
+    <p>Im Marktstammdatenregister zählt der Stromspeicher als eigene Einheit, getrennt von der Solaranlage. Er muss <b>innerhalb eines Monats nach Inbetriebnahme</b> registriert werden. Ausgenommen sind nur Speicher ganz ohne Netzanschluss, was im Haus praktisch nie vorkommt. Auch beim Netzbetreiber wird der Speicher angemeldet, das übernimmt der Elektrofachbetrieb. Wie die Registrierung funktioniert und was bei einer versäumten Frist passiert, steht auf der Seite <a class="ilink" data-nav="mastr">Anlage anmelden</a>.</p>
+
+    <h2>Bleibt die Einspeisevergütung erhalten?</h2>
+    <p>Ja. Strom, der erst in der Batterie zwischengespeichert und dann eingespeist wird, bleibt vergütungsfähig, solange der Speicher nur Solarstrom aufnimmt. Lädt der Speicher auch Strom aus dem Netz, wird es komplizierter: Dann entfällt nach den bisherigen Regeln die Vergütung für die gesamte Einspeisung.</p>
+    <p>Hier bewegt sich gerade etwas. Die Bundesnetzagentur hat am 1. Oktober 2026 Regeln für den gemischten Betrieb festgelegt, mit denen die Förderung auch dann erhalten bleibt. Netz- und Messstellenbetreiber haben für die Umsetzung bis Ende September 2027 Zeit. Für einen normalen Heimspeicher, der nur vom Dach lädt, ändert sich nichts.</p>
+
+    <h2>Wann sich das Nachrüsten besonders lohnt</h2>
+    <ul class="liste">
+      <li><b>Bei Anlagen nach dem 25. Februar 2025.</b> Für sie gibt es bei negativen Strompreisen keine Vergütung, und ohne Smart Meter dürfen Anlagen unter 25 kW nur 60 % ihrer Leistung einspeisen. Beides trifft die Mittagsspitze. Ein Speicher, der diesen Strom aufnimmt, macht beide Regeln für Sie weitgehend bedeutungslos.</li>
+      <li><b>Bei Anlagen, die aus der Förderung fallen.</b> Nach 20 Jahren gibt es nur noch den Marktwert, höchstens 10 Cent je Kilowattstunde und abzüglich eines Abschlags. Jede Kilowattstunde, die Sie selbst nutzen statt einzuspeisen, ist dann deutlich mehr wert.</li>
+      <li><b>Wenn ein neuer Verbraucher dazukommt.</b> Eine <a class="ilink" data-nav="wp">Wärmepumpe</a> oder ein Elektroauto verschieben den Verbrauch. Dann lohnt es sich, Speicher und neue Verbraucher gemeinsam zu planen.</li>
+    </ul>
+    <p>Weniger lohnend ist ein Speicher, wenn Sie tagsüber ohnehin viel Strom verbrauchen oder die Anlage klein ist. Welche Größe zu Ihrem Verbrauch passt, steht auf der Seite <a class="ilink" data-nav="speicher">Stromspeicher</a>. Ein Speicher, der größer ist als der nächtliche Verbrauch, füllt sich im Winter selten und wird im Sommer nicht leer.</p>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>HTW Berlin, Stromspeicher-Inspektion 2026: <a href="https://solar.htw-berlin.de/wp-content/uploads/HTW-aquu-Stromspeicher-Inspektion-2026.pdf" target="_blank" rel="noopener">htw-berlin.de (PDF)</a></li>
+        <li>§ 12 Abs. 3 UStG: <a href="https://www.gesetze-im-internet.de/ustg_1980/__12.html" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+        <li>BMF-Schreiben vom 27.02.2023 zum Nullsteuersatz: <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2023-02-27-nullsteuersatz-fuer-umsaetze-im-zusammenhang-mit-bestimmten-photovoltaikanlagen.pdf" target="_blank" rel="noopener">bundesfinanzministerium.de (PDF)</a></li>
+        <li>BMF-Schreiben vom 30.11.2023: <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2023-11-30-einzelfragen-bei-der-anwendung-des-nullsteuersatzes-fuer-bestimmte-photovoltaikanlagen.pdf" target="_blank" rel="noopener">bundesfinanzministerium.de (PDF)</a></li>
+        <li>Marktstammdatenregisterverordnung §§ 2 und 5: <a href="https://www.gesetze-im-internet.de/mastrv/__5.html" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+        <li>EEG 2023, §§ 9, 19, 23b, 51: <a href="https://www.gesetze-im-internet.de/eeg_2014/" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+        <li>Bundesnetzagentur, Festlegung MiSpeL vom 01.10.2026: <a href="https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/DE/2026/20261001_Mispel.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+<!--FAQ-->
+<!--KURZANFRAGE-->
+</div><!-- /view-rat-speicher -->
+
+<div id="view-rat-eeg" hidden>
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <a data-nav="ratgeber">Ratgeber</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Einspeisevergütung</span></div>
+      <div class="eyebrow"><span class="dot"></span> Ratgeber · Photovoltaik</div>
+      <h1>Einspeisevergütung 2026 <em>und was ab 2027 kommt.</em></h1>
+      <p class="lede">Bis Ende 2026 gelten die bekannten Sätze. Danach soll die feste Vergütung für neue Anlagen wegfallen. Was beschlossen ist, was erst geplant ist und was das für Ihre Entscheidung heißt.</p>
+    </div>
+  </header>
+
+  <section class="pad"><div class="wrap"><div class="artikel">
+    <h2>Die Sätze bis 31. Dezember 2026</h2>
+    <p>Für Anlagen auf dem Haus, die zwischen dem 1. August und dem 31. Dezember 2026 in Betrieb gehen, zahlt der Netzbetreiber laut Bundesnetzagentur je Kilowattstunde:</p>
+    <div class="tabelle-wrap"><table class="tabelle">
+      <thead><tr><th>Anlagenleistung</th><th>Teileinspeisung</th><th>Volleinspeisung</th></tr></thead>
+      <tbody>
+        <tr><td>bis 10 kW</td><td>7,70 ct</td><td>12,22 ct</td></tr>
+        <tr><td>über 10 bis 40 kW</td><td>6,66 ct</td><td>10,24 ct</td></tr>
+        <tr><td>über 40 bis 100 kW</td><td>5,44 ct</td><td>10,24 ct</td></tr>
+      </tbody>
+    </table></div>
+    <p>Bei Anlagen über 10 kW wird anteilig gerechnet: Die ersten 10 kW bekommen den höheren Satz, nur der Rest den niedrigeren. Gezahlt wird 20 Jahre lang, gerechnet bis zum Jahresende des zwanzigsten Jahres. Der Satz, der bei Inbetriebnahme gilt, bleibt für diese ganze Zeit fest.</p>
+
+    <h2>Was für Anlagen ab 2027 geplant ist</h2>
+    <p>Das EEG 2023, auf dem diese Sätze beruhen, gilt laut Bundesnetzagentur bis zum 31. Dezember 2026. Für die Zeit danach liegt dem Bundestag ein Gesetzentwurf vor (Drucksache 21/7867 vom 7. September 2026). Er sieht für neue Anlagen vor:</p>
+    <ul class="liste">
+      <li><b>Keine feste Einspeisevergütung mehr.</b> Stattdessen eine befristete Übergangszahlung, gezahlt bis zum Ende des 36. Monats nach Inbetriebnahme, also rund drei Jahre statt zwanzig.</li>
+      <li>Die Übergangszahlung soll bei rund <b>5,2 Cent</b> je Kilowattstunde liegen. Kleine Anlagen bekommen sie nur, wenn sie bis zu bestimmten Stichtagen in Betrieb gehen.</li>
+      <li>Neue Dachanlagen unter 100 kW sollen ihre Einspeisung dauerhaft auf <b>50 % der Leistung</b> begrenzen, auch mit intelligentem Messsystem.</li>
+    </ul>
+    <p><b>Das ist noch kein Gesetz.</b> Die erste Lesung war am 24. September 2026, die Anhörung am 5. Oktober. Außerdem muss die EU-Kommission zustimmen. Einzelheiten können sich bis zum Beschluss noch ändern. Wir aktualisieren diese Seite, sobald es entschieden ist.</p>
+
+    <h2>Was das für Ihre Entscheidung heißt</h2>
+    <p>Wer noch 2026 in Betrieb geht, sichert sich nach heutigem Recht 20 Jahre lang den festen Satz. Das klingt nach einem Grund zur Eile, wird aber oft überschätzt. Bei einer typischen Anlage mit Eigenverbrauch bringt die Einspeisung nur einen kleinen Teil des Nutzens. Der größere Teil kommt aus dem Strom, den Sie selbst verbrauchen und nicht für 30 bis 40 Cent einkaufen müssen. Warum das so ist, steht im Ratgeber <a class="ilink" data-nav="rat-pv">Lohnt sich Photovoltaik 2026 noch?</a>.</p>
+    <p>Der Entwurf verschiebt das noch weiter. Ohne feste Vergütung zählt künftig fast nur noch der Eigenverbrauch. Anlagen werden dann eher nach dem eigenen Bedarf ausgelegt, mit <a class="ilink" data-nav="speicher">Speicher</a>, <a class="ilink" data-nav="wp">Wärmepumpe</a> oder <a class="ilink" data-nav="wallbox">Wallbox</a> als zusätzlichen Verbrauchern. Eine Anlage nur zum Einspeisen rechnet sich dann kaum noch.</p>
+    <p>Lassen Sie sich nicht unter Zeitdruck setzen. Ein Betrieb, der Ihnen eine Inbetriebnahme noch 2026 zusagt, muss das auch schaffen: Anmeldung beim Netzbetreiber, Zählerwechsel und Montage brauchen ihre Zeit. Steht im Angebot kein verbindlicher Termin, ist die Zusage wenig wert.</p>
+
+    <h2>Regeln, die schon heute gelten</h2>
+    <p>Seit dem 25. Februar 2025 gelten für neue Anlagen zwei Regeln aus dem sogenannten Solarspitzengesetz:</p>
+    <ul class="liste">
+      <li><b>Keine Vergütung bei negativen Strompreisen.</b> Für diese Stunden sinkt der Satz auf null. Die ausgefallenen Zeiten werden am Ende der Förderdauer anteilig angehängt.</li>
+      <li><b>60 % Einspeisegrenze</b> für Anlagen unter 25 kW, solange kein intelligentes Messsystem mit Steuerung eingebaut ist.</li>
+    </ul>
+    <p>Beides trifft vor allem Anlagen, die mittags viel einspeisen. Wer den Strom in dieser Zeit selbst nutzt, ist kaum betroffen. Anlagen, die vor dem 25. Februar 2025 in Betrieb gingen, bleiben bei den alten Regeln.</p>
+
+    <h2>Und wenn die Anlage aus der Förderung fällt?</h2>
+    <p>Anlagen, deren 20 Jahre abgelaufen sind, bekommen weiter den Jahresmarktwert, höchstens 10 Cent je Kilowattstunde und abzüglich eines Vermarktungsabschlags. Diese Regelung gilt bis Ende 2032, auch der neue Entwurf hält daran fest. Für solche Anlagen ist ein nachgerüsteter Speicher oft die naheliegende Frage, mehr dazu im Ratgeber <a class="ilink" data-nav="rat-speicher">Stromspeicher nachrüsten</a>.</p>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>EEG-Vergütungssätze und Hinweis zur Nachfolgeregelung: <a href="https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/ErneuerbareEnergien/EEG_Foerderung/start.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
+        <li>Gesetzentwurf, Drucksache 21/7867 vom 07.09.2026: <a href="https://dserver.bundestag.de/btd/21/078/2107867.pdf" target="_blank" rel="noopener">bundestag.de (PDF)</a></li>
+        <li>Anhörung im Ausschuss für Wirtschaft und Energie am 05.10.2026: <a href="https://www.bundestag.de/ausschuesse/a09_wirtschaft/wp21_a09_Anhoerungen/1217432-1217432" target="_blank" rel="noopener">bundestag.de</a></li>
+        <li>EEG 2023, §§ 9, 25, 49, 51, 23b: <a href="https://www.gesetze-im-internet.de/eeg_2014/" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+        <li>Inkrafttreten Solarspitzengesetz: <a href="https://www.bundesregierung.de/breg-de/aktuelles/energiewende-2320072" target="_blank" rel="noopener">bundesregierung.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+<!--FAQ-->
+<!--KURZANFRAGE-->
+</div><!-- /view-rat-eeg -->
+
 <div id="view-impressum" hidden>
   <header class="ref-hero">
     <div class="wrap">
@@ -5164,6 +5774,7 @@
         <h2>4. Kontaktaufnahme &amp; Anfrageformulare</h2>
         <p>Wenn Sie uns über unsere Formulare (Angebotsanfrage, Rückrufwunsch, Kontaktformular, Angebots-Check, Bestandsanlagen-Check, Terminanfrage, Partneranfrage) oder per E-Mail kontaktieren, verarbeiten wir die von Ihnen angegebenen Daten (z. B. Name, Anschrift/PLZ, Telefonnummer, E-Mail-Adresse sowie Ihre Angaben zum Vorhaben), um Ihre Anfrage zu bearbeiten und Ihnen ein Angebot zu erstellen bzw. Sie an einen passenden Fachbetrieb zu vermitteln.</p>
         <p>Zur technischen Übermittlung der Formulardaten per E-Mail nutzen wir den Dienst FormSubmit (formsubmit.co). Dabei werden die eingegebenen Formulardaten an dessen Server übertragen und an unsere E-Mail-Adresse weitergeleitet. Rechtsgrundlage ist Ihre Einwilligung sowie die Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und b DSGVO). Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+        <p><b>Eingangsbestätigung.</b> Haben Sie eine E-Mail-Adresse angegeben, schicken wir Ihnen nach dem Absenden eine automatische Eingangsbestätigung. Dazu werden Ihr Name, Ihre E-Mail-Adresse, die Art der Anfrage und gegebenenfalls Ihr Terminwunsch an eine Serverfunktion bei unserem Hostinganbieter Vercel übermittelt und über unser E-Mail-Postfach bei der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, versendet. Die Serverfunktion speichert diese Angaben nicht. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Bearbeitung Ihrer Anfrage).</p>
 <!--CAL:AN-->
         <h2>4a. Terminbuchung über Cal.com</h2>
         <p>Für die Vereinbarung von Beratungsterminen setzen wir den Dienst <b>Cal.com</b> ein (Cal.com, Inc., 2261 Market Street, San Francisco, CA 94114, USA). Der Buchungskalender ist auf unserer Terminseite eingebunden.</p>
@@ -5220,7 +5831,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></div>
-      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="kosten">Kosten</a><a data-nav="foerderung2027">Förderung sinkt 2027</a><a data-nav="berlin">Solar &amp; Wärmepumpe Berlin</a><a data-nav="brandenburg">Solar &amp; Wärmepumpe Brandenburg</a><a data-nav="mastr">Anlage anmelden</a><a data-nav="rendite">Rentabilitätsrechner</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="bestand">Bestandsanlagen-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="termin">Termin</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
+      <div class="foot-links"><a href="#funnel" data-go-funnel>Angebot</a><a data-nav="pv">Photovoltaik</a><a data-nav="speicher">Stromspeicher</a><a data-nav="wp">Wärmepumpe</a><a data-nav="wallbox">Wallbox</a><a data-nav="kosten">Kosten</a><a data-nav="foerderung2027">Förderung sinkt 2027</a><a data-nav="berlin">Solar &amp; Wärmepumpe Berlin</a><a data-nav="brandenburg">Solar &amp; Wärmepumpe Brandenburg</a><a data-nav="potsdam">Potsdam</a><a data-nav="falkensee">Falkensee</a><a data-nav="bernau">Bernau</a><a data-nav="oranienburg">Oranienburg</a><a data-nav="mastr">Anlage anmelden</a><a data-nav="rendite">Rentabilitätsrechner</a><a data-nav="rechner">Wärmepumpen-Rechner</a><a data-nav="check">Angebots-Check</a><a data-nav="bestand">Bestandsanlagen-Check</a><a data-nav="ratgeber">Ratgeber</a><a data-nav="ref">Referenzen</a><a data-nav="about">Über uns</a><a data-nav="termin">Termin</a><a data-nav="kontakt">Kontakt</a><a data-nav="ask">Anfragen</a><a data-nav="partner">Partner werden</a><a data-nav="impressum">Impressum</a><a data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:service-bhd@outlook.de" style="color:inherit">service-bhd@outlook.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
@@ -5283,8 +5894,52 @@
       const out=await res.json().catch(()=>null);
       const ok=res.ok && !(out && String(out.success)==='false');
       if(!ok)console.error('Lead-Versand abgelehnt:',out);
+      // Erst nach erfolgreichem Versand: Eingangsbestaetigung an den Kunden.
+      if(ok)bestaetigen(lead.typ, lead.mail||lead.email, lead.name||lead.ansprechpartner, '');
       return ok;
     }catch(e){console.error('Lead-Versand fehlgeschlagen',e);return false;}
+  }
+
+  // ---------- Eingangsbestaetigung an den Kunden ----------
+  // Laeuft ueber unsere eigene Funktion /api/bestaetigung (Versand ueber das
+  // IONOS-Postfach). Wird NUR nach erfolgreichem Lead-Versand aufgerufen und
+  // ist davon unabhaengig: scheitert die Bestaetigung, ist die Anfrage
+  // trotzdem bei uns. Fehler werden bewusst verschluckt.
+  function bestaetigen(art,mail,name,termin){
+    try{
+      mail=String(mail||'').trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail))return;
+      fetch('/api/bestaetigung',{method:'POST',keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({art:String(art||''),email:mail,name:String(name||'').slice(0,80),termin:termin||''})
+      }).catch(function(){});
+    }catch(e){}
+  }
+
+  // Die drei Upload-/Terminformulare senden per normalem POST und kommen ueber
+  // ?checkok/?bestandok/?terminok zurueck. Erst DORT steht fest, dass FormSubmit
+  // angenommen hat – deshalb die Angaben vorher in sessionStorage parken.
+  (function(){
+    [['check-form-el','Angebots-Check','c-mail','c-name'],
+     ['bestand-form-el','Bestandsanlagen-Check','b-mail','b-name'],
+     ['termin-form-el','Termin','t-mail','t-name']].forEach(function(f){
+      const form=document.getElementById(f[0]);
+      if(!form)return;
+      form.addEventListener('submit',function(){
+        try{
+          const wert=id=>{const el=document.getElementById(id);return el?el.value:'';};
+          sessionStorage.setItem('bhd-bestaetigung',JSON.stringify({
+            art:f[1],email:wert(f[2]),name:wert(f[3]),termin:f[1]==='Termin'?wert('t-termin'):''}));
+        }catch(e){}
+      });
+    });
+  })();
+  function bestaetigungNachRueckkehr(){
+    try{
+      const d=JSON.parse(sessionStorage.getItem('bhd-bestaetigung')||'null');
+      sessionStorage.removeItem('bhd-bestaetigung');
+      if(d)bestaetigen(d.art,d.email,d.name,d.termin);
+    }catch(e){}
   }
 
   // Ersatz-Hinweis, wenn der Versand scheitert – besser als ein falsches „Danke"
@@ -6287,6 +6942,7 @@
     if(form)form.style.display='none';
     if(done)done.classList.add('show');
     trackLead('angebots-check');
+    bestaetigungNachRueckkehr();
     const anchor=document.getElementById('check-form');
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname+'#angebots-check');
@@ -6303,6 +6959,7 @@
     form.style.display='none';
     done.classList.add('show');
     trackLead('bestandsanlagen-check');
+    bestaetigungNachRueckkehr();
     const anchor=document.getElementById('bestand-form');
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname);
@@ -6387,13 +7044,14 @@
     }
     const istFeiertag=d=>feiertage(d.getFullYear()).has(key(d));
 
-    /* Oeffnungszeiten: Mo–Mi 10–20 Uhr, Do–Fr 10–16 Uhr, Wochenende zu.
-     * Freitags ist 12:30–14:30 Uhr fest gesperrt, an Feiertagen ganz zu. */
+    /* Oeffnungszeiten: Mo–Mi 10–20 Uhr, Do–Fr 10–16 Uhr, Sa 10–15 Uhr,
+     * Sonntag zu. Freitags ist 12:30–14:30 Uhr fest gesperrt, an Feiertagen
+     * ganz zu. Samstag wie im Google-Unternehmensprofil. */
     function zeitenAm(d){
       const wt=d.getDay();
-      if(wt===0||wt===6)return [];
+      if(wt===0)return [];
       if(istFeiertag(d))return [];
-      const ende=(wt<=3)?20*60:16*60;
+      const ende=(wt===6)?15*60:(wt<=3)?20*60:16*60;
       const liste=[];
       for(let m=10*60;m<ende;m+=30){
         if(wt===5&&m>=750&&m<870)continue;   // Freitag 12:30 bis 14:30
@@ -6579,6 +7237,7 @@
     form.style.display='none';
     done.classList.add('show');
     trackLead('termin');
+    bestaetigungNachRueckkehr();
     const anchor=document.getElementById('kalender');
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname);

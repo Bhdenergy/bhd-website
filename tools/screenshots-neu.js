@@ -13,10 +13,15 @@ const BASIS = 'http://localhost:8099';
 const CHROME = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
 
 const SEITEN = [
-  ['brandenburg', '/photovoltaik-waermepumpe-brandenburg/'],
-  ['foerderung2027', '/waermepumpe-foerderung-2027/'],
-  ['mastr', '/photovoltaik-anmelden-marktstammdatenregister/'],
-  ['start', '/']
+  ['wallbox', '/wallbox/'],
+  ['potsdam', '/photovoltaik-waermepumpe-potsdam/'],
+  ['falkensee', '/photovoltaik-waermepumpe-falkensee/'],
+  ['bernau', '/photovoltaik-waermepumpe-bernau/'],
+  ['oranienburg', '/photovoltaik-waermepumpe-oranienburg/'],
+  ['rat-eeg', '/ratgeber/einspeiseverguetung/'],
+  ['rat-pvwp', '/ratgeber/photovoltaik-waermepumpe-kombinieren/'],
+  ['rat-speicher', '/ratgeber/stromspeicher-nachruesten/'],
+  ['ratgeber', '/ratgeber/']
 ];
 
 (async () => {

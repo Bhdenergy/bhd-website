@@ -257,6 +257,75 @@ const PAGES = [
     }
   },
   {
+    /* Fakten am 13.10.2026 gegen NAV, BNetzA, BMF und Stromnetz-Berlin-Preisblatt
+     * 2026 geprueft. Netzentgeltbetraege jaehrlich zum 01.01. nachziehen. */
+    key: 'wallbox', dir: 'wallbox', view: 'view-wallbox', prio: '0.8', crumb: 'Wallbox',
+    title: 'Wallbox für das Eigenheim: Anmeldung, § 14a, Kosten | BHD',
+    ogTitle: 'Wallbox zu Hause – was Sie vor dem Kauf wissen sollten | BHD',
+    desc: 'Wallbox im Einfamilienhaus: Anmeldung beim Netzbetreiber, 11 oder 22 kW, weniger Netzentgelt nach § 14a EnWG und warum es keinen Zuschuss und keine 0 % Mehrwertsteuer gibt.',
+    service: {
+      name: 'Beratung zur Wallbox im Eigenheim',
+      typ: 'Wallbox-Beratung',
+      desc: 'Beratung zur Wallbox im Einfamilienhaus: Ladeleistung, Anmeldung und Zustimmung beim Netzbetreiber nach § 19 NAV, Netzentgeltmodule nach § 14a EnWG, Laden mit Solarstrom und Prüfung von Wallbox-Angeboten.'
+    }
+  },
+  {
+    /* Ortsseite, Fakten am 13.10.2026 gegen amtliche Quellen geprueft (Liste
+     * steht auf der Seite). Wieder anfassen: KfW-Absenkung 01.02.2027, Antragsstatus Klimaschutzfoerderprogramm (Frist jeweils 31.10.). */
+    key: 'potsdam', dir: 'photovoltaik-waermepumpe-potsdam', view: 'view-potsdam', prio: '0.8',
+    crumb: 'Potsdam',
+    title: 'Photovoltaik & Wärmepumpe Potsdam: was hier gilt | BHD',
+    ogTitle: 'Photovoltaik und Wärmepumpe in Potsdam | BHD',
+    desc: 'Solaranlage und Wärmepumpe in Potsdam: Klimaschutzförderprogramm der Stadt, Denkmalbereiche und Welterbe, Fernwärmesatzung und Anmeldung bei der Netzgesellschaft Potsdam.',
+    service: {
+      name: 'Beratung zu Photovoltaik und Wärmepumpe in Potsdam',
+      typ: 'Photovoltaik- und Wärmepumpen-Beratung',
+      desc: 'Beratung für Hausbesitzer in Potsdam zu Solaranlage, Stromspeicher und Wärmepumpe: Klimaschutzförderprogramm der Landeshauptstadt, Denkmal- und Gestaltungssatzungen, kommunaler Wärmeplan und Fernwärmesatzung, Anmeldung bei der Netzgesellschaft Potsdam und KfW-Zuschuss 458.'
+    }
+  },
+  {
+    /* Ortsseite, Fakten am 13.10.2026 gegen amtliche Quellen geprueft (Liste
+     * steht auf der Seite). Wieder anfassen: KfW-Absenkung 01.02.2027. */
+    key: 'falkensee', dir: 'photovoltaik-waermepumpe-falkensee', view: 'view-falkensee', prio: '0.8',
+    crumb: 'Falkensee',
+    title: 'Photovoltaik & Wärmepumpe Falkensee: was hier gilt | BHD',
+    ogTitle: 'Photovoltaik und Wärmepumpe in Falkensee | BHD',
+    desc: 'Solaranlage und Wärmepumpe in Falkensee: was der Wärmeplan für Einfamilienhäuser bedeutet, Anmeldung bei E.DIS, Gestaltungssatzung Falkenhagen und KfW-Zuschuss.',
+    service: {
+      name: 'Beratung zu Photovoltaik und Wärmepumpe in Falkensee',
+      typ: 'Photovoltaik- und Wärmepumpen-Beratung',
+      desc: 'Beratung für Hausbesitzer in Falkensee zu Solaranlage, Stromspeicher und Wärmepumpe: kommunaler Wärmeplan, Fernwärmesatzung Falkenhorst, Gestaltungssatzung Angerdorf Falkenhagen, Anmeldung bei E.DIS Netz und KfW-Zuschuss 458.'
+    }
+  },
+  {
+    /* Ortsseite, Fakten am 13.10.2026 gegen amtliche Quellen geprueft (Liste
+     * steht auf der Seite). Wieder anfassen: KfW-Absenkung 01.02.2027. */
+    key: 'bernau', dir: 'photovoltaik-waermepumpe-bernau', view: 'view-bernau', prio: '0.8',
+    crumb: 'Bernau',
+    title: 'Photovoltaik & Wärmepumpe Bernau: was hier gilt | BHD',
+    ogTitle: 'Photovoltaik und Wärmepumpe in Bernau | BHD',
+    desc: 'Solaranlage und Wärmepumpe in Bernau bei Berlin: warum das Eigenheim vom Fernwärme-Anschlusszwang befreit ist, Altstadtsatzungen, Stadtwerke Bernau und KfW-Zuschuss.',
+    service: {
+      name: 'Beratung zu Photovoltaik und Wärmepumpe in Bernau',
+      typ: 'Photovoltaik- und Wärmepumpen-Beratung',
+      desc: 'Beratung für Hausbesitzer in Bernau bei Berlin zu Solaranlage, Stromspeicher und Wärmepumpe: Fernwärmesatzung und Befreiung für selbst genutzte Häuser, Denkmal- und Gestaltungssatzungen, Anmeldung bei den Stadtwerken Bernau und KfW-Zuschuss 458.'
+    }
+  },
+  {
+    /* Ortsseite, Fakten am 13.10.2026 gegen amtliche Quellen geprueft (Liste
+     * steht auf der Seite). Wieder anfassen: KfW-Absenkung 01.02.2027, Stand Waermeplan (Beschluss offen). */
+    key: 'oranienburg', dir: 'photovoltaik-waermepumpe-oranienburg', view: 'view-oranienburg', prio: '0.8',
+    crumb: 'Oranienburg',
+    title: 'Photovoltaik & Wärmepumpe Oranienburg: was hier gilt | BHD',
+    ogTitle: 'Photovoltaik und Wärmepumpe in Oranienburg | BHD',
+    desc: 'Solaranlage und Wärmepumpe in Oranienburg: Kampfmittel bei Erdarbeiten, zwei Netzbetreiber je nach Ortsteil, Wärmeplanungskarte und Erhaltungssatzung Innenstadt.',
+    service: {
+      name: 'Beratung zu Photovoltaik und Wärmepumpe in Oranienburg',
+      typ: 'Photovoltaik- und Wärmepumpen-Beratung',
+      desc: 'Beratung für Hausbesitzer in Oranienburg zu Solaranlage, Stromspeicher und Wärmepumpe: Kampfmittelauskunft vor Erdarbeiten, Stadtwerke Oranienburg oder E.DIS Netz je nach Ortsteil, Wärmeplanung, Erhaltungssatzung Innenstadt und KfW-Zuschuss 458.'
+    }
+  },
+  {
     key: 'ratgeber', dir: 'ratgeber', view: 'view-ratgeber', prio: '0.7', crumb: 'Ratgeber',
     title: 'Ratgeber: Photovoltaik & Wärmepumpe verstehen | BHD',
     desc: 'Verständliche Beiträge zu Photovoltaik, Wärmepumpe und Angebotsprüfung – von Beratern, die keine Anlagen verkaufen und auch sagen, was sich nicht lohnt.',
@@ -279,6 +348,24 @@ const PAGES = [
     title: 'PV-Angebot prüfen: 12-Punkte-Checkliste | BHD Ratgeber',
     desc: 'Checkliste für PV- und Wärmepumpen-Angebote: zwölf Angaben, die enthalten sein müssen, und drei Warnzeichen, bei denen Sie besser nicht unterschreiben.',
     article: { headline: 'Angebot prüfen: 12 Punkte, die drinstehen müssen', pub: '2026-08-01', section: 'Angebotsprüfung' }
+  },
+  {
+    key: 'rat-eeg', dir: 'ratgeber/einspeiseverguetung', view: 'view-rat-eeg', prio: '0.8', crumb: 'Einspeisevergütung',
+    title: 'Einspeisevergütung 2026 und was ab 2027 kommt | BHD Ratgeber',
+    desc: 'Einspeisevergütung bis Ende 2026: 7,70 ct bei Teileinspeisung bis 10 kW. Ab 2027 soll die feste Vergütung für neue Anlagen wegfallen. Was geplant ist und was das heißt.',
+    article: { headline: 'Einspeisevergütung 2026 und was ab 2027 kommt', pub: '2026-10-13', section: 'Photovoltaik' }
+  },
+  {
+    key: 'rat-pvwp', dir: 'ratgeber/photovoltaik-waermepumpe-kombinieren', view: 'view-rat-pvwp', prio: '0.8', crumb: 'PV und Wärmepumpe',
+    title: 'PV und Wärmepumpe kombinieren: was es bringt | BHD Ratgeber',
+    desc: 'Wie viel Wärmepumpenstrom vom eigenen Dach kommt, was im Winter passiert und ob sich ein eigener Zähler lohnt. Mit Messwerten des Fraunhofer ISE.',
+    article: { headline: 'Photovoltaik und Wärmepumpe: wie gut passen sie zusammen?', pub: '2026-10-13', section: 'Wärmepumpe' }
+  },
+  {
+    key: 'rat-speicher', dir: 'ratgeber/stromspeicher-nachruesten', view: 'view-rat-speicher', prio: '0.8', crumb: 'Speicher nachrüsten',
+    title: 'Stromspeicher nachrüsten: geht das, was kostet es? | BHD Ratgeber',
+    desc: 'Speicher zur bestehenden Solaranlage nachrüsten: AC oder DC, 0 % Mehrwertsteuer auch beim Nachrüsten, Anmeldung im Marktstammdatenregister und wann es sich lohnt.',
+    article: { headline: 'Stromspeicher nachrüsten: was Sie wissen müssen', pub: '2026-10-13', section: 'Stromspeicher' }
   },
   {
     key: 'rechner', dir: 'waermepumpen-rechner', view: 'view-rechner', prio: '0.9', crumb: 'Wärmepumpen-Rechner',
@@ -824,10 +911,18 @@ const KURZANFRAGE = {
   brandenburg: { h: 'Projekt in Brandenburg?', p: 'Hinterlassen Sie Ihre Nummer. Wir melden uns und klären mit Ihnen, was auf Ihrem Grundstück geht und was die Gemeinde dazu sagt.', thema: 'Photovoltaik' },
   foerderung2027: { h: 'Reicht die Zeit bei Ihnen noch?', p: 'Hinterlassen Sie Ihre Nummer. Wir sagen Ihnen ehrlich, ob der Antrag bis Ende Januar realistisch ist — und was dafür bis wann vorliegen muss.', thema: 'Wärmepumpe' },
   mastr:       { h: 'Unsicher, ob Ihre Anlage angemeldet ist?', p: 'Hinterlassen Sie Ihre Nummer. Wir sehen nach und sagen Ihnen, was zu tun ist.', thema: 'Bestehende Anlage' },
+  wallbox:     { h: 'Wallbox geplant?', p: 'Hinterlassen Sie Ihre Nummer. Wir klären mit Ihnen Leistung, Anmeldung und ob sich das Laden mit Solarstrom bei Ihnen lohnt.', thema: 'Wallbox' },
+  potsdam:     { h: 'Projekt in Potsdam?', p: 'Hinterlassen Sie Ihre Nummer. Wir klären mit Ihnen Förderung, Satzungen und was für Ihr Haus in Frage kommt.', thema: 'Photovoltaik' },
+  falkensee:   { h: 'Projekt in Falkensee?', p: 'Hinterlassen Sie Ihre Nummer. Wir sagen Ihnen, ob eine Wärmepumpe in Ihrem Haus passt und was die Förderung bringt.', thema: 'Wärmepumpe' },
+  bernau:      { h: 'Projekt in Bernau?', p: 'Hinterlassen Sie Ihre Nummer. Wir klären mit Ihnen, was in Ihrer Straße gilt und was sich für Ihr Haus rechnet.', thema: 'Photovoltaik' },
+  oranienburg: { h: 'Projekt in Oranienburg?', p: 'Hinterlassen Sie Ihre Nummer. Wir klären mit Ihnen auch die Frage der Kampfmittel, bevor gegraben wird.', thema: 'Wärmepumpe' },
+  'rat-eeg':   { h: 'Lohnt es sich bei Ihnen noch?', p: 'Wir rechnen mit Ihnen durch, was Eigenverbrauch und Einspeisung bei Ihrem Haus bringen.', thema: 'Photovoltaik' },
+  'rat-pvwp':  { h: 'PV und Wärmepumpe zusammen planen?', p: 'Hinterlassen Sie Ihre Nummer. Wir sagen Ihnen, wie groß die Anlage sein sollte und ob ein eigener Zähler sinnvoll ist.', thema: 'Photovoltaik und Wärmepumpe' },
+  'rat-speicher': { h: 'Speicher nachrüsten?', p: 'Nennen Sie uns im Rückruf Ihre Anlage und Ihren Verbrauch, dann sagen wir Ihnen, welche Lösung passt.', thema: 'Stromspeicher' },
   kontakt:     { h: 'Nachricht schreiben', p: 'Schreiben Sie uns kurz, worum es geht. Fotos oder ein Angebot als PDF schicken Sie am einfachsten per WhatsApp oder über den Angebots-Check.', thema: 'Sonstiges', nachricht: true, kontakt: true }
 };
 
-const KF_THEMEN = ['Photovoltaik', 'Stromspeicher', 'Wärmepumpe', 'Photovoltaik und Wärmepumpe', 'Angebot prüfen lassen', 'Bestehende Anlage', 'Sonstiges'];
+const KF_THEMEN = ['Photovoltaik', 'Stromspeicher', 'Wärmepumpe', 'Wallbox', 'Photovoltaik und Wärmepumpe', 'Angebot prüfen lassen', 'Bestehende Anlage', 'Sonstiges'];
 
 function kurzanfrageHtml(key) {
   const c = KURZANFRAGE[key];
@@ -1118,6 +1213,11 @@ fs.writeFileSync(path.join(ROOT, 'llms.txt'),
 - [Photovoltaik und Wärmepumpe in Brandenburg](${SITE}${URL_OF.brandenburg}): keine Solarpflicht, Baurecht nach BbgBO, Förderung
 - [Wärmepumpen-Förderung 2027](${SITE}${URL_OF.foerderung2027}): was sich am 01.02.2027 beim KfW-Zuschuss ändert
 - [PV im Marktstammdatenregister anmelden](${SITE}${URL_OF.mastr}): Frist, Folgen, Nachholen
+- [Wallbox](${SITE}${URL_OF.wallbox}): Anmeldung nach § 19 NAV, Netzentgelt nach § 14a EnWG, keine 0 % Umsatzsteuer
+- [Potsdam](${SITE}${URL_OF.potsdam}): Klimaschutzförderprogramm, Denkmal und Welterbe, Fernwärmesatzung, Netzgesellschaft Potsdam
+- [Falkensee](${SITE}${URL_OF.falkensee}): Wärmeplan, E.DIS Netz, Gestaltungssatzung Falkenhagen
+- [Bernau bei Berlin](${SITE}${URL_OF.bernau}): Befreiung vom Fernwärme-Anschlusszwang, Altstadtsatzungen, Stadtwerke Bernau
+- [Oranienburg](${SITE}${URL_OF.oranienburg}): Kampfmittel bei Erdarbeiten, zwei Netzbetreiber, Wärmeplanungskarte
 - [Angebots-Check](${SITE}${URL_OF.check}): kostenlose Prüfung eines vorliegenden Angebots, Rückmeldung in 24 Stunden
 - [Wärmepumpen-Rechner](${SITE}${URL_OF.rechner}): Heizlast, Gerätegröße, Jahresarbeitszahl und Förderung – ohne Anmeldung
 

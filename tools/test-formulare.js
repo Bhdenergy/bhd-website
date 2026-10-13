@@ -28,11 +28,25 @@ function pruefe(bedingung, text) {
   if (!bedingung) fehler++;
 }
 
-/* Faengt POSTs an FormSubmit ab und liefert eine Erfolgsantwort zurueck. */
-async function abfangen(page, sammler) {
+/* Aufrufe der Eingangsbestaetigung (/api/bestaetigung) – je Seite gesammelt. */
+const BESTAETIGT = [];
+
+/* Faengt POSTs an FormSubmit ab und liefert eine Erfolgsantwort zurueck.
+ * Mit "weiter" antwortet ein normaler (nicht-AJAX) POST wie FormSubmit mit
+ * einer Weiterleitung auf die Danke-Adresse (?checkok=1 usw.). */
+async function abfangen(page, sammler, weiter) {
   await page.setRequestInterception(true);
   page.on('request', req => {
     const u = req.url();
+    if (u.includes('/api/bestaetigung')) {
+      let d = {}; try { d = JSON.parse(req.postData() || '{}'); } catch (e) { /* leer */ }
+      BESTAETIGT.push({ seite: new URL(page.url()).pathname, daten: d });
+      return req.respond({ status: 200, contentType: 'application/json', body: '{"ok":true}' });
+    }
+    if (u.includes('formsubmit.co') && weiter && weiter.ziel && req.method() === 'POST' && req.isNavigationRequest()) {
+      sammler.push({ url: u, body: req.postData() || '', methode: req.method() });
+      return req.respond({ status: 302, headers: { Location: weiter.ziel }, body: '' });
+    }
     if (u.includes('formsubmit.co')) {
       /* Nur echte Absendungen zaehlen. Nach dem multipart-POST holt der
        * Browser noch formsubmit.co/favicon.ico – das ist kein Lead und
@@ -155,8 +169,16 @@ async function multipartFormular(browser, pfad, formId, name, vorher) {
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 1000 });
   const gesendet = [];
-  await abfangen(page, gesendet);
+  const weiter = { ziel: null };
+  await abfangen(page, gesendet, weiter);
   await page.goto(BASIS + pfad, { waitUntil: 'networkidle2' });
+  /* Rueckkehradresse wie bei FormSubmit: _next auf den lokalen Server umbiegen. */
+  weiter.ziel = await page.evaluate((id, basis) => {
+    const n = document.querySelector('#' + id + ' input[name="_next"]');
+    if (!n) return null;
+    const u = new URL(n.value);
+    return basis + u.pathname + u.search;
+  }, formId, BASIS);
 
   /* Die Terminseite kann auf Cal.com umgestellt sein – dann gibt es das
    * eigene Formular nicht mehr. Das ist kein Fehler, sondern der
@@ -200,7 +222,9 @@ async function multipartFormular(browser, pfad, formId, name, vorher) {
   }, formId);
 
   pruefe(gefuellt === 'ok', 'Formular ausfuellbar (' + gefuellt + ')');
-  await schlaf(1600);
+  await schlaf(2600);
+  const dankeNachRueckkehr = await page.evaluate(() => !!document.querySelector('.fdone.show'));
+  pruefe(dankeNachRueckkehr, 'nach der Rueckkehr von FormSubmit erscheint die Danke-Meldung');
 
   pruefe(gesendet.length === 1, 'genau ein POST an FormSubmit (war: ' + gesendet.length + ')');
   if (gesendet.length) {
@@ -267,7 +291,11 @@ const KF_SEITEN = ['/photovoltaik/', '/stromspeicher/', '/waermepumpe/', '/koste
   '/ueber-uns/', '/ratgeber/', '/ratgeber/photovoltaik-lohnt-sich/', '/ratgeber/waermepumpe-altbau/',
   '/ratgeber/angebot-pruefen/', '/photovoltaik-waermepumpe-berlin/',
   '/photovoltaik-waermepumpe-brandenburg/', '/waermepumpe-foerderung-2027/',
-  '/photovoltaik-anmelden-marktstammdatenregister/', '/kontakt/'];
+  '/photovoltaik-anmelden-marktstammdatenregister/', '/wallbox/',
+  '/photovoltaik-waermepumpe-potsdam/', '/photovoltaik-waermepumpe-falkensee/',
+  '/photovoltaik-waermepumpe-bernau/', '/photovoltaik-waermepumpe-oranienburg/',
+  '/ratgeber/einspeiseverguetung/', '/ratgeber/photovoltaik-waermepumpe-kombinieren/',
+  '/ratgeber/stromspeicher-nachruesten/', '/kontakt/'];
 
 async function kurzanfrage(browser, pfad) {
   const page = await browser.newPage();
@@ -332,6 +360,17 @@ async function kurzanfrage(browser, pfad) {
   await rechnerFormular(browser);
   console.log('\n8) Kurzanfrage / Kontaktformular (' + KF_SEITEN.length + ' Seiten)');
   for (const s of KF_SEITEN) await kurzanfrage(browser, s);
+  console.log('\n9) Eingangsbestaetigung an den Kunden');
+  const erwartet = ['/', '/anfragen/', '/partner-werden/', '/angebots-check/', '/bestandsanlagen-check/', '/termin/', '/waermepumpen-rechner/', '/kontakt/'];
+  for (const seite of erwartet) {
+    const b = BESTAETIGT.filter(x => x.seite === seite);
+    pruefe(b.length === 1 && b[0].daten.email === 'test@example.org',
+      seite + ': genau eine Bestaetigung an die Kundenadresse (war: ' + b.length + ')');
+  }
+  const termin = BESTAETIGT.find(x => x.seite === '/termin/');
+  pruefe(!!(termin && /\d{2}\.\d{2}\.\d{4} um \d{2}:\d{2} Uhr/.test(termin.daten.termin || '')), '/termin/: Wunschtermin wird mitgegeben');
+  const ohneMail = BESTAETIGT.filter(x => !erwartet.includes(x.seite));
+  pruefe(ohneMail.every(x => x.daten.email), 'Rueckrufformulare ohne E-Mail loesen keine Bestaetigung aus');
   await browser.close();
   console.log(fehler ? ('\n' + fehler + ' FEHLER – nicht deployen.') : '\nAlle Lead-Wege senden korrekt.');
   process.exit(fehler ? 1 : 0);

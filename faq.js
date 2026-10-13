@@ -357,6 +357,131 @@ const FAQ = {
       F('Was gehört in ein vollständiges Angebot?',
         'Hersteller und Typ aller Komponenten mit Stückzahl, Leistung in kWp und Speicherkapazität in kWh, Montageart und Unterkonstruktion, Nebenleistungen wie Gerüst, Zählerschrank und Netzanmeldung, Gewährleistungsfristen sowie ein realistischer Ertragswert mit Angabe der Annahmen.')
     ]
+  },
+
+  /* ------------------------------------------------- Neue Seiten Okt. 2026 */
+  wallbox: {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen zur Wallbox',
+    intro: 'Stand Oktober 2026. Netzentgelte ändern sich jedes Jahr zum 1. Januar.',
+    items: [
+      F('Muss ich meine Wallbox anmelden?',
+        'Ja, immer. Nach § 19 der Niederspannungsanschlussverordnung ist jede Ladeeinrichtung dem Netzbetreiber vor der Inbetriebnahme mitzuteilen. Liegt die Summe aller Ladepunkte über 12 kVA, braucht sie zusätzlich seine Zustimmung. Die Anmeldung übernimmt der Elektrofachbetrieb.'),
+      F('Reicht eine Wallbox mit 11 kW?',
+        'Für ein Einfamilienhaus in aller Regel ja. Damit ist ein Auto über Nacht voll, und die Box bleibt unter der 12-kVA-Schwelle. Viele Elektroautos laden an der Wallbox ohnehin nicht mit mehr als 11 kW.'),
+      F('Darf der Netzbetreiber meine Wallbox abschalten?',
+        'Abschalten nicht. Er darf die Leistung nach § 14a EnWG nur dann herunterregeln, wenn eine Überlastung des Netzes droht, und auch dann nie unter 4,2 kW. Im Gegenzug zahlen Sie ein reduziertes Netzentgelt.'),
+      F('Gibt es eine Förderung für die Wallbox?',
+        'Für die private Wallbox am Einfamilienhaus derzeit nicht. Der KfW-Zuschuss 442 ist nicht mehr beantragbar, Berlin und Brandenburg haben kein Programm für Privatleute. Gefördert werden aktuell Stellplätze in Mehrparteienhäusern ab drei Wohneinheiten.'),
+      F('Gilt für die Wallbox auch der Nullsteuersatz?',
+        'Nein. Der Nullsteuersatz gilt für Solaranlage und Speicher. Ladeinfrastruktur gehört laut Bundesfinanzministerium ausdrücklich nicht zu den wesentlichen Komponenten einer Photovoltaikanlage. Auf die Wallbox fallen 19 % Umsatzsteuer an.')
+    ]
+  },
+
+  potsdam: {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen aus Potsdam',
+    intro: 'Stand Oktober 2026. Förderprogramm und Satzungen ändern sich, vor einem Auftrag deshalb den aktuellen Stand prüfen.',
+    items: [
+      F('Kann ich in Potsdam gerade Förderung beantragen?',
+        'Zum Stand 13. Oktober 2026 nimmt die Stadt keine Anträge für das Klimaschutzförderprogramm an. Laut Richtlinie sind Anträge ohnehin nur bis zum 31. Oktober eines Jahres möglich. Wer 2027 bauen will, kann die Energieberatung schon jetzt machen, sollte aber vor dem Antrag nichts verbindlich bestellen.'),
+      F('Was zahlt das Potsdamer Programm?',
+        'Laut Richtlinie vom 26. März 2026 unter anderem 200 € je kWp für Photovoltaik bis höchstens 1.200 €, 1.000 € für einen Speicher ab 5 kWh in Verbindung mit einer Solaranlage und 2.000 € für eine Wärmepumpe im Wohngebäude. Voraussetzung sind unter anderem Erstwohnsitz in Potsdam und eine vorherige Energieberatung.'),
+      F('Brauche ich in Potsdam eine Genehmigung für die Solaranlage?',
+        'Meist nicht. In Denkmalbereichen, bei Einzeldenkmalen und im Gebiet von Erhaltungs- oder Sanierungssatzungen aber schon. Das betrifft vor allem die historischen Stadtkerne von Potsdam und Babelsberg und die Vorstädte.'),
+      F('Wer ist in Potsdam der Netzbetreiber?',
+        'Die Netzgesellschaft Potsdam GmbH. Solaranlagen und Wallboxen meldet der Fachbetrieb nur noch über ihr Netzanschlussportal an.')
+    ]
+  },
+
+  falkensee: {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen aus Falkensee',
+    intro: 'Stand Oktober 2026.',
+    items: [
+      F('Kommt in Falkensee Fernwärme in meine Straße?',
+        'Für die meisten Häuser nicht. Der Wärmeplan von Juni 2026 sieht für rund 12.000 der etwa 15.700 beheizten Gebäude eine eigene Heizung im Haus vor. Wärmenetzgebiete gibt es für rund 350 Gebäude, für etwa 3.000 Gebäude ist die Frage noch offen.'),
+      F('Muss ich die Wärmepumpe bei E.DIS anmelden?',
+        'Ja, und zwar unabhängig von der Leistung. E.DIS muss sie genehmigen. Die Anmeldung macht ein eingetragener Elektrofachbetrieb über das Kundenportal.'),
+      F('Gibt es in Falkensee eine Förderung?',
+        'Ein Programm der Stadt gibt es nicht. Der Landkreis Havelland hat Balkonkraftwerke gefördert, für 2026 sind dort derzeit keine Anträge möglich. Für die Wärmepumpe gilt der KfW-Zuschuss 458, für die Solaranlage der Nullsteuersatz.'),
+      F('Darf ich in Falkenhagen eine Solaranlage aufs Dach setzen?',
+        'Im Geltungsbereich der Gestaltungssatzung für das historische Angerdorf Falkenhagen sind Kollektoren auf Dächern grundsätzlich nicht zulässig. Ob das auch für Photovoltaik gilt, sollten Sie vorher mit dem Bauamt klären.')
+    ]
+  },
+
+  bernau: {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen aus Bernau',
+    intro: 'Stand Oktober 2026.',
+    items: [
+      F('Muss ich in Bernau an die Fernwärme?',
+        'Als Eigentümer eines selbst genutzten Hauses mit bis zu zwei Wohnungen nicht. Die Fernwärmesatzung befreit diese Häuser ausdrücklich vom Anschlusszwang. Aus dem Wärmeplan von Mai 2026 ergibt sich laut Stadt ebenfalls kein Anschlusszwang.'),
+      F('Darf ich in der Bernauer Altstadt eine Solaranlage bauen?',
+        'Im Bereich der Denkmalschutzsatzung brauchen Sie eine Erlaubnis der Unteren Denkmalschutzbehörde des Landkreises Barnim. Die Gestaltungssatzung Innenstadt lässt Solaranlagen zu, wenn sie nicht verunstaltend wirken.'),
+      F('Was gilt in Birkholz?',
+        'Laut Gestaltungssatzung dürfen Solaranlagen, die von der Straße aus sichtbar sind, höchstens ein Viertel der Dachfläche einnehmen.'),
+      F('Wer ist in Bernau der Netzbetreiber?',
+        'Im Stadtgebiet und in den angrenzenden Ortsteilen die Stadtwerke Bernau. Wer bei Ihnen zuständig ist, steht auf Ihrer Stromrechnung.')
+    ]
+  },
+
+  oranienburg: {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen aus Oranienburg',
+    intro: 'Stand Oktober 2026. Zur Kampfmittelfrage gibt im Einzelfall der Kampfmittelbeseitigungsdienst oder das Ordnungsamt verbindlich Auskunft.',
+    items: [
+      F('Brauche ich für die Wärmepumpe eine Kampfmittelprüfung?',
+        'Für Bauvorhaben mit Baugenehmigung verlangt die Bauaufsicht in belasteten Gebieten eine Kampfmittelfreiheitsbescheinigung. Für das Fundament einer Luftwärmepumpe ist das nicht ausdrücklich geregelt. Wir raten trotzdem, vor jeder Erdarbeit Auskunft einzuholen. Bei einer Erdwärmebohrung führt an einer Prüfung praktisch kein Weg vorbei.'),
+      F('Wer ist in Oranienburg der Netzbetreiber?',
+        'In der Kernstadt und in Sachsenhausen die Stadtwerke Oranienburg. In Lehnitz, Friedrichsthal, Germendorf, Malz, Schmachtenhagen, Wensickendorf und Zehlendorf ist es E.DIS Netz.'),
+      F('Bekomme ich in Oranienburg Fernwärme?',
+        'Das zeigt die Wärmeplanungskarte der Stadt für jede Adresse. In Gebieten mit Individualversorgung müssen Eigentümer selbst für die Heizung sorgen. Dort ist die Wärmepumpe meist die naheliegende Lösung.'),
+      F('Gibt es in Oranienburg eine Förderung?',
+        'Ein städtisches Programm gibt es nicht. Für die Wärmepumpe gilt der KfW-Zuschuss 458, für Solaranlage und Speicher der Nullsteuersatz.')
+    ]
+  },
+
+  'rat-eeg': {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen zur Einspeisevergütung',
+    intro: 'Stand Oktober 2026. Der Gesetzentwurf für 2027 ist noch nicht beschlossen.',
+    items: [
+      F('Wie hoch ist die Einspeisevergütung 2026?',
+        'Für Anlagen auf dem Haus mit Inbetriebnahme zwischen dem 1. August und 31. Dezember 2026: 7,70 Cent je kWh bei Teileinspeisung bis 10 kW, 6,66 Cent für den Teil bis 40 kW. Bei Volleinspeisung 12,22 und 10,24 Cent.'),
+      F('Fällt die Einspeisevergütung 2027 weg?',
+        'Für neue Anlagen ist das geplant. Der Gesetzentwurf vom 7. September 2026 sieht statt der festen Vergütung eine Übergangszahlung von rund 5,2 Cent für etwa drei Jahre vor. Beschlossen ist das noch nicht.'),
+      F('Betrifft das meine bestehende Anlage?',
+        'Nein. Der Vergütungssatz, der bei Inbetriebnahme galt, bleibt für die gesamte Förderdauer von 20 Jahren bestehen.')
+    ]
+  },
+
+  'rat-pvwp': {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen zu PV und Wärmepumpe',
+    intro: 'Stand Oktober 2026.',
+    items: [
+      F('Kann eine Solaranlage meine Wärmepumpe im Winter versorgen?',
+        'Nur zu einem kleinen Teil. In Messungen des Fraunhofer ISE sank der selbst gedeckte Anteil im November bis Januar unter 15 %. Übers Jahr kam ohne Batterie rund 13 bis 36 % des Wärmepumpenstroms vom eigenen Dach.'),
+      F('Brauche ich für die Wärmepumpe einen eigenen Zähler?',
+        'Pflicht ist er seit 2024 nicht mehr. Er ermöglicht aber das Modul 2 beim Netzentgelt, bei dem der Arbeitspreis des Netzentgelts um 60 % sinkt. Ohne eigenen Zähler ist nur die pauschale Ermäßigung nach Modul 1 möglich.'),
+      F('Lohnt sich ein Batteriespeicher für die Wärmepumpe?',
+        'Für die Winterlücke kaum, dafür ist auch ein großer Speicher zu klein. Er hilft, den Abend- und Nachtverbrauch des Hauses mit Solarstrom zu decken. Danach sollte er bemessen werden.')
+    ]
+  },
+
+  'rat-speicher': {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen zum Nachrüsten',
+    intro: 'Stand Oktober 2026.',
+    items: [
+      F('Fällt beim nachgerüsteten Speicher Mehrwertsteuer an?',
+        'Nein, wenn die Anlage höchstens 30 kWp hat. Das Bundesfinanzministerium nennt nachträglich eingebaute Speicher ausdrücklich als begünstigt.'),
+      F('Muss ich den Speicher anmelden?',
+        'Ja. Er ist im Marktstammdatenregister eine eigene Einheit und muss innerhalb eines Monats nach Inbetriebnahme registriert werden. Beim Netzbetreiber meldet ihn der Elektrofachbetrieb an.'),
+      F('Verliere ich durch den Speicher meine Einspeisevergütung?',
+        'Nein, solange der Speicher nur Solarstrom vom eigenen Dach lädt. Zwischengespeicherter Solarstrom bleibt vergütungsfähig.')
+    ]
   }
 };
 

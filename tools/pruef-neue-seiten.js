@@ -10,9 +10,16 @@ const puppeteer = require('puppeteer-core');
 
 const BASIS = process.argv[2] || 'http://localhost:8099';
 const SEITEN = [
+  '/wallbox/',
+  '/photovoltaik-waermepumpe-potsdam/',
+  '/photovoltaik-waermepumpe-falkensee/',
+  '/photovoltaik-waermepumpe-bernau/',
+  '/photovoltaik-waermepumpe-oranienburg/',
+  '/ratgeber/einspeiseverguetung/',
+  '/ratgeber/photovoltaik-waermepumpe-kombinieren/',
+  '/ratgeber/stromspeicher-nachruesten/',
   '/photovoltaik-waermepumpe-brandenburg/',
-  '/waermepumpe-foerderung-2027/',
-  '/photovoltaik-anmelden-marktstammdatenregister/',
+  '/ratgeber/',
   '/'
 ];
 const CHROME = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';

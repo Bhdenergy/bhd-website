@@ -233,6 +233,24 @@
           "position": 3,
           "name": "Angebot prüfen: 12 Punkte, die drinstehen müssen",
           "url": "https://bhd-energie.de/ratgeber/angebot-pruefen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Einspeisevergütung 2026 und was ab 2027 kommt",
+          "url": "https://bhd-energie.de/ratgeber/einspeiseverguetung/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Photovoltaik und Wärmepumpe: wie gut passen sie zusammen?",
+          "url": "https://bhd-energie.de/ratgeber/photovoltaik-waermepumpe-kombinieren/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Stromspeicher nachrüsten: was Sie wissen müssen",
+          "url": "https://bhd-energie.de/ratgeber/stromspeicher-nachruesten/"
         }
       ]
     },
@@ -271,8 +289,8 @@
 }
 </script>
 <style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f6f5f1;color:#1b1a17}img{max-width:100%}</style>
-<link rel="preload" href="/assets/site.css?v=ccb597ad" as="style">
-<link rel="stylesheet" href="/assets/site.css?v=ccb597ad">
+<link rel="preload" href="/assets/site.css?v=858f40a1" as="style">
+<link rel="stylesheet" href="/assets/site.css?v=858f40a1">
 </head><body data-page="ratgeber" data-ga="G-NM7G327C1L">
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
@@ -324,6 +342,7 @@
           <a href="/photovoltaik/" data-nav="pv">Photovoltaik</a>
           <a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a>
           <a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a>
+          <a href="/wallbox/" data-nav="wallbox">Wallbox</a>
           <a href="/rentabilitaetsrechner/" data-nav="rendite">Rentabilitätsrechner</a>
           <a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a>
           <a href="/kosten/" data-nav="kosten">Was zahle ich?</a>
@@ -396,6 +415,24 @@
           <p>Eine Checkliste zum Mitnehmen. Fehlt einer dieser Punkte, ist das Angebot nicht günstiger, sondern unvollständig.</p>
           <span class="art-go">Beitrag lesen <svg class="ic"><use href="#i-chevron"/></svg></span>
         </a>
+        <a href="/ratgeber/einspeiseverguetung/" class="artcard" data-nav="rat-eeg">
+          <span class="art-tag">Photovoltaik</span>
+          <h2>Einspeisevergütung 2026 und was ab 2027 kommt</h2>
+          <p>Die aktuellen Sätze, der Gesetzentwurf für neue Anlagen ab 2027 und warum der Eigenverbrauch noch wichtiger wird.</p>
+          <span class="art-go">Beitrag lesen <svg class="ic"><use href="#i-chevron"/></svg></span>
+        </a>
+        <a href="/ratgeber/photovoltaik-waermepumpe-kombinieren/" class="artcard" data-nav="rat-pvwp">
+          <span class="art-tag">Wärmepumpe</span>
+          <h2>Photovoltaik und Wärmepumpe: wie gut passen sie zusammen?</h2>
+          <p>Wie viel Wärmepumpenstrom wirklich vom Dach kommt, was im Winter passiert und ob sich ein eigener Zähler lohnt.</p>
+          <span class="art-go">Beitrag lesen <svg class="ic"><use href="#i-chevron"/></svg></span>
+        </a>
+        <a href="/ratgeber/stromspeicher-nachruesten/" class="artcard" data-nav="rat-speicher">
+          <span class="art-tag">Stromspeicher</span>
+          <h2>Stromspeicher nachrüsten: was Sie wissen müssen</h2>
+          <p>Ob es bei Ihrer Anlage geht, warum keine Mehrwertsteuer anfällt und wann sich das Nachrüsten besonders lohnt.</p>
+          <span class="art-go">Beitrag lesen <svg class="ic"><use href="#i-chevron"/></svg></span>
+        </a>
       </div>
       <p class="brands-note">Die Beiträge werden laufend ergänzt. Fehlt Ihnen ein Thema? Rufen Sie an, dann schreiben wir dazu etwas – und beantworten Ihre Frage direkt.</p>
     </div>
@@ -437,7 +474,7 @@
       </div>
       <div class="fcard kf-card" id="kf-ratgeber-card">
         <form class="kf-form" id="kf-ratgeber-form" data-quelle="ratgeber" data-typ="Rückrufwunsch">
-          <div class="fld"><label for="kf-ratgeber-thema">Thema</label><select id="kf-ratgeber-thema" name="thema"><option>Photovoltaik</option><option>Stromspeicher</option><option>Wärmepumpe</option><option>Photovoltaik und Wärmepumpe</option><option>Angebot prüfen lassen</option><option>Bestehende Anlage</option><option selected>Sonstiges</option></select></div>
+          <div class="fld"><label for="kf-ratgeber-thema">Thema</label><select id="kf-ratgeber-thema" name="thema"><option>Photovoltaik</option><option>Stromspeicher</option><option>Wärmepumpe</option><option>Wallbox</option><option>Photovoltaik und Wärmepumpe</option><option>Angebot prüfen lassen</option><option>Bestehende Anlage</option><option selected>Sonstiges</option></select></div>
           <div class="grid2">
             <div class="fld"><label for="kf-ratgeber-name">Name <span class="req">*</span></label><input type="text" id="kf-ratgeber-name" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></div>
             <div class="fld"><label for="kf-ratgeber-tel">Telefon <span class="req">*</span></label><input type="tel" id="kf-ratgeber-tel" name="tel" required autocomplete="tel" placeholder="0170 1234567" minlength="6"></div>
@@ -472,13 +509,13 @@
   <div class="wrap">
     <div class="foot-top">
       <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo" src="/assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></a>
-      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/waermepumpe-foerderung-2027/" data-nav="foerderung2027">Förderung sinkt 2027</a><a href="/photovoltaik-waermepumpe-berlin/" data-nav="berlin">Solar &amp; Wärmepumpe Berlin</a><a href="/photovoltaik-waermepumpe-brandenburg/" data-nav="brandenburg">Solar &amp; Wärmepumpe Brandenburg</a><a href="/photovoltaik-anmelden-marktstammdatenregister/" data-nav="mastr">Anlage anmelden</a><a href="/rentabilitaetsrechner/" data-nav="rendite">Rentabilitätsrechner</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/bestandsanlagen-check/" data-nav="bestand">Bestandsanlagen-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/termin/" data-nav="termin">Termin</a><a href="/kontakt/" data-nav="kontakt">Kontakt</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
+      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/wallbox/" data-nav="wallbox">Wallbox</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/waermepumpe-foerderung-2027/" data-nav="foerderung2027">Förderung sinkt 2027</a><a href="/photovoltaik-waermepumpe-berlin/" data-nav="berlin">Solar &amp; Wärmepumpe Berlin</a><a href="/photovoltaik-waermepumpe-brandenburg/" data-nav="brandenburg">Solar &amp; Wärmepumpe Brandenburg</a><a href="/photovoltaik-waermepumpe-potsdam/" data-nav="potsdam">Potsdam</a><a href="/photovoltaik-waermepumpe-falkensee/" data-nav="falkensee">Falkensee</a><a href="/photovoltaik-waermepumpe-bernau/" data-nav="bernau">Bernau</a><a href="/photovoltaik-waermepumpe-oranienburg/" data-nav="oranienburg">Oranienburg</a><a href="/photovoltaik-anmelden-marktstammdatenregister/" data-nav="mastr">Anlage anmelden</a><a href="/rentabilitaetsrechner/" data-nav="rendite">Rentabilitätsrechner</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/bestandsanlagen-check/" data-nav="bestand">Bestandsanlagen-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/termin/" data-nav="termin">Termin</a><a href="/kontakt/" data-nav="kontakt">Kontakt</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
     </div>
     <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:info@bhd-energie.de" style="color:inherit">info@bhd-energie.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
   </div>
 </footer>
 
-<script src="/assets/site.js?v=ccb597ad" defer></script>
+<script src="/assets/site.js?v=858f40a1" defer></script>
 
 <div class="quickcontact" aria-label="Schnellkontakt">
   <a class="qc qc-phone" href="tel:+491634440392" aria-label="Anrufen unter 0163 4440392">

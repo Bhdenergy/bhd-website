@@ -4,7 +4,7 @@
  *   node tools/test-termin.js        (Server muss auf 8099 laufen)
  *
  * Prueft die Regeln, die man von aussen nicht sieht:
- *  - Oeffnungszeiten Mo-Mi 10-20 Uhr, Do-Fr 10-16 Uhr, Wochenende zu
+ *  - Oeffnungszeiten Mo-Mi 10-20 Uhr, Do-Fr 10-16 Uhr, Sa 10-15 Uhr, Sonntag zu
  *  - Freitag 12:30-14:30 Uhr immer gesperrt
  *  - rund 20 Prozent der Zeiten je Tag als vergeben markiert
  *  - dieselben Zeiten bleiben ueber Neuladen hinweg gesperrt
@@ -71,21 +71,24 @@ async function monatLesen(page) {
   const monatNr = MONATE.indexOf(daten.monat.split(' ')[0]);
 
   console.log('1) Öffnungszeiten (' + daten.monat + ')');
-  let mowmi = 0, dofr = 0, wochenende = 0, freitagMittag = 0, tageGeprueft = 0;
+  let mowmi = 0, dofr = 0, sonntag = 0, samstag = 0, samstagFalsch = 0, freitagMittag = 0, tageGeprueft = 0;
   for (const t of daten.tage) {
     if (!t.frei) continue;
     tageGeprueft++;
     const wt = new Date(jahr, monatNr, t.tag).getDay();
     const zeiten = t.slots.map(s => s.zeit);
     const erste = zeiten[0], letzte = zeiten[zeiten.length - 1];
-    if (wt === 0 || wt === 6) wochenende++;
+    if (wt === 0) sonntag++;
+    if (wt === 6) { samstag++; if (erste < '10:00' || letzte > '14:30') samstagFalsch++; }
     if (wt >= 1 && wt <= 3 && letzte > '19:30') mowmi++;
     if (wt >= 4 && wt <= 5 && letzte > '15:30') dofr++;
     if (wt === 5 && zeiten.some(z => z >= '12:30' && z < '14:30')) freitagMittag++;
     if (erste && erste < '10:00') mowmi++;
   }
   pruefe(tageGeprueft > 0, tageGeprueft + ' buchbare Tage im ersten Monat gefunden');
-  pruefe(wochenende === 0, 'kein Termin an Samstag oder Sonntag');
+  pruefe(sonntag === 0, 'kein Termin am Sonntag');
+  pruefe(samstag > 0, 'Samstage sind buchbar (' + samstag + ' gefunden)');
+  pruefe(samstagFalsch === 0, 'Samstag nur 10:00 bis 14:30');
   pruefe(mowmi === 0, 'Mo–Mi endet spätestens 19:30, beginnt frühestens 10:00');
   pruefe(dofr === 0, 'Do–Fr endet spätestens 15:30');
   pruefe(freitagMittag === 0, 'Freitag 12:30–14:30 nirgends angeboten');

@@ -54,8 +54,52 @@
       const out=await res.json().catch(()=>null);
       const ok=res.ok && !(out && String(out.success)==='false');
       if(!ok)console.error('Lead-Versand abgelehnt:',out);
+      // Erst nach erfolgreichem Versand: Eingangsbestaetigung an den Kunden.
+      if(ok)bestaetigen(lead.typ, lead.mail||lead.email, lead.name||lead.ansprechpartner, '');
       return ok;
     }catch(e){console.error('Lead-Versand fehlgeschlagen',e);return false;}
+  }
+
+  // ---------- Eingangsbestaetigung an den Kunden ----------
+  // Laeuft ueber unsere eigene Funktion /api/bestaetigung (Versand ueber das
+  // IONOS-Postfach). Wird NUR nach erfolgreichem Lead-Versand aufgerufen und
+  // ist davon unabhaengig: scheitert die Bestaetigung, ist die Anfrage
+  // trotzdem bei uns. Fehler werden bewusst verschluckt.
+  function bestaetigen(art,mail,name,termin){
+    try{
+      mail=String(mail||'').trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail))return;
+      fetch('/api/bestaetigung',{method:'POST',keepalive:true,
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({art:String(art||''),email:mail,name:String(name||'').slice(0,80),termin:termin||''})
+      }).catch(function(){});
+    }catch(e){}
+  }
+
+  // Die drei Upload-/Terminformulare senden per normalem POST und kommen ueber
+  // ?checkok/?bestandok/?terminok zurueck. Erst DORT steht fest, dass FormSubmit
+  // angenommen hat – deshalb die Angaben vorher in sessionStorage parken.
+  (function(){
+    [['check-form-el','Angebots-Check','c-mail','c-name'],
+     ['bestand-form-el','Bestandsanlagen-Check','b-mail','b-name'],
+     ['termin-form-el','Termin','t-mail','t-name']].forEach(function(f){
+      const form=document.getElementById(f[0]);
+      if(!form)return;
+      form.addEventListener('submit',function(){
+        try{
+          const wert=id=>{const el=document.getElementById(id);return el?el.value:'';};
+          sessionStorage.setItem('bhd-bestaetigung',JSON.stringify({
+            art:f[1],email:wert(f[2]),name:wert(f[3]),termin:f[1]==='Termin'?wert('t-termin'):''}));
+        }catch(e){}
+      });
+    });
+  })();
+  function bestaetigungNachRueckkehr(){
+    try{
+      const d=JSON.parse(sessionStorage.getItem('bhd-bestaetigung')||'null');
+      sessionStorage.removeItem('bhd-bestaetigung');
+      if(d)bestaetigen(d.art,d.email,d.name,d.termin);
+    }catch(e){}
   }
 
   // Ersatz-Hinweis, wenn der Versand scheitert – besser als ein falsches „Danke"
@@ -967,6 +1011,7 @@
     if(form)form.style.display='none';
     if(done)done.classList.add('show');
     trackLead('angebots-check');
+    bestaetigungNachRueckkehr();
     const anchor=document.getElementById('check-form');
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname);
@@ -983,6 +1028,7 @@
     form.style.display='none';
     done.classList.add('show');
     trackLead('bestandsanlagen-check');
+    bestaetigungNachRueckkehr();
     const anchor=document.getElementById('bestand-form');
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname);
@@ -1067,13 +1113,14 @@
     }
     const istFeiertag=d=>feiertage(d.getFullYear()).has(key(d));
 
-    /* Oeffnungszeiten: Mo–Mi 10–20 Uhr, Do–Fr 10–16 Uhr, Wochenende zu.
-     * Freitags ist 12:30–14:30 Uhr fest gesperrt, an Feiertagen ganz zu. */
+    /* Oeffnungszeiten: Mo–Mi 10–20 Uhr, Do–Fr 10–16 Uhr, Sa 10–15 Uhr,
+     * Sonntag zu. Freitags ist 12:30–14:30 Uhr fest gesperrt, an Feiertagen
+     * ganz zu. Samstag wie im Google-Unternehmensprofil. */
     function zeitenAm(d){
       const wt=d.getDay();
-      if(wt===0||wt===6)return [];
+      if(wt===0)return [];
       if(istFeiertag(d))return [];
-      const ende=(wt<=3)?20*60:16*60;
+      const ende=(wt===6)?15*60:(wt<=3)?20*60:16*60;
       const liste=[];
       for(let m=10*60;m<ende;m+=30){
         if(wt===5&&m>=750&&m<870)continue;   // Freitag 12:30 bis 14:30
@@ -1259,6 +1306,7 @@
     form.style.display='none';
     done.classList.add('show');
     trackLead('termin');
+    bestaetigungNachRueckkehr();
     const anchor=document.getElementById('kalender');
     if(anchor)anchor.scrollIntoView({behavior:'smooth',block:'center'});
     history.replaceState(null,'',location.pathname);
