@@ -1374,6 +1374,173 @@
     .ztab-text td::before{content:attr(data-label);display:block;font-size:.85rem;font-weight:600;color:var(--ink-3)}
   }
 
+  /* ======================================================================
+     GESTALTUNG "KLAR" (Oktober 2026)
+     Vorbild: Aktionsseite von 1komma5.com. Weisser Grund, Inter fuer Text
+     und h1, Barlow fuer Zwischenueberschriften, schwarze Knoepfe, warm
+     getoente Abschnitte, aufklappbare Kaesten mit Goldrahmen, dunkle
+     Flaechen fuer Ablauf und Footer. Gold bleibt der Markenakzent.
+     Steht am Ende und uebersteuert "SCHLICHT".
+     ====================================================================== */
+  @font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;
+    src:url("/assets/fonts/inter-latin-var.woff2") format("woff2")}
+  @font-face{font-family:"Barlow";font-style:normal;font-weight:700;font-display:swap;
+    src:url("/assets/fonts/barlow-700.woff2") format("woff2")}
+  :root{--bg:#fff;--bg-soft:#f8f3ea;--tint:#f8f3ea;--ink:#222;--ink-2:#474747;--ink-3:#636363;
+    --line:rgba(0,0,0,.09);--line-2:rgba(0,0,0,.17);--dunkel:#222;--r:6px;
+    --sans:"Inter","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+    --head:"Barlow","Inter","Segoe UI",Arial,sans-serif;
+    --akzent:#b07a22;--akzent-tief:#8f6414;--rahmen:#d9b671;--hell-akzent:#e6bd6e}
+  body{font-family:var(--sans);font-size:17px;background:#fff;color:#111}
+  h1{font-family:var(--sans);font-weight:700;letter-spacing:-.02em;line-height:1.12}
+  h2,h3{font-family:var(--head);font-weight:700;letter-spacing:0}
+  h2{font-size:clamp(1.65rem,2.7vw,2.25rem);line-height:1.18}
+  .exp-row b,.ablauf li::before,.s3 .n{font-family:var(--head)}
+  .fund-hint h3{font-family:var(--head);font-size:1.2rem}
+
+  /* Kopfleiste: weiss mit leichtem Schatten */
+  nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:0;box-shadow:0 2px 14px rgba(0,0,0,.07)}
+  .nav-links>a,.nav-drop-lbl{font-weight:500;color:#222}
+
+  /* Knoepfe: schwarz, leicht gerundet */
+  .btn{background:#222;color:#fff;border:0;border-radius:var(--r);font-weight:600;letter-spacing:.01em;padding:16px 30px}
+  .btn:hover{background:#000;color:#fff}
+  .btn-ghost{background:transparent;color:#222;border:1.5px solid #222}
+  .btn-ghost:hover{background:#222;color:#fff;border-color:#222}
+  .btn-hell{background:#fff;color:#222}
+  .btn-hell:hover{background:var(--tint);color:#222}
+  .progress-fill{background:var(--akzent)}
+  input:focus,select:focus,textarea:focus{border-color:#222;box-shadow:0 0 0 3px rgba(0,0,0,.08)}
+
+  /* Getoente Abschnitte ohne Linien */
+  .sec-alt,.k5-tint{background:var(--tint);border:0}
+  .k5-kicker{margin:0 0 10px;color:var(--akzent-tief);font-family:var(--head);font-weight:700;font-size:1.06rem}
+  .k5-h2{margin:0 0 36px;max-width:30ch}
+
+  /* Haekchen-Liste wie Checkboxen */
+  .k5-checks{list-style:none;margin:0 0 32px;padding:0;display:grid;gap:14px}
+  .k5-checks li{position:relative;padding-left:40px;font-size:1.06rem;line-height:1.45;color:#222}
+  .k5-checks li::before{content:"";position:absolute;left:0;top:0;width:25px;height:25px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10'/%3E%3Cpath d='M8 11l4 4 9-10'/%3E%3C/svg%3E") no-repeat center/contain}
+
+  /* Startseite: Hero mit Bild links, Text rechts */
+  .k5-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;
+    padding:0;background:#fff;min-height:min(600px,80vh);overflow:visible}
+  .k5-hero-media{position:relative;align-self:stretch;min-height:440px;overflow:hidden;
+    border-radius:0 14px 14px 0;background:#cfc8ba}
+  .k5-hero-copy{padding:56px clamp(24px,5vw,96px) 56px clamp(32px,7vw,112px);max-width:660px}
+  .k5-hero h1{font-size:clamp(2.2rem,3.7vw,3.2rem);max-width:15ch;margin:0 0 28px;color:#222}
+  .k5-hero .hero-cta{margin:0}
+  .k5-hero .hero-facts{margin:22px 0 0;font-size:.95rem;color:var(--ink-3)}
+  @media(max-width:1024px){
+    .k5-hero{grid-template-columns:minmax(0,1fr);min-height:0}
+    .k5-hero-media{min-height:0;aspect-ratio:16/10;border-radius:0}
+    .k5-hero-copy{padding:36px 20px 44px;max-width:none}}
+
+  /* Startseite: Anfrage auf getoentem Grund */
+  .k5-anfrage{padding:clamp(56px,7vw,92px) 0}
+  .k5-anfrage-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+  .k5-anfrage h2{margin:0 0 6px}
+  .k5-sub{color:var(--ink-2);margin:0 0 24px}
+  .k5-anfrage .funnel{background:#fff;border:0;border-radius:12px;box-shadow:0 4px 22px rgba(0,0,0,.07);max-width:none}
+  .k5-anfrage .choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .k5-anfrage .choice{flex-direction:column;justify-content:center;text-align:center;gap:12px;padding:24px 14px;min-height:150px;
+    background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.07);font-weight:600;font-size:1rem}
+  .k5-anfrage .choice .cic{width:60px;height:60px;border:0;background:none;color:#222}
+  .k5-anfrage .choice .cic .ic{width:50px;height:50px;stroke-width:1.1}
+  .k5-anfrage .choice .chev{display:none}
+  .k5-anfrage .choice:hover{border-color:#222;background:#fff}
+  .k5-stimme{background:#fff;border-radius:12px;padding:32px;box-shadow:0 4px 22px rgba(0,0,0,.07);text-align:center}
+  .k5-stimme .qstars{display:inline-flex;gap:3px;color:#e3a520;margin-bottom:14px}
+  .k5-stimme .qstars .ic{width:26px;height:26px}
+  .k5-stimme-txt{font-size:1.08rem;line-height:1.55;color:#222;margin:0 0 12px}
+  .k5-stimme-wer{color:var(--ink-3);font-size:.95rem;margin:0 0 16px}
+  .k5-marken{display:flex;align-items:center;gap:32px;margin-top:56px}
+  .k5-marken-lbl{flex:none;color:var(--ink-3);font-size:.95rem}
+  .k5-marken .marquee{flex:1;min-width:0;margin:0}
+  .k5-hinweis{background:#fff;border:1px solid var(--line);border-radius:12px;padding:clamp(24px,3vw,36px);margin-top:36px}
+  .k5-hinweis h3{font-size:1.45rem;margin:0 0 12px;color:#222}
+  .k5-hinweis p:last-child{margin:0;color:var(--ink-2);max-width:80ch}
+  .k5-hinweis a{color:var(--akzent-tief);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  @media(max-width:900px){.k5-anfrage-grid{grid-template-columns:minmax(0,1fr)}
+    .k5-marken{flex-direction:column;align-items:flex-start;gap:12px}.k5-marken .marquee{width:100%}}
+  @media(max-width:560px){.k5-anfrage .choices{grid-template-columns:minmax(0,1fr)}
+    .k5-anfrage .choice{flex-direction:row;justify-content:flex-start;text-align:left;min-height:0;padding:16px 18px}
+    .k5-anfrage .choice .cic{width:40px;height:40px}.k5-anfrage .choice .cic .ic{width:32px;height:32px}}
+
+  /* Aufklappbare Kaesten mit Goldrahmen (Leistungen, FAQ) */
+  .k5-acc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 40px;align-items:start}
+  .k5-acc-item,.faq-item{border:1.5px solid var(--rahmen);border-radius:10px;background:#fff}
+  .k5-acc-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:22px 24px;font-family:var(--head);font-weight:700;font-size:1.2rem;color:#222}
+  .k5-acc-item summary::-webkit-details-marker{display:none}
+  .k5-acc-item summary::after{content:"+";font-family:var(--sans);font-weight:300;font-size:2rem;line-height:1;color:var(--akzent-tief);transition:transform .2s var(--ease)}
+  .k5-acc-item[open] summary::after{transform:rotate(45deg)}
+  .k5-acc-body{padding:0 24px 22px;color:var(--ink-2)}
+  .k5-acc-body p{margin:0 0 12px}
+  @media(max-width:760px){.k5-acc{grid-template-columns:minmax(0,1fr);gap:14px}}
+  .faq{max-width:none;display:grid;gap:14px;border:0}
+  .faq-item{border-bottom:1.5px solid var(--rahmen);border-radius:10px}
+  .faq-item summary{padding:20px 24px;font-weight:600}
+  .faq-item .ans{padding:0 24px 22px}
+
+  /* Zweigeteilte Flaechen: Foto und Text je halbe Breite */
+  .k5-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:560px}
+  .k5-split-foto{margin:0;position:relative;min-height:360px;overflow:hidden}
+  .k5-split-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .k5-split-text{padding:clamp(48px,7vw,96px) clamp(24px,7vw,112px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+  .k5-split-text h2{margin:0 0 22px;max-width:18ch}
+  .k5-split-text>p{max-width:52ch;color:var(--ink-2);margin:0 0 28px;font-size:1.06rem}
+  .k5-split-dark{background:var(--dunkel);color:#fff}
+  .k5-split-dark h2{color:#fff}
+  .k5-split-dark .k5-kicker{color:var(--hell-akzent)}
+  .k5-split-dark .k5-checks li{color:#fff}
+  .k5-split-dark .k5-checks li::before{filter:invert(1)}
+  .k5-split-dark .k5-split-text>p{color:rgba(255,255,255,.74)}
+  .k5-split-dark .k5-split-text>p.k5-klein{font-size:.93rem}
+  @media(max-width:900px){.k5-split{grid-template-columns:minmax(0,1fr);min-height:0}
+    .k5-split-foto{min-height:0;aspect-ratio:4/3}
+    .k5-ablauf .k5-split-foto{order:-1}}
+
+  /* Foerdersaetze als Grafik neben einem Geraet */
+  .k5-quoten{display:flex;align-items:center;justify-content:center;gap:clamp(20px,3vw,40px);padding:48px 24px;background:#fff;color:#d6cfc1}
+  .k5-geraet{width:min(300px,44%);height:auto;flex:none}
+  .k5-quoten ul{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+  .k5-quoten b{display:block;font-family:var(--head);font-size:clamp(2rem,3.4vw,2.8rem);line-height:1;color:#222}
+  .k5-quoten li:nth-child(1) b{color:var(--akzent)}
+  .k5-quoten li:nth-child(2) b{color:var(--akzent-tief)}
+  .k5-quoten li:nth-child(3) b{color:#6b4a0f}
+  .k5-quoten span{display:block;color:var(--ink-2);font-size:1rem;margin-top:4px}
+  @media(max-width:560px){.k5-geraet{display:none}}
+
+  /* Karten: getoent, weich gerundet */
+  .fund{background:var(--tint);border:0;border-radius:12px}
+  .fund-hint{border-top-color:#222}
+  .quote{background:var(--tint);border:0;border-radius:12px}
+  .partner-card{border-radius:12px}
+
+  /* Ablauf auf dunkler Flaeche */
+  .k5-steps{display:grid;gap:14px;width:100%;max-width:470px}
+  .k5-step{border:1px solid rgba(255,255,255,.4);border-radius:10px}
+  .k5-step:not([open]){border-color:transparent;background:rgba(255,255,255,.07)}
+  .k5-step summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;font-weight:700;font-size:1.08rem;color:#fff}
+  .k5-step summary::-webkit-details-marker{display:none}
+  .k5-step summary::after{content:"+";font-weight:300;font-size:1.6rem;line-height:1}
+  .k5-step[open] summary::after{content:"\2013"}
+  .k5-step p{margin:0;padding:0 22px 14px;color:rgba(255,255,255,.8);font-size:.98rem}
+  .k5-steplink{display:inline-block;margin:0 22px 20px;color:var(--hell-akzent);font-weight:600}
+
+  /* Kontakt am Ende der Startseite */
+  .k5-kontakt{padding:clamp(56px,7vw,92px) 0}
+  .k5-kontakt h2{margin:0 0 10px}
+  .k5-kontakt p:not(.k5-kicker){color:var(--ink-2);margin:0 0 26px}
+
+  /* Dunkler Footer, Logo auf heller Platte */
+  footer{background:var(--dunkel);color:rgba(255,255,255,.7);border-top:0;padding:56px 0 44px}
+  footer .brand-logo{background:#fff;border-radius:8px;padding:8px 12px;box-sizing:content-box}
+  footer a,.foot-links a{color:#fff}
+  .foot-links a:hover{color:var(--hell-akzent)}
+
 /* <picture> soll das Layout nicht beeinflussen – die bestehenden
    Regeln greifen dadurch weiterhin direkt auf das <img>. */
 picture{display:contents}

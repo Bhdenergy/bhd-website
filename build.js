@@ -1075,13 +1075,13 @@ function buildPage(page) {
 <meta property="og:image:alt" content="BHD – Beratung Heimenergie Deutschland: Photovoltaik und Wärmepumpe, unabhängige Beratung für Hausbesitzer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="${SITE}/assets/og-bhd.png">
-<meta name="theme-color" content="#f6f5f1">
+<meta name="theme-color" content="#ffffff">
 <script type="application/ld+json">
 ${jsonLd(page, view)}
 </script>
 ${STYLE_INLINE}
 <link rel="preload" href="/assets/site.css?v=${ASSET_V}" as="style">
-<link rel="preload" href="/assets/fonts/merriweather-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=${ASSET_V}">
 </head><body data-page="${page.key}"${GA4_ID ? ' data-ga="' + esc(GA4_ID) + '"' : ''}>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>

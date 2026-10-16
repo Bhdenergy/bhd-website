@@ -23,7 +23,7 @@
 <meta property="og:image:alt" content="BHD – Beratung Heimenergie Deutschland: Photovoltaik und Wärmepumpe, unabhängige Beratung für Hausbesitzer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://bhd-energie.de/assets/og-bhd.png">
-<meta name="theme-color" content="#f6f5f1">
+<meta name="theme-color" content="#ffffff">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -300,10 +300,10 @@
   ]
 }
 </script>
-<style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f6f5f1;color:#1b1a17}img{max-width:100%}</style>
-<link rel="preload" href="/assets/site.css?v=cacda96b" as="style">
-<link rel="preload" href="/assets/fonts/merriweather-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=cacda96b">
+<style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#111}img{max-width:100%}</style>
+<link rel="preload" href="/assets/site.css?v=0a0d7f6c" as="style">
+<link rel="preload" href="/assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=0a0d7f6c">
 </head><body data-page="home" data-ga="G-NM7G327C1L">
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
@@ -398,38 +398,42 @@
 <main id="inhalt">
 <div id="view-home">
 
-<header class="hero hero-video">
-  <!-- Drohnenaufnahme hinter dem Hero. Das Standbild ist sofort da (65 KB),
-       das Video wird erst nach dem Seitenaufbau nachgeladen (siehe Skript
-       "Video im Hero"). preload="none" ist entscheidend: sonst zieht der
-       Browser das Video schon waehrend des Seitenaufbaus. -->
-  <div class="hero-media" aria-hidden="true">
+<!-- Hero im Stil "Bild links, Text rechts". Das Standbild ist sofort da,
+     das Video wird erst nach dem Seitenaufbau nachgeladen (Skript
+     "Video im Hero"). preload="none" ist entscheidend. -->
+<header class="hero k5-hero">
+  <div class="k5-hero-media" aria-hidden="true">
     <img class="hero-still" src="/assets/video/dachfilm3-standbild-1280.webp"
          srcset="/assets/video/dachfilm3-standbild-854.webp 854w, /assets/video/dachfilm3-standbild-1280.webp 1280w, /assets/video/dachfilm3-standbild-1920.webp 1920w"
-         sizes="100vw" alt=""
+         sizes="(max-width:1024px) 100vw, 50vw" alt=""
          width="1920" height="1080" fetchpriority="high" decoding="async">
     <video class="hero-vid" muted loop playsinline preload="none"
            data-vid-gross="/assets/video/dachfilm3-1920.mp4"
            data-vid-mittel="/assets/video/dachfilm3-1280.mp4"
            data-vid-klein="/assets/video/dachfilm3-854.mp4"></video>
-    <span class="hero-veil"></span>
   </div>
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <h1 class="rise in d1">Sonne rein. Stromrechnung raus.</h1>
-      <p class="lede rise in d1">Photovoltaik, Stromspeicher und Wärmepumpe für Ihr Haus. Wir beraten unabhängig, prüfen die Förderung und vermitteln einen Fachbetrieb für die Montage. Sitz in Berlin, bundesweit tätig.</p>
-      <div class="hero-cta rise in d2">
-        <a href="/#funnel" class="btn">Angebot anfragen</a>
-        <a href="/referenzen/" data-nav="ref" class="btn btn-ghost">Referenzen ansehen</a>
-      </div>
-      <p class="hero-facts rise in d2">Erstberatung kostenlos · Antwort in der Regel am nächsten Werktag</p>
-
-      <!-- Förder-Hinweis: soll auf den ersten Blick sagen, dass es Geld gibt
-           und dass die Sätze planmäßig sinken. -->
-      <p class="hero-foerder rise in d2"><b>Wärmepumpe: bis zu 80&nbsp;% Zuschuss von der KfW.</b> Am 1.&nbsp;Februar 2027 sinken Klimabonus und Förderhöchstbetrag, für einen typischen Haushalt um rund 1.400&nbsp;€. <a href="/waermepumpe-foerderung-2027/" data-nav="foerderung2027">Rechenbeispiele ansehen</a></p>
+  <div class="k5-hero-copy">
+    <h1>Sonne rein. Stromrechnung raus.</h1>
+    <ul class="k5-checks">
+      <li>Photovoltaik, Stromspeicher und Wärmepumpe für Ihr Haus</li>
+      <li>Unabhängige Beratung, Montage durch einen Fachbetrieb aus Ihrer Region</li>
+      <li>Wärmepumpe: bis zu 80&nbsp;% Zuschuss von der KfW</li>
+    </ul>
+    <div class="hero-cta">
+      <a href="/#funnel" class="btn">Angebot anfragen</a>
     </div>
+    <p class="hero-facts">Erstberatung kostenlos · Antwort in der Regel am nächsten Werktag · Sitz in Berlin, bundesweit tätig</p>
+  </div>
+</header>
 
-    <div class="funnel rise in d1" id="funnel">
+<!-- Anfrage direkt unter dem Hero, auf getoentem Grund -->
+<section class="k5-tint k5-anfrage">
+  <div class="wrap">
+    <div class="k5-anfrage-grid">
+      <div>
+        <h2>Kostenloses Angebot anfragen</h2>
+        <p class="k5-sub">Fünf kurze Fragen, danach meldet sich ein Fachbetrieb aus Ihrer Region.</p>
+    <div class="funnel" id="funnel">
       <div class="funnel-top">
         <div class="funnel-meta"><span class="lbl" id="stepLabel">Schritt 1 von 5</span><span class="freebadge">Kostenlos</span></div>
         <div class="progress"><div class="progress-fill" id="pfill"></div></div>
@@ -508,68 +512,116 @@
         </div>
       </div>
     </div>
-  </div>
-</header>
+      </div>
+      <aside class="k5-stimme">
+        <span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+        <p class="k5-stimme-txt">„Sehr professionelle, freundliche und ehrliche Beratung. Die Planung verlief reibungslos und wir fühlen uns bestens betreut.“</p>
+        <p class="k5-stimme-wer">Victor, Bewertung auf Google</p>
+        <a class="ilink" href="https://www.google.com/maps?cid=17443850458843580917" target="_blank" rel="noopener">Alle Bewertungen auf Google</a>
+      </aside>
+    </div>
 
-<section class="strip">
-  <div class="wrap strip-in">
-    <span>Unabhängige Beratung</span>
-    <span>Geprüfte Fachbetriebe</span>
-    <span>Bis 80&nbsp;% KfW-Zuschuss</span>
-    <span>0&nbsp;% MwSt. auf Solar</span>
-    <span>Bis 25 Jahre Modulgarantie</span>
+    <div class="k5-marken">
+      <span class="k5-marken-lbl">Partner und Hersteller</span>
+    <div class="marquee" aria-label="Unsere Partner">
+      <div class="marquee-track">
+        <div class="mk"><img class="hoch" width="140" height="160" src="/assets/partner/zee-logo.png" alt="Zaurov Eco Engineering" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="251" height="58" src="/assets/marken/trina.svg" alt="Trina Solar" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="300" height="116" src="/assets/marken/longi.png" alt="LONGi" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img class="hoch" width="88" height="88" src="/assets/marken/k2.svg" alt="K2 Systems" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="2000" height="324" src="/assets/marken/huawei.svg" alt="Huawei" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="166" height="64" src="/assets/marken/foxess.svg" alt="Fox ESS" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="196" height="67" src="/assets/marken/alphaess.svg" alt="AlphaESS" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="301" height="61" src="/assets/marken/sigenergy.svg" alt="Sigenergy" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="433" height="97" src="/assets/marken/bosch.svg" alt="Bosch" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img class="hoch" width="151" height="143" src="/assets/marken/buderus.png" alt="Buderus" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="576" height="164" src="/assets/marken/vaillant.svg" alt="Vaillant" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="174" height="53" src="/assets/marken/wolf.svg" alt="Wolf" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="504" height="80" src="/assets/marken/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk"><img width="288" height="64" src="/assets/marken/unielektro.svg" alt="Uni Elektro" loading="lazy" decoding="async" fetchpriority="low"></div>
+
+        <div class="mk" aria-hidden="true"><img class="hoch" width="140" height="160" src="/assets/partner/zee-logo.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="251" height="58" src="/assets/marken/trina.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="300" height="116" src="/assets/marken/longi.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img class="hoch" width="88" height="88" src="/assets/marken/k2.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="2000" height="324" src="/assets/marken/huawei.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="166" height="64" src="/assets/marken/foxess.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="196" height="67" src="/assets/marken/alphaess.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="301" height="61" src="/assets/marken/sigenergy.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="433" height="97" src="/assets/marken/bosch.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img class="hoch" width="151" height="143" src="/assets/marken/buderus.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="576" height="164" src="/assets/marken/vaillant.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="174" height="53" src="/assets/marken/wolf.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="504" height="80" src="/assets/marken/panasonic.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" aria-hidden="true"><img width="288" height="64" src="/assets/marken/unielektro.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="k5-hinweis">
+      <p class="k5-kicker">Ab Februar 2027 gibt es weniger Zuschuss</p>
+      <h3>Die Förderung für Wärmepumpen sinkt halbjährlich</h3>
+      <p>Am 1.&nbsp;Februar 2027 sinken Klimabonus und Förderhöchstbetrag, für einen typischen Haushalt um rund 1.400&nbsp;€. Danach geht es alle sechs Monate weiter nach unten. <a href="/waermepumpe-foerderung-2027/" data-nav="foerderung2027">Rechenbeispiel ansehen</a></p>
+    </div>
   </div>
 </section>
 
-<!-- Leistungen: Text links, Foto rechts. Ersetzt die frueheren Icon-Kacheln. -->
+<!-- Leistungen als aufklappbare Kaesten in zwei Spalten -->
 <section class="pad">
-  <div class="wrap split">
-    <div class="split-text">
-      <h2>Was wir anbieten</h2>
-      <p class="split-lede">Wir planen Anlagen für Ein- und Zweifamilienhäuser. Oft lohnt es sich, mehrere Teile zusammen zu planen, weil sie sich den Strom vom Dach teilen.</p>
-      <ul class="leistliste">
-        <li><a href="/photovoltaik/" data-nav="pv"><b>Photovoltaik</b><span>Module auf dem Dach. Der Strom wird zuerst im Haus verbraucht.</span></a></li>
-        <li><a href="/stromspeicher/" data-nav="speicher"><b>Stromspeicher</b><span>Hebt Strom vom Mittag für den Abend auf.</span></a></li>
-        <li><a href="/waermepumpe/" data-nav="wp"><b>Wärmepumpe</b><span>Ersetzt die Gas- oder Ölheizung. Gefördert über die KfW.</span></a></li>
-        <li><a href="/wallbox/" data-nav="wallbox"><b>Wallbox</b><span>Lädt das Auto zu Hause, gern mit dem eigenen Solarstrom.</span></a></li>
-      </ul>
+  <div class="wrap">
+    <h2 class="k5-h2">Was wir für Ihr Haus anbieten</h2>
+    <div class="k5-acc">
+      <details class="k5-acc-item"><summary>Photovoltaik</summary><div class="k5-acc-body"><p>Module auf dem Dach. Der Strom wird zuerst im Haus verbraucht, der Rest geht gegen Vergütung ins Netz. Auf Lieferung und Montage fallen 0&nbsp;% Mehrwertsteuer an.</p><a href="/photovoltaik/" class="ilink" data-nav="pv">Mehr zu Photovoltaik</a></div></details>
+      <details class="k5-acc-item"><summary>Wärmepumpe</summary><div class="k5-acc-body"><p>Ersetzt die Gas- oder Ölheizung. Gefördert über den KfW-Zuschuss 458 mit bis zu 80&nbsp;% der förderfähigen Kosten.</p><a href="/waermepumpe/" class="ilink" data-nav="wp">Mehr zur Wärmepumpe</a></div></details>
+      <details class="k5-acc-item"><summary>Stromspeicher</summary><div class="k5-acc-body"><p>Hebt Strom vom Mittag für den Abend auf. Lässt sich auch an eine bestehende Anlage nachrüsten.</p><a href="/stromspeicher/" class="ilink" data-nav="speicher">Mehr zum Stromspeicher</a></div></details>
+      <details class="k5-acc-item"><summary>Wallbox</summary><div class="k5-acc-body"><p>Lädt das Auto zu Hause, gern mit dem eigenen Solarstrom vom Dach.</p><a href="/wallbox/" class="ilink" data-nav="wallbox">Mehr zur Wallbox</a></div></details>
+      <details class="k5-acc-item"><summary>Angebots-Check</summary><div class="k5-acc-body"><p>Sie haben schon ein Angebot vorliegen? Wir prüfen es unabhängig auf Seriosität, Effizienz und Fairness, bevor Sie unterschreiben.</p><a href="/angebots-check/" class="ilink" data-nav="check">Angebot prüfen lassen</a></div></details>
+      <details class="k5-acc-item"><summary>Bestandsanlagen-Check</summary><div class="k5-acc-body"><p>Ihre Anlage läuft nicht, wie sie soll, wurde nie angemeldet oder der Errichter ist nicht mehr erreichbar? Wir sehen uns den Fall an, auch wenn die Anlage nicht von uns ist.</p><a href="/bestandsanlagen-check/" class="ilink" data-nav="bestand">Zum Bestandsanlagen-Check</a></div></details>
     </div>
-    <figure class="split-foto">
-      <picture><source type="image/webp" srcset="/assets/referenzen/ref-pv-07-hofanlage-400.webp 400w, /assets/referenzen/ref-pv-07-hofanlage-800.webp 800w" sizes="(max-width:900px) 92vw, 460px"><img src="/assets/referenzen/ref-pv-07-hofanlage.jpg" width="960" height="1280" loading="lazy" decoding="async"
-          
-           alt="Zwei Scheunendächer eines Hofes vollflächig mit Photovoltaik belegt, davor der Transporter von BHD"></picture>
-      <figcaption>Zwei Scheunendächer, vollflächig belegt</figcaption>
-    </figure>
   </div>
 </section>
 
-<!-- Eigenverbrauch: schlichte Tabelle statt Balken -->
-<section class="pad sec-alt">
-  <div class="wrap">
-    <div class="head">
-      <h2>Wie viel Strom vom eigenen Dach kommt</h2>
-      <p>Richtwerte für ein Einfamilienhaus, über das ganze Jahr gerechnet. Für Ihr Haus rechnet es der <a href="/rentabilitaetsrechner/" class="ilink" data-nav="rendite">Rentabilitätsrechner</a> genauer aus.</p>
-    </div>
-    <table class="ztab">
-      <thead><tr><th scope="col">Ausstattung</th><th scope="col">Anteil aus eigenem Solarstrom</th></tr></thead>
-      <tbody>
-        <tr><td>Nur Solaranlage</td><td>rund 40&nbsp;%</td></tr>
-        <tr><td>Solaranlage und Speicher</td><td>rund 70&nbsp;%</td></tr>
-        <tr><td>Solaranlage, Speicher und Wärmepumpe</td><td>rund 55&nbsp;%</td></tr>
-      </tbody>
-    </table>
-    <p class="ztab-note">Der dritte Wert ist niedriger, weil die Wärmepumpe ihren Strom vor allem im Winter braucht, wenn die Sonne wenig liefert. Dafür fällt die Gas- oder Ölrechnung weg. Die Werte hängen von Dach, Verbrauch und Anlagengröße ab.</p>
+<!-- Foto links, dunkle Flaeche rechts -->
+<section class="k5-split k5-split-dark">
+  <figure class="k5-split-foto">
+    <picture><source type="image/webp" srcset="/assets/referenzen/ref-pv-07-hofanlage-400.webp 400w, /assets/referenzen/ref-pv-07-hofanlage-800.webp 800w" sizes="(max-width:900px) 100vw, 50vw"><img src="/assets/referenzen/ref-pv-07-hofanlage.jpg" width="960" height="1280" loading="lazy" decoding="async"
+        
+         alt="Zwei Scheunendächer eines Hofes vollflächig mit Photovoltaik belegt, davor der Transporter von BHD"></picture>
+  </figure>
+  <div class="k5-split-text">
+    <p class="k5-kicker">Photovoltaik, Speicher und Wärmepumpe</p>
+    <h2>Wie viel Strom vom eigenen Dach kommt</h2>
+    <ul class="k5-checks">
+      <li>Nur Solaranlage: rund 40&nbsp;% aus eigenem Solarstrom</li>
+      <li>Solaranlage und Speicher: rund 70&nbsp;%</li>
+      <li>Solaranlage, Speicher und Wärmepumpe: rund 55&nbsp;%, dafür fällt die Gas- oder Ölrechnung weg</li>
+    </ul>
+    <p class="k5-klein">Richtwerte für ein Einfamilienhaus über das ganze Jahr. Die Wärmepumpe braucht ihren Strom vor allem im Winter, wenn die Sonne wenig liefert. Die Werte hängen von Dach, Verbrauch und Anlagengröße ab.</p>
+    <a href="/rentabilitaetsrechner/" data-nav="rendite" class="btn btn-hell">Für mein Haus berechnen</a>
   </div>
 </section>
 
-<!-- ===== Förderung & Steuer ===== -->
-<section class="pad" id="foerderung">
-  <div class="wrap">
-    <div class="head">
-      <h2>Förderung und Steuer 2026</h2>
-      <p>Wärmepumpe und Photovoltaik werden auf zwei verschiedenen Wegen gefördert. Bei der Wärmepumpe gibt es einen Zuschuss, bei Solar fällt die Mehrwertsteuer weg.</p>
-    </div>
+<!-- Foerderung: getoente Flaeche links, Grafik rechts -->
+<section class="k5-split" id="foerderung">
+  <div class="k5-split-text k5-tint">
+    <h2>Wärmepumpe mit bis zu 80&nbsp;% Zuschuss</h2>
+    <p>Die Boni der KfW lassen sich kombinieren, höchstens bis 80&nbsp;% der förderfähigen Kosten. Im Einfamilienhaus sind das bis zu 22.400&nbsp;€ Zuschuss. Den Antrag stellen Sie vor dem Auftrag, wir achten im Ablauf darauf.</p>
+    <a href="/waermepumpen-rechner/" data-nav="rechner" class="btn">Förderung berechnen</a>
+  </div>
+  <div class="k5-quoten">
+    <svg class="k5-geraet" viewBox="0 0 300 260" aria-hidden="true"><rect x="8" y="8" width="284" height="244" rx="10" fill="none" stroke="currentColor" stroke-width="3"/><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="140" cy="130" r="92"/><circle cx="140" cy="130" r="74"/><circle cx="140" cy="130" r="56"/><circle cx="140" cy="130" r="38"/><circle cx="140" cy="130" r="16" stroke-width="3"/><path d="M140 114V40M154 138l64 37M126 138l-64 37" stroke-width="5" stroke-linecap="round"/></g></svg>
+    <ul aria-label="Fördersätze KfW-Zuschuss 458">
+      <li class="q-max"><b>80&nbsp;%</b><span>höchster Fördersatz</span></li>
+      <li><b>bis +40&nbsp;%</b><span>Einkommensbonus</span></li>
+      <li><b>+16&nbsp;%</b><span>Klimageschwindigkeits&shy;bonus</span></li>
+      <li><b>30&nbsp;%</b><span>Grundförderung</span></li>
+    </ul>
+  </div>
+</section>
 
+<section class="pad">
+  <div class="wrap">
+    <h2 class="k5-h2">Förderung und Steuer 2026 im Überblick</h2>
     <div class="fund-grid">
       <div class="fund rise">
         <div class="fund-top">
@@ -623,100 +675,6 @@
   </div>
 </section>
 
-<!-- Ablauf: nummerierte Liste neben Foto. Ersetzt die 1-2-3-Kreise. -->
-<section class="pad sec-alt">
-  <div class="wrap split split-rev">
-    <figure class="split-foto">
-      <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-09-montage-speicher-400.webp 400w, /assets/referenzen/ref-tec-09-montage-speicher-800.webp 800w" sizes="(max-width:900px) 92vw, 460px"><img src="/assets/referenzen/ref-tec-09-montage-speicher.jpg" width="960" height="1280" loading="lazy" decoding="async"
-          
-           alt="Monteur im BHD-Shirt richtet einen wandmontierten Batteriespeicher an einer Klinkerwand aus"></picture>
-      <figcaption>Speichermontage vor Ort</figcaption>
-    </figure>
-    <div class="split-text">
-      <h2>So läuft es ab</h2>
-      <ol class="ablauf">
-        <li><b>Anfrage</b><span>Sie beantworten oben ein paar Fragen oder rufen uns an.</span></li>
-        <li><b>Beratung und Angebot</b><span>Ein Fachbetrieb aus Ihrer Region sieht sich Ihr Haus an und macht ein Angebot. Bei der Wärmepumpe wird vorher der Förderantrag gestellt.</span></li>
-        <li><b>Montage</b><span>Die Anlage wird gebaut, in Betrieb genommen und beim Netzbetreiber angemeldet.</span></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Ausgezeichneter Installationspartner ===== -->
-<section class="pad" id="partner">
-  <div class="wrap">
-    <div class="head rise">
-      <h2>Unser Installationspartner</h2>
-      <p>Für die Umsetzung arbeiten wir mit geprüften Fachbetrieben. Einen davon stellen wir hier vor.</p>
-    </div>
-    <a class="partner-card rise" href="https://zaurovee.de/" target="_blank" rel="noopener noreferrer">
-      <span class="pc-logo"><img src="/assets/partner/zaurov-eco-engineering.png" width="419" height="480" loading="lazy" decoding="async" alt="Logo von Zaurov Eco Engineering"></span>
-      <span class="pc-body">
-        <span class="pc-badge">Unser bester Installationspartner 2026</span>
-        <span class="pc-name">Zaurov Eco Engineering</span>
-        <span class="pc-rating">
-          <span class="pc-stars" role="img" aria-label="Fünf von fünf Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
-          <b>5,0</b>
-        </span>
-        <span class="pc-text">Wärmepumpen, Heizungsmodernisierung und Sanitär aus einer Hand. Installation, Wartung und Reparatur in Bielefeld, in Ostwestfalen-Lippe und deutschlandweit. Ein Ansprechpartner von der Planung bis zur Übergabe.</span>
-        <span class="pc-link">Zur Website von Zaurov Eco Engineering <svg class="ic"><use href="#i-chevron"/></svg></span>
-      </span>
-    </a>
-  </div>
-</section>
-
-<!-- ===== Hersteller & Lieferanten ===== -->
-<section class="pad" style="padding-top:0" id="marken">
-  <div class="wrap">
-    <div class="head rise">
-      <h2>Unsere Partner</h2>
-      <p>Wir arbeiten mit einem festen Installationspartner und mit Komponenten etablierter Hersteller. Für diese Komponenten gibt es Ersatzteile, Garantie und Service auch in zehn Jahren noch.</p>
-    </div>
-
-    <!-- Karussell: die Marken laufen endlos durch. Die Liste steht ZWEIMAL im
-         Markup, die Animation schiebt genau um die halbe Spurbreite (-50 %) –
-         so entsteht ein nahtloser Übergang. Die zweite Hälfte ist für
-         Screenreader ausgeblendet. Beim Ergänzen einer Marke immer BEIDE
-         Hälften pflegen, sonst ruckelt der Übergang. -->
-    <div class="marquee rise" aria-label="Unsere Partner">
-      <div class="marquee-track">
-        <div class="mk"><img class="hoch" width="140" height="160" src="/assets/partner/zee-logo.png" alt="Zaurov Eco Engineering" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="251" height="58" src="/assets/marken/trina.svg" alt="Trina Solar" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="300" height="116" src="/assets/marken/longi.png" alt="LONGi" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img class="hoch" width="88" height="88" src="/assets/marken/k2.svg" alt="K2 Systems" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="2000" height="324" src="/assets/marken/huawei.svg" alt="Huawei" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="166" height="64" src="/assets/marken/foxess.svg" alt="Fox ESS" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="196" height="67" src="/assets/marken/alphaess.svg" alt="AlphaESS" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="301" height="61" src="/assets/marken/sigenergy.svg" alt="Sigenergy" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="433" height="97" src="/assets/marken/bosch.svg" alt="Bosch" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img class="hoch" width="151" height="143" src="/assets/marken/buderus.png" alt="Buderus" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="576" height="164" src="/assets/marken/vaillant.svg" alt="Vaillant" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="174" height="53" src="/assets/marken/wolf.svg" alt="Wolf" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="504" height="80" src="/assets/marken/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="288" height="64" src="/assets/marken/unielektro.svg" alt="Uni Elektro" loading="lazy" decoding="async" fetchpriority="low"></div>
-
-        <div class="mk" aria-hidden="true"><img class="hoch" width="140" height="160" src="/assets/partner/zee-logo.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="251" height="58" src="/assets/marken/trina.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="300" height="116" src="/assets/marken/longi.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img class="hoch" width="88" height="88" src="/assets/marken/k2.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="2000" height="324" src="/assets/marken/huawei.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="166" height="64" src="/assets/marken/foxess.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="196" height="67" src="/assets/marken/alphaess.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="301" height="61" src="/assets/marken/sigenergy.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="433" height="97" src="/assets/marken/bosch.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img class="hoch" width="151" height="143" src="/assets/marken/buderus.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="576" height="164" src="/assets/marken/vaillant.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="174" height="53" src="/assets/marken/wolf.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="504" height="80" src="/assets/marken/panasonic.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="288" height="64" src="/assets/marken/unielektro.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-      </div>
-    </div>
-
-    <p class="brands-note">Genannt sind unser Installationspartner Zaurov Eco Engineering sowie Hersteller und Lieferanten, deren Komponenten in unseren Projekten verbaut werden. Welche Marke bei Ihnen zum Einsatz kommt, hängt von Dach, Verbrauch und Verfügbarkeit ab und steht in Ihrem Angebot. Alle Namen und Marken gehören den jeweiligen Unternehmen.</p>
-  </div>
-</section>
-
 <section class="pad" style="padding-top:0">
   <div class="wrap">
     <div class="head rise">
@@ -767,7 +725,46 @@
   </div>
 </section>
 
-<section class="pad" style="padding-top:0">
+<section class="pad" id="partner">
+  <div class="wrap">
+    <div class="head rise">
+      <h2>Unser Installationspartner</h2>
+      <p>Für die Umsetzung arbeiten wir mit geprüften Fachbetrieben. Einen davon stellen wir hier vor.</p>
+    </div>
+    <a class="partner-card rise" href="https://zaurovee.de/" target="_blank" rel="noopener noreferrer">
+      <span class="pc-logo"><img src="/assets/partner/zaurov-eco-engineering.png" width="419" height="480" loading="lazy" decoding="async" alt="Logo von Zaurov Eco Engineering"></span>
+      <span class="pc-body">
+        <span class="pc-badge">Unser bester Installationspartner 2026</span>
+        <span class="pc-name">Zaurov Eco Engineering</span>
+        <span class="pc-rating">
+          <span class="pc-stars" role="img" aria-label="Fünf von fünf Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+          <b>5,0</b>
+        </span>
+        <span class="pc-text">Wärmepumpen, Heizungsmodernisierung und Sanitär aus einer Hand. Installation, Wartung und Reparatur in Bielefeld, in Ostwestfalen-Lippe und deutschlandweit. Ein Ansprechpartner von der Planung bis zur Übergabe.</span>
+        <span class="pc-link">Zur Website von Zaurov Eco Engineering <svg class="ic"><use href="#i-chevron"/></svg></span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- Ablauf: dunkle Flaeche mit aufklappbaren Schritten, Foto rechts -->
+<section class="k5-split k5-split-dark k5-ablauf">
+  <div class="k5-split-text">
+    <h2>In drei Schritten zu Ihrer Anlage</h2>
+    <div class="k5-steps">
+      <details class="k5-step" open><summary>1. Anfrage stellen</summary><p>Sie beantworten oben ein paar Fragen oder rufen uns an.</p><a href="/#funnel" class="k5-steplink">Jetzt anfragen</a></details>
+      <details class="k5-step"><summary>2. Beratung und Angebot</summary><p>Ein Fachbetrieb aus Ihrer Region sieht sich Ihr Haus an und macht ein Angebot. Bei der Wärmepumpe wird vorher der Förderantrag gestellt.</p></details>
+      <details class="k5-step"><summary>3. Montage</summary><p>Die Anlage wird gebaut, in Betrieb genommen und beim Netzbetreiber angemeldet.</p></details>
+    </div>
+  </div>
+  <figure class="k5-split-foto">
+    <picture><source type="image/webp" srcset="/assets/referenzen/ref-tec-09-montage-speicher-400.webp 400w, /assets/referenzen/ref-tec-09-montage-speicher-800.webp 800w" sizes="(max-width:900px) 100vw, 50vw"><img src="/assets/referenzen/ref-tec-09-montage-speicher.jpg" width="960" height="1280" loading="lazy" decoding="async"
+        
+         alt="Monteur im BHD-Shirt richtet einen wandmontierten Batteriespeicher an einer Klinkerwand aus"></picture>
+  </figure>
+</section>
+
+<section class="pad">
   <div class="wrap">
     <div class="head rise">
       <h2>Häufige Fragen</h2>
@@ -811,12 +808,11 @@
   </div>
 </section>
 
-<section class="kontaktband">
-  <div class="wrap kb-in">
-    <div>
-      <h2>Fragen zu Ihrem Haus?</h2>
-      <p>Mo–Fr 9–18 Uhr, Sa 10–15 Uhr. Oder schreiben Sie uns über das Formular.</p>
-    </div>
+<section class="k5-tint k5-kontakt">
+  <div class="wrap">
+    <p class="k5-kicker">Anfrage</p>
+    <h2>Fragen zu Ihrem Haus?</h2>
+    <p>Mo–Fr 9–18 Uhr, Sa 10–15 Uhr. Oder schreiben Sie uns über das Formular.</p>
     <div class="kb-btns">
       <a href="tel:+491634440392" class="btn"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
       <a href="/#funnel" class="btn btn-ghost">Anfrage stellen</a>
@@ -837,7 +833,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=cacda96b" defer></script>
+<script src="/assets/site.js?v=0a0d7f6c" defer></script>
 
 <div class="quickcontact" aria-label="Schnellkontakt">
   <a class="qc qc-phone" href="tel:+491634440392" aria-label="Anrufen unter 0163 4440392">
