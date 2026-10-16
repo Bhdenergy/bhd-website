@@ -117,8 +117,8 @@ const PAGES = [
   },
   {
     key: 'check', dir: 'angebots-check', view: 'view-check', prio: '0.9', crumb: 'Angebots-Check',
-    title: 'Angebots-Check: PV-Angebot prüfen lassen | BHD',
-    desc: 'Angebot für Photovoltaik oder Wärmepumpe kostenlos prüfen lassen: Seriosität, Auslegung und Preis. Ehrliche Rückmeldung innerhalb von 24 Stunden.',
+    title: 'Angebots-Check: PV- & Wärmepumpen-Angebot prüfen | BHD',
+    desc: 'Angebot für Photovoltaik oder Wärmepumpe kostenlos prüfen lassen, bundesweit: Seriosität, Auslegung und Preis. Rückmeldung in der Regel in 24 Stunden.',
     ld: ['service'],
     service: {
       name: "Kostenloser Angebots-Check",
@@ -131,14 +131,14 @@ const PAGES = [
     crumb: 'Bestandsanlagen-Check',
     title: 'Bestandsanlagen-Check: Hilfe bei Mängeln & Baustopp | BHD',
     ogTitle: 'Anlage schon gebaut und es hakt? Bestandsanlagen-Check | BHD',
-    desc: 'Photovoltaik oder Wärmepumpe bereits installiert und es gibt Probleme: Mängel, Baustopp, insolvente Firma, fehlende Anmeldung oder kein Wartungsvertrag. Wir schauen drauf.',
+    desc: 'PV-Anlage oder Wärmepumpe schon installiert und es hakt: Mängel, Baustopp, insolvente Firma, fehlende Anmeldung oder kein Wartungsvertrag. Wir schauen drauf.',
     ld: ['bestandservice']
   },
   {
     key: 'termin', dir: 'termin', view: 'view-termin', prio: '0.9', crumb: 'Termin',
     title: 'Termin vereinbaren – Telefonberatung kostenlos | BHD',
     ogTitle: 'Beratungstermin online anfragen – kostenlos | BHD',
-    desc: 'Beratungstermin zu Photovoltaik oder Wärmepumpe direkt online anfragen. Telefontermin kostenlos, auf Wunsch auch vor Ort. Montag bis Freitag, Antwort am selben Werktag.'
+    desc: 'Beratungstermin zu Photovoltaik oder Wärmepumpe online anfragen. Telefontermin kostenlos, auf Wunsch auch vor Ort. Antwort am selben Werktag.'
   },
   {
     key: 'ref', dir: 'referenzen', view: 'view-ref', prio: '0.8', crumb: 'Referenzen',
@@ -199,9 +199,9 @@ const PAGES = [
      * am 31.12.2026 aus, Klimabonus sinkt am 01.02.2027 -> dann ueberarbeiten. */
     key: 'berlin', dir: 'photovoltaik-waermepumpe-berlin', view: 'view-berlin', prio: '0.9',
     crumb: 'Photovoltaik & Wärmepumpe in Berlin',
-    title: 'Photovoltaik & Wärmepumpe Berlin: Solarpflicht & Förderung | BHD',
+    title: 'Photovoltaik & Wärmepumpe Berlin: Pflicht & Förderung | BHD',
     ogTitle: 'Photovoltaik und Wärmepumpe in Berlin – was hier gilt | BHD',
-    desc: 'Solaranlage oder Wärmepumpe in Berlin: wann die Solarpflicht greift, welche SolarPLUS-Zuschüsse es gibt, was beim Denkmalschutz gilt. Beratung mit Sitz in Berlin.',
+    desc: 'Solaranlage oder Wärmepumpe in Berlin: wann die Solarpflicht greift, welche SolarPLUS-Zuschüsse es gibt und was beim Denkmalschutz gilt.',
     service: {
       name: 'Beratung zu Photovoltaik und Wärmepumpe in Berlin',
       typ: 'Photovoltaik- und Wärmepumpen-Beratung',
@@ -215,9 +215,9 @@ const PAGES = [
      * Wieder anfassen: KfW-Absenkung 01.02.2027, Potsdamer Programm-Status. */
     key: 'brandenburg', dir: 'photovoltaik-waermepumpe-brandenburg', view: 'view-brandenburg',
     prio: '0.9', crumb: 'Photovoltaik & Wärmepumpe in Brandenburg',
-    title: 'Photovoltaik & Wärmepumpe Brandenburg: Regeln & Förderung | BHD',
+    title: 'Photovoltaik & Wärmepumpe Brandenburg: Förderung | BHD',
     ogTitle: 'Photovoltaik und Wärmepumpe in Brandenburg – was hier gilt | BHD',
-    desc: 'Solaranlage in Brandenburg: keine Solarpflicht, keine Baugenehmigung nach § 61 BbgBO, kein Landeszuschuss. Was stattdessen gilt und was der KfW-Zuschuss bringt.',
+    desc: 'Solaranlage in Brandenburg: keine Solarpflicht, keine Baugenehmigung nach § 61 BbgBO, kein Landeszuschuss. Was stattdessen gilt und was die KfW zahlt.',
     service: {
       name: 'Beratung zu Photovoltaik und Wärmepumpe in Brandenburg',
       typ: 'Photovoltaik- und Wärmepumpen-Beratung',
@@ -233,7 +233,7 @@ const PAGES = [
     prio: '0.9', crumb: 'Förderung sinkt 2027',
     title: 'Wärmepumpen-Förderung sinkt 2027: was das kostet | BHD',
     ogTitle: 'Am 1. Februar 2027 sinkt die Wärmepumpen-Förderung | BHD',
-    desc: 'Am 1. Februar 2027 sinken Klimageschwindigkeitsbonus und Förderhöchstbetrag der KfW 458. Für einen typischen Haushalt sind das rund 1.400 € weniger. Mit Rechenbeispielen.',
+    desc: 'Am 1. Februar 2027 sinken Klimabonus und Förderhöchstbetrag der KfW 458. Für einen typischen Haushalt rund 1.400 € weniger. Mit Rechenbeispielen.',
     service: {
       name: 'Unterstützung bei der KfW-Förderbeantragung für Wärmepumpen',
       typ: 'Förderberatung Wärmepumpe',
@@ -248,7 +248,7 @@ const PAGES = [
     prio: '0.8', crumb: 'Anlage anmelden',
     title: 'Solaranlage im Marktstammdatenregister anmelden | BHD',
     ogTitle: 'Solaranlage anmelden – Frist, Folgen und wie Sie es nachholen | BHD',
-    desc: 'Photovoltaik im Marktstammdatenregister anmelden: ein Monat Frist ab Inbetriebnahme. Was eine versäumte Frist wirklich kostet und wie Sie die Anmeldung nachholen.',
+    desc: 'Photovoltaik im Marktstammdatenregister anmelden: ein Monat Frist ab Inbetriebnahme. Was eine versäumte Frist kostet und wie Sie sie nachholen.',
     ld: ['service'],
     service: {
       name: 'Prüfung der Anmeldung von Photovoltaikanlagen',
@@ -262,7 +262,7 @@ const PAGES = [
     key: 'wallbox', dir: 'wallbox', view: 'view-wallbox', prio: '0.8', crumb: 'Wallbox',
     title: 'Wallbox für das Eigenheim: Anmeldung, § 14a, Kosten | BHD',
     ogTitle: 'Wallbox zu Hause – was Sie vor dem Kauf wissen sollten | BHD',
-    desc: 'Wallbox im Einfamilienhaus: Anmeldung beim Netzbetreiber, 11 oder 22 kW, weniger Netzentgelt nach § 14a EnWG und warum es keinen Zuschuss und keine 0 % Mehrwertsteuer gibt.',
+    desc: 'Wallbox im Eigenheim: Anmeldung beim Netzbetreiber, 11 oder 22 kW, weniger Netzentgelt nach § 14a EnWG. Kein Zuschuss, keine 0 % Mehrwertsteuer.',
     service: {
       name: 'Beratung zur Wallbox im Eigenheim',
       typ: 'Wallbox-Beratung',
@@ -276,7 +276,7 @@ const PAGES = [
     crumb: 'Potsdam',
     title: 'Photovoltaik & Wärmepumpe Potsdam: was hier gilt | BHD',
     ogTitle: 'Photovoltaik und Wärmepumpe in Potsdam | BHD',
-    desc: 'Solaranlage und Wärmepumpe in Potsdam: Klimaschutzförderprogramm der Stadt, Denkmalbereiche und Welterbe, Fernwärmesatzung und Anmeldung bei der Netzgesellschaft Potsdam.',
+    desc: 'Solaranlage und Wärmepumpe in Potsdam: städtisches Förderprogramm, Denkmalbereiche und Welterbe, Fernwärmesatzung und Netzgesellschaft Potsdam.',
     service: {
       name: 'Beratung zu Photovoltaik und Wärmepumpe in Potsdam',
       typ: 'Photovoltaik- und Wärmepumpen-Beratung',
@@ -290,7 +290,7 @@ const PAGES = [
     crumb: 'Falkensee',
     title: 'Photovoltaik & Wärmepumpe Falkensee: was hier gilt | BHD',
     ogTitle: 'Photovoltaik und Wärmepumpe in Falkensee | BHD',
-    desc: 'Solaranlage und Wärmepumpe in Falkensee: was der Wärmeplan für Einfamilienhäuser bedeutet, Anmeldung bei E.DIS, Gestaltungssatzung Falkenhagen und KfW-Zuschuss.',
+    desc: 'Solaranlage und Wärmepumpe in Falkensee: was der Wärmeplan fürs Eigenheim bedeutet, Anmeldung bei E.DIS, Gestaltungssatzung Falkenhagen, KfW-Zuschuss.',
     service: {
       name: 'Beratung zu Photovoltaik und Wärmepumpe in Falkensee',
       typ: 'Photovoltaik- und Wärmepumpen-Beratung',
@@ -304,7 +304,7 @@ const PAGES = [
     crumb: 'Bernau',
     title: 'Photovoltaik & Wärmepumpe Bernau: was hier gilt | BHD',
     ogTitle: 'Photovoltaik und Wärmepumpe in Bernau | BHD',
-    desc: 'Solaranlage und Wärmepumpe in Bernau bei Berlin: warum das Eigenheim vom Fernwärme-Anschlusszwang befreit ist, Altstadtsatzungen, Stadtwerke Bernau und KfW-Zuschuss.',
+    desc: 'Solaranlage und Wärmepumpe in Bernau: warum das Eigenheim vom Fernwärme-Anschlusszwang befreit ist, Altstadtsatzungen, Stadtwerke Bernau, KfW-Zuschuss.',
     service: {
       name: 'Beratung zu Photovoltaik und Wärmepumpe in Bernau',
       typ: 'Photovoltaik- und Wärmepumpen-Beratung',
@@ -318,7 +318,7 @@ const PAGES = [
     crumb: 'Oranienburg',
     title: 'Photovoltaik & Wärmepumpe Oranienburg: was hier gilt | BHD',
     ogTitle: 'Photovoltaik und Wärmepumpe in Oranienburg | BHD',
-    desc: 'Solaranlage und Wärmepumpe in Oranienburg: Kampfmittel bei Erdarbeiten, zwei Netzbetreiber je nach Ortsteil, Wärmeplanungskarte und Erhaltungssatzung Innenstadt.',
+    desc: 'Solaranlage und Wärmepumpe in Oranienburg: Kampfmittel bei Erdarbeiten, zwei Netzbetreiber je nach Ortsteil, Wärmeplanung und Erhaltungssatzung.',
     service: {
       name: 'Beratung zu Photovoltaik und Wärmepumpe in Oranienburg',
       typ: 'Photovoltaik- und Wärmepumpen-Beratung',
@@ -352,7 +352,7 @@ const PAGES = [
   {
     key: 'rat-eeg', dir: 'ratgeber/einspeiseverguetung', view: 'view-rat-eeg', prio: '0.8', crumb: 'Einspeisevergütung',
     title: 'Einspeisevergütung 2026 und was ab 2027 kommt | BHD Ratgeber',
-    desc: 'Einspeisevergütung bis Ende 2026: 7,70 ct bei Teileinspeisung bis 10 kW. Ab 2027 soll die feste Vergütung für neue Anlagen wegfallen. Was geplant ist und was das heißt.',
+    desc: 'Einspeisevergütung bis Ende 2026: 7,70 ct bei Teileinspeisung bis 10 kW. Ab 2027 soll die feste Vergütung für neue Anlagen entfallen. Was geplant ist.',
     article: { headline: 'Einspeisevergütung 2026 und was ab 2027 kommt', pub: '2026-10-13', section: 'Photovoltaik' }
   },
   {
@@ -363,8 +363,8 @@ const PAGES = [
   },
   {
     key: 'rat-speicher', dir: 'ratgeber/stromspeicher-nachruesten', view: 'view-rat-speicher', prio: '0.8', crumb: 'Speicher nachrüsten',
-    title: 'Stromspeicher nachrüsten: geht das, was kostet es? | BHD Ratgeber',
-    desc: 'Speicher zur bestehenden Solaranlage nachrüsten: AC oder DC, 0 % Mehrwertsteuer auch beim Nachrüsten, Anmeldung im Marktstammdatenregister und wann es sich lohnt.',
+    title: 'Stromspeicher nachrüsten: Kosten & Ablauf | BHD Ratgeber',
+    desc: 'Speicher zur bestehenden Solaranlage nachrüsten: AC oder DC, 0 % Mehrwertsteuer auch beim Nachrüsten, Anmeldung im MaStR und wann es sich lohnt.',
     article: { headline: 'Stromspeicher nachrüsten: was Sie wissen müssen', pub: '2026-10-13', section: 'Stromspeicher' }
   },
   {
@@ -379,7 +379,7 @@ const PAGES = [
     crumb: 'Rentabilitätsrechner',
     title: 'Rentabilitätsrechner: Lohnt sich PV oder Wärmepumpe? | BHD',
     ogTitle: 'Rechnet sich Photovoltaik oder eine Wärmepumpe? Jetzt rechnen | BHD',
-    desc: 'Kostenloser Rentabilitätsrechner für Photovoltaik und Wärmepumpe: Ersparnis pro Jahr, Einspeisevergütung, KfW-Zuschuss und nach wie vielen Jahren sich die Anlage bezahlt macht.',
+    desc: 'Kostenloser Rentabilitätsrechner für Photovoltaik und Wärmepumpe: Ersparnis pro Jahr, Einspeisevergütung, KfW-Zuschuss und Amortisationszeit.',
     ld: ['rendite']
   },
   {
@@ -937,7 +937,7 @@ function kurzanfrageHtml(key) {
   <section class="pad kf-band" id="rueckruf">
     <div class="wrap kf-grid">
       <div class="kf-copy">
-        <div class="eyebrow"><span class="dot"></span> ${c.kontakt ? 'Kontaktformular' : 'Kostenloser Rückruf'}</div>
+        <div class="eyebrow">${c.kontakt ? 'Kontaktformular' : 'Kostenloser Rückruf'}</div>
         <h2>${c.h}</h2>
         <p>${c.p}</p>
         <ul class="usp">
@@ -1081,6 +1081,7 @@ ${jsonLd(page, view)}
 </script>
 ${STYLE_INLINE}
 <link rel="preload" href="/assets/site.css?v=${ASSET_V}" as="style">
+<link rel="preload" href="/assets/fonts/merriweather-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=${ASSET_V}">
 </head><body data-page="${page.key}"${GA4_ID ? ' data-ga="' + esc(GA4_ID) + '"' : ''}>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>

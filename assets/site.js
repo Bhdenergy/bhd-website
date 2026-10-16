@@ -533,7 +533,9 @@
     const kinder=Math.max(0,num('wp-kinder',0));
     const zveRaw=parseFloat($('wp-zve').value);
     const zveAngegeben=isFinite(zveRaw)&&zveRaw>0;
-    const zve=zveAngegeben?Math.max(0,zveRaw-kinder*10000):null;
+    // KfW-Merkblatt 458: mit mindestens einem minderjaehrigen Kind steigt die
+    // Grenze pauschal und EINMALIG um 10.000 € - nicht je Kind.
+    const zve=zveAngegeben?Math.max(0,zveRaw-(kinder>0?10000:0)):null;
 
     let quote=30;
     const bausteine=['30 % Grundförderung'];
@@ -546,7 +548,7 @@
     const quoteVorDeckel=quote;
     // Deckel: laut KfW-Merkblatt 458 grundsaetzlich 70 %. Die 80 % gibt es nur
     // fuer selbstnutzende Eigentuemer mit einem anzusetzenden zu versteuernden
-    // Haushaltseinkommen bis 30.000 € (Kinder sind oben bereits abgezogen).
+    // Haushaltseinkommen bis 30.000 € (Familienzuschlag ist oben bereits abgezogen).
     // Vorher stand hier pauschal 80 % - das hat im Bereich 30.001 bis 40.000 €
     // sechs Prozentpunkte zu viel ausgewiesen, also bis zu 1.680 € Zuschuss,
     // den es nicht gibt.
@@ -843,7 +845,8 @@
     const kinder=Math.max(0,num('rw-kinder',0));
     const zveRaw=parseFloat($('rw-zve').value);
     const zveDa=isFinite(zveRaw)&&zveRaw>0;
-    const zve=zveDa?Math.max(0,zveRaw-kinder*10000):null;
+    // Familienzuschlag einmalig 10.000 €, nicht je Kind (KfW-Merkblatt 458).
+    const zve=zveDa?Math.max(0,zveRaw-(kinder>0?10000:0)):null;
 
     let quote=30;
     if(selbst&&altOK)quote+=16;

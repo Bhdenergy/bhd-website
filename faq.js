@@ -60,6 +60,8 @@ const FAQ = {
         'Typische Warnzeichen: Pauschalpreise ohne Aufschlüsselung nach Modulen, Wechselrichter und Speicher, fehlende Hersteller- und Typenbezeichnungen, unrealistische Ertragsversprechen, Unterschrift nur heute mit Sonderrabatt, sowie fehlende Positionen für Zählerschrank, Gerüst oder Netzanmeldung.'),
       F('Seid ihr wirklich unabhängig?',
         'Wir sind kein Hersteller und keine Montagefirma. Wir bewerten das Angebot fachlich und sagen Ihnen auch, wenn es gut ist. Dann können Sie es beim vorliegenden Anbieter unterschreiben. Vermitteln tun wir nur, wenn Sie das ausdrücklich möchten.'),
+      F('Gibt es kostenlose Angebotsprüfungen nicht auch bei öffentlichen Stellen?',
+        'Ja. In Berlin prüft das SolarZentrum Berlin Angebote kostenlos, allerdings nur für Berliner Gebäude, höchstens drei Angebote und keine reinen Wärmepumpen-Angebote. Daneben bieten die Verbraucherzentralen Energieberatung an. Unser Check gilt bundesweit, auch für reine Wärmepumpen-Angebote, und Sie bekommen in der Regel innerhalb von 24 Stunden eine Rückmeldung.'),
       F('Muss ich danach etwas bei euch beauftragen?',
         'Nein. Es entsteht keine Verpflichtung, weder aus der Prüfung noch aus einem anschließenden Gespräch. Viele nutzen den Check nur, um beim vorliegenden Anbieter sicherer verhandeln zu können.')
     ]
@@ -500,7 +502,6 @@ function faqHtml(key) {
     '  <section class="pad" style="padding-top:0">',
     '    <div class="wrap">',
     '      <div class="head">',
-    '        <div class="kicker">' + d.kicker + '</div>',
     '        <h2>' + d.titel + '</h2>',
     d.intro ? '        <p>' + d.intro + '</p>' : '',
     '      </div>',
