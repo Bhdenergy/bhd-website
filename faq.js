@@ -59,7 +59,7 @@ const FAQ = {
       F('Woran erkenne ich ein unseriöses Angebot?',
         'Typische Warnzeichen: Pauschalpreise ohne Aufschlüsselung nach Modulen, Wechselrichter und Speicher, fehlende Hersteller- und Typenbezeichnungen, unrealistische Ertragsversprechen, Unterschrift nur heute mit Sonderrabatt, sowie fehlende Positionen für Zählerschrank, Gerüst oder Netzanmeldung.'),
       F('Seid ihr wirklich unabhängig?',
-        'Wir sind kein Hersteller und keine Montagefirma. Wir bewerten das Angebot fachlich und sagen Ihnen auch, wenn es gut ist. Dann können Sie es beim vorliegenden Anbieter unterschreiben. Vermitteln tun wir nur, wenn Sie das ausdrücklich möchten.'),
+        'Wir sind kein Hersteller und keine Montagefirma. Wir bewerten das Angebot fachlich und sagen Ihnen auch, wenn es gut ist. Dann unterschreiben Sie beim vorliegenden Anbieter, und wir verdienen daran nichts. Vermitteln tun wir nur, wenn Sie das ausdrücklich möchten.'),
       F('Gibt es kostenlose Angebotsprüfungen nicht auch bei öffentlichen Stellen?',
         'Ja. In Berlin prüft das SolarZentrum Berlin Angebote kostenlos, allerdings nur für Berliner Gebäude, höchstens drei Angebote und keine reinen Wärmepumpen-Angebote. Daneben bieten die Verbraucherzentralen Energieberatung an. Unser Check gilt bundesweit, auch für reine Wärmepumpen-Angebote, und Sie bekommen in der Regel innerhalb von 24 Stunden eine Rückmeldung.'),
       F('Muss ich danach etwas bei euch beauftragen?',
@@ -156,30 +156,15 @@ const FAQ = {
     intro: 'Wer hinter BHD steht, wie wir arbeiten und woran wir verdienen.',
     items: [
       F('Baut ihr die Anlagen selbst?',
-        'Nein. Wir beraten, planen die Auslegung und begleiten das Projekt. Gebaut wird von geprüften Installateur-Partnern mit langjähriger Montage-Erfahrung. Die Trennung ist Absicht: Wer nicht selbst montiert, kann ein Angebot unbefangener bewerten.'),
+        'Wir beraten, planen die Auslegung und begleiten das Projekt. Die Montage übernehmen geprüfte Installateur-Partner mit langjähriger Erfahrung. Diese Aufteilung ist Absicht: Wer nicht selbst montiert, kann ein Angebot unbefangener bewerten.'),
       F('Was kostet mich die Beratung?',
         'Beratung, Angebots-Check und Telefontermin sind kostenlos. Wir werden erst vergütet, wenn über uns tatsächlich ein Projekt zustande kommt. Für Sie ändert das nichts am Preis.'),
       F('In welchen Regionen seid ihr tätig?',
-        'Unser Sitz ist Berlin, tätig sind wir bundesweit. Ob wir in Ihrer Region einen passenden Fachbetrieb haben, klären wir gleich bei der ersten Anfrage. Wenn nicht, sagen wir Ihnen das offen.'),
+        'Unser Sitz ist Berlin, tätig sind wir bundesweit. Welcher Fachbetrieb in Ihrer Region die Montage übernimmt, klären wir gleich bei der ersten Anfrage.'),
       F('Wer ist mein Ansprechpartner?',
         'Sie haben einen festen Ansprechpartner von der Anfrage bis zur Übergabe. Die Geschäftsführung ist in die Projekte eingebunden und sieht sich die Ausführung bei den entscheidenden Schritten an.'),
       F('Wie wählt ihr eure Partnerbetriebe aus?',
-        'Nach Qualität der Ausführung, Termintreue und Umgang mit den Kunden. Betriebe, bei denen es wiederholt hakt, bekommen keine weiteren Projekte. Wir nehmen bewusst nicht jeden Auftrag an, weil wir für jede Anlage geradestehen wollen.')
-    ]
-  },
-
-  /* ---------------------------------------------------------- Referenzen */
-  ref: {
-    kicker: 'Zu den Projekten',
-    titel: 'Häufige Fragen zu den Referenzen',
-    intro: 'Woher die Bilder stammen und was sie zeigen.',
-    items: [
-      F('Sind das eigene Projekte?',
-        'Die gezeigten Fotos stammen aus Projekten, die unsere Fachpartner umgesetzt und die wir begleitet haben. Einzelne Aufnahmen von Geräten sind Herstellerbilder, erkennbar an der Studio-Optik.'),
-      F('Wie lange dauert eine Installation?',
-        'Die reine Montage einer Photovoltaikanlage dauert meist ein bis drei Tage, bei einer Wärmepumpe kommen Erdarbeiten, Hydraulik und Inbetriebnahme dazu. Der längere Teil sind Planung, Förderantrag und Netzanmeldung, nicht die Arbeit auf der Baustelle.'),
-      F('Kann ich mit früheren Kunden sprechen?',
-        'Auf Anfrage stellen wir gern einen Kontakt her, sofern der jeweilige Kunde einverstanden ist. Ungefragt geben wir keine Kundendaten weiter.')
+        'Nach Qualität der Ausführung, Termintreue und Umgang mit den Kunden. Wir nehmen bewusst nicht jeden Auftrag an, weil wir für jede Anlage geradestehen wollen.')
     ]
   },
 
