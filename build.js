@@ -581,7 +581,7 @@ function webpPicture(html) {
 /* Das schliessende </div> der Marke muss zu </a> werden – zeilenweise sicher. */
 function fixBrandClose(html) {
   return html.replace(
-    /<a class="brand" href="\/" data-nav="home" aria-label="Zur Startseite">(<img[^>]*>)<\/div>/g,
+    /<a class="brand" href="\/" data-nav="home" aria-label="Zur Startseite">(<img[^>]*>(?:<span class="brand-txt"[^>]*>[^<]*<br>[^<]*<\/span>)?)<\/div>/g,
     '<a class="brand" href="/" data-nav="home" aria-label="Zur Startseite">$1</a>'
   );
 }

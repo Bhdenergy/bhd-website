@@ -17,9 +17,13 @@
   // Swipe-Slider Pfeile
   document.querySelectorAll('.swipe-wrap').forEach(w=>{
     const track=w.querySelector('.swipe');
+    w.querySelectorAll('.bew-mehr').forEach(btn=>btn.addEventListener('click',()=>{
+      const p=btn.previousElementSibling;const offen=p.classList.toggle('offen');
+      btn.setAttribute('aria-expanded',offen);btn.textContent=offen?'Weniger anzeigen':'Ganze Bewertung lesen';
+    }));
     w.querySelectorAll('[data-swipe]').forEach(btn=>btn.addEventListener('click',()=>{
       const card=track.firstElementChild;
-      const step=card?card.getBoundingClientRect().width+20:280;
+      const step=card?card.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).columnGap)||20):280;
       track.scrollBy({left:btn.dataset.swipe==='next'?step:-step,behavior:'smooth'});
     }));
   });

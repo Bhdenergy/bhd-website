@@ -1541,6 +1541,151 @@
   footer a,.foot-links a{color:#fff}
   .foot-links a:hover{color:var(--hell-akzent)}
 
+  /* ======================================================================
+     GESTALTUNG "FEINSCHLIFF" (17.10.2026)
+     Weniger Vorlagen-Merkmale: Gold nur noch fuer Links und Sterne,
+     Linien statt Rahmenkaesten, keine Deko-Symbole, echte Foerdergrafik.
+     Steht am Ende und uebersteuert KLAR.
+     ====================================================================== */
+  /* Kopf: Logo ohne die winzige Unterzeile. Der Name steht als lesbarer
+     Text daneben, aber nur im Burger-Modus (unter 1100px). Am Desktop hat
+     er neben dem Menue keinen Platz, dort steht er im title/alt. */
+  .brand{gap:10px}
+  .brand-kopf{height:48px}
+  .brand-txt{display:none;font-size:.8rem;line-height:1.25;font-weight:500;color:#444}
+  @media(max-width:1099px){.brand-txt{display:block}}
+  @media(max-width:360px){.brand-txt{display:none}}
+  /* Knapp ueber 1100px wurde "Jetzt anfragen" rechts abgeschnitten (auch vorher schon). */
+  @media(min-width:1100px) and (max-width:1239px){
+    .nav-links{gap:14px}
+    .nav-links a,.nav-drop-lbl{font-size:.9rem}
+    .nav-right{gap:10px}
+    .nav-cta{padding:12px 16px;font-size:.92rem}
+  }
+
+  /* Hero: schlichte Zeilen statt Haekchen */
+  .k5-zeilen{list-style:none;margin:0 0 32px;padding:0;max-width:44ch}
+  .k5-zeilen li{font-size:1.08rem;line-height:1.45;color:#333;padding:10px 0;border-top:1px solid #e4dfd5}
+  .k5-zeilen li:last-child{border-bottom:1px solid #e4dfd5}
+
+  /* Anfrage: Symbole bleiben (ohne wurde 16.10. abgelehnt), jetzt gegenstaendlich:
+     Modul mit Sonne, WP-Ausseneinheit, Haus mit beidem. Fortschritt neutral. */
+  .progress-fill{background:#222}
+  .k5-anfrage .choice .cic .ic{width:56px;height:56px}
+  @media(max-width:560px){.k5-anfrage .choice .cic .ic{width:36px;height:36px}}
+  /* Weniger Luft zwischen Bewertungen und Partner */
+  section.pad:has(.swipe-wrap){padding-bottom:clamp(40px,5vw,64px)}
+  .k5-anfrage .funnel,.k5-stimme{box-shadow:none;border:1px solid #e4dfd5}
+
+  /* Logos als ruhige Reihe, ohne Kaesten und ohne Laufband */
+  .k5-marken{align-items:flex-start;gap:32px;margin-top:56px;padding-top:30px;border-top:1px solid #e1dbcf}
+  .k5-marken-lbl{padding-top:6px}
+  .k5-logos{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:center;gap:22px 38px}
+  .k5-logos .mk{width:auto;height:auto;margin:0;padding:0;border:0;background:none;box-shadow:none}
+  /* feste Hoehe: einige SVGs haben keine eigene Breite und fielen sonst auf 0px */
+  .k5-logos .mk img{height:26px;width:auto;max-height:none;max-width:130px;opacity:.75}
+  .k5-logos .mk img.hoch{height:40px;max-height:none}
+  @media(max-width:560px){.k5-logos{gap:18px 26px}.k5-logos .mk img{height:22px;max-width:100px}.k5-logos .mk img.hoch{height:34px}}
+
+  /* Hinweis Februar 2027: Linie links statt Kasten */
+  .k5-hinweis{background:none;border:0;border-left:3px solid #222;border-radius:0;padding:4px 0 4px 24px}
+
+  /* Leistungen: offen, drei Spalten, Linien */
+  .k5-leistungen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 48px}
+  .k5-leistung{border-top:1px solid #d8d2c6;padding:24px 0 36px}
+  .k5-leistung h3{font-size:1.3rem;margin:0 0 10px;color:#222}
+  .k5-leistung p{margin:0 0 14px;color:var(--ink-2);line-height:1.55}
+  @media(max-width:900px){.k5-leistungen{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}}
+  @media(max-width:600px){.k5-leistungen{grid-template-columns:minmax(0,1fr)}.k5-leistung{padding:20px 0 26px}}
+
+  /* Dunkler Block: Tabelle statt Haekchen */
+  .k5-anteil{width:100%;max-width:540px;border-collapse:collapse;margin:0 0 26px;font-size:1.02rem}
+  .k5-anteil th{text-align:left;font-weight:500;font-size:.85rem;color:rgba(255,255,255,.7);padding:0 0 10px;border-bottom:1px solid rgba(255,255,255,.4)}
+  .k5-anteil td{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.16);vertical-align:top;color:#fff}
+  .k5-anteil th:last-child,.k5-anteil td:last-child{text-align:right;padding-left:20px}
+  .k5-anteil td:last-child{font-weight:600;white-space:nowrap}
+  .k5-anteil td small{display:block;white-space:normal;font-weight:400;font-size:.84rem;color:rgba(255,255,255,.72);margin-top:3px}
+
+  /* Foerdergrafik: gestapelter Balken mit Obergrenzen */
+  .k5-quoten{display:flex;align-items:center;justify-content:center;padding:clamp(48px,6vw,88px) clamp(20px,5vw,72px);background:#fff;color:inherit}
+  .k5-balken{margin:0;width:100%;max-width:520px}
+  .k5-balken figcaption{font-family:var(--head);font-weight:700;font-size:1.2rem;color:#222;margin:0 0 46px}
+  .kb-track{position:relative;display:flex;height:52px;background:#eeeae2;border-radius:4px}
+  .k5-quoten .kb-track span{margin:0;font-size:.95rem}
+  .k5-quoten .kb-seg{display:flex;color:#fff}
+  .k5-quoten .kb-weg,.k5-quoten .kb-mark{display:block}
+  .k5-quoten .kb-legende{margin:30px 0 0;gap:10px}
+  .kb-seg{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:.95rem;white-space:nowrap;overflow:hidden}
+  .kb-seg.kb-grund{border-radius:4px 0 0 4px}
+  .kb-seg.kb-eink{justify-content:flex-start;padding-left:12px}
+  .kb-grund{background:#222}
+  .kb-klima{background:#5f584c}
+  .kb-eink{background:var(--akzent-tief)}
+  .kb-weg{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.8) 0 4px,transparent 4px 8px)}
+  .kb-mark{position:absolute;top:-10px;bottom:-10px;width:0;border-left:2px dashed #222}
+  .kb-mark b{position:absolute;bottom:100%;left:0;transform:translateX(-50%);margin-bottom:4px;font-size:.85rem;color:#222;white-space:nowrap}
+  .kb-legende{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:10px;font-size:.95rem;color:var(--ink-2)}
+  .kb-legende li{display:flex;gap:10px;align-items:baseline}
+  .kb-legende i{flex:none;width:12px;height:12px;border-radius:2px;transform:translateY(1px)}
+  .kb-deckel{margin:18px 0 0;font-size:.93rem;color:var(--ink-2);line-height:1.55}
+  @media(max-width:560px){.kb-mark b{font-size:.76rem}.k5-quoten .kb-seg{font-size:.85rem}}
+
+  /* Foerderkarten ohne Symbolkaestchen, Hinweise gleich breit */
+  .fund-ic{display:none}
+  .fund-hint{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  @media(max-width:800px){.fund-hint{grid-template-columns:minmax(0,1fr)}}
+
+  /* Bewertungen: in Spalten untereinander statt Karussell (am Handy eine Spalte).
+     Im Karussell bestimmte die laengste Bewertung die Hoehe aller Karten. */
+  /* Karussell mit engem Abstand und gleich hohen Karten. Etwas mehr als drei
+     Karten sichtbar, damit man sieht, dass es weitergeht. Die sehr lange
+     Bewertung ist auf drei Zeilen gekuerzt (aufklappbar, Text wortgetreu),
+     sonst wuerde sie die Hoehe aller Karten bestimmen. */
+  .swipe{display:flex;gap:14px;align-items:stretch;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 6px}
+  .swipe>.quote{display:flex;flex:0 0 calc((100% - 42px) / 3.25);width:auto;margin:0;padding:22px 24px;gap:12px}
+  .swipe-nav{display:flex;justify-content:flex-start;gap:8px;margin-top:16px}
+  .snav{width:42px;height:42px}
+  .snav:hover,.snav:focus-visible{border-color:#222;color:#222;background:#fff}
+  section.pad:has(.swipe-wrap) .head{margin-bottom:24px}
+  .quote .who{margin-top:auto;padding-top:6px}
+  .bew-wert{display:flex;align-items:center;gap:8px;font-size:.95rem}
+  .bew-wert b{font-weight:700;color:#222}
+  .quote .qstars,.k5-stimme .qstars{gap:1px;color:#e3a224}
+  .quote .qstars .ic{width:14px;height:14px}
+  .k5-stimme .qstars{margin-bottom:12px}
+  .k5-stimme .qstars .ic{width:17px;height:17px}
+  .bew-lang{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+  .bew-lang.offen{display:block;-webkit-line-clamp:unset}
+  .bew-mehr{align-self:flex-start;background:none;border:0;padding:0;font:inherit;font-size:.9rem;font-weight:600;color:var(--akzent-tief);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  @media(max-width:900px){.swipe>.quote{flex-basis:calc((100% - 14px) / 2.2)}}
+  @media(max-width:600px){.swipe{gap:12px}.swipe>.quote{flex-basis:84%;padding:20px}}
+  #partner.pad{padding-top:clamp(24px,4vw,48px)}
+
+  /* FAQ: Trennlinien statt Goldrahmen */
+  .faq{gap:0;border-top:1px solid #d8d2c6}
+  .faq-item{border:0;border-bottom:1px solid #d8d2c6;border-radius:0;background:none}
+  .faq-item summary{padding:20px 0}
+  .faq-item .ans{padding:0 0 22px}
+
+  /* Ablauf: Link weiss statt Gold */
+  .k5-steplink{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+  /* Schnellkontakt: einheitlich, Anrufen dunkel, die anderen hell */
+  .quickcontact{right:16px;bottom:16px;gap:10px}
+  .qc{width:48px;height:48px}
+  .qc .ic{width:21px;height:21px}
+  .qc-phone{background:#222;color:#fff}
+  .qc-wa,.qc-mail{background:#fff;color:#222;border:1px solid #cfc9bd}
+  .qc-wa .ic{color:#0B7A63}
+  @media(max-width:700px){
+    .qc{height:46px}
+    .qc-wa,.qc-mail{background:#fff;border-color:#cfc9bd}
+    /* Solange die Einwilligungsleiste offen ist, steht sie allein unten.
+       Beide zusammen haben ein Drittel des Bildschirms verdeckt. */
+    body:has(.consent-bar:not([hidden])) .quickcontact{display:none}
+    body:has(.consent-bar:not([hidden])) .consent-bar{bottom:0}
+  }
+
 /* <picture> soll das Layout nicht beeinflussen – die bestehenden
    Regeln greifen dadurch weiterhin direkt auf das <img>. */
 picture{display:contents}

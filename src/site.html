@@ -1617,17 +1617,165 @@
   footer .brand-logo{background:#fff;border-radius:8px;padding:8px 12px;box-sizing:content-box}
   footer a,.foot-links a{color:#fff}
   .foot-links a:hover{color:var(--hell-akzent)}
+
+  /* ======================================================================
+     GESTALTUNG "FEINSCHLIFF" (17.10.2026)
+     Weniger Vorlagen-Merkmale: Gold nur noch fuer Links und Sterne,
+     Linien statt Rahmenkaesten, keine Deko-Symbole, echte Foerdergrafik.
+     Steht am Ende und uebersteuert KLAR.
+     ====================================================================== */
+  /* Kopf: Logo ohne die winzige Unterzeile. Der Name steht als lesbarer
+     Text daneben, aber nur im Burger-Modus (unter 1100px). Am Desktop hat
+     er neben dem Menue keinen Platz, dort steht er im title/alt. */
+  .brand{gap:10px}
+  .brand-kopf{height:48px}
+  .brand-txt{display:none;font-size:.8rem;line-height:1.25;font-weight:500;color:#444}
+  @media(max-width:1099px){.brand-txt{display:block}}
+  @media(max-width:360px){.brand-txt{display:none}}
+  /* Knapp ueber 1100px wurde "Jetzt anfragen" rechts abgeschnitten (auch vorher schon). */
+  @media(min-width:1100px) and (max-width:1239px){
+    .nav-links{gap:14px}
+    .nav-links a,.nav-drop-lbl{font-size:.9rem}
+    .nav-right{gap:10px}
+    .nav-cta{padding:12px 16px;font-size:.92rem}
+  }
+
+  /* Hero: schlichte Zeilen statt Haekchen */
+  .k5-zeilen{list-style:none;margin:0 0 32px;padding:0;max-width:44ch}
+  .k5-zeilen li{font-size:1.08rem;line-height:1.45;color:#333;padding:10px 0;border-top:1px solid #e4dfd5}
+  .k5-zeilen li:last-child{border-bottom:1px solid #e4dfd5}
+
+  /* Anfrage: Symbole bleiben (ohne wurde 16.10. abgelehnt), jetzt gegenstaendlich:
+     Modul mit Sonne, WP-Ausseneinheit, Haus mit beidem. Fortschritt neutral. */
+  .progress-fill{background:#222}
+  .k5-anfrage .choice .cic .ic{width:56px;height:56px}
+  @media(max-width:560px){.k5-anfrage .choice .cic .ic{width:36px;height:36px}}
+  /* Weniger Luft zwischen Bewertungen und Partner */
+  section.pad:has(.swipe-wrap){padding-bottom:clamp(40px,5vw,64px)}
+  .k5-anfrage .funnel,.k5-stimme{box-shadow:none;border:1px solid #e4dfd5}
+
+  /* Logos als ruhige Reihe, ohne Kaesten und ohne Laufband */
+  .k5-marken{align-items:flex-start;gap:32px;margin-top:56px;padding-top:30px;border-top:1px solid #e1dbcf}
+  .k5-marken-lbl{padding-top:6px}
+  .k5-logos{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:center;gap:22px 38px}
+  .k5-logos .mk{width:auto;height:auto;margin:0;padding:0;border:0;background:none;box-shadow:none}
+  /* feste Hoehe: einige SVGs haben keine eigene Breite und fielen sonst auf 0px */
+  .k5-logos .mk img{height:26px;width:auto;max-height:none;max-width:130px;opacity:.75}
+  .k5-logos .mk img.hoch{height:40px;max-height:none}
+  @media(max-width:560px){.k5-logos{gap:18px 26px}.k5-logos .mk img{height:22px;max-width:100px}.k5-logos .mk img.hoch{height:34px}}
+
+  /* Hinweis Februar 2027: Linie links statt Kasten */
+  .k5-hinweis{background:none;border:0;border-left:3px solid #222;border-radius:0;padding:4px 0 4px 24px}
+
+  /* Leistungen: offen, drei Spalten, Linien */
+  .k5-leistungen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 48px}
+  .k5-leistung{border-top:1px solid #d8d2c6;padding:24px 0 36px}
+  .k5-leistung h3{font-size:1.3rem;margin:0 0 10px;color:#222}
+  .k5-leistung p{margin:0 0 14px;color:var(--ink-2);line-height:1.55}
+  @media(max-width:900px){.k5-leistungen{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}}
+  @media(max-width:600px){.k5-leistungen{grid-template-columns:minmax(0,1fr)}.k5-leistung{padding:20px 0 26px}}
+
+  /* Dunkler Block: Tabelle statt Haekchen */
+  .k5-anteil{width:100%;max-width:540px;border-collapse:collapse;margin:0 0 26px;font-size:1.02rem}
+  .k5-anteil th{text-align:left;font-weight:500;font-size:.85rem;color:rgba(255,255,255,.7);padding:0 0 10px;border-bottom:1px solid rgba(255,255,255,.4)}
+  .k5-anteil td{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.16);vertical-align:top;color:#fff}
+  .k5-anteil th:last-child,.k5-anteil td:last-child{text-align:right;padding-left:20px}
+  .k5-anteil td:last-child{font-weight:600;white-space:nowrap}
+  .k5-anteil td small{display:block;white-space:normal;font-weight:400;font-size:.84rem;color:rgba(255,255,255,.72);margin-top:3px}
+
+  /* Foerdergrafik: gestapelter Balken mit Obergrenzen */
+  .k5-quoten{display:flex;align-items:center;justify-content:center;padding:clamp(48px,6vw,88px) clamp(20px,5vw,72px);background:#fff;color:inherit}
+  .k5-balken{margin:0;width:100%;max-width:520px}
+  .k5-balken figcaption{font-family:var(--head);font-weight:700;font-size:1.2rem;color:#222;margin:0 0 46px}
+  .kb-track{position:relative;display:flex;height:52px;background:#eeeae2;border-radius:4px}
+  .k5-quoten .kb-track span{margin:0;font-size:.95rem}
+  .k5-quoten .kb-seg{display:flex;color:#fff}
+  .k5-quoten .kb-weg,.k5-quoten .kb-mark{display:block}
+  .k5-quoten .kb-legende{margin:30px 0 0;gap:10px}
+  .kb-seg{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:.95rem;white-space:nowrap;overflow:hidden}
+  .kb-seg.kb-grund{border-radius:4px 0 0 4px}
+  .kb-seg.kb-eink{justify-content:flex-start;padding-left:12px}
+  .kb-grund{background:#222}
+  .kb-klima{background:#5f584c}
+  .kb-eink{background:var(--akzent-tief)}
+  .kb-weg{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.8) 0 4px,transparent 4px 8px)}
+  .kb-mark{position:absolute;top:-10px;bottom:-10px;width:0;border-left:2px dashed #222}
+  .kb-mark b{position:absolute;bottom:100%;left:0;transform:translateX(-50%);margin-bottom:4px;font-size:.85rem;color:#222;white-space:nowrap}
+  .kb-legende{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:10px;font-size:.95rem;color:var(--ink-2)}
+  .kb-legende li{display:flex;gap:10px;align-items:baseline}
+  .kb-legende i{flex:none;width:12px;height:12px;border-radius:2px;transform:translateY(1px)}
+  .kb-deckel{margin:18px 0 0;font-size:.93rem;color:var(--ink-2);line-height:1.55}
+  @media(max-width:560px){.kb-mark b{font-size:.76rem}.k5-quoten .kb-seg{font-size:.85rem}}
+
+  /* Foerderkarten ohne Symbolkaestchen, Hinweise gleich breit */
+  .fund-ic{display:none}
+  .fund-hint{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  @media(max-width:800px){.fund-hint{grid-template-columns:minmax(0,1fr)}}
+
+  /* Bewertungen: in Spalten untereinander statt Karussell (am Handy eine Spalte).
+     Im Karussell bestimmte die laengste Bewertung die Hoehe aller Karten. */
+  /* Karussell mit engem Abstand und gleich hohen Karten. Etwas mehr als drei
+     Karten sichtbar, damit man sieht, dass es weitergeht. Die sehr lange
+     Bewertung ist auf drei Zeilen gekuerzt (aufklappbar, Text wortgetreu),
+     sonst wuerde sie die Hoehe aller Karten bestimmen. */
+  .swipe{display:flex;gap:14px;align-items:stretch;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 6px}
+  .swipe>.quote{display:flex;flex:0 0 calc((100% - 42px) / 3.25);width:auto;margin:0;padding:22px 24px;gap:12px}
+  .swipe-nav{display:flex;justify-content:flex-start;gap:8px;margin-top:16px}
+  .snav{width:42px;height:42px}
+  .snav:hover,.snav:focus-visible{border-color:#222;color:#222;background:#fff}
+  section.pad:has(.swipe-wrap) .head{margin-bottom:24px}
+  .quote .who{margin-top:auto;padding-top:6px}
+  .bew-wert{display:flex;align-items:center;gap:8px;font-size:.95rem}
+  .bew-wert b{font-weight:700;color:#222}
+  .quote .qstars,.k5-stimme .qstars{gap:1px;color:#e3a224}
+  .quote .qstars .ic{width:14px;height:14px}
+  .k5-stimme .qstars{margin-bottom:12px}
+  .k5-stimme .qstars .ic{width:17px;height:17px}
+  .bew-lang{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+  .bew-lang.offen{display:block;-webkit-line-clamp:unset}
+  .bew-mehr{align-self:flex-start;background:none;border:0;padding:0;font:inherit;font-size:.9rem;font-weight:600;color:var(--akzent-tief);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  @media(max-width:900px){.swipe>.quote{flex-basis:calc((100% - 14px) / 2.2)}}
+  @media(max-width:600px){.swipe{gap:12px}.swipe>.quote{flex-basis:84%;padding:20px}}
+  #partner.pad{padding-top:clamp(24px,4vw,48px)}
+
+  /* FAQ: Trennlinien statt Goldrahmen */
+  .faq{gap:0;border-top:1px solid #d8d2c6}
+  .faq-item{border:0;border-bottom:1px solid #d8d2c6;border-radius:0;background:none}
+  .faq-item summary{padding:20px 0}
+  .faq-item .ans{padding:0 0 22px}
+
+  /* Ablauf: Link weiss statt Gold */
+  .k5-steplink{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+  /* Schnellkontakt: einheitlich, Anrufen dunkel, die anderen hell */
+  .quickcontact{right:16px;bottom:16px;gap:10px}
+  .qc{width:48px;height:48px}
+  .qc .ic{width:21px;height:21px}
+  .qc-phone{background:#222;color:#fff}
+  .qc-wa,.qc-mail{background:#fff;color:#222;border:1px solid #cfc9bd}
+  .qc-wa .ic{color:#0B7A63}
+  @media(max-width:700px){
+    .qc{height:46px}
+    .qc-wa,.qc-mail{background:#fff;border-color:#cfc9bd}
+    /* Solange die Einwilligungsleiste offen ist, steht sie allein unten.
+       Beide zusammen haben ein Drittel des Bildschirms verdeckt. */
+    body:has(.consent-bar:not([hidden])) .quickcontact{display:none}
+    body:has(.consent-bar:not([hidden])) .consent-bar{bottom:0}
+  }
 </style>
 
 <!-- SVG icon sprite (kein einziges Emoji, alles skaliert scharf) -->
 <svg style="display:none" aria-hidden="true">
   <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.3M12 19.1v2.3M2.6 12h2.3M19.1 12h2.3M5.1 5.1l1.6 1.6M17.3 17.3l1.6 1.6M18.9 5.1l-1.6 1.6M6.7 17.3l-1.6 1.6"/></symbol>
   <symbol id="i-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 8.5c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 14.5c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></symbol>
+  <symbol id="i-pvmodul" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24.5" cy="6.8" r="2.6"/><path d="M24.5 1.3v1.2M24.5 11.1v1.2M19 6.8h1.2M28.8 6.8H30M20.6 2.9l.85.85M27.55 9.85l.85.85M28.4 2.9l-.85.85M21.45 9.85l-.85.85"/><path d="M3.5 28h18l4-13.5h-18z"/><path d="M9.5 28l4-13.5M15.5 28l4-13.5M5.6 21.25h18"/></symbol>
+  <symbol id="i-wpaussen" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="27" height="17.5" rx="1.5"/><circle cx="11.5" cy="15.75" r="6"/><circle cx="11.5" cy="15.75" r="1.1"/><path d="M11.5 14.6c-.3-2 .6-3.4 2.1-3.6M12.5 16.3c1.7 1.1 2.1 2.7 1.3 3.9M10.5 16.3c-1.9.8-3.4.3-4-.9"/><path d="M21.5 11.5h4.5M21.5 14.5h4.5M21.5 17.5h4.5M21.5 20.5h4.5"/><path d="M6.5 24.5v2.5M25.5 24.5v2.5"/></symbol>
+  <symbol id="i-kombi" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.8 14.5L12.5 5l10.7 9.5"/><path d="M4 12.6V28h17V12.6"/><path d="M3.94 12.6l6.42-5.7 1.73 1.94-6.42 5.7z"/><path d="M6.08 10.7l1.73 1.94M8.22 8.8l1.73 1.94"/><path d="M10 28v-6.5h5V28"/><rect x="23" y="19.5" width="8" height="8.5" rx="1"/><circle cx="26.1" cy="23.75" r="2"/><path d="M29.3 22h.2M29.3 23.75h.2M29.3 25.5h.2"/></symbol>
   <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5"/></symbol>
   <symbol id="i-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6 8 6M6 10.5V19h12v-8.5"/></symbol>
   <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.6"/><path d="M10.6 10.6L20 20M17 17l2-2M14.5 14.5l1.8-1.8"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2 2A15 15 0 013 6a2 2 0 012-2z"/></symbol>
-  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l2.85 5.9 6.5.8-4.75 4.45 1.2 6.4L12 17.7 6.2 20.15l1.2-6.4L2.65 9.3l6.5-.8z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.56 9.08L22.08 9.32L16.14 13.94L18.23 21.18L12 16.95L5.77 21.18L7.86 13.94L1.92 9.32L9.44 9.08Z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/></symbol>
   <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2L5 13h6l-1 9 8-11h-6z"/></symbol>
@@ -1659,7 +1807,7 @@
 
 <nav>
   <div class="wrap nav-in">
-    <div class="brand" data-nav="home"><img class="brand-logo" src="assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></div>
+    <div class="brand" data-nav="home"><img class="brand-logo brand-kopf" src="assets/bhd-logo-kopf.png" width="245" height="132" alt="BHD – Beratung Heimenergie Deutschland"><span class="brand-txt" aria-hidden="true">Beratung Heimenergie<br>Deutschland</span></div>
     <div class="nav-links" id="nav-links">
       <a data-nav="home">Start</a>
       <div class="nav-drop">
@@ -1727,7 +1875,7 @@
   </div>
   <div class="k5-hero-copy">
     <h1>Sonne rein. Stromrechnung raus.</h1>
-    <ul class="k5-checks">
+    <ul class="k5-zeilen">
       <li>Photovoltaik, Stromspeicher und Wärmepumpe für Ihr Haus</li>
       <li>Unabhängige Beratung, Montage durch einen Fachbetrieb aus Ihrer Region</li>
       <li>Wärmepumpe: bis zu 80&nbsp;% Zuschuss von der KfW</li>
@@ -1735,7 +1883,7 @@
     <div class="hero-cta">
       <a href="#funnel" class="btn">Angebot anfragen</a>
     </div>
-    <p class="hero-facts">Erstberatung kostenlos · Antwort in der Regel am nächsten Werktag · Sitz in Berlin, bundesweit tätig</p>
+    <p class="hero-facts">Die Erstberatung ist kostenlos. Wir melden uns in der Regel am nächsten Werktag.</p>
   </div>
 </header>
 
@@ -1757,9 +1905,9 @@
           <h2 class="funnel-title">Wofür interessieren Sie sich?</h2>
           <p class="funnel-hint">Wählen Sie, womit Sie starten möchten.</p>
           <div class="choices">
-            <button class="choice" data-field="produkt" data-value="Solaranlage"><span class="cic"><svg class="ic"><use href="#i-sun"/></svg></span> Solaranlage <svg class="ic chev"><use href="#i-chevron"/></svg></button>
-            <button class="choice" data-field="produkt" data-value="Wärmepumpe"><span class="cic"><svg class="ic"><use href="#i-wave"/></svg></span> Wärmepumpe <svg class="ic chev"><use href="#i-chevron"/></svg></button>
-            <button class="choice" data-field="produkt" data-value="Solar + Wärmepumpe"><span class="cic"><svg class="ic"><use href="#i-layers"/></svg></span> Beides kombiniert <svg class="ic chev"><use href="#i-chevron"/></svg></button>
+            <button class="choice" data-field="produkt" data-value="Solaranlage"><span class="cic"><svg class="ic"><use href="#i-pvmodul"/></svg></span> Solaranlage <svg class="ic chev"><use href="#i-chevron"/></svg></button>
+            <button class="choice" data-field="produkt" data-value="Wärmepumpe"><span class="cic"><svg class="ic"><use href="#i-wpaussen"/></svg></span> Wärmepumpe <svg class="ic chev"><use href="#i-chevron"/></svg></button>
+            <button class="choice" data-field="produkt" data-value="Solar + Wärmepumpe"><span class="cic"><svg class="ic"><use href="#i-kombi"/></svg></span> Beides kombiniert <svg class="ic chev"><use href="#i-chevron"/></svg></button>
           </div>
         </div>
 
@@ -1836,60 +1984,42 @@
 
     <div class="k5-marken">
       <span class="k5-marken-lbl">Partner und Hersteller</span>
-    <div class="marquee" aria-label="Unsere Partner">
-      <div class="marquee-track">
-        <div class="mk"><img class="hoch" width="140" height="160" src="assets/partner/zee-logo.png" alt="Zaurov Eco Engineering" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="251" height="58" src="assets/marken/trina.svg" alt="Trina Solar" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="300" height="116" src="assets/marken/longi.png" alt="LONGi" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img class="hoch" width="88" height="88" src="assets/marken/k2.svg" alt="K2 Systems" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="2000" height="324" src="assets/marken/huawei.svg" alt="Huawei" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="166" height="64" src="assets/marken/foxess.svg" alt="Fox ESS" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="196" height="67" src="assets/marken/alphaess.svg" alt="AlphaESS" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="301" height="61" src="assets/marken/sigenergy.svg" alt="Sigenergy" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="433" height="97" src="assets/marken/bosch.svg" alt="Bosch" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img class="hoch" width="151" height="143" src="assets/marken/buderus.png" alt="Buderus" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="576" height="164" src="assets/marken/vaillant.svg" alt="Vaillant" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="174" height="53" src="assets/marken/wolf.svg" alt="Wolf" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="504" height="80" src="assets/marken/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk"><img width="288" height="64" src="assets/marken/unielektro.svg" alt="Uni Elektro" loading="lazy" decoding="async" fetchpriority="low"></div>
-
-        <div class="mk" aria-hidden="true"><img class="hoch" width="140" height="160" src="assets/partner/zee-logo.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="251" height="58" src="assets/marken/trina.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="300" height="116" src="assets/marken/longi.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img class="hoch" width="88" height="88" src="assets/marken/k2.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="2000" height="324" src="assets/marken/huawei.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="166" height="64" src="assets/marken/foxess.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="196" height="67" src="assets/marken/alphaess.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="301" height="61" src="assets/marken/sigenergy.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="433" height="97" src="assets/marken/bosch.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img class="hoch" width="151" height="143" src="assets/marken/buderus.png" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="576" height="164" src="assets/marken/vaillant.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="174" height="53" src="assets/marken/wolf.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="504" height="80" src="assets/marken/panasonic.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
-        <div class="mk" aria-hidden="true"><img width="288" height="64" src="assets/marken/unielektro.svg" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+    <div class="k5-logos" role="list" aria-label="Unsere Partner">
+        <div class="mk" role="listitem"><img class="hoch" width="140" height="160" src="assets/partner/zee-logo.png" alt="Zaurov Eco Engineering" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="251" height="58" src="assets/marken/trina.svg" alt="Trina Solar" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="300" height="116" src="assets/marken/longi.png" alt="LONGi" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img class="hoch" width="88" height="88" src="assets/marken/k2.svg" alt="K2 Systems" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="2000" height="324" src="assets/marken/huawei.svg" alt="Huawei" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="166" height="64" src="assets/marken/foxess.svg" alt="Fox ESS" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="196" height="67" src="assets/marken/alphaess.svg" alt="AlphaESS" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="301" height="61" src="assets/marken/sigenergy.svg" alt="Sigenergy" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="433" height="97" src="assets/marken/bosch.svg" alt="Bosch" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img class="hoch" width="151" height="143" src="assets/marken/buderus.png" alt="Buderus" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="576" height="164" src="assets/marken/vaillant.svg" alt="Vaillant" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="174" height="53" src="assets/marken/wolf.svg" alt="Wolf" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="504" height="80" src="assets/marken/panasonic.svg" alt="Panasonic" loading="lazy" decoding="async" fetchpriority="low"></div>
+        <div class="mk" role="listitem"><img width="288" height="64" src="assets/marken/unielektro.svg" alt="Uni Elektro" loading="lazy" decoding="async" fetchpriority="low"></div>
       </div>
-    </div>
     </div>
 
     <div class="k5-hinweis">
-      <p class="k5-kicker">Ab Februar 2027 gibt es weniger Zuschuss</p>
       <h3>Die Förderung für Wärmepumpen sinkt halbjährlich</h3>
       <p>Am 1.&nbsp;Februar 2027 sinken Klimabonus und Förderhöchstbetrag, für einen typischen Haushalt um rund 1.400&nbsp;€. Danach geht es alle sechs Monate weiter nach unten. <a data-nav="foerderung2027">Rechenbeispiel ansehen</a></p>
     </div>
   </div>
 </section>
 
-<!-- Leistungen als aufklappbare Kaesten in zwei Spalten -->
+<!-- Leistungen offen sichtbar, drei Spalten, getrennt durch Linien -->
 <section class="pad">
   <div class="wrap">
     <h2 class="k5-h2">Was wir für Ihr Haus anbieten</h2>
-    <div class="k5-acc">
-      <details class="k5-acc-item"><summary>Photovoltaik</summary><div class="k5-acc-body"><p>Module auf dem Dach. Der Strom wird zuerst im Haus verbraucht, der Rest geht gegen Vergütung ins Netz. Auf Lieferung und Montage fallen 0&nbsp;% Mehrwertsteuer an.</p><a class="ilink" data-nav="pv">Mehr zu Photovoltaik</a></div></details>
-      <details class="k5-acc-item"><summary>Wärmepumpe</summary><div class="k5-acc-body"><p>Ersetzt die Gas- oder Ölheizung. Gefördert über den KfW-Zuschuss 458 mit bis zu 80&nbsp;% der förderfähigen Kosten.</p><a class="ilink" data-nav="wp">Mehr zur Wärmepumpe</a></div></details>
-      <details class="k5-acc-item"><summary>Stromspeicher</summary><div class="k5-acc-body"><p>Hebt Strom vom Mittag für den Abend auf. Lässt sich auch an eine bestehende Anlage nachrüsten.</p><a class="ilink" data-nav="speicher">Mehr zum Stromspeicher</a></div></details>
-      <details class="k5-acc-item"><summary>Wallbox</summary><div class="k5-acc-body"><p>Lädt das Auto zu Hause, gern mit dem eigenen Solarstrom vom Dach.</p><a class="ilink" data-nav="wallbox">Mehr zur Wallbox</a></div></details>
-      <details class="k5-acc-item"><summary>Angebots-Check</summary><div class="k5-acc-body"><p>Sie haben schon ein Angebot vorliegen? Wir prüfen es unabhängig auf Seriosität, Effizienz und Fairness, bevor Sie unterschreiben.</p><a class="ilink" data-nav="check">Angebot prüfen lassen</a></div></details>
-      <details class="k5-acc-item"><summary>Bestandsanlagen-Check</summary><div class="k5-acc-body"><p>Ihre Anlage läuft nicht, wie sie soll, wurde nie angemeldet oder der Errichter ist nicht mehr erreichbar? Wir sehen uns den Fall an, auch wenn die Anlage nicht von uns ist.</p><a class="ilink" data-nav="bestand">Zum Bestandsanlagen-Check</a></div></details>
+    <div class="k5-leistungen">
+      <div class="k5-leistung"><h3>Photovoltaik</h3><p>Module auf dem Dach. Der Strom wird zuerst im Haus verbraucht, der Rest geht gegen Vergütung ins Netz. Auf Lieferung und Montage fallen 0&nbsp;% Mehrwertsteuer an.</p><a class="ilink" data-nav="pv">Mehr zu Photovoltaik</a></div>
+      <div class="k5-leistung"><h3>Wärmepumpe</h3><p>Ersetzt die Gas- oder Ölheizung. Gefördert über den KfW-Zuschuss 458 mit bis zu 80&nbsp;% der förderfähigen Kosten.</p><a class="ilink" data-nav="wp">Mehr zur Wärmepumpe</a></div>
+      <div class="k5-leistung"><h3>Stromspeicher</h3><p>Hebt Strom vom Mittag für den Abend auf. Lässt sich auch an eine bestehende Anlage nachrüsten.</p><a class="ilink" data-nav="speicher">Mehr zum Stromspeicher</a></div>
+      <div class="k5-leistung"><h3>Wallbox</h3><p>Lädt das Auto zu Hause, gern mit dem eigenen Solarstrom vom Dach.</p><a class="ilink" data-nav="wallbox">Mehr zur Wallbox</a></div>
+      <div class="k5-leistung"><h3>Angebots-Check</h3><p>Sie haben schon ein Angebot vorliegen? Wir prüfen es unabhängig auf Seriosität, Effizienz und Fairness, bevor Sie unterschreiben.</p><a class="ilink" data-nav="check">Angebot prüfen lassen</a></div>
+      <div class="k5-leistung"><h3>Bestandsanlagen-Check</h3><p>Ihre Anlage läuft nicht, wie sie soll, wurde nie angemeldet oder der Errichter ist nicht mehr erreichbar? Wir sehen uns den Fall an, auch wenn die Anlage nicht von uns ist.</p><a class="ilink" data-nav="bestand">Zum Bestandsanlagen-Check</a></div>
     </div>
   </div>
 </section>
@@ -1902,13 +2032,15 @@
          alt="Zwei Scheunendächer eines Hofes vollflächig mit Photovoltaik belegt, davor der Transporter von BHD">
   </figure>
   <div class="k5-split-text">
-    <p class="k5-kicker">Photovoltaik, Speicher und Wärmepumpe</p>
     <h2>Wie viel Strom vom eigenen Dach kommt</h2>
-    <ul class="k5-checks">
-      <li>Nur Solaranlage: rund 40&nbsp;% aus eigenem Solarstrom</li>
-      <li>Solaranlage und Speicher: rund 70&nbsp;%</li>
-      <li>Solaranlage, Speicher und Wärmepumpe: rund 55&nbsp;%, dafür fällt die Gas- oder Ölrechnung weg</li>
-    </ul>
+    <table class="k5-anteil">
+      <thead><tr><th scope="col">Ausstattung</th><th scope="col">Anteil eigener Solarstrom</th></tr></thead>
+      <tbody>
+        <tr><td>Nur Solaranlage</td><td>rund 40&nbsp;%</td></tr>
+        <tr><td>Solaranlage und Speicher</td><td>rund 70&nbsp;%</td></tr>
+        <tr><td>Solaranlage, Speicher und Wärmepumpe</td><td>rund 55&nbsp;%<small>dafür fällt die Gas- oder Ölrechnung weg</small></td></tr>
+      </tbody>
+    </table>
     <p class="k5-klein">Richtwerte für ein Einfamilienhaus über das ganze Jahr. Die Wärmepumpe braucht ihren Strom vor allem im Winter, wenn die Sonne wenig liefert. Die Werte hängen von Dach, Verbrauch und Anlagengröße ab.</p>
     <a data-nav="rendite" class="btn btn-hell">Für mein Haus berechnen</a>
   </div>
@@ -1922,13 +2054,21 @@
     <a data-nav="rechner" class="btn">Förderung berechnen</a>
   </div>
   <div class="k5-quoten">
-    <svg class="k5-geraet" viewBox="0 0 300 260" aria-hidden="true"><rect x="8" y="8" width="284" height="244" rx="10" fill="none" stroke="currentColor" stroke-width="3"/><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="140" cy="130" r="92"/><circle cx="140" cy="130" r="74"/><circle cx="140" cy="130" r="56"/><circle cx="140" cy="130" r="38"/><circle cx="140" cy="130" r="16" stroke-width="3"/><path d="M140 114V40M154 138l64 37M126 138l-64 37" stroke-width="5" stroke-linecap="round"/></g></svg>
-    <ul aria-label="Fördersätze KfW-Zuschuss 458">
-      <li class="q-max"><b>80&nbsp;%</b><span>höchster Fördersatz</span></li>
-      <li><b>bis +40&nbsp;%</b><span>Einkommensbonus</span></li>
-      <li><b>+16&nbsp;%</b><span>Klimageschwindigkeits&shy;bonus</span></li>
-      <li><b>30&nbsp;%</b><span>Grundförderung</span></li>
-    </ul>
+    <figure class="k5-balken">
+      <figcaption>So setzt sich der Zuschuss zusammen</figcaption>
+      <div class="kb-track" role="img" aria-label="Grundförderung 30 Prozent, Klimageschwindigkeitsbonus 16 Prozent und Einkommensbonus bis 40 Prozent ergeben zusammen bis zu 86 Prozent. Ausgezahlt werden höchstens 70 Prozent, bei niedrigem Einkommen 80 Prozent.">
+        <span class="kb-seg kb-grund" style="width:30%">30&nbsp;%</span><span class="kb-seg kb-klima" style="width:16%">16&nbsp;%</span><span class="kb-seg kb-eink" style="width:40%">bis 40&nbsp;%</span>
+        <span class="kb-weg" style="left:80%;width:6%"></span>
+        <span class="kb-mark" style="left:70%"><b>70&nbsp;%</b></span>
+        <span class="kb-mark kb-mark80" style="left:80%"><b>80&nbsp;%</b></span>
+      </div>
+      <ul class="kb-legende">
+        <li><i class="kb-grund"></i>Grundförderung, für jeden Eigentümer</li>
+        <li><i class="kb-klima"></i>Klimageschwindigkeitsbonus, beim Tausch einer alten Heizung</li>
+        <li><i class="kb-eink"></i>Einkommensbonus, gestaffelt nach Haushaltseinkommen</li>
+      </ul>
+      <p class="kb-deckel">Zusammen gibt es höchstens 70&nbsp;%, bei einem Haushaltseinkommen bis 30.000&nbsp;€ (mit Kind bis 40.000&nbsp;€) höchstens 80&nbsp;%. Was darüber liegt, wird nicht ausgezahlt.</p>
+    </figure>
   </div>
 </section>
 
@@ -1996,34 +2136,35 @@
     <div class="swipe-wrap rise">
       <div class="swipe" role="list">
         <blockquote class="quote" role="listitem">
-          <span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+          <span class="bew-wert"><b>5,0</b><span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></span>
           <p>„Sehr professionelle, freundliche und ehrliche Beratung. Die Planung verlief reibungslos und wir fühlen uns bestens betreut. Vielen Dank an das Team von BHD!“</p>
-          <div class="who"><span class="avatar" style="--a1:#C6892A;--a2:#E3A03F" aria-hidden="true">VI</span><span><b>Victor</b><small>Bewertung auf Google</small></span></div>
+          <div class="who"><span><b>Victor</b><small>Bewertung auf Google</small></span></div>
         </blockquote>
         <blockquote class="quote" role="listitem">
-          <span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+          <span class="bew-wert"><b>5,0</b><span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></span>
           <p>„Mega guter Service und Bereitschaft des Unternehmen die beste, wie geeignete Lösung zu finden. Kann es nur weiterempfehlen!“</p>
-          <div class="who"><span class="avatar" style="--a1:#E3A03F;--a2:#C6892A" aria-hidden="true">JS</span><span><b>Jamal S.</b><small>Bewertung auf Google</small></span></div>
+          <div class="who"><span><b>Jamal S.</b><small>Bewertung auf Google</small></span></div>
         </blockquote>
         <blockquote class="quote" role="listitem">
-          <span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+          <span class="bew-wert"><b>5,0</b><span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></span>
+          <p class="bew-lang">„Ich möchte mich herzlich für die bisherige Zusammenarbeit bedanken. Zudem möchte ich dem Team von BHD ein großes Lob für die ehrliche, kompetente, professionelle und zuverlässige Arbeit aussprechen. Ich hoffe auf noch einige weitere Jahre der Zusammenarbeit mit euch. Ihr seid der Hammer! :)“</p>
+          <button type="button" class="bew-mehr" aria-expanded="false">Ganze Bewertung lesen</button>
+          <div class="who"><span><b>Gabriel Z.</b><small>Unser Installationspartner · Bewertung auf Google</small></span></div>
+        </blockquote>
+        <blockquote class="quote" role="listitem">
+          <span class="bew-wert"><b>5,0</b><span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></span>
           <p>„Ehrliche und Kompetente Beratung, empfehlenswert.“</p>
-          <div class="who"><span class="avatar" style="--a1:#9A6F22;--a2:#E3A03F" aria-hidden="true">OO</span><span><b>Oliviér O.</b><small>Bewertung auf Google</small></span></div>
+          <div class="who"><span><b>Oliviér O.</b><small>Bewertung auf Google</small></span></div>
         </blockquote>
         <blockquote class="quote" role="listitem">
-          <span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+          <span class="bew-wert"><b>5,0</b><span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></span>
           <p>„Schnelle, zuverlässige und hervorragende Kommunikation“</p>
-          <div class="who"><span class="avatar" style="--a1:#E3A03F;--a2:#9A6F22" aria-hidden="true">TW</span><span><b>Tang W.</b><small>Bewertung auf Google</small></span></div>
+          <div class="who"><span><b>Tang W.</b><small>Bewertung auf Google</small></span></div>
         </blockquote>
         <blockquote class="quote" role="listitem">
-          <span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+          <span class="bew-wert"><b>5,0</b><span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></span>
           <p>„Hervorragendes Planungsbüro für B2B Angelegenheiten“</p>
-          <div class="who"><span class="avatar" style="--a1:#C6892A;--a2:#E3A03F" aria-hidden="true">DH</span><span><b>DMG Hochbau GmbH</b><small>Unternehmen · Bewertung auf Google</small></span></div>
-        </blockquote>
-        <blockquote class="quote" role="listitem">
-          <span class="qstars" role="img" aria-label="5 von 5 Sternen"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
-          <p>„Ich möchte mich herzlich für die bisherige Zusammenarbeit bedanken. Zudem möchte ich dem Team von BHD ein großes Lob für die ehrliche, kompetente, professionelle und zuverlässige Arbeit aussprechen. Ich hoffe auf noch einige weitere Jahre der Zusammenarbeit mit euch. Ihr seid der Hammer! :)“</p>
-          <div class="who"><span class="avatar" style="--a1:#E3A03F;--a2:#C6892A" aria-hidden="true">GZ</span><span><b>Gabriel Z.</b><small>Unser Installationspartner · Bewertung auf Google</small></span></div>
+          <div class="who"><span><b>DMG Hochbau GmbH</b><small>Unternehmen · Bewertung auf Google</small></span></div>
         </blockquote>
       </div>
       <div class="swipe-nav">
@@ -2033,7 +2174,7 @@
     </div>
     <p class="brands-note">Eine Auswahl aus unseren Bewertungen auf Google, wortgetreu übernommen. Die Bewertungen stammen aus unserem Google-Unternehmensprofil, wo Google sie nach eigenen Richtlinien veröffentlicht. Wir übernehmen sie unverändert. Alle Bewertungen finden Sie dort.</p>
     <div class="hero-cta rise" style="margin-top:22px">
-      <a href="https://www.google.com/maps?cid=17443850458843580917" class="btn" target="_blank" rel="noopener"><svg class="ic"><use href="#i-star"/></svg> Alle Bewertungen auf Google</a>
+      <a href="https://www.google.com/maps?cid=17443850458843580917" class="btn" target="_blank" rel="noopener">Alle Bewertungen auf Google</a>
     </div>
   </div>
 </section>
@@ -2123,7 +2264,6 @@
 
 <section class="k5-tint k5-kontakt">
   <div class="wrap">
-    <p class="k5-kicker">Anfrage</p>
     <h2>Fragen zu Ihrem Haus?</h2>
     <p>Mo–Fr 9–18 Uhr, Sa 10–15 Uhr. Oder schreiben Sie uns über das Formular.</p>
     <div class="kb-btns">
@@ -6296,9 +6436,13 @@
   // Swipe-Slider Pfeile
   document.querySelectorAll('.swipe-wrap').forEach(w=>{
     const track=w.querySelector('.swipe');
+    w.querySelectorAll('.bew-mehr').forEach(btn=>btn.addEventListener('click',()=>{
+      const p=btn.previousElementSibling;const offen=p.classList.toggle('offen');
+      btn.setAttribute('aria-expanded',offen);btn.textContent=offen?'Weniger anzeigen':'Ganze Bewertung lesen';
+    }));
     w.querySelectorAll('[data-swipe]').forEach(btn=>btn.addEventListener('click',()=>{
       const card=track.firstElementChild;
-      const step=card?card.getBoundingClientRect().width+20:280;
+      const step=card?card.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).columnGap)||20):280;
       track.scrollBy({left:btn.dataset.swipe==='next'?step:-step,behavior:'smooth'});
     }));
   });
