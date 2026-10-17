@@ -572,7 +572,13 @@ function webpPicture(html) {
     /* data-sizes am <img> ueberschreibt die Kartenwerte – etwa fuer ein Foto
      * im Kopfbereich, das deutlich breiter als eine Referenzkarte ist. */
     const eigen = tag.match(/\sdata-sizes="([^"]+)"/);
-    const srcset = stufen.map(s => s.datei + ' ' + s.b + 'w').join(', ');
+    const kette = stufen.map(s => s.datei + ' ' + s.b + 'w');
+    /* Die volle WebP-Fassung als groesste Stufe dazunehmen, wenn sie breiter
+     * ist als die 800er. Sonst wurden grosse Fotos (halbe Bildschirmbreite)
+     * aus der 800er-Datei hochskaliert und wirkten unscharf. */
+    const breite = Number((tag.match(/\swidth="(\d+)"/) || [])[1] || 0);
+    if (breite > stufen[stufen.length - 1].b) kette.push(webp + ' ' + breite + 'w');
+    const srcset = kette.join(', ');
     return '<picture><source type="image/webp" srcset="' + srcset +
            '" sizes="' + (eigen ? eigen[1] : BILD_SIZES) + '">' + tag.replace(/\sdata-sizes="[^"]+"/, '') + '</picture>';
   });

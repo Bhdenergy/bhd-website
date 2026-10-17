@@ -1866,7 +1866,7 @@
   <div class="k5-hero-media" aria-hidden="true">
     <img class="hero-still" src="/assets/video/dachfilm3-standbild-1280.webp"
          srcset="/assets/video/dachfilm3-standbild-854.webp 854w, /assets/video/dachfilm3-standbild-1280.webp 1280w, /assets/video/dachfilm3-standbild-1920.webp 1920w"
-         sizes="(max-width:1024px) 100vw, 50vw" alt=""
+         sizes="(max-width:1024px) 100vw, 1200px" alt=""
          width="1920" height="1080" fetchpriority="high" decoding="async">
     <video class="hero-vid" muted loop playsinline preload="none"
            data-vid-gross="/assets/video/dachfilm3-1920.mp4"
@@ -6615,7 +6615,11 @@
     var langsam=/(^|-)[23]g$/.test(netz.effectiveType||'');
     function quelle(){
       if(langsam)return v.dataset.vidKlein;
-      var b=Math.round((v.getBoundingClientRect().width||window.innerWidth)*dpr);
+      /* Das Video fuellt seinen Kasten (object-fit:cover) und wird dabei seitlich
+         beschnitten. Massgeblich ist also die Breite, die es bei voller Kastenhoehe
+         hat, nicht die Kastenbreite. Sonst kam die 1280er-Fassung und wurde hochskaliert. */
+      var kr=v.getBoundingClientRect();
+      var b=Math.round(Math.max(kr.width||window.innerWidth,(kr.height||0)*16/9)*dpr);
       if(bandLayout)return b>=1100?v.dataset.vidMittel:v.dataset.vidKlein;
       return b>=1400?v.dataset.vidGross:v.dataset.vidMittel;
     }

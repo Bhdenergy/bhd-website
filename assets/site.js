@@ -196,7 +196,11 @@
     var langsam=/(^|-)[23]g$/.test(netz.effectiveType||'');
     function quelle(){
       if(langsam)return v.dataset.vidKlein;
-      var b=Math.round((v.getBoundingClientRect().width||window.innerWidth)*dpr);
+      /* Das Video fuellt seinen Kasten (object-fit:cover) und wird dabei seitlich
+         beschnitten. Massgeblich ist also die Breite, die es bei voller Kastenhoehe
+         hat, nicht die Kastenbreite. Sonst kam die 1280er-Fassung und wurde hochskaliert. */
+      var kr=v.getBoundingClientRect();
+      var b=Math.round(Math.max(kr.width||window.innerWidth,(kr.height||0)*16/9)*dpr);
       if(bandLayout)return b>=1100?v.dataset.vidMittel:v.dataset.vidKlein;
       return b>=1400?v.dataset.vidGross:v.dataset.vidMittel;
     }
