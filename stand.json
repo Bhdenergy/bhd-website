@@ -4,123 +4,123 @@
     "datum": "2026-10-27"
   },
   "check": {
-    "hash": "a8e8cec078ca0d36b9bcb01e8c8f56dd",
+    "hash": "ba52f2f2dc65dfa500f46a4db3858e25",
     "datum": "2026-10-27"
   },
   "bestand": {
-    "hash": "23e187dd8286f105be7f718b88b4dd54",
+    "hash": "26ec6fe5c69ae3a8b109e00aab425b5b",
     "datum": "2026-10-27"
   },
   "termin": {
-    "hash": "0e597427bc7fa8ed466e1573da9fdcca",
+    "hash": "6bd12b2d48773fad2067f6ef7e133715",
     "datum": "2026-10-27"
   },
   "ref": {
-    "hash": "3d189aa001717ec97bae9d13c68fa6cd",
+    "hash": "4791e2093cefc0e15342622213f6fc4f",
     "datum": "2026-10-27"
   },
   "about": {
-    "hash": "05d6cc409cbb7f4bbe60a6886a457920",
+    "hash": "b9ebc64d1f77f15a27932c6d60cccbfa",
     "datum": "2026-10-27"
   },
   "pv": {
-    "hash": "bbe2d03ebe5059e42b956a182a3da281",
+    "hash": "1021233bca5da9038df7d02f6876cf38",
     "datum": "2026-10-27"
   },
   "speicher": {
-    "hash": "daeb738a828dee1128d42cbc306ca45e",
+    "hash": "09090064e7728817b026376f3bb59a0b",
     "datum": "2026-10-27"
   },
   "wp": {
-    "hash": "369ad117199a3214cc08c803e787b859",
+    "hash": "500e1d940b396acb90d24edc1fbfa95f",
     "datum": "2026-10-27"
   },
   "kosten": {
-    "hash": "beb0f8e4c427795d4ba665146fbb0fef",
+    "hash": "8936637c7f86c20a2bc396ee19bc0cb2",
     "datum": "2026-10-27"
   },
   "berlin": {
-    "hash": "e427d5c9e057df443afee2cc8ef075e6",
+    "hash": "27a1a18f94b6763036c29b31b59799cb",
     "datum": "2026-10-27"
   },
   "brandenburg": {
-    "hash": "57d2493253f01b33bf0a67b9e1125599",
+    "hash": "ba98e6db8e0cc69cfaa3161d2bd046b8",
     "datum": "2026-10-27"
   },
   "foerderung2027": {
-    "hash": "4590b5464f0a594a73a967494f9fd54e",
+    "hash": "4a80f520a92435c2be680d1425b39a12",
     "datum": "2026-10-27"
   },
   "mastr": {
-    "hash": "47d70ab71893f85f47e999d8c17697ae",
+    "hash": "e69f5a426875e439aa7315fd118972fc",
     "datum": "2026-10-27"
   },
   "wallbox": {
-    "hash": "cda6a070dc2ca2c0413b9b8d54a5a3af",
+    "hash": "dd133d07c7e49328138b91186f2cf8a6",
     "datum": "2026-10-27"
   },
   "potsdam": {
-    "hash": "e35c36f6980d0a96b01cc31f9f589c41",
+    "hash": "5d5e4e7bae383c06175421148d9abfe8",
     "datum": "2026-10-27"
   },
   "falkensee": {
-    "hash": "03f703c3afdf2ac33b9ea446e1f267a2",
+    "hash": "9f79a5391ff5796cb45e09cecd56cdf6",
     "datum": "2026-10-27"
   },
   "bernau": {
-    "hash": "93ec093c665a201f00991d7a80c65c6b",
+    "hash": "be9aaf4f51f5bf831f883f49eaaf51b6",
     "datum": "2026-10-27"
   },
   "oranienburg": {
-    "hash": "52f270b81289d9c7a9dbe376c27a0db4",
+    "hash": "e943dc707672de46b6e8fec2785596fe",
     "datum": "2026-10-27"
   },
   "ratgeber": {
-    "hash": "45a56162d7ee682459d166d73829e563",
+    "hash": "baa7f2d6737d437f32f1f7e733cd78d4",
     "datum": "2026-10-27"
   },
   "rat-pv": {
-    "hash": "b5d5a66132956a605d26fe5d245e529b",
+    "hash": "0677e15fe461fca94e48e2eaec5b819c",
     "datum": "2026-10-27"
   },
   "rat-wp": {
-    "hash": "4eb30a8f2eaa037d91eac21c5d200572",
+    "hash": "32359cce0a133c48643ad79450bbea63",
     "datum": "2026-10-27"
   },
   "rat-check": {
-    "hash": "ab0d079a4b80c1b8f6e81d98338558d3",
+    "hash": "b84d0caf4324361559b35ae811a9b77e",
     "datum": "2026-10-27"
   },
   "rat-eeg": {
-    "hash": "4d0a7ee083d486a33f68ea484748e80d",
+    "hash": "3b453be02c1229185419159cad711081",
     "datum": "2026-10-27"
   },
   "rat-pvwp": {
-    "hash": "1677cd47782d37d4bea003b3f76ff669",
+    "hash": "2b4641fb88297fe418e00c5349d5476f",
     "datum": "2026-10-27"
   },
   "rat-speicher": {
-    "hash": "124820dc9830ee2b9a5199126363577b",
+    "hash": "436bdf2bddc57c3eb8242fb8c086dd38",
     "datum": "2026-10-27"
   },
   "rechner": {
-    "hash": "76c256e63a7b8274ffa20f2f98282926",
+    "hash": "c869b7240769a8e0c16be7a23f182e1d",
     "datum": "2026-10-27"
   },
   "rendite": {
-    "hash": "187b4bb7eeaf5c415a8608b7633137c8",
+    "hash": "08e8a9317ebc092ea84bd56ed0b09b72",
     "datum": "2026-10-27"
   },
   "ask": {
-    "hash": "937c6011c71f3aea8f0ed017a619b760",
+    "hash": "09afa68abae0f82cbac85d3a530ae2b3",
     "datum": "2026-10-27"
   },
   "kontakt": {
-    "hash": "55807b41b7e6aa2acc6ea1bddfefdab9",
+    "hash": "7a24c9c6deaff38563780e61f1d72c53",
     "datum": "2026-10-27"
   },
   "partner": {
-    "hash": "303207ba2e7d78ee0eb958b87877656c",
+    "hash": "dce8df13c35714b78c8f4d7bcbf5ade7",
     "datum": "2026-10-27"
   },
   "impressum": {

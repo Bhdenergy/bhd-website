@@ -94,6 +94,11 @@ const KURZ = {
     'Kernstadt und Sachsenhausen gehören zum Netz der Stadtwerke Oranienburg, die übrigen Ortsteile zu E.DIS Netz.',
     'Im Gebiet der Erhaltungssatzung Innenstadt braucht auch eine sichtbare Solaranlage eine Genehmigung.'
   ],
+  rechner: [
+    'Die Größe einer Wärmepumpe richtet sich nach der Heizlast. Als Richtwert gelten 30 Watt je m² im Neubau bis 120 Watt je m² im unsanierten Altbau.',
+    'Ein Haus mit 120 m² aus den Jahren 1984 bis 1994 hat damit rund 9 kW Heizlast. Mit Warmwasser passt eine Wärmepumpe mit etwa 10 kW.',
+    'Die KfW fördert mit 30 % Grundförderung plus Boni, höchstens 70 oder 80 % von 28.000 €. Der Rechner ermittelt Größe und Zuschuss aus Ihren Angaben, ohne Anmeldung.'
+  ],
   'rat-pv': [
     'In den meisten Fällen ja. Das Geld bringt heute der vermiedene Netzbezug, nicht mehr die Einspeisung.',
     'Selbst verbrauchter Strom spart rund 35 Cent je kWh. Eingespeister Strom bringt bei Anlagen bis 10 kWp rund 7,7 Cent.',
@@ -186,6 +191,11 @@ const GEO_CSS = `
 .quellen ul{margin:0;padding-left:1.15em;font-size:.92rem}
 .quellen li{margin:0 0 4px}
 .quellen a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.ztab-kw{min-width:620px}
+.ztab-kw th,.ztab-kw td{text-align:right;padding-right:0;padding-left:14px}
+.ztab-kw th:first-child,.ztab-kw td:first-child,.ztab-kw tbody th{text-align:left;padding-left:0}
+.ztab-kw tbody th{padding:15px 0;border-bottom:1px solid var(--line-2);font-weight:700}
+.ztab-kw td:last-child{font-weight:400}
 @media (max-width:600px){.kurz-box{padding:16px 16px}}
 `;
 

@@ -171,7 +171,7 @@ const PAGES = [
   },
   {
     key: 'pv', dir: 'photovoltaik', view: 'view-pv', prio: '0.9', crumb: 'Photovoltaik',
-    title: 'Photovoltaik fürs Eigenheim: Kosten & Förderung | BHD',
+    title: 'Photovoltaik Einfamilienhaus: Kosten, Größe, Förderung | BHD',
     ogTitle: 'Photovoltaik – unabhängig beraten statt verkauft | BHD',
     desc: 'Photovoltaik fürs Einfamilienhaus: welche Anlagengröße passt, warum der Eigenverbrauch zählt und wie 0 % Mehrwertsteuer wirkt. Unabhängig beraten.',
     service: {
@@ -203,7 +203,7 @@ const PAGES = [
   },
   {
     key: 'kosten', dir: 'kosten', view: 'view-kosten', prio: '0.9', crumb: 'Kosten',
-    title: 'Was kostet PV, Speicher & Wärmepumpe? Preise | BHD',
+    title: 'Was kostet eine Photovoltaikanlage oder Wärmepumpe? | BHD',
     ogTitle: 'Preise offen genannt – Photovoltaik & Wärmepumpe | BHD',
     desc: 'Marktübliche Preise für Photovoltaik, Stromspeicher und Wärmepumpe, Stand 2026. Mit Beispielrechnung zum Eigenanteil nach der KfW-Förderung.',
     service: {
@@ -218,7 +218,7 @@ const PAGES = [
      * am 31.12.2026 aus, Klimabonus sinkt am 01.02.2027 -> dann ueberarbeiten. */
     key: 'berlin', dir: 'photovoltaik-waermepumpe-berlin', view: 'view-berlin', prio: '0.9',
     crumb: 'Photovoltaik & Wärmepumpe in Berlin',
-    title: 'Photovoltaik & Wärmepumpe Berlin: Pflicht & Förderung | BHD',
+    title: 'PV & Wärmepumpe Berlin: Förderung, SolarPLUS, Pflicht | BHD',
     ogTitle: 'Photovoltaik und Wärmepumpe in Berlin – was hier gilt | BHD',
     desc: 'Solaranlage oder Wärmepumpe in Berlin: wann die Solarpflicht greift, welche SolarPLUS-Zuschüsse es gibt und was beim Denkmalschutz gilt.',
     service: {
@@ -265,7 +265,7 @@ const PAGES = [
      * § 52 Abs. 1 Nr. 11 EEG 2023. Keine ungeprueften Bussgeld-Zahlen ergaenzen. */
     key: 'mastr', dir: 'photovoltaik-anmelden-marktstammdatenregister', view: 'view-mastr',
     prio: '0.8', crumb: 'Anlage anmelden',
-    title: 'Solaranlage im Marktstammdatenregister anmelden | BHD',
+    title: 'Solaranlage anmelden: Marktstammdatenregister & Frist | BHD',
     ogTitle: 'Solaranlage anmelden – Frist, Folgen und wie Sie es nachholen | BHD',
     desc: 'Photovoltaik im Marktstammdatenregister anmelden: ein Monat Frist ab Inbetriebnahme. Was eine versäumte Frist kostet und wie Sie sie nachholen.',
     ld: ['service'],
@@ -293,7 +293,7 @@ const PAGES = [
      * steht auf der Seite). Wieder anfassen: KfW-Absenkung 01.02.2027, Antragsstatus Klimaschutzfoerderprogramm (Frist jeweils 31.10.). */
     key: 'potsdam', dir: 'photovoltaik-waermepumpe-potsdam', view: 'view-potsdam', prio: '0.8',
     crumb: 'Potsdam',
-    title: 'Photovoltaik & Wärmepumpe Potsdam: was hier gilt | BHD',
+    title: 'Photovoltaik & Wärmepumpe Potsdam: Förderung & Regeln | BHD',
     ogTitle: 'Photovoltaik und Wärmepumpe in Potsdam | BHD',
     desc: 'Solaranlage und Wärmepumpe in Potsdam: städtisches Förderprogramm, Denkmalbereiche und Welterbe, Fernwärmesatzung und Netzgesellschaft Potsdam.',
     service: {
@@ -346,7 +346,7 @@ const PAGES = [
   },
   {
     key: 'ratgeber', dir: 'ratgeber', view: 'view-ratgeber', prio: '0.7', crumb: 'Ratgeber',
-    title: 'Ratgeber: Photovoltaik & Wärmepumpe verstehen | BHD',
+    title: 'Ratgeber Photovoltaik & Wärmepumpe: Kosten, Förderung | BHD',
     desc: 'Verständliche Beiträge zu Photovoltaik, Wärmepumpe und Angebotsprüfung – von Beratern, die keine Anlagen verkaufen und auch sagen, was sich nicht lohnt.',
     ld: ['ratgeberliste']
   },
@@ -358,9 +358,9 @@ const PAGES = [
   },
   {
     key: 'rat-wp', dir: 'ratgeber/waermepumpe-altbau', view: 'view-rat-wp', prio: '0.8', crumb: 'Wärmepumpe im Altbau',
-    title: 'Wärmepumpe im Altbau: geht das? | BHD Ratgeber',
+    title: 'Wärmepumpe im Altbau: ist das möglich? | BHD Ratgeber',
     desc: 'Der Selbsttest an einem kalten Tag, warum die Vorlauftemperatur über 500 Euro im Jahr entscheidet und weshalb Dämmung selten der günstigste Hebel ist.',
-    article: { headline: 'Wärmepumpe im Altbau: geht das?', pub: '2026-08-01', section: 'Wärmepumpe' }
+    article: { headline: 'Wärmepumpe im Altbau: ist das möglich?', pub: '2026-08-01', section: 'Wärmepumpe' }
   },
   {
     key: 'rat-check', dir: 'ratgeber/angebot-pruefen', view: 'view-rat-check', prio: '0.8', crumb: 'Angebot prüfen',
@@ -388,9 +388,9 @@ const PAGES = [
   },
   {
     key: 'rechner', dir: 'waermepumpen-rechner', view: 'view-rechner', prio: '0.9', crumb: 'Wärmepumpen-Rechner',
-    title: 'Wärmepumpen-Rechner: Größe & Förderung | BHD',
+    title: 'Wärmepumpe berechnen: Größe in kW & Förderung | BHD',
     ogTitle: 'Kostenloser Wärmepumpen-Rechner – Größe & Förderung | BHD',
-    desc: 'Kostenloser Wärmepumpen-Rechner: Heizlast, Gerätegröße, Jahresarbeitszahl, Speicher und KfW-Zuschuss aus Ihren Gebäudedaten. Ohne Anmeldung.',
+    desc: 'Wärmepumpe berechnen: Heizlast, Größe in kW, Speicher und KfW-Förderung aus Ihren Gebäudedaten. Mit kW-Tabelle für 100 bis 250 m². Kostenlos.',
     ld: ['rechner']
   },
   {
@@ -408,7 +408,7 @@ const PAGES = [
   },
   {
     key: 'kontakt', dir: 'kontakt', view: 'view-kontakt', prio: '0.8', crumb: 'Kontakt',
-    title: 'Kontakt & Kontaktformular | BHD Berlin',
+    title: 'Kontakt: Beratung Photovoltaik & Wärmepumpe Berlin | BHD',
     ogTitle: 'Kontakt – direkt mit einem Berater sprechen | BHD',
     desc: 'BHD erreichen Sie Mo–Fr 9–18 Uhr und Sa 10–15 Uhr: per Kontaktformular, Telefon 0163 4440392, WhatsApp oder E-Mail. Sitz in Berlin, Beratung bundesweit.',
     ld: ['kontakt']
@@ -920,7 +920,7 @@ function faqEinsetzen(html, key) {
 function kurzHtml(key) {
   return '\n  <section class="kurz" aria-labelledby="kurz-' + key + '"><div class="wrap"><div class="kurz-box">\n' +
     '    <h2 id="kurz-' + key + '">Das Wichtigste in Kürze</h2>\n' +
-    '    <ul>\n' + KURZ[key].map(s => '      <li>' + esc(s) + '</li>\n').join('') + '    </ul>\n' +
+    '    <ul>\n' + KURZ[key].map(s => '      <li>' + esc(s).replace(/ (€|%|kW|kWh|kWp|Watt|°C)(?=[ .,)]|$)/g, ' $1') + '</li>\n').join('') + '    </ul>\n' +
     '    <p class="kurz-stand">Zuletzt aktualisiert am <time datetime="__STAND_ISO__">__STAND__</time>. Alle Angaben ohne Gewähr.</p>\n' +
     '  </div></div></section>\n';
 }

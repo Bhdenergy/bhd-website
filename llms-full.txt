@@ -273,16 +273,16 @@ Zuletzt aktualisiert: 27.10.2026
 
 Kostenloser Angebots-Check · Antwort in 24 Stunden
 
-# Angebot erhalten? Erst prüfen, dann unterschreiben
+# Angebot prüfen lassen, bevor Sie unterschreiben
 
-Sie haben bereits ein Angebot für Photovoltaik, Speicher oder eine Wärmepumpe vorliegen? Wir prüfen es unabhängig auf Seriosität, Effizienz und Fairness – und vermitteln Ihnen auf Wunsch einen geprüften, vertrauenswürdigen Installationspartner aus unserem Netzwerk. Kostenlos und innerhalb von 24 Stunden.
+Sie haben bereits ein Angebot für Photovoltaik, einen Stromspeicher oder eine Wärmepumpe? Wir prüfen es unabhängig auf Seriosität, technische Auslegung und Preis und melden uns in der Regel innerhalb von 24 Stunden. Auf Wunsch nennen wir Ihnen einen geprüften Installationspartner aus unserem Netzwerk. Die Prüfung ist kostenlos.
 
 Prüfung in 24 Stunden
 Unabhängig & neutral
 € Kostenlos & unverbindlich
 Geprüfte Partnerbetriebe
 
-## Bei dieser Investition zählt Erfahrung – nicht der niedrigste Preis
+## Warum der niedrigste Preis selten das beste Angebot ist
 
 Eine Solaranlage oder Wärmepumpe ist eine Anschaffung für 20 Jahre und länger. Genau deshalb sollte man nicht die erstbeste Unterschrift setzen – und schon gar nicht allein nach dem günstigsten Preis entscheiden. Denn billig ist selten die beste Wahl: Lockangebote bestehen oft aus schwächeren Komponenten, unrealistisch schöngerechneten Erträgen oder versteckten Kosten, die erst nach der Montage sichtbar werden.
 
@@ -301,17 +301,17 @@ Passt die Anlage technisch zu Ihrem Haus? Wir prüfen Dimensionierung, Komponent
 ### Fairness
 Stimmt das Preis-Leistungs-Verhältnis? Wir ordnen den Preis ehrlich im Marktvergleich ein – ohne Verkaufsinteresse. Die Spannen dazu stehen offen unter Kosten.
 
-## Diese Fallen erkennen wir für Sie
+## Worauf wir bei der Prüfung achten
 
 Nicht jedes günstige Angebot ist ein gutes Angebot. Auf diese Punkte achten wir besonders – die vollständige Liste steht im Ratgeber Angebot prüfen: 12 Punkte.
 
-### Lockpreise
+### Auffällig niedrige Preise
 Auffällig niedrige Preise gehen fast immer zulasten von Qualität, Service oder Garantie.
 
-### Billige Komponenten
+### Minderwertige Komponenten
 Module, Speicher und Wechselrichter unterscheiden sich stark – günstig heißt oft weniger Ertrag und kürzere Lebensdauer.
 
-### Schöngerechnete Erträge
+### Zu hoch angesetzte Erträge
 Unrealistische Ertrags- und Einsparversprechen, die sich später nicht halten lassen.
 
 ### Versteckte Kosten
@@ -385,20 +385,20 @@ Zuletzt aktualisiert: 27.10.2026
 
 Für Anlagen, die schon stehen
 
-# Anlage steht – und jetzt hakt es?
+# Probleme mit einer bestehenden Anlage
 
-Nicht jede Photovoltaikanlage und nicht jede Wärmepumpe läuft nach der Montage so, wie sie soll. Manche wurde nie angemeldet, bei anderen steht die Baustelle seit Monaten still oder der Errichter ist nicht mehr erreichbar. Wir sehen uns Ihren Fall an – auch wenn die Anlage nicht von uns ist.
+Nicht jede Photovoltaikanlage oder Wärmepumpe läuft nach der Montage wie vorgesehen. Manche Anlagen wurden nie angemeldet, bei anderen ruht die Baustelle seit Monaten oder der Errichter ist nicht mehr erreichbar. Wir sehen uns Ihren Fall an, auch wenn die Anlage nicht von uns errichtet wurde.
 
 € Ersteinschätzung kostenlos
 Auch telefonisch
 Auch bei fremden Anlagen
 Fachbetriebe zur Übernahme
 
-## Sechs Fälle, die wir immer wieder sehen
+## Häufige Probleme bei bestehenden Anlagen
 
 Wenn Sie sich in einem davon wiedererkennen, sind Sie hier richtig. Und wenn Ihr Fall nicht dabei ist, schildern Sie ihn uns trotzdem.
 
-### Nie angemeldet
+### Anlage nicht angemeldet
 Die Anlage läuft, steht aber nicht im Marktstammdatenregister oder wurde beim Netzbetreiber nie gemeldet. Das lässt sich nachholen – je früher, desto besser. Was dabei zu tun ist.
 
 ### Baustopp
@@ -407,7 +407,7 @@ Module liegen auf dem Dach, der Speicher steht im Keller, und seit Wochen kommt 
 ### Mängel und Schäden
 Undichte Dachdurchführung, lose Unterkonstruktion, falsch gesetzte Leitungen, Wärmepumpe zu laut. Wir sehen uns an, was tatsächlich vorliegt.
 
-### Firma insolvent
+### Installationsbetrieb insolvent
 Der Errichter existiert nicht mehr, Gewährleistung läuft ins Leere. Wir helfen, den Zustand zu dokumentieren und einen Betrieb zu finden, der übernimmt.
 
 ### Kein Wartungsvertrag
@@ -416,7 +416,7 @@ Niemand ist mehr zuständig, wenn etwas ausfällt. Wir vermitteln einen Fachbetr
 ### Zu wenig Ertrag
 Die Anlage bringt weniger als versprochen. Oft liegt es an Auslegung, Verschattung, Wechselrichter-Einstellungen oder schlicht daran, dass ein String nicht liefert.
 
-## Fremde Anlagen fasst kaum jemand gern an
+## Warum Betriebe fremde Anlagen ungern übernehmen
 
 Wer eine Anlage nicht selbst gebaut hat, übernimmt ungern die Verantwortung dafür. Man weiß nicht, was unter der Verkleidung steckt, wie sauber gearbeitet wurde und wofür man am Ende geradesteht. Deshalb bekommen viele Hausbesitzer auf ihre Anfrage gar keine Antwort oder hören, man mache „nur eigene Anlagen".
 
@@ -438,7 +438,7 @@ Wir rufen zurück und gehen den Fall mit Ihnen durch: was aus der Ferne erkennba
 
 3
 
-### Vor Ort und weiter
+### Bestandsaufnahme und Übergabe
 Wenn nötig kommen wir zur Bestandsaufnahme und halten den Zustand fest. Danach vermitteln wir einen Fachbetrieb, der die Anlage übernimmt, fertigstellt, in Ordnung bringt oder künftig wartet.
 
 ### Was wir tun – und was nicht
@@ -451,7 +451,7 @@ Eine saubere technische Dokumentation ist dafür allerdings die Grundlage. Genau
 
 Je genauer Sie das Problem beschreiben und je mehr Fotos Sie anhängen, desto konkreter können wir antworten. Wenn Ihnen Schreiben zu umständlich ist: rufen Sie an, das geht genauso.
 
-### Angekommen.
+### Ihre Anfrage ist eingegangen
 
 Wir sehen uns Ihre Schilderung an und melden uns bei Ihnen – in der Regel innerhalb eines Werktags. Wenn es eilt, rufen Sie gern direkt an: 0163 4440392.
 
@@ -469,7 +469,7 @@ Was kostet ein Wartungsvertrag? Das hängt stark von Anlagengröße und Leistung
 
 Ihre Frage war nicht dabei?
 
-## Lieber gleich sprechen?
+## Telefonische Beratung
 
 Manche Fälle sind in fünf Minuten am Telefon klarer als in jedem Formular.
 
@@ -480,16 +480,16 @@ Zuletzt aktualisiert: 27.10.2026
 
 Realisierte Projekte für Einfamilienhäuser
 
-# Anlagen, die für sich sprechen
+# Referenzen: umgesetzte Anlagen
 
-Ein Auszug aus Projekten, die wir begleitet haben – vom Modulfeld auf dem Ziegeldach über die Wärmepumpe im Garten bis zu Speicher, Wechselrichter und Wallbox im Technikraum.
+Eine Auswahl von Projekten, die wir begleitet haben: Photovoltaik auf Ziegel- und Flachdächern, Wärmepumpen, Stromspeicher, Wechselrichter und Wallboxen.
 
 250+ umgesetzte Anlagen
 24 h Rückmeldung zum Angebots-Check
 bis 90 % weniger Strom aus dem Netz
 100 % geprüfte Fachbetriebe
 
-## Eigenheime mit Zukunft
+## Umgesetzte Projekte
 
 Filtern Sie nach Anlagentyp – von der Dachanlage über die Wärmepumpe bis zu Speicher, Wechselrichter und Wallbox.
 
@@ -732,7 +732,7 @@ Technik & Speicher
 
 Wechselrichter und Batteriespeicher von Huawei neben dem Zählerschrank. Die Leitungen laufen im Kanal.
 
-### Und viele weitere Projekte
+### Weitere Projekte
 
 Diese Galerie ist nur ein Auszug. Über 250 Anlagen sind bereits umgesetzt – von der einzelnen Dachfläche bis zur kompletten Umstellung mit Wärmepumpe, Speicher und Wallbox.
 
@@ -794,7 +794,7 @@ Dass wir uns diese Zeit nehmen können, hat einen Grund: Wir nehmen nicht jeden 
 
 Geschäftsführer Kürşat Yıldırım bei der Bestandsaufnahme vor Ort.
 
-## Werte, die man merkt
+## Unsere Grundsätze
 
 Vier Grundsätze prägen jede Zusammenarbeit – von der ersten Frage bis lange nach der Montage.
 
@@ -872,21 +872,21 @@ Zuletzt aktualisiert: 27.10.2026
 
 0 % Mehrwertsteuer · unbefristet
 
-# Photovoltaik: Strom vom eigenen Dach
+# Photovoltaik fürs Einfamilienhaus: Strom vom eigenen Dach
 
-Eine Solaranlage ist die einzige Anschaffung am Haus, die jeden Monat Geld zurückgibt statt zu kosten. Entscheidend ist nicht die größte Anlage, sondern die, die zu Ihrem Verbrauch passt.
+Eine Solaranlage fürs Einfamilienhaus kostet mit Speicher meist 15.000 bis 21.000 €, ohne Umsatzsteuer. Ob sie sich rechnet, hängt vor allem daran, wie viel Strom Sie selbst verbrauchen. Entscheidend ist deshalb nicht die größte Anlage, sondern die, die zu Ihrem Verbrauch passt.
 
 ## Das Wichtigste in Kürze
 
 - Seit dem 1. Januar 2023 fällt auf Kauf und Montage einer Solaranlage am Wohnhaus keine Umsatzsteuer an (§ 12 Abs. 3 UStG). Die Regel ist unbefristet.
-- Als Faustregel gilt rund 1 kWp Leistung je 1.000 kWh Jahresverbrauch. Mit Wärmepumpe oder E-Auto darf die Anlage größer sein.
-- In unserem Rechenbeispiel (10 kWp, 8 kWh Speicher, 19.500 €) bringt die Anlage rund 1.347 € im Jahr und hat sich nach etwa 14,5 Jahren bezahlt gemacht.
+- Als Faustregel gilt rund 1 kWp Leistung je 1.000 kWh Jahresverbrauch. Mit Wärmepumpe oder E-Auto darf die Anlage größer sein.
+- In unserem Rechenbeispiel (10 kWp, 8 kWh Speicher, 19.500 €) bringt die Anlage rund 1.347 € im Jahr und hat sich nach etwa 14,5 Jahren bezahlt gemacht.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
-## Eigenverbrauch schlägt Einspeisung
+## Eigenverbrauch bringt mehr als Einspeisung
 
-Der Strom, den Sie selbst verbrauchen, ist ungefähr dreimal so viel wert wie der, den Sie ins Netz geben. Alles an der Planung dreht sich um diesen einen Satz.
+Der Strom, den Sie selbst verbrauchen, ist rund viereinhalbmal so viel wert wie der, den Sie ins Netz geben: etwa 35 Cent gesparter Netzstrom gegen 7,7 Cent Einspeisevergütung. Alles an der Planung dreht sich um diesen einen Satz.
 
 ### Dachfläche
 Süd bringt am meisten, Ost-West verteilt den Ertrag besser über den Tag. Beides funktioniert. Auch Nordflächen können sich bei genug Platz rechnen.
@@ -900,7 +900,7 @@ Hebt den Eigenverbrauch von etwa 30 auf 60 bis 80 Prozent. Sinnvoll, wenn abends
 ### Zählerschrank
 Muss die neue Technik aufnehmen können. In älteren Häusern ist hier häufiger etwas zu tun, als die Angebote vermuten lassen.
 
-## Zwei Vorteile, die viele nicht kennen
+## Steuerliche Vorteile
 
 Seit dem 1. Januar 2023 fällt auf Lieferung und Montage von Solaranlage, Speicher und Wechselrichter am Wohngebäude keine Umsatzsteuer an (§ 12 Abs. 3 UStG). Die Regelung ist unbefristet. Bei 20.000 € Anlagenpreis sind das rund 3.800 €, die Sie schlicht nicht zahlen.
 
@@ -918,7 +918,7 @@ bis 30 kWp einkommensteuerfrei beim Einfamilienhaus
 
 Stand August 2026, ohne Gewähr.
 
-## Wann hat sich das bezahlt gemacht?
+## Wann sich die Anlage amortisiert
 
 Die Frage, die am häufigsten kommt. Hier die Rechnung an einem typischen Haushalt, offen nachvollziehbar.
 
@@ -937,7 +937,7 @@ Einfamilienhaus, 4 Personen, 4.500 kWh Jahresverbrauch
 
 Danach läuft die Anlage weiter: Module halten typischerweise 25 bis 30 Jahre. Viele Rechner lassen die Betriebskosten weg – dann steht dort eine Amortisation von zwölf Jahren. Wir zeigen sie lieber. Steigt der Strompreis, verkürzt sich die Zeit, sinkt er, verlängert sie sich. Wer zusätzlich ein E-Auto oder eine Wärmepumpe betreibt, hebt den Eigenverbrauch deutlich und kommt spürbar schneller in die Gewinnzone. Mit Ihren eigenen Zahlen rechnet das der Rentabilitätsrechner. Alle Werte sind Annahmen und keine Zusage.
 
-## Fünf Fehler, die richtig Geld kosten
+## Fünf häufige Planungsfehler
 
 Das sind die Punkte, über die wir im Angebots-Check am häufigsten stolpern.
 
@@ -948,7 +948,7 @@ Der teuerste Teil einer Anlage sind Gerüst, Montage und Anschluss. Zusätzliche
 
 2
 
-### Ertrag schöngerechnet
+### Zu hoch angesetzter Ertrag
 In Deutschland sind je nach Ausrichtung und Neigung etwa 900 bis 1.050 kWh je kWp und Jahr realistisch. Wer Ihnen 1.200 kWh verspricht, rechnet mit Bestwerten aus Süddeutschland bei perfekter Südausrichtung ohne jede Verschattung. Fragen Sie nach, mit welchem spezifischen Ertrag gerechnet wurde.
 
 3
@@ -963,7 +963,7 @@ Der häufigste Grund, warum aus einem günstigen Angebot am Ende ein teures wird
 
 5
 
-### Speicher zu groß gekauft
+### Speicher überdimensioniert
 Ein Speicher, der im Sommer nie leer wird, verdient sein Geld nicht zurück. Als Richtwert gilt etwa 1 kWh je 1.000 kWh Jahresstromverbrauch. Alles darüber ist bequem, aber wirtschaftlich fragwürdig.
 
 ## Häufige Fragen zu Photovoltaik
@@ -1019,19 +1019,19 @@ Zuletzt aktualisiert: 27.10.2026
 
 Sonne von mittags bis abends
 
-# Stromspeicher: Sonne für den Abend
+# Stromspeicher: Solarstrom auch am Abend nutzen
 
-Ohne Speicher nutzen Sie etwa ein Drittel Ihres Solarstroms selbst, der Rest geht für wenig Geld ins Netz. Mit Speicher sind 60 bis 80 Prozent realistisch. Die Frage ist nur, welche Größe sich rechnet.
+Ohne Speicher nutzt ein Haushalt etwa ein Drittel seines Solarstroms selbst, mit Speicher 60 bis 80 Prozent. Wie groß der Speicher sein sollte, hängt vor allem vom Stromverbrauch am Abend und in der Nacht ab.
 
 ## Das Wichtigste in Kürze
 
 - Ohne Speicher nutzt ein Haushalt etwa ein Drittel seines Solarstroms selbst, mit Speicher 60 bis 80 Prozent.
-- Richtwert für die Größe ist etwa 1 kWh Speicher je 1.000 kWh Jahresverbrauch. Im Einfamilienhaus mit vier Personen sind 10 bis 12 kWh üblich.
-- Ohne Wärmepumpe oder E-Auto trägt sich ein Speicher oft nicht sicher, im Beispiel erst nach rund 18 Jahren. Bei 8.000 kWh Verbrauch sind es etwa zehn Jahre.
+- Richtwert für die Größe ist etwa 1 kWh Speicher je 1.000 kWh Jahresverbrauch. Im Einfamilienhaus mit vier Personen sind 10 bis 12 kWh üblich.
+- Ohne Wärmepumpe oder E-Auto trägt sich ein Speicher oft nicht sicher, im Beispiel erst nach rund 18 Jahren. Bei 8.000 kWh Verbrauch sind es etwa zehn Jahre.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
-## Größer ist nicht besser
+## Die passende Speichergröße
 
 Ein Speicher, der im Sommer nie ganz leer wird, verdient sein Geld nicht zurück. Als Richtwert gilt etwa 1 kWh Speicher je 1.000 kWh Jahresstromverbrauch. Wie Speicher und Anlage zusammenspielen, steht unter Photovoltaik; die aktuellen Preise je kWh nennen wir offen.
 
@@ -1069,7 +1069,7 @@ Lithium-Eisenphosphat gilt heute als Standard für Heimspeicher: langlebiger, th
 ### Aufstellort
 Speicher mögen keine Frost- und keine Hitzeräume. Ein trockener Keller oder Hauswirtschaftsraum ist ideal, eine ungedämmte Garage selten.
 
-## Rechnet sich ein Speicher überhaupt?
+## Wann sich ein Speicher wirtschaftlich lohnt
 
 Ehrliche Antwort: Es kommt darauf an. Hier die Rechnung an einem Standardfall.
 
@@ -1128,17 +1128,17 @@ Bis zu 80 % KfW-Zuschuss
 
 # Wärmepumpe: Heizen ohne Brennstoff
 
-Eine Wärmepumpe macht aus einer Kilowattstunde Strom drei bis vier Kilowattstunden Wärme. Ob sich das in Ihrem Haus rechnet, hängt an einer einzigen Zahl: der Vorlauftemperatur.
+Eine Wärmepumpe erzeugt aus einer Kilowattstunde Strom drei bis vier Kilowattstunden Wärme. Wie wirtschaftlich sie in Ihrem Haus arbeitet, hängt vor allem von der Vorlauftemperatur der Heizung ab.
 
 ## Das Wichtigste in Kürze
 
-- Eine Wärmepumpe macht aus 1 kWh Strom 3 bis 4 kWh Wärme. Wie viel genau, hängt an der Vorlauftemperatur: bei 35 °C rund 4,3, bei 55 °C etwa 3,0.
-- Die KfW bezuschusst den Einbau mit 30 % Grundförderung plus Boni, zusammen höchstens 70 oder 80 % von 28.000 €. Das sind bis zu 22.400 €.
+- Eine Wärmepumpe macht aus 1 kWh Strom 3 bis 4 kWh Wärme. Wie viel genau, hängt an der Vorlauftemperatur: bei 35 °C rund 4,3, bei 55 °C etwa 3,0.
+- Die KfW bezuschusst den Einbau mit 30 % Grundförderung plus Boni, zusammen höchstens 70 oder 80 % von 28.000 €. Das sind bis zu 22.400 €.
 - Der Förderantrag muss vor der Auftragserteilung gestellt werden. Üblich ist ein Vertrag mit aufschiebender Bedingung.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
-## Vorlauftemperatur ist alles
+## Die Vorlauftemperatur bestimmt die Effizienz
 
 Je niedriger die Temperatur, mit der Ihre Heizung auskommt, desto weniger Strom braucht die Wärmepumpe. Der Unterschied ist erheblich: Bei 35 °C über eine Fußbodenheizung sind rund 4,3 Kilowattstunden Wärme je Kilowattstunde Strom realistisch, bei 55 °C über Bestandsheizkörper nur noch etwa 3,0. Das sind über 40 Prozent Unterschied bei den Betriebskosten.
 
@@ -1245,19 +1245,19 @@ Zuletzt aktualisiert: 27.10.2026
 
 Marktübliche Preise, Stand August 2026
 
-# Was kostet das wirklich?
+# Was kostet eine Photovoltaikanlage oder Wärmepumpe wirklich?
 
-Die meisten Anbieter nennen keine Preise, bevor Sie Ihre Telefonnummer hinterlassen haben. Wir machen es anders: Hier stehen die Spannen, mit denen der Markt aktuell arbeitet. Damit können Sie ein Angebot einordnen, noch bevor Sie mit uns sprechen. Die Technik dahinter erklären wir bei Photovoltaik, Stromspeicher und Wärmepumpe. Ob sich das für Sie rechnet, zeigt der Rentabilitätsrechner.
+Hier finden Sie die Preisspannen, mit denen der Markt derzeit für Photovoltaik, Stromspeicher und Wärmepumpen arbeitet. So können Sie ein Angebot einordnen, bevor Sie mit einem Anbieter sprechen. Die Technik erklären wir bei Photovoltaik, Stromspeicher und Wärmepumpe. Ob sich eine Anlage für Sie rechnet, zeigt der Rentabilitätsrechner.
 
 ## Das Wichtigste in Kürze
 
-- Eine Solaranlage mit 10 kWp kostet schlüsselfertig etwa 12.500 bis 16.000 €, mit Speicher 17.000 bis 21.000 €. Umsatzsteuer fällt dabei nicht an.
-- Eine Luft-Wasser-Wärmepumpe im Einfamilienhaus kostet als komplette Umstellung typischerweise 22.000 bis 35.000 €.
-- Beispiel: Bei 28.000 € Investition und Tausch einer Ölheizung zahlt die KfW 46 %, also 12.880 €. Der Eigenanteil liegt dann bei 15.120 €.
+- Eine Solaranlage mit 10 kWp kostet schlüsselfertig etwa 12.500 bis 16.000 €, mit Speicher 17.000 bis 21.000 €. Umsatzsteuer fällt dabei nicht an.
+- Eine Luft-Wasser-Wärmepumpe im Einfamilienhaus kostet als komplette Umstellung typischerweise 22.000 bis 35.000 €.
+- Beispiel: Bei 28.000 € Investition und Tausch einer Ölheizung zahlt die KfW 46 %, also 12.880 €. Der Eigenanteil liegt dann bei 15.120 €.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
-## Solaranlage mit und ohne Speicher
+## Was kostet eine Photovoltaikanlage mit und ohne Speicher?
 
 Für private Anlagen am Wohngebäude fällt keine Umsatzsteuer an. Die Beträge unten sind deshalb bereits das, was Sie zahlen.
 
@@ -1269,7 +1269,11 @@ Anlagengröße Ohne Speicher Mit Speicher Passend für
 
 Schlüsselfertig gerechnet: Module, Unterkonstruktion, Wechselrichter, Montage, Elektroanschluss und Anmeldung beim Netzbetreiber. Das entspricht rund 1.300 bis 1.600 € je kWp ohne Speicher und 1.700 bis 2.100 € je kWp mit Speicher. Der reine Systempreis ohne Handwerkerleistung liegt laut Fraunhofer ISE deutlich darunter – der Unterschied ist die Arbeit, nicht der Aufschlag.
 
-## Was der Speicher extra kostet
+### Wie viel kWp brauche ich für 4 Personen?
+
+Ein Haushalt mit vier Personen verbraucht meist 4.000 bis 4.500 kWh Strom im Jahr. Als Untergrenze gilt rund 1 kWp je 1.000 kWh, also 4 bis 5 kWp. Wenn das Dach es zulässt, empfehlen wir dennoch meist 8 bis 10 kWp. Gerüst und Montage fallen ohnehin an, zusätzliche Module kosten vergleichsweise wenig. Zudem steigt der Strombedarf, wenn später ein Elektroauto oder eine Wärmepumpe hinzukommt. Mehr dazu unter Photovoltaik.
+
+## Was kostet ein Stromspeicher?
 
 Kapazität Preis inkl. Einbau Je kWh Sinnvoll bei
 5 kWh 3.000–4.500 € 600–900 € kleine Anlage, wenig Abendverbrauch
@@ -1278,7 +1282,7 @@ Kapazität Preis inkl. Einbau Je kWh Sinnvoll bei
 
 Faustregel für die Größe: etwa 1 kWh Speicher je 1.000 kWh Jahresstromverbrauch. Größer ist nicht besser – ein Speicher, der im Sommer nie leer wird, verdient sein Geld nicht zurück. Notstromfähigkeit kostet je nach Umfang 500 bis 2.500 € zusätzlich.
 
-## Luft-Wasser-Wärmepumpe im Einfamilienhaus
+## Was kostet eine Luft-Wasser-Wärmepumpe im Einfamilienhaus?
 
 Hier gilt der normale Steuersatz. Dafür gibt es den KfW-Zuschuss, der den Eigenanteil erheblich senkt.
 
@@ -1310,7 +1314,7 @@ Gerüst 500–1.500 € bei Dacharbeiten, abhängig von Standzeit
 Heizkörper tauschen 400–900 € je Stück wenn die Vorlauftemperatur zu hoch liegt
 Hydraulischer Abgleich 700–1.500 € bei jeder Wärmepumpe im Bestand Pflicht
 
-## Was den Preis wirklich treibt
+## Was den Preis bestimmt
 
 ### Das Dach
 Ziegel, Blech oder Flachdach, Neigung, Ausrichtung und wie viele Flächen belegt werden. Zwei kleine Teilflächen kosten mehr als eine große.
@@ -1321,7 +1325,7 @@ Ist Platz für die neue Technik oder muss er raus? Das ist der Posten, der Angeb
 ### Die Komponenten
 Zwischen dem günstigsten und dem hochwertigsten Wechselrichter liegen schnell 1.500 €. Bei Speichern ist die Spanne noch größer.
 
-### Die Wege
+### Anfahrt und Entfernung
 Ein Betrieb aus der Region rechnet anders als einer, der 200 km anreist und Übernachtungen einkalkuliert.
 
 Ihr Angebot liegt außerhalb dieser Spannen?
@@ -1341,6 +1345,8 @@ Was die Anschaffung kostet, wann sie sich rechnet und welche Posten in Angeboten
 
 Was ist eine Kilowattstunde (kWh)? Eine Kilowattstunde ist die Strommenge, die ein Gerät mit 1.000 Watt Leistung in einer Stunde verbraucht. Ein Backofen mit 2.000 Watt braucht in 30 Minuten also 1 kWh. Ein Vier-Personen-Haushalt kommt im Jahr typischerweise auf 3.500 bis 4.500 kWh. Nach dieser Einheit wird Ihr Strom abgerechnet.
 Was kostet mich eine Kilowattstunde Strom? Für Haushaltskunden liegt der Arbeitspreis derzeit meist zwischen 30 und 40 Cent je Kilowattstunde, dazu kommt ein monatlicher Grundpreis. Genau das ist der Hebel einer Solaranlage: Selbst erzeugter Strom kostet über die Lebensdauer gerechnet ungefähr 8 bis 12 Cent je Kilowattstunde.
+Was kostet eine Photovoltaikanlage mit Speicher für ein Einfamilienhaus? Für ein typisches Einfamilienhaus mit 8 bis 10 kWp und Speicher liegen die Preise derzeit meist bei 15.000 bis 21.000 Euro, schlüsselfertig und ohne Umsatzsteuer. Ohne Speicher sind es etwa 10.500 bis 16.000 Euro. Der Speicher selbst kostet mit 10 kWh rund 4.500 bis 7.000 Euro inklusive Einbau.
+Wie viel kWp brauche ich für 4 Personen? Ein Vier-Personen-Haushalt verbraucht meist 4.000 bis 4.500 kWh Strom im Jahr. Als Untergrenze gilt rund 1 kWp je 1.000 kWh, also 4 bis 5 kWp. Passt es aufs Dach, empfehlen wir meist 8 bis 10 kWp, weil zusätzliche Module wenig kosten und ein späteres E-Auto oder eine Wärmepumpe den Strom brauchen.
 Wann amortisiert sich eine Photovoltaikanlage? Bei guter Auslegung und hohem Eigenverbrauch sind 10 bis 14 Jahre ein realistischer Korridor, wenn man Betriebskosten und Leistungsverlust der Module ehrlich mitrechnet. Entscheidend ist, wie viel des erzeugten Stroms Sie selbst nutzen: Jede selbst verbrauchte Kilowattstunde spart 30 bis 40 Cent, jede eingespeiste bringt derzeit 7,7 Cent. Wer Ihnen fünf Jahre verspricht, rechnet mit Annahmen, die selten eintreten. Mit Ihren eigenen Zahlen rechnet das unser Rentabilitätsrechner.
 Warum kostet Photovoltaik keine Mehrwertsteuer? Seit 2023 gilt für Lieferung und Montage von Photovoltaikanlagen, Speichern und Wechselrichtern an Wohngebäuden ein Umsatzsteuersatz von 0 Prozent (§ 12 Abs. 3 UStG). Diese Regelung ist unbefristet, es gibt also keine Frist, unter der man hindurchmuss. Bei 20.000 Euro Anlagenpreis sind das rund 3.800 Euro Ersparnis.
 Welche Kosten werden in Angeboten oft vergessen? Typisch sind: Erneuerung des Zählerschranks, Gerüst bei Dacharbeiten, Wallbox samt Installation, einzelne größere Heizkörper und der hydraulische Abgleich, der bei jeder Wärmepumpe im Bestand Pflicht ist. Die Spannen dazu stehen weiter oben auf dieser Seite. Seriöse Angebote führen diese Posten wenigstens als Option auf.
@@ -1371,12 +1377,12 @@ Unser Sitz: Berlin-Gesundbrunnen
 
 # Photovoltaik und Wärmepumpe in Berlin
 
-In Berlin gelten ein paar Regeln, die es anderswo nicht gibt: die Solarpflicht bei Dachsanierungen, das Landesprogramm SolarPLUS und viele Häuser unter Denkmalschutz. Hier steht, was davon Ihr Haus betrifft.
+In Berlin gelten einige Regeln, die es in anderen Bundesländern nicht gibt: die Solarpflicht bei Dachsanierungen, das Landesprogramm SolarPLUS und der Denkmalschutz vieler Gebäude. Auf dieser Seite steht, was davon für Ihr Haus gilt.
 
 ## Das Wichtigste in Kürze
 
-- Das Berliner Solargesetz verlangt bei Neubau und wesentlicher Dachsanierung eine Solaranlage. Bei Häusern mit höchstens zwei Wohnungen genügen 2 kW.
-- Das Landesprogramm SolarPLUS zahlt Zuschüsse für Stromspeicher (bis 4.750 €), Zählerschrank (750 €) und denkmalgerechte Anlagen (bis 5.700 €).
+- Das Berliner Solargesetz verlangt bei Neubau und wesentlicher Dachsanierung eine Solaranlage. Bei Häusern mit höchstens zwei Wohnungen genügen 2 kW.
+- Das Landesprogramm SolarPLUS zahlt Zuschüsse für Stromspeicher (bis 4.750 €), Zählerschrank (750 €) und denkmalgerechte Anlagen (bis 5.700 €).
 - Ein eigenes Berliner Programm für Wärmepumpen gibt es derzeit nicht. Es gilt der KfW-Zuschuss des Bundes.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
@@ -1484,7 +1490,7 @@ Berlin und das ganze Umland
 
 # Photovoltaik und Wärmepumpe in Brandenburg
 
-In Brandenburg gelten andere Regeln als direkt hinter der Stadtgrenze in Berlin: keine Solarpflicht, dafür meist auch kein Zuschuss vom Land. Hier steht, was für Ihr Haus wirklich gilt — und wo die Unterschiede teuer werden können.
+In Brandenburg gelten andere Regeln als in Berlin: Es gibt keine Solarpflicht, in der Regel aber auch keinen Zuschuss vom Land. Hier steht, was für Ihr Haus gilt und wo sich die Unterschiede auf die Kosten auswirken.
 
 ## Das Wichtigste in Kürze
 
@@ -1508,7 +1514,7 @@ Für die private Aufdachanlage zahlt das Land Brandenburg keinen Zuschuss. Einze
 ### Wärmepumpe
 Der KfW-Zuschuss des Bundes gilt hier genauso. Wer eine alte Ölheizung ersetzt, kommt oft auf die höchsten Sätze.
 
-## Solarpflicht: In Brandenburg gibt es keine
+## Keine Solarpflicht in Brandenburg
 
 Wer aus Berlin nach Brandenburg zieht oder beides im Kopf hat, verwechselt das schnell. Berlin hat ein eigenes Solargesetz, das bei Neubau und grundlegender Dachsanierung eine Anlage vorschreibt. In Brandenburg gibt es nichts Vergleichbares: Die Brandenburgische Bauordnung in der Fassung vom 29. Juni 2026 enthält keine Pflicht, eine Solaranlage zu errichten. Eine Dachsanierung können Sie hier also ohne Photovoltaik durchziehen.
 
@@ -1565,7 +1571,7 @@ Für Anlagen bis 10 kWp, die zwischen dem 1. August und dem 31. Dezember 2026 in
 
 Was eine Stadt zusätzlich regelt, unterscheidet sich stark: eigene Förderprogramme, Fernwärmesatzungen, Denkmalbereiche, verschiedene Netzbetreiber. Für vier Städte haben wir das zusammengetragen: Potsdam, Falkensee, Bernau und Oranienburg.
 
-## Große Dächer, große Anlagen — und eine Grenze
+## Große Dachflächen und die 30-kWp-Grenze
 
 Brandenburger Grundstücke sind im Schnitt großzügiger als Berliner. Scheunen, Nebengebäude und Garagen bieten Fläche, die in der Stadt fehlt. Das verführt dazu, einfach das ganze Dach vollzumachen. Zwei Dinge sprechen dagegen: Ab 30 kWp Bruttoleistung entfällt der Nullsteuersatz nicht automatisch, wohl aber ändern sich die steuerlichen Randbedingungen und die Anmeldepflichten. Und jede Kilowattstunde, die Sie nicht selbst verbrauchen, bringt nur die Einspeisevergütung. Eine Anlage, die zum Verbrauch passt, schlägt fast immer die Anlage, die zum Dach passt.
 
@@ -1615,19 +1621,19 @@ Stand: 23. September 2026
 
 # Die Wärmepumpen-Förderung sinkt am 1. Februar 2027
 
-Zwei Stellschrauben gehen gleichzeitig nach unten: der Klimageschwindigkeitsbonus und die Kostengrenze, auf die gerechnet wird. Für einen typischen Haushalt sind das rund 1.400 € weniger Zuschuss. Hier steht, was genau sich ändert, für wen es wirklich teuer wird — und bis wann Sie realistisch handeln müssen.
+Am 1. Februar 2027 sinken bei der KfW-Förderung zwei Werte gleichzeitig: der Klimageschwindigkeitsbonus und die förderfähigen Höchstkosten. Für einen typischen Haushalt bedeutet das rund 1.400 € weniger Zuschuss. Hier steht, was sich ändert, wen es besonders betrifft und bis wann Sie den Antrag stellen sollten.
 
 ## Das Wichtigste in Kürze
 
-- Am 1. Februar 2027 sinkt der Klimageschwindigkeitsbonus der KfW von 16 auf 12 %. Danach sinkt er halbjährlich weiter, ab dem 1. August 2028 entfällt er.
-- Am selben Tag sinken die förderfähigen Höchstkosten von 28.000 auf 27.250 €, danach alle sechs Monate um weitere 750 €.
-- Maßgeblich ist das Datum der Antragstellung. Wer eine Ölheizung ersetzt, bekommt bei einem Antrag ab Februar 2027 rund 1.435 € weniger.
+- Am 1. Februar 2027 sinkt der Klimageschwindigkeitsbonus der KfW von 16 auf 12 %. Danach sinkt er halbjährlich weiter, ab dem 1. August 2028 entfällt er.
+- Am selben Tag sinken die förderfähigen Höchstkosten von 28.000 auf 27.250 €, danach alle sechs Monate um weitere 750 €.
+- Maßgeblich ist das Datum der Antragstellung. Wer eine Ölheizung ersetzt, bekommt bei einem Antrag ab Februar 2027 rund 1.435 € weniger.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
-## Zwei Zahlen, ein Stichtag
+## Was sich am 1. Februar 2027 ändert
 
-Maßgeblich ist der Zeitpunkt der Antragstellung — nicht wann die Wärmepumpe eingebaut wird und nicht wann die Rechnung kommt.
+Maßgeblich ist der Zeitpunkt der Antragstellung, nicht der Einbau der Wärmepumpe und nicht das Rechnungsdatum.
 
 ### Klimabonus: 16 % → 12 %
 Der Klimageschwindigkeitsbonus sinkt am 1. Februar 2027 um 4 Prozentpunkte und danach halbjährlich weiter. Ab dem 1. August 2028 gibt es ihn gar nicht mehr.
@@ -1638,7 +1644,7 @@ Der Betrag, auf den der Prozentsatz überhaupt angewendet wird, sinkt am selben 
 ### Vorerst unverändert
 Grundförderung 30 %, Einkommensbonus und die Obergrenze von 70 bzw. 80 % stehen so im geltenden Merkblatt. Für 2027 ist aber ein Umbau der Grundförderung angekündigt — siehe unten.
 
-### Der Haken
+### Was vor dem Antrag vorliegen muss
 Antragen kann man erst, wenn eine Fachunternehmer-Bestätigung und ein unterschriebener Vertrag vorliegen. Das ist der Zeitfresser, nicht der Antrag selbst.
 
 ## Was der Unterschied in Euro bedeutet
@@ -1680,7 +1686,7 @@ Für das erste Quartal 2027 hat der Bund einen weiteren Umbau angekündigt, besc
 
 Wichtig zur Einordnung: Diese Regelung steht noch nicht im Merkblatt und gilt noch nicht. Das zuständige Ministerium hat angekündigt, die Einzelheiten im zweiten Halbjahr 2026 bekanntzugeben. Wer also heute beantragt, rechnet in jedem Fall mit 30 Prozent Grundförderung, unabhängig davon, wo das Gerät gebaut wurde. Wir aktualisieren diese Seite, sobald die Bedingungen amtlich veröffentlicht sind.
 
-## Warum „bis Ende Januar" in Wahrheit früher heißt
+## Warum der Antrag früher vorbereitet werden sollte
 
 Der Antrag selbst ist in einer halben Stunde gestellt. Das Problem sind die beiden Dinge, die vorher vorliegen müssen. Die KfW beschreibt den Weg in sechs Schritten, und die ersten beiden liegen nicht bei Ihnen:
 
@@ -1693,7 +1699,7 @@ Sie brauchen also vorher: eine Heizlastberechnung, ein durchgerechnetes Angebot,
 Sie haben schon ein Angebot für eine Wärmepumpe?
 Dann prüfen wir kostenlos, ob die Auslegung trägt, ob der Preis marktüblich ist und ob das Angebot überhaupt förderfähig ist. Rückmeldung innerhalb von 24 Stunden.
 
-## Drei Fehler, die die Förderung ganz kosten
+## Drei Fehler, durch die die Förderung entfällt
 
 - Zu früh beauftragen. Der Vertrag muss die Bedingung zur KfW-Zusage enthalten. Ein normaler Auftrag ohne diese Klausel, unterschrieben vor dem Antrag, kann die Förderung kosten.
 - Klimabonus ohne Anspruch einplanen. Bei Gas- und Biomasseheizungen gibt es ihn nur, wenn die Inbetriebnahme bei Antragstellung mindestens 20 Jahre zurückliegt. Bei Öl, Kohle, Gasetagen- und Nachtspeicherheizungen gilt keine Altersgrenze — die Heizung muss aber funktionstüchtig sein. Wer wartet, bis sie ausfällt, verliert unter Umständen den Bonus.
@@ -1741,19 +1747,19 @@ Zuletzt aktualisiert: 27.10.2026
 
 Marktstammdatenregister
 
-# Solaranlage anmelden — und was passiert, wenn nicht
+# Solaranlage anmelden: Pflichten, Fristen und Folgen
 
-Jede Photovoltaikanlage muss innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister der Bundesnetzagentur eingetragen werden. Das wird oft vergessen, weil viele davon ausgehen, der Installateur habe es erledigt. Hier steht, was Pflicht ist, was eine versäumte Frist wirklich kostet — und wie Sie es nachholen.
+Jede Photovoltaikanlage muss innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister der Bundesnetzagentur eingetragen werden. Das wird häufig versäumt, weil Betreiber davon ausgehen, der Installateur habe es übernommen. Hier steht, was Pflicht ist, welche Folgen eine versäumte Frist hat und wie Sie die Eintragung nachholen.
 
 ## Das Wichtigste in Kürze
 
 - Jede Solaranlage, auch ein Balkonkraftwerk, muss innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister eingetragen werden. Zuständig ist der Betreiber, die Eintragung ist kostenlos.
 - Fehlt der Eintrag, hält der Netzbetreiber die Einspeisevergütung zurück.
-- Eine Sanktionszahlung von 10 € je kW und Monat entsteht erst, wenn zusätzlich die EEG-Jahresmeldung bis 28. Februar fehlt. Wer beides nachholt, zahlt 80 % weniger.
+- Eine Sanktionszahlung von 10 € je kW und Monat entsteht erst, wenn zusätzlich die EEG-Jahresmeldung bis 28. Februar fehlt. Wer beides nachholt, zahlt 80 % weniger.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
-## Die vier Fragen, die immer kommen
+## Die häufigsten Fragen zur Anmeldung
 
 ### Wie lange habe ich Zeit?
 Einen Monat. Die Frist beginnt mit der Inbetriebnahme der Anlage, nicht mit der Schlussrechnung und nicht mit dem Zählerwechsel.
@@ -1767,7 +1773,7 @@ Ja. Steckersolargeräte müssen ebenfalls eingetragen werden, wenn auch in einem
 ### Was kostet es?
 Nichts. Die Registrierung im Marktstammdatenregister ist kostenlos und läuft online.
 
-## Was passiert, wenn die Frist verstrichen ist
+## Frist im Marktstammdatenregister versäumt: was dann passiert
 
 Hier kursieren die wildesten Zahlen. Die tatsächliche Rechtslage ist enger und in zwei Punkte zu trennen.
 
@@ -1790,7 +1796,7 @@ Eine reine Nichtregistrierung ohne versäumte Jahresmeldung löst nach der aktue
 Anlage steht schon, aber irgendetwas stimmt nicht?
 Fehlende Anmeldung, keine Einspeisevergütung, Mängel, Baustopp oder die Firma ist nicht mehr erreichbar: Wir schauen uns den Stand an und sagen Ihnen, was zu tun ist.
 
-## Das Register ist öffentlich — auch das wird übersehen
+## Die Einträge im Register sind öffentlich
 
 Die eingetragenen Anlagendaten sind öffentlich einsehbar. Das ist beabsichtigt: Das Register dient der Bundesnetzagentur und den Netzbetreibern dazu, den Anlagenbestand zu kennen. Für Sie hat das einen praktischen Nutzen — Sie können vor dem Kauf eines Hauses nachsehen, ob die Anlage auf dem Dach überhaupt registriert ist. Ist sie es nicht, ist das ein Punkt für die Kaufverhandlung und nicht Ihr Problem nach dem Einzug.
 
@@ -1843,28 +1849,28 @@ Laden zu Hause
 
 # Die Wallbox für das eigene Haus
 
-Eine Wallbox ist schnell gekauft. Ob sie sich lohnt, hängt an drei Dingen: an der Anmeldung beim Netzbetreiber, am Netzentgelt und daran, ob Sie mit eigenem Solarstrom laden. Hier steht, was dabei gilt.
+Ob sich eine Wallbox lohnt, hängt von drei Punkten ab: der Anmeldung beim Netzbetreiber, dem Netzentgelt und davon, ob Sie mit eigenem Solarstrom laden. Hier steht, was dabei gilt.
 
 ## Das Wichtigste in Kürze
 
 - Jede Wallbox muss vor der Inbetriebnahme beim Netzbetreiber angemeldet werden. Über 12 kVA braucht sie zusätzlich seine Zustimmung (§ 19 NAV).
-- Für ein Einfamilienhaus reichen meist 11 kW. Damit ist ein Auto über Nacht voll.
-- Neue Wallboxen über 4,2 kW sind nach § 14a EnWG steuerbar. Dafür sinkt das Netzentgelt, bei der Stromnetz Berlin 2026 pauschal um 146,58 € im Jahr. Einen Zuschuss für die private Wallbox gibt es 2026 nicht.
+- Für ein Einfamilienhaus reichen meist 11 kW. Damit ist ein Auto über Nacht voll.
+- Neue Wallboxen über 4,2 kW sind nach § 14a EnWG steuerbar. Dafür sinkt das Netzentgelt, bei der Stromnetz Berlin 2026 pauschal um 146,58 € im Jahr. Einen Zuschuss für die private Wallbox gibt es 2026 nicht.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
 ## Vier Punkte vor dem Kauf
 
-### Immer anmelden
+### Anmeldepflicht
 Jede Wallbox muss vor der Inbetriebnahme beim Netzbetreiber angemeldet werden. Über 12 kVA braucht sie zusätzlich seine Zustimmung.
 
-### 11 kW reichen meist
+### 11 kW sind meist ausreichend
 Damit ist ein Auto über Nacht voll. Eine 22-kW-Box braucht die Zustimmung des Netzbetreibers und bringt im Alltag oft wenig.
 
-### Weniger Netzentgelt
+### Reduziertes Netzentgelt
 Neue Wallboxen sind steuerbar nach § 14a EnWG. Dafür zahlen Sie weniger Netzentgelt, in Berlin derzeit rund 147 € im Jahr.
 
-### Kein Zuschuss
+### Keine Förderung
 Für die private Wallbox am Einfamilienhaus gibt es 2026 keinen Zuschuss vom Bund, von Berlin oder von Brandenburg.
 
 ## Anmeldung beim Netzbetreiber
@@ -1879,7 +1885,7 @@ Für ein Einfamilienhaus sind 11 kW der Normalfall. Eine solche Box lädt über 
 
 Wichtig ist die Summe: Zwei Wallboxen mit je 11 kW ergeben 22 kW am Hausanschluss und brauchen damit ebenfalls die Zustimmung.
 
-## § 14a EnWG: dimmbar, dafür günstiger
+## § 14a EnWG: steuerbare Wallbox, reduziertes Netzentgelt
 
 Seit dem 1. Januar 2024 müssen neue Wallboxen mit mehr als 4,2 kW steuerbar sein. Der Netzbetreiber darf die Ladeleistung herunterregeln, aber nur, solange tatsächlich eine Überlastung des Netzes droht, und nie unter 4,2 kW. Ein Auto lädt also auch dann weiter, nur langsamer. Im Gegenzug darf der Netzbetreiber den Anschluss nicht mehr mit Hinweis auf sein Netz ablehnen oder hinauszögern.
 
@@ -1912,7 +1918,7 @@ Anders ist es bei Mehrparteienhäusern: Für bestehende Häuser mit mindestens d
 
 Liegt Ihnen schon ein Angebot vor, sehen wir es uns im Angebots-Check kostenlos an.
 
-## Und das Auto als Speicher?
+## Das Elektroauto als Speicher
 
 Bidirektionales Laden, also Strom aus dem Autoakku zurück ins Haus, kommt voran. Die Bundesnetzagentur hat am 1. Oktober 2026 festgelegt, dass solche Ladepunkte Stromspeichern weitgehend gleichgestellt werden. Netz- und Messstellenbetreiber haben für die Umsetzung bis Ende September 2027 Zeit. Bis dahin geht es nur im Einzelfall mit deren Einverständnis. Wer heute eine Wallbox kauft, sollte deshalb nicht allein dafür einen Aufpreis zahlen.
 
@@ -1961,11 +1967,11 @@ Landeshauptstadt Potsdam
 
 # Photovoltaik und Wärmepumpe in Potsdam
 
-Potsdam hat ein eigenes Förderprogramm, viele Denkmalbereiche und seit Juni 2026 einen beschlossenen Wärmeplan. Für Ihr Haus heißt das: Manches ist hier einfacher als anderswo in Brandenburg, manches deutlich aufwendiger.
+Potsdam hat ein eigenes Förderprogramm, viele Denkmalbereiche und seit Juni 2026 einen beschlossenen Wärmeplan. Einiges ist dadurch einfacher als anderswo in Brandenburg, anderes aufwendiger.
 
 ## Das Wichtigste in Kürze
 
-- Das Potsdamer Klimaschutzförderprogramm sieht unter anderem 2.000 € für eine Wärmepumpe und 200 € je kWp Photovoltaik vor, höchstens 1.200 €. Derzeit nimmt die Stadt aber keine Anträge an.
+- Das Potsdamer Klimaschutzförderprogramm sieht unter anderem 2.000 € für eine Wärmepumpe und 200 € je kWp Photovoltaik vor, höchstens 1.200 €. Derzeit nimmt die Stadt aber keine Anträge an.
 - In den historischen Stadtkernen, den Vorstädten und am Welterbe braucht eine Solaranlage oft eine Erlaubnis.
 - Netzbetreiber ist die Netzgesellschaft Potsdam. Seit Juni 2026 gibt es einen beschlossenen Wärmeplan mit Fernwärme-Vorranggebieten.
 
@@ -2072,7 +2078,7 @@ Falkensee im Havelland
 
 # Photovoltaik und Wärmepumpe in Falkensee
 
-Falkensee ist eine Stadt der Einfamilienhäuser, und fast alle heizen noch mit Öl oder Gas. Der Wärmeplan der Stadt sieht für die meisten Häuser keine Fernwärme vor. Für viele Eigentümer läuft es deshalb auf die Wärmepumpe hinaus.
+Falkensee ist von Einfamilienhäusern geprägt, die überwiegend mit Öl oder Gas heizen. Der Wärmeplan sieht für die meisten Häuser keine Fernwärme vor. Für viele Eigentümer ist die Wärmepumpe deshalb die naheliegende Lösung.
 
 ## Das Wichtigste in Kürze
 
@@ -2084,7 +2090,7 @@ Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
 ## Was in Falkensee gilt
 
-### Wärmepumpe statt Netz
+### Eigene Heizung statt Wärmenetz
 Für rund 12.000 der etwa 15.700 beheizten Gebäude sieht der Wärmeplan eine eigene Heizung im Haus vor, kein Wärmenetz.
 
 ### E.DIS Netz
@@ -2185,7 +2191,7 @@ Bernau bei Berlin
 
 # Photovoltaik und Wärmepumpe in Bernau
 
-In Bernau kommt rund 40 % der Wärme aus dem Fernwärmenetz. Trotzdem können die meisten Hausbesitzer frei entscheiden, wie sie heizen. Was Sie zu Stadtwerken, Fernwärmesatzung und Altstadt wissen sollten.
+In Bernau stammen rund 40 % der Wärme aus dem Fernwärmenetz. Die meisten Hausbesitzer können trotzdem frei entscheiden, wie sie heizen. Hier steht, was Sie zu Stadtwerken, Fernwärmesatzung und Altstadt wissen sollten.
 
 ## Das Wichtigste in Kürze
 
@@ -2197,7 +2203,7 @@ Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
 ## Was in Bernau gilt
 
-### Eigenheim frei
+### Befreiung für selbst genutzte Wohnhäuser
 Selbst genutzte Wohnhäuser mit bis zu zwei Wohnungen sind vom Fernwärme-Anschlusszwang befreit. Die Wärmepumpe ist also möglich.
 
 ### Stadtwerke Bernau
@@ -2292,7 +2298,7 @@ Oranienburg im Kreis Oberhavel
 
 # Photovoltaik und Wärmepumpe in Oranienburg
 
-Die Solaranlage auf dem Dach ist in Oranienburg so einfach wie anderswo. Bei der Wärmepumpe gibt es eine Besonderheit, die es in kaum einer anderen Stadt gibt: Für Fundament und Leitungsgraben wird im Boden gearbeitet, und der Boden ist hier mit Blindgängern belastet.
+Eine Solaranlage auf dem Dach ist in Oranienburg genauso unkompliziert wie anderswo. Für eine Wärmepumpe gibt es eine Besonderheit: Für Fundament und Leitungsgraben sind Erdarbeiten nötig, und der Boden ist in weiten Teilen der Stadt mit Blindgängern belastet.
 
 ## Das Wichtigste in Kürze
 
@@ -2398,9 +2404,9 @@ Zuletzt aktualisiert: 27.10.2026
 
 Ohne Verkaufsinteresse geschrieben
 
-# Ratgeber: erst verstehen, dann kaufen
+# Ratgeber Photovoltaik und Wärmepumpe
 
-Wir verkaufen keine Anlagen. Deshalb steht hier auch, wann sich etwas nicht lohnt. Diese Beiträge beantworten die Fragen, die uns Hausbesitzer am häufigsten stellen.
+Diese Beiträge beantworten die Fragen, die Hausbesitzer uns am häufigsten stellen. Wir nennen dabei auch die Fälle, in denen sich eine Anlage nicht lohnt.
 
 Photovoltaik
 
@@ -2412,7 +2418,7 @@ Beitrag lesen
 
 Wärmepumpe
 
-## Wärmepumpe im Altbau: geht das?
+## Wärmepumpe im Altbau: ist das möglich?
 
 Die ehrliche Antwort auf die häufigste Frage, mit dem entscheidenden Test, den Sie selbst an einem kalten Tag machen können – und was er über Ihr Haus verrät.
 
@@ -2485,13 +2491,13 @@ Ratgeber · Stand August 2026
 
 # Lohnt sich Photovoltaik 2026 noch?
 
-Kurz: In den meisten Fällen ja, aber aus einem anderen Grund als vor zehn Jahren. Wer heute mit der Einspeisevergütung rechnet, rechnet falsch.
+In den meisten Fällen ja. Der wirtschaftliche Vorteil entsteht heute vor allem durch den selbst verbrauchten Strom und kaum noch durch die Einspeisevergütung.
 
 ## Das Wichtigste in Kürze
 
 - In den meisten Fällen ja. Das Geld bringt heute der vermiedene Netzbezug, nicht mehr die Einspeisung.
-- Selbst verbrauchter Strom spart rund 35 Cent je kWh. Eingespeister Strom bringt bei Anlagen bis 10 kWp rund 7,7 Cent.
-- Im Beispiel (10 kWp, 8 kWh Speicher, 19.500 €) liegt der Vorteil bei rund 1.347 € im Jahr. Die Anlage hat sich nach etwa 14,5 Jahren bezahlt gemacht.
+- Selbst verbrauchter Strom spart rund 35 Cent je kWh. Eingespeister Strom bringt bei Anlagen bis 10 kWp rund 7,7 Cent.
+- Im Beispiel (10 kWp, 8 kWh Speicher, 19.500 €) liegt der Vorteil bei rund 1.347 € im Jahr. Die Anlage hat sich nach etwa 14,5 Jahren bezahlt gemacht.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
@@ -2501,7 +2507,7 @@ Vor zehn Jahren war eine Solaranlage eine Geldanlage: Man speiste alles ein und 
 
 Gleichzeitig ist etwas anderes passiert: Anlagen sind deutlich günstiger geworden, seit 2023 fällt keine Umsatzsteuer mehr an, und Netzstrom kostet rund 35 Cent. Damit hat sich die Logik umgedreht. Nicht die Einspeisung bringt das Geld, sondern der vermiedene Netzbezug. Jede Kilowattstunde, die Sie selbst verbrauchen, ist rund viereinhalbmal so viel wert wie eine eingespeiste.
 
-## Die Rechnung an einem echten Fall
+## Rechenbeispiel für ein Einfamilienhaus
 
 Nehmen wir ein Einfamilienhaus mit vier Personen und 4.500 kWh Jahresverbrauch. Auf dem Satteldach liegen 10 kWp, dazu ein Speicher mit 8 kWh. Investition: rund 19.500 € – die Spannen dahinter stehen unter Kosten.
 
@@ -2520,7 +2526,7 @@ Ohne die Betriebskosten stünden hier zwölf Jahre, und genau so rechnen es die 
 
 Es gibt Fälle, in denen wir abraten. Wenn das Dach in den nächsten Jahren ohnehin neu gedeckt werden muss, sollte das zuerst geschehen – eine Anlage abzubauen und wieder aufzulegen kostet vierstellig. Wenn ein Verkauf des Hauses in kurzer Frist ansteht, wird sich die Anlage nicht amortisieren und erhöht den Verkaufspreis meist nicht in gleicher Höhe. Und bei einem Zwei-Personen-Haushalt mit 2.000 kWh Jahresverbrauch und starker Verschattung wird die Rechnung schlicht dünn.
 
-## Was in der Praxis schiefgeht
+## Häufige Fehler in der Praxis
 
 Aus dem, was uns im Angebots-Check begegnet: Erträge werden zu optimistisch gerechnet, Verschattung wird nicht geprüft, und der Zählerschrank taucht im Angebot gar nicht auf und kommt später als Nachtrag. Realistisch sind in Deutschland 900 bis 1.050 kWh je kWp und Jahr. Wer Ihnen 1.200 verspricht, rechnet mit süddeutschen Bestwerten.
 
@@ -2561,19 +2567,19 @@ Zuletzt aktualisiert: 27.10.2026
 
 Ratgeber · mit Selbsttest
 
-# Wärmepumpe im Altbau: geht das?
+# Wärmepumpe im Altbau: ist das möglich?
 
-Meistens ja. Entscheidend ist nicht das Baujahr und nicht die Dämmung, sondern eine einzige Zahl – und die können Sie an einem kalten Tag selbst herausfinden.
+In den meisten Fällen ja. Entscheidend ist weniger das Baujahr oder die Dämmung als die Vorlauftemperatur, mit der die Heizung auskommt. Diese lässt sich an einem kalten Tag selbst prüfen.
 
 ## Das Wichtigste in Kürze
 
 - Meistens ja. Entscheidend ist die Vorlauftemperatur, nicht das Baujahr und nicht die Dämmung.
-- Selbsttest: An einem kalten Tag den Vorlauf am Kessel auf 50 und dann auf 45 °C senken. Bleibt es in allen Räumen warm, ist das Haus in der Regel geeignet.
-- Größere Heizkörper in wenigen Räumen (400 bis 900 € je Stück) und ein hydraulischer Abgleich (700 bis 1.500 €) bringen meist mehr als eine Dämmung.
+- Selbsttest: An einem kalten Tag den Vorlauf am Kessel auf 50 und dann auf 45 °C senken. Bleibt es in allen Räumen warm, ist das Haus in der Regel geeignet.
+- Größere Heizkörper in wenigen Räumen (400 bis 900 € je Stück) und ein hydraulischer Abgleich (700 bis 1.500 €) bringen meist mehr als eine Dämmung.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
-## Der Test, den Sie selbst machen können
+## Selbsttest: Ist Ihr Haus geeignet?
 
 Warten Sie einen richtig kalten Tag ab, am besten unter null Grad. Drehen Sie die Heizung auf normalen Betrieb und stellen Sie an Ihrem Heizkessel die Vorlauftemperatur schrittweise herunter – auf 50 Grad, dann auf 45. Warten Sie jeweils einen Tag.
 
@@ -2590,7 +2596,7 @@ Vorlauf Arbeitszahl Stromkosten bei 20.000 kWh Wärme
 
 Gerechnet mit 26 Cent je Kilowattstunde Wärmepumpenstrom. Zwischen 35 und 55 Grad liegen über 500 € im Jahr, also mehr als 10.000 € über die Lebensdauer der Anlage.
 
-## Der günstigste Hebel ist fast nie die Dämmung
+## Heizkörper und hydraulischer Abgleich vor der Dämmung
 
 Viele glauben, vor einer Wärmepumpe müsse das ganze Haus gedämmt werden. Das stimmt selten. Deutlich wirksamer im Verhältnis zum Preis sind zwei andere Maßnahmen:
 
@@ -2598,11 +2604,11 @@ Größere Heizkörper in wenigen Räumen. Meist sind es zwei oder drei Zimmer, d
 
 Hydraulischer Abgleich. Dabei wird eingestellt, wie viel Wasser durch welchen Heizkörper fließt. Ohne Abgleich bekommen Räume nahe der Heizung zu viel und entfernte zu wenig – und man dreht die Vorlauftemperatur hoch, um den letzten Raum warm zu bekommen. Kosten: 700 bis 1.500 €, bei jeder Wärmepumpe im Bestand ohnehin Pflicht.
 
-## Die Sorge mit dem Lärm
+## Schallschutz und Abstand zum Nachbarn
 
 Die häufigste Frage überhaupt, meist wegen der Nachbarn. Aktuelle Luft-Wasser-Geräte liegen bei etwa 50 bis 60 Dezibel Schallleistung. Entscheidend ist aber der Schalldruck am Nachbargrundstück, und der hängt vom Aufstellort ab. Drei Dinge helfen: genug Abstand zur Grenze, keine Aufstellung in einer Ecke zwischen zwei Wänden, wo sich der Schall verstärkt, und ein Gerät mit Nachtabsenkung. Ein guter Planer rechnet das vorher aus, statt zu hoffen.
 
-## Was oft vergessen wird
+## Häufig übersehen: der Zählerschrank
 
 Der Zählerschrank. Eine Wärmepumpe braucht eine eigene Absicherung mit Fehlerstromschutzschalter Typ B und eine Steuereinrichtung nach § 14a EnWG. In Häusern aus den Siebzigern und Achtzigern fehlt dafür oft schlicht der Platz. Rechnen Sie im Zweifel mit 1.500 bis 3.500 € – und misstrauen Sie einem Angebot, das den Punkt gar nicht erwähnt.
 
@@ -2645,13 +2651,13 @@ Ratgeber · Checkliste
 
 # Angebot prüfen: 12 Punkte, die drinstehen müssen
 
-Ein Angebot ohne diese Angaben ist nicht günstiger als die Konkurrenz. Es ist nur unvollständig – und die Differenz kommt später als Nachtrag.
+Fehlen diese Angaben, ist ein Angebot unvollständig. Die fehlenden Leistungen werden häufig später als Nachtrag berechnet.
 
 ## Das Wichtigste in Kürze
 
 - In jedes Angebot gehören alle Komponenten mit Hersteller und Typ, getrennt ausgewiesene Garantien und der Zählerschrank als eigene Position.
-- Übliche Anzahlungen liegen bei 20 bis 30 %. Wer 80 % vor Baubeginn verlangt, verlagert sein Risiko auf Sie.
-- Bei Photovoltaik sind 900 bis 1.050 kWh je kWp realistisch. Bei einer Wärmepumpe muss die Heizlast genannt sein und wie sie ermittelt wurde.
+- Übliche Anzahlungen liegen bei 20 bis 30 %. Wer 80 % vor Baubeginn verlangt, verlagert sein Risiko auf Sie.
+- Bei Photovoltaik sind 900 bis 1.050 kWh je kWp realistisch. Bei einer Wärmepumpe muss die Heizlast genannt sein und wie sie ermittelt wurde.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
@@ -2693,7 +2699,7 @@ Kein Vor-Ort-Termin. Wer Ihnen ein verbindliches Angebot macht, ohne Dach, Kelle
 
 Ein einziger Gesamtpreis ohne Aufschlüsselung. Sie können dann weder vergleichen noch erkennen, wo gespart wurde.
 
-## Und der Preis?
+## Der Preis im Verhältnis zur Leistung
 
 Der niedrigste Preis gewinnt selten. Wichtiger ist, ob Leistungsumfang und Preis zusammenpassen. Eine Einordnung marktüblicher Spannen für Anlagen, Speicher und Wärmepumpen finden Sie auf unserer Kostenseite – damit können Sie ein Angebot selbst einordnen, bevor Sie mit jemandem sprechen.
 
@@ -2736,11 +2742,11 @@ Ratgeber · Photovoltaik
 
 # Einspeisevergütung 2026 und was ab 2027 kommt
 
-Bis Ende 2026 gelten die bekannten Sätze. Danach soll die feste Vergütung für neue Anlagen wegfallen. Was beschlossen ist, was erst geplant ist und was das für Ihre Entscheidung heißt.
+Bis Ende 2026 gelten die bekannten Vergütungssätze. Für neue Anlagen ab 2027 soll die feste Vergütung entfallen. Hier steht, was beschlossen ist, was geplant ist und was das für Ihre Entscheidung bedeutet.
 
 ## Das Wichtigste in Kürze
 
-- Für Anlagen bis 10 kW mit Inbetriebnahme vom 1. August bis 31. Dezember 2026 zahlt der Netzbetreiber 7,70 ct je kWh bei Teileinspeisung und 12,22 ct bei Volleinspeisung, 20 Jahre lang.
+- Für Anlagen bis 10 kW mit Inbetriebnahme vom 1. August bis 31. Dezember 2026 zahlt der Netzbetreiber 7,70 ct je kWh bei Teileinspeisung und 12,22 ct bei Volleinspeisung, 20 Jahre lang.
 - Der Satz bei Inbetriebnahme bleibt für die ganze Laufzeit fest.
 - Für neue Anlagen ab 2027 sieht ein Gesetzentwurf (Drucksache 21/7867) statt fester Vergütung eine Übergangszahlung von rund 5,2 ct für etwa drei Jahre vor. Beschlossen ist er noch nicht (Stand Oktober 2026).
 
@@ -2787,7 +2793,7 @@ Seit dem 25. Februar 2025 gelten für neue Anlagen zwei Regeln aus dem sogenannt
 
 Beides trifft vor allem Anlagen, die mittags viel einspeisen. Wer den Strom in dieser Zeit selbst nutzt, ist kaum betroffen. Anlagen, die vor dem 25. Februar 2025 in Betrieb gingen, bleiben bei den alten Regeln.
 
-## Und wenn die Anlage aus der Förderung fällt?
+## Nach dem Ende der Einspeisevergütung
 
 Anlagen, deren 20 Jahre abgelaufen sind, bekommen weiter den Jahresmarktwert, höchstens 10 Cent je Kilowattstunde und abzüglich eines Vermarktungsabschlags. Diese Regelung gilt bis Ende 2032, auch der neue Entwurf hält daran fest. Für solche Anlagen ist ein nachgerüsteter Speicher oft die naheliegende Frage, mehr dazu im Ratgeber Stromspeicher nachrüsten.
 
@@ -2832,11 +2838,11 @@ Ratgeber · Photovoltaik und Wärmepumpe
 
 # Photovoltaik und Wärmepumpe: wie gut passen sie zusammen?
 
-Die Wärmepumpe braucht im Winter den meisten Strom, die Solaranlage liefert ihn im Sommer. Trotzdem lohnt sich die Kombination. Was Messungen aus echten Häusern zeigen.
+Eine Wärmepumpe braucht im Winter den meisten Strom, eine Solaranlage erzeugt ihn vor allem im Sommer. Die Kombination lohnt sich trotzdem. Hier steht, was Messungen in bewohnten Häusern zeigen.
 
 ## Das Wichtigste in Kürze
 
-- In Messungen des Fraunhofer ISE kamen ohne Batterie 13 bis 36 % des Wärmepumpenstroms vom eigenen Dach, mit Batterie 17 bis 49 %.
+- In Messungen des Fraunhofer ISE kamen ohne Batterie 13 bis 36 % des Wärmepumpenstroms vom eigenen Dach, mit Batterie 17 bis 49 %.
 - Im Winter sinkt der Solaranteil stark. Die Solaranlage macht die Wärmepumpe nicht stromautark, senkt aber die Stromkosten über das Jahr deutlich.
 - Am meisten bringt es, Solarüberschuss als Wärme zu speichern, etwa über eine höhere Warmwassertemperatur.
 
@@ -2848,7 +2854,7 @@ Das Fraunhofer-Institut für Solare Energiesysteme hat Wärmepumpen in bestehend
 
 Bezogen auf das ganze Haus deckten die Anlagen ohne Batterie 25 bis 40 % des Strombedarfs selbst, mit Batterie 32 bis 62 %.
 
-## Die Winterlücke ist real
+## Geringerer Solarertrag im Winter
 
 Von Mai bis August kam eines der gemessenen Häuser mit Batterie fast vollständig ohne Netzstrom aus. Im November, Dezember und Januar sank der Anteil unter 15 %. Die Batterie hilft in diesen Monaten nur noch, den wenigen Solarstrom vom Mittag in den Nachmittag zu schieben. Über Nacht reicht er nicht mehr.
 
@@ -2917,12 +2923,12 @@ Ratgeber · Stromspeicher
 
 # Stromspeicher nachrüsten: was Sie wissen müssen
 
-Die Solaranlage läuft seit Jahren, mittags geht viel Strom ins Netz, abends kaufen Sie ihn teuer zurück. Ein Speicher lässt sich fast immer nachrüsten. Worauf es dabei ankommt.
+Bei vielen älteren Solaranlagen geht mittags ein großer Teil des Stroms ins Netz, abends wird teurer Netzstrom gekauft. Ein Speicher lässt sich in den meisten Fällen nachrüsten. Hier steht, worauf es dabei ankommt.
 
 ## Das Wichtigste in Kürze
 
 - Ein Speicher lässt sich fast immer nachrüsten, entweder am Hybridwechselrichter (DC) oder mit eigenem Batteriewechselrichter (AC).
-- Auch für nachgerüstete Speicher gilt 0 % Umsatzsteuer, wenn die Anlage höchstens 30 kWp hat (§ 12 Abs. 3 UStG).
+- Auch für nachgerüstete Speicher gilt 0 % Umsatzsteuer, wenn die Anlage höchstens 30 kWp hat (§ 12 Abs. 3 UStG).
 - Der Speicher ist im Marktstammdatenregister eine eigene Einheit und muss innerhalb eines Monats nach Inbetriebnahme eingetragen werden.
 
 Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
@@ -2939,7 +2945,7 @@ Der Nullsteuersatz nach § 12 Abs. 3 UStG gilt ausdrücklich auch für Speicher,
 
 Steht auf einem Angebot für einen nachgerüsteten Speicher Mehrwertsteuer, fragen Sie nach.
 
-## Anmelden: Der Speicher ist eine eigene Einheit
+## Anmeldung des Speichers als eigene Einheit
 
 Im Marktstammdatenregister zählt der Stromspeicher als eigene Einheit, getrennt von der Solaranlage. Er muss innerhalb eines Monats nach Inbetriebnahme registriert werden. Ausgenommen sind nur Speicher ganz ohne Netzanschluss, was im Haus praktisch nie vorkommt. Auch beim Netzbetreiber wird der Speicher angemeldet, das übernimmt der Elektrofachbetrieb. Wie die Registrierung funktioniert und was bei einer versäumten Frist passiert, steht auf der Seite Anlage anmelden.
 
@@ -2998,9 +3004,17 @@ Zuletzt aktualisiert: 27.10.2026
 
 Kostenlos · ohne Anmeldung
 
-# Welche Wärmepumpe passt zu Ihrem Haus?
+# Wärmepumpe berechnen: welche Größe passt zu Ihrem Haus?
 
-Beantworten Sie ein paar Fragen zu Ihrem Gebäude. Sie bekommen eine überschlägige Auslegung mit Heizlast, Gerätegröße, Speichern und der voraussichtlichen KfW-Förderung. Gerechnet wird nur mit dem, was Sie angeben. Welche Kennwerte dabei angesetzt werden, steht weiter unten offen.
+Beantworten Sie einige Fragen zu Ihrem Gebäude. Sie erhalten eine überschlägige Auslegung mit Heizlast, Gerätegröße in kW, Speichern und der voraussichtlichen KfW-Förderung. Gerechnet wird ausschließlich mit Ihren Angaben. Die angesetzten Kennwerte sind weiter unten beschrieben.
+
+## Das Wichtigste in Kürze
+
+- Die Größe einer Wärmepumpe richtet sich nach der Heizlast. Als Richtwert gelten 30 Watt je m² im Neubau bis 120 Watt je m² im unsanierten Altbau.
+- Ein Haus mit 120 m² aus den Jahren 1984 bis 1994 hat damit rund 9 kW Heizlast. Mit Warmwasser passt eine Wärmepumpe mit etwa 10 kW.
+- Die KfW fördert mit 30 % Grundförderung plus Boni, höchstens 70 oder 80 % von 28.000 €. Der Rechner ermittelt Größe und Zuschuss aus Ihren Angaben, ohne Anmeldung.
+
+Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
 
 ## 1. Ihr Gebäude
 
@@ -3126,6 +3140,36 @@ Auslegung prüfen lassen
 
 Ihre Auslegung ist bei uns eingegangen. Wir prüfen die Werte und melden uns zeitnah bei Ihnen.
 
+## Wie viel kW Wärmepumpe für 100, 120, 150 oder 200 m²?
+
+Die Tabelle zeigt die Heizlast eines freistehenden Hauses in Kilowatt, gerechnet mit denselben Kennwerten wie der Rechner oben. Übernimmt die Wärmepumpe auch das Warmwasser, kommen rund 10 % dazu. Gewählt wird dann die nächste Gerätestufe darüber.
+
+Wohnfläche Neubau ab 2016 2002 bis 2015 1984 bis 1994 vor 1984, teilsaniert vor 1984, unsaniert
+
+100 m² 3,0 kW 4,0 kW 7,5 kW 8,5 kW 12,0 kW
+
+120 m² 3,6 kW 4,8 kW 9,0 kW 10,2 kW 14,4 kW
+
+150 m² 4,5 kW 6,0 kW 11,3 kW 12,8 kW 18,0 kW
+
+200 m² 6,0 kW 8,0 kW 15,0 kW 17,0 kW 24,0 kW
+
+250 m² 7,5 kW 10,0 kW 18,8 kW 21,3 kW 30,0 kW
+
+Angesetzt sind 30, 40, 75, 85 und 120 Watt je m² für rund −12 °C Auslegungstemperatur. Eine Doppelhaushälfte liegt etwa 8 % darunter, ein Reihenmittelhaus etwa 18 %. Das sind Erfahrungswerte für die Größenordnung. Verbindlich ist erst eine raumweise Heizlastberechnung nach DIN EN 12831.
+
+### Wie viel kW pro m² braucht eine Wärmepumpe?
+
+Den größten Einfluss hat der Dämmstand des Gebäudes. Ein Neubau kommt mit etwa 30 Watt je m² aus, ein unsanierter Altbau benötigt bis zu 120 Watt. Ein Haus mit 120 m² aus den Achtzigern liegt damit bei rund 9 kW, mit Warmwasser bei einer 10-kW-Wärmepumpe.
+
+Genauer ist die Berechnung über den bisherigen Verbrauch. Tragen Sie oben Ihren Gas- oder Ölverbrauch ein, dann rechnet der Rechner die Heizlast daraus. Das Klima Ihres Standorts und Ihr Heizverhalten sind darin schon enthalten.
+
+### Warum die Wärmepumpe nicht überdimensioniert werden sollte
+
+Eine überdimensionierte Wärmepumpe schaltet in der Übergangszeit häufig ein und aus. Das senkt die Effizienz und belastet den Verdichter. An den wenigen Tagen im Jahr unterhalb der Auslegungstemperatur unterstützt der Heizstab, über den die meisten Geräte verfügen. Die Wärmepumpe wird deshalb auf die berechnete Heizlast ausgelegt, ohne großen Sicherheitszuschlag.
+
+Ob Ihre Heizkörper für eine Wärmepumpe reichen, steht im Ratgeber Wärmepumpe im Altbau. Was die Anlage kostet, steht unter Kosten.
+
 ## So wird gerechnet
 
 Damit Sie die Zahlen einordnen können, steht hier jede Annahme offen. Wer anders rechnet, kommt zu anderen Ergebnissen. Die Technik dahinter erklären wir auf der Seite Wärmepumpe, die Preise unter Kosten. Was nach Förderung übrig bleibt und wann es sich bezahlt macht, rechnet der Rentabilitätsrechner.
@@ -3143,6 +3187,8 @@ Was dieser Rechner nicht kann Er ersetzt keine Heizlastberechnung nach DIN EN 12
 Die Fragen, die beim Rechnen am häufigsten aufkommen.
 
 Wie groß muss meine Wärmepumpe sein? Die Größe richtet sich nach der Heizlast des Gebäudes. Aus dem Jahresverbrauch lässt sie sich am zuverlässigsten ableiten: nutzbare Wärme abzüglich Warmwasser, geteilt durch rund 2.100 Vollbenutzungsstunden. Ohne Verbrauchsangabe rechnet man über Wohnfläche und Baualtersklasse. Verbindlich ist eine raumweise Heizlastberechnung nach DIN EN 12831.
+Wie viel kW Wärmepumpe brauche ich für 120 m²? Das hängt vom Baujahr und Dämmstand ab. Ein Neubau mit 120 m² hat eine Heizlast von etwa 3,6 kW, ein Haus von 1984 bis 1994 rund 9 kW und ein unsaniertes Haus von vor 1984 rund 14 kW. Übernimmt die Wärmepumpe auch das Warmwasser, kommen etwa 10 Prozent dazu. Die Tabelle auf dieser Seite zeigt die Werte für 100 bis 250 m².
+Wie berechne ich die Förderung für meine Wärmepumpe? Förderfähig sind höchstens 28.000 Euro Kosten für die erste Wohneinheit. Darauf gibt es 30 Prozent Grundförderung, 16 Prozent Klimageschwindigkeitsbonus beim Tausch einer alten Öl-, Kohle- oder Nachtspeicherheizung oder einer mindestens 20 Jahre alten Gas- oder Biomasseheizung, und je nach Einkommen 10, 30 oder 40 Prozent Einkommensbonus. Beispiel: Ölheizung raus, kein Einkommensbonus, 46 Prozent von 28.000 Euro sind 12.880 Euro. Der Rechner oben macht das mit Ihren Angaben.
 Wie viel Förderung gibt es 2026 für eine Wärmepumpe? Über den KfW-Zuschuss 458 gibt es 30 Prozent Grundförderung, dazu für selbstnutzende Eigentümer 16 Prozent Klimageschwindigkeitsbonus beim Tausch einer alten Heizung und einen Einkommensbonus von 40, 30 oder 10 Prozent je nach zu versteuerndem Haushaltseinkommen. Gedeckelt ist die Gesamtförderung bei 70 Prozent; die 80 Prozent erreichen nur selbstnutzende Eigentümer mit einem anzusetzenden zu versteuernden Haushaltseinkommen bis 30.000 Euro. Die förderfähigen Kosten der ersten Wohneinheit liegen bei 28.000 Euro. Daraus ergibt sich ein Höchstzuschuss von 22.400 Euro. Der Antrag muss vor der Auftragserteilung gestellt werden.
 Welche Jahresarbeitszahl erreicht eine Luft-Wasser-Wärmepumpe? Entscheidend ist die Vorlauftemperatur. Bei 35 Grad über eine Fußbodenheizung sind rund 4,3 realistisch, bei 45 Grad etwa 3,6 und bei 55 Grad über Bestandsheizkörper nur noch rund 3,0. Warmwasserbereitung über dieselbe Wärmepumpe senkt den Jahreswert um etwa 0,2. Größere Heizflächen und ein hydraulischer Abgleich sind deshalb meist die wirtschaftlichste Maßnahme.
 Braucht eine Wärmepumpe einen Pufferspeicher? In der Regel ja. Ein Puffer- oder Reihenspeicher mit etwa 20 Litern je Kilowatt Heizleistung, mindestens aber 50 Litern, stellt sicher, dass beim Abtauen genügend Wärme im System ist und die Wärmepumpe nicht ständig taktet. Der Warmwasserspeicher kommt separat dazu und richtet sich nach der Personenzahl.
@@ -3150,7 +3196,7 @@ Wie genau ist das Ergebnis dieses Rechners? Es ist eine überschlägige Auslegun
 
 Ihre Frage war nicht dabei?
 
-## Angebot schon im Haus?
+## Liegt Ihnen bereits ein Angebot vor?
 
 Wir prüfen es kostenlos und unabhängig auf Auslegung, Preis und Fairness.
 
@@ -3161,9 +3207,9 @@ Zuletzt aktualisiert: 27.10.2026
 
 Kostenlos · ohne Anmeldung
 
-# Rechnet sich das für mich?
+# Rentabilitätsrechner für Photovoltaik und Wärmepumpe
 
-Die Frage, die am Ende zählt. Tragen Sie ein, was Sie heute verbrauchen und zahlen – Sie sehen sofort, was übrig bleibt und nach wie vielen Jahren die Anlage bezahlt ist. Gerechnet wird vorsichtig: Betriebskosten sind drin, steigende Energiepreise sind es nicht.
+Tragen Sie Ihren heutigen Verbrauch und Ihre Energiekosten ein. Der Rechner zeigt die jährliche Ersparnis und nach wie vielen Jahren die Anlage bezahlt ist. Betriebskosten sind eingerechnet, steigende Energiepreise bewusst nicht.
 
 2 Minuten bis zum Ergebnis
 Rechnet im Browser, nichts wird gesendet
@@ -3336,7 +3382,7 @@ Ersetzt das Ergebnis ein Angebot? Nein. Es ist eine Überschlagsrechnung mit off
 
 Ihre Frage war nicht dabei?
 
-## Zahlen passen – und jetzt?
+## Die nächsten Schritte
 
 Schicken Sie uns ein vorliegendes Angebot. Wir sagen Ihnen innerhalb von 24 Stunden, ob es zu dieser Rechnung passt. Kostenlos und ohne Verkaufsinteresse.
 
@@ -3349,9 +3395,9 @@ Für Fachbetriebe, Lieferanten & Vertriebspartner
 
 # Partner werden
 
-Wir beraten Hausbesitzer zu Photovoltaik und Wärmepumpe und geben die fertig vorbereiteten Projekte an Fachbetriebe weiter. Wenn Sie Kapazität haben und sauber arbeiten, passen wir zusammen.
+Wir beraten Hausbesitzer zu Photovoltaik und Wärmepumpen und geben vorbereitete Projekte an Fachbetriebe weiter. Dafür suchen wir Betriebe mit freien Kapazitäten und sauberer Ausführung.
 
-## Aufträge statt Akquise
+## Aufträge ohne eigene Akquise
 
 Wir übernehmen den Teil, der Zeit kostet: erste Beratung, Bedarfsklärung und Vorqualifizierung. Sie bekommen Projekte, bei denen die Grundfragen schon geklärt sind.
 
@@ -3409,7 +3455,7 @@ Vergütung, Zuständigkeiten, Reaktionszeiten und Gewährleistung halten wir vor
 ### Erstes Projekt
 Wir starten mit einem einzelnen Projekt. Läuft das für beide Seiten gut, kommen weitere dazu.
 
-## Wir sind wählerisch. Aus gutem Grund
+## Wie wir Partnerbetriebe auswählen
 
 Wir empfehlen unsere Partner weiter und stehen mit unserem Namen dafür ein. Deshalb nehmen wir nicht jeden Betrieb auf.
 
@@ -3443,6 +3489,6 @@ Je genauer Ihre Angaben, desto schneller können wir einschätzen, ob und wo wir
 
 Ihre Partnerschaftsanfrage ist eingegangen. Wir melden uns in der Regel innerhalb von zwei Werktagen telefonisch bei Ihnen.
 
-## Lieber erst einmal telefonieren?
+## Telefonische Beratung
 
 Rufen Sie an, dann klären wir in fünf Minuten, ob es passt.

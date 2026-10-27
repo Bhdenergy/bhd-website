@@ -29,7 +29,7 @@
 
 ## Ratgeber
 - [Lohnt sich Photovoltaik 2026 noch?](https://bhd-energie.de/ratgeber/photovoltaik-lohnt-sich/)
-- [Wärmepumpe im Altbau: geht das?](https://bhd-energie.de/ratgeber/waermepumpe-altbau/)
+- [Wärmepumpe im Altbau: ist das möglich?](https://bhd-energie.de/ratgeber/waermepumpe-altbau/)
 - [Angebot prüfen: 12 Punkte, die drinstehen müssen](https://bhd-energie.de/ratgeber/angebot-pruefen/)
 - [Einspeisevergütung 2026 und was ab 2027 kommt](https://bhd-energie.de/ratgeber/einspeiseverguetung/)
 - [Photovoltaik und Wärmepumpe: wie gut passen sie zusammen?](https://bhd-energie.de/ratgeber/photovoltaik-waermepumpe-kombinieren/)
@@ -44,7 +44,7 @@
 ## Kernaussagen je Seite
 Stand jeweils in Klammern. Alle Angaben ohne Gewähr.
 
-### [Photovoltaik fürs Eigenheim: Kosten & Förderung](https://bhd-energie.de/photovoltaik/) (27.10.2026)
+### [Photovoltaik Einfamilienhaus: Kosten, Größe, Förderung](https://bhd-energie.de/photovoltaik/) (27.10.2026)
 - Seit dem 1. Januar 2023 fällt auf Kauf und Montage einer Solaranlage am Wohnhaus keine Umsatzsteuer an (§ 12 Abs. 3 UStG). Die Regel ist unbefristet.
 - Als Faustregel gilt rund 1 kWp Leistung je 1.000 kWh Jahresverbrauch. Mit Wärmepumpe oder E-Auto darf die Anlage größer sein.
 - In unserem Rechenbeispiel (10 kWp, 8 kWh Speicher, 19.500 €) bringt die Anlage rund 1.347 € im Jahr und hat sich nach etwa 14,5 Jahren bezahlt gemacht.
@@ -59,12 +59,12 @@ Stand jeweils in Klammern. Alle Angaben ohne Gewähr.
 - Die KfW bezuschusst den Einbau mit 30 % Grundförderung plus Boni, zusammen höchstens 70 oder 80 % von 28.000 €. Das sind bis zu 22.400 €.
 - Der Förderantrag muss vor der Auftragserteilung gestellt werden. Üblich ist ein Vertrag mit aufschiebender Bedingung.
 
-### [Was kostet PV, Speicher & Wärmepumpe? Preise](https://bhd-energie.de/kosten/) (27.10.2026)
+### [Was kostet eine Photovoltaikanlage oder Wärmepumpe?](https://bhd-energie.de/kosten/) (27.10.2026)
 - Eine Solaranlage mit 10 kWp kostet schlüsselfertig etwa 12.500 bis 16.000 €, mit Speicher 17.000 bis 21.000 €. Umsatzsteuer fällt dabei nicht an.
 - Eine Luft-Wasser-Wärmepumpe im Einfamilienhaus kostet als komplette Umstellung typischerweise 22.000 bis 35.000 €.
 - Beispiel: Bei 28.000 € Investition und Tausch einer Ölheizung zahlt die KfW 46 %, also 12.880 €. Der Eigenanteil liegt dann bei 15.120 €.
 
-### [Photovoltaik & Wärmepumpe Berlin: Pflicht & Förderung](https://bhd-energie.de/photovoltaik-waermepumpe-berlin/) (27.10.2026)
+### [PV & Wärmepumpe Berlin: Förderung, SolarPLUS, Pflicht](https://bhd-energie.de/photovoltaik-waermepumpe-berlin/) (27.10.2026)
 - Das Berliner Solargesetz verlangt bei Neubau und wesentlicher Dachsanierung eine Solaranlage. Bei Häusern mit höchstens zwei Wohnungen genügen 2 kW.
 - Das Landesprogramm SolarPLUS zahlt Zuschüsse für Stromspeicher (bis 4.750 €), Zählerschrank (750 €) und denkmalgerechte Anlagen (bis 5.700 €).
 - Ein eigenes Berliner Programm für Wärmepumpen gibt es derzeit nicht. Es gilt der KfW-Zuschuss des Bundes.
@@ -79,7 +79,7 @@ Stand jeweils in Klammern. Alle Angaben ohne Gewähr.
 - Am selben Tag sinken die förderfähigen Höchstkosten von 28.000 auf 27.250 €, danach alle sechs Monate um weitere 750 €.
 - Maßgeblich ist das Datum der Antragstellung. Wer eine Ölheizung ersetzt, bekommt bei einem Antrag ab Februar 2027 rund 1.435 € weniger.
 
-### [Solaranlage im Marktstammdatenregister anmelden](https://bhd-energie.de/photovoltaik-anmelden-marktstammdatenregister/) (27.10.2026)
+### [Solaranlage anmelden: Marktstammdatenregister & Frist](https://bhd-energie.de/photovoltaik-anmelden-marktstammdatenregister/) (27.10.2026)
 - Jede Solaranlage, auch ein Balkonkraftwerk, muss innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister eingetragen werden. Zuständig ist der Betreiber, die Eintragung ist kostenlos.
 - Fehlt der Eintrag, hält der Netzbetreiber die Einspeisevergütung zurück.
 - Eine Sanktionszahlung von 10 € je kW und Monat entsteht erst, wenn zusätzlich die EEG-Jahresmeldung bis 28. Februar fehlt. Wer beides nachholt, zahlt 80 % weniger.
@@ -89,7 +89,7 @@ Stand jeweils in Klammern. Alle Angaben ohne Gewähr.
 - Für ein Einfamilienhaus reichen meist 11 kW. Damit ist ein Auto über Nacht voll.
 - Neue Wallboxen über 4,2 kW sind nach § 14a EnWG steuerbar. Dafür sinkt das Netzentgelt, bei der Stromnetz Berlin 2026 pauschal um 146,58 € im Jahr. Einen Zuschuss für die private Wallbox gibt es 2026 nicht.
 
-### [Photovoltaik & Wärmepumpe Potsdam: was hier gilt](https://bhd-energie.de/photovoltaik-waermepumpe-potsdam/) (27.10.2026)
+### [Photovoltaik & Wärmepumpe Potsdam: Förderung & Regeln](https://bhd-energie.de/photovoltaik-waermepumpe-potsdam/) (27.10.2026)
 - Das Potsdamer Klimaschutzförderprogramm sieht unter anderem 2.000 € für eine Wärmepumpe und 200 € je kWp Photovoltaik vor, höchstens 1.200 €. Derzeit nimmt die Stadt aber keine Anträge an.
 - In den historischen Stadtkernen, den Vorstädten und am Welterbe braucht eine Solaranlage oft eine Erlaubnis.
 - Netzbetreiber ist die Netzgesellschaft Potsdam. Seit Juni 2026 gibt es einen beschlossenen Wärmeplan mit Fernwärme-Vorranggebieten.
@@ -114,7 +114,7 @@ Stand jeweils in Klammern. Alle Angaben ohne Gewähr.
 - Selbst verbrauchter Strom spart rund 35 Cent je kWh. Eingespeister Strom bringt bei Anlagen bis 10 kWp rund 7,7 Cent.
 - Im Beispiel (10 kWp, 8 kWh Speicher, 19.500 €) liegt der Vorteil bei rund 1.347 € im Jahr. Die Anlage hat sich nach etwa 14,5 Jahren bezahlt gemacht.
 
-### [Wärmepumpe im Altbau: geht das? | BHD Ratgeber](https://bhd-energie.de/ratgeber/waermepumpe-altbau/) (27.10.2026)
+### [Wärmepumpe im Altbau: ist das möglich? | BHD Ratgeber](https://bhd-energie.de/ratgeber/waermepumpe-altbau/) (27.10.2026)
 - Meistens ja. Entscheidend ist die Vorlauftemperatur, nicht das Baujahr und nicht die Dämmung.
 - Selbsttest: An einem kalten Tag den Vorlauf am Kessel auf 50 und dann auf 45 °C senken. Bleibt es in allen Räumen warm, ist das Haus in der Regel geeignet.
 - Größere Heizkörper in wenigen Räumen (400 bis 900 € je Stück) und ein hydraulischer Abgleich (700 bis 1.500 €) bringen meist mehr als eine Dämmung.
@@ -138,6 +138,11 @@ Stand jeweils in Klammern. Alle Angaben ohne Gewähr.
 - Ein Speicher lässt sich fast immer nachrüsten, entweder am Hybridwechselrichter (DC) oder mit eigenem Batteriewechselrichter (AC).
 - Auch für nachgerüstete Speicher gilt 0 % Umsatzsteuer, wenn die Anlage höchstens 30 kWp hat (§ 12 Abs. 3 UStG).
 - Der Speicher ist im Marktstammdatenregister eine eigene Einheit und muss innerhalb eines Monats nach Inbetriebnahme eingetragen werden.
+
+### [Wärmepumpe berechnen: Größe in kW & Förderung](https://bhd-energie.de/waermepumpen-rechner/) (27.10.2026)
+- Die Größe einer Wärmepumpe richtet sich nach der Heizlast. Als Richtwert gelten 30 Watt je m² im Neubau bis 120 Watt je m² im unsanierten Altbau.
+- Ein Haus mit 120 m² aus den Jahren 1984 bis 1994 hat damit rund 9 kW Heizlast. Mit Warmwasser passt eine Wärmepumpe mit etwa 10 kW.
+- Die KfW fördert mit 30 % Grundförderung plus Boni, höchstens 70 oder 80 % von 28.000 €. Der Rechner ermittelt Größe und Zuschuss aus Ihren Angaben, ohne Anmeldung.
 
 ## Volltext
 Alle Inhaltsseiten als reiner Text: https://bhd-energie.de/llms-full.txt

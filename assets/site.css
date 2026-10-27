@@ -1704,4 +1704,9 @@ picture{display:contents}
 .quellen ul{margin:0;padding-left:1.15em;font-size:.92rem}
 .quellen li{margin:0 0 4px}
 .quellen a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.ztab-kw{min-width:620px}
+.ztab-kw th,.ztab-kw td{text-align:right;padding-right:0;padding-left:14px}
+.ztab-kw th:first-child,.ztab-kw td:first-child,.ztab-kw tbody th{text-align:left;padding-left:0}
+.ztab-kw tbody th{padding:15px 0;border-bottom:1px solid var(--line-2);font-weight:700}
+.ztab-kw td:last-child{font-weight:400}
 @media (max-width:600px){.kurz-box{padding:16px 16px}}
