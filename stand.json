@@ -1,0 +1,134 @@
+{
+  "home": {
+    "hash": "7431e46c9a8073200f45d831f507aa95",
+    "datum": "2026-10-27"
+  },
+  "check": {
+    "hash": "a8e8cec078ca0d36b9bcb01e8c8f56dd",
+    "datum": "2026-10-27"
+  },
+  "bestand": {
+    "hash": "23e187dd8286f105be7f718b88b4dd54",
+    "datum": "2026-10-27"
+  },
+  "termin": {
+    "hash": "0e597427bc7fa8ed466e1573da9fdcca",
+    "datum": "2026-10-27"
+  },
+  "ref": {
+    "hash": "3d189aa001717ec97bae9d13c68fa6cd",
+    "datum": "2026-10-27"
+  },
+  "about": {
+    "hash": "05d6cc409cbb7f4bbe60a6886a457920",
+    "datum": "2026-10-27"
+  },
+  "pv": {
+    "hash": "bbe2d03ebe5059e42b956a182a3da281",
+    "datum": "2026-10-27"
+  },
+  "speicher": {
+    "hash": "daeb738a828dee1128d42cbc306ca45e",
+    "datum": "2026-10-27"
+  },
+  "wp": {
+    "hash": "369ad117199a3214cc08c803e787b859",
+    "datum": "2026-10-27"
+  },
+  "kosten": {
+    "hash": "beb0f8e4c427795d4ba665146fbb0fef",
+    "datum": "2026-10-27"
+  },
+  "berlin": {
+    "hash": "e427d5c9e057df443afee2cc8ef075e6",
+    "datum": "2026-10-27"
+  },
+  "brandenburg": {
+    "hash": "57d2493253f01b33bf0a67b9e1125599",
+    "datum": "2026-10-27"
+  },
+  "foerderung2027": {
+    "hash": "4590b5464f0a594a73a967494f9fd54e",
+    "datum": "2026-10-27"
+  },
+  "mastr": {
+    "hash": "47d70ab71893f85f47e999d8c17697ae",
+    "datum": "2026-10-27"
+  },
+  "wallbox": {
+    "hash": "cda6a070dc2ca2c0413b9b8d54a5a3af",
+    "datum": "2026-10-27"
+  },
+  "potsdam": {
+    "hash": "e35c36f6980d0a96b01cc31f9f589c41",
+    "datum": "2026-10-27"
+  },
+  "falkensee": {
+    "hash": "03f703c3afdf2ac33b9ea446e1f267a2",
+    "datum": "2026-10-27"
+  },
+  "bernau": {
+    "hash": "93ec093c665a201f00991d7a80c65c6b",
+    "datum": "2026-10-27"
+  },
+  "oranienburg": {
+    "hash": "52f270b81289d9c7a9dbe376c27a0db4",
+    "datum": "2026-10-27"
+  },
+  "ratgeber": {
+    "hash": "45a56162d7ee682459d166d73829e563",
+    "datum": "2026-10-27"
+  },
+  "rat-pv": {
+    "hash": "b5d5a66132956a605d26fe5d245e529b",
+    "datum": "2026-10-27"
+  },
+  "rat-wp": {
+    "hash": "4eb30a8f2eaa037d91eac21c5d200572",
+    "datum": "2026-10-27"
+  },
+  "rat-check": {
+    "hash": "ab0d079a4b80c1b8f6e81d98338558d3",
+    "datum": "2026-10-27"
+  },
+  "rat-eeg": {
+    "hash": "4d0a7ee083d486a33f68ea484748e80d",
+    "datum": "2026-10-27"
+  },
+  "rat-pvwp": {
+    "hash": "1677cd47782d37d4bea003b3f76ff669",
+    "datum": "2026-10-27"
+  },
+  "rat-speicher": {
+    "hash": "124820dc9830ee2b9a5199126363577b",
+    "datum": "2026-10-27"
+  },
+  "rechner": {
+    "hash": "76c256e63a7b8274ffa20f2f98282926",
+    "datum": "2026-10-27"
+  },
+  "rendite": {
+    "hash": "187b4bb7eeaf5c415a8608b7633137c8",
+    "datum": "2026-10-27"
+  },
+  "ask": {
+    "hash": "937c6011c71f3aea8f0ed017a619b760",
+    "datum": "2026-10-27"
+  },
+  "kontakt": {
+    "hash": "55807b41b7e6aa2acc6ea1bddfefdab9",
+    "datum": "2026-10-27"
+  },
+  "partner": {
+    "hash": "303207ba2e7d78ee0eb958b87877656c",
+    "datum": "2026-10-27"
+  },
+  "impressum": {
+    "hash": "ad7ce315fb1292fcfe1307c45e14361d",
+    "datum": "2026-10-27"
+  },
+  "datenschutz": {
+    "hash": "5451e4fd2336aff9d4fab95f93ae7db6",
+    "datum": "2026-10-27"
+  }
+}

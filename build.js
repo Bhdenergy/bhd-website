@@ -15,6 +15,8 @@ const path = require('path');
 /* Häufige Fragen für die Seiten, die keinen eigenen Block in src/site.html
  * haben. Das Schema entsteht davon unabhängig aus dem sichtbaren HTML. */
 const { faqHtml } = require('./faq');
+/* Kurzantworten und Quellen fuer KI-Suchen (GEO), siehe geo.js. */
+const { KURZ, QUELLEN, BELEG_HOSTS, GEO_CSS } = require('./geo');
 
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src', 'site.html');
@@ -87,6 +89,23 @@ const OPENING = {
 
 /* Datum des letzten inhaltlichen Durchgangs – fuer dateModified im JSON-LD. */
 const REVIEWED = new Date().toISOString().slice(0, 10);
+
+/* Echtes Aenderungsdatum je Seite. Vorher bekam jede Seite bei jedem Build
+ * das heutige Datum, auch ohne inhaltliche Aenderung. KI-Suchen und Google
+ * gewichten Aktualitaet, ein Datum, das sich ohne Grund bewegt, ist aber
+ * wertlos. stand.json merkt sich je Seite einen Hash des Inhalts; das Datum
+ * springt nur, wenn sich der Inhalt wirklich aendert. Datei mit committen. */
+const STAND_FILE = path.join(ROOT, 'stand.json');
+const STAND = fs.existsSync(STAND_FILE) ? JSON.parse(fs.readFileSync(STAND_FILE, 'utf8')) : {};
+function standFuer(key, inhalt) {
+  const hash = require('crypto').createHash('md5').update(inhalt).digest('hex');
+  if (!STAND[key] || STAND[key].hash !== hash) STAND[key] = { hash, datum: REVIEWED };
+  return STAND[key].datum;
+}
+function datumDe(iso) {
+  const [j, m, t] = iso.split('-');
+  return t + '.' + m + '.' + j;
+}
 
 /* Zeilenenden vereinheitlichen – die Quelldatei kommt aus Windows (CRLF). */
 const src = fs.readFileSync(SRC, 'utf8').replace(/\r\n/g, '\n');
@@ -685,7 +704,11 @@ function jsonLd(page, viewHtml) {
       about: { '@id': SITE + '/#org' },
       /* Damit Google und KI-Systeme erkennen, wie aktuell der Stand ist –
        * bei Foerdersaetzen, die sich 2027 aendern, ist das entscheidend. */
-      dateModified: REVIEWED
+      dateModified: page._stand || REVIEWED,
+      /* GEO: dieselben Kernsaetze wie im sichtbaren Kasten und die
+       * amtlichen Belege, die auf der Seite verlinkt sind. */
+      ...(KURZ[page.key] ? { abstract: KURZ[page.key].join(' ') } : {}),
+      ...(belege(viewHtml).length ? { citation: belege(viewHtml) } : {})
     }
   ];
 
@@ -740,7 +763,7 @@ function jsonLd(page, viewHtml) {
       description: page.desc,
       inLanguage: 'de-DE',
       datePublished: page.article.pub,
-      dateModified: REVIEWED,
+      dateModified: page._stand || REVIEWED,
       articleSection: page.article.section,
       author: { '@id': SITE + '/#kuersat' },
       publisher: { '@id': SITE + '/#org' },
@@ -890,6 +913,49 @@ function jsonLd(page, viewHtml) {
 function faqEinsetzen(html, key) {
   if (html.indexOf('<!--FAQ-->') < 0) return html;
   return html.split('<!--FAQ-->').join(faqHtml(key));
+}
+
+/* GEO: Kasten "Das Wichtigste in Kuerze" direkt unter dem Seitenkopf.
+ * __STAND__ wird erst nach dem Inhalts-Hash ersetzt (siehe buildPage). */
+function kurzHtml(key) {
+  return '\n  <section class="kurz" aria-labelledby="kurz-' + key + '"><div class="wrap"><div class="kurz-box">\n' +
+    '    <h2 id="kurz-' + key + '">Das Wichtigste in Kürze</h2>\n' +
+    '    <ul>\n' + KURZ[key].map(s => '      <li>' + esc(s) + '</li>\n').join('') + '    </ul>\n' +
+    '    <p class="kurz-stand">Zuletzt aktualisiert am <time datetime="__STAND_ISO__">__STAND__</time>. Alle Angaben ohne Gewähr.</p>\n' +
+    '  </div></div></section>\n';
+}
+function kurzEinsetzen(html, key) {
+  if (!KURZ[key]) return html;
+  const i = html.indexOf('</header>');
+  if (i < 0) throw new Error('KURZ fuer "' + key + '", aber kein </header> in der Ansicht');
+  return html.slice(0, i + 9) + kurzHtml(key) + html.slice(i + 9);
+}
+
+/* GEO: Quellenliste fuer Seiten, die im Text noch keine Belege verlinken.
+ * Steht vor dem FAQ-Block, sonst vor dem Rueckruf-Formular. */
+function quellenEinsetzen(html, key) {
+  if (!QUELLEN[key]) return html;
+  const block = '\n  <section class="quellen"><div class="wrap"><div>\n' +
+    '    <h2>Quellen</h2>\n    <ul>\n' +
+    QUELLEN[key].map(q => '      <li><a href="' + q[1] + '" target="_blank" rel="noopener">' + esc(q[0]) + '</a></li>\n').join('') +
+    '    </ul>\n  </div></div></section>\n';
+  for (const marke of ['<!--FAQ-->', '<!--KURZANFRAGE-->']) {
+    const i = html.indexOf(marke);
+    if (i >= 0) return html.slice(0, i) + block + html.slice(i);
+  }
+  return html + block;
+}
+
+/* Alle Links auf amtliche und wissenschaftliche Quellen einer Seite,
+ * fuer citation im JSON-LD. */
+function belege(html) {
+  const out = [];
+  for (const m of html.matchAll(/href="(https?:\/\/[^"]+)"/g)) {
+    let host;
+    try { host = new URL(m[1].replace(/&amp;/g, '&')).hostname; } catch (e) { continue; }
+    if (BELEG_HOSTS.test(host) && !out.includes(m[1])) out.push(m[1]);
+  }
+  return out;
 }
 
 /* ------------------------------------------------ Kurzanfrage / Kontakt
@@ -1043,7 +1109,10 @@ function buildPage(page) {
    * FAQ-Abschnitt), DANACH fixLinks. Die eingesetzten Bausteine enthalten
    * selbst data-nav-Verweise - laeuft fixLinks vorher, bleiben deren Links
    * ohne Ziel. Genau das war beim FAQ-Knopf "Termin vereinbaren" passiert. */
-  const roh = kurzanfrageEinsetzen(faqEinsetzen(calUmschalten(VIEWS[page.key]), page.key), page.key);
+  const rohOhneStand = kurzanfrageEinsetzen(faqEinsetzen(quellenEinsetzen(kurzEinsetzen(
+    calUmschalten(VIEWS[page.key]), page.key), page.key), page.key), page.key);
+  page._stand = standFuer(page.key, rohOhneStand);
+  const roh = rohOhneStand.replace('__STAND_ISO__', page._stand).replace('__STAND__', datumDe(page._stand));
 
   const view = webpPicture(fixLinks(roh)
     // Der Angebots-Check springt nach dem Upload auf seine eigene Seite zurueck.
@@ -1119,7 +1188,7 @@ ${QUICK_OUT}
 const CSS_OUT = STYLE_MAIN.replace(/^<style>\n?/, '').replace(/<\/style>$/, '') +
   '\n/* <picture> soll das Layout nicht beeinflussen – die bestehenden\n' +
   '   Regeln greifen dadurch weiterhin direkt auf das <img>. */\n' +
-  'picture{display:contents}\n';
+  'picture{display:contents}\n' + GEO_CSS;
 const JS_OUT = SCRIPT;
 const ASSET_V = require('crypto').createHash('md5')
   .update(CSS_OUT + JS_OUT).digest('hex').slice(0, 8);
@@ -1162,8 +1231,8 @@ const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' +
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n' +
   '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' +
   PAGES.map(p => {
-    const datei = path.join(ROOT, p.dir || '', 'index.html');
-    const lastmod = fs.statSync(datei).mtime.toISOString().slice(0, 10);
+    /* lastmod aus stand.json: aendert sich nur bei echter Inhaltsaenderung. */
+    const lastmod = p._stand;
     return '  <url>\n' +
       '    <loc>' + SITE + URL_OF[p.key] + '</loc>\n' +
       '    <lastmod>' + lastmod + '</lastmod>\n' +
@@ -1176,8 +1245,19 @@ const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' +
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap, 'utf8');
 
 /* robots.txt */
+/* Die KI-Crawler werden ausdruecklich zugelassen. "User-agent: *" reicht
+ * technisch, aber einige Betreiber werten nur eigene Gruppen aus, und so
+ * ist die Absicht eindeutig. Suche/Antwort (OAI-SearchBot, ChatGPT-User,
+ * Claude-SearchBot, Perplexity) und Training (GPTBot, ClaudeBot,
+ * Google-Extended, Applebot-Extended) sind beide erlaubt: Wer zitiert
+ * werden will, muss auch gelernt werden duerfen. */
+const KI_BOTS = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot',
+  'Claude-User', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended',
+  'Bingbot', 'meta-externalagent', 'MistralAI-User', 'CCBot'];
 fs.writeFileSync(path.join(ROOT, 'robots.txt'),
-  'User-agent: *\nAllow: /\n\nSitemap: ' + SITE + '/sitemap.xml\n', 'utf8');
+  'User-agent: *\nAllow: /\n\n' +
+  KI_BOTS.map(b => 'User-agent: ' + b).join('\n') + '\nAllow: /\n\n' +
+  'Sitemap: ' + SITE + '/sitemap.xml\n', 'utf8');
 
 /* ---------------------------------------------- Dateien fuer Suche und KI */
 
@@ -1237,10 +1317,48 @@ ${beitraegeTxt}
 - [Kontakt](${SITE}${URL_OF.kontakt})
 - [Für Fachbetriebe](${SITE}${URL_OF.partner})
 
+## Kernaussagen je Seite
+Stand jeweils in Klammern. Alle Angaben ohne Gewähr.
+
+${PAGES.filter(p => KURZ[p.key]).map(p =>
+  '### [' + p.title.replace(/ \| BHD$/, '') + '](' + SITE + URL_OF[p.key] + ') (' + datumDe(p._stand) + ')\n' +
+  KURZ[p.key].map(s => '- ' + s).join('\n')).join('\n\n')}
+
+## Volltext
+Alle Inhaltsseiten als reiner Text: ${SITE}/llms-full.txt
+
 ## Kontakt
 Telefon +49 163 4440392 · ${MAIL}
 Google Maps: ${GOOGLE_MAPS}
 `, 'utf8');
+
+/* llms-full.txt – der Inhalt aller Themen- und Ratgeberseiten als Klartext.
+ * KI-Systeme muessen so kein Layout, Menue und Formular herausrechnen. */
+const OHNE_VOLLTEXT = ['impressum', 'datenschutz', 'anfragen', 'termin', 'kontakt', 'ask'];
+function alsText(html) {
+  let m = (html.match(/<main[\s\S]*?<\/main>/) || [''])[0]
+    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<form[\s\S]*?<\/form>|<svg[\s\S]*?<\/svg>|<nav[\s\S]*?<\/nav>/g, '')
+    .replace(/<div class="breadcrumb"[\s\S]*?<\/div>/g, '')
+    .replace(/<a[^>]*class="btn[^"]*"[^>]*>[\s\S]*?<\/a>/g, '');
+  m = m.replace(/<h1[^>]*>/g, '\n# ').replace(/<h2[^>]*>/g, '\n\n## ').replace(/<h3[^>]*>/g, '\n\n### ')
+    .replace(/<li[^>]*>/g, '\n- ').replace(/<\/(p|h[1-6]|li|tr)>/g, '\n').replace(/<br\s*\/?>/g, '\n')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/[ \t]+/g, ' ').replace(/ *\n */g, '\n').replace(/\n{3,}/g, '\n\n')
+    .replace(/ ([.,;:!?])/g, '$1').replace(/(\n- [^\n]*)\n\n(?=- )/g, '$1\n').replace(/(\n- [^\n]*)\n\n(?=- )/g, '$1\n');
+  return m.trim();
+}
+fs.writeFileSync(path.join(ROOT, 'llms-full.txt'),
+  '# BHD – Beratung Heimenergie Deutschland: Inhalte als Klartext\n\n' +
+  '> Betreiber: Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin. ' +
+  'Unabhängige Beratung zu Photovoltaik, Stromspeicher und Wärmepumpe, Schwerpunkt Berlin und Brandenburg, Beratung auch bundesweit. ' +
+  'Kurzfassung: ' + SITE + '/llms.txt\n\n' +
+  PAGES.filter(p => !OHNE_VOLLTEXT.includes(p.key)).map(p => {
+    const html = fs.readFileSync(path.join(ROOT, p.dir || '', 'index.html'), 'utf8');
+    return '---\n\nQuelle: ' + SITE + URL_OF[p.key] + '\nZuletzt aktualisiert: ' + datumDe(p._stand) + '\n\n' + alsText(html);
+  }).join('\n\n') + '\n', 'utf8');
+
+fs.writeFileSync(STAND_FILE, JSON.stringify(STAND, null, 2) + '\n', 'utf8');
 
 console.log('Erzeugt:');
 written.forEach(w => console.log('  ' + w[0].padEnd(18) + w[1]));

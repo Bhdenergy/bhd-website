@@ -41,6 +41,107 @@
 - [Kontakt](https://bhd-energie.de/kontakt/)
 - [Für Fachbetriebe](https://bhd-energie.de/partner-werden/)
 
+## Kernaussagen je Seite
+Stand jeweils in Klammern. Alle Angaben ohne Gewähr.
+
+### [Photovoltaik fürs Eigenheim: Kosten & Förderung](https://bhd-energie.de/photovoltaik/) (27.10.2026)
+- Seit dem 1. Januar 2023 fällt auf Kauf und Montage einer Solaranlage am Wohnhaus keine Umsatzsteuer an (§ 12 Abs. 3 UStG). Die Regel ist unbefristet.
+- Als Faustregel gilt rund 1 kWp Leistung je 1.000 kWh Jahresverbrauch. Mit Wärmepumpe oder E-Auto darf die Anlage größer sein.
+- In unserem Rechenbeispiel (10 kWp, 8 kWh Speicher, 19.500 €) bringt die Anlage rund 1.347 € im Jahr und hat sich nach etwa 14,5 Jahren bezahlt gemacht.
+
+### [Stromspeicher: Größe, Technik und Preise](https://bhd-energie.de/stromspeicher/) (27.10.2026)
+- Ohne Speicher nutzt ein Haushalt etwa ein Drittel seines Solarstroms selbst, mit Speicher 60 bis 80 Prozent.
+- Richtwert für die Größe ist etwa 1 kWh Speicher je 1.000 kWh Jahresverbrauch. Im Einfamilienhaus mit vier Personen sind 10 bis 12 kWh üblich.
+- Ohne Wärmepumpe oder E-Auto trägt sich ein Speicher oft nicht sicher, im Beispiel erst nach rund 18 Jahren. Bei 8.000 kWh Verbrauch sind es etwa zehn Jahre.
+
+### [Wärmepumpe: Eignung, Ablauf & KfW-Förderung](https://bhd-energie.de/waermepumpe/) (27.10.2026)
+- Eine Wärmepumpe macht aus 1 kWh Strom 3 bis 4 kWh Wärme. Wie viel genau, hängt an der Vorlauftemperatur: bei 35 °C rund 4,3, bei 55 °C etwa 3,0.
+- Die KfW bezuschusst den Einbau mit 30 % Grundförderung plus Boni, zusammen höchstens 70 oder 80 % von 28.000 €. Das sind bis zu 22.400 €.
+- Der Förderantrag muss vor der Auftragserteilung gestellt werden. Üblich ist ein Vertrag mit aufschiebender Bedingung.
+
+### [Was kostet PV, Speicher & Wärmepumpe? Preise](https://bhd-energie.de/kosten/) (27.10.2026)
+- Eine Solaranlage mit 10 kWp kostet schlüsselfertig etwa 12.500 bis 16.000 €, mit Speicher 17.000 bis 21.000 €. Umsatzsteuer fällt dabei nicht an.
+- Eine Luft-Wasser-Wärmepumpe im Einfamilienhaus kostet als komplette Umstellung typischerweise 22.000 bis 35.000 €.
+- Beispiel: Bei 28.000 € Investition und Tausch einer Ölheizung zahlt die KfW 46 %, also 12.880 €. Der Eigenanteil liegt dann bei 15.120 €.
+
+### [Photovoltaik & Wärmepumpe Berlin: Pflicht & Förderung](https://bhd-energie.de/photovoltaik-waermepumpe-berlin/) (27.10.2026)
+- Das Berliner Solargesetz verlangt bei Neubau und wesentlicher Dachsanierung eine Solaranlage. Bei Häusern mit höchstens zwei Wohnungen genügen 2 kW.
+- Das Landesprogramm SolarPLUS zahlt Zuschüsse für Stromspeicher (bis 4.750 €), Zählerschrank (750 €) und denkmalgerechte Anlagen (bis 5.700 €).
+- Ein eigenes Berliner Programm für Wärmepumpen gibt es derzeit nicht. Es gilt der KfW-Zuschuss des Bundes.
+
+### [Photovoltaik & Wärmepumpe Brandenburg: Förderung](https://bhd-energie.de/photovoltaik-waermepumpe-brandenburg/) (27.10.2026)
+- In Brandenburg gibt es keine Solarpflicht, auch nicht bei einer Dachsanierung.
+- Solaranlagen auf Dach und Fassade sind nach § 61 BbgBO verfahrensfrei. Ausnahmen gelten bei Hochhäusern und örtlichen Satzungen.
+- Das Land zahlt keinen Zuschuss für private Aufdachanlagen. Für die Wärmepumpe gilt der KfW-Zuschuss des Bundes.
+
+### [Wärmepumpen-Förderung sinkt 2027: was das kostet](https://bhd-energie.de/waermepumpe-foerderung-2027/) (27.10.2026)
+- Am 1. Februar 2027 sinkt der Klimageschwindigkeitsbonus der KfW von 16 auf 12 %. Danach sinkt er halbjährlich weiter, ab dem 1. August 2028 entfällt er.
+- Am selben Tag sinken die förderfähigen Höchstkosten von 28.000 auf 27.250 €, danach alle sechs Monate um weitere 750 €.
+- Maßgeblich ist das Datum der Antragstellung. Wer eine Ölheizung ersetzt, bekommt bei einem Antrag ab Februar 2027 rund 1.435 € weniger.
+
+### [Solaranlage im Marktstammdatenregister anmelden](https://bhd-energie.de/photovoltaik-anmelden-marktstammdatenregister/) (27.10.2026)
+- Jede Solaranlage, auch ein Balkonkraftwerk, muss innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister eingetragen werden. Zuständig ist der Betreiber, die Eintragung ist kostenlos.
+- Fehlt der Eintrag, hält der Netzbetreiber die Einspeisevergütung zurück.
+- Eine Sanktionszahlung von 10 € je kW und Monat entsteht erst, wenn zusätzlich die EEG-Jahresmeldung bis 28. Februar fehlt. Wer beides nachholt, zahlt 80 % weniger.
+
+### [Wallbox für das Eigenheim: Anmeldung, § 14a, Kosten](https://bhd-energie.de/wallbox/) (27.10.2026)
+- Jede Wallbox muss vor der Inbetriebnahme beim Netzbetreiber angemeldet werden. Über 12 kVA braucht sie zusätzlich seine Zustimmung (§ 19 NAV).
+- Für ein Einfamilienhaus reichen meist 11 kW. Damit ist ein Auto über Nacht voll.
+- Neue Wallboxen über 4,2 kW sind nach § 14a EnWG steuerbar. Dafür sinkt das Netzentgelt, bei der Stromnetz Berlin 2026 pauschal um 146,58 € im Jahr. Einen Zuschuss für die private Wallbox gibt es 2026 nicht.
+
+### [Photovoltaik & Wärmepumpe Potsdam: was hier gilt](https://bhd-energie.de/photovoltaik-waermepumpe-potsdam/) (27.10.2026)
+- Das Potsdamer Klimaschutzförderprogramm sieht unter anderem 2.000 € für eine Wärmepumpe und 200 € je kWp Photovoltaik vor, höchstens 1.200 €. Derzeit nimmt die Stadt aber keine Anträge an.
+- In den historischen Stadtkernen, den Vorstädten und am Welterbe braucht eine Solaranlage oft eine Erlaubnis.
+- Netzbetreiber ist die Netzgesellschaft Potsdam. Seit Juni 2026 gibt es einen beschlossenen Wärmeplan mit Fernwärme-Vorranggebieten.
+
+### [Photovoltaik & Wärmepumpe Falkensee: was hier gilt](https://bhd-energie.de/photovoltaik-waermepumpe-falkensee/) (27.10.2026)
+- Für rund 12.000 der etwa 15.700 beheizten Gebäude in Falkensee sieht der Wärmeplan eine eigene Heizung im Haus vor, kein Wärmenetz.
+- Netzbetreiber ist E.DIS Netz. Eine Wärmepumpe muss dort unabhängig von ihrer Leistung angemeldet werden.
+- Die Stadt hat kein eigenes Förderprogramm. Im Angerdorf Falkenhagen schließt eine Gestaltungssatzung Kollektoren auf Dächern grundsätzlich aus.
+
+### [Photovoltaik & Wärmepumpe Bernau: was hier gilt](https://bhd-energie.de/photovoltaik-waermepumpe-bernau/) (27.10.2026)
+- Selbst genutzte Wohnhäuser mit bis zu zwei Wohnungen sind in Bernau vom Fernwärme-Anschlusszwang befreit (§ 6 Fernwärmesatzung). Eine Wärmepumpe ist dort also möglich.
+- Im Stadtgebiet betreiben die Stadtwerke Bernau das Stromnetz.
+- In der Altstadt gelten Denkmal- und Gestaltungssatzung. In Birkholz darf eine sichtbare Anlage höchstens ein Viertel des Dachs belegen. Eine Stadtförderung gibt es nicht.
+
+### [Photovoltaik & Wärmepumpe Oranienburg: was hier gilt](https://bhd-energie.de/photovoltaik-waermepumpe-oranienburg/) (27.10.2026)
+- Weite Teile von Oranienburg gelten als Kampfmittelverdachtsfläche. Vor den Erdarbeiten für eine Wärmepumpe sollte das geklärt sein.
+- Kernstadt und Sachsenhausen gehören zum Netz der Stadtwerke Oranienburg, die übrigen Ortsteile zu E.DIS Netz.
+- Im Gebiet der Erhaltungssatzung Innenstadt braucht auch eine sichtbare Solaranlage eine Genehmigung.
+
+### [Lohnt sich Photovoltaik 2026 noch? | BHD Ratgeber](https://bhd-energie.de/ratgeber/photovoltaik-lohnt-sich/) (27.10.2026)
+- In den meisten Fällen ja. Das Geld bringt heute der vermiedene Netzbezug, nicht mehr die Einspeisung.
+- Selbst verbrauchter Strom spart rund 35 Cent je kWh. Eingespeister Strom bringt bei Anlagen bis 10 kWp rund 7,7 Cent.
+- Im Beispiel (10 kWp, 8 kWh Speicher, 19.500 €) liegt der Vorteil bei rund 1.347 € im Jahr. Die Anlage hat sich nach etwa 14,5 Jahren bezahlt gemacht.
+
+### [Wärmepumpe im Altbau: geht das? | BHD Ratgeber](https://bhd-energie.de/ratgeber/waermepumpe-altbau/) (27.10.2026)
+- Meistens ja. Entscheidend ist die Vorlauftemperatur, nicht das Baujahr und nicht die Dämmung.
+- Selbsttest: An einem kalten Tag den Vorlauf am Kessel auf 50 und dann auf 45 °C senken. Bleibt es in allen Räumen warm, ist das Haus in der Regel geeignet.
+- Größere Heizkörper in wenigen Räumen (400 bis 900 € je Stück) und ein hydraulischer Abgleich (700 bis 1.500 €) bringen meist mehr als eine Dämmung.
+
+### [PV-Angebot prüfen: 12-Punkte-Checkliste | BHD Ratgeber](https://bhd-energie.de/ratgeber/angebot-pruefen/) (27.10.2026)
+- In jedes Angebot gehören alle Komponenten mit Hersteller und Typ, getrennt ausgewiesene Garantien und der Zählerschrank als eigene Position.
+- Übliche Anzahlungen liegen bei 20 bis 30 %. Wer 80 % vor Baubeginn verlangt, verlagert sein Risiko auf Sie.
+- Bei Photovoltaik sind 900 bis 1.050 kWh je kWp realistisch. Bei einer Wärmepumpe muss die Heizlast genannt sein und wie sie ermittelt wurde.
+
+### [Einspeisevergütung 2026 und was ab 2027 kommt | BHD Ratgeber](https://bhd-energie.de/ratgeber/einspeiseverguetung/) (27.10.2026)
+- Für Anlagen bis 10 kW mit Inbetriebnahme vom 1. August bis 31. Dezember 2026 zahlt der Netzbetreiber 7,70 ct je kWh bei Teileinspeisung und 12,22 ct bei Volleinspeisung, 20 Jahre lang.
+- Der Satz bei Inbetriebnahme bleibt für die ganze Laufzeit fest.
+- Für neue Anlagen ab 2027 sieht ein Gesetzentwurf (Drucksache 21/7867) statt fester Vergütung eine Übergangszahlung von rund 5,2 ct für etwa drei Jahre vor. Beschlossen ist er noch nicht (Stand Oktober 2026).
+
+### [PV und Wärmepumpe kombinieren: was es bringt | BHD Ratgeber](https://bhd-energie.de/ratgeber/photovoltaik-waermepumpe-kombinieren/) (27.10.2026)
+- In Messungen des Fraunhofer ISE kamen ohne Batterie 13 bis 36 % des Wärmepumpenstroms vom eigenen Dach, mit Batterie 17 bis 49 %.
+- Im Winter sinkt der Solaranteil stark. Die Solaranlage macht die Wärmepumpe nicht stromautark, senkt aber die Stromkosten über das Jahr deutlich.
+- Am meisten bringt es, Solarüberschuss als Wärme zu speichern, etwa über eine höhere Warmwassertemperatur.
+
+### [Stromspeicher nachrüsten: Kosten & Ablauf | BHD Ratgeber](https://bhd-energie.de/ratgeber/stromspeicher-nachruesten/) (27.10.2026)
+- Ein Speicher lässt sich fast immer nachrüsten, entweder am Hybridwechselrichter (DC) oder mit eigenem Batteriewechselrichter (AC).
+- Auch für nachgerüstete Speicher gilt 0 % Umsatzsteuer, wenn die Anlage höchstens 30 kWp hat (§ 12 Abs. 3 UStG).
+- Der Speicher ist im Marktstammdatenregister eine eigene Einheit und muss innerhalb eines Monats nach Inbetriebnahme eingetragen werden.
+
+## Volltext
+Alle Inhaltsseiten als reiner Text: https://bhd-energie.de/llms-full.txt
+
 ## Kontakt
 Telefon +49 163 4440392 · info@bhd-energie.de
 Google Maps: https://www.google.com/maps?cid=17443850458843580917
