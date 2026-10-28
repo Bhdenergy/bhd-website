@@ -20,10 +20,10 @@ const ZIEL = process.argv[2] || 'http://localhost:8099/';
  * Drei Fassungen seit 27.08.2026: auf dem PC liegt das Video full-bleed hinter
  * dem Hero und wurde vorher aus 1280 px auf 1920 px hochgezogen. */
 const ERWARTET = {
-  gross: 'dachfilm3-1920.mp4',   // ab 1400 px Anzeigebreite (mal Pixeldichte)
-  mittel: 'dachfilm3-1280.mp4',  // 1025 bis 1399 px
-  klein: 'dachfilm3-854.mp4',    // Handy-Band unter 1025 px
-  dauer: 10.4,      // zwei Ausschnitte, per Kreuzblende verbunden
+  gross: 'dachfilm4-1920.mp4',   // ab 1400 px Anzeigebreite (mal Pixeldichte)
+  mittel: 'dachfilm4-1280.mp4',  // 1025 bis 1399 px
+  klein: 'dachfilm4-854.mp4',    // Handy-Band unter 1025 px
+  dauer: 7.3,       // zwei Ausschnitte, per Kreuzblende verbunden (erster gekuerzt 29.10.2026)
   toleranz: 0.3
 };
 
