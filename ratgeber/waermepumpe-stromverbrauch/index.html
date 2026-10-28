@@ -1,0 +1,573 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wärmepumpe Stromverbrauch: so rechnen Sie ihn aus | BHD Ratgeber</title>
+<meta name="description" content="Wie viel Strom eine Wärmepumpe im Einfamilienhaus braucht: Rechenweg mit Beispiel, Messwerte des Fraunhofer ISE und günstigeres Netzentgelt nach § 14a EnWG.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Brotherhooddeen UG (haftungsbeschränkt)">
+<meta name="geo.region" content="DE-BE">
+<meta name="geo.placename" content="Berlin">
+<link rel="canonical" href="https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/">
+<meta name="google-site-verification" content="YmJdAGRuu0_isrbFEfEq8GP-UYUhLj1bDpGdXmTraFE">
+<!-- Domain-Umzug: nur die Konstante SITE in build.js aendern, dann "node build.js" -->
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BHD – Beratung Heimenergie Deutschland">
+<meta property="og:title" content="Wärmepumpe Stromverbrauch: so rechnen Sie ihn aus | BHD Ratgeber">
+<meta property="og:description" content="Wie viel Strom eine Wärmepumpe im Einfamilienhaus braucht: Rechenweg mit Beispiel, Messwerte des Fraunhofer ISE und günstigeres Netzentgelt nach § 14a EnWG.">
+<meta property="og:url" content="https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://bhd-energie.de/assets/og-bhd.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BHD – Beratung Heimenergie Deutschland: Photovoltaik und Wärmepumpe, unabhängige Beratung für Hausbesitzer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://bhd-energie.de/assets/og-bhd.png">
+<meta name="theme-color" content="#ffffff">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://bhd-energie.de/#org",
+      "name": "BHD – Beratung Heimenergie Deutschland",
+      "legalName": "Brotherhooddeen UG (haftungsbeschränkt)",
+      "vatID": "DE370268782",
+      "identifier": "HRB 266273 B",
+      "url": "https://bhd-energie.de/",
+      "email": "info@bhd-energie.de",
+      "telephone": "+49 163 4440392",
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Kürşat Yıldırım"
+      },
+      "description": "Unabhängige Beratung für Hausbesitzer zu Photovoltaik, Stromspeicher und Wärmepumpe. Vermittlung geprüfter, regionaler Fachbetriebe. Sitz in Berlin, bundesweit tätig.",
+      "alternateName": [
+        "Beratung Heimenergie Deutschland",
+        "BHD Energie",
+        "BHD"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Prinzenallee 44b",
+        "postalCode": "13359",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.55896,
+        "longitude": 13.38854
+      },
+      "hasMap": "https://www.google.com/maps?cid=17443850458843580917",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Berlin"
+        },
+        {
+          "@type": "Country",
+          "name": "Deutschland"
+        }
+      ],
+      "knowsAbout": [
+        "Photovoltaik",
+        "Solaranlage",
+        "Stromspeicher",
+        "Batteriespeicher",
+        "Wärmepumpe",
+        "Luft-Wasser-Wärmepumpe",
+        "Wallbox",
+        "Energieberatung",
+        "KfW-Förderung",
+        "Heizlastberechnung",
+        "Eigenverbrauch",
+        "Angebotsprüfung"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Unabhängige Beratung zu Photovoltaik und Stromspeicher"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Beratung und Vermittlung für Wärmepumpen inklusive KfW-Förderung"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Kostenloser Angebots-Check für Photovoltaik- und Wärmepumpen-Angebote"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Vermittlung geprüfter regionaler Fachbetriebe"
+          }
+        }
+      ],
+      "slogan": "Sonne rein. Stromrechnung raus.",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://bhd-energie.de/#logo",
+        "url": "https://bhd-energie.de/icon-512.png",
+        "width": 512,
+        "height": 512,
+        "caption": "BHD – Beratung Heimenergie Deutschland"
+      },
+      "image": "https://bhd-energie.de/assets/og-bhd.png",
+      "priceRange": "€€",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+49-163-4440392",
+          "email": "info@bhd-energie.de",
+          "contactType": "customer service",
+          "areaServed": "DE",
+          "availableLanguage": [
+            "de"
+          ]
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday"
+          ],
+          "opens": "10:00",
+          "closes": "15:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.google.com/maps?cid=17443850458843580917",
+        "https://www.google.com/search?kgmid=/g/11nw0q10b9"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://bhd-energie.de/#website",
+      "url": "https://bhd-energie.de/",
+      "name": "BHD – Beratung Heimenergie Deutschland",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@id": "https://bhd-energie.de/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/#webpage",
+      "url": "https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/",
+      "name": "Wärmepumpe Stromverbrauch: so rechnen Sie ihn aus | BHD Ratgeber",
+      "description": "Wie viel Strom eine Wärmepumpe im Einfamilienhaus braucht: Rechenweg mit Beispiel, Messwerte des Fraunhofer ISE und günstigeres Netzentgelt nach § 14a EnWG.",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@id": "https://bhd-energie.de/#website"
+      },
+      "about": {
+        "@id": "https://bhd-energie.de/#org"
+      },
+      "dateModified": "2026-10-28",
+      "abstract": "Der Jahresstromverbrauch einer Wärmepumpe ist die benötigte Wärme geteilt durch die Jahresarbeitszahl. Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom. Luft-Wasser-Wärmepumpen erreichten in Messungen des Fraunhofer ISE im Bestand im Mittel eine Jahresarbeitszahl von 3,4.",
+      "citation": [
+        "https://www.ise.fraunhofer.de/content/dam/ise/de/documents/presseinformationen/2025/3025_ISE_PI_Waermepumpen-heizen-auch-im-Altbau-klimafreundlich.pdf",
+        "https://www.ise.fraunhofer.de/content/dam/ise/de/documents/projekte/WP-QS_Schlussbericht.pdf",
+        "https://www.bundesnetzagentur.de/DE/Vportal/Energie/SteuerbareVBE/start.html",
+        "https://www.gesetze-im-internet.de/enwg_2005/__14a.html"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://bhd-energie.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Stromverbrauch Wärmepumpe",
+          "item": "https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://bhd-energie.de/#kuersat",
+      "name": "Kürşat Yıldırım",
+      "jobTitle": "Geschäftsführer",
+      "worksFor": {
+        "@id": "https://bhd-energie.de/#org"
+      },
+      "url": "https://bhd-energie.de/ueber-uns/",
+      "knowsAbout": [
+        "Photovoltaik",
+        "Wärmepumpe",
+        "Stromspeicher",
+        "KfW-Förderung",
+        "Angebotsprüfung"
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/#article",
+      "headline": "Wie viel Strom braucht eine Wärmepumpe?",
+      "description": "Wie viel Strom eine Wärmepumpe im Einfamilienhaus braucht: Rechenweg mit Beispiel, Messwerte des Fraunhofer ISE und günstigeres Netzentgelt nach § 14a EnWG.",
+      "inLanguage": "de-DE",
+      "datePublished": "2026-10-28",
+      "dateModified": "2026-10-28",
+      "articleSection": "Wärmepumpe",
+      "author": {
+        "@id": "https://bhd-energie.de/#kuersat"
+      },
+      "publisher": {
+        "@id": "https://bhd-energie.de/#org"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/#webpage"
+      },
+      "image": "https://bhd-energie.de/assets/og-bhd.png",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/#faq",
+      "inLanguage": "de-DE",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie viel Strom braucht eine Wärmepumpe im Einfamilienhaus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das hängt vom Wärmebedarf des Hauses ab. Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit einer Luft-Wasser-Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist die Jahresarbeitszahl?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sie gibt an, wie viele Kilowattstunden Wärme die Wärmepumpe über ein Jahr aus einer Kilowattstunde Strom erzeugt. Bei einer Jahresarbeitszahl von 3,4 werden aus 1 kWh Strom 3,4 kWh Wärme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es günstigeren Strom für die Wärmepumpe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Neue Wärmepumpen über 4,2 kW gelten nach § 14a EnWG als steuerbare Verbrauchseinrichtung. Dafür sinkt das Netzentgelt, entweder über eine jährliche Pauschale oder über einen niedrigeren Arbeitspreis mit eigenem Zähler."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#111}img{max-width:100%}</style>
+<link rel="preload" href="/assets/site.css?v=f4975770" as="style">
+<link rel="preload" href="/assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=f4975770">
+</head><body data-page="rat-strom" data-ga="G-NM7G327C1L">
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.3M12 19.1v2.3M2.6 12h2.3M19.1 12h2.3M5.1 5.1l1.6 1.6M17.3 17.3l1.6 1.6M18.9 5.1l-1.6 1.6M6.7 17.3l-1.6 1.6"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 8.5c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 14.5c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></symbol>
+  <symbol id="i-pvmodul" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24.5" cy="6.8" r="2.6"/><path d="M24.5 1.3v1.2M24.5 11.1v1.2M19 6.8h1.2M28.8 6.8H30M20.6 2.9l.85.85M27.55 9.85l.85.85M28.4 2.9l-.85.85M21.45 9.85l-.85.85"/><path d="M3.5 28h18l4-13.5h-18z"/><path d="M9.5 28l4-13.5M15.5 28l4-13.5M5.6 21.25h18"/></symbol>
+  <symbol id="i-wpaussen" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="27" height="17.5" rx="1.5"/><circle cx="11.5" cy="15.75" r="6"/><circle cx="11.5" cy="15.75" r="1.1"/><path d="M11.5 14.6c-.3-2 .6-3.4 2.1-3.6M12.5 16.3c1.7 1.1 2.1 2.7 1.3 3.9M10.5 16.3c-1.9.8-3.4.3-4-.9"/><path d="M21.5 11.5h4.5M21.5 14.5h4.5M21.5 17.5h4.5M21.5 20.5h4.5"/><path d="M6.5 24.5v2.5M25.5 24.5v2.5"/></symbol>
+  <symbol id="i-kombi" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.8 14.5L12.5 5l10.7 9.5"/><path d="M4 12.6V28h17V12.6"/><path d="M3.94 12.6l6.42-5.7 1.73 1.94-6.42 5.7z"/><path d="M6.08 10.7l1.73 1.94M8.22 8.8l1.73 1.94"/><path d="M10 28v-6.5h5V28"/><rect x="23" y="19.5" width="8" height="8.5" rx="1"/><circle cx="26.1" cy="23.75" r="2"/><path d="M29.3 22h.2M29.3 23.75h.2M29.3 25.5h.2"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6 8 6M6 10.5V19h12v-8.5"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.6"/><path d="M10.6 10.6L20 20M17 17l2-2M14.5 14.5l1.8-1.8"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2 2A15 15 0 013 6a2 2 0 012-2z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.56 9.08L22.08 9.32L16.14 13.94L18.23 21.18L12 16.95L5.77 21.18L7.86 13.94L1.92 9.32L9.44 9.08Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2L5 13h6l-1 9 8-11h-6z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2.2"/><path d="M8 10V7a4 4 0 018 0v3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="15" height="9" rx="2"/><path d="M21 11v3"/><path d="M11 10l-2 3h3l-2 3"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v4M15 2v4"/><path d="M7 6h10v3a5 5 0 01-10 0z"/><path d="M12 14v3a3 3 0 003 3"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 2v3M14 2v3M10 19v3M14 19v3M2 10h3M2 14h3M19 10h3M19 14h3"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 16v-3M12 16V9M16 16v-5"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.4"/><rect x="14" y="3" width="7" height="7" rx="1.4"/><rect x="3" y="14" width="7" height="7" rx="1.4"/><rect x="14" y="14" width="7" height="7" rx="1.4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.2"/><path d="M3.6 7.2l8.4 5.9 8.4-5.9"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2.02c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.15-1.35a9.93 9.93 0 004.89 1.25h.01c5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.04-5.16-2.92-7.04a9.88 9.88 0 00-7.05-2.88zm0 18.17h-.01a8.26 8.26 0 01-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 01-1.26-4.39c0-4.56 3.71-8.27 8.27-8.27 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 012.42 5.85c0 4.56-3.71 8.25-8.27 8.25zm4.53-6.19c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.98-.14.16-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.44.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29z"/></symbol>
+  <symbol id="i-logo" viewBox="0 0 66 46">
+    <path d="M5 30 L23 12 L35 24 L61 24" fill="none" stroke="#E7EAED" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13 29 V40 H33 V25" fill="none" stroke="#E7EAED" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="17,25 27,19.5 31,23.5 21,29" fill="#9AA3AC"/>
+    <g stroke="#E2A63C" stroke-width="1.8" stroke-linecap="round">
+      <circle cx="45" cy="11" r="4.4" fill="#E2A63C" stroke="none"/>
+      <line x1="45" y1="2.6" x2="45" y2="5"/><line x1="45" y1="17" x2="45" y2="19.4"/>
+      <line x1="36.6" y1="11" x2="39" y2="11"/><line x1="51" y1="11" x2="53.4" y2="11"/>
+      <line x1="39" y1="5" x2="40.7" y2="6.7"/><line x1="49.3" y1="15.3" x2="51" y2="17"/>
+      <line x1="51" y1="5" x2="49.3" y2="6.7"/><line x1="40.7" y1="15.3" x2="39" y2="17"/>
+    </g>
+    <path d="M25 28 L21 35 L24.2 35 L22 40.5 L29 32.5 L25.6 32.5 L27.6 28 Z" fill="#E2A63C"/>
+  </symbol>
+</svg>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo brand-kopf" src="/assets/bhd-logo-kopf.png" width="245" height="132" alt="BHD – Beratung Heimenergie Deutschland"><span class="brand-txt" aria-hidden="true">Beratung Heimenergie<br>Deutschland</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="/" data-nav="home">Start</a>
+      <div class="nav-drop">
+        <span class="nav-drop-lbl">Leistungen <svg class="ic"><use href="#i-chevron"/></svg></span>
+        <div class="nav-sub">
+          <a href="/photovoltaik/" data-nav="pv">Photovoltaik</a>
+          <a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a>
+          <a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a>
+          <a href="/wallbox/" data-nav="wallbox">Wallbox</a>
+          <a href="/rentabilitaetsrechner/" data-nav="rendite">Rentabilitätsrechner</a>
+          <a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a>
+          <a href="/kosten/" data-nav="kosten">Was zahle ich?</a>
+          <a href="/waermepumpe-foerderung-2027/" data-nav="foerderung2027">Förderung sinkt 2027</a>
+          <a href="/photovoltaik-waermepumpe-berlin/" data-nav="berlin">In Berlin</a>
+          <a href="/photovoltaik-waermepumpe-brandenburg/" data-nav="brandenburg">In Brandenburg</a>
+        </div>
+      </div>
+      <a href="/angebots-check/" data-nav="check">Angebots-Check</a>
+      <a href="/bestandsanlagen-check/" data-nav="bestand">Bestandsanlagen-Check</a>
+      <div class="nav-drop">
+        <a href="/ueber-uns/" class="nav-drop-lbl" data-nav="about">Über uns <svg class="ic"><use href="#i-chevron"/></svg></a>
+        <div class="nav-sub">
+          <a href="/ueber-uns/" data-nav="about">Über uns</a>
+          <a href="/referenzen/" data-nav="ref">Referenzen</a>
+          <a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a>
+        </div>
+      </div>
+      <a href="/termin/" data-nav="termin">Termin</a>
+      <div class="nav-drop">
+        <a href="/kontakt/" class="nav-drop-lbl" data-nav="kontakt">Kontakt <svg class="ic"><use href="#i-chevron"/></svg></a>
+        <div class="nav-sub">
+          <a href="/kontakt/" data-nav="kontakt">Kontakt</a>
+          <a href="/anfragen/" data-nav="ask">Anfragen</a>
+        </div>
+      </div>
+      <a href="/partner-werden/" data-nav="partner" class="nav-b2b">Partner werden</a>
+      <a href="tel:+491634440392" class="menu-phone"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:+491634440392" class="nav-phone"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
+      <a href="/#funnel" data-go-funnel class="btn nav-cta">Jetzt anfragen</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="inhalt">
+<div id="view-rat-strom">
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/" data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Stromverbrauch Wärmepumpe</span></div>
+      <div class="eyebrow">Ratgeber · Wärmepumpe</div>
+      <h1>Wie viel Strom braucht eine Wärmepumpe?</h1>
+      <p class="lede">Wer von Gas oder Öl auf eine Wärmepumpe umsteigt, kauft künftig Strom statt Brennstoff. Wie viel, lässt sich aus dem bisherigen Verbrauch recht gut abschätzen. Hier steht der Rechenweg mit einem Beispiel.</p>
+    </div>
+  </header>
+  <section class="kurz" aria-labelledby="kurz-rat-strom"><div class="wrap"><div class="kurz-box">
+    <h2 id="kurz-rat-strom">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Der Jahresstromverbrauch einer Wärmepumpe ist die benötigte Wärme geteilt durch die Jahresarbeitszahl.</li>
+      <li>Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.</li>
+      <li>Luft-Wasser-Wärmepumpen erreichten in Messungen des Fraunhofer ISE im Bestand im Mittel eine Jahresarbeitszahl von 3,4.</li>
+    </ul>
+    <p class="kurz-stand">Zuletzt aktualisiert am <time datetime="2026-10-28">28.10.2026</time>. Alle Angaben ohne Gewähr.</p>
+  </div></div></section>
+
+
+  <section class="pad"><div class="wrap"><div class="artikel">
+    <h2>So rechnen Sie den Stromverbrauch aus</h2>
+    <p>Die Rechnung hat zwei Schritte. Zuerst brauchen Sie die Wärmemenge, die Ihr Haus im Jahr benötigt. Die steckt in Ihrer bisherigen Heizkostenabrechnung. Ein Gaskessel macht aus einer Kilowattstunde Gas nicht ganz eine Kilowattstunde Wärme, wir rechnen mit 90 %. Bei Öl entspricht ein Liter etwa 10 Kilowattstunden.</p>
+    <p>Im zweiten Schritt teilen Sie die Wärmemenge durch die <b>Jahresarbeitszahl</b>. Sie gibt an, wie viele Kilowattstunden Wärme die Wärmepumpe über das ganze Jahr aus einer Kilowattstunde Strom erzeugt. Bei einer Jahresarbeitszahl von 3,4 werden aus 1 kWh Strom 3,4 kWh Wärme.</p>
+    <p><b>Stromverbrauch = Wärmebedarf ÷ Jahresarbeitszahl</b></p>
+
+    <h2>Ein Beispiel mit Zahlen</h2>
+    <p>Ein Einfamilienhaus hat bisher 20.000 kWh Gas im Jahr für die Heizung verbraucht. Das sind rund 18.000 kWh Wärme. Wie viel Strom die Wärmepumpe dafür braucht, hängt vor allem von der Vorlauftemperatur ab, also davon, wie warm das Heizungswasser sein muss, damit alle Räume warm werden.</p>
+    <div class="ktable" style="max-width:620px">
+      <div class="kt-head kt-3"><span>Vorlauf</span><span>Arbeitszahl</span><span>Strom bei 18.000 kWh Wärme</span></div>
+      <div class="kt-row kt-3"><span data-l="Vorlauf"><b>35 °C</b></span><span data-l="Arbeitszahl">4,3</span><span data-l="Strom">rund 4.200 kWh/Jahr</span></div>
+      <div class="kt-row kt-3"><span data-l="Vorlauf"><b>45 °C</b></span><span data-l="Arbeitszahl">3,6</span><span data-l="Strom">rund 5.000 kWh/Jahr</span></div>
+      <div class="kt-row kt-3"><span data-l="Vorlauf"><b>55 °C</b></span><span data-l="Arbeitszahl">3,0</span><span data-l="Strom">rund 6.000 kWh/Jahr</span></div>
+    </div>
+    <p class="kt-note">Arbeitszahlen für Luft-Wasser-Wärmepumpen, wie sie auch unser Rechner ansetzt. Was das in Euro bedeutet, sehen Sie, wenn Sie den Wert mit dem Arbeitspreis aus Ihrem Stromvertrag malnehmen.</p>
+    <p>35 °C reichen meist bei einer Fußbodenheizung. Bei Heizkörpern liegt der Wert oft höher. Das muss nicht so bleiben: Mit einem hydraulischen Abgleich und größeren Heizkörpern in einzelnen Räumen sinkt die nötige Vorlauftemperatur häufig deutlich. Mehr dazu steht im Beitrag <a href="/ratgeber/waermepumpe-altbau/" class="ilink" data-nav="rat-wp">Wärmepumpe im Altbau</a>.</p>
+    <p>Wird auch das Warmwasser über die Wärmepumpe bereitet, sinkt die Jahresarbeitszahl etwas, weil dafür höhere Temperaturen nötig sind.</p>
+
+    <h2>Was Wärmepumpen in bestehenden Häusern erreichen</h2>
+    <p>Das Fraunhofer-Institut für Solare Energiesysteme hat vier Jahre lang 77 Wärmepumpen in Ein- bis Dreifamilienhäusern gemessen. Die Luft-Wasser-Wärmepumpen kamen im Mittel auf eine Jahresarbeitszahl von <b>3,4</b>. Die schwächste Anlage lag bei 2,6, die beste bei 4,9. Erdwärmepumpen erreichten im Mittel 4,3.</p>
+    <p>Für das Beispielhaus bedeutet das: Mit dem Mittelwert von 3,4 wären es rund 5.300 kWh Strom im Jahr. Zwischen der schwächsten und der besten gemessenen Luft-Wasser-Anlage liegen rund 6.900 und 3.700 kWh. Einen Zusammenhang zwischen dem Baujahr des Hauses und der Effizienz fanden die Forscher nicht. Sie haben aber Planungs- und Installationsfehler gefunden, die Strom kosten. Eine sorgfältige Auslegung lohnt sich also.</p>
+    <p>Der elektrische Heizstab, der an sehr kalten Tagen aushilft, spielte in den Messungen kaum eine Rolle. Bei den Luft-Wasser-Wärmepumpen lieferte er 1,3 % der elektrischen Arbeit. Die Forscher weisen darauf hin, dass die Winter im Messzeitraum eher mild waren.</p>
+
+    <h2>Günstigeres Netzentgelt nach § 14a EnWG</h2>
+    <p>Wärmepumpen mit mehr als 4,2 kW Anschlussleistung, die seit dem 1. Januar 2024 in Betrieb gehen, gelten als steuerbare Verbrauchseinrichtung. Der Netzbetreiber darf ihre Leistung bei drohender Überlastung des Netzes vorübergehend drosseln. Eine Mindestleistung von 4,2 kW bleibt dabei erhalten. Im Gegenzug sinkt das Netzentgelt. Es gibt drei Varianten:</p>
+    <ul class="liste">
+      <li><b>Modul 1:</b> eine jährliche Pauschale. Laut Bundesnetzagentur liegt sie je nach Netzbetreiber bei 110 bis 190 € im Jahr (Stand 2023).</li>
+      <li><b>Modul 2:</b> Der Arbeitspreis des Netzentgelts sinkt auf 40 %. Dafür braucht die Wärmepumpe einen eigenen Zähler. Bei hohem Verbrauch ist das oft die günstigere Wahl.</li>
+      <li><b>Modul 3:</b> zeitabhängige Netzentgelte, nur zusammen mit Modul 1 und nur mit einem intelligenten Messsystem.</li>
+    </ul>
+    <p>Welches Modul sich bei Ihnen rechnet, hängt vom Verbrauch und von den Preisen Ihres Netzbetreibers ab. Ob ein eigener Zähler sinnvoll ist, steht auch im Beitrag <a href="/ratgeber/photovoltaik-waermepumpe-kombinieren/" class="ilink" data-nav="rat-pvwp">Photovoltaik und Wärmepumpe</a>.</p>
+
+    <h2>Wie viel davon vom eigenen Dach kommen kann</h2>
+    <p>Mit einer Solaranlage lässt sich ein Teil des Wärmepumpenstroms selbst erzeugen. In den Messungen des Fraunhofer ISE waren es ohne Batterie rund 13 bis 36 %, mit Batterie 17 bis 49 %. Im Winter, wenn die Wärmepumpe am meisten Strom braucht, liefert das Dach am wenigsten. Den größten Teil kaufen Sie also weiter aus dem Netz.</p>
+
+    <div class="artikel-cta">
+      <p><b>Wie viel wäre es bei Ihnen?</b> Unser Rechner ermittelt aus Ihrem bisherigen Verbrauch oder Ihrer Wohnfläche die Gerätegröße, die Jahresarbeitszahl und den voraussichtlichen Stromverbrauch. Ohne Anmeldung.</p>
+      <a href="/waermepumpen-rechner/" data-nav="rechner" class="btn">Zum Wärmepumpen-Rechner</a>
+    </div>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 28. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>Fraunhofer ISE, Presseinformation vom 03.11.2025 „Wärmepumpen heizen auch im Altbau klimafreundlich“: <a href="https://www.ise.fraunhofer.de/content/dam/ise/de/documents/presseinformationen/2025/3025_ISE_PI_Waermepumpen-heizen-auch-im-Altbau-klimafreundlich.pdf" target="_blank" rel="noopener">ise.fraunhofer.de (PDF)</a></li>
+        <li>Fraunhofer ISE, Abschlussbericht „WP-QS im Bestand“, 25.11.2025: <a href="https://www.ise.fraunhofer.de/content/dam/ise/de/documents/projekte/WP-QS_Schlussbericht.pdf" target="_blank" rel="noopener">ise.fraunhofer.de (PDF)</a></li>
+        <li>Bundesnetzagentur, steuerbare Verbrauchseinrichtungen: <a href="https://www.bundesnetzagentur.de/DE/Vportal/Energie/SteuerbareVBE/start.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
+        <li>§ 14a EnWG: <a href="https://www.gesetze-im-internet.de/enwg_2005/__14a.html" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+  <section class="pad" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <h2>Häufige Fragen zum Stromverbrauch</h2>
+        <p>Stand Oktober 2026.</p>
+      </div>
+      <div class="faq" data-faq>
+        <details class="faq-item"><summary>Wie viel Strom braucht eine Wärmepumpe im Einfamilienhaus? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Das hängt vom Wärmebedarf des Hauses ab. Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit einer Luft-Wasser-Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.</div></details>
+        <details class="faq-item"><summary>Was ist die Jahresarbeitszahl? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Sie gibt an, wie viele Kilowattstunden Wärme die Wärmepumpe über ein Jahr aus einer Kilowattstunde Strom erzeugt. Bei einer Jahresarbeitszahl von 3,4 werden aus 1 kWh Strom 3,4 kWh Wärme.</div></details>
+        <details class="faq-item"><summary>Gibt es günstigeren Strom für die Wärmepumpe? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Neue Wärmepumpen über 4,2 kW gelten nach § 14a EnWG als steuerbare Verbrauchseinrichtung. Dafür sinkt das Netzentgelt, entweder über eine jährliche Pauschale oder über einen niedrigeren Arbeitspreis mit eigenem Zähler.</div></details>
+      </div>
+      <div class="faq-more">
+        <p>Ihre Frage war nicht dabei?</p>
+        <div class="faq-more-btns">
+          <a href="tel:+491634440392" class="btn"><svg class="ic"><use href="#i-phone"/></svg> 0163 4440392</a>
+          <a href="/termin/" data-nav="termin" class="btn btn-ghost">Termin vereinbaren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad kf-band" id="rueckruf">
+    <div class="wrap kf-grid">
+      <div class="kf-copy">
+        <div class="eyebrow">Kostenloser Rückruf</div>
+        <h2>Wie viel wäre es bei Ihnen?</h2>
+        <p>Nennen Sie uns Ihren bisherigen Gas- oder Ölverbrauch. Wir rechnen Ihnen aus, mit welchem Stromverbrauch Sie rechnen sollten.</p>
+        <ul class="usp">
+          <li><svg class="ic"><use href="#i-check"/></svg> Kostenlos und unverbindlich</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Antwort in der Regel innerhalb eines Werktags</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Lieber direkt? <a href="tel:+491634440392">0163 4440392</a></li>
+        </ul>
+      </div>
+      <div class="fcard kf-card" id="kf-rat-strom-card">
+        <form class="kf-form" id="kf-rat-strom-form" data-quelle="rat-strom" data-typ="Rückrufwunsch">
+          <div class="fld"><label for="kf-rat-strom-thema">Thema</label><select id="kf-rat-strom-thema" name="thema"><option>Photovoltaik</option><option>Stromspeicher</option><option selected>Wärmepumpe</option><option>Wallbox</option><option>Photovoltaik und Wärmepumpe</option><option>Angebot prüfen lassen</option><option>Bestehende Anlage</option><option>Sonstiges</option></select></div>
+          <div class="grid2">
+            <div class="fld"><label for="kf-rat-strom-name">Name <span class="req">*</span></label><input type="text" id="kf-rat-strom-name" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></div>
+            <div class="fld"><label for="kf-rat-strom-tel">Telefon <span class="req">*</span></label><input type="tel" id="kf-rat-strom-tel" name="tel" required autocomplete="tel" placeholder="0170 1234567" minlength="6"></div>
+          </div>
+          <div class="grid2">
+            <div class="fld"><label for="kf-rat-strom-plz">Postleitzahl <span class="req">*</span></label><input type="text" id="kf-rat-strom-plz" name="plz" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="z. B. 13359"></div>
+            <div class="fld"><label for="kf-rat-strom-mail">E-Mail <span class="hint2">(optional)</span></label><input type="email" id="kf-rat-strom-mail" name="email" autocomplete="email" placeholder="name@beispiel.de"></div>
+          </div>
+          <div class="fld"><label for="kf-rat-strom-msg">Worum geht es? <span class="hint2">(optional)</span></label><textarea id="kf-rat-strom-msg" name="nachricht" rows="2" placeholder="z. B. Einfamilienhaus, 4.000 kWh Verbrauch"></textarea></div>
+          <input type="text" name="_honey" class="kf-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="consent">
+            <input type="checkbox" id="kf-rat-strom-dsgvo" required>
+            <label for="kf-rat-strom-dsgvo">Ich bin einverstanden, dass BHD mich zu meiner Anfrage kontaktiert (<a href="/datenschutz/">Datenschutz</a>). Widerruf jederzeit möglich. <span class="req">*</span></label>
+          </div>
+          <button type="submit" class="btn" style="width:100%">Rückruf anfordern</button>
+          <div class="fnote"><svg class="ic"><use href="#i-lock"/></svg> SSL-verschlüsselt · kein Newsletter · kostenlos</div>
+        </form>
+        <div class="fdone" id="kf-rat-strom-done" role="status">
+          <div class="check"><svg class="ic"><use href="#i-check"/></svg></div>
+          <h3>Danke, ist angekommen.</h3>
+          <p>Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /view-rat-strom -->
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="/" data-nav="home" aria-label="Zur Startseite"><img class="brand-logo" src="/assets/bhd-logo-150.png" width="150" height="92" alt="BHD – Beratung Heimenergie Deutschland"></a>
+      <div class="foot-links"><a href="/#funnel" data-go-funnel>Angebot</a><a href="/photovoltaik/" data-nav="pv">Photovoltaik</a><a href="/stromspeicher/" data-nav="speicher">Stromspeicher</a><a href="/waermepumpe/" data-nav="wp">Wärmepumpe</a><a href="/wallbox/" data-nav="wallbox">Wallbox</a><a href="/kosten/" data-nav="kosten">Kosten</a><a href="/waermepumpe-foerderung-2027/" data-nav="foerderung2027">Förderung sinkt 2027</a><a href="/photovoltaik-waermepumpe-berlin/" data-nav="berlin">Solar &amp; Wärmepumpe Berlin</a><a href="/photovoltaik-waermepumpe-brandenburg/" data-nav="brandenburg">Solar &amp; Wärmepumpe Brandenburg</a><a href="/photovoltaik-waermepumpe-potsdam/" data-nav="potsdam">Potsdam</a><a href="/photovoltaik-waermepumpe-falkensee/" data-nav="falkensee">Falkensee</a><a href="/photovoltaik-waermepumpe-bernau/" data-nav="bernau">Bernau</a><a href="/photovoltaik-waermepumpe-oranienburg/" data-nav="oranienburg">Oranienburg</a><a href="/photovoltaik-anmelden-marktstammdatenregister/" data-nav="mastr">Anlage anmelden</a><a href="/rentabilitaetsrechner/" data-nav="rendite">Rentabilitätsrechner</a><a href="/waermepumpen-rechner/" data-nav="rechner">Wärmepumpen-Rechner</a><a href="/angebots-check/" data-nav="check">Angebots-Check</a><a href="/bestandsanlagen-check/" data-nav="bestand">Bestandsanlagen-Check</a><a href="/ratgeber/" data-nav="ratgeber">Ratgeber</a><a href="/referenzen/" data-nav="ref">Referenzen</a><a href="/ueber-uns/" data-nav="about">Über uns</a><a href="/termin/" data-nav="termin">Termin</a><a href="/kontakt/" data-nav="kontakt">Kontakt</a><a href="/anfragen/" data-nav="ask">Anfragen</a><a href="/partner-werden/" data-nav="partner">Partner werden</a><a href="/impressum/" data-nav="impressum">Impressum</a><a href="/datenschutz/" data-nav="datenschutz">Datenschutz</a></div>
+    </div>
+    <p class="disclaimer">BHD – Beratung Heimenergie Deutschland ist eine Marke der Brotherhooddeen UG (haftungsbeschränkt), Prinzenallee 44b, 13359 Berlin · Geschäftsführer: Kürşat Yıldırım · Tel. <a href="tel:+491634440392" style="color:inherit">0163 4440392</a> · <a href="mailto:info@bhd-energie.de" style="color:inherit">info@bhd-energie.de</a>. Gegründet 2024. © 2026 BHD – Beratung Heimenergie Deutschland · Brotherhooddeen UG (haftungsbeschränkt)</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=f4975770" defer></script>
+
+<div class="quickcontact" aria-label="Schnellkontakt">
+  <a class="qc qc-phone" href="tel:+491634440392" aria-label="Anrufen unter 0163 4440392">
+    <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
+    <span class="qc-label">Anrufen</span>
+  </a>
+  <a class="qc qc-wa" href="https://wa.me/491634440392?text=Hallo%20BHD%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung." target="_blank" rel="noopener" aria-label="Über WhatsApp schreiben">
+    <svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    <span class="qc-label">WhatsApp</span>
+  </a>
+  <a class="qc qc-mail" href="mailto:info@bhd-energie.de?subject=Anfrage%20%C3%BCber%20die%20Website" aria-label="E-Mail schreiben an info@bhd-energie.de">
+    <svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>
+    <span class="qc-label">E-Mail</span>
+  </a>
+</div>
+
+<!-- Einwilligung fuer die Reichweitenmessung. Bleibt ausgeblendet, solange in
+     build.js keine GA4_ID hinterlegt ist – dann wird auch nichts geladen und
+     es braucht kein Banner. Ohne Zustimmung verlaesst kein Datenpaket den
+     Browser (§ 25 TDDDG). -->
+<div class="consent-bar" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-titel" hidden>
+  <div class="consent-in">
+    <div class="consent-txt">
+      <strong id="consent-titel">Dürfen wir mitzählen?</strong>
+      <p>Wir möchten anonym messen, welche Seiten gelesen werden. Google Analytics setzt dafür Cookies und überträgt Daten in die USA. Ohne Ihre Zustimmung passiert nichts davon. Mehr in der <a href="/datenschutz/" data-nav="datenschutz">Datenschutzerklärung</a>.</p>
+    </div>
+    <div class="consent-btns">
+      <button type="button" class="btn btn-ghost" id="consent-nein">Nur Notwendiges</button>
+      <button type="button" class="btn" id="consent-ja">Statistik erlauben</button>
+    </div>
+  </div>
+</div>
+
+
+</body></html>

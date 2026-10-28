@@ -5,11 +5,10 @@
 ---
 
 Quelle: https://bhd-energie.de/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 28.10.2026
 
-# Sonne rein. Stromrechnung raus.
+# Sonne rein. Stromrechnung raus. Photovoltaik, Stromspeicher und Wärmepumpe für Ihr Haus
 
-- Photovoltaik, Stromspeicher und Wärmepumpe für Ihr Haus
 - Unabhängige Beratung, Montage durch einen Fachbetrieb aus Ihrer Region
 - Wärmepumpe: bis zu 80 % Zuschuss von der KfW
 
@@ -2400,7 +2399,7 @@ Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 28.10.2026
 
 Ohne Verkaufsinteresse geschrieben
 
@@ -2453,6 +2452,14 @@ Stromspeicher
 ## Stromspeicher nachrüsten: was Sie wissen müssen
 
 Ob es bei Ihrer Anlage geht, warum keine Mehrwertsteuer anfällt und wann sich das Nachrüsten besonders lohnt.
+
+Beitrag lesen
+
+Wärmepumpe
+
+## Wie viel Strom braucht eine Wärmepumpe?
+
+Der Rechenweg mit einem Beispiel, Messwerte aus bestehenden Häusern und wie Sie beim Netzentgelt sparen.
 
 Beitrag lesen
 
@@ -2988,6 +2995,103 @@ Kostenloser Rückruf
 ## Speicher nachrüsten?
 
 Nennen Sie uns im Rückruf Ihre Anlage und Ihren Verbrauch, dann sagen wir Ihnen, welche Lösung passt.
+
+- Kostenlos und unverbindlich
+- Antwort in der Regel innerhalb eines Werktags
+- Lieber direkt? 0163 4440392
+
+### Danke, ist angekommen.
+
+Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+
+---
+
+Quelle: https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/
+Zuletzt aktualisiert: 28.10.2026
+
+Ratgeber · Wärmepumpe
+
+# Wie viel Strom braucht eine Wärmepumpe?
+
+Wer von Gas oder Öl auf eine Wärmepumpe umsteigt, kauft künftig Strom statt Brennstoff. Wie viel, lässt sich aus dem bisherigen Verbrauch recht gut abschätzen. Hier steht der Rechenweg mit einem Beispiel.
+
+## Das Wichtigste in Kürze
+
+- Der Jahresstromverbrauch einer Wärmepumpe ist die benötigte Wärme geteilt durch die Jahresarbeitszahl.
+- Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.
+- Luft-Wasser-Wärmepumpen erreichten in Messungen des Fraunhofer ISE im Bestand im Mittel eine Jahresarbeitszahl von 3,4.
+
+Zuletzt aktualisiert am 28.10.2026. Alle Angaben ohne Gewähr.
+
+## So rechnen Sie den Stromverbrauch aus
+
+Die Rechnung hat zwei Schritte. Zuerst brauchen Sie die Wärmemenge, die Ihr Haus im Jahr benötigt. Die steckt in Ihrer bisherigen Heizkostenabrechnung. Ein Gaskessel macht aus einer Kilowattstunde Gas nicht ganz eine Kilowattstunde Wärme, wir rechnen mit 90 %. Bei Öl entspricht ein Liter etwa 10 Kilowattstunden.
+
+Im zweiten Schritt teilen Sie die Wärmemenge durch die Jahresarbeitszahl. Sie gibt an, wie viele Kilowattstunden Wärme die Wärmepumpe über das ganze Jahr aus einer Kilowattstunde Strom erzeugt. Bei einer Jahresarbeitszahl von 3,4 werden aus 1 kWh Strom 3,4 kWh Wärme.
+
+Stromverbrauch = Wärmebedarf ÷ Jahresarbeitszahl
+
+## Ein Beispiel mit Zahlen
+
+Ein Einfamilienhaus hat bisher 20.000 kWh Gas im Jahr für die Heizung verbraucht. Das sind rund 18.000 kWh Wärme. Wie viel Strom die Wärmepumpe dafür braucht, hängt vor allem von der Vorlauftemperatur ab, also davon, wie warm das Heizungswasser sein muss, damit alle Räume warm werden.
+
+Vorlauf Arbeitszahl Strom bei 18.000 kWh Wärme
+35 °C 4,3 rund 4.200 kWh/Jahr
+45 °C 3,6 rund 5.000 kWh/Jahr
+55 °C 3,0 rund 6.000 kWh/Jahr
+
+Arbeitszahlen für Luft-Wasser-Wärmepumpen, wie sie auch unser Rechner ansetzt. Was das in Euro bedeutet, sehen Sie, wenn Sie den Wert mit dem Arbeitspreis aus Ihrem Stromvertrag malnehmen.
+
+35 °C reichen meist bei einer Fußbodenheizung. Bei Heizkörpern liegt der Wert oft höher. Das muss nicht so bleiben: Mit einem hydraulischen Abgleich und größeren Heizkörpern in einzelnen Räumen sinkt die nötige Vorlauftemperatur häufig deutlich. Mehr dazu steht im Beitrag Wärmepumpe im Altbau.
+
+Wird auch das Warmwasser über die Wärmepumpe bereitet, sinkt die Jahresarbeitszahl etwas, weil dafür höhere Temperaturen nötig sind.
+
+## Was Wärmepumpen in bestehenden Häusern erreichen
+
+Das Fraunhofer-Institut für Solare Energiesysteme hat vier Jahre lang 77 Wärmepumpen in Ein- bis Dreifamilienhäusern gemessen. Die Luft-Wasser-Wärmepumpen kamen im Mittel auf eine Jahresarbeitszahl von 3,4. Die schwächste Anlage lag bei 2,6, die beste bei 4,9. Erdwärmepumpen erreichten im Mittel 4,3.
+
+Für das Beispielhaus bedeutet das: Mit dem Mittelwert von 3,4 wären es rund 5.300 kWh Strom im Jahr. Zwischen der schwächsten und der besten gemessenen Luft-Wasser-Anlage liegen rund 6.900 und 3.700 kWh. Einen Zusammenhang zwischen dem Baujahr des Hauses und der Effizienz fanden die Forscher nicht. Sie haben aber Planungs- und Installationsfehler gefunden, die Strom kosten. Eine sorgfältige Auslegung lohnt sich also.
+
+Der elektrische Heizstab, der an sehr kalten Tagen aushilft, spielte in den Messungen kaum eine Rolle. Bei den Luft-Wasser-Wärmepumpen lieferte er 1,3 % der elektrischen Arbeit. Die Forscher weisen darauf hin, dass die Winter im Messzeitraum eher mild waren.
+
+## Günstigeres Netzentgelt nach § 14a EnWG
+
+Wärmepumpen mit mehr als 4,2 kW Anschlussleistung, die seit dem 1. Januar 2024 in Betrieb gehen, gelten als steuerbare Verbrauchseinrichtung. Der Netzbetreiber darf ihre Leistung bei drohender Überlastung des Netzes vorübergehend drosseln. Eine Mindestleistung von 4,2 kW bleibt dabei erhalten. Im Gegenzug sinkt das Netzentgelt. Es gibt drei Varianten:
+
+- Modul 1: eine jährliche Pauschale. Laut Bundesnetzagentur liegt sie je nach Netzbetreiber bei 110 bis 190 € im Jahr (Stand 2023).
+- Modul 2: Der Arbeitspreis des Netzentgelts sinkt auf 40 %. Dafür braucht die Wärmepumpe einen eigenen Zähler. Bei hohem Verbrauch ist das oft die günstigere Wahl.
+- Modul 3: zeitabhängige Netzentgelte, nur zusammen mit Modul 1 und nur mit einem intelligenten Messsystem.
+
+Welches Modul sich bei Ihnen rechnet, hängt vom Verbrauch und von den Preisen Ihres Netzbetreibers ab. Ob ein eigener Zähler sinnvoll ist, steht auch im Beitrag Photovoltaik und Wärmepumpe.
+
+## Wie viel davon vom eigenen Dach kommen kann
+
+Mit einer Solaranlage lässt sich ein Teil des Wärmepumpenstroms selbst erzeugen. In den Messungen des Fraunhofer ISE waren es ohne Batterie rund 13 bis 36 %, mit Batterie 17 bis 49 %. Im Winter, wenn die Wärmepumpe am meisten Strom braucht, liefert das Dach am wenigsten. Den größten Teil kaufen Sie also weiter aus dem Netz.
+
+Wie viel wäre es bei Ihnen? Unser Rechner ermittelt aus Ihrem bisherigen Verbrauch oder Ihrer Wohnfläche die Gerätegröße, die Jahresarbeitszahl und den voraussichtlichen Stromverbrauch. Ohne Anmeldung.
+
+Quellen (geprüft am 28. Oktober 2026, alle Angaben ohne Gewähr):
+
+- Fraunhofer ISE, Presseinformation vom 03.11.2025 „Wärmepumpen heizen auch im Altbau klimafreundlich“: ise.fraunhofer.de (PDF)
+- Fraunhofer ISE, Abschlussbericht „WP-QS im Bestand“, 25.11.2025: ise.fraunhofer.de (PDF)
+- Bundesnetzagentur, steuerbare Verbrauchseinrichtungen: bundesnetzagentur.de
+- § 14a EnWG: gesetze-im-internet.de
+
+## Häufige Fragen zum Stromverbrauch
+
+Stand Oktober 2026.
+
+Wie viel Strom braucht eine Wärmepumpe im Einfamilienhaus? Das hängt vom Wärmebedarf des Hauses ab. Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit einer Luft-Wasser-Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.
+Was ist die Jahresarbeitszahl? Sie gibt an, wie viele Kilowattstunden Wärme die Wärmepumpe über ein Jahr aus einer Kilowattstunde Strom erzeugt. Bei einer Jahresarbeitszahl von 3,4 werden aus 1 kWh Strom 3,4 kWh Wärme.
+Gibt es günstigeren Strom für die Wärmepumpe? Neue Wärmepumpen über 4,2 kW gelten nach § 14a EnWG als steuerbare Verbrauchseinrichtung. Dafür sinkt das Netzentgelt, entweder über eine jährliche Pauschale oder über einen niedrigeren Arbeitspreis mit eigenem Zähler.
+
+Ihre Frage war nicht dabei?
+
+Kostenloser Rückruf
+
+## Wie viel wäre es bei Ihnen?
+
+Nennen Sie uns Ihren bisherigen Gas- oder Ölverbrauch. Wir rechnen Ihnen aus, mit welchem Stromverbrauch Sie rechnen sollten.
 
 - Kostenlos und unverbindlich
 - Antwort in der Regel innerhalb eines Werktags

@@ -1,7 +1,7 @@
 {
   "home": {
-    "hash": "7431e46c9a8073200f45d831f507aa95",
-    "datum": "2026-10-27"
+    "hash": "1e50ea80943efc600439eac8c1d0e981",
+    "datum": "2026-10-28"
   },
   "check": {
     "hash": "ba52f2f2dc65dfa500f46a4db3858e25",
@@ -76,8 +76,8 @@
     "datum": "2026-10-27"
   },
   "ratgeber": {
-    "hash": "baa7f2d6737d437f32f1f7e733cd78d4",
-    "datum": "2026-10-27"
+    "hash": "d0eef48ce005cd6c8e0f279774182065",
+    "datum": "2026-10-28"
   },
   "rat-pv": {
     "hash": "0677e15fe461fca94e48e2eaec5b819c",
@@ -130,5 +130,9 @@
   "datenschutz": {
     "hash": "5451e4fd2336aff9d4fab95f93ae7db6",
     "datum": "2026-10-27"
+  },
+  "rat-strom": {
+    "hash": "3536dd772aba203692445abb0a2ba340",
+    "datum": "2026-10-28"
   }
 }

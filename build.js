@@ -387,6 +387,12 @@ const PAGES = [
     article: { headline: 'Stromspeicher nachrüsten: was Sie wissen müssen', pub: '2026-10-13', section: 'Stromspeicher' }
   },
   {
+    key: 'rat-strom', dir: 'ratgeber/waermepumpe-stromverbrauch', view: 'view-rat-strom', prio: '0.8', crumb: 'Stromverbrauch Wärmepumpe',
+    title: 'Wärmepumpe Stromverbrauch: so rechnen Sie ihn aus | BHD Ratgeber',
+    desc: 'Wie viel Strom eine Wärmepumpe im Einfamilienhaus braucht: Rechenweg mit Beispiel, Messwerte des Fraunhofer ISE und günstigeres Netzentgelt nach § 14a EnWG.',
+    article: { headline: 'Wie viel Strom braucht eine Wärmepumpe?', pub: '2026-10-28', section: 'Wärmepumpe' }
+  },
+  {
     key: 'rechner', dir: 'waermepumpen-rechner', view: 'view-rechner', prio: '0.9', crumb: 'Wärmepumpen-Rechner',
     title: 'Wärmepumpe berechnen: Größe in kW & Förderung | BHD',
     ogTitle: 'Kostenloser Wärmepumpen-Rechner – Größe & Förderung | BHD',
@@ -990,6 +996,7 @@ const KURZANFRAGE = {
   oranienburg: { h: 'Projekt in Oranienburg?', p: 'Hinterlassen Sie Ihre Nummer. Wir klären mit Ihnen auch die Frage der Kampfmittel, bevor gegraben wird.', thema: 'Wärmepumpe' },
   'rat-eeg':   { h: 'Lohnt es sich bei Ihnen noch?', p: 'Wir rechnen mit Ihnen durch, was Eigenverbrauch und Einspeisung bei Ihrem Haus bringen.', thema: 'Photovoltaik' },
   'rat-pvwp':  { h: 'PV und Wärmepumpe zusammen planen?', p: 'Hinterlassen Sie Ihre Nummer. Wir sagen Ihnen, wie groß die Anlage sein sollte und ob ein eigener Zähler sinnvoll ist.', thema: 'Photovoltaik und Wärmepumpe' },
+  'rat-strom':  { h: 'Wie viel wäre es bei Ihnen?', p: 'Nennen Sie uns Ihren bisherigen Gas- oder Ölverbrauch. Wir rechnen Ihnen aus, mit welchem Stromverbrauch Sie rechnen sollten.', thema: 'Wärmepumpe' },
   'rat-speicher': { h: 'Speicher nachrüsten?', p: 'Nennen Sie uns im Rückruf Ihre Anlage und Ihren Verbrauch, dann sagen wir Ihnen, welche Lösung passt.', thema: 'Stromspeicher' },
   kontakt:     { h: 'Nachricht schreiben', p: 'Schreiben Sie uns kurz, worum es geht. Fotos oder ein Angebot als PDF schicken Sie am einfachsten per WhatsApp oder über den Angebots-Check.', thema: 'Sonstiges', nachricht: true, kontakt: true }
 };

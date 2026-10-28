@@ -295,7 +295,7 @@ const KF_SEITEN = ['/photovoltaik/', '/stromspeicher/', '/waermepumpe/', '/koste
   '/photovoltaik-waermepumpe-potsdam/', '/photovoltaik-waermepumpe-falkensee/',
   '/photovoltaik-waermepumpe-bernau/', '/photovoltaik-waermepumpe-oranienburg/',
   '/ratgeber/einspeiseverguetung/', '/ratgeber/photovoltaik-waermepumpe-kombinieren/',
-  '/ratgeber/stromspeicher-nachruesten/', '/kontakt/'];
+  '/ratgeber/stromspeicher-nachruesten/', '/ratgeber/waermepumpe-stromverbrauch/', '/kontakt/'];
 
 async function kurzanfrage(browser, pfad) {
   const page = await browser.newPage();

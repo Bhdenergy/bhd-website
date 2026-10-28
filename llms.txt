@@ -34,6 +34,7 @@
 - [Einspeisevergütung 2026 und was ab 2027 kommt](https://bhd-energie.de/ratgeber/einspeiseverguetung/)
 - [Photovoltaik und Wärmepumpe: wie gut passen sie zusammen?](https://bhd-energie.de/ratgeber/photovoltaik-waermepumpe-kombinieren/)
 - [Stromspeicher nachrüsten: was Sie wissen müssen](https://bhd-energie.de/ratgeber/stromspeicher-nachruesten/)
+- [Wie viel Strom braucht eine Wärmepumpe?](https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/)
 
 ## Weitere Seiten
 - [Referenzen](https://bhd-energie.de/referenzen/): umgesetzte Projekte mit eigenen Fotos
@@ -138,6 +139,11 @@ Stand jeweils in Klammern. Alle Angaben ohne Gewähr.
 - Ein Speicher lässt sich fast immer nachrüsten, entweder am Hybridwechselrichter (DC) oder mit eigenem Batteriewechselrichter (AC).
 - Auch für nachgerüstete Speicher gilt 0 % Umsatzsteuer, wenn die Anlage höchstens 30 kWp hat (§ 12 Abs. 3 UStG).
 - Der Speicher ist im Marktstammdatenregister eine eigene Einheit und muss innerhalb eines Monats nach Inbetriebnahme eingetragen werden.
+
+### [Wärmepumpe Stromverbrauch: so rechnen Sie ihn aus | BHD Ratgeber](https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/) (28.10.2026)
+- Der Jahresstromverbrauch einer Wärmepumpe ist die benötigte Wärme geteilt durch die Jahresarbeitszahl.
+- Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.
+- Luft-Wasser-Wärmepumpen erreichten in Messungen des Fraunhofer ISE im Bestand im Mittel eine Jahresarbeitszahl von 3,4.
 
 ### [Wärmepumpe berechnen: Größe in kW & Förderung](https://bhd-energie.de/waermepumpen-rechner/) (27.10.2026)
 - Die Größe einer Wärmepumpe richtet sich nach der Heizlast. Als Richtwert gelten 30 Watt je m² im Neubau bis 120 Watt je m² im unsanierten Altbau.

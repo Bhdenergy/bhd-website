@@ -1506,7 +1506,11 @@
   .k5-hero-media{position:relative;align-self:stretch;min-height:440px;overflow:hidden;
     border-radius:0 14px 14px 0;background:#cfc8ba}
   .k5-hero-copy{padding:56px clamp(24px,5vw,96px) 56px clamp(32px,7vw,112px);max-width:660px}
-  .k5-hero h1{font-size:clamp(2.2rem,3.7vw,3.2rem);max-width:15ch;margin:0 0 28px;color:#222}
+  .k5-hero h1{font-size:clamp(2.2rem,3.7vw,3.2rem);margin:0 0 28px;color:#222}
+  /* Slogan + Suchbegriff in einer h1: Google liest beides, optisch bleibt der Slogan gross */
+  .k5-hero h1 .h1-haupt{display:block;max-width:15ch}
+  .k5-hero h1 .h1-sub{display:block;max-width:44ch;margin-top:14px;font-family:inherit;font-size:1.15rem;
+    font-weight:600;line-height:1.4;letter-spacing:0;color:#444}
   .k5-hero .hero-cta{margin:0}
   .k5-hero .hero-facts{margin:22px 0 0;font-size:.95rem;color:var(--ink-3)}
   @media(max-width:1024px){
@@ -1874,9 +1878,8 @@
            data-vid-klein="/assets/video/dachfilm3-854.mp4"></video>
   </div>
   <div class="k5-hero-copy">
-    <h1>Sonne rein. Stromrechnung raus.</h1>
+    <h1><span class="h1-haupt">Sonne rein. Stromrechnung raus.</span><span class="h1-sub">Photovoltaik, Stromspeicher und Wärmepumpe für Ihr Haus</span></h1>
     <ul class="k5-zeilen">
-      <li>Photovoltaik, Stromspeicher und Wärmepumpe für Ihr Haus</li>
       <li>Unabhängige Beratung, Montage durch einen Fachbetrieb aus Ihrer Region</li>
       <li>Wärmepumpe: bis zu 80&nbsp;% Zuschuss von der KfW</li>
     </ul>
@@ -3628,6 +3631,12 @@
           <span class="art-tag">Stromspeicher</span>
           <h2>Stromspeicher nachrüsten: was Sie wissen müssen</h2>
           <p>Ob es bei Ihrer Anlage geht, warum keine Mehrwertsteuer anfällt und wann sich das Nachrüsten besonders lohnt.</p>
+          <span class="art-go">Beitrag lesen <svg class="ic"><use href="#i-chevron"/></svg></span>
+        </a>
+        <a class="artcard" data-nav="rat-strom">
+          <span class="art-tag">Wärmepumpe</span>
+          <h2>Wie viel Strom braucht eine Wärmepumpe?</h2>
+          <p>Der Rechenweg mit einem Beispiel, Messwerte aus bestehenden Häusern und wie Sie beim Netzentgelt sparen.</p>
           <span class="art-go">Beitrag lesen <svg class="ic"><use href="#i-chevron"/></svg></span>
         </a>
       </div>
@@ -6304,6 +6313,71 @@
 <!--FAQ-->
 <!--KURZANFRAGE-->
 </div><!-- /view-rat-eeg -->
+
+<div id="view-rat-strom" hidden>
+  <header class="ref-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <a data-nav="ratgeber">Ratgeber</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Stromverbrauch Wärmepumpe</span></div>
+      <div class="eyebrow">Ratgeber · Wärmepumpe</div>
+      <h1>Wie viel Strom braucht eine Wärmepumpe?</h1>
+      <p class="lede">Wer von Gas oder Öl auf eine Wärmepumpe umsteigt, kauft künftig Strom statt Brennstoff. Wie viel, lässt sich aus dem bisherigen Verbrauch recht gut abschätzen. Hier steht der Rechenweg mit einem Beispiel.</p>
+    </div>
+  </header>
+
+  <section class="pad"><div class="wrap"><div class="artikel">
+    <h2>So rechnen Sie den Stromverbrauch aus</h2>
+    <p>Die Rechnung hat zwei Schritte. Zuerst brauchen Sie die Wärmemenge, die Ihr Haus im Jahr benötigt. Die steckt in Ihrer bisherigen Heizkostenabrechnung. Ein Gaskessel macht aus einer Kilowattstunde Gas nicht ganz eine Kilowattstunde Wärme, wir rechnen mit 90 %. Bei Öl entspricht ein Liter etwa 10 Kilowattstunden.</p>
+    <p>Im zweiten Schritt teilen Sie die Wärmemenge durch die <b>Jahresarbeitszahl</b>. Sie gibt an, wie viele Kilowattstunden Wärme die Wärmepumpe über das ganze Jahr aus einer Kilowattstunde Strom erzeugt. Bei einer Jahresarbeitszahl von 3,4 werden aus 1 kWh Strom 3,4 kWh Wärme.</p>
+    <p><b>Stromverbrauch = Wärmebedarf ÷ Jahresarbeitszahl</b></p>
+
+    <h2>Ein Beispiel mit Zahlen</h2>
+    <p>Ein Einfamilienhaus hat bisher 20.000 kWh Gas im Jahr für die Heizung verbraucht. Das sind rund 18.000 kWh Wärme. Wie viel Strom die Wärmepumpe dafür braucht, hängt vor allem von der Vorlauftemperatur ab, also davon, wie warm das Heizungswasser sein muss, damit alle Räume warm werden.</p>
+    <div class="ktable" style="max-width:620px">
+      <div class="kt-head kt-3"><span>Vorlauf</span><span>Arbeitszahl</span><span>Strom bei 18.000 kWh Wärme</span></div>
+      <div class="kt-row kt-3"><span data-l="Vorlauf"><b>35 °C</b></span><span data-l="Arbeitszahl">4,3</span><span data-l="Strom">rund 4.200 kWh/Jahr</span></div>
+      <div class="kt-row kt-3"><span data-l="Vorlauf"><b>45 °C</b></span><span data-l="Arbeitszahl">3,6</span><span data-l="Strom">rund 5.000 kWh/Jahr</span></div>
+      <div class="kt-row kt-3"><span data-l="Vorlauf"><b>55 °C</b></span><span data-l="Arbeitszahl">3,0</span><span data-l="Strom">rund 6.000 kWh/Jahr</span></div>
+    </div>
+    <p class="kt-note">Arbeitszahlen für Luft-Wasser-Wärmepumpen, wie sie auch unser Rechner ansetzt. Was das in Euro bedeutet, sehen Sie, wenn Sie den Wert mit dem Arbeitspreis aus Ihrem Stromvertrag malnehmen.</p>
+    <p>35 °C reichen meist bei einer Fußbodenheizung. Bei Heizkörpern liegt der Wert oft höher. Das muss nicht so bleiben: Mit einem hydraulischen Abgleich und größeren Heizkörpern in einzelnen Räumen sinkt die nötige Vorlauftemperatur häufig deutlich. Mehr dazu steht im Beitrag <a class="ilink" data-nav="rat-wp">Wärmepumpe im Altbau</a>.</p>
+    <p>Wird auch das Warmwasser über die Wärmepumpe bereitet, sinkt die Jahresarbeitszahl etwas, weil dafür höhere Temperaturen nötig sind.</p>
+
+    <h2>Was Wärmepumpen in bestehenden Häusern erreichen</h2>
+    <p>Das Fraunhofer-Institut für Solare Energiesysteme hat vier Jahre lang 77 Wärmepumpen in Ein- bis Dreifamilienhäusern gemessen. Die Luft-Wasser-Wärmepumpen kamen im Mittel auf eine Jahresarbeitszahl von <b>3,4</b>. Die schwächste Anlage lag bei 2,6, die beste bei 4,9. Erdwärmepumpen erreichten im Mittel 4,3.</p>
+    <p>Für das Beispielhaus bedeutet das: Mit dem Mittelwert von 3,4 wären es rund 5.300 kWh Strom im Jahr. Zwischen der schwächsten und der besten gemessenen Luft-Wasser-Anlage liegen rund 6.900 und 3.700 kWh. Einen Zusammenhang zwischen dem Baujahr des Hauses und der Effizienz fanden die Forscher nicht. Sie haben aber Planungs- und Installationsfehler gefunden, die Strom kosten. Eine sorgfältige Auslegung lohnt sich also.</p>
+    <p>Der elektrische Heizstab, der an sehr kalten Tagen aushilft, spielte in den Messungen kaum eine Rolle. Bei den Luft-Wasser-Wärmepumpen lieferte er 1,3 % der elektrischen Arbeit. Die Forscher weisen darauf hin, dass die Winter im Messzeitraum eher mild waren.</p>
+
+    <h2>Günstigeres Netzentgelt nach § 14a EnWG</h2>
+    <p>Wärmepumpen mit mehr als 4,2 kW Anschlussleistung, die seit dem 1. Januar 2024 in Betrieb gehen, gelten als steuerbare Verbrauchseinrichtung. Der Netzbetreiber darf ihre Leistung bei drohender Überlastung des Netzes vorübergehend drosseln. Eine Mindestleistung von 4,2 kW bleibt dabei erhalten. Im Gegenzug sinkt das Netzentgelt. Es gibt drei Varianten:</p>
+    <ul class="liste">
+      <li><b>Modul 1:</b> eine jährliche Pauschale. Laut Bundesnetzagentur liegt sie je nach Netzbetreiber bei 110 bis 190 € im Jahr (Stand 2023).</li>
+      <li><b>Modul 2:</b> Der Arbeitspreis des Netzentgelts sinkt auf 40 %. Dafür braucht die Wärmepumpe einen eigenen Zähler. Bei hohem Verbrauch ist das oft die günstigere Wahl.</li>
+      <li><b>Modul 3:</b> zeitabhängige Netzentgelte, nur zusammen mit Modul 1 und nur mit einem intelligenten Messsystem.</li>
+    </ul>
+    <p>Welches Modul sich bei Ihnen rechnet, hängt vom Verbrauch und von den Preisen Ihres Netzbetreibers ab. Ob ein eigener Zähler sinnvoll ist, steht auch im Beitrag <a class="ilink" data-nav="rat-pvwp">Photovoltaik und Wärmepumpe</a>.</p>
+
+    <h2>Wie viel davon vom eigenen Dach kommen kann</h2>
+    <p>Mit einer Solaranlage lässt sich ein Teil des Wärmepumpenstroms selbst erzeugen. In den Messungen des Fraunhofer ISE waren es ohne Batterie rund 13 bis 36 %, mit Batterie 17 bis 49 %. Im Winter, wenn die Wärmepumpe am meisten Strom braucht, liefert das Dach am wenigsten. Den größten Teil kaufen Sie also weiter aus dem Netz.</p>
+
+    <div class="artikel-cta">
+      <p><b>Wie viel wäre es bei Ihnen?</b> Unser Rechner ermittelt aus Ihrem bisherigen Verbrauch oder Ihrer Wohnfläche die Gerätegröße, die Jahresarbeitszahl und den voraussichtlichen Stromverbrauch. Ohne Anmeldung.</p>
+      <a data-nav="rechner" class="btn">Zum Wärmepumpen-Rechner</a>
+    </div>
+
+    <div class="quellen">
+      <p><b>Quellen</b> (geprüft am 28. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <ul class="liste">
+        <li>Fraunhofer ISE, Presseinformation vom 03.11.2025 „Wärmepumpen heizen auch im Altbau klimafreundlich“: <a href="https://www.ise.fraunhofer.de/content/dam/ise/de/documents/presseinformationen/2025/3025_ISE_PI_Waermepumpen-heizen-auch-im-Altbau-klimafreundlich.pdf" target="_blank" rel="noopener">ise.fraunhofer.de (PDF)</a></li>
+        <li>Fraunhofer ISE, Abschlussbericht „WP-QS im Bestand“, 25.11.2025: <a href="https://www.ise.fraunhofer.de/content/dam/ise/de/documents/projekte/WP-QS_Schlussbericht.pdf" target="_blank" rel="noopener">ise.fraunhofer.de (PDF)</a></li>
+        <li>Bundesnetzagentur, steuerbare Verbrauchseinrichtungen: <a href="https://www.bundesnetzagentur.de/DE/Vportal/Energie/SteuerbareVBE/start.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
+        <li>§ 14a EnWG: <a href="https://www.gesetze-im-internet.de/enwg_2005/__14a.html" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+      </ul>
+    </div>
+  </div></div></section>
+
+<!--FAQ-->
+<!--KURZANFRAGE-->
+</div><!-- /view-rat-strom -->
 
 <div id="view-impressum" hidden>
   <header class="ref-hero">

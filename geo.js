@@ -124,6 +124,11 @@ const KURZ = {
     'Im Winter sinkt der Solaranteil stark. Die Solaranlage macht die Wärmepumpe nicht stromautark, senkt aber die Stromkosten über das Jahr deutlich.',
     'Am meisten bringt es, Solarüberschuss als Wärme zu speichern, etwa über eine höhere Warmwassertemperatur.'
   ],
+  'rat-strom': [
+    'Der Jahresstromverbrauch einer Wärmepumpe ist die benötigte Wärme geteilt durch die Jahresarbeitszahl.',
+    'Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.',
+    'Luft-Wasser-Wärmepumpen erreichten in Messungen des Fraunhofer ISE im Bestand im Mittel eine Jahresarbeitszahl von 3,4.'
+  ],
   'rat-speicher': [
     'Ein Speicher lässt sich fast immer nachrüsten, entweder am Hybridwechselrichter (DC) oder mit eigenem Batteriewechselrichter (AC).',
     'Auch für nachgerüstete Speicher gilt 0 % Umsatzsteuer, wenn die Anlage höchstens 30 kWp hat (§ 12 Abs. 3 UStG).',

@@ -18,6 +18,8 @@ const SEITEN = [
   '/ratgeber/einspeiseverguetung/',
   '/ratgeber/photovoltaik-waermepumpe-kombinieren/',
   '/ratgeber/stromspeicher-nachruesten/',
+  '/ratgeber/waermepumpe-stromverbrauch/',
+  '/',
   '/photovoltaik-waermepumpe-brandenburg/',
   '/ratgeber/',
   '/'

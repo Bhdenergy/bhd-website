@@ -1429,7 +1429,11 @@
   .k5-hero-media{position:relative;align-self:stretch;min-height:440px;overflow:hidden;
     border-radius:0 14px 14px 0;background:#cfc8ba}
   .k5-hero-copy{padding:56px clamp(24px,5vw,96px) 56px clamp(32px,7vw,112px);max-width:660px}
-  .k5-hero h1{font-size:clamp(2.2rem,3.7vw,3.2rem);max-width:15ch;margin:0 0 28px;color:#222}
+  .k5-hero h1{font-size:clamp(2.2rem,3.7vw,3.2rem);margin:0 0 28px;color:#222}
+  /* Slogan + Suchbegriff in einer h1: Google liest beides, optisch bleibt der Slogan gross */
+  .k5-hero h1 .h1-haupt{display:block;max-width:15ch}
+  .k5-hero h1 .h1-sub{display:block;max-width:44ch;margin-top:14px;font-family:inherit;font-size:1.15rem;
+    font-weight:600;line-height:1.4;letter-spacing:0;color:#444}
   .k5-hero .hero-cta{margin:0}
   .k5-hero .hero-facts{margin:22px 0 0;font-size:.95rem;color:var(--ink-3)}
   @media(max-width:1024px){

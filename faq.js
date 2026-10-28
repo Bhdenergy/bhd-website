@@ -477,6 +477,19 @@ const FAQ = {
       F('Verliere ich durch den Speicher meine Einspeisevergütung?',
         'Nein, solange der Speicher nur Solarstrom vom eigenen Dach lädt. Zwischengespeicherter Solarstrom bleibt vergütungsfähig.')
     ]
+  },
+  'rat-strom': {
+    kicker: 'Kurz beantwortet',
+    titel: 'Häufige Fragen zum Stromverbrauch',
+    intro: 'Stand Oktober 2026.',
+    items: [
+      F('Wie viel Strom braucht eine Wärmepumpe im Einfamilienhaus?',
+        'Das hängt vom Wärmebedarf des Hauses ab. Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit einer Luft-Wasser-Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.'),
+      F('Was ist die Jahresarbeitszahl?',
+        'Sie gibt an, wie viele Kilowattstunden Wärme die Wärmepumpe über ein Jahr aus einer Kilowattstunde Strom erzeugt. Bei einer Jahresarbeitszahl von 3,4 werden aus 1 kWh Strom 3,4 kWh Wärme.'),
+      F('Gibt es günstigeren Strom für die Wärmepumpe?',
+        'Neue Wärmepumpen über 4,2 kW gelten nach § 14a EnWG als steuerbare Verbrauchseinrichtung. Dafür sinkt das Netzentgelt, entweder über eine jährliche Pauschale oder über einen niedrigeren Arbeitspreis mit eigenem Zähler.')
+    ]
   }
 };
 
