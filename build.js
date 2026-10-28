@@ -46,6 +46,8 @@ const GSC_TOKEN = 'YmJdAGRuu0_isrbFEfEq8GP-UYUhLj1bDpGdXmTraFE';
 /* Google Analytics 4: Mess-ID aus der Datenstream-Einstellung, Form "G-XXXXXXXXXX".
  * WICHTIG: GA4 wird erst nach ausdruecklicher Einwilligung geladen (§ 25 TDDDG). */
 const GA4_ID = 'G-NM7G327C1L';
+// Meta-Pixel (Events Manager, Werbekonto BHD). Laedt nur bei Einwilligung 'alle'.
+const META_PIXEL = '1132077185894133';
 
 /* Social-Media-Profile fuer sameAs im JSON-LD. NUR echte, existierende Profile
  * eintragen – Verweise auf nicht vorhandene Seiten schaden mehr, als sie nutzen.
@@ -1165,7 +1167,7 @@ ${STYLE_INLINE}
 <link rel="preload" href="/assets/site.css?v=${ASSET_V}" as="style">
 <link rel="preload" href="/assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=${ASSET_V}">
-</head><body data-page="${page.key}"${GA4_ID ? ' data-ga="' + esc(GA4_ID) + '"' : ''}>
+</head><body data-page="${page.key}"${GA4_ID ? ' data-ga="' + esc(GA4_ID) + '"' : ''}${META_PIXEL ? ' data-meta="' + esc(META_PIXEL) + '"' : ''}>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
 ${SPRITE}

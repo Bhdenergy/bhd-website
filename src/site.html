@@ -1267,7 +1267,11 @@
     display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap}
   .consent-txt{flex:1 1 420px;min-width:0}
   .consent-txt strong{display:block;font-size:1.02rem;margin-bottom:5px}
-  .consent-txt p{margin:0;font-size:.9rem;line-height:1.55;color:var(--ink-2);max-width:72ch}
+  .consent-txt p{margin:0;font-size:.84rem;line-height:1.45;color:var(--ink-2);max-width:none}
+  .consent-txt{flex:1 1 480px}
+  .consent-bar{padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+  .consent-txt strong{font-size:.95rem;margin-bottom:3px}
+  .consent-btns .btn{padding:10px 16px;font-size:.9rem}
   .consent-txt a{color:var(--gold-deep);font-weight:600;text-decoration:underline}
   .consent-btns{display:flex;gap:11px;flex:0 0 auto;flex-wrap:wrap}
   .consent-btns .btn{white-space:nowrap}
@@ -1280,9 +1284,9 @@
       padding:13px 0 calc(13px + env(safe-area-inset-bottom,0px))}
     .consent-in{padding:0 16px;gap:11px}
     .consent-txt strong{font-size:.96rem;margin-bottom:2px}
-    .consent-txt p{font-size:.84rem;line-height:1.5}
+    .consent-txt p{font-size:.76rem;line-height:1.4}
     .consent-btns{width:100%;gap:9px;flex-wrap:nowrap}
-    .consent-btns .btn{flex:1 1 0;min-width:0;padding:11px 10px;font-size:.88rem}
+    .consent-btns .btn{flex:1 1 0;min-width:0;padding:9px 4px;font-size:.8rem;white-space:normal;line-height:1.2}
   }
 
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise{opacity:1;transform:none}.blob{display:none}.flow-line{stroke-dashoffset:0}.node-dot,.node-final,.node-label{opacity:1}}
@@ -6499,7 +6503,8 @@
         <p><strong>Wir laden Google Analytics ausschließlich nach Ihrer ausdrücklichen Einwilligung.</strong> Solange Sie nicht zugestimmt haben, wird kein Google-Skript geladen und kein Cookie gesetzt. Rechtsgrundlage ist Ihre Einwilligung nach § 25 Abs. 1 TDDDG und Art. 6 Abs. 1 lit. a DSGVO.</p>
         <p><strong>Übermittlung in die USA.</strong> Dabei können Daten an die Google LLC in den USA übermittelt werden. Google LLC ist unter dem EU-US Data Privacy Framework zertifiziert; Grundlage der Übermittlung ist der Angemessenheitsbeschluss der EU-Kommission vom 10. Juli 2023, ergänzt um Standardvertragsklauseln. Trotz dieser Grundlagen lässt sich ein Zugriff US-amerikanischer Behörden nicht vollständig ausschließen.</p>
         <p><strong>Einwilligung widerrufen.</strong> Sie können Ihre Entscheidung jederzeit mit Wirkung für die Zukunft ändern: <a href="#" data-consent>Einwilligung erneut abfragen</a>. Die bis dahin erfolgte Verarbeitung bleibt rechtmäßig. Weitere Informationen finden Sie in der <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
-        <p>Marketing-Dienste wie das Meta Pixel setzen wir derzeit <strong>nicht</strong> ein. Sollte sich das ändern, holen wir auch dafür vorab Ihre Einwilligung ein und ergänzen diese Erklärung.</p>
+        <p><strong>Meta-Pixel.</strong> Wenn Sie im Einwilligungsfenster „Alles akzeptieren“ wählen, nutzen wir zusätzlich das Meta-Pixel der Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland. Damit messen wir, ob Besucher, die über unsere Werbung auf Facebook oder Instagram kommen, eine Anfrage stellen, und können Werbung gezielter ausspielen. Das Pixel setzt Cookies und überträgt Daten wie aufgerufene Seiten, Zeitpunkt, IP-Adresse, Gerät und Browser sowie die Information, dass eine Anfrage abgeschickt wurde, an Meta. Den Inhalt Ihrer Anfrage (Name, Telefon, E-Mail, Nachricht) übermitteln wir nicht an Meta. Ist Ihr Browser bei Facebook oder Instagram angemeldet, kann Meta die Daten Ihrem Konto zuordnen.</p>
+        <p>Für das Erheben und Übermitteln dieser Daten sind wir mit Meta gemeinsam verantwortlich (Art. 26 DSGVO). Die Vereinbarung dazu finden Sie unter <a href="https://www.facebook.com/legal/controller_addendum" target="_blank" rel="noopener">facebook.com/legal/controller_addendum</a>. Für die weitere Verarbeitung ist Meta allein verantwortlich. Rechtsgrundlage ist Ihre Einwilligung nach § 25 Abs. 1 TDDDG und Art. 6 Abs. 1 lit. a DSGVO. Daten können an die Meta Platforms Inc. in den USA übermittelt werden, die unter dem EU-US Data Privacy Framework zertifiziert ist. Mit „Nur Statistik“ oder „Ablehnen“ wird das Pixel nicht geladen. Weitere Informationen finden Sie in der <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Datenschutzrichtlinie von Meta</a>.</p>
 
         <h2>10. Ihre Rechte</h2>
         <p>Sie haben im Rahmen der gesetzlichen Bestimmungen das Recht auf:</p>
@@ -6661,6 +6666,7 @@
   // bleibt das Banner unsichtbar und die Seite komplett trackingfrei.
   (function(){
     var GA=document.body.dataset.ga||'';
+    var META=document.body.dataset.meta||'';
     var KEY='bhd-consent';
     var box=document.getElementById('consent');
 
@@ -6686,14 +6692,31 @@
       document.head.appendChild(s);
     }
 
+    // Meta-Pixel: nur bei 'alle'. Der Basiscode entspricht dem von Meta,
+    // ohne den noscript-Pixel (der wuerde ohne Einwilligung feuern).
+    function ladeMeta(){
+      if(!META||window.fbq)return;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init',META);
+      fbq('track','PageView');
+    }
+
+    // 'alle' = Statistik + Meta-Pixel, 'ja' = nur Statistik, 'nein' = nichts.
     var wahl=gelesen();
     if(!GA)schliessen();
+    else if(wahl==='alle'){ladeGA();ladeMeta();schliessen()}
     else if(wahl==='ja'){ladeGA();schliessen()}
     else if(wahl==='nein')schliessen();
     else zeigen();
 
-    var ja=document.getElementById('consent-ja'),nein=document.getElementById('consent-nein');
+    var ja=document.getElementById('consent-ja'),nein=document.getElementById('consent-nein'),
+      alle=document.getElementById('consent-alle');
     if(ja)ja.addEventListener('click',function(){merken('ja');ladeGA();schliessen()});
+    if(alle)alle.addEventListener('click',function(){merken('alle');ladeGA();ladeMeta();schliessen()});
     if(nein)nein.addEventListener('click',function(){merken('nein');schliessen()});
 
     // Aus der Datenschutzerklaerung heraus widerrufbar
@@ -6707,6 +6730,8 @@
   // laeuft ins Leere, solange keine Einwilligung vorliegt – genau so gewollt.
   function trackLead(quelle){
     try{if(window.gtag)gtag('event','generate_lead',{method:quelle})}catch(e){}
+    // Fuer Meta nur echte Anfragen: das Oeffnen des Kalenders ist keine.
+    try{if(window.fbq&&quelle!=='termin-kalender-geoeffnet')fbq('track','Lead',{content_name:quelle})}catch(e){}
   }
 
   // ---------- Video im Hero (nur Startseite) ----------
@@ -7976,12 +8001,13 @@
 <div class="consent-bar" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-titel" hidden>
   <div class="consent-in">
     <div class="consent-txt">
-      <strong id="consent-titel">Dürfen wir mitzählen?</strong>
-      <p>Wir möchten anonym messen, welche Seiten gelesen werden. Google Analytics setzt dafür Cookies und überträgt Daten in die USA. Ohne Ihre Zustimmung passiert nichts davon. Mehr in der <a data-nav="datenschutz">Datenschutzerklärung</a>.</p>
+      <strong id="consent-titel">Cookie-Einstellungen</strong>
+      <p>Wir nutzen optionale Cookies von Google (Statistik) und Meta (Werbung auf Facebook und Instagram). Dabei können Daten in die USA gehen und dort auch zu eigenen Zwecken verarbeitet werden. Widerruf jederzeit möglich. <a data-nav="datenschutz">Datenschutz</a></p>
     </div>
     <div class="consent-btns">
-      <button type="button" class="btn btn-ghost" id="consent-nein">Nur Notwendiges</button>
-      <button type="button" class="btn" id="consent-ja">Statistik erlauben</button>
+      <button type="button" class="btn btn-ghost" id="consent-nein">Ablehnen</button>
+      <button type="button" class="btn btn-ghost" id="consent-ja">Nur Statistik</button>
+      <button type="button" class="btn" id="consent-alle">Alles akzeptieren</button>
     </div>
   </div>
 </div>

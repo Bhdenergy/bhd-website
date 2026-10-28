@@ -123,6 +123,7 @@
   // bleibt das Banner unsichtbar und die Seite komplett trackingfrei.
   (function(){
     var GA=document.body.dataset.ga||'';
+    var META=document.body.dataset.meta||'';
     var KEY='bhd-consent';
     var box=document.getElementById('consent');
 
@@ -148,14 +149,31 @@
       document.head.appendChild(s);
     }
 
+    // Meta-Pixel: nur bei 'alle'. Der Basiscode entspricht dem von Meta,
+    // ohne den noscript-Pixel (der wuerde ohne Einwilligung feuern).
+    function ladeMeta(){
+      if(!META||window.fbq)return;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init',META);
+      fbq('track','PageView');
+    }
+
+    // 'alle' = Statistik + Meta-Pixel, 'ja' = nur Statistik, 'nein' = nichts.
     var wahl=gelesen();
     if(!GA)schliessen();
+    else if(wahl==='alle'){ladeGA();ladeMeta();schliessen()}
     else if(wahl==='ja'){ladeGA();schliessen()}
     else if(wahl==='nein')schliessen();
     else zeigen();
 
-    var ja=document.getElementById('consent-ja'),nein=document.getElementById('consent-nein');
+    var ja=document.getElementById('consent-ja'),nein=document.getElementById('consent-nein'),
+      alle=document.getElementById('consent-alle');
     if(ja)ja.addEventListener('click',function(){merken('ja');ladeGA();schliessen()});
+    if(alle)alle.addEventListener('click',function(){merken('alle');ladeGA();ladeMeta();schliessen()});
     if(nein)nein.addEventListener('click',function(){merken('nein');schliessen()});
 
     // Aus der Datenschutzerklaerung heraus widerrufbar
@@ -169,6 +187,8 @@
   // laeuft ins Leere, solange keine Einwilligung vorliegt – genau so gewollt.
   function trackLead(quelle){
     try{if(window.gtag)gtag('event','generate_lead',{method:quelle})}catch(e){}
+    // Fuer Meta nur echte Anfragen: das Oeffnen des Kalenders ist keine.
+    try{if(window.fbq&&quelle!=='termin-kalender-geoeffnet')fbq('track','Lead',{content_name:quelle})}catch(e){}
   }
 
   // ---------- Video im Hero (nur Startseite) ----------

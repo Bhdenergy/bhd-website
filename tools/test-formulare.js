@@ -306,6 +306,9 @@ async function kurzanfrage(browser, pfad) {
   /* Sanftes Scrollen der Seite aus: page.click() scrollt zum Element und
    * klickt sofort – waehrend der Animation traf der Klick sonst daneben. */
   await page.addStyleTag({ content: 'html{scroll-behavior:auto!important}' });
+  /* Wie ein Besucher zuerst das Cookie-Banner wegklicken: es liegt unten
+   * fest ueber der Seite und verdeckt sonst je nach Fensterhoehe den Knopf. */
+  await page.evaluate(() => { const bar = document.getElementById('consent'); if (bar && !bar.hidden) document.getElementById('consent-nein').click(); });
   const form = await page.$('form.kf-form');
   if (!form) { pruefe(false, pfad + ': Formular vorhanden'); await page.close(); return; }
 

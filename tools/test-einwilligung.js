@@ -36,12 +36,12 @@ function pruefe(bedingung, text) {
   const pos = await p1.$eval('#consent', el => getComputedStyle(el).position);
   pruefe(pos === 'fixed', 'Leiste ist am Fenster fixiert (ist: ' + pos + ')');
 
-  await p1.click('#consent-ja');
+  await p1.click('#consent-alle');
   const wegNachKlick = await p1.$eval('#consent', el => el.hidden);
   pruefe(wegNachKlick, 'Leiste verschwindet nach "Statistik erlauben"');
 
   const gemerkt = await p1.evaluate(() => localStorage.getItem('bhd-consent'));
-  pruefe(gemerkt === 'ja', 'Entscheidung gespeichert (ist: ' + gemerkt + ')');
+  pruefe(gemerkt === 'alle', 'Entscheidung gespeichert (ist: ' + gemerkt + ')');
 
   await p1.reload({ waitUntil: 'networkidle0' });
   const bleibtWeg = await p1.$eval('#consent', el => el.hidden);
@@ -58,7 +58,7 @@ function pruefe(bedingung, text) {
   await p2.evaluate(() => localStorage.clear());
   await p2.reload({ waitUntil: 'networkidle0' });
   await p2.click('#consent-nein');
-  pruefe(await p2.$eval('#consent', el => el.hidden), 'Leiste verschwindet nach "Nur Notwendiges"');
+  pruefe(await p2.$eval('#consent', el => el.hidden), 'Leiste verschwindet nach "Ablehnen"');
   const gtagWeg = await p2.evaluate(() => !window.__gaAktiv);
   pruefe(gtagWeg, 'Kein Analytics geladen nach Ablehnung');
   await p2.close();
