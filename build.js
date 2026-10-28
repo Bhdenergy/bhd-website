@@ -50,7 +50,7 @@ const GA4_ID = 'G-NM7G327C1L';
 /* Social-Media-Profile fuer sameAs im JSON-LD. NUR echte, existierende Profile
  * eintragen – Verweise auf nicht vorhandene Seiten schaden mehr, als sie nutzen.
  * Beispiel: ['https://www.facebook.com/…', 'https://www.linkedin.com/company/…'] */
-const SOCIAL = [];
+const SOCIAL = ['https://www.facebook.com/profile.php?id=61589562397455'];
 
 /* Google-Unternehmensprofil (angelegt Okt. 2026). CID und Knowledge-Graph-ID
  * aus Google Maps ausgelesen. Steht in sameAs/hasMap und auf der Kontaktseite. */
