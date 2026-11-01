@@ -299,7 +299,7 @@ const FAQ = {
   foerderung2027: {
     kicker: 'Kurz beantwortet',
     titel: 'Häufige Fragen zur Absenkung',
-    intro: 'Stand 23. September 2026 nach dem Merkblatt KfW 458. Was bewilligt wird, entscheidet allein die KfW.',
+    intro: 'Stand 1. November 2026 nach dem Merkblatt KfW 458. Was bewilligt wird, entscheidet allein die KfW.',
     items: [
       F('Was genau ändert sich am 1. Februar 2027?',
         'Zwei Werte sinken gleichzeitig. Der Klimageschwindigkeitsbonus geht von 16 auf 12 Prozent zurück, und der Höchstbetrag der förderfähigen Kosten für die erste Wohneinheit sinkt von 28.000 auf 27.250 Euro. Beides sinkt danach halbjährlich weiter, jeweils zum 1. Februar und zum 1. August. Die Grundförderung von 30 Prozent und der Einkommensbonus bleiben unverändert.'),

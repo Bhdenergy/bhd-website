@@ -133,7 +133,7 @@ const PAGES = [
     key: 'home', dir: '', view: 'view-home', prio: '1.0', nav: false,
     title: 'Photovoltaik & Wärmepumpe Berlin & bundesweit | BHD',
     ogTitle: 'Photovoltaik & Wärmepumpe – unabhängige Beratung | BHD',
-    desc: 'Unabhängige Beratung zu Photovoltaik, Stromspeicher und Wärmepumpe. Geprüfte Fachbetriebe, KfW-Zuschuss bis 80 %. Sitz in Berlin, bundesweit tätig.',
+    desc: 'Unabhängige Beratung zu Photovoltaik, Stromspeicher und Wärmepumpe. Geprüfte Fachbetriebe, KfW-Zuschuss bis 70 %, bei geringem Einkommen 80 %. Sitz in Berlin, bundesweit tätig.',
     ld: ['faq']
   },
   {
@@ -196,7 +196,7 @@ const PAGES = [
     key: 'wp', dir: 'waermepumpe', view: 'view-wp', prio: '0.9', crumb: 'Wärmepumpe',
     title: 'Wärmepumpe: Eignung, Ablauf & KfW-Förderung | BHD',
     ogTitle: 'Wärmepumpe – lohnt sich das in Ihrem Haus? | BHD',
-    desc: 'Wärmepumpe im Altbau: warum die Vorlauftemperatur über die Kosten entscheidet, wie eine Umstellung abläuft und wie bis zu 80 % KfW-Zuschuss gehen.',
+    desc: 'Wärmepumpe im Altbau: warum die Vorlauftemperatur über die Kosten entscheidet, wie eine Umstellung abläuft und wie bis zu 70 % KfW-Zuschuss gehen.',
     service: {
       name: "Beratung und Vermittlung für Wärmepumpen",
       typ: "Wärmepumpen-Beratung",
@@ -1023,7 +1023,7 @@ function kurzanfrageHtml(key) {
         <p>${c.p}</p>
         <ul class="usp">
           <li><svg class="ic"><use href="#i-check"/></svg> Kostenlos und unverbindlich</li>
-          <li><svg class="ic"><use href="#i-check"/></svg> Antwort in der Regel innerhalb eines Werktags</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Antwort in der Regel innerhalb von 24 Stunden</li>
           <li><svg class="ic"><use href="#i-check"/></svg> Lieber direkt? <a href="tel:+491634440392">0163 4440392</a></li>
         </ul>
       </div>
@@ -1050,7 +1050,7 @@ function kurzanfrageHtml(key) {
         <div class="fdone" id="${id}-done" role="status">
           <div class="check"><svg class="ic"><use href="#i-check"/></svg></div>
           <h3>Danke, ist angekommen.</h3>
-          <p>Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.</p>
+          <p>Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.</p>
         </div>
       </div>
     </div>
@@ -1303,7 +1303,7 @@ fs.writeFileSync(path.join(ROOT, 'llms.txt'),
 ## Leistungen
 - [Photovoltaik](${SITE}${URL_OF.pv}): Anlagengröße, Eigenverbrauch, 0 % Umsatzsteuer nach § 12 Abs. 3 UStG
 - [Stromspeicher](${SITE}${URL_OF.speicher}): sinnvolle Kapazität, nutzbare Kapazität, Zyklengarantie
-- [Wärmepumpe](${SITE}${URL_OF.wp}): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 80 %
+- [Wärmepumpe](${SITE}${URL_OF.wp}): Eignung im Altbau, Vorlauftemperatur, KfW-Zuschuss 458 bis 70 %, bei geringem Einkommen 80 %
 - [Kosten](${SITE}${URL_OF.kosten}): marktübliche Preise und Eigenanteil nach Förderung
 - [Photovoltaik und Wärmepumpe in Berlin](${SITE}${URL_OF.berlin}): Solargesetz Berlin, Zuschüsse aus SolarPLUS, Denkmalschutz, Stromnetz Berlin
 - [Photovoltaik und Wärmepumpe in Brandenburg](${SITE}${URL_OF.brandenburg}): keine Solarpflicht, Baurecht nach BbgBO, Förderung

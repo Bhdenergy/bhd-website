@@ -5,14 +5,14 @@
 ---
 
 Quelle: https://bhd-energie.de/
-Zuletzt aktualisiert: 28.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 # Sonne rein. Stromrechnung raus. Photovoltaik, Stromspeicher und Wärmepumpe für Ihr Haus
 
 - Unabhängige Beratung, Montage durch einen Fachbetrieb aus Ihrer Region
-- Wärmepumpe: bis zu 80 % Zuschuss von der KfW
+- Wärmepumpe: bis zu 70 % Zuschuss von der KfW, bei geringem Einkommen bis 80 %
 
-Die Erstberatung ist kostenlos. Wir melden uns in der Regel am nächsten Werktag.
+Die Erstberatung ist kostenlos. Wir melden uns in der Regel innerhalb von 24 Stunden.
 
 ## Kostenloses Angebot anfragen
 
@@ -94,7 +94,7 @@ Module auf dem Dach. Der Strom wird zuerst im Haus verbraucht, der Rest geht geg
 Mehr zu Photovoltaik
 
 ### Wärmepumpe
-Ersetzt die Gas- oder Ölheizung. Gefördert über den KfW-Zuschuss 458 mit bis zu 80 % der förderfähigen Kosten.
+Ersetzt die Gas- oder Ölheizung. Gefördert über den KfW-Zuschuss 458 mit bis zu 70 % der förderfähigen Kosten, bei geringem Einkommen bis 80 %.
 Mehr zur Wärmepumpe
 
 ### Stromspeicher
@@ -125,9 +125,9 @@ Solaranlage, Speicher und Wärmepumpe rund 55 % dafür fällt die Gas- oder Ölr
 
 Richtwerte für ein Einfamilienhaus über das ganze Jahr. Die Wärmepumpe braucht ihren Strom vor allem im Winter, wenn die Sonne wenig liefert. Die Werte hängen von Dach, Verbrauch und Anlagengröße ab.
 
-## Wärmepumpe mit bis zu 80 % Zuschuss
+## Wärmepumpe mit bis zu 70 % Zuschuss
 
-Die Boni der KfW lassen sich kombinieren, höchstens bis 80 % der förderfähigen Kosten. Im Einfamilienhaus sind das bis zu 22.400 € Zuschuss. Den Antrag stellen Sie vor dem Auftrag, wir achten im Ablauf darauf.
+Die Boni der KfW lassen sich kombinieren, in der Regel bis 70 % der förderfähigen Kosten, bei geringem Einkommen bis 80 %. Im Einfamilienhaus sind das bis zu 19.600 € Zuschuss, bei 80 % bis zu 22.400 €. Den Antrag stellen Sie vor dem Auftrag, wir achten im Ablauf darauf.
 
 So setzt sich der Zuschuss zusammen
 
@@ -146,7 +146,7 @@ Zusammen gibt es höchstens 70 %, bei einem Haushaltseinkommen bis 30.000 € (m
 
 ### Wärmepumpe: KfW-Zuschuss 458
 
-bis 80 % der förderfähigen Kosten, höchstens 22.400 € Zuschuss im Einfamilienhaus. Sie zahlen den Rest.
+bis 70 % der förderfähigen Kosten, bei geringem Einkommen bis 80 %. Höchstens 22.400 € Zuschuss im Einfamilienhaus. Sie zahlen den Rest.
 
 - Grundförderung für jeden Eigentümer 30 %
 - Klimageschwindigkeitsbonus beim Tausch einer alten Heizung + 16 %
@@ -174,7 +174,7 @@ Die Zuschusssätze der Wärmepumpen-Förderung sinken planmäßig: Der Klimagesc
 
 Der Antrag muss vor der Auftragserteilung gestellt werden. Wer den Handwerker zuerst beauftragt, verliert den Zuschuss. Üblich ist ein Vertrag mit aufschiebender Bedingung, damit beides zusammenpasst. Wir achten im Ablauf darauf.
 
-Stand: August 2026, nach den seit dem 21. Juli 2026 geltenden Bedingungen der Bundesförderung für effiziente Gebäude (KfW-Zuschuss 458). Angaben ohne Gewähr und keine Rechts- oder Steuerberatung. Maßgeblich sind die jeweils gültigen Förderbedingungen der KfW und die gesetzlichen Regelungen.
+Stand: November 2026, nach den seit dem 21. Juli 2026 geltenden Bedingungen der Bundesförderung für effiziente Gebäude (KfW-Zuschuss 458). Angaben ohne Gewähr und keine Rechts- oder Steuerberatung. Maßgeblich sind die jeweils gültigen Förderbedingungen der KfW und die gesetzlichen Regelungen.
 
 ## Bewertungen auf Google
 
@@ -380,7 +380,7 @@ Unabhängig, ehrlich und innerhalb von 24 Stunden – bevor Sie unterschreiben.
 ---
 
 Quelle: https://bhd-energie.de/bestandsanlagen-check/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Für Anlagen, die schon stehen
 
@@ -452,7 +452,7 @@ Je genauer Sie das Problem beschreiben und je mehr Fotos Sie anhängen, desto ko
 
 ### Ihre Anfrage ist eingegangen
 
-Wir sehen uns Ihre Schilderung an und melden uns bei Ihnen – in der Regel innerhalb eines Werktags. Wenn es eilt, rufen Sie gern direkt an: 0163 4440392.
+Wir sehen uns Ihre Schilderung an und melden uns bei Ihnen – in der Regel innerhalb von 24 Stunden. Wenn es eilt, rufen Sie gern direkt an: 0163 4440392.
 
 ## Häufige Fragen zu bestehenden Anlagen
 
@@ -475,7 +475,7 @@ Manche Fälle sind in fünf Minuten am Telefon klarer als in jedem Formular.
 ---
 
 Quelle: https://bhd-energie.de/referenzen/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Realisierte Projekte für Einfamilienhäuser
 
@@ -744,17 +744,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer, wir melden uns für ein erstes Gespräch.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/ueber-uns/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Wer hinter BHD steht
 
@@ -857,17 +857,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer, wir melden uns persönlich bei Ihnen.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/photovoltaik/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 0 % Mehrwertsteuer · unbefristet
 
@@ -881,7 +881,7 @@ Eine Solaranlage fürs Einfamilienhaus kostet mit Speicher meist 15.000 bis 21.0
 - Als Faustregel gilt rund 1 kWp Leistung je 1.000 kWh Jahresverbrauch. Mit Wärmepumpe oder E-Auto darf die Anlage größer sein.
 - In unserem Rechenbeispiel (10 kWp, 8 kWh Speicher, 19.500 €) bringt die Anlage rund 1.347 € im Jahr und hat sich nach etwa 14,5 Jahren bezahlt gemacht.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Eigenverbrauch bringt mehr als Einspeisung
 
@@ -1004,17 +1004,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir rufen zurück und schätzen gemeinsam mit Ihnen ein, welche Anlagengröße sinnvoll ist.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/stromspeicher/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Sonne von mittags bis abends
 
@@ -1028,7 +1028,7 @@ Ohne Speicher nutzt ein Haushalt etwa ein Drittel seines Solarstroms selbst, mit
 - Richtwert für die Größe ist etwa 1 kWh Speicher je 1.000 kWh Jahresverbrauch. Im Einfamilienhaus mit vier Personen sind 10 bis 12 kWh üblich.
 - Ohne Wärmepumpe oder E-Auto trägt sich ein Speicher oft nicht sicher, im Beispiel erst nach rund 18 Jahren. Bei 8.000 kWh Verbrauch sind es etwa zehn Jahre.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Die passende Speichergröße
 
@@ -1111,19 +1111,19 @@ Kostenloser Rückruf
 Nennen Sie uns im Rückruf Ihren Jahresverbrauch, dann sagen wir Ihnen, welche Größe sich rechnet.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/waermepumpe/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
-Bis zu 80 % KfW-Zuschuss
+Bis zu 70 % KfW-Zuschuss
 
 # Wärmepumpe: Heizen ohne Brennstoff
 
@@ -1135,7 +1135,7 @@ Eine Wärmepumpe erzeugt aus einer Kilowattstunde Strom drei bis vier Kilowattst
 - Die KfW bezuschusst den Einbau mit 30 % Grundförderung plus Boni, zusammen höchstens 70 oder 80 % von 28.000 €. Das sind bis zu 22.400 €.
 - Der Förderantrag muss vor der Auftragserteilung gestellt werden. Üblich ist ein Vertrag mit aufschiebender Bedingung.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Die Vorlauftemperatur bestimmt die Effizienz
 
@@ -1147,7 +1147,7 @@ Die gute Nachricht: Man muss dafür selten das ganze Haus dämmen. Größere Hei
 - Keine Erdarbeiten bei Luft-Wasser-Geräten
 - Mit eigener Solaranlage sinken die Betriebskosten weiter
 
-bis 80 % KfW-Zuschuss, höchstens 22.400 €
+bis 70 % KfW-Zuschuss, bei geringem Einkommen 80 %, höchstens 22.400 €
 
 3 bis 4 Kilowattstunden Wärme je Kilowattstunde Strom
 
@@ -1230,17 +1230,17 @@ Kostenloser Rückruf
 Wir sagen es Ihnen ehrlich, auch wenn die Antwort „noch nicht" lautet. Dazu gehört ein erster Blick auf die KfW-Förderung.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/kosten/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Marktübliche Preise, Stand August 2026
 
@@ -1254,7 +1254,7 @@ Hier finden Sie die Preisspannen, mit denen der Markt derzeit für Photovoltaik,
 - Eine Luft-Wasser-Wärmepumpe im Einfamilienhaus kostet als komplette Umstellung typischerweise 22.000 bis 35.000 €.
 - Beispiel: Bei 28.000 € Investition und Tausch einer Ölheizung zahlt die KfW 46 %, also 12.880 €. Der Eigenanteil liegt dann bei 15.120 €.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Was kostet eine Photovoltaikanlage mit und ohne Speicher?
 
@@ -1360,17 +1360,17 @@ Kostenloser Rückruf
 Sagen Sie uns kurz, worum es geht. Sie bekommen eine Einschätzung für Ihr Haus, kostenlos und unverbindlich.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/photovoltaik-waermepumpe-berlin/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Unser Sitz: Berlin-Gesundbrunnen
 
@@ -1384,7 +1384,7 @@ In Berlin gelten einige Regeln, die es in anderen Bundesländern nicht gibt: die
 - Das Landesprogramm SolarPLUS zahlt Zuschüsse für Stromspeicher (bis 4.750 €), Zählerschrank (750 €) und denkmalgerechte Anlagen (bis 5.700 €).
 - Ein eigenes Berliner Programm für Wärmepumpen gibt es derzeit nicht. Es gilt der KfW-Zuschuss des Bundes.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Vier Punkte, die in Berlin dazukommen
 
@@ -1473,17 +1473,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir melden uns und klären mit Ihnen, was für Ihr Haus in Frage kommt.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/photovoltaik-waermepumpe-brandenburg/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Berlin und das ganze Umland
 
@@ -1497,7 +1497,7 @@ In Brandenburg gelten andere Regeln als in Berlin: Es gibt keine Solarpflicht, i
 - Solaranlagen auf Dach und Fassade sind nach § 61 BbgBO verfahrensfrei. Ausnahmen gelten bei Hochhäusern und örtlichen Satzungen.
 - Das Land zahlt keinen Zuschuss für private Aufdachanlagen. Für die Wärmepumpe gilt der KfW-Zuschuss des Bundes.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Vier Unterschiede zu Berlin
 
@@ -1604,19 +1604,19 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir melden uns und klären mit Ihnen, was auf Ihrem Grundstück geht und was die Gemeinde dazu sagt.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/waermepumpe-foerderung-2027/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
-Stand: 23. September 2026
+Stand: 1. November 2026
 
 # Die Wärmepumpen-Förderung sinkt am 1. Februar 2027
 
@@ -1628,7 +1628,7 @@ Am 1. Februar 2027 sinken bei der KfW-Förderung zwei Werte gleichzeitig: der Kl
 - Am selben Tag sinken die förderfähigen Höchstkosten von 28.000 auf 27.250 €, danach alle sechs Monate um weitere 750 €.
 - Maßgeblich ist das Datum der Antragstellung. Wer eine Ölheizung ersetzt, bekommt bei einem Antrag ab Februar 2027 rund 1.435 € weniger.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Was sich am 1. Februar 2027 ändert
 
@@ -1704,7 +1704,7 @@ Dann prüfen wir kostenlos, ob die Auslegung trägt, ob der Preis marktüblich i
 - Klimabonus ohne Anspruch einplanen. Bei Gas- und Biomasseheizungen gibt es ihn nur, wenn die Inbetriebnahme bei Antragstellung mindestens 20 Jahre zurückliegt. Bei Öl, Kohle, Gasetagen- und Nachtspeicherheizungen gilt keine Altersgrenze — die Heizung muss aber funktionstüchtig sein. Wer wartet, bis sie ausfällt, verliert unter Umständen den Bonus.
 - Hydraulischen Abgleich weglassen. Ohne die vorgeschriebenen Nachweise gibt es am Ende keine Auszahlung, auch wenn die Zusage vorlag. Das fällt erst bei der Bestätigung nach Durchführung auf — dann ist die Anlage schon bezahlt.
 
-Alle Angaben sind der Stand vom 23. September 2026 und ersetzen keine Förderzusage. Was am Ende bewilligt wird, entscheidet allein die KfW. Wie eine Umstellung technisch abläuft, steht auf der Seite Wärmepumpe; was das Ganze kostet, auf der Seite Was zahle ich?.
+Alle Angaben sind der Stand vom 1. November 2026 und ersetzen keine Förderzusage. Was am Ende bewilligt wird, entscheidet allein die KfW. Wie eine Umstellung technisch abläuft, steht auf der Seite Wärmepumpe; was das Ganze kostet, auf der Seite Was zahle ich?.
 
 Quellen (geprüft am 23. September 2026, alle Angaben ohne Gewähr):
 
@@ -1714,7 +1714,7 @@ Quellen (geprüft am 23. September 2026, alle Angaben ohne Gewähr):
 
 ## Häufige Fragen zur Absenkung
 
-Stand 23. September 2026 nach dem Merkblatt KfW 458. Was bewilligt wird, entscheidet allein die KfW.
+Stand 1. November 2026 nach dem Merkblatt KfW 458. Was bewilligt wird, entscheidet allein die KfW.
 
 Was genau ändert sich am 1. Februar 2027? Zwei Werte sinken gleichzeitig. Der Klimageschwindigkeitsbonus geht von 16 auf 12 Prozent zurück, und der Höchstbetrag der förderfähigen Kosten für die erste Wohneinheit sinkt von 28.000 auf 27.250 Euro. Beides sinkt danach halbjährlich weiter, jeweils zum 1. Februar und zum 1. August. Die Grundförderung von 30 Prozent und der Einkommensbonus bleiben unverändert.
 Zählt das Datum des Einbaus oder das Datum des Antrags? Der Zeitpunkt der Antragstellung. Wann die Wärmepumpe eingebaut wird und wann die Rechnung kommt, spielt für den Fördersatz keine Rolle. Deshalb ist es entscheidend, den Antrag rechtzeitig gestellt zu haben — nicht die Baustelle rechtzeitig fertig zu bekommen.
@@ -1732,17 +1732,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir sagen Ihnen ehrlich, ob der Antrag bis Ende Januar realistisch ist — und was dafür bis wann vorliegen muss.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/photovoltaik-anmelden-marktstammdatenregister/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Marktstammdatenregister
 
@@ -1756,7 +1756,7 @@ Jede Photovoltaikanlage muss innerhalb eines Monats nach Inbetriebnahme im Markt
 - Fehlt der Eintrag, hält der Netzbetreiber die Einspeisevergütung zurück.
 - Eine Sanktionszahlung von 10 € je kW und Monat entsteht erst, wenn zusätzlich die EEG-Jahresmeldung bis 28. Februar fehlt. Wer beides nachholt, zahlt 80 % weniger.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Die häufigsten Fragen zur Anmeldung
 
@@ -1832,17 +1832,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir sehen nach und sagen Ihnen, was zu tun ist.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/wallbox/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Laden zu Hause
 
@@ -1856,7 +1856,7 @@ Ob sich eine Wallbox lohnt, hängt von drei Punkten ab: der Anmeldung beim Netzb
 - Für ein Einfamilienhaus reichen meist 11 kW. Damit ist ein Auto über Nacht voll.
 - Neue Wallboxen über 4,2 kW sind nach § 14a EnWG steuerbar. Dafür sinkt das Netzentgelt, bei der Stromnetz Berlin 2026 pauschal um 146,58 € im Jahr. Einen Zuschuss für die private Wallbox gibt es 2026 nicht.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Vier Punkte vor dem Kauf
 
@@ -1950,17 +1950,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir klären mit Ihnen Leistung, Anmeldung und ob sich das Laden mit Solarstrom bei Ihnen lohnt.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/photovoltaik-waermepumpe-potsdam/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Landeshauptstadt Potsdam
 
@@ -1974,7 +1974,7 @@ Potsdam hat ein eigenes Förderprogramm, viele Denkmalbereiche und seit Juni 202
 - In den historischen Stadtkernen, den Vorstädten und am Welterbe braucht eine Solaranlage oft eine Erlaubnis.
 - Netzbetreiber ist die Netzgesellschaft Potsdam. Seit Juni 2026 gibt es einen beschlossenen Wärmeplan mit Fernwärme-Vorranggebieten.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Was in Potsdam anders ist
 
@@ -2061,17 +2061,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir klären mit Ihnen Förderung, Satzungen und was für Ihr Haus in Frage kommt.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/photovoltaik-waermepumpe-falkensee/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Falkensee im Havelland
 
@@ -2085,7 +2085,7 @@ Falkensee ist von Einfamilienhäusern geprägt, die überwiegend mit Öl oder Ga
 - Netzbetreiber ist E.DIS Netz. Eine Wärmepumpe muss dort unabhängig von ihrer Leistung angemeldet werden.
 - Die Stadt hat kein eigenes Förderprogramm. Im Angerdorf Falkenhagen schließt eine Gestaltungssatzung Kollektoren auf Dächern grundsätzlich aus.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Was in Falkensee gilt
 
@@ -2174,17 +2174,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir sagen Ihnen, ob eine Wärmepumpe in Ihrem Haus passt und was die Förderung bringt.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/photovoltaik-waermepumpe-bernau/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Bernau bei Berlin
 
@@ -2198,7 +2198,7 @@ In Bernau stammen rund 40 % der Wärme aus dem Fernwärmenetz. Die meisten Hausb
 - Im Stadtgebiet betreiben die Stadtwerke Bernau das Stromnetz.
 - In der Altstadt gelten Denkmal- und Gestaltungssatzung. In Birkholz darf eine sichtbare Anlage höchstens ein Viertel des Dachs belegen. Eine Stadtförderung gibt es nicht.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Was in Bernau gilt
 
@@ -2281,17 +2281,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir klären mit Ihnen, was in Ihrer Straße gilt und was sich für Ihr Haus rechnet.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/photovoltaik-waermepumpe-oranienburg/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Oranienburg im Kreis Oberhavel
 
@@ -2305,7 +2305,7 @@ Eine Solaranlage auf dem Dach ist in Oranienburg genauso unkompliziert wie ander
 - Kernstadt und Sachsenhausen gehören zum Netz der Stadtwerke Oranienburg, die übrigen Ortsteile zu E.DIS Netz.
 - Im Gebiet der Erhaltungssatzung Innenstadt braucht auch eine sichtbare Solaranlage eine Genehmigung.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Was in Oranienburg gilt
 
@@ -2389,17 +2389,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir klären mit Ihnen auch die Frage der Kampfmittel, bevor gegraben wird.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/
-Zuletzt aktualisiert: 28.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Ohne Verkaufsinteresse geschrieben
 
@@ -2482,17 +2482,17 @@ Kostenloser Rückruf
 Stellen Sie sie uns direkt. Wir rufen zurück, ohne Verkaufsdruck.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/photovoltaik-lohnt-sich/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Ratgeber · Stand August 2026
 
@@ -2506,7 +2506,7 @@ In den meisten Fällen ja. Der wirtschaftliche Vorteil entsteht heute vor allem 
 - Selbst verbrauchter Strom spart rund 35 Cent je kWh. Eingespeister Strom bringt bei Anlagen bis 10 kWp rund 7,7 Cent.
 - Im Beispiel (10 kWp, 8 kWh Speicher, 19.500 €) liegt der Vorteil bei rund 1.347 € im Jahr. Die Anlage hat sich nach etwa 14,5 Jahren bezahlt gemacht.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Was sich geändert hat
 
@@ -2560,17 +2560,17 @@ Kostenloser Rückruf
 Wir gehen die Zahlen für Ihr Haus mit Ihnen durch, am Telefon und kostenlos.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/waermepumpe-altbau/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Ratgeber · mit Selbsttest
 
@@ -2584,7 +2584,7 @@ In den meisten Fällen ja. Entscheidend ist weniger das Baujahr oder die Dämmun
 - Selbsttest: An einem kalten Tag den Vorlauf am Kessel auf 50 und dann auf 45 °C senken. Bleibt es in allen Räumen warm, ist das Haus in der Regel geeignet.
 - Größere Heizkörper in wenigen Räumen (400 bis 900 € je Stück) und ein hydraulischer Abgleich (700 bis 1.500 €) bringen meist mehr als eine Dämmung.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Selbsttest: Ist Ihr Haus geeignet?
 
@@ -2642,17 +2642,17 @@ Kostenloser Rückruf
 Wir schauen uns Heizung und Heizkörper mit Ihnen an und sagen Ihnen offen, was dafür nötig ist.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/angebot-pruefen/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Ratgeber · Checkliste
 
@@ -2666,7 +2666,7 @@ Fehlen diese Angaben, ist ein Angebot unvollständig. Die fehlenden Leistungen w
 - Übliche Anzahlungen liegen bei 20 bis 30 %. Wer 80 % vor Baubeginn verlangt, verlagert sein Risiko auf Sie.
 - Bei Photovoltaik sind 900 bis 1.050 kWh je kWp realistisch. Bei einer Wärmepumpe muss die Heizlast genannt sein und wie sie ermittelt wurde.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Bei jeder Anlage
 
@@ -2733,17 +2733,17 @@ Kostenloser Rückruf
 Rückruf anfordern oder das Angebot direkt im Angebots-Check hochladen.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/einspeiseverguetung/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Ratgeber · Photovoltaik
 
@@ -2757,7 +2757,7 @@ Bis Ende 2026 gelten die bekannten Vergütungssätze. Für neue Anlagen ab 2027 
 - Der Satz bei Inbetriebnahme bleibt für die ganze Laufzeit fest.
 - Für neue Anlagen ab 2027 sieht ein Gesetzentwurf (Drucksache 21/7867) statt fester Vergütung eine Übergangszahlung von rund 5,2 ct für etwa drei Jahre vor. Beschlossen ist er noch nicht (Stand Oktober 2026).
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Die Sätze bis 31. Dezember 2026
 
@@ -2829,17 +2829,17 @@ Kostenloser Rückruf
 Wir rechnen mit Ihnen durch, was Eigenverbrauch und Einspeisung bei Ihrem Haus bringen.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/photovoltaik-waermepumpe-kombinieren/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Ratgeber · Photovoltaik und Wärmepumpe
 
@@ -2853,7 +2853,7 @@ Eine Wärmepumpe braucht im Winter den meisten Strom, eine Solaranlage erzeugt i
 - Im Winter sinkt der Solaranteil stark. Die Solaranlage macht die Wärmepumpe nicht stromautark, senkt aber die Stromkosten über das Jahr deutlich.
 - Am meisten bringt es, Solarüberschuss als Wärme zu speichern, etwa über eine höhere Warmwassertemperatur.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Wie viel Wärmepumpenstrom vom Dach kommt
 
@@ -2914,17 +2914,17 @@ Kostenloser Rückruf
 Hinterlassen Sie Ihre Nummer. Wir sagen Ihnen, wie groß die Anlage sein sollte und ob ein eigener Zähler sinnvoll ist.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/stromspeicher-nachruesten/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Ratgeber · Stromspeicher
 
@@ -2938,7 +2938,7 @@ Bei vielen älteren Solaranlagen geht mittags ein großer Teil des Stroms ins Ne
 - Auch für nachgerüstete Speicher gilt 0 % Umsatzsteuer, wenn die Anlage höchstens 30 kWp hat (§ 12 Abs. 3 UStG).
 - Der Speicher ist im Marktstammdatenregister eine eigene Einheit und muss innerhalb eines Monats nach Inbetriebnahme eingetragen werden.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## Geht das bei meiner Anlage?
 
@@ -2997,17 +2997,17 @@ Kostenloser Rückruf
 Nennen Sie uns im Rückruf Ihre Anlage und Ihren Verbrauch, dann sagen wir Ihnen, welche Lösung passt.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/
-Zuletzt aktualisiert: 28.10.2026
+Zuletzt aktualisiert: 01.11.2026
 
 Ratgeber · Wärmepumpe
 
@@ -3021,7 +3021,7 @@ Wer von Gas oder Öl auf eine Wärmepumpe umsteigt, kauft künftig Strom statt B
 - Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.
 - Luft-Wasser-Wärmepumpen erreichten in Messungen des Fraunhofer ISE im Bestand im Mittel eine Jahresarbeitszahl von 3,4.
 
-Zuletzt aktualisiert am 28.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
 
 ## So rechnen Sie den Stromverbrauch aus
 
@@ -3094,12 +3094,12 @@ Kostenloser Rückruf
 Nennen Sie uns Ihren bisherigen Gas- oder Ölverbrauch. Wir rechnen Ihnen aus, mit welchem Stromverbrauch Sie rechnen sollten.
 
 - Kostenlos und unverbindlich
-- Antwort in der Regel innerhalb eines Werktags
+- Antwort in der Regel innerhalb von 24 Stunden
 - Lieber direkt? 0163 4440392
 
 ### Danke, ist angekommen.
 
-Wir melden uns in der Regel innerhalb eines Werktags bei Ihnen.
+Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 
 ---
 

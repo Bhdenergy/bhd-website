@@ -1,107 +1,107 @@
 {
   "home": {
-    "hash": "c42f15fa014c325bab89d1f93827a18a",
-    "datum": "2026-10-28"
+    "hash": "bdecd2d3c5f6a301cd0eaca8d78b8bed",
+    "datum": "2026-11-01"
   },
   "check": {
     "hash": "ba52f2f2dc65dfa500f46a4db3858e25",
     "datum": "2026-10-27"
   },
   "bestand": {
-    "hash": "26ec6fe5c69ae3a8b109e00aab425b5b",
-    "datum": "2026-10-27"
+    "hash": "da0465bc033dc871ecec82917b0eebe7",
+    "datum": "2026-11-01"
   },
   "termin": {
     "hash": "6bd12b2d48773fad2067f6ef7e133715",
     "datum": "2026-10-27"
   },
   "ref": {
-    "hash": "4791e2093cefc0e15342622213f6fc4f",
-    "datum": "2026-10-27"
+    "hash": "434a4e4661dfceba341fe20ab8016c10",
+    "datum": "2026-11-01"
   },
   "about": {
-    "hash": "b9ebc64d1f77f15a27932c6d60cccbfa",
-    "datum": "2026-10-27"
+    "hash": "b10d7c668f3c430e1143540708e8743a",
+    "datum": "2026-11-01"
   },
   "pv": {
-    "hash": "1021233bca5da9038df7d02f6876cf38",
-    "datum": "2026-10-27"
+    "hash": "7b6af783580eaec7b325269898adfefa",
+    "datum": "2026-11-01"
   },
   "speicher": {
-    "hash": "09090064e7728817b026376f3bb59a0b",
-    "datum": "2026-10-27"
+    "hash": "7d9c2566399d370968e804fde2869d34",
+    "datum": "2026-11-01"
   },
   "wp": {
-    "hash": "500e1d940b396acb90d24edc1fbfa95f",
-    "datum": "2026-10-27"
+    "hash": "aaf7ca73f82045988be3337611e6ecb9",
+    "datum": "2026-11-01"
   },
   "kosten": {
-    "hash": "8936637c7f86c20a2bc396ee19bc0cb2",
-    "datum": "2026-10-27"
+    "hash": "01feadd4cdd3e30c5840c02242efd044",
+    "datum": "2026-11-01"
   },
   "berlin": {
-    "hash": "27a1a18f94b6763036c29b31b59799cb",
-    "datum": "2026-10-27"
+    "hash": "644b9444b06a16b57bb915cab097e820",
+    "datum": "2026-11-01"
   },
   "brandenburg": {
-    "hash": "ba98e6db8e0cc69cfaa3161d2bd046b8",
-    "datum": "2026-10-27"
+    "hash": "f7d37a734b7d10668a3349e7d3c85d99",
+    "datum": "2026-11-01"
   },
   "foerderung2027": {
-    "hash": "4a80f520a92435c2be680d1425b39a12",
-    "datum": "2026-10-27"
+    "hash": "dc3206b565ce07218b9e48f1cd3777a5",
+    "datum": "2026-11-01"
   },
   "mastr": {
-    "hash": "e69f5a426875e439aa7315fd118972fc",
-    "datum": "2026-10-27"
+    "hash": "6af352dc47cb26cc1f354d5debef2974",
+    "datum": "2026-11-01"
   },
   "wallbox": {
-    "hash": "dd133d07c7e49328138b91186f2cf8a6",
-    "datum": "2026-10-27"
+    "hash": "54fde8cdab37bbde0e5d91b786f59f86",
+    "datum": "2026-11-01"
   },
   "potsdam": {
-    "hash": "5d5e4e7bae383c06175421148d9abfe8",
-    "datum": "2026-10-27"
+    "hash": "712bdc104c143214f1427440d209f560",
+    "datum": "2026-11-01"
   },
   "falkensee": {
-    "hash": "9f79a5391ff5796cb45e09cecd56cdf6",
-    "datum": "2026-10-27"
+    "hash": "74c47f43271a021f4f6873fe4a7dd91c",
+    "datum": "2026-11-01"
   },
   "bernau": {
-    "hash": "be9aaf4f51f5bf831f883f49eaaf51b6",
-    "datum": "2026-10-27"
+    "hash": "248d9712e092e2bf02a57e06a10244b0",
+    "datum": "2026-11-01"
   },
   "oranienburg": {
-    "hash": "e943dc707672de46b6e8fec2785596fe",
-    "datum": "2026-10-27"
+    "hash": "6968ed785ecaa3659d2b4940557e81c0",
+    "datum": "2026-11-01"
   },
   "ratgeber": {
-    "hash": "d0eef48ce005cd6c8e0f279774182065",
-    "datum": "2026-10-28"
+    "hash": "a4499d4b5cab3caf3444e1fba133adcf",
+    "datum": "2026-11-01"
   },
   "rat-pv": {
-    "hash": "0677e15fe461fca94e48e2eaec5b819c",
-    "datum": "2026-10-27"
+    "hash": "4f5094bb3609115d24b642a9dec11971",
+    "datum": "2026-11-01"
   },
   "rat-wp": {
-    "hash": "32359cce0a133c48643ad79450bbea63",
-    "datum": "2026-10-27"
+    "hash": "8d151b6c387d7ba24299acabee33919e",
+    "datum": "2026-11-01"
   },
   "rat-check": {
-    "hash": "b84d0caf4324361559b35ae811a9b77e",
-    "datum": "2026-10-27"
+    "hash": "42d35d94d38c90718c81a5d6f90af3cb",
+    "datum": "2026-11-01"
   },
   "rat-eeg": {
-    "hash": "3b453be02c1229185419159cad711081",
-    "datum": "2026-10-27"
+    "hash": "54eb8bbccbb3dc2cfba719765569b7da",
+    "datum": "2026-11-01"
   },
   "rat-pvwp": {
-    "hash": "2b4641fb88297fe418e00c5349d5476f",
-    "datum": "2026-10-27"
+    "hash": "0f52ae0b0becd39e559ed87e5c0c27fd",
+    "datum": "2026-11-01"
   },
   "rat-speicher": {
-    "hash": "436bdf2bddc57c3eb8242fb8c086dd38",
-    "datum": "2026-10-27"
+    "hash": "9994a5f593d2244de73d2b3e6f330728",
+    "datum": "2026-11-01"
   },
   "rechner": {
     "hash": "c869b7240769a8e0c16be7a23f182e1d",
@@ -116,8 +116,8 @@
     "datum": "2026-10-27"
   },
   "kontakt": {
-    "hash": "7a24c9c6deaff38563780e61f1d72c53",
-    "datum": "2026-10-27"
+    "hash": "a57c42f64e87fd524f5dc81805204c93",
+    "datum": "2026-11-01"
   },
   "partner": {
     "hash": "dce8df13c35714b78c8f4d7bcbf5ade7",
@@ -132,7 +132,7 @@
     "datum": "2026-10-31"
   },
   "rat-strom": {
-    "hash": "3536dd772aba203692445abb0a2ba340",
-    "datum": "2026-10-28"
+    "hash": "f188bf17d8eba91c1282d8ce9c5c9625",
+    "datum": "2026-11-01"
   }
 }
