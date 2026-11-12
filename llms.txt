@@ -140,7 +140,7 @@ Stand jeweils in Klammern. Alle Angaben ohne Gewähr.
 - Auch für nachgerüstete Speicher gilt 0 % Umsatzsteuer, wenn die Anlage höchstens 30 kWp hat (§ 12 Abs. 3 UStG).
 - Der Speicher ist im Marktstammdatenregister eine eigene Einheit und muss innerhalb eines Monats nach Inbetriebnahme eingetragen werden.
 
-### [Wärmepumpe Stromverbrauch: so rechnen Sie ihn aus | BHD Ratgeber](https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/) (01.11.2026)
+### [Wärmepumpe Stromverbrauch berechnen | BHD Ratgeber](https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/) (01.11.2026)
 - Der Jahresstromverbrauch einer Wärmepumpe ist die benötigte Wärme geteilt durch die Jahresarbeitszahl.
 - Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.
 - Luft-Wasser-Wärmepumpen erreichten in Messungen des Fraunhofer ISE im Bestand im Mittel eine Jahresarbeitszahl von 3,4.

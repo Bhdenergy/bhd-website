@@ -128,12 +128,23 @@ function esc(s) {
 
 /* ------------------------------------------------------------ Seitenplan */
 
+// Einsatzgebiet fuer JSON-LD: Sitz Berlin, eigene Ortsseiten im Umland, bundesweit
+const GEBIET = [
+  { '@type': 'City', name: 'Berlin' },
+  { '@type': 'State', name: 'Brandenburg' },
+  { '@type': 'City', name: 'Potsdam' },
+  { '@type': 'City', name: 'Falkensee' },
+  { '@type': 'City', name: 'Bernau bei Berlin' },
+  { '@type': 'City', name: 'Oranienburg' },
+  { '@type': 'Country', name: 'Deutschland' }
+];
+
 const PAGES = [
   {
     key: 'home', dir: '', view: 'view-home', prio: '1.0', nav: false,
     title: 'Photovoltaik & Wärmepumpe Berlin & bundesweit | BHD',
     ogTitle: 'Photovoltaik & Wärmepumpe – unabhängige Beratung | BHD',
-    desc: 'Unabhängige Beratung zu Photovoltaik, Stromspeicher und Wärmepumpe. Geprüfte Fachbetriebe, KfW-Zuschuss bis 70 %, bei geringem Einkommen 80 %. Sitz in Berlin, bundesweit tätig.',
+    desc: 'Photovoltaik, Stromspeicher und Wärmepumpe: unabhängige Beratung, geprüfte Fachbetriebe, KfW-Zuschuss bis 70 %. Sitz in Berlin, bundesweit tätig.',
     ld: ['faq']
   },
   {
@@ -390,7 +401,7 @@ const PAGES = [
   },
   {
     key: 'rat-strom', dir: 'ratgeber/waermepumpe-stromverbrauch', view: 'view-rat-strom', prio: '0.8', crumb: 'Stromverbrauch Wärmepumpe',
-    title: 'Wärmepumpe Stromverbrauch: so rechnen Sie ihn aus | BHD Ratgeber',
+    title: 'Wärmepumpe Stromverbrauch berechnen | BHD Ratgeber',
     desc: 'Wie viel Strom eine Wärmepumpe im Einfamilienhaus braucht: Rechenweg mit Beispiel, Messwerte des Fraunhofer ISE und günstigeres Netzentgelt nach § 14a EnWG.',
     article: { headline: 'Wie viel Strom braucht eine Wärmepumpe?', pub: '2026-10-28', section: 'Wärmepumpe' }
   },
@@ -653,10 +664,7 @@ function jsonLd(page, viewHtml) {
       // Koordinaten der Geschäftsadresse, per OpenStreetMap ermittelt
       geo: { '@type': 'GeoCoordinates', latitude: 52.55896, longitude: 13.38854 },
       hasMap: GOOGLE_MAPS,
-      areaServed: [
-        { '@type': 'City', name: 'Berlin' },
-        { '@type': 'Country', name: 'Deutschland' }
-      ],
+      areaServed: GEBIET,
       knowsAbout: [
         'Photovoltaik', 'Solaranlage', 'Stromspeicher', 'Batteriespeicher', 'Wärmepumpe',
         'Luft-Wasser-Wärmepumpe', 'Wallbox', 'Energieberatung', 'KfW-Förderung',
@@ -843,10 +851,7 @@ function jsonLd(page, viewHtml) {
       serviceType: page.service.typ,
       description: page.service.desc,
       provider: { '@id': SITE + '/#org' },
-      areaServed: [
-        { '@type': 'City', name: 'Berlin' },
-        { '@type': 'Country', name: 'Deutschland' }
-      ],
+      areaServed: GEBIET,
       audience: { '@type': 'Audience', audienceType: 'Hausbesitzer und Eigentümer' },
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: 'Beratung und Angebotserstellung kostenlos und unverbindlich' }
     });

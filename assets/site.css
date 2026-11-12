@@ -1699,6 +1699,77 @@
     body:has(.consent-bar:not([hidden])) .consent-bar{bottom:0}
   }
 
+  /* ==========================================================
+     GESTALTUNG "A – HELL UND LUFTIG" (12.11.2026)
+     Uebersteuert KLAR + FEINSCHLIFF. Hero: Text oben, breites
+     Video darunter; Leistungen als Karten; runde Knoepfe;
+     heller Footer mit Linkspalten.
+     ========================================================== */
+  :root{--tint:#faf7f2;--bg-soft:#faf7f2}
+  body{background:#fff}
+  nav{box-shadow:none;border-bottom:1px solid #ece8e0}
+  .btn{border-radius:999px;padding:15px 28px}
+
+  /* Startseite: Hero */
+  .k5-hero{display:flex;flex-direction:column-reverse;align-items:stretch;max-width:1240px;margin:0 auto;padding:56px 32px 24px;gap:40px;min-height:0;background:none}
+  .k5-hero-copy{max-width:none;padding:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px 64px;align-items:end}
+  .k5-hero-copy h1{grid-column:1;grid-row:1/4;margin:0}
+  .k5-hero h1 .h1-haupt{font-size:clamp(2.6rem,5.2vw,4.4rem);max-width:12ch;letter-spacing:-.025em;line-height:1.02}
+  .k5-hero h1 .h1-sub{font-size:1.2rem;color:#555;font-weight:500}
+  .k5-zeilen{grid-column:2;margin:0}
+  .k5-zeilen li,.k5-zeilen li:last-child{border:0;padding:6px 0 6px 28px;position:relative;color:#444}
+  .k5-zeilen li::before{content:"";position:absolute;left:0;top:13px;width:14px;height:8px;border-left:2px solid var(--akzent);border-bottom:2px solid var(--akzent);transform:rotate(-45deg)}
+  .k5-hero .hero-cta{grid-column:2}
+  .k5-hero .hero-facts{grid-column:2;margin:0}
+  .k5-hero-media{border-radius:24px;aspect-ratio:21/9;min-height:0;align-self:stretch}
+  .k5-hero-media .hero-still,.k5-hero-media .hero-vid{width:100%;height:100%;object-fit:cover}
+
+  /* Startseite: Leistungen als Karten */
+  .k5-leistungen{gap:20px}
+  .k5-leistung{background:#fff;border:1px solid #ece8e0;border-radius:20px;padding:28px 28px 26px}
+  .k5-leistung h3{font-size:1.25rem}
+
+  /* Startseite: geteilte Flaechen und Kontakt als Bloecke im Container */
+  .k5-split{max-width:1240px;margin:0 auto 24px;border-radius:28px;overflow:hidden}
+  .k5-kontakt{border-radius:28px;max-width:1240px;margin:0 auto 64px}
+
+  /* Footer hell, Links in Spalten */
+  footer{background:#fff;color:#555;border-top:1px solid #ece8e0}
+  footer a,.foot-links a{color:#222}
+  .foot-links a:hover{color:var(--akzent-tief)}
+  footer .brand-logo{background:none;padding:0}
+  footer .disclaimer{color:#666}
+  .foot-top{display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px;align-items:start}
+  .foot-links.foot-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+  .foot-cols .fcol{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .foot-cols .fcol-t{margin:0 0 4px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#666}
+  .foot-cols a{font-size:.94rem;padding:0;margin:0}
+
+  @media(max-width:1024px){
+    .k5-hero{flex-direction:column;padding:16px 18px 8px;gap:22px}
+    .k5-hero-copy{grid-template-columns:minmax(0,1fr)}
+    .k5-hero-copy h1,.k5-zeilen,.k5-hero .hero-cta,.k5-hero .hero-facts{grid-column:1;grid-row:auto}
+    .k5-hero-media{aspect-ratio:16/10;border-radius:18px}
+    .k5-split,.k5-kontakt{border-radius:0;margin:0}
+    .foot-top{grid-template-columns:minmax(0,1fr);gap:28px}
+    .foot-links.foot-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}
+  }
+  @media(max-width:600px){
+    .k5-hero{padding:12px 14px 4px;gap:20px}
+    .k5-hero-copy{padding:0 4px}
+    .k5-hero h1 .h1-haupt{font-size:2.15rem}
+    .k5-hero h1 .h1-sub{font-size:1rem;margin-top:8px}
+    .k5-hero-copy{gap:12px}
+    .k5-zeilen li,.k5-zeilen li:last-child{font-size:.97rem;padding:3px 0 3px 26px}
+    .k5-zeilen li::before{top:9px}
+    .k5-hero .hero-facts{font-size:.88rem}
+    .k5-hero-media{aspect-ratio:16/10}
+    .k5-hero .hero-cta .btn{width:100%;justify-content:center;text-align:center}
+    .k5-hero-media{aspect-ratio:4/3;border-radius:16px}
+    .k5-leistung{padding:22px 20px}
+    .foot-cols a{padding:4px 0}
+  }
+
 /* <picture> soll das Layout nicht beeinflussen – die bestehenden
    Regeln greifen dadurch weiterhin direkt auf das <img>. */
 picture{display:contents}
