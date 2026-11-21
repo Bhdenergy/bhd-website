@@ -60,8 +60,8 @@
     "datum": "2026-11-01"
   },
   "potsdam": {
-    "hash": "712bdc104c143214f1427440d209f560",
-    "datum": "2026-11-01"
+    "hash": "dbdd823f1a2e4822e69259803631808f",
+    "datum": "2026-11-21"
   },
   "falkensee": {
     "hash": "74c47f43271a021f4f6873fe4a7dd91c",
@@ -80,32 +80,32 @@
     "datum": "2026-11-01"
   },
   "rat-pv": {
-    "hash": "4f5094bb3609115d24b642a9dec11971",
-    "datum": "2026-11-01"
+    "hash": "95698cef2fe6f8c0adff62c66457903f",
+    "datum": "2026-11-21"
   },
   "rat-wp": {
-    "hash": "8d151b6c387d7ba24299acabee33919e",
-    "datum": "2026-11-01"
+    "hash": "bb669e4aa8e488b098c2aac0cf9f587f",
+    "datum": "2026-11-21"
   },
   "rat-check": {
     "hash": "42d35d94d38c90718c81a5d6f90af3cb",
     "datum": "2026-11-01"
   },
   "rat-eeg": {
-    "hash": "54eb8bbccbb3dc2cfba719765569b7da",
-    "datum": "2026-11-01"
+    "hash": "66a1bc1d1830628ccb2b0b1ca1b9fe7e",
+    "datum": "2026-11-21"
   },
   "rat-pvwp": {
-    "hash": "0f52ae0b0becd39e559ed87e5c0c27fd",
-    "datum": "2026-11-01"
+    "hash": "9b0f10678585661dc60280a3466fdfef",
+    "datum": "2026-11-21"
   },
   "rat-speicher": {
-    "hash": "9994a5f593d2244de73d2b3e6f330728",
-    "datum": "2026-11-01"
+    "hash": "40443a73084fd45cf70ebbf7a57a6567",
+    "datum": "2026-11-21"
   },
   "rechner": {
-    "hash": "c869b7240769a8e0c16be7a23f182e1d",
-    "datum": "2026-10-27"
+    "hash": "f459da9146f0129c3229118223abe0a6",
+    "datum": "2026-11-21"
   },
   "rendite": {
     "hash": "08e8a9317ebc092ea84bd56ed0b09b72",
@@ -132,7 +132,7 @@
     "datum": "2026-10-31"
   },
   "rat-strom": {
-    "hash": "f188bf17d8eba91c1282d8ce9c5c9625",
-    "datum": "2026-11-01"
+    "hash": "de57b07dc338a0774b2a3ddbc31d9a18",
+    "datum": "2026-11-21"
   }
 }

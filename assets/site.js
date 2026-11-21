@@ -465,9 +465,31 @@
 
   const VOLLSTUNDEN=2100;      // Vollbenutzungsstunden Heizung pro Jahr (Richtwert Deutschland)
   const WW_PRO_PERSON=500;     // kWh Warmwasserwärme je Person und Jahr
-  const MAX_KOSTEN=28000;      // förderfähige Kosten 1. Wohneinheit, KfW 458 ab 21.07.2026
   const MAX_QUOTE=80;          // Deckel nur bei anzusetzendem zvE bis 30.000 €
   const REGEL_QUOTE=70;        // sonst gilt der Regeldeckel von 70 %
+
+  // KfW 458 (kfw.de, Produktseite, geprueft 21.11.2026): Klimageschwindigkeitsbonus
+  // 16 %, sinkt erstmals zum 01.02.2027 und danach halbjaehrlich zum 01.02. und 01.08.
+  // um 4 Punkte, ab 01.08.2028 entfaellt er. Der Foerderhoechstbetrag der ersten
+  // Wohneinheit (28.000 €) sinkt zu denselben Terminen um je 750 €.
+  // Massgeblich ist das Datum der Antragstellung. Stufe 0 = bis 31.01.2027.
+  const MONATE=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+  function kfwStufe(n){
+    const d=new Date(2027,1+6*(n-1),1);
+    return {
+      klima:Math.max(0,16-4*n),
+      kosten:28000-750*Math.min(n,8),
+      ab:n>0?d.getDate()+'. '+MONATE[d.getMonth()]+' '+d.getFullYear():''
+    };
+  }
+  function kfwStufeHeute(){
+    const h=new Date();
+    if(h<new Date(2027,1,1))return 0;
+    return 1+Math.floor(((h.getFullYear()-2027)*12+h.getMonth()-1)/6);
+  }
+  const STUFE_N=kfwStufeHeute();
+  const STUFE=kfwStufe(STUFE_N), STUFE_NEXT=kfwStufe(STUFE_N+1);
+  const MAX_KOSTEN=STUFE.kosten; // förderfähige Kosten 1. Wohneinheit bei Antrag heute
 
   // Jahresarbeitszahl einer Luft-Wasser-Wärmepumpe je Vorlauftemperatur
   const JAZ_VL={35:4.3, 40:4.0, 45:3.6, 55:3.0, 60:2.7};
@@ -567,7 +589,7 @@
 
     let quote=30;
     const bausteine=['30 % Grundförderung'];
-    if(selbstnutzer&&altOK){quote+=16;bausteine.push('16 % Klimageschwindigkeitsbonus');}
+    if(selbstnutzer&&altOK&&STUFE.klima>0){quote+=STUFE.klima;bausteine.push(STUFE.klima+' % Klimageschwindigkeitsbonus');}
     if(selbstnutzer&&zveAngegeben){
       let ek=0;
       if(zve<=30000)ek=40; else if(zve<=40000)ek=30; else if(zve<=50000)ek=10;
@@ -589,6 +611,11 @@
     const foerderfaehig=Math.min(invest,MAX_KOSTEN);
     const zuschuss=foerderfaehig*quote/100;
     const eigen=invest-zuschuss;
+
+    // Gleiche Rechnung bei Antrag nach der naechsten Absenkung (Bonus und Hoechstbetrag).
+    const quoteNext=Math.min(deckel,quoteVorDeckel-((selbstnutzer&&altOK)?(STUFE.klima-STUFE_NEXT.klima):0));
+    const zuschussNext=Math.min(invest,STUFE_NEXT.kosten)*quoteNext/100;
+    const verlust=Math.round(zuschuss-zuschussNext);
 
     // --- Kostenvergleich ---
     const preisStrom=num('wp-preis-strom',0.26);
@@ -650,6 +677,11 @@
     $('r-eigen').textContent=eur(eigen);
     $('r-fund-note').textContent=bausteine.join(' + ')+'. Gerechnet auf '+eur(foerderfaehig)+
       (investAngegeben?' förderfähige Kosten':' Förderhöchstbetrag, weil keine Investitionssumme angegeben ist')+'.';
+    const fr=$('r-frist');
+    if(verlust>0){
+      fr.hidden=false;
+      fr.innerHTML='<b>Bei Antrag ab '+STUFE_NEXT.ab+':</b> voraussichtlich '+eur(zuschussNext)+' Zuschuss, also rund <b>'+eur(verlust)+' weniger</b>. Maßgeblich ist das Datum des Antrags bei der KfW, nicht der Einbau.';
+    }else{ fr.hidden=true; }
 
     $('r-hinweise').innerHTML=hinweise.map(h=>'<div class="cn cn-'+h[0]+'">'+h[1]+'</div>').join('');
 

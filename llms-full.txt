@@ -1960,7 +1960,7 @@ Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 ---
 
 Quelle: https://bhd-energie.de/photovoltaik-waermepumpe-potsdam/
-Zuletzt aktualisiert: 01.11.2026
+Zuletzt aktualisiert: 21.11.2026
 
 Landeshauptstadt Potsdam
 
@@ -1974,7 +1974,7 @@ Potsdam hat ein eigenes Förderprogramm, viele Denkmalbereiche und seit Juni 202
 - In den historischen Stadtkernen, den Vorstädten und am Welterbe braucht eine Solaranlage oft eine Erlaubnis.
 - Netzbetreiber ist die Netzgesellschaft Potsdam. Seit Juni 2026 gibt es einen beschlossenen Wärmeplan mit Fernwärme-Vorranggebieten.
 
-Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 21.11.2026. Alle Angaben ohne Gewähr.
 
 ## Was in Potsdam anders ist
 
@@ -2001,7 +2001,7 @@ Potsdam ist eine der wenigen Städte in Brandenburg, die Privatleuten selbst Gel
 
 Die Bedingungen sind strenger als bei vielen anderen Programmen. Gefördert werden nur Privatleute mit Erstwohnsitz in Potsdam. Vor dem Antrag ist eine Energieberatung Pflicht, etwa bei der Verbraucherzentrale Brandenburg. Für Wärmepumpe und Speicher müssen Sie Ökostrom beziehen. Der Antrag muss gestellt sein, bevor Sie verbindlich bestellen, und bewilligt wird in der Reihenfolge des Eingangs.
 
-Zum Stand 13. Oktober 2026 können keine Anträge gestellt werden. Die Richtlinie lässt Anträge ohnehin nur bis zum 31. Oktober eines Jahres zu. Für 2026 ist das Programm damit praktisch erledigt. Wer 2027 bauen will, kann die Zeit nutzen: Energieberatung jetzt machen, Angebote einholen, aber noch nichts unterschreiben, bis der Antrag gestellt ist. Das gilt im Übrigen genauso für den KfW-Zuschuss.
+Auch zum Stand 21. November 2026 können keine Anträge gestellt werden. Die Stadt kündigt an, Formulare wieder bereitzustellen, sobald Anträge möglich sind, nennt aber noch keinen Termin. Die Richtlinie lässt Anträge ohnehin nur bis zum 31. Oktober eines Jahres zu. Für 2026 ist das Programm damit praktisch erledigt. Wer 2027 bauen will, kann die Zeit nutzen: Energieberatung jetzt machen, Angebote einholen, aber noch nichts unterschreiben, bis der Antrag gestellt ist. Das gilt im Übrigen genauso für den KfW-Zuschuss.
 
 ## Denkmalschutz, Welterbe und Satzungen
 
@@ -2029,11 +2029,11 @@ Für die Wärmepumpe selbst gilt der KfW-Zuschuss 458 wie überall: 30 % Grundf�
 
 ## Eignet sich Ihr Dach?
 
-Die Stadt bietet eine kostenlose Solarpotenzialanalyse für einzelne Hausdächer an. Sie zeigt, ob sich Ihr Dach grundsätzlich für Photovoltaik eignet. Für die Größe der Anlage zählt dann vor allem Ihr Verbrauch. Mit dem Rentabilitätsrechner können Sie das mit Ihren eigenen Zahlen durchspielen.
+Die Stadt bietet eine kostenlose Solarpotenzialanalyse für einzelne Hausdächer an. Sie zeigt, ob sich Ihr Dach grundsätzlich für Photovoltaik eignet. Für die Größe der Anlage zählt dann vor allem Ihr Verbrauch. Mit dem Rentabilitätsrechner können Sie das mit Ihren eigenen Zahlen durchspielen. Grundlagen zu Anlagengröße, Speicher und Kosten stehen auf der Seite Photovoltaik.
 
 Quellen (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):
 
-- Klimaschutzförderprogramm, Antragsstatus: potsdam.de
+- Klimaschutzförderprogramm, Antragsstatus (erneut geprüft am 21.11.2026): potsdam.de
 - Potsdamer Klimaschutzförderrichtlinie vom 26.03.2026: potsdam.de (PDF)
 - Allgemeine Hinweise der Bauaufsicht zu Solaranlagen, Stand März 2025: potsdam.de (PDF)
 - Solarenergie und Denkmalschutz: potsdam.de
@@ -2492,7 +2492,7 @@ Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/photovoltaik-lohnt-sich/
-Zuletzt aktualisiert: 01.11.2026
+Zuletzt aktualisiert: 21.11.2026
 
 Ratgeber · Stand August 2026
 
@@ -2506,7 +2506,7 @@ In den meisten Fällen ja. Der wirtschaftliche Vorteil entsteht heute vor allem 
 - Selbst verbrauchter Strom spart rund 35 Cent je kWh. Eingespeister Strom bringt bei Anlagen bis 10 kWp rund 7,7 Cent.
 - Im Beispiel (10 kWp, 8 kWh Speicher, 19.500 €) liegt der Vorteil bei rund 1.347 € im Jahr. Die Anlage hat sich nach etwa 14,5 Jahren bezahlt gemacht.
 
-Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 21.11.2026. Alle Angaben ohne Gewähr.
 
 ## Was sich geändert hat
 
@@ -2516,11 +2516,13 @@ Gleichzeitig ist etwas anderes passiert: Anlagen sind deutlich günstiger geword
 
 ## Rechenbeispiel für ein Einfamilienhaus
 
-Nehmen wir ein Einfamilienhaus mit vier Personen und 4.500 kWh Jahresverbrauch. Auf dem Satteldach liegen 10 kWp, dazu ein Speicher mit 8 kWh. Investition: rund 19.500 € – die Spannen dahinter stehen unter Kosten.
+Nehmen wir ein Einfamilienhaus mit vier Personen und 4.500 kWh Jahresverbrauch. Auf dem Satteldach liegen 10 kWp (wie man die Größe einer Photovoltaikanlage festlegt, steht auf der Photovoltaik-Seite), dazu ein Speicher mit 8 kWh. Investition: rund 19.500 € – die Spannen dahinter stehen unter Kosten.
 
 Die Anlage erzeugt bei etwa 950 kWh je kWp rund 9.500 kWh im Jahr. Mit Speicher deckt sie etwa 66 Prozent des Haushaltsbedarfs, also rund 2.970 kWh. Bei 35 Cent Netzstrompreis sind das 1.040 € gespart. Die übrigen 6.530 kWh gehen ins Netz und bringen bei 7,7 Cent noch 503 €. Davon gehen rund 195 € im Jahr für Versicherung, Zähler und die Rücklage für den Wechselrichter ab. Bleiben 1.347 € Vorteil pro Jahr – rechnerisch amortisiert sich die Anlage damit in etwa 14,5 Jahren.
 
 Ohne die Betriebskosten stünden hier zwölf Jahre, und genau so rechnen es die meisten. Wir zeigen die ehrlichere Zahl. Danach läuft die Anlage weiter: Module halten typischerweise 25 bis 30 Jahre. Der Wechselrichter muss meist nach 12 bis 15 Jahren getauscht werden – deshalb steckt er oben schon in der Rücklage. Mit Ihren eigenen Zahlen rechnet das der Rentabilitätsrechner.
+
+Rechnet es sich bei Ihnen? Der Rentabilitätsrechner rechnet mit Ihrem Verbrauch und Ihrem Dach.
 
 ## Für wen es sich besonders lohnt
 
@@ -2570,7 +2572,7 @@ Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/waermepumpe-altbau/
-Zuletzt aktualisiert: 01.11.2026
+Zuletzt aktualisiert: 21.11.2026
 
 Ratgeber · mit Selbsttest
 
@@ -2584,7 +2586,7 @@ In den meisten Fällen ja. Entscheidend ist weniger das Baujahr oder die Dämmun
 - Selbsttest: An einem kalten Tag den Vorlauf am Kessel auf 50 und dann auf 45 °C senken. Bleibt es in allen Räumen warm, ist das Haus in der Regel geeignet.
 - Größere Heizkörper in wenigen Räumen (400 bis 900 € je Stück) und ein hydraulischer Abgleich (700 bis 1.500 €) bringen meist mehr als eine Dämmung.
 
-Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 21.11.2026. Alle Angaben ohne Gewähr.
 
 ## Selbsttest: Ist Ihr Haus geeignet?
 
@@ -2602,6 +2604,8 @@ Vorlauf Arbeitszahl Stromkosten bei 20.000 kWh Wärme
 55 °C 3,0 rund 1.733 €/Jahr
 
 Gerechnet mit 26 Cent je Kilowattstunde Wärmepumpenstrom. Zwischen 35 und 55 Grad liegen über 500 € im Jahr, also mehr als 10.000 € über die Lebensdauer der Anlage.
+
+Wärmepumpe im Altbau geplant? Bis 31. Januar 2027 gelten noch die höheren Fördersätze. Der Rechner zeigt Ihren voraussichtlichen Zuschuss und wie viel davon bei einem Antrag ab Februar wegfällt.
 
 ## Heizkörper und hydraulischer Abgleich vor der Dämmung
 
@@ -2743,7 +2747,7 @@ Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/einspeiseverguetung/
-Zuletzt aktualisiert: 01.11.2026
+Zuletzt aktualisiert: 21.11.2026
 
 Ratgeber · Photovoltaik
 
@@ -2757,7 +2761,7 @@ Bis Ende 2026 gelten die bekannten Vergütungssätze. Für neue Anlagen ab 2027 
 - Der Satz bei Inbetriebnahme bleibt für die ganze Laufzeit fest.
 - Für neue Anlagen ab 2027 sieht ein Gesetzentwurf (Drucksache 21/7867) statt fester Vergütung eine Übergangszahlung von rund 5,2 ct für etwa drei Jahre vor. Beschlossen ist er noch nicht (Stand Oktober 2026).
 
-Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 21.11.2026. Alle Angaben ohne Gewähr.
 
 ## Die Sätze bis 31. Dezember 2026
 
@@ -2782,6 +2786,8 @@ Das EEG 2023, auf dem diese Sätze beruhen, gilt laut Bundesnetzagentur bis zum 
 - Neue Dachanlagen unter 100 kW sollen ihre Einspeisung dauerhaft auf 50 % der Leistung begrenzen, auch mit intelligentem Messsystem.
 
 Das ist noch kein Gesetz. Die erste Lesung war am 24. September 2026, die Anhörung am 5. Oktober. Außerdem muss die EU-Kommission zustimmen. Einzelheiten können sich bis zum Beschluss noch ändern. Wir aktualisieren diese Seite, sobald es entschieden ist.
+
+Rechnet sich eine Anlage bei Ihnen? Entscheidend ist der Eigenverbrauch. Der Rentabilitätsrechner rechnet mit Ihrem Verbrauch und Ihrem Dach.
 
 ## Was das für Ihre Entscheidung heißt
 
@@ -2839,7 +2845,7 @@ Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/photovoltaik-waermepumpe-kombinieren/
-Zuletzt aktualisiert: 01.11.2026
+Zuletzt aktualisiert: 21.11.2026
 
 Ratgeber · Photovoltaik und Wärmepumpe
 
@@ -2853,7 +2859,7 @@ Eine Wärmepumpe braucht im Winter den meisten Strom, eine Solaranlage erzeugt i
 - Im Winter sinkt der Solaranteil stark. Die Solaranlage macht die Wärmepumpe nicht stromautark, senkt aber die Stromkosten über das Jahr deutlich.
 - Am meisten bringt es, Solarüberschuss als Wärme zu speichern, etwa über eine höhere Warmwassertemperatur.
 
-Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 21.11.2026. Alle Angaben ohne Gewähr.
 
 ## Wie viel Wärmepumpenstrom vom Dach kommt
 
@@ -2865,7 +2871,9 @@ Bezogen auf das ganze Haus deckten die Anlagen ohne Batterie 25 bis 40 % des Str
 
 Von Mai bis August kam eines der gemessenen Häuser mit Batterie fast vollständig ohne Netzstrom aus. Im November, Dezember und Januar sank der Anteil unter 15 %. Die Batterie hilft in diesen Monaten nur noch, den wenigen Solarstrom vom Mittag in den Nachmittag zu schieben. Über Nacht reicht er nicht mehr.
 
-Wer das weiß, plant realistisch: Die Solaranlage macht die Wärmepumpe nicht stromautark. Sie senkt aber die Stromkosten über das Jahr deutlich, vor allem in der Übergangszeit und beim Warmwasser im Sommer.
+Wer das weiß, plant realistisch: Die Solaranlage macht die Wärmepumpe nicht stromautark. Sie senkt aber die Stromkosten über das Jahr deutlich, vor allem in der Übergangszeit und beim Warmwasser im Sommer. Worauf es bei der Auslegung der Photovoltaikanlage ankommt, steht auf der eigenen Seite.
+
+Beides zusammen planen? Wir sagen Ihnen, wie groß Solaranlage und Wärmepumpe für Ihr Haus sein sollten und welcher Zuschuss möglich ist.
 
 ## Warmwasser und Heizkurve als Speicher
 
@@ -2924,7 +2932,7 @@ Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/stromspeicher-nachruesten/
-Zuletzt aktualisiert: 01.11.2026
+Zuletzt aktualisiert: 21.11.2026
 
 Ratgeber · Stromspeicher
 
@@ -2938,7 +2946,7 @@ Bei vielen älteren Solaranlagen geht mittags ein großer Teil des Stroms ins Ne
 - Auch für nachgerüstete Speicher gilt 0 % Umsatzsteuer, wenn die Anlage höchstens 30 kWp hat (§ 12 Abs. 3 UStG).
 - Der Speicher ist im Marktstammdatenregister eine eigene Einheit und muss innerhalb eines Monats nach Inbetriebnahme eingetragen werden.
 
-Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 21.11.2026. Alle Angaben ohne Gewähr.
 
 ## Geht das bei meiner Anlage?
 
@@ -2946,11 +2954,31 @@ In den meisten Fällen ja. Es gibt zwei Bauarten. Beim DC-gekoppelten Speicher h
 
 Bei neuen Anlagen ist DC-Kopplung inzwischen der Normalfall: Laut Stromspeicher-Inspektion der HTW Berlin hatten 2025 rund 90 % der Systeme einen Hybridwechselrichter. Beim Nachrüsten hängt die Wahl am vorhandenen Gerät. Ist Ihr Wechselrichter schon ein Hybridgerät mit Batterieanschluss, reicht oft die passende Batterie. Ist er alt oder nicht dafür ausgelegt, ist die AC-Lösung meist einfacher, als den Wechselrichter zu tauschen. Ein Angebot sollte begründen, warum es die eine oder andere Lösung vorschlägt.
 
-## Keine Mehrwertsteuer, auch beim Nachrüsten
+## Was kostet das Nachrüsten?
+
+Für den Speicher selbst gelten ungefähr dieselben Preise wie bei einer neuen Anlage. Marktübliche Spannen inklusive Einbau:
+
+Nutzbare Kapazität Preis inkl. Einbau Je kWh
+
+5 kWh 3.000–4.500 € 600–900 €
+
+10 kWh 4.500–7.000 € 450–700 €
+
+15 kWh 6.500–9.500 € 430–630 €
+
+Beim Nachrüsten kommt je nach Anlage etwas dazu. Bei der AC-Lösung ist das der eigene Batteriewechselrichter, bei der DC-Lösung unter Umständen ein neuer Hybridwechselrichter, wenn der alte keinen Batterieanschluss hat. Wie viel das ausmacht, hängt vom vorhandenen Gerät ab und zeigt erst ein Angebot für Ihre Anlage. Notstromfähigkeit kostet je nach Umfang 500 bis 2.500 € zusätzlich. Eine Übersicht aller Preise steht auf der Seite Kosten.
+
+Als Richtwert für die Größe gilt etwa 1 kWh Speicher je 1.000 kWh Jahresstromverbrauch. Ein größerer Speicher kostet mehr, wird aber selten voll genutzt.
+
+Sie haben schon eine Solaranlage? Im Bestandsanlagen-Check sehen wir uns Ihre Anlage an und sagen Ihnen, ob und wie ein Speicher dazu passt. Kostenlos und unverbindlich.
+
+## Steuern: 0 % Mehrwertsteuer auch beim Nachrüsten
 
 Der Nullsteuersatz nach § 12 Abs. 3 UStG gilt ausdrücklich auch für Speicher, die später eingebaut werden. Das Bundesfinanzministerium schreibt im Anwendungserlass: Neben Modulen und Batteriespeicher, „auch nachträglich eingebaute Speicher“, sind die wesentlichen Komponenten steuerfrei. Voraussetzung: Die Anlage hat laut Marktstammdatenregister höchstens 30 kWp. Bei Speichern ab 5 kWh nutzbarer Kapazität geht das Ministerium vereinfachend davon aus, dass sie für Solarstrom bestimmt sind.
 
 Steht auf einem Angebot für einen nachgerüsteten Speicher Mehrwertsteuer, fragen Sie nach.
+
+Bei der Einkommensteuer ändert der Speicher nichts. Die Einnahmen aus der Anlage bleiben nach § 3 Nr. 72 EStG steuerfrei, wenn sie laut Marktstammdatenregister höchstens 30 kWp je Wohneinheit hat. Beim Einfamilienhaus ist das fast immer der Fall.
 
 ## Anmeldung des Speichers als eigene Einheit
 
@@ -2977,6 +3005,7 @@ Quellen (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):
 - BMF-Schreiben vom 27.02.2023 zum Nullsteuersatz: bundesfinanzministerium.de (PDF)
 - BMF-Schreiben vom 30.11.2023: bundesfinanzministerium.de (PDF)
 - Marktstammdatenregisterverordnung §§ 2 und 5: gesetze-im-internet.de
+- § 3 Nr. 72 EStG: gesetze-im-internet.de
 - EEG 2023, §§ 9, 19, 23b, 51: gesetze-im-internet.de
 - Bundesnetzagentur, Festlegung MiSpeL vom 01.10.2026: bundesnetzagentur.de
 
@@ -3007,7 +3036,7 @@ Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 ---
 
 Quelle: https://bhd-energie.de/ratgeber/waermepumpe-stromverbrauch/
-Zuletzt aktualisiert: 01.11.2026
+Zuletzt aktualisiert: 21.11.2026
 
 Ratgeber · Wärmepumpe
 
@@ -3021,7 +3050,7 @@ Wer von Gas oder Öl auf eine Wärmepumpe umsteigt, kauft künftig Strom statt B
 - Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.
 - Luft-Wasser-Wärmepumpen erreichten in Messungen des Fraunhofer ISE im Bestand im Mittel eine Jahresarbeitszahl von 3,4.
 
-Zuletzt aktualisiert am 01.11.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 21.11.2026. Alle Angaben ohne Gewähr.
 
 ## So rechnen Sie den Stromverbrauch aus
 
@@ -3045,6 +3074,8 @@ Arbeitszahlen für Luft-Wasser-Wärmepumpen, wie sie auch unser Rechner ansetzt.
 35 °C reichen meist bei einer Fußbodenheizung. Bei Heizkörpern liegt der Wert oft höher. Das muss nicht so bleiben: Mit einem hydraulischen Abgleich und größeren Heizkörpern in einzelnen Räumen sinkt die nötige Vorlauftemperatur häufig deutlich. Mehr dazu steht im Beitrag Wärmepumpe im Altbau.
 
 Wird auch das Warmwasser über die Wärmepumpe bereitet, sinkt die Jahresarbeitszahl etwas, weil dafür höhere Temperaturen nötig sind.
+
+Wärmepumpe geplant? Bis 31. Januar 2027 gelten noch die höheren Fördersätze. Der Rechner zeigt, welcher Zuschuss bei Ihnen möglich ist und wie viel davon bei einem Antrag ab Februar wegfällt.
 
 ## Was Wärmepumpen in bestehenden Häusern erreichen
 
@@ -3104,7 +3135,7 @@ Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.
 ---
 
 Quelle: https://bhd-energie.de/waermepumpen-rechner/
-Zuletzt aktualisiert: 27.10.2026
+Zuletzt aktualisiert: 21.11.2026
 
 Kostenlos · ohne Anmeldung
 
@@ -3118,7 +3149,7 @@ Beantworten Sie einige Fragen zu Ihrem Gebäude. Sie erhalten eine überschlägi
 - Ein Haus mit 120 m² aus den Jahren 1984 bis 1994 hat damit rund 9 kW Heizlast. Mit Warmwasser passt eine Wärmepumpe mit etwa 10 kW.
 - Die KfW fördert mit 30 % Grundförderung plus Boni, höchstens 70 oder 80 % von 28.000 €. Der Rechner ermittelt Größe und Zuschuss aus Ihren Angaben, ohne Anmeldung.
 
-Zuletzt aktualisiert am 27.10.2026. Alle Angaben ohne Gewähr.
+Zuletzt aktualisiert am 21.11.2026. Alle Angaben ohne Gewähr.
 
 ## 1. Ihr Gebäude
 
@@ -3236,6 +3267,8 @@ Voraussichtliche KfW-Förderung
 Förderquote –
 Zuschuss –
 Ihr Eigenanteil –
+
+Was sich am 1. Februar 2027 ändert
 
 Auslegung prüfen lassen
 Überschlägige Auslegung auf Basis Ihrer Angaben. Verbindlich ist eine raumweise Heizlastberechnung nach DIN EN 12831 durch einen Fachbetrieb vor Ort. Die Förderangaben sind keine Zusage der KfW.

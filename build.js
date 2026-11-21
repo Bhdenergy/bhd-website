@@ -144,7 +144,7 @@ const PAGES = [
     key: 'home', dir: '', view: 'view-home', prio: '1.0', nav: false,
     title: 'Photovoltaik & Wärmepumpe Berlin & bundesweit | BHD',
     ogTitle: 'Photovoltaik & Wärmepumpe – unabhängige Beratung | BHD',
-    desc: 'Photovoltaik, Stromspeicher und Wärmepumpe: unabhängige Beratung, geprüfte Fachbetriebe, KfW-Zuschuss bis 70 %. Sitz in Berlin, bundesweit tätig.',
+    desc: 'Photovoltaik, Stromspeicher und Wärmepumpe: unabhängige Beratung, geprüfte Fachbetriebe, KfW-Zuschuss bis zu 80 %. Sitz in Berlin, bundesweit tätig.',
     ld: ['faq']
   },
   {
@@ -231,7 +231,7 @@ const PAGES = [
      * am 31.12.2026 aus, Klimabonus sinkt am 01.02.2027 -> dann ueberarbeiten. */
     key: 'berlin', dir: 'photovoltaik-waermepumpe-berlin', view: 'view-berlin', prio: '0.9',
     crumb: 'Photovoltaik & Wärmepumpe in Berlin',
-    title: 'PV & Wärmepumpe Berlin: Förderung, SolarPLUS, Pflicht | BHD',
+    title: 'Photovoltaik Förderung Berlin: SolarPLUS, Pflicht | BHD',
     ogTitle: 'Photovoltaik und Wärmepumpe in Berlin – was hier gilt | BHD',
     desc: 'Solaranlage oder Wärmepumpe in Berlin: wann die Solarpflicht greift, welche SolarPLUS-Zuschüsse es gibt und was beim Denkmalschutz gilt.',
     service: {
@@ -263,9 +263,9 @@ const PAGES = [
      * ZWINGEND zum 01.02.2027 ueberarbeiten - dann 12 % und 27.250 EUR. */
     key: 'foerderung2027', dir: 'waermepumpe-foerderung-2027', view: 'view-foerderung2027',
     prio: '0.9', crumb: 'Förderung sinkt 2027',
-    title: 'Wärmepumpen-Förderung sinkt 2027: was das kostet | BHD',
+    title: 'Wärmepumpe Förderung 2027: was ab 1. Februar sinkt | BHD',
     ogTitle: 'Am 1. Februar 2027 sinkt die Wärmepumpen-Förderung | BHD',
-    desc: 'Am 1. Februar 2027 sinken Klimabonus und Förderhöchstbetrag der KfW 458. Für einen typischen Haushalt rund 1.400 € weniger. Mit Rechenbeispielen.',
+    desc: 'Bis 31. Januar 2027 gibt es noch 16 % Klimabonus auf bis zu 28.000 €. Wer später beantragt, bekommt oft rund 1.400 € weniger. Mit Rechenbeispielen.',
     service: {
       name: 'Unterstützung bei der KfW-Förderbeantragung für Wärmepumpen',
       typ: 'Förderberatung Wärmepumpe',
@@ -306,9 +306,9 @@ const PAGES = [
      * steht auf der Seite). Wieder anfassen: KfW-Absenkung 01.02.2027, Antragsstatus Klimaschutzfoerderprogramm (Frist jeweils 31.10.). */
     key: 'potsdam', dir: 'photovoltaik-waermepumpe-potsdam', view: 'view-potsdam', prio: '0.8',
     crumb: 'Potsdam',
-    title: 'Photovoltaik & Wärmepumpe Potsdam: Förderung & Regeln | BHD',
+    title: 'Photovoltaik Förderung Potsdam: Zuschüsse & Regeln | BHD',
     ogTitle: 'Photovoltaik und Wärmepumpe in Potsdam | BHD',
-    desc: 'Solaranlage und Wärmepumpe in Potsdam: städtisches Förderprogramm, Denkmalbereiche und Welterbe, Fernwärmesatzung und Netzgesellschaft Potsdam.',
+    desc: 'Photovoltaik und Wärmepumpe in Potsdam: was das städtische Förderprogramm zahlt, aktueller Antragsstand, Denkmal- und Welterbe-Regeln, KfW-Zuschuss.',
     service: {
       name: 'Beratung zu Photovoltaik und Wärmepumpe in Potsdam',
       typ: 'Photovoltaik- und Wärmepumpen-Beratung',
@@ -395,21 +395,21 @@ const PAGES = [
   },
   {
     key: 'rat-speicher', dir: 'ratgeber/stromspeicher-nachruesten', view: 'view-rat-speicher', prio: '0.8', crumb: 'Speicher nachrüsten',
-    title: 'Stromspeicher nachrüsten: Kosten & Ablauf | BHD Ratgeber',
-    desc: 'Speicher zur bestehenden Solaranlage nachrüsten: AC oder DC, 0 % Mehrwertsteuer auch beim Nachrüsten, Anmeldung im MaStR und wann es sich lohnt.',
+    title: 'Stromspeicher nachrüsten: Kosten, 0 % MwSt, Ablauf | BHD',
+    desc: 'Speicher nachrüsten: Preise für 5, 10 und 15 kWh, AC oder DC, 0 % Mehrwertsteuer auch nachträglich, Anmeldung im MaStR und wann es sich lohnt.',
     article: { headline: 'Stromspeicher nachrüsten: was Sie wissen müssen', pub: '2026-10-13', section: 'Stromspeicher' }
   },
   {
     key: 'rat-strom', dir: 'ratgeber/waermepumpe-stromverbrauch', view: 'view-rat-strom', prio: '0.8', crumb: 'Stromverbrauch Wärmepumpe',
     title: 'Wärmepumpe Stromverbrauch berechnen | BHD Ratgeber',
-    desc: 'Wie viel Strom eine Wärmepumpe im Einfamilienhaus braucht: Rechenweg mit Beispiel, Messwerte des Fraunhofer ISE und günstigeres Netzentgelt nach § 14a EnWG.',
+    desc: 'Wie viel Strom braucht eine Wärmepumpe? Im Beispielhaus rund 4.200 bis 6.000 kWh im Jahr. Mit Rechenweg, Fraunhofer-Messwerten und § 14a EnWG.',
     article: { headline: 'Wie viel Strom braucht eine Wärmepumpe?', pub: '2026-10-28', section: 'Wärmepumpe' }
   },
   {
     key: 'rechner', dir: 'waermepumpen-rechner', view: 'view-rechner', prio: '0.9', crumb: 'Wärmepumpen-Rechner',
-    title: 'Wärmepumpe berechnen: Größe in kW & Förderung | BHD',
+    title: 'Wärmepumpe berechnen: kW-Größe & KfW-Förderrechner | BHD',
     ogTitle: 'Kostenloser Wärmepumpen-Rechner – Größe & Förderung | BHD',
-    desc: 'Wärmepumpe berechnen: Heizlast, Größe in kW, Speicher und KfW-Förderung aus Ihren Gebäudedaten. Mit kW-Tabelle für 100 bis 250 m². Kostenlos.',
+    desc: 'Wärmepumpe berechnen: Heizlast, Größe in kW und KfW-Zuschuss aus Ihren Gebäudedaten, mit Vergleich vor und nach dem 1. Februar 2027. Kostenlos.',
     ld: ['rechner']
   },
   {

@@ -922,6 +922,9 @@
   .artikel{max-width:740px;margin:0 auto}
   .artikel h2{font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:600;letter-spacing:-.02em;margin:44px 0 16px}
   .artikel h2:first-child{margin-top:0}
+  .art-cta{margin:32px 0;padding:20px 22px;background:var(--bg-soft);border-left:3px solid var(--gold);border-radius:var(--r,4px)}
+  .art-cta p{margin:0 0 14px}
+  .art-cta-btns{display:flex;flex-wrap:wrap;gap:10px}
   .artikel p{margin:0 0 16px;color:var(--ink-2);font-size:1.06rem;line-height:1.68}
   .artikel p b{color:var(--ink);font-weight:600}
   .artikel .usp{margin:20px 0 24px}
@@ -1122,6 +1125,8 @@
   .co-fundgrid span{display:block;color:var(--ink-3);font-size:.82rem;line-height:1.35;margin-bottom:5px}
   .co-fundgrid b{display:block;font-size:1.25rem;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
   .co-fund-note{margin:14px 0 0;font-size:.85rem;color:var(--ink-3);line-height:1.5}
+  .co-fund-frist{margin:12px 0 0;padding:10px 12px;border-left:3px solid var(--gold-deep);background:var(--bg);font-size:.88rem;line-height:1.5;color:var(--ink-2,var(--ink))}
+  .co-fund-link{display:inline-block;margin-top:10px;font-size:.85rem;font-weight:600;color:var(--gold-deep);text-decoration:underline;cursor:pointer}
   .co-notes{margin-top:22px;display:flex;flex-direction:column;gap:10px}
   .cn{padding:14px 16px;border-radius:4px;font-size:.89rem;line-height:1.55;border:1px solid var(--line)}
   .cn-info{background:var(--bg-soft);color:var(--ink-2)}
@@ -3747,9 +3752,14 @@
     <p>Gleichzeitig ist etwas anderes passiert: Anlagen sind deutlich günstiger geworden, seit 2023 fällt keine Umsatzsteuer mehr an, und Netzstrom kostet rund 35 Cent. Damit hat sich die Logik umgedreht. <b>Nicht die Einspeisung bringt das Geld, sondern der vermiedene Netzbezug.</b> Jede Kilowattstunde, die Sie selbst verbrauchen, ist rund viereinhalbmal so viel wert wie eine eingespeiste.</p>
 
     <h2>Rechenbeispiel für ein Einfamilienhaus</h2>
-    <p>Nehmen wir ein Einfamilienhaus mit vier Personen und 4.500 kWh Jahresverbrauch. Auf dem Satteldach liegen 10 kWp, dazu ein <a class="ilink" data-nav="speicher">Speicher</a> mit 8 kWh. Investition: rund 19.500 € – die Spannen dahinter stehen unter <a class="ilink" data-nav="kosten">Kosten</a>.</p>
+    <p>Nehmen wir ein Einfamilienhaus mit vier Personen und 4.500 kWh Jahresverbrauch. Auf dem Satteldach liegen 10 kWp (wie man die <a class="ilink" data-nav="pv">Größe einer Photovoltaikanlage</a> festlegt, steht auf der Photovoltaik-Seite), dazu ein <a class="ilink" data-nav="speicher">Speicher</a> mit 8 kWh. Investition: rund 19.500 € – die Spannen dahinter stehen unter <a class="ilink" data-nav="kosten">Kosten</a>.</p>
     <p>Die Anlage erzeugt bei etwa 950 kWh je kWp rund <b>9.500 kWh im Jahr</b>. Mit Speicher deckt sie etwa 66 Prozent des Haushaltsbedarfs, also rund 2.970 kWh. Bei 35 Cent Netzstrompreis sind das <b>1.040 € gespart</b>. Die übrigen 6.530 kWh gehen ins Netz und bringen bei 7,7 Cent noch <b>503 €</b>. Davon gehen rund 195 € im Jahr für Versicherung, Zähler und die Rücklage für den Wechselrichter ab. Bleiben <b>1.347 € Vorteil pro Jahr</b> – rechnerisch amortisiert sich die Anlage damit in etwa <b>14,5 Jahren</b>.</p>
     <p>Ohne die Betriebskosten stünden hier zwölf Jahre, und genau so rechnen es die meisten. Wir zeigen die ehrlichere Zahl. Danach läuft die Anlage weiter: Module halten typischerweise 25 bis 30 Jahre. Der Wechselrichter muss meist nach 12 bis 15 Jahren getauscht werden – deshalb steckt er oben schon in der Rücklage. Mit Ihren eigenen Zahlen rechnet das der <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a>.</p>
+
+    <div class="art-cta">
+      <p><b>Rechnet es sich bei Ihnen?</b> Der Rentabilitätsrechner rechnet mit Ihrem Verbrauch und Ihrem Dach.</p>
+      <div class="art-cta-btns"><a data-nav="rendite" class="btn">Zum Rentabilitätsrechner</a><a href="#rueckruf" class="btn btn-ghost">Rückruf anfordern</a></div>
+    </div>
 
     <h2>Für wen es sich besonders lohnt</h2>
     <ul class="usp">
@@ -3799,6 +3809,11 @@
       <div class="kt-row kt-3"><span data-l="Vorlauf"><b>55 °C</b></span><span data-l="Arbeitszahl">3,0</span><span data-l="Stromkosten">rund 1.733 €/Jahr</span></div>
     </div>
     <p class="kt-note">Gerechnet mit 26 Cent je Kilowattstunde Wärmepumpenstrom. Zwischen 35 und 55 Grad liegen über 500 € im Jahr, also mehr als 10.000 € über die Lebensdauer der Anlage.</p>
+
+    <div class="art-cta">
+      <p><b>Wärmepumpe im Altbau geplant?</b> Bis 31. Januar 2027 gelten noch die höheren Fördersätze. Der Rechner zeigt Ihren voraussichtlichen Zuschuss und wie viel davon bei einem Antrag ab Februar wegfällt.</p>
+      <div class="art-cta-btns"><a data-nav="rechner" class="btn">Zum Wärmepumpen-Rechner</a><a href="#rueckruf" class="btn btn-ghost">Rückruf anfordern</a></div>
+    </div>
 
     <h2>Heizkörper und hydraulischer Abgleich vor der Dämmung</h2>
     <p>Viele glauben, vor einer Wärmepumpe müsse das ganze Haus gedämmt werden. Das stimmt selten. Deutlich wirksamer im Verhältnis zum Preis sind zwei andere Maßnahmen:</p>
@@ -4404,6 +4419,8 @@
                 <div><span>Ihr Eigenanteil</span><b id="r-eigen">–</b></div>
               </div>
               <p class="co-fund-note" id="r-fund-note"></p>
+              <p class="co-fund-frist" id="r-frist" hidden></p>
+              <a data-nav="foerderung2027" class="co-fund-link" id="r-frist-link">Was sich am 1. Februar 2027 ändert</a>
             </div>
 
             <div class="co-notes" id="r-hinweise"></div>
@@ -5944,7 +5961,7 @@
       <li><b>Balkonkraftwerk</b>: 250 € pauschal.</li>
     </ul>
     <p>Die Bedingungen sind strenger als bei vielen anderen Programmen. Gefördert werden nur Privatleute mit Erstwohnsitz in Potsdam. <b>Vor dem Antrag ist eine Energieberatung Pflicht</b>, etwa bei der Verbraucherzentrale Brandenburg. Für Wärmepumpe und Speicher müssen Sie Ökostrom beziehen. Der Antrag muss gestellt sein, bevor Sie verbindlich bestellen, und bewilligt wird in der Reihenfolge des Eingangs.</p>
-    <p><b>Zum Stand 13. Oktober 2026 können keine Anträge gestellt werden.</b> Die Richtlinie lässt Anträge ohnehin nur bis zum 31. Oktober eines Jahres zu. Für 2026 ist das Programm damit praktisch erledigt. Wer 2027 bauen will, kann die Zeit nutzen: Energieberatung jetzt machen, Angebote einholen, aber noch nichts unterschreiben, bis der Antrag gestellt ist. Das gilt im Übrigen genauso für den KfW-Zuschuss.</p>
+    <p><b>Auch zum Stand 21. November 2026 können keine Anträge gestellt werden.</b> Die Stadt kündigt an, Formulare wieder bereitzustellen, sobald Anträge möglich sind, nennt aber noch keinen Termin. Die Richtlinie lässt Anträge ohnehin nur bis zum 31. Oktober eines Jahres zu. Für 2026 ist das Programm damit praktisch erledigt. Wer 2027 bauen will, kann die Zeit nutzen: Energieberatung jetzt machen, Angebote einholen, aber noch nichts unterschreiben, bis der Antrag gestellt ist. Das gilt im Übrigen genauso für den KfW-Zuschuss.</p>
 
     <h2>Denkmalschutz, Welterbe und Satzungen</h2>
     <p>Grundsätzlich sind Solaranlagen auf dem Dach auch in Potsdam nach § 61 der Brandenburgischen Bauordnung verfahrensfrei. Die Bauaufsicht weist aber selbst darauf hin, dass für die historischen Stadtkerne von Potsdam und Babelsberg und für die Vorstädte <b>Denkmalbereichs-, Erhaltungs- und Gestaltungssatzungen sowie Bebauungspläne</b> bestehen. Dazu kommt die Welterbe-Satzung der Berlin-Potsdamer Kulturlandschaft.</p>
@@ -5965,12 +5982,12 @@
     <p>Für die Wärmepumpe selbst gilt der KfW-Zuschuss 458 wie überall: 30 % Grundförderung, dazu je nach Fall Klimageschwindigkeits- und Einkommensbonus, zusammen bis zu 70 % und in bestimmten Fällen 80 %. Gerechnet wird auf höchstens 28.000 € für die erste Wohneinheit. Am 1. Februar 2027 sinken Bonus und Höchstbetrag. Was das kostet, steht auf der Seite <a class="ilink" data-nav="foerderung2027">Förderung sinkt 2027</a>.</p>
 
     <h2>Eignet sich Ihr Dach?</h2>
-    <p>Die Stadt bietet eine kostenlose Solarpotenzialanalyse für einzelne Hausdächer an. Sie zeigt, ob sich Ihr Dach grundsätzlich für Photovoltaik eignet. Für die Größe der Anlage zählt dann vor allem Ihr Verbrauch. Mit dem <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a> können Sie das mit Ihren eigenen Zahlen durchspielen.</p>
+    <p>Die Stadt bietet eine kostenlose Solarpotenzialanalyse für einzelne Hausdächer an. Sie zeigt, ob sich Ihr Dach grundsätzlich für Photovoltaik eignet. Für die Größe der Anlage zählt dann vor allem Ihr Verbrauch. Mit dem <a class="ilink" data-nav="rendite">Rentabilitätsrechner</a> können Sie das mit Ihren eigenen Zahlen durchspielen. Grundlagen zu Anlagengröße, Speicher und Kosten stehen auf der Seite <a class="ilink" data-nav="pv">Photovoltaik</a>.</p>
 
     <div class="quellen">
       <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
       <ul class="liste">
-        <li>Klimaschutzförderprogramm, Antragsstatus: <a href="https://www.potsdam.de/de/kategorie/klimaschutzfoerderprogramm" target="_blank" rel="noopener">potsdam.de</a></li>
+        <li>Klimaschutzförderprogramm, Antragsstatus (erneut geprüft am 21.11.2026): <a href="https://www.potsdam.de/de/kategorie/klimaschutzfoerderprogramm" target="_blank" rel="noopener">potsdam.de</a></li>
         <li>Potsdamer Klimaschutzförderrichtlinie vom 26.03.2026: <a href="https://www.potsdam.de/system/files/document/Schlussfassung%20Potsdamer%20Klimaschutzf%C3%B6rderrichtlinie%20%20vom%2026.03.2026_1.pdf" target="_blank" rel="noopener">potsdam.de (PDF)</a></li>
         <li>Allgemeine Hinweise der Bauaufsicht zu Solaranlagen, Stand März 2025: <a href="https://www.potsdam.de/system/files/document/250314_441_Allgemeine%20Hinweise%20baurechtl.%20Genehmigungsbed%C3%BCrftigkeit%20Solaranlagen_Aktualisierung%202025_0.pdf" target="_blank" rel="noopener">potsdam.de (PDF)</a></li>
         <li>Solarenergie und Denkmalschutz: <a href="https://www.potsdam.de/de/solarenergie-und-denkmalschutz" target="_blank" rel="noopener">potsdam.de</a></li>
@@ -6242,7 +6259,12 @@
 
     <h2>Geringerer Solarertrag im Winter</h2>
     <p>Von Mai bis August kam eines der gemessenen Häuser mit Batterie fast vollständig ohne Netzstrom aus. Im November, Dezember und Januar sank der Anteil unter 15 %. Die Batterie hilft in diesen Monaten nur noch, den wenigen Solarstrom vom Mittag in den Nachmittag zu schieben. Über Nacht reicht er nicht mehr.</p>
-    <p>Wer das weiß, plant realistisch: Die Solaranlage macht die Wärmepumpe nicht stromautark. Sie senkt aber die Stromkosten über das Jahr deutlich, vor allem in der Übergangszeit und beim Warmwasser im Sommer.</p>
+    <p>Wer das weiß, plant realistisch: Die Solaranlage macht die Wärmepumpe nicht stromautark. Sie senkt aber die Stromkosten über das Jahr deutlich, vor allem in der Übergangszeit und beim Warmwasser im Sommer. Worauf es bei der Auslegung der <a class="ilink" data-nav="pv">Photovoltaikanlage</a> ankommt, steht auf der eigenen Seite.</p>
+
+    <div class="art-cta">
+      <p><b>Beides zusammen planen?</b> Wir sagen Ihnen, wie groß Solaranlage und Wärmepumpe für Ihr Haus sein sollten und welcher Zuschuss möglich ist.</p>
+      <div class="art-cta-btns"><a href="#rueckruf" class="btn">Rückruf anfordern</a><a data-nav="rechner" class="btn btn-ghost">Zum Wärmepumpen-Rechner</a></div>
+    </div>
 
     <h2>Warmwasser und Heizkurve als Speicher</h2>
     <p>Der Trick liegt darin, Wärme zu speichern statt Strom. In den gemessenen Häusern wurde bei Solarüberschuss die Warmwassertemperatur angehoben, teils auch die Heizkurve leicht nach oben gesetzt. Das Haus und der Warmwasserspeicher nehmen die Energie auf, die Wärmepumpe läuft dann, wenn die Sonne scheint. Viele Geräte haben dafür einen eigenen Eingang, oft „SG Ready“ genannt.</p>
@@ -6294,9 +6316,28 @@
     <p>In den meisten Fällen ja. Es gibt zwei Bauarten. Beim <b>DC-gekoppelten</b> Speicher hängt die Batterie an einem Hybridwechselrichter, der Solarstrom und Batterie in einem Gerät verwaltet. Beim <b>AC-gekoppelten</b> Speicher bleibt der vorhandene Wechselrichter, und die Batterie bekommt einen eigenen Batteriewechselrichter im Hausnetz.</p>
     <p>Bei neuen Anlagen ist DC-Kopplung inzwischen der Normalfall: Laut Stromspeicher-Inspektion der HTW Berlin hatten 2025 rund 90 % der Systeme einen Hybridwechselrichter. Beim Nachrüsten hängt die Wahl am vorhandenen Gerät. Ist Ihr Wechselrichter schon ein Hybridgerät mit Batterieanschluss, reicht oft die passende Batterie. Ist er alt oder nicht dafür ausgelegt, ist die AC-Lösung meist einfacher, als den Wechselrichter zu tauschen. Ein Angebot sollte begründen, warum es die eine oder andere Lösung vorschlägt.</p>
 
-    <h2>Keine Mehrwertsteuer, auch beim Nachrüsten</h2>
+    <h2>Was kostet das Nachrüsten?</h2>
+    <p>Für den Speicher selbst gelten ungefähr dieselben Preise wie bei einer neuen Anlage. Marktübliche Spannen inklusive Einbau:</p>
+    <div class="tabelle-wrap"><table class="tabelle">
+      <thead><tr><th>Nutzbare Kapazität</th><th>Preis inkl. Einbau</th><th>Je kWh</th></tr></thead>
+      <tbody>
+        <tr><td>5 kWh</td><td>3.000–4.500 €</td><td>600–900 €</td></tr>
+        <tr><td>10 kWh</td><td>4.500–7.000 €</td><td>450–700 €</td></tr>
+        <tr><td>15 kWh</td><td>6.500–9.500 €</td><td>430–630 €</td></tr>
+      </tbody>
+    </table></div>
+    <p>Beim Nachrüsten kommt je nach Anlage etwas dazu. Bei der AC-Lösung ist das der eigene Batteriewechselrichter, bei der DC-Lösung unter Umständen ein neuer Hybridwechselrichter, wenn der alte keinen Batterieanschluss hat. Wie viel das ausmacht, hängt vom vorhandenen Gerät ab und zeigt erst ein Angebot für Ihre Anlage. Notstromfähigkeit kostet je nach Umfang 500 bis 2.500 € zusätzlich. Eine Übersicht aller Preise steht auf der Seite <a class="ilink" data-nav="kosten">Kosten</a>.</p>
+    <p>Als Richtwert für die Größe gilt etwa 1 kWh Speicher je 1.000 kWh Jahresstromverbrauch. Ein größerer Speicher kostet mehr, wird aber selten voll genutzt.</p>
+
+    <div class="art-cta">
+      <p><b>Sie haben schon eine Solaranlage?</b> Im Bestandsanlagen-Check sehen wir uns Ihre Anlage an und sagen Ihnen, ob und wie ein Speicher dazu passt. Kostenlos und unverbindlich.</p>
+      <div class="art-cta-btns"><a data-nav="bestand" class="btn">Anlage prüfen lassen</a><a href="#rueckruf" class="btn btn-ghost">Rückruf anfordern</a></div>
+    </div>
+
+    <h2>Steuern: 0 % Mehrwertsteuer auch beim Nachrüsten</h2>
     <p>Der Nullsteuersatz nach § 12 Abs. 3 UStG gilt ausdrücklich auch für Speicher, die später eingebaut werden. Das Bundesfinanzministerium schreibt im Anwendungserlass: Neben Modulen und Batteriespeicher, „auch nachträglich eingebaute Speicher“, sind die wesentlichen Komponenten steuerfrei. Voraussetzung: Die Anlage hat laut Marktstammdatenregister höchstens 30 kWp. Bei Speichern ab 5 kWh nutzbarer Kapazität geht das Ministerium vereinfachend davon aus, dass sie für Solarstrom bestimmt sind.</p>
     <p>Steht auf einem Angebot für einen nachgerüsteten Speicher Mehrwertsteuer, fragen Sie nach.</p>
+    <p>Bei der Einkommensteuer ändert der Speicher nichts. Die Einnahmen aus der Anlage bleiben nach § 3 Nr. 72 EStG steuerfrei, wenn sie laut Marktstammdatenregister höchstens 30 kWp je Wohneinheit hat. Beim Einfamilienhaus ist das fast immer der Fall.</p>
 
     <h2>Anmeldung des Speichers als eigene Einheit</h2>
     <p>Im Marktstammdatenregister zählt der Stromspeicher als eigene Einheit, getrennt von der Solaranlage. Er muss <b>innerhalb eines Monats nach Inbetriebnahme</b> registriert werden. Ausgenommen sind nur Speicher ganz ohne Netzanschluss, was im Haus praktisch nie vorkommt. Auch beim Netzbetreiber wird der Speicher angemeldet, das übernimmt der Elektrofachbetrieb. Wie die Registrierung funktioniert und was bei einer versäumten Frist passiert, steht auf der Seite <a class="ilink" data-nav="mastr">Anlage anmelden</a>.</p>
@@ -6321,6 +6362,7 @@
         <li>BMF-Schreiben vom 27.02.2023 zum Nullsteuersatz: <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2023-02-27-nullsteuersatz-fuer-umsaetze-im-zusammenhang-mit-bestimmten-photovoltaikanlagen.pdf" target="_blank" rel="noopener">bundesfinanzministerium.de (PDF)</a></li>
         <li>BMF-Schreiben vom 30.11.2023: <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2023-11-30-einzelfragen-bei-der-anwendung-des-nullsteuersatzes-fuer-bestimmte-photovoltaikanlagen.pdf" target="_blank" rel="noopener">bundesfinanzministerium.de (PDF)</a></li>
         <li>Marktstammdatenregisterverordnung §§ 2 und 5: <a href="https://www.gesetze-im-internet.de/mastrv/__5.html" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+        <li>§ 3 Nr. 72 EStG: <a href="https://www.gesetze-im-internet.de/estg/__3.html" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
         <li>EEG 2023, §§ 9, 19, 23b, 51: <a href="https://www.gesetze-im-internet.de/eeg_2014/" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
         <li>Bundesnetzagentur, Festlegung MiSpeL vom 01.10.2026: <a href="https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/DE/2026/20261001_Mispel.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
       </ul>
@@ -6363,9 +6405,14 @@
     </ul>
     <p><b>Das ist noch kein Gesetz.</b> Die erste Lesung war am 24. September 2026, die Anhörung am 5. Oktober. Außerdem muss die EU-Kommission zustimmen. Einzelheiten können sich bis zum Beschluss noch ändern. Wir aktualisieren diese Seite, sobald es entschieden ist.</p>
 
+    <div class="art-cta">
+      <p><b>Rechnet sich eine Anlage bei Ihnen?</b> Entscheidend ist der Eigenverbrauch. Der Rentabilitätsrechner rechnet mit Ihrem Verbrauch und Ihrem Dach.</p>
+      <div class="art-cta-btns"><a data-nav="rendite" class="btn">Zum Rentabilitätsrechner</a><a href="#rueckruf" class="btn btn-ghost">Rückruf anfordern</a></div>
+    </div>
+
     <h2>Was das für Ihre Entscheidung heißt</h2>
     <p>Wer noch 2026 in Betrieb geht, sichert sich nach heutigem Recht 20 Jahre lang den festen Satz. Das klingt nach einem Grund zur Eile, wird aber oft überschätzt. Bei einer typischen Anlage mit Eigenverbrauch bringt die Einspeisung nur einen kleinen Teil des Nutzens. Der größere Teil kommt aus dem Strom, den Sie selbst verbrauchen und nicht für 30 bis 40 Cent einkaufen müssen. Warum das so ist, steht im Ratgeber <a class="ilink" data-nav="rat-pv">Lohnt sich Photovoltaik 2026 noch?</a>.</p>
-    <p>Der Entwurf verschiebt das noch weiter. Ohne feste Vergütung zählt künftig fast nur noch der Eigenverbrauch. Anlagen werden dann eher nach dem eigenen Bedarf ausgelegt, mit <a class="ilink" data-nav="speicher">Speicher</a>, <a class="ilink" data-nav="wp">Wärmepumpe</a> oder <a class="ilink" data-nav="wallbox">Wallbox</a> als zusätzlichen Verbrauchern. Eine Anlage nur zum Einspeisen rechnet sich dann kaum noch.</p>
+    <p>Der Entwurf verschiebt das noch weiter. Ohne feste Vergütung zählt künftig fast nur noch der Eigenverbrauch. Anlagen werden dann eher <a class="ilink" data-nav="pv">nach dem eigenen Bedarf ausgelegt</a>, mit <a class="ilink" data-nav="speicher">Speicher</a>, <a class="ilink" data-nav="wp">Wärmepumpe</a> oder <a class="ilink" data-nav="wallbox">Wallbox</a> als zusätzlichen Verbrauchern. Eine Anlage nur zum Einspeisen rechnet sich dann kaum noch.</p>
     <p>Lassen Sie sich nicht unter Zeitdruck setzen. Ein Betrieb, der Ihnen eine Inbetriebnahme noch 2026 zusagt, muss das auch schaffen: Anmeldung beim Netzbetreiber, Zählerwechsel und Montage brauchen ihre Zeit. Steht im Angebot kein verbindlicher Termin, ist die Zusage wenig wert.</p>
 
     <h2>Regeln, die schon heute gelten</h2>
@@ -6422,6 +6469,11 @@
     <p class="kt-note">Arbeitszahlen für Luft-Wasser-Wärmepumpen, wie sie auch unser Rechner ansetzt. Was das in Euro bedeutet, sehen Sie, wenn Sie den Wert mit dem Arbeitspreis aus Ihrem Stromvertrag malnehmen.</p>
     <p>35 °C reichen meist bei einer Fußbodenheizung. Bei Heizkörpern liegt der Wert oft höher. Das muss nicht so bleiben: Mit einem hydraulischen Abgleich und größeren Heizkörpern in einzelnen Räumen sinkt die nötige Vorlauftemperatur häufig deutlich. Mehr dazu steht im Beitrag <a class="ilink" data-nav="rat-wp">Wärmepumpe im Altbau</a>.</p>
     <p>Wird auch das Warmwasser über die Wärmepumpe bereitet, sinkt die Jahresarbeitszahl etwas, weil dafür höhere Temperaturen nötig sind.</p>
+
+    <div class="art-cta">
+      <p><b>Wärmepumpe geplant?</b> Bis 31. Januar 2027 gelten noch die höheren Fördersätze. Der Rechner zeigt, welcher Zuschuss bei Ihnen möglich ist und wie viel davon bei einem Antrag ab Februar wegfällt.</p>
+      <div class="art-cta-btns"><a data-nav="rechner" class="btn">Zum Wärmepumpen-Rechner</a><a href="#rueckruf" class="btn btn-ghost">Rückruf anfordern</a></div>
+    </div>
 
     <h2>Was Wärmepumpen in bestehenden Häusern erreichen</h2>
     <p>Das Fraunhofer-Institut für Solare Energiesysteme hat vier Jahre lang 77 Wärmepumpen in Ein- bis Dreifamilienhäusern gemessen. Die Luft-Wasser-Wärmepumpen kamen im Mittel auf eine Jahresarbeitszahl von <b>3,4</b>. Die schwächste Anlage lag bei 2,6, die beste bei 4,9. Erdwärmepumpen erreichten im Mittel 4,3.</p>
@@ -7171,9 +7223,31 @@
 
   const VOLLSTUNDEN=2100;      // Vollbenutzungsstunden Heizung pro Jahr (Richtwert Deutschland)
   const WW_PRO_PERSON=500;     // kWh Warmwasserwärme je Person und Jahr
-  const MAX_KOSTEN=28000;      // förderfähige Kosten 1. Wohneinheit, KfW 458 ab 21.07.2026
   const MAX_QUOTE=80;          // Deckel nur bei anzusetzendem zvE bis 30.000 €
   const REGEL_QUOTE=70;        // sonst gilt der Regeldeckel von 70 %
+
+  // KfW 458 (kfw.de, Produktseite, geprueft 21.11.2026): Klimageschwindigkeitsbonus
+  // 16 %, sinkt erstmals zum 01.02.2027 und danach halbjaehrlich zum 01.02. und 01.08.
+  // um 4 Punkte, ab 01.08.2028 entfaellt er. Der Foerderhoechstbetrag der ersten
+  // Wohneinheit (28.000 €) sinkt zu denselben Terminen um je 750 €.
+  // Massgeblich ist das Datum der Antragstellung. Stufe 0 = bis 31.01.2027.
+  const MONATE=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+  function kfwStufe(n){
+    const d=new Date(2027,1+6*(n-1),1);
+    return {
+      klima:Math.max(0,16-4*n),
+      kosten:28000-750*Math.min(n,8),
+      ab:n>0?d.getDate()+'. '+MONATE[d.getMonth()]+' '+d.getFullYear():''
+    };
+  }
+  function kfwStufeHeute(){
+    const h=new Date();
+    if(h<new Date(2027,1,1))return 0;
+    return 1+Math.floor(((h.getFullYear()-2027)*12+h.getMonth()-1)/6);
+  }
+  const STUFE_N=kfwStufeHeute();
+  const STUFE=kfwStufe(STUFE_N), STUFE_NEXT=kfwStufe(STUFE_N+1);
+  const MAX_KOSTEN=STUFE.kosten; // förderfähige Kosten 1. Wohneinheit bei Antrag heute
 
   // Jahresarbeitszahl einer Luft-Wasser-Wärmepumpe je Vorlauftemperatur
   const JAZ_VL={35:4.3, 40:4.0, 45:3.6, 55:3.0, 60:2.7};
@@ -7273,7 +7347,7 @@
 
     let quote=30;
     const bausteine=['30 % Grundförderung'];
-    if(selbstnutzer&&altOK){quote+=16;bausteine.push('16 % Klimageschwindigkeitsbonus');}
+    if(selbstnutzer&&altOK&&STUFE.klima>0){quote+=STUFE.klima;bausteine.push(STUFE.klima+' % Klimageschwindigkeitsbonus');}
     if(selbstnutzer&&zveAngegeben){
       let ek=0;
       if(zve<=30000)ek=40; else if(zve<=40000)ek=30; else if(zve<=50000)ek=10;
@@ -7295,6 +7369,11 @@
     const foerderfaehig=Math.min(invest,MAX_KOSTEN);
     const zuschuss=foerderfaehig*quote/100;
     const eigen=invest-zuschuss;
+
+    // Gleiche Rechnung bei Antrag nach der naechsten Absenkung (Bonus und Hoechstbetrag).
+    const quoteNext=Math.min(deckel,quoteVorDeckel-((selbstnutzer&&altOK)?(STUFE.klima-STUFE_NEXT.klima):0));
+    const zuschussNext=Math.min(invest,STUFE_NEXT.kosten)*quoteNext/100;
+    const verlust=Math.round(zuschuss-zuschussNext);
 
     // --- Kostenvergleich ---
     const preisStrom=num('wp-preis-strom',0.26);
@@ -7356,6 +7435,11 @@
     $('r-eigen').textContent=eur(eigen);
     $('r-fund-note').textContent=bausteine.join(' + ')+'. Gerechnet auf '+eur(foerderfaehig)+
       (investAngegeben?' förderfähige Kosten':' Förderhöchstbetrag, weil keine Investitionssumme angegeben ist')+'.';
+    const fr=$('r-frist');
+    if(verlust>0){
+      fr.hidden=false;
+      fr.innerHTML='<b>Bei Antrag ab '+STUFE_NEXT.ab+':</b> voraussichtlich '+eur(zuschussNext)+' Zuschuss, also rund <b>'+eur(verlust)+' weniger</b>. Maßgeblich ist das Datum des Antrags bei der KfW, nicht der Einbau.';
+    }else{ fr.hidden=true; }
 
     $('r-hinweise').innerHTML=hinweise.map(h=>'<div class="cn cn-'+h[0]+'">'+h[1]+'</div>').join('');
 
