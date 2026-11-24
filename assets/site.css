@@ -848,6 +848,10 @@
   .art-cta{margin:32px 0;padding:20px 22px;background:var(--bg-soft);border-left:3px solid var(--gold);border-radius:var(--r,4px)}
   .art-cta p{margin:0 0 14px}
   .art-cta-btns{display:flex;flex-wrap:wrap;gap:10px}
+  /* Einzeiliger Hinweis auf den Angebots-Check am Artikelende */
+  .art-check{margin:28px 0 0;padding:14px 18px;border:1px solid var(--line);border-radius:var(--r,4px);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:space-between}
+  .art-check span{flex:1 1 320px}
+  .art-check a{font-weight:600;color:var(--green-deep);text-decoration:underline;white-space:nowrap}
   .artikel p{margin:0 0 16px;color:var(--ink-2);font-size:1.06rem;line-height:1.68}
   .artikel p b{color:var(--ink);font-weight:600}
   .artikel .usp{margin:20px 0 24px}

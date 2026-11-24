@@ -376,16 +376,20 @@ const FAQ = {
   potsdam: {
     kicker: 'Kurz beantwortet',
     titel: 'Häufige Fragen aus Potsdam',
-    intro: 'Stand Oktober 2026. Förderprogramm und Satzungen ändern sich, vor einem Auftrag deshalb den aktuellen Stand prüfen.',
+    intro: 'Stand November 2026. Förderprogramm und Satzungen ändern sich, vor einem Auftrag deshalb den aktuellen Stand prüfen.',
     items: [
       F('Kann ich in Potsdam gerade Förderung beantragen?',
-        'Zum Stand 13. Oktober 2026 nimmt die Stadt keine Anträge für das Klimaschutzförderprogramm an. Laut Richtlinie sind Anträge ohnehin nur bis zum 31. Oktober eines Jahres möglich. Wer 2027 bauen will, kann die Energieberatung schon jetzt machen, sollte aber vor dem Antrag nichts verbindlich bestellen.'),
+        'Zum Stand 24. November 2026 nimmt die Stadt keine Anträge für das Klimaschutzförderprogramm an. Laut Richtlinie sind Anträge ohnehin nur bis zum 31. Oktober eines Jahres möglich. Wer 2027 bauen will, kann die Energieberatung schon jetzt machen, sollte aber vor dem Antrag nichts verbindlich bestellen.'),
       F('Was zahlt das Potsdamer Programm?',
         'Laut Richtlinie vom 26. März 2026 unter anderem 200 € je kWp für Photovoltaik bis höchstens 1.200 €, 1.000 € für einen Speicher ab 5 kWh in Verbindung mit einer Solaranlage und 2.000 € für eine Wärmepumpe im Wohngebäude. Voraussetzung sind unter anderem Erstwohnsitz in Potsdam und eine vorherige Energieberatung.'),
       F('Brauche ich in Potsdam eine Genehmigung für die Solaranlage?',
         'Meist nicht. In Denkmalbereichen, bei Einzeldenkmalen und im Gebiet von Erhaltungs- oder Sanierungssatzungen aber schon. Das betrifft vor allem die historischen Stadtkerne von Potsdam und Babelsberg und die Vorstädte.'),
       F('Wer ist in Potsdam der Netzbetreiber?',
-        'Die Netzgesellschaft Potsdam GmbH. Solaranlagen und Wallboxen meldet der Fachbetrieb nur noch über ihr Netzanschlussportal an.')
+        'Die Netzgesellschaft Potsdam GmbH. Solaranlagen und Wallboxen meldet der Fachbetrieb nur noch über ihr Netzanschlussportal an.'),
+      F('Welche Förderung bekomme ich in Potsdam trotzdem?',
+        'Auch ohne das städtische Programm gelten die Regeln des Bundes: Für die Solaranlage mit Speicher fällt bis 30 kWp keine Umsatzsteuer an, und die Einnahmen sind steuerfrei. Für die Wärmepumpe gibt es den KfW-Zuschuss 458 mit 30 % Grundförderung und je nach Fall weiteren Boni.'),
+      F('Was kostet eine Solaranlage in Potsdam?',
+        'Dieselben Marktpreise wie im übrigen Berliner Umland: Eine Anlage mit 8 bis 10 kWp kostet schlüsselfertig etwa 10.500 bis 16.000 € ohne Speicher und 15.000 bis 21.000 € mit Speicher, ohne Umsatzsteuer. Mehr kann es werden, wenn Denkmal- oder Satzungsauflagen eine besondere Ausführung verlangen.')
     ]
   },
 
@@ -440,14 +444,16 @@ const FAQ = {
   'rat-eeg': {
     kicker: 'Kurz beantwortet',
     titel: 'Häufige Fragen zur Einspeisevergütung',
-    intro: 'Stand Oktober 2026. Der Gesetzentwurf für 2027 ist noch nicht beschlossen.',
+    intro: 'Stand November 2026. Der Gesetzentwurf für 2027 ist noch nicht beschlossen.',
     items: [
       F('Wie hoch ist die Einspeisevergütung 2026?',
         'Für Anlagen auf dem Haus mit Inbetriebnahme zwischen dem 1. August und 31. Dezember 2026: 7,70 Cent je kWh bei Teileinspeisung bis 10 kW, 6,66 Cent für den Teil bis 40 kW. Bei Volleinspeisung 12,22 und 10,24 Cent.'),
       F('Fällt die Einspeisevergütung 2027 weg?',
         'Für neue Anlagen ist das geplant. Der Gesetzentwurf vom 7. September 2026 sieht statt der festen Vergütung eine Übergangszahlung von rund 5,2 Cent für etwa drei Jahre vor. Beschlossen ist das noch nicht.'),
       F('Betrifft das meine bestehende Anlage?',
-        'Nein. Der Vergütungssatz, der bei Inbetriebnahme galt, bleibt für die gesamte Förderdauer von 20 Jahren bestehen.')
+        'Nein. Der Vergütungssatz, der bei Inbetriebnahme galt, bleibt für die gesamte Förderdauer von 20 Jahren bestehen.'),
+      F('Teileinspeisung oder Volleinspeisung: was lohnt sich mehr?',
+        'Im Einfamilienhaus meist die Teileinspeisung. Bei einer 10-kWp-Anlage bringt sie in unserem Beispiel mit Speicher rund 1.540 € im Jahr, die Volleinspeisung rund 1.160 €. Der Grund: Jede selbst verbrauchte Kilowattstunde spart rund 35 Cent Netzstrom, die Volleinspeisung zahlt nur 12,22 Cent. Dafür braucht die Volleinspeisung keinen Speicher.')
     ]
   },
 
@@ -481,14 +487,16 @@ const FAQ = {
   'rat-strom': {
     kicker: 'Kurz beantwortet',
     titel: 'Häufige Fragen zum Stromverbrauch',
-    intro: 'Stand Oktober 2026.',
+    intro: 'Stand November 2026.',
     items: [
       F('Wie viel Strom braucht eine Wärmepumpe im Einfamilienhaus?',
         'Das hängt vom Wärmebedarf des Hauses ab. Ein Haus, das bisher 20.000 kWh Gas im Jahr verbraucht, braucht mit einer Luft-Wasser-Wärmepumpe je nach Vorlauftemperatur rund 4.200 bis 6.000 kWh Strom.'),
       F('Was ist die Jahresarbeitszahl?',
         'Sie gibt an, wie viele Kilowattstunden Wärme die Wärmepumpe über ein Jahr aus einer Kilowattstunde Strom erzeugt. Bei einer Jahresarbeitszahl von 3,4 werden aus 1 kWh Strom 3,4 kWh Wärme.'),
       F('Gibt es günstigeren Strom für die Wärmepumpe?',
-        'Neue Wärmepumpen über 4,2 kW gelten nach § 14a EnWG als steuerbare Verbrauchseinrichtung. Dafür sinkt das Netzentgelt, entweder über eine jährliche Pauschale oder über einen niedrigeren Arbeitspreis mit eigenem Zähler.')
+        'Neue Wärmepumpen über 4,2 kW gelten nach § 14a EnWG als steuerbare Verbrauchseinrichtung. Dafür sinkt das Netzentgelt, entweder über eine jährliche Pauschale oder über einen niedrigeren Arbeitspreis mit eigenem Zähler.'),
+      F('Was kostet der Strom für eine Wärmepumpe im Jahr?',
+        'Bei einem Haus, das bisher 20.000 kWh Gas verbraucht hat, rund 5.300 kWh Strom. Bei 26 Cent je kWh sind das etwa 1.380 € im Jahr, gegenüber rund 2.400 € für das Gas bei 12 Cent. Das sind Beispielwerte ohne Grundgebühren.')
     ]
   }
 };

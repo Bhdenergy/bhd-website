@@ -925,6 +925,10 @@
   .art-cta{margin:32px 0;padding:20px 22px;background:var(--bg-soft);border-left:3px solid var(--gold);border-radius:var(--r,4px)}
   .art-cta p{margin:0 0 14px}
   .art-cta-btns{display:flex;flex-wrap:wrap;gap:10px}
+  /* Einzeiliger Hinweis auf den Angebots-Check am Artikelende */
+  .art-check{margin:28px 0 0;padding:14px 18px;border:1px solid var(--line);border-radius:var(--r,4px);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:space-between}
+  .art-check span{flex:1 1 320px}
+  .art-check a{font-weight:600;color:var(--green-deep);text-decoration:underline;white-space:nowrap}
   .artikel p{margin:0 0 16px;color:var(--ink-2);font-size:1.06rem;line-height:1.68}
   .artikel p b{color:var(--ink);font-weight:600}
   .artikel .usp{margin:20px 0 24px}
@@ -3317,10 +3321,61 @@
             <span class="er-ic"><svg class="ic"><use href="#i-clock"/></svg></span>
             <div><b>25 Jahre</b><span>Leistungsgarantie vieler Modulhersteller</span></div>
           </div>
-          <div class="exp-foot"><svg class="ic"><use href="#i-star"/></svg> Stand August 2026, ohne Gewähr.</div>
+          <div class="exp-foot"><svg class="ic"><use href="#i-star"/></svg> Stand November 2026, ohne Gewähr.</div>
         </aside>
       </div>
     </div>
+  </section>
+
+  <!-- 24.11.2026: Kosten und Foerderung ergaenzt, weil der Seitentitel beides verspricht.
+       Preise 1:1 von der Kostenseite (view-kosten) – bei Aenderung BEIDE Stellen pflegen.
+       Foerderzahlen am 24.11.2026 amtlich geprueft (BNetzA, IBB-Richtlinie SolarPLUS 2026,
+       potsdam.de, gesetze-im-internet.de). Wieder anfassen: SolarPLUS endet 31.12.2026,
+       EEG-Nachfolgeregelung ab 01.01.2027 noch in parlamentarischer Beratung. -->
+  <section class="pad" style="padding-top:0" id="pv-kosten">
+    <div class="wrap">
+      <div class="head">
+        <h2>Was kostet eine Photovoltaikanlage fürs Einfamilienhaus?</h2>
+        <p>Marktübliche Spannen, schlüsselfertig mit Montage, Anschluss und Anmeldung. Umsatzsteuer fällt nicht an, die Beträge sind also das, was Sie zahlen.</p>
+      </div>
+      <div class="ktable">
+        <div class="kt-head"><span>Anlagengröße</span><span>Ohne Speicher</span><span>Mit Speicher</span><span>Passend für</span></div>
+        <div class="kt-row"><span data-l="Anlagengröße"><b>5 kWp</b></span><span data-l="Ohne Speicher">7.000–9.500 €</span><span data-l="Mit Speicher">11.000–15.000 €</span><span data-l="Passend für">2 Personen, rund 3.000 kWh/Jahr</span></div>
+        <div class="kt-row"><span data-l="Anlagengröße"><b>8 kWp</b></span><span data-l="Ohne Speicher">10.500–13.500 €</span><span data-l="Mit Speicher">15.000–19.500 €</span><span data-l="Passend für">3–4 Personen, rund 4.000 kWh/Jahr</span></div>
+        <div class="kt-row"><span data-l="Anlagengröße"><b>10 kWp</b></span><span data-l="Ohne Speicher">12.500–16.000 €</span><span data-l="Mit Speicher">17.000–21.000 €</span><span data-l="Passend für">4–5 Personen oder E-Auto</span></div>
+        <div class="kt-row"><span data-l="Anlagengröße"><b>15 kWp</b></span><span data-l="Ohne Speicher">18.000–23.000 €</span><span data-l="Mit Speicher">24.000–30.000 €</span><span data-l="Passend für">großes Dach, Wärmepumpe und E-Auto</span></div>
+      </div>
+      <p class="kt-note">Was den Preis nach oben oder unten treibt (Dach, Zählerschrank, Komponenten) und was Speicher und Wärmepumpe kosten, steht auf der Seite <a class="ilink" data-nav="kosten">Kosten</a>. Liegt Ihnen schon ein Angebot vor, ordnen wir es im <a class="ilink" data-nav="check">Angebots-Check</a> kostenlos ein.</p>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0" id="pv-foerderung">
+    <div class="wrap"><div class="artikel">
+      <h2>Welche Förderung gibt es für Photovoltaik?</h2>
+      <p>Bei der Solaranlage läuft die Förderung des Bundes über drei Wege:</p>
+      <ul class="liste">
+        <li><b>0 % Umsatzsteuer</b> auf Module, Speicher, Wechselrichter und Montage, wenn die Anlage laut Marktstammdatenregister höchstens 30 kWp hat (§ 12 Abs. 3 UStG).</li>
+        <li><b>Steuerfreie Einnahmen</b> für Anlagen bis 30 kWp je Wohneinheit, höchstens 100 kWp je Person (§ 3 Nr. 72 EStG).</li>
+        <li><b>Einspeisevergütung:</b> Für Anlagen bis 10 kW, die bis zum 31. Dezember 2026 in Betrieb gehen, 7,70 Cent je kWh bei Teileinspeisung und 12,22 Cent bei Volleinspeisung, fest für 20 Jahre. Für Anlagen ab 2027 berät der Bundestag noch über eine Nachfolgeregelung. Was geplant ist, steht im Ratgeber <a class="ilink" data-nav="rat-eeg">Einspeisevergütung</a>.</li>
+      </ul>
+      <p>Dazu kommen in einigen Regionen Zuschüsse:</p>
+      <ul class="liste">
+        <li><b>Berlin:</b> Das Landesprogramm SolarPLUS zahlt für den Speicher je nach Anlagengröße 500 bis 4.750 €, für einen neuen Zählerschrank 750 € und für denkmalgerechte Anlagen bis 5.700 €. Die Richtlinie gilt bis 31. Dezember 2026. Ob es 2027 weitergeht, ist noch nicht veröffentlicht. Details auf der Seite <a class="ilink" data-nav="berlin">Photovoltaik in Berlin</a>.</li>
+        <li><b>Potsdam:</b> Das städtische Programm sieht 200 € je kWp (höchstens 1.200 €) und 1.000 € für einen Speicher vor. Derzeit nimmt die Stadt aber keine Anträge an. Mehr auf der Seite <a class="ilink" data-nav="potsdam">Photovoltaik in Potsdam</a>.</li>
+        <li><b>Brandenburg und andere Orte:</b> Was dort gilt, steht auf der Seite <a class="ilink" data-nav="brandenburg">Photovoltaik in Brandenburg</a>.</li>
+      </ul>
+      <p>Bei allen Zuschüssen gilt: Antrag stellen, <b>bevor</b> Sie einen Auftrag unterschreiben oder anzahlen. Sonst riskieren Sie, leer auszugehen.</p>
+      <div class="quellen">
+        <p><b>Quellen</b> (geprüft am 24. November 2026, alle Angaben ohne Gewähr):</p>
+        <ul class="liste">
+          <li>§ 12 Abs. 3 UStG: <a href="https://www.gesetze-im-internet.de/ustg_1980/__12.html" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+          <li>§ 3 Nr. 72 EStG: <a href="https://www.gesetze-im-internet.de/estg/__3.html" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+          <li>EEG-Vergütungssätze und Stand der Nachfolgeregelung: <a href="https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/ErneuerbareEnergien/EEG_Foerderung/start.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
+          <li>Förderrichtlinie SolarPLUS 2026: <a href="https://www.ibb-business-team.de/foerderangebote/solarplus/solarplus-s/" target="_blank" rel="noopener">ibb-business-team.de</a></li>
+          <li>Klimaschutzförderprogramm Potsdam, Antragsstatus: <a href="https://www.potsdam.de/de/beantragung-einer-zuwendung-aus-dem-klimaschutzfoerderprogramm-der-landeshauptstadt-potsdam" target="_blank" rel="noopener">potsdam.de</a></li>
+        </ul>
+      </div>
+    </div></div>
   </section>
 
   <section class="pad" style="padding-top:0">
@@ -3392,7 +3447,11 @@
         <details class="faq-item"><summary>Wie viel Dachfläche braucht eine Photovoltaikanlage? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Ein modernes Modul leistet etwa 400 bis 450 Watt und misst rund 1,1 mal 1,8 Meter. Für 1 kWp brauchen Sie also grob 4 bis 5 Quadratmeter. Eine 10-kWp-Anlage belegt damit etwa 45 bis 50 Quadratmeter Dachfläche. Auf Flachdächern kommt mehr Fläche dazu, weil die Reihen sich sonst gegenseitig verschatten.</div></details>
         <details class="faq-item"><summary>Wie viel Wartung braucht eine Solaranlage? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Sehr wenig. Es gibt keine beweglichen Teile, die verschleißen. Empfohlen wird eine Sichtprüfung alle paar Jahre: Sitzen die Module fest, sind Kabel und Steckverbinder in Ordnung, arbeitet der Wechselrichter störungsfrei? Eine Reinigung ist in Deutschland bei Dachneigungen ab etwa 15 Grad meist überflüssig, weil Regen die Module ausreichend spült. Anders sieht es bei Flachdächern, starkem Baumbestand oder Nähe zu Landwirtschaft aus. Der Wechselrichter ist das Bauteil mit der kürzesten Lebensdauer und muss oft nach 12 bis 15 Jahren ersetzt werden – kalkulieren Sie das als Posten ein.</div></details>
 
-        <details class="faq-item"><summary>Was bringt die Einspeisevergütung noch? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Für Anlagen bis 10 kWp mit Teileinspeisung liegt sie derzeit bei rund 7,7 Cent je Kilowattstunde, bei Volleinspeisung bei rund 12,2 Cent. Der Satz sinkt halbjährlich um etwa ein Prozent, ist dafür aber ab Inbetriebnahme für 20 Jahre plus das Restjahr garantiert. Wichtig zur Einordnung: Netzstrom kostet etwa 35 Cent. Jede selbst verbrauchte Kilowattstunde ist deshalb rund viermal so viel wert wie eine eingespeiste. Die Einspeisung ist heute ein Nebeneffekt, nicht das Geschäftsmodell.</div></details>
+        <details class="faq-item"><summary>Was bringt die Einspeisevergütung noch? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Für Anlagen bis 10 kWp, die bis zum 31. Dezember 2026 in Betrieb gehen, 7,70 Cent je Kilowattstunde bei Teileinspeisung und 12,22 Cent bei Volleinspeisung. Der Satz gilt ab Inbetriebnahme fest für 20 Jahre plus das Restjahr. Für Anlagen ab 2027 berät der Bundestag noch über eine Nachfolgeregelung, Einzelheiten im Ratgeber <a class="ilink" data-nav="rat-eeg">Einspeisevergütung</a>. Wichtig zur Einordnung: Netzstrom kostet etwa 35 Cent. Jede selbst verbrauchte Kilowattstunde ist deshalb rund viereinhalbmal so viel wert wie eine eingespeiste. Die Einspeisung ist heute ein Nebeneffekt, nicht das Geschäftsmodell.</div></details>
+
+        <details class="faq-item"><summary>Was kostet eine Photovoltaikanlage für ein Einfamilienhaus? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Eine Anlage mit 8 bis 10 kWp, wie sie für die meisten Einfamilienhäuser passt, kostet schlüsselfertig etwa 10.500 bis 16.000 € ohne Speicher und 15.000 bis 21.000 € mit Speicher. Umsatzsteuer fällt nicht an. Teurer wird es vor allem, wenn der Zählerschrank erneuert werden muss (1.500 bis 3.500 €). Die ganze Tabelle steht oben auf dieser Seite.</div></details>
+
+        <details class="faq-item"><summary>Welche Förderung gibt es für Photovoltaik? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Bundesweit: 0 % Umsatzsteuer beim Kauf, steuerfreie Einnahmen bis 30 kWp und die Einspeisevergütung. In Berlin kommt bis Ende 2026 das Landesprogramm SolarPLUS dazu, mit bis zu 4.750 € für den Speicher und 750 € für den Zählerschrank. Potsdam hat ein eigenes Programm, nimmt derzeit aber keine Anträge an. Stand 24. November 2026.</div></details>
 
         <details class="faq-item"><summary>Ist ein Balkonkraftwerk eine Alternative? <svg class="ic"><use href="#i-chevron"/></svg></summary><div class="ans">Für Mieter und für alle, die klein anfangen wollen, ja. Ein Steckersolargerät mit 800 Watt kostet einige hundert Euro, ist anmeldepflichtig im Marktstammdatenregister und deckt einen Teil der Grundlast ab. Für ein Eigenheim mit eigenem Dach ist es aber kein Ersatz: Die Leistung liegt bei etwa einem Zehntel einer normalen Anlage, es gibt keine Einspeisevergütung in nennenswerter Höhe und keine sinnvolle Speicheranbindung. Wer ein Dach hat, sollte es nutzen.</div></details>
 
@@ -3830,7 +3889,9 @@
       <p><b>Passt es bei Ihnen?</b> Unser Rechner ermittelt aus Ihren Gebäudedaten Heizlast, Gerätegröße, Jahresarbeitszahl und den voraussichtlichen KfW-Zuschuss. Ohne Anmeldung.</p>
       <a data-nav="rechner" class="btn">Zum Wärmepumpen-Rechner</a>
     </div>
-  </div></div></section>
+  <p class="art-check"><span>Liegt Ihnen schon ein Angebot für die Wärmepumpe vor? Wir prüfen Gerätegröße, Heizkörper und Förderfähigkeit kostenlos.</span><a data-nav="check">Angebot prüfen lassen</a></p>
+
+    </div></div></section>
 <!--FAQ-->
 <!--KURZANFRAGE-->
 </div><!-- /view-rat-wp -->
@@ -3858,7 +3919,7 @@
     <p><b>8. Entsorgung</b> von Verpackung, Altgerät und Bauschutt.</p>
 
     <h2>Zusätzlich bei Photovoltaik</h2>
-    <p><b>9. Der angenommene spezifische Ertrag</b> in Kilowattstunden je kWp. Realistisch sind 900 bis 1.050. Steht dort 1.200, wurde mit Bestwerten gerechnet.</p>
+    <p><b>9. Der angenommene spezifische Ertrag</b> in Kilowattstunden je kWp. Realistisch sind 900 bis 1.050. Steht dort 1.200, wurde mit Bestwerten gerechnet. Welche Anlagengröße zu Ihrem Verbrauch passt und was sie kosten darf, steht auf der Seite <a class="ilink" data-nav="pv">Photovoltaik fürs Einfamilienhaus</a>.</p>
     <p><b>10. Eine Verschattungsbetrachtung.</b> Schornstein, Gaube, Nachbarbaum – wurde das geprüft und wie wird damit umgegangen?</p>
 
     <h2>Zusätzlich bei Wärmepumpen</h2>
@@ -4425,7 +4486,7 @@
 
             <div class="co-notes" id="r-hinweise"></div>
 
-            <button type="button" class="btn" style="width:100%;margin-top:22px" id="wp-send">Auslegung prüfen lassen</button>
+            <button type="button" class="btn" style="width:100%;margin-top:22px" id="wp-send">Ergebnis und Förderung kostenlos prüfen lassen</button>
             <p class="co-legal">Überschlägige Auslegung auf Basis Ihrer Angaben. Verbindlich ist eine raumweise Heizlastberechnung nach DIN EN 12831 durch einen Fachbetrieb vor Ort. Die Förderangaben sind keine Zusage der KfW.</p>
           </div>
         </aside>
@@ -4435,7 +4496,9 @@
   </section>
 
   <!-- Kontaktformular für die Auslegung -->
-  <section class="pad" style="padding-top:0" id="wp-kontakt" hidden>
+  <!-- Seit 24.11.2026 immer sichtbar (vorher erst nach Klick): der Rechner hat die
+       meisten Besucher der Website, das Formular soll ohne Umweg erreichbar sein. -->
+  <section class="pad" style="padding-top:0" id="wp-kontakt">
     <div class="wrap">
       <div class="forms-wrap" style="max-width:680px">
         <div class="fcard" id="wp-card">
@@ -4444,8 +4507,8 @@
               <span class="fbadge"><svg class="ic"><use href="#i-check"/></svg></span>
               <div>
                 <span class="ftag"><svg class="ic"><use href="#i-shield"/></svg> Kostenlos &amp; unverbindlich</span>
-                <h2>Auslegung prüfen lassen</h2>
-                <p>Wir schauen uns Ihre Werte an und melden uns mit einer ehrlichen Einschätzung. Ihre Eingaben aus dem Rechner werden mitgeschickt.</p>
+                <h2>Ergebnis und Förderung kostenlos prüfen lassen</h2>
+                <p>Wir prüfen Gerätegröße, Förderquote und Zuschuss anhand Ihrer Werte und melden uns mit einer Einschätzung, in der Regel innerhalb von 24 Stunden. Ihre Eingaben aus dem Rechner werden automatisch mitgeschickt.</p>
               </div>
             </div>
             <div class="grid2">
@@ -4461,7 +4524,7 @@
               <input type="checkbox" id="wp-k-dsgvo">
               <label for="wp-k-dsgvo">Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden und ich kontaktiert werde (<a href="#datenschutz">Datenschutz</a>). Widerruf jederzeit möglich. <span class="req">*</span></label>
             </div>
-            <button type="button" class="btn" style="width:100%" id="wp-k-submit">Auslegung senden</button>
+            <button type="button" class="btn" style="width:100%" id="wp-k-submit">Kostenlos prüfen lassen</button>
             <div class="fnote"><svg class="ic"><use href="#i-lock"/></svg> SSL-verschlüsselt · kein Spam · 100 % kostenlos</div>
           </form>
           <div class="fdone" id="wp-k-done">
@@ -5929,7 +5992,7 @@
       <div class="breadcrumb"><a data-nav="home">Start</a> <svg class="ic"><use href="#i-chevron"/></svg> <a data-nav="brandenburg">Brandenburg</a> <svg class="ic"><use href="#i-chevron"/></svg> <span>Potsdam</span></div>
       <div class="eyebrow">Landeshauptstadt Potsdam</div>
       <h1>Photovoltaik und Wärmepumpe in Potsdam</h1>
-      <p class="lede">Potsdam hat ein eigenes Förderprogramm, viele Denkmalbereiche und seit Juni 2026 einen beschlossenen Wärmeplan. Einiges ist dadurch einfacher als anderswo in Brandenburg, anderes aufwendiger.</p>
+      <p class="lede">Potsdam hat ein eigenes Förderprogramm für Solaranlage, Speicher und Wärmepumpe, nimmt aber derzeit keine Anträge an (Stand 24. November 2026). Unabhängig davon gelten 0 % Umsatzsteuer auf die Solaranlage und der KfW-Zuschuss für die Wärmepumpe. Dazu kommen viele Denkmalbereiche und seit Juni 2026 ein beschlossener Wärmeplan.</p>
       <div class="hero-cta">
         <a href="#rueckruf" class="btn">Rückruf anfordern</a>
         <a data-nav="check" class="btn btn-ghost">Angebot prüfen lassen</a>
@@ -5961,7 +6024,10 @@
       <li><b>Balkonkraftwerk</b>: 250 € pauschal.</li>
     </ul>
     <p>Die Bedingungen sind strenger als bei vielen anderen Programmen. Gefördert werden nur Privatleute mit Erstwohnsitz in Potsdam. <b>Vor dem Antrag ist eine Energieberatung Pflicht</b>, etwa bei der Verbraucherzentrale Brandenburg. Für Wärmepumpe und Speicher müssen Sie Ökostrom beziehen. Der Antrag muss gestellt sein, bevor Sie verbindlich bestellen, und bewilligt wird in der Reihenfolge des Eingangs.</p>
-    <p><b>Auch zum Stand 21. November 2026 können keine Anträge gestellt werden.</b> Die Stadt kündigt an, Formulare wieder bereitzustellen, sobald Anträge möglich sind, nennt aber noch keinen Termin. Die Richtlinie lässt Anträge ohnehin nur bis zum 31. Oktober eines Jahres zu. Für 2026 ist das Programm damit praktisch erledigt. Wer 2027 bauen will, kann die Zeit nutzen: Energieberatung jetzt machen, Angebote einholen, aber noch nichts unterschreiben, bis der Antrag gestellt ist. Das gilt im Übrigen genauso für den KfW-Zuschuss.</p>
+    <p><b>Auch zum Stand 24. November 2026 können keine Anträge gestellt werden.</b> Die Stadt kündigt an, Formulare wieder bereitzustellen, sobald Anträge möglich sind, nennt aber noch keinen Termin. Die Richtlinie lässt Anträge ohnehin nur bis zum 31. Oktober eines Jahres zu. Für 2026 ist das Programm damit praktisch erledigt. Wer 2027 bauen will, kann die Zeit nutzen: Energieberatung jetzt machen, Angebote einholen, aber noch nichts unterschreiben, bis der Antrag gestellt ist. Das gilt im Übrigen genauso für den KfW-Zuschuss.</p>
+
+    <h2>Was eine Solaranlage in Potsdam kostet</h2>
+    <p>In Potsdam gelten dieselben Marktpreise wie im übrigen Berliner Umland. Eine Anlage mit 8 bis 10 kWp, wie sie für die meisten Einfamilienhäuser passt, kostet schlüsselfertig etwa <b>10.500 bis 16.000 € ohne Speicher</b> und <b>15.000 bis 21.000 € mit Speicher</b>. Umsatzsteuer fällt nicht an. Mehr kann es werden, wenn Denkmal- oder Satzungsauflagen eine besondere Ausführung verlangen oder der Zählerschrank erneuert werden muss. Alle Größen stehen auf der Seite <a class="ilink" data-nav="kosten">Kosten</a>. Liegt Ihnen schon ein Angebot vor, prüfen wir es im <a class="ilink" data-nav="check">Angebots-Check</a> kostenlos.</p>
 
     <h2>Denkmalschutz, Welterbe und Satzungen</h2>
     <p>Grundsätzlich sind Solaranlagen auf dem Dach auch in Potsdam nach § 61 der Brandenburgischen Bauordnung verfahrensfrei. Die Bauaufsicht weist aber selbst darauf hin, dass für die historischen Stadtkerne von Potsdam und Babelsberg und für die Vorstädte <b>Denkmalbereichs-, Erhaltungs- und Gestaltungssatzungen sowie Bebauungspläne</b> bestehen. Dazu kommt die Welterbe-Satzung der Berlin-Potsdamer Kulturlandschaft.</p>
@@ -5987,7 +6053,7 @@
     <div class="quellen">
       <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
       <ul class="liste">
-        <li>Klimaschutzförderprogramm, Antragsstatus (erneut geprüft am 21.11.2026): <a href="https://www.potsdam.de/de/kategorie/klimaschutzfoerderprogramm" target="_blank" rel="noopener">potsdam.de</a></li>
+        <li>Klimaschutzförderprogramm, Antragsstatus (erneut geprüft am 24.11.2026): <a href="https://www.potsdam.de/de/kategorie/klimaschutzfoerderprogramm" target="_blank" rel="noopener">potsdam.de</a></li>
         <li>Potsdamer Klimaschutzförderrichtlinie vom 26.03.2026: <a href="https://www.potsdam.de/system/files/document/Schlussfassung%20Potsdamer%20Klimaschutzf%C3%B6rderrichtlinie%20%20vom%2026.03.2026_1.pdf" target="_blank" rel="noopener">potsdam.de (PDF)</a></li>
         <li>Allgemeine Hinweise der Bauaufsicht zu Solaranlagen, Stand März 2025: <a href="https://www.potsdam.de/system/files/document/250314_441_Allgemeine%20Hinweise%20baurechtl.%20Genehmigungsbed%C3%BCrftigkeit%20Solaranlagen_Aktualisierung%202025_0.pdf" target="_blank" rel="noopener">potsdam.de (PDF)</a></li>
         <li>Solarenergie und Denkmalschutz: <a href="https://www.potsdam.de/de/solarenergie-und-denkmalschutz" target="_blank" rel="noopener">potsdam.de</a></li>
@@ -6287,6 +6353,8 @@
     </ul>
     <p>Ob eine Wärmepumpe in Ihrem Haus gut läuft, entscheidet sich nicht am Dach, sondern an den Heizkörpern. Dazu der Ratgeber <a class="ilink" data-nav="rat-wp">Wärmepumpe im Altbau</a>. Was an Förderung möglich ist, rechnet der <a class="ilink" data-nav="rechner">Wärmepumpen-Rechner</a>.</p>
 
+    <p class="art-check"><span>Haben Sie schon Angebote für Solaranlage oder Wärmepumpe? Wir prüfen kostenlos, ob beides zusammenpasst.</span><a data-nav="check">Angebot prüfen lassen</a></p>
+
     <div class="quellen">
       <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
       <ul class="liste">
@@ -6327,7 +6395,7 @@
       </tbody>
     </table></div>
     <p>Beim Nachrüsten kommt je nach Anlage etwas dazu. Bei der AC-Lösung ist das der eigene Batteriewechselrichter, bei der DC-Lösung unter Umständen ein neuer Hybridwechselrichter, wenn der alte keinen Batterieanschluss hat. Wie viel das ausmacht, hängt vom vorhandenen Gerät ab und zeigt erst ein Angebot für Ihre Anlage. Notstromfähigkeit kostet je nach Umfang 500 bis 2.500 € zusätzlich. Eine Übersicht aller Preise steht auf der Seite <a class="ilink" data-nav="kosten">Kosten</a>.</p>
-    <p>Als Richtwert für die Größe gilt etwa 1 kWh Speicher je 1.000 kWh Jahresstromverbrauch. Ein größerer Speicher kostet mehr, wird aber selten voll genutzt.</p>
+    <p>Als Richtwert für die Größe gilt etwa 1 kWh Speicher je 1.000 kWh Jahresstromverbrauch. Ein größerer Speicher kostet mehr, wird aber selten voll genutzt. Planen Sie Speicher und Solaranlage neu, finden Sie Größen und Komplettpreise auf der Seite <a class="ilink" data-nav="pv">Photovoltaik</a>.</p>
 
     <div class="art-cta">
       <p><b>Sie haben schon eine Solaranlage?</b> Im Bestandsanlagen-Check sehen wir uns Ihre Anlage an und sagen Ihnen, ob und wie ein Speicher dazu passt. Kostenlos und unverbindlich.</p>
@@ -6353,6 +6421,8 @@
       <li><b>Wenn ein neuer Verbraucher dazukommt.</b> Eine <a class="ilink" data-nav="wp">Wärmepumpe</a> oder ein Elektroauto verschieben den Verbrauch. Dann lohnt es sich, Speicher und neue Verbraucher gemeinsam zu planen.</li>
     </ul>
     <p>Weniger lohnend ist ein Speicher, wenn Sie tagsüber ohnehin viel Strom verbrauchen oder die Anlage klein ist. Welche Größe zu Ihrem Verbrauch passt, steht auf der Seite <a class="ilink" data-nav="speicher">Stromspeicher</a>. Ein Speicher, der größer ist als der nächtliche Verbrauch, füllt sich im Winter selten und wird im Sommer nicht leer.</p>
+
+    <p class="art-check"><span>Liegt Ihnen schon ein Angebot für den Speicher vor? Wir prüfen Größe, Kompatibilität und Preis kostenlos.</span><a data-nav="check">Angebot prüfen lassen</a></p>
 
     <div class="quellen">
       <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
@@ -6410,6 +6480,19 @@
       <div class="art-cta-btns"><a data-nav="rendite" class="btn">Zum Rentabilitätsrechner</a><a href="#rueckruf" class="btn btn-ghost">Rückruf anfordern</a></div>
     </div>
 
+    <!-- 24.11.2026: Zahlen = Beispielhaus der Seite Photovoltaik (view-pv). Bei Aenderung dort mitpflegen. -->
+    <h2>Teileinspeisung oder Volleinspeisung?</h2>
+    <p>Bei der Teileinspeisung nutzen Sie den Solarstrom zuerst selbst und speisen nur den Überschuss ein. Bei der Volleinspeisung geht alles ins Netz, dafür ist der Satz höher. Gerechnet an unserem Beispielhaus von der Seite <a class="ilink" data-nav="pv">Photovoltaik</a>: 10 kWp, rund 9.500 kWh Ertrag im Jahr, mit 8-kWh-Speicher bei Teileinspeisung.</p>
+    <div class="tabelle-wrap"><table class="tabelle">
+      <thead><tr><th></th><th>Teileinspeisung</th><th>Volleinspeisung</th></tr></thead>
+      <tbody>
+        <tr><td>selbst verbraucht</td><td>2.970 kWh × 35 ct = 1.040 €</td><td>0 €</td></tr>
+        <tr><td>eingespeist</td><td>6.530 kWh × 7,70 ct = 503 €</td><td>9.500 kWh × 12,22 ct = 1.161 €</td></tr>
+        <tr><td><b>Vorteil pro Jahr</b></td><td><b>rund 1.540 €</b></td><td><b>rund 1.160 €</b></td></tr>
+      </tbody>
+    </table></div>
+    <p>Die Teileinspeisung liegt im Beispiel rund 380 € im Jahr vorn, braucht aber den Speicher. Ohne Speicher sinkt der Eigenverbrauch und damit der Abstand. Die Volleinspeisung kann sich lohnen, wenn im Haus kaum Strom gebraucht wird. Wechseln können Sie jeweils zum 1. Januar, wenn Sie es dem Netzbetreiber vor dem 1. Dezember in Textform mitteilen (§ 48 Abs. 2a EEG 2023). Ab 2027 hängt die Rechnung zusätzlich an der Nachfolgeregelung, siehe oben.</p>
+
     <h2>Was das für Ihre Entscheidung heißt</h2>
     <p>Wer noch 2026 in Betrieb geht, sichert sich nach heutigem Recht 20 Jahre lang den festen Satz. Das klingt nach einem Grund zur Eile, wird aber oft überschätzt. Bei einer typischen Anlage mit Eigenverbrauch bringt die Einspeisung nur einen kleinen Teil des Nutzens. Der größere Teil kommt aus dem Strom, den Sie selbst verbrauchen und nicht für 30 bis 40 Cent einkaufen müssen. Warum das so ist, steht im Ratgeber <a class="ilink" data-nav="rat-pv">Lohnt sich Photovoltaik 2026 noch?</a>.</p>
     <p>Der Entwurf verschiebt das noch weiter. Ohne feste Vergütung zählt künftig fast nur noch der Eigenverbrauch. Anlagen werden dann eher <a class="ilink" data-nav="pv">nach dem eigenen Bedarf ausgelegt</a>, mit <a class="ilink" data-nav="speicher">Speicher</a>, <a class="ilink" data-nav="wp">Wärmepumpe</a> oder <a class="ilink" data-nav="wallbox">Wallbox</a> als zusätzlichen Verbrauchern. Eine Anlage nur zum Einspeisen rechnet sich dann kaum noch.</p>
@@ -6426,13 +6509,15 @@
     <h2>Nach dem Ende der Einspeisevergütung</h2>
     <p>Anlagen, deren 20 Jahre abgelaufen sind, bekommen weiter den Jahresmarktwert, höchstens 10 Cent je Kilowattstunde und abzüglich eines Vermarktungsabschlags. Diese Regelung gilt bis Ende 2032, auch der neue Entwurf hält daran fest. Für solche Anlagen ist ein nachgerüsteter Speicher oft die naheliegende Frage, mehr dazu im Ratgeber <a class="ilink" data-nav="rat-speicher">Stromspeicher nachrüsten</a>.</p>
 
+    <p class="art-check"><span>Liegt Ihnen schon ein Angebot für eine Solaranlage vor? Wir prüfen Ertragsannahmen, Inbetriebnahmetermin und Preis kostenlos.</span><a data-nav="check">Angebot prüfen lassen</a></p>
+
     <div class="quellen">
-      <p><b>Quellen</b> (geprüft am 13. Oktober 2026, alle Angaben ohne Gewähr):</p>
+      <p><b>Quellen</b> (Sätze und Stand der Nachfolgeregelung erneut geprüft am 24. November 2026, alle Angaben ohne Gewähr):</p>
       <ul class="liste">
         <li>EEG-Vergütungssätze und Hinweis zur Nachfolgeregelung: <a href="https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/ErneuerbareEnergien/EEG_Foerderung/start.html" target="_blank" rel="noopener">bundesnetzagentur.de</a></li>
         <li>Gesetzentwurf, Drucksache 21/7867 vom 07.09.2026: <a href="https://dserver.bundestag.de/btd/21/078/2107867.pdf" target="_blank" rel="noopener">bundestag.de (PDF)</a></li>
         <li>Anhörung im Ausschuss für Wirtschaft und Energie am 05.10.2026: <a href="https://www.bundestag.de/ausschuesse/a09_wirtschaft/wp21_a09_Anhoerungen/1217432-1217432" target="_blank" rel="noopener">bundestag.de</a></li>
-        <li>EEG 2023, §§ 9, 25, 49, 51, 23b: <a href="https://www.gesetze-im-internet.de/eeg_2014/" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
+        <li>EEG 2023, §§ 9, 25, 48, 49, 51, 23b: <a href="https://www.gesetze-im-internet.de/eeg_2014/" target="_blank" rel="noopener">gesetze-im-internet.de</a></li>
         <li>Inkrafttreten Solarspitzengesetz: <a href="https://www.bundesregierung.de/breg-de/aktuelles/energiewende-2320072" target="_blank" rel="noopener">bundesregierung.de</a></li>
       </ul>
     </div>
@@ -6470,6 +6555,20 @@
     <p>35 °C reichen meist bei einer Fußbodenheizung. Bei Heizkörpern liegt der Wert oft höher. Das muss nicht so bleiben: Mit einem hydraulischen Abgleich und größeren Heizkörpern in einzelnen Räumen sinkt die nötige Vorlauftemperatur häufig deutlich. Mehr dazu steht im Beitrag <a class="ilink" data-nav="rat-wp">Wärmepumpe im Altbau</a>.</p>
     <p>Wird auch das Warmwasser über die Wärmepumpe bereitet, sinkt die Jahresarbeitszahl etwas, weil dafür höhere Temperaturen nötig sind.</p>
 
+    <!-- 24.11.2026: Werte = Gas x 0,9 / 3,4 (Fraunhofer-Mittelwert), Kosten 0,26 €/kWh Strom
+         und 0,12 €/kWh Gas = Voreinstellungen des Waermepumpen-Rechners. -->
+    <h2>Stromverbrauch und Kosten nach bisherigem Gasverbrauch</h2>
+    <p>Die Tabelle rechnet mit der mittleren Jahresarbeitszahl von 3,4, die das Fraunhofer ISE in bestehenden Häusern gemessen hat (mehr dazu weiter unten). Bei Öl entspricht ein Liter etwa 10 kWh, 2.000 Liter also rund 20.000 kWh.</p>
+    <div class="ktable" style="max-width:720px">
+      <div class="kt-head"><span>Gas bisher</span><span>Strom Wärmepumpe</span><span>Stromkosten</span><span>Gaskosten bisher</span></div>
+      <div class="kt-row"><span data-l="Gas bisher"><b>10.000 kWh</b></span><span data-l="Strom Wärmepumpe">rund 2.600 kWh</span><span data-l="Stromkosten">rund 690 €</span><span data-l="Gaskosten bisher">rund 1.200 €</span></div>
+      <div class="kt-row"><span data-l="Gas bisher"><b>15.000 kWh</b></span><span data-l="Strom Wärmepumpe">rund 4.000 kWh</span><span data-l="Stromkosten">rund 1.030 €</span><span data-l="Gaskosten bisher">rund 1.800 €</span></div>
+      <div class="kt-row"><span data-l="Gas bisher"><b>20.000 kWh</b></span><span data-l="Strom Wärmepumpe">rund 5.300 kWh</span><span data-l="Stromkosten">rund 1.380 €</span><span data-l="Gaskosten bisher">rund 2.400 €</span></div>
+      <div class="kt-row"><span data-l="Gas bisher"><b>25.000 kWh</b></span><span data-l="Strom Wärmepumpe">rund 6.600 kWh</span><span data-l="Stromkosten">rund 1.720 €</span><span data-l="Gaskosten bisher">rund 3.000 €</span></div>
+      <div class="kt-row"><span data-l="Gas bisher"><b>30.000 kWh</b></span><span data-l="Strom Wärmepumpe">rund 7.900 kWh</span><span data-l="Stromkosten">rund 2.060 €</span><span data-l="Gaskosten bisher">rund 3.600 €</span></div>
+    </div>
+    <p class="kt-note">Gerechnet mit 26 Cent je kWh Wärmepumpenstrom und 12 Cent je kWh Gas, ohne Grundgebühren. Das sind Beispielwerte, keine Zusage. Mit Ihren eigenen Preisen rechnet der <a class="ilink" data-nav="rechner">Wärmepumpen-Rechner</a>. Bei niedriger Vorlauftemperatur sinkt der Verbrauch, bei hoher steigt er, siehe Tabelle oben.</p>
+
     <div class="art-cta">
       <p><b>Wärmepumpe geplant?</b> Bis 31. Januar 2027 gelten noch die höheren Fördersätze. Der Rechner zeigt, welcher Zuschuss bei Ihnen möglich ist und wie viel davon bei einem Antrag ab Februar wegfällt.</p>
       <div class="art-cta-btns"><a data-nav="rechner" class="btn">Zum Wärmepumpen-Rechner</a><a href="#rueckruf" class="btn btn-ghost">Rückruf anfordern</a></div>
@@ -6490,12 +6589,14 @@
     <p>Welches Modul sich bei Ihnen rechnet, hängt vom Verbrauch und von den Preisen Ihres Netzbetreibers ab. Ob ein eigener Zähler sinnvoll ist, steht auch im Beitrag <a class="ilink" data-nav="rat-pvwp">Photovoltaik und Wärmepumpe</a>.</p>
 
     <h2>Wie viel davon vom eigenen Dach kommen kann</h2>
-    <p>Mit einer Solaranlage lässt sich ein Teil des Wärmepumpenstroms selbst erzeugen. In den Messungen des Fraunhofer ISE waren es ohne Batterie rund 13 bis 36 %, mit Batterie 17 bis 49 %. Im Winter, wenn die Wärmepumpe am meisten Strom braucht, liefert das Dach am wenigsten. Den größten Teil kaufen Sie also weiter aus dem Netz.</p>
+    <p>Mit einer Solaranlage lässt sich ein Teil des Wärmepumpenstroms selbst erzeugen. In den Messungen des Fraunhofer ISE waren es ohne Batterie rund 13 bis 36 %, mit Batterie 17 bis 49 %. Im Winter, wenn die Wärmepumpe am meisten Strom braucht, liefert das Dach am wenigsten. Den größten Teil kaufen Sie also weiter aus dem Netz. Welche Anlagengröße dafür passt, steht auf der Seite <a class="ilink" data-nav="pv">Photovoltaik</a>.</p>
 
     <div class="artikel-cta">
       <p><b>Wie viel wäre es bei Ihnen?</b> Unser Rechner ermittelt aus Ihrem bisherigen Verbrauch oder Ihrer Wohnfläche die Gerätegröße, die Jahresarbeitszahl und den voraussichtlichen Stromverbrauch. Ohne Anmeldung.</p>
       <a data-nav="rechner" class="btn">Zum Wärmepumpen-Rechner</a>
     </div>
+
+    <p class="art-check"><span>Liegt Ihnen schon ein Angebot für die Wärmepumpe vor? Wir prüfen Gerätegröße, Arbeitszahl und Förderung kostenlos.</span><a data-nav="check">Angebot prüfen lassen</a></p>
 
     <div class="quellen">
       <p><b>Quellen</b> (geprüft am 28. Oktober 2026, alle Angaben ohne Gewähr):</p>
@@ -6597,7 +6698,7 @@
 
         <h2>4. Kontaktaufnahme &amp; Anfrageformulare</h2>
         <p>Wenn Sie uns über unsere Formulare (Angebotsanfrage, Rückrufwunsch, Kontaktformular, Angebots-Check, Bestandsanlagen-Check, Terminanfrage, Partneranfrage) oder per E-Mail kontaktieren, verarbeiten wir die von Ihnen angegebenen Daten (z. B. Name, Anschrift/PLZ, Telefonnummer, E-Mail-Adresse sowie Ihre Angaben zum Vorhaben), um Ihre Anfrage zu bearbeiten und Ihnen ein Angebot zu erstellen bzw. Sie an einen passenden Fachbetrieb zu vermitteln.</p>
-        <p>Zur technischen Übermittlung der Formulardaten per E-Mail nutzen wir den Dienst FormSubmit (formsubmit.co). Dabei werden die eingegebenen Formulardaten an dessen Server übertragen und an unsere E-Mail-Adresse weitergeleitet. Rechtsgrundlage ist Ihre Einwilligung sowie die Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und b DSGVO). Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+        <p>Zur technischen Übermittlung der Formulardaten per E-Mail nutzen wir den Dienst FormSubmit (formsubmit.co). Dabei werden die eingegebenen Formulardaten an dessen Server übertragen und an unsere E-Mail-Adresse weitergeleitet. Zusammen mit Ihren Angaben übermitteln wir, auf welcher Seite unserer Website Sie das Formular abgeschickt haben und von welcher Seite Sie dorthin gekommen sind (bei fremden Websites nur deren Name, etwa google.com). So erkennen wir, welche Inhalte hilfreich sind (berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO). Dafür wird nichts auf Ihrem Gerät gespeichert. Rechtsgrundlage ist Ihre Einwilligung sowie die Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und b DSGVO). Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</p>
         <p><b>Eingangsbestätigung.</b> Haben Sie eine E-Mail-Adresse angegeben, schicken wir Ihnen nach dem Absenden eine automatische Eingangsbestätigung. Dazu werden Ihr Name, Ihre E-Mail-Adresse, die Art der Anfrage und gegebenenfalls Ihr Terminwunsch an eine Serverfunktion bei unserem Hostinganbieter Vercel übermittelt und über unser E-Mail-Postfach bei der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, versendet. Die Serverfunktion speichert diese Angaben nicht. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Bearbeitung Ihrer Anfrage).</p>
 <!--CAL:AN-->
         <h2>4a. Terminbuchung über Cal.com</h2>
@@ -6704,13 +6805,29 @@
   // Startseite und die Formulare auf /anfragen/ liegen auf verschiedenen
   // Seiten und brauchen beide diese Funktion.
   // Gibt true zurueck, wenn FormSubmit die Anfrage angenommen hat.
+
+  // Herkunft der Anfrage: auf welcher Seite abgeschickt und von wo der Besucher
+  // kam (Vorseite auf bhd-energie.de oder nur der Name der fremden Website,
+  // z. B. www.google.com). Bewusst OHNE sessionStorage/Cookie: Speichern auf dem
+  // Endgeraet waere nach § 25 TDDDG einwilligungspflichtig. Abfragen wie
+  // ?utm_campaign=… werden mitgegeben, damit Meta-Anzeigen erkennbar sind.
+  function herkunft(){
+    const h={seite:location.pathname+(location.search.indexOf('utm_')>-1?location.search:'')};
+    try{
+      if(document.referrer){
+        const r=new URL(document.referrer);
+        h.vorseite=r.host===location.host?r.pathname:r.host;
+      }else h.vorseite='direkt aufgerufen';
+    }catch(e){}
+    return h;
+  }
   async function sendLead(lead){
     try{
       const payload=Object.assign({
         _subject:'Neue Anfrage ('+lead.typ+') – BHD Website',
         _template:'table',
         _captcha:'false'
-      },lead);
+      },herkunft(),lead);
       if(Array.isArray(payload.interesse))payload.interesse=payload.interesse.join(', ');
       // Formular-kodiert (application/x-www-form-urlencoded) statt JSON:
       // vermeidet den CORS-Preflight, der Browser-Absendungen still blockieren kann.
@@ -6757,6 +6874,15 @@
       const form=document.getElementById(f[0]);
       if(!form)return;
       form.addEventListener('submit',function(){
+        // Herkunft als versteckte Felder mitsenden (gleiche Logik wie sendLead)
+        try{
+          const h=herkunft();
+          Object.keys(h).forEach(function(k){
+            let el=form.querySelector('input[name="'+k+'"]');
+            if(!el){el=document.createElement('input');el.type='hidden';el.name=k;form.appendChild(el);}
+            el.value=h[k];
+          });
+        }catch(e){}
         try{
           const wert=id=>{const el=document.getElementById(id);return el?el.value:'';};
           sessionStorage.setItem('bhd-bestaetigung',JSON.stringify({

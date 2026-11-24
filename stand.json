@@ -24,8 +24,8 @@
     "datum": "2026-11-01"
   },
   "pv": {
-    "hash": "7b6af783580eaec7b325269898adfefa",
-    "datum": "2026-11-01"
+    "hash": "07e10c8e00d3e7ea04b3ac1a2ab3edc9",
+    "datum": "2026-11-24"
   },
   "speicher": {
     "hash": "7d9c2566399d370968e804fde2869d34",
@@ -60,8 +60,8 @@
     "datum": "2026-11-01"
   },
   "potsdam": {
-    "hash": "dbdd823f1a2e4822e69259803631808f",
-    "datum": "2026-11-21"
+    "hash": "20d5eb58a058635a4bd7f255eafdbe42",
+    "datum": "2026-11-24"
   },
   "falkensee": {
     "hash": "74c47f43271a021f4f6873fe4a7dd91c",
@@ -84,28 +84,28 @@
     "datum": "2026-11-21"
   },
   "rat-wp": {
-    "hash": "bb669e4aa8e488b098c2aac0cf9f587f",
-    "datum": "2026-11-21"
+    "hash": "309393d5f1d1f2668025102daa0dce30",
+    "datum": "2026-11-24"
   },
   "rat-check": {
-    "hash": "42d35d94d38c90718c81a5d6f90af3cb",
-    "datum": "2026-11-01"
+    "hash": "002ba771805db028404186e79eb3757c",
+    "datum": "2026-11-24"
   },
   "rat-eeg": {
-    "hash": "66a1bc1d1830628ccb2b0b1ca1b9fe7e",
-    "datum": "2026-11-21"
+    "hash": "d02fe9ab9e5eea3f1f242a97a22fab4b",
+    "datum": "2026-11-24"
   },
   "rat-pvwp": {
-    "hash": "9b0f10678585661dc60280a3466fdfef",
-    "datum": "2026-11-21"
+    "hash": "3066427f50d8f0c46728f6ead2e363c6",
+    "datum": "2026-11-24"
   },
   "rat-speicher": {
-    "hash": "40443a73084fd45cf70ebbf7a57a6567",
-    "datum": "2026-11-21"
+    "hash": "aea1752ffc73a26c89371095c77b4e58",
+    "datum": "2026-11-24"
   },
   "rechner": {
-    "hash": "f459da9146f0129c3229118223abe0a6",
-    "datum": "2026-11-21"
+    "hash": "736ff19b9152e773ff0a0e1a1081c9eb",
+    "datum": "2026-11-24"
   },
   "rendite": {
     "hash": "08e8a9317ebc092ea84bd56ed0b09b72",
@@ -128,11 +128,11 @@
     "datum": "2026-10-27"
   },
   "datenschutz": {
-    "hash": "094c33b632b40af431800a11cdfa4e83",
-    "datum": "2026-10-31"
+    "hash": "aaa1066a1812acfaaad0ab924616c930",
+    "datum": "2026-11-24"
   },
   "rat-strom": {
-    "hash": "de57b07dc338a0774b2a3ddbc31d9a18",
-    "datum": "2026-11-21"
+    "hash": "de5365dd71784dd43cf23baca627a628",
+    "datum": "2026-11-24"
   }
 }

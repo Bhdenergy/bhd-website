@@ -186,7 +186,7 @@ const PAGES = [
     key: 'pv', dir: 'photovoltaik', view: 'view-pv', prio: '0.9', crumb: 'Photovoltaik',
     title: 'Photovoltaik Einfamilienhaus: Kosten, Größe, Förderung | BHD',
     ogTitle: 'Photovoltaik – unabhängig beraten statt verkauft | BHD',
-    desc: 'Photovoltaik fürs Einfamilienhaus: welche Anlagengröße passt, warum der Eigenverbrauch zählt und wie 0 % Mehrwertsteuer wirkt. Unabhängig beraten.',
+    desc: 'Photovoltaik fürs Einfamilienhaus: 8 bis 10 kWp kosten 10.500 bis 21.000 €, ohne Umsatzsteuer. Passende Größe, Förderung in Berlin und Potsdam.',
     service: {
       name: "Beratung und Vermittlung für Photovoltaikanlagen",
       typ: "Photovoltaik-Beratung",
@@ -402,7 +402,7 @@ const PAGES = [
   {
     key: 'rat-strom', dir: 'ratgeber/waermepumpe-stromverbrauch', view: 'view-rat-strom', prio: '0.8', crumb: 'Stromverbrauch Wärmepumpe',
     title: 'Wärmepumpe Stromverbrauch berechnen | BHD Ratgeber',
-    desc: 'Wie viel Strom braucht eine Wärmepumpe? Im Beispielhaus rund 4.200 bis 6.000 kWh im Jahr. Mit Rechenweg, Fraunhofer-Messwerten und § 14a EnWG.',
+    desc: 'Wie viel Strom braucht eine Wärmepumpe? Bei 20.000 kWh Gas rund 5.300 kWh, etwa 1.380 € im Jahr. Tabelle nach Gasverbrauch und Rechenweg.',
     article: { headline: 'Wie viel Strom braucht eine Wärmepumpe?', pub: '2026-10-28', section: 'Wärmepumpe' }
   },
   {

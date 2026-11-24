@@ -37,13 +37,29 @@
   // Startseite und die Formulare auf /anfragen/ liegen auf verschiedenen
   // Seiten und brauchen beide diese Funktion.
   // Gibt true zurueck, wenn FormSubmit die Anfrage angenommen hat.
+
+  // Herkunft der Anfrage: auf welcher Seite abgeschickt und von wo der Besucher
+  // kam (Vorseite auf bhd-energie.de oder nur der Name der fremden Website,
+  // z. B. www.google.com). Bewusst OHNE sessionStorage/Cookie: Speichern auf dem
+  // Endgeraet waere nach § 25 TDDDG einwilligungspflichtig. Abfragen wie
+  // ?utm_campaign=… werden mitgegeben, damit Meta-Anzeigen erkennbar sind.
+  function herkunft(){
+    const h={seite:location.pathname+(location.search.indexOf('utm_')>-1?location.search:'')};
+    try{
+      if(document.referrer){
+        const r=new URL(document.referrer);
+        h.vorseite=r.host===location.host?r.pathname:r.host;
+      }else h.vorseite='direkt aufgerufen';
+    }catch(e){}
+    return h;
+  }
   async function sendLead(lead){
     try{
       const payload=Object.assign({
         _subject:'Neue Anfrage ('+lead.typ+') – BHD Website',
         _template:'table',
         _captcha:'false'
-      },lead);
+      },herkunft(),lead);
       if(Array.isArray(payload.interesse))payload.interesse=payload.interesse.join(', ');
       // Formular-kodiert (application/x-www-form-urlencoded) statt JSON:
       // vermeidet den CORS-Preflight, der Browser-Absendungen still blockieren kann.
@@ -90,6 +106,15 @@
       const form=document.getElementById(f[0]);
       if(!form)return;
       form.addEventListener('submit',function(){
+        // Herkunft als versteckte Felder mitsenden (gleiche Logik wie sendLead)
+        try{
+          const h=herkunft();
+          Object.keys(h).forEach(function(k){
+            let el=form.querySelector('input[name="'+k+'"]');
+            if(!el){el=document.createElement('input');el.type='hidden';el.name=k;form.appendChild(el);}
+            el.value=h[k];
+          });
+        }catch(e){}
         try{
           const wert=id=>{const el=document.getElementById(id);return el?el.value:'';};
           sessionStorage.setItem('bhd-bestaetigung',JSON.stringify({
